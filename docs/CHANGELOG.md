@@ -1,5 +1,13 @@
 # CHANGELOG — 《九曜：天墟》
 
+## 2026-09-14（第二輪）
+
+- 連線技術棧正式拍板：**Photon Fusion（Dedicated Server 模式）**，明確排除 Host 模式用於
+  正式營運。流程：Claude 提出草稿審查意見（分區/副本人數定義不一致、防作弊立場模糊、
+  成本門檻邏輯缺陷）→ GPT-5.2 修正 → 與 Gemini、DeepSeek 交叉驗證收斂 → 咖哩依實際預算
+  調整成本門檻數字（改用 NT$500/1000 兩階，符合 Phase 0 自掏腰包測試規模而非新創標準）。
+  詳見 `docs/01_ARCHITECTURE_DECISIONS_V1.0.md` 第1節。
+
 ## 2026-09-14
 
 - 建立repo `sky03104/jiuyao-tianxu`
