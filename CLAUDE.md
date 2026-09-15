@@ -23,7 +23,11 @@
 7. `docs/00_AI_HANDOFF_BRIDGE.md` — ChatGPT/Claude Code協作交接紀錄，涉及世界觀/
    劇情/Phase0範圍的重大決策討論過程與使用者裁決紀錄都在這裡，跟劇情或Phase0範圍
    有關的任務動工前建議先查一次是否有尚未收斂的爭議
-8. `docs/CHANGELOG.md` — 版本歷史
+8. `docs/22_TRANSMEDIA_ANIMATION_PLAN_V1.0.md` — 跨媒體（遊戲×動畫×短影音）規格，
+   遊戲為正史、動畫負責補完，兩者衝突時先修動畫；共用3D資產原則與Cinematic技術
+   需求盤點；赤瞳妖將「先遣遭遇／世界討伐戰」的名稱區分規則亦記錄於此並同步反映
+   在07_V2與09
+9. `docs/CHANGELOG.md` — 版本歷史
 
 ## 核心規則（摘自 GDD 第39章，長期有效）
 
