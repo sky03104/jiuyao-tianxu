@@ -232,6 +232,126 @@ ChatGPT / Claude Code 技術與產品建議
 >
 > 不要刪除歷史紀錄；最新紀錄放最上方。
 
+## [CLAUDE-REPLY-005]
+
+**日期：** 2026-09-16
+
+**對應 HANDOFF：** HANDOFF-005_PHASE0A.md
+
+**狀態：** 完成
+
+### 已完成
+
+嚴格依HANDOFF-005第5節「建議執行順序」1~15步一步一步做，沒有跳步或提前擴張範圍
+（未做六大武器完整系統/雙修切換/完整靈印/裝備/任務/公會/經濟/PvP/副本/世界BOSS/
+完整劇情/正式美術/完整動畫等第3節明確禁止項目）：
+
+1. Unity 6000.5.5f1 + URP 17.5.0專案建立（上一輪已完成）。
+2. Photon Fusion 2.1.2 (stable)套件匯入，咖哩透過Unity Asset Store取得
+  `.unitypackage`提供（上一輪已完成，本輪修正編譯錯誤：Fusion Statistics面板
+  依賴舊版uGUI，補上`com.unity.ugui`後編譯通過無錯誤）。
+3. Network Runner基礎連線：手寫`NetworkGameLauncher`（未使用Fusion官方
+  FusionBootstrap範例，避免Combat/Core跟Photon demo程式碼耦合），依`-netmode`
+  命令列參數啟動Server/Client/Host。
+4. 玩家移動：`PlayerMovement`讀取`PlayerInputData`（INetworkInput），
+  Server權威下依輸入更新位置。
+5. 玩家可見性與同步：`NetworkTransform`同步位置，`OnPlayerJoined`/`OnPlayerLeft`
+  正確處理玩家加入/離開。
+6. 基礎戰鬥：`PlayerCombat`做攻擊意圖→Sphere Overlap命中判定→`Health.ApplyDamage`。
+7. Server Authority：`Health`/`PlayerMovement`/`PlayerCombat`所有狀態修改皆guard
+  在`Object.HasStateAuthority`；玩家生成邏輯guard在`runner.IsServer`；未採用
+  「Client自算傷害再告訴Server」的禁止架構。
+8. 穩定性測試：見下方「實跑證據」。
+
+### 修改文件
+
+- `unity/JiuyaoTianxu/Assets/_Project/Core/`（新增）：PlayerInputData.cs（INetworkInput
+  結構）、KeyboardInputProvider.cs（本機鍵盤輸入）、AutoTestInputProvider.cs
+  （headless驗收用的程式化按鍵模擬，見下方說明）。
+- `unity/JiuyaoTianxu/Assets/_Project/Net/NetworkGameLauncher.cs`（新增）：Fusion
+  啟動器與完整`INetworkRunnerCallbacks`實作（19個方法簽章皆用反射工具直接讀取
+  `Fusion.Runtime.dll`驗證過，不是憑訓練記憶猜測——Fusion 2的callback介面/
+  `StartGameArgs`欄位/`NetworkInput.Set<T>()`等API細節每版可能微調，查證後才動手
+  比較不會寫出編譯不過的架構）。
+- `unity/JiuyaoTianxu/Assets/_Project/Combat/`（新增）：Health.cs、PlayerMovement.cs、
+  PlayerCombat.cs。
+- `unity/JiuyaoTianxu/Assets/_Project/Editor/Phase0ANetworkSetup.cs`（新增）：
+  建立Player/NetworkRunner預製物並接線進測試場景。
+- `unity/JiuyaoTianxu/Assets/_Project/Editor/Phase0ABuild.cs`（新增）：打包Windows
+  Standalone供headless驗收用。
+- `unity/JiuyaoTianxu/Assets/_Project/Net/Prefabs/Player.prefab`、
+  `NetworkRunner.prefab`（新增）。
+- `unity/JiuyaoTianxu/README.md`（更新）：完整進度表與驗收結果記錄。
+
+### 使用哪個 Unity 版本 / Photon Fusion 版本
+
+Unity Editor 6000.5.5f1；Photon Fusion 2.1.2 (stable, build 2279)。
+
+### 測試方式與測試結果（0-A-08穩定性測試，實跑證據）
+
+**測試方式**：因為要驗的是01_ARCHITECTURE_DECISIONS已定案的Dedicated Server拓樸
+（不是Editor內Host模式），打包成Windows Standalone後啟動3個獨立headless進程：
+1個Server + 2個Client（`-batchmode -nographics -netmode server/client -autotest`）。
+`-autotest`旗標啟用`AutoTestInputProvider`——因為無視窗的headless進程收不到真實
+鍵盤輸入，改用程式碼以固定節奏（0.5秒按、0.5秒放）模擬攻擊鍵，這是Phase0-A
+headless驗收專用的測試替身，不是正式輸入方案（正式鍵盤/手機輸入走
+`KeyboardInputProvider`，兩者共用同一個`PlayerInputData`抽象層，未來接手機
+虛擬搖桿只需再加一個Provider，不用動Net/Combat）。
+
+**測試結果**：
+- 2個Client都成功連線（`StartGame succeeded as Client`／`Connected to server`），
+  Server記錄兩名玩家加入（`Player joined: [Player:2]`、`[Player:3]`），兩個Client
+  互相看見對方（各自的Local/Remote玩家對應正確）。
+- **324次**完整的Attack→Hit→Damage→HP Sync循環（遠超過驗收標準的10次），HP從
+  100正確遞減，並在`Mathf.Max(0, HP - amount)`處clamp在0（觀察到641次「HP now 0」
+  紀錄，無負值，clamp邏輯正確）。
+- 手動終止其中一個Client程序，Server正確觸發`Player left: [Player:3]`，未崩潰
+  未卡死。
+- Server log全程搜尋`Exception`/`NullReference`/`Unhandled`關鍵字，除了已知的
+  本機Editor授權握手警告（與Fusion連線無關）外，無其他錯誤紀錄。
+
+### 是否存在 blocker
+
+否（Phase 0-A本次任務範圍已全部完成，無阻塞項）。
+
+### 發現的問題（誠實記錄除錯過程，非隱藏）
+
+**問題A（已排查並解決，過程記錄供未來參考）**：第一次用1 Server+1 Client測試時，
+0次命中——排查後發現Dedicated Server模式下Server本身不生成本地玩家（這是預期
+行為，Dedicated Server本來就不該有本地玩家），所以1 Server+1 Client組合下場上
+只有1名玩家、打不到任何目標。改用1 Server+2 Client（2名玩家）後正常命中。這不是
+程式錯誤，是我測試設計一開始沒考慮到的組合問題，已修正。
+
+**問題B（已排查並解決，Unity Editor腳本已知坑，值得記錄避免未來重踩）**：
+`Phase0ANetworkSetup.cs`第一版把`PrefabUtility.SaveAsPrefabAsset`回傳的物件
+參照直接傳給`WireLauncherIntoScene`，結果場景檔裡`_runnerPrefab`/`_playerPrefab`
+欄位存成`{fileID: 0}`（空引用）——三輪診斷後查明：`EditorSceneManager.OpenScene`
+切換場景這個動作本身會讓「切換前拿到的」prefab物件參照失效，即使是剛存檔、剛用
+`AssetDatabase.LoadAssetAtPath`重新讀取的參照也一樣，只要是在`OpenScene`呼叫
+「之前」取得的都會失效。修法：改成先呼叫`OpenScene`，場景切換完成「之後」才用
+`AssetDatabase.LoadAssetAtPath`依路徑讀取prefab。這是本次唯一花比較多輪次排查
+的問題，已在README與此處記錄根因，避免未來寫類似Editor腳本時重踩。
+
+### Claude Code 意見
+
+[接受]（Phase 0-A本身沒有需要反對或建議修改的地方，HANDOFF-005的任務設計與
+驗收標準都清楚可執行，已依指示逐步完成並提供實跑證據，不是憑印象宣稱完成）
+
+### 是否需要 ChatGPT／使用者決策
+
+否（Phase 0-A已完成，可以進入HANDOFF-005第8節指定的下一階段：Phase 0-B六大
+武器路線最小可玩戰鬥Loop。若要開始，需要ChatGPT發下一個HANDOFF任務單，或使用者
+直接指示我按19_DEVELOPMENT_ROADMAP的既定範圍開始）
+
+### 下一步
+
+- 等待ChatGPT/使用者指派Phase 0-B任務（六流派最小可辨識戰鬥循環，呼應19已定案
+  範圍：刀/劍/槍/弓/重刃/靈杖）。
+- HANDOFF-003/004遺留的兩個待確認問題（17技術架構的Cinematic建議、手機效能
+  預算基準）仍未收到回覆，維持開放狀態，不影響Phase 0-B可以開始。
+
+---
+
 ## [CLAUDE-NOTE-005]（非HANDOFF任務，咖哩直接請求，未經ChatGPT發起）
 
 **日期：** 2026-09-16

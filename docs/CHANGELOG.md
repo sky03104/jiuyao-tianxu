@@ -1,5 +1,28 @@
 # CHANGELOG — 《九曜：天墟》
 
+## 2026-09-16（第二十二筆，HANDOFF-005：Phase 0-A完成，2-Client連線+Server權威戰鬥驗證通過）
+
+- 執行HANDOFF-005第5節「建議執行順序」全部15步，未跳步、未提前擴張範圍（六大
+  武器/雙修/完整靈印/裝備/任務/公會/經濟/PvP/副本/世界BOSS/完整劇情/正式美術/
+  完整動畫等皆未觸碰，符合第3節明確禁止清單）。
+- 新增輸入抽象層（Core/PlayerInputData/KeyboardInputProvider/AutoTestInputProvider）、
+  手寫Fusion啟動器（Net/NetworkGameLauncher，未依賴Fusion官方FusionBootstrap範例，
+  保持與Photon demo程式碼解耦；完整INetworkRunnerCallbacks實作，19個方法簽章
+  皆用反射工具直接讀取Fusion.Runtime.dll查證，非憑訓練記憶猜測）、Server權威
+  戰鬥（Combat/Health+PlayerMovement+PlayerCombat，所有狀態修改guard在
+  Object.HasStateAuthority）。
+- 打包Windows Standalone後以1 Server+2 Client三個獨立headless進程實跑驗證
+  （`-autotest`旗標程式化模擬按鍵，因headless進程收不到真實鍵盤輸入）：
+  兩Client互相看見對方、324次Attack→Hit→Damage→HP Sync循環（遠超驗收標準10次）、
+  HP正確遞減並於0處clamp、手動終止Client後Server正確觸發OnPlayerLeft未崩潰。
+- 除錯過程記錄兩個問題：(1) 首次測試用1 Server+1 Client，因Dedicated Server不
+  生成本地玩家導致場上只有1名玩家打不到目標，改用1 Server+2 Client排除；
+  (2) 發現並修正一個Unity Editor腳本已知坑——`PrefabUtility.SaveAsPrefabAsset`
+  回傳的物件參照會在後續`EditorSceneManager.OpenScene`切換場景後失效，即使是
+  切換前才重新讀取的參照也一樣，修法為場景開啟後才用`AssetDatabase.LoadAssetAtPath`
+  依路徑讀取。
+- Phase 0-A全部完成，無阻塞項，可進入Phase 0-B（六大武器最小可玩戰鬥Loop）。
+
 ## 2026-09-16（第二十一筆，補入生成式影片模型作為輔助工具）
 
 - 咖哩提出候選：MiniMax H3（本地部署）、Veo 3、Seedance（雲端服務）三款文字/圖片
