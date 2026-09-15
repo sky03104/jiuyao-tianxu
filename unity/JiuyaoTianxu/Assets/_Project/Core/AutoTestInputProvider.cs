@@ -3,25 +3,52 @@ using UnityEngine;
 namespace JiuyaoTianxu.Core
 {
     /// <summary>
-    /// Deterministic scripted input used only for Phase 0-A headless verification
-    /// (two processes launched with -batchmode -nographics have no real keyboard/
-    /// window, so UnityEngine.Input never fires). Activated by the -autotest
-    /// command-line flag. Stays put and presses Attack on a fixed duty cycle so the
-    /// 10-cycle Attack->Hit->Damage->HP-Sync loop required by HANDOFF-005 §0-A-08
-    /// can be verified from logs without a human at a keyboard.
+    /// Deterministic scripted input used only for headless verification
+    /// (-batchmode -nographics processes have no real keyboard/window, so
+    /// UnityEngine.Input never fires). Activated by the -autotest command-line
+    /// flag.
+    ///
+    /// Paced by Fusion's own simulation tick (NetworkRunner.Tick.Raw), NOT
+    /// Time.frameCount — a first version used Time.frameCount and got stuck for
+    /// 30+ minutes on a single weapon. Root cause: in a headless nographics
+    /// process, Unity's Update()/frame rate is decoupled from Fusion's fixed
+    /// simulation tick rate, so a frame-count-paced input pattern gets sampled
+    /// into FixedUpdateNetwork at a wildly different (and inconsistent) rate
+    /// than intended, silently breaking any timing assumption (including the
+    /// "rest gap before switching weapon" meant to guarantee CombatState
+    /// returns to Idle). Ticks are what CombatController's own TickTimers are
+    /// measured in, so pacing test input in ticks keeps both in the same clock.
+    ///
+    /// Each weapon window is: attack-pulse for a while, then a rest gap with no
+    /// input at all (long enough for any weapon's worst-case Recovery+ComboWindow
+    /// to elapse), then one SwitchWeapon press — SwitchWeapon only applies while
+    /// CombatState.IsIdle, so the rest gap is required, not cosmetic.
     /// </summary>
     public static class AutoTestInputProvider
     {
-        private const int CycleFrames = 30; // ~0.5s at 60fps: press for the first half, release for the second.
+        private const int CycleTicks = 30;          // attack press/release duty cycle.
+        private const int WeaponWindowTicks = 360;   // total ticks spent on one weapon before switching.
+        private const int RestBeforeSwitchTicks = 120; // ticks of total silence before the switch press.
 
-        public static PlayerInputData Poll()
+        public static PlayerInputData Poll(int tick)
         {
             var data = new PlayerInputData { Move = Vector2.zero };
 
-            var phase = Time.frameCount % CycleFrames;
-            if (phase < CycleFrames / 2)
+            var windowPos = tick % WeaponWindowTicks;
+            var attackWindowEnd = WeaponWindowTicks - RestBeforeSwitchTicks;
+
+            if (windowPos < attackWindowEnd)
             {
-                data.Buttons.Set(PlayerButton.Attack, true);
+                var phase = windowPos % CycleTicks;
+                if (phase < CycleTicks / 2)
+                {
+                    data.Buttons.Set(PlayerButton.Attack, true);
+                }
+            }
+            else if (windowPos == WeaponWindowTicks - 1)
+            {
+                // Rest gap has fully elapsed by this tick — safe to switch.
+                data.Buttons.Set(PlayerButton.SwitchWeapon, true);
             }
 
             return data;

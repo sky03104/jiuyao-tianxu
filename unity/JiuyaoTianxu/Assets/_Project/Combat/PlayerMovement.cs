@@ -1,19 +1,27 @@
 using Fusion;
+using JiuyaoTianxu.Combat.Framework;
 using JiuyaoTianxu.Core;
 using UnityEngine;
 
 namespace JiuyaoTianxu.Combat
 {
     /// <summary>
-    /// Minimal server-authoritative movement for Phase 0-A. Only StateAuthority
-    /// (the dedicated server) advances position from input; every other peer just
-    /// receives the networked Transform and interpolates. No animation, no character
-    /// controller physics yet — that's Phase 0-B's job once the six weapon flows
-    /// bring real movesets.
+    /// Server-authoritative movement. Speed is scaled by CombatController's
+    /// networked MoveSpeedMultiplier (0 while most attacks are active/recovering,
+    /// 1 when idle, partial for weapons that explicitly allow moving mid-attack —
+    /// see AttackDefinition.CanMoveDuringAttack). Movement itself knows nothing
+    /// about weapons or attacks, only reads that one shared multiplier.
     /// </summary>
     public class PlayerMovement : NetworkBehaviour
     {
         [SerializeField] private float _moveSpeed = 4f;
+
+        private CombatController _combat;
+
+        public override void Spawned()
+        {
+            _combat = GetComponent<CombatController>();
+        }
 
         public override void FixedUpdateNetwork()
         {
@@ -23,7 +31,8 @@ namespace JiuyaoTianxu.Combat
             var move = new Vector3(input.Move.x, 0f, input.Move.y);
             if (move.sqrMagnitude > 1f) move.Normalize();
 
-            transform.position += move * (_moveSpeed * Runner.DeltaTime);
+            var speedMultiplier = _combat != null ? _combat.MoveSpeedMultiplier : 1f;
+            transform.position += move * (_moveSpeed * speedMultiplier * Runner.DeltaTime);
         }
     }
 }

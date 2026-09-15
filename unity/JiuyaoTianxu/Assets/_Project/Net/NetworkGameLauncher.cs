@@ -114,8 +114,14 @@ namespace JiuyaoTianxu.Net
                 return;
             }
 
-            var spawnPosition = new Vector3(_spawnedPlayers.Count * 1.5f, 1f, 0f);
-            var playerObject = runner.Spawn(_playerPrefab, spawnPosition, Quaternion.identity, player);
+            // Face spawned players toward each other so directional melee hit
+            // shapes (offset along transform.forward) actually reach a target —
+            // otherwise two players spawned side-by-side both facing +Z (the old
+            // Quaternion.identity default) never overlap on short-range weapons.
+            var index = _spawnedPlayers.Count;
+            var spawnPosition = new Vector3(index * 1.5f, 1f, 0f);
+            var facing = index % 2 == 0 ? Quaternion.LookRotation(Vector3.right) : Quaternion.LookRotation(Vector3.left);
+            var playerObject = runner.Spawn(_playerPrefab, spawnPosition, facing, player);
             _spawnedPlayers[player] = playerObject;
         }
 
@@ -132,7 +138,7 @@ namespace JiuyaoTianxu.Net
 
         public void OnInput(NetworkRunner runner, NetworkInput input)
         {
-            input.Set(AutoTestMode ? AutoTestInputProvider.Poll() : KeyboardInputProvider.Poll());
+            input.Set(AutoTestMode ? AutoTestInputProvider.Poll(runner.Tick.Raw) : KeyboardInputProvider.Poll());
         }
 
         public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input) { }

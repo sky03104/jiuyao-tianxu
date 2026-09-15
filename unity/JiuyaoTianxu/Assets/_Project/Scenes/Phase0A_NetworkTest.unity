@@ -308,53 +308,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &124950242
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 124950244}
-  - component: {fileID: 124950243}
-  m_Layer: 0
-  m_Name: NetworkGameLauncher
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &124950243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124950242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45bdb257b3354674b8e0c1d282bdfbe3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JiuyaoTianxu.Net.NetworkGameLauncher
-  _runnerPrefab: {fileID: 8940270348112064278, guid: e3a53ef68ef9b2241bf348d00aab77b0, type: 3}
-  _playerPrefab: {fileID: 7805608695806785716, guid: 204eaed2e16c20a43aec7cf574bb13fc, type: 3}
-  _sessionName: Phase0ATest
---- !u!4 &124950244
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124950242}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1880475636
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,6 +421,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1965975169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1965975171}
+  - component: {fileID: 1965975170}
+  m_Layer: 0
+  m_Name: NetworkGameLauncher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1965975170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965975169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45bdb257b3354674b8e0c1d282bdfbe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JiuyaoTianxu.Net.NetworkGameLauncher
+  _runnerPrefab: {fileID: 8940270348112064278, guid: e3a53ef68ef9b2241bf348d00aab77b0, type: 3}
+  _playerPrefab: {fileID: 7805608695806785716, guid: 204eaed2e16c20a43aec7cf574bb13fc, type: 3}
+  _sessionName: Phase0ATest
+--- !u!4 &1965975171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965975169}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -475,4 +475,4 @@ SceneRoots:
   - {fileID: 1880475640}
   - {fileID: 1215101}
   - {fileID: 116747150}
-  - {fileID: 124950244}
+  - {fileID: 1965975171}

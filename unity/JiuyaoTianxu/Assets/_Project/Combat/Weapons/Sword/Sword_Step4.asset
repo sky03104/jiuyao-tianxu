@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d072e6ed63fa1043828de8d98f7d79f, type: 3}
+  m_Name: Sword_Step4
+  m_EditorClassIdentifier: Assembly-CSharp::JiuyaoTianxu.Combat.Framework.AttackDefinition
+  AttackId: Sword_Step4
+  WeaponType: 1
+  ComboStep: 4
+  Damage: 5
+  StartupTime: 0.05
+  ActiveTime: 0.07
+  RecoveryTime: 0.08
+  Cooldown: 0
+  ChargeOrCastTime: 0
+  CanCombo: 1
+  ComboWindow: 0.5
+  CanMoveDuringAttack: 1
+  MoveSpeedMultiplier: 0.6
+  ResourceCost: 0
+  HitShape: 0
+  Range: 1.3
+  HitExtents: {x: 1, y: 1, z: 1}
+  ProjectileSpeed: 15
+  AreaRadius: 0
+  AppliesKnockback: 0
+  KnockbackForce: 0
+  AppliesArmorBreak: 0
+  GrantsSuperArmor: 0

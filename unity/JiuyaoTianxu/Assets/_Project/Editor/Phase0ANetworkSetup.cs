@@ -1,14 +1,16 @@
 using System.Linq;
 using Fusion;
 using JiuyaoTianxu.Combat;
+using JiuyaoTianxu.Combat.Framework;
 using JiuyaoTianxu.Net;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
 /// <summary>
-/// One-off Phase 0-A network bootstrap: builds the Player and NetworkRunner
-/// prefabs, and wires a NetworkGameLauncher into the test scene.
+/// One-off Phase 0-A/0-B network bootstrap: builds the Player, Projectile and
+/// NetworkRunner prefabs, wires the six WeaponDefinition assets into
+/// CombatController, and wires a NetworkGameLauncher into the test scene.
 /// Run via: Unity.exe -batchmode -executeMethod Phase0ANetworkSetup.Run -quit
 /// </summary>
 public static class Phase0ANetworkSetup
@@ -16,26 +18,40 @@ public static class Phase0ANetworkSetup
     private const string PrefabFolder = "Assets/_Project/Net/Prefabs";
     private const string PlayerPrefabPath = PrefabFolder + "/Player.prefab";
     private const string RunnerPrefabPath = PrefabFolder + "/NetworkRunner.prefab";
+    private const string ProjectilePrefabPath = PrefabFolder + "/Projectile.prefab";
     private const string ScenePath = "Assets/_Project/Scenes/Phase0A_NetworkTest.unity";
+    private const string WeaponsRoot = "Assets/_Project/Combat/Weapons";
+
+    private static readonly WeaponType[] WeaponOrder =
+    {
+        WeaponType.Blade, WeaponType.Sword, WeaponType.Spear,
+        WeaponType.Bow, WeaponType.HeavyBlade, WeaponType.Staff,
+    };
 
     public static void Run()
     {
         EnsureFolder("Assets/_Project", "Net");
         EnsureFolder("Assets/_Project/Net", "Prefabs");
 
+        Phase0BWeaponDataSetup.Run();
+
         BuildPlayerPrefab();
         BuildRunnerPrefab();
+        BuildProjectilePrefab();
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
 
-        // WireLauncherIntoScene loads the prefabs by path itself, AFTER opening the
+        // WireLauncherIntoScene loads everything by path itself, AFTER opening the
         // target scene — opening a different scene was observed to invalidate any
-        // prefab object reference obtained beforehand (even ones loaded fresh via
-        // AssetDatabase.LoadAssetAtPath just before the call), silently leaving the
-        // launcher's fields null if resolved too early.
+        // asset object reference obtained beforehand (even ones loaded fresh via
+        // AssetDatabase.LoadAssetAtPath just before the call), silently leaving
+        // fields null if resolved too early. See README "已知問題" for the full story.
         WireLauncherIntoScene();
+        WireCombatControllerOnPrefab();
 
-        Debug.Log("[Phase0ANetworkSetup] Player + NetworkRunner prefabs built and wired into test scene.");
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+        Debug.Log("[Phase0ANetworkSetup] Player + Projectile + NetworkRunner prefabs built and wired.");
     }
 
     private static void EnsureFolder(string parent, string name)
@@ -51,15 +67,14 @@ public static class Phase0ANetworkSetup
         var go = GameObject.CreatePrimitive(PrimitiveType.Capsule);
         go.name = "Player";
 
-        var netObj = go.AddComponent<NetworkObject>();
+        go.AddComponent<NetworkObject>();
         go.AddComponent<NetworkTransform>();
         go.AddComponent<PlayerMovement>();
-        go.AddComponent<PlayerCombat>();
         go.AddComponent<Health>();
+        go.AddComponent<CombatState>();
+        go.AddComponent<CombatController>();
 
         var savedPrefab = PrefabUtility.SaveAsPrefabAsset(go, PlayerPrefabPath);
-        Debug.Log($"[Phase0ANetworkSetup] BuildPlayerPrefab: savedPrefab={(savedPrefab == null ? "NULL" : savedPrefab.name)}, " +
-                  $"components on go before destroy: {string.Join(",", go.GetComponents<Component>().Select(c => c.GetType().Name))}");
         Object.DestroyImmediate(go);
 
         if (savedPrefab == null)
@@ -68,9 +83,7 @@ public static class Phase0ANetworkSetup
             return null;
         }
 
-        var netObjOnPrefab = savedPrefab.GetComponent<NetworkObject>();
-        Debug.Log($"[Phase0ANetworkSetup] NetworkObject on saved prefab: {(netObjOnPrefab == null ? "NULL" : "OK")}");
-        return netObjOnPrefab;
+        return savedPrefab.GetComponent<NetworkObject>();
     }
 
     private static NetworkRunner BuildRunnerPrefab()
@@ -81,7 +94,6 @@ public static class Phase0ANetworkSetup
         go.AddComponent<NetworkObjectProviderDefault>();
 
         var savedPrefab = PrefabUtility.SaveAsPrefabAsset(go, RunnerPrefabPath);
-        Debug.Log($"[Phase0ANetworkSetup] BuildRunnerPrefab: savedPrefab={(savedPrefab == null ? "NULL" : savedPrefab.name)}");
         Object.DestroyImmediate(go);
 
         if (savedPrefab == null)
@@ -91,6 +103,30 @@ public static class Phase0ANetworkSetup
         }
 
         return savedPrefab.GetComponent<NetworkRunner>();
+    }
+
+    private static NetworkObject BuildProjectilePrefab()
+    {
+        var go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        go.name = "Projectile";
+        go.transform.localScale = Vector3.one * 0.3f;
+        var col = go.GetComponent<Collider>();
+        if (col != null) col.isTrigger = true; // visual/marker collider only; Projectile.cs does its own OverlapSphere.
+
+        go.AddComponent<NetworkObject>();
+        go.AddComponent<NetworkTransform>();
+        go.AddComponent<Projectile>();
+
+        var savedPrefab = PrefabUtility.SaveAsPrefabAsset(go, ProjectilePrefabPath);
+        Object.DestroyImmediate(go);
+
+        if (savedPrefab == null)
+        {
+            Debug.LogError("[Phase0ANetworkSetup] SaveAsPrefabAsset returned null for Projectile prefab.");
+            return null;
+        }
+
+        return savedPrefab.GetComponent<NetworkObject>();
     }
 
     private static void WireLauncherIntoScene()
@@ -119,9 +155,46 @@ public static class Phase0ANetworkSetup
         so.FindProperty("_playerPrefab").objectReferenceValue = playerPrefab;
         so.ApplyModifiedPropertiesWithoutUndo();
 
-        Debug.Log($"[Phase0ANetworkSetup] Wired launcher: player={(playerPrefab == null ? "NULL" : "OK")}, runner={(runnerPrefab == null ? "NULL" : "OK")}");
-
         EditorSceneManager.MarkSceneDirty(scene);
         EditorSceneManager.SaveScene(scene);
+    }
+
+    /// <summary>
+    /// Wires the six WeaponDefinition assets + the Projectile prefab into
+    /// CombatController on the Player PREFAB ASSET (not a scene instance) —
+    /// PrefabUtility.LoadPrefabContents/SaveAsPrefabAsset round-trip so every
+    /// spawned Player picks these up without needing a scene-instance override.
+    /// </summary>
+    private static void WireCombatControllerOnPrefab()
+    {
+        var root = PrefabUtility.LoadPrefabContents(PlayerPrefabPath);
+        var controller = root.GetComponent<CombatController>();
+
+        var weapons = WeaponOrder
+            .Select(w => AssetDatabase.LoadAssetAtPath<WeaponDefinition>($"{WeaponsRoot}/{w}/{w}_Weapon.asset"))
+            .ToArray();
+
+        var missing = weapons.Where(w => w == null).Count();
+        if (missing > 0)
+        {
+            Debug.LogError($"[Phase0ANetworkSetup] {missing} WeaponDefinition asset(s) failed to load.");
+        }
+
+        var projectilePrefab = AssetDatabase.LoadAssetAtPath<NetworkObject>(ProjectilePrefabPath);
+
+        var so = new SerializedObject(controller);
+        var weaponsProp = so.FindProperty("_weapons");
+        weaponsProp.arraySize = weapons.Length;
+        for (var i = 0; i < weapons.Length; i++)
+        {
+            weaponsProp.GetArrayElementAtIndex(i).objectReferenceValue = weapons[i];
+        }
+        so.FindProperty("_projectilePrefab").objectReferenceValue = projectilePrefab;
+        so.ApplyModifiedPropertiesWithoutUndo();
+
+        PrefabUtility.SaveAsPrefabAsset(root, PlayerPrefabPath);
+        PrefabUtility.UnloadPrefabContents(root);
+
+        Debug.Log($"[Phase0ANetworkSetup] Wired {weapons.Length - missing}/{weapons.Length} weapons + projectile prefab into CombatController.");
     }
 }

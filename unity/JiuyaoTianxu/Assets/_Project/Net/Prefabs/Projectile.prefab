@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &908723654597829535
+--- !u!1 &8965347957123641396
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,53 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7385324740494042293}
-  - component: {fileID: 253460290296914878}
-  - component: {fileID: 1056501814721304353}
-  - component: {fileID: 3163405605044565810}
-  - component: {fileID: 7805608695806785716}
-  - component: {fileID: 6908055136152484837}
-  - component: {fileID: 5419966529165574621}
-  - component: {fileID: 535834606331885221}
-  - component: {fileID: 5841958488391571184}
-  - component: {fileID: 8900131096346332200}
+  - component: {fileID: 960274611404080666}
+  - component: {fileID: 9033972326546928440}
+  - component: {fileID: 2012783639332170943}
+  - component: {fileID: 5596198550523124304}
+  - component: {fileID: 7295565285684886709}
+  - component: {fileID: 5243838710319376084}
+  - component: {fileID: 4128384035163826784}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7385324740494042293
+--- !u!4 &960274611404080666
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908723654597829535}
+  m_GameObject: {fileID: 8965347957123641396}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &253460290296914878
+--- !u!33 &9033972326546928440
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908723654597829535}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!136 &1056501814721304353
-CapsuleCollider:
+  m_GameObject: {fileID: 8965347957123641396}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!135 &2012783639332170943
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908723654597829535}
+  m_GameObject: {fileID: 8965347957123641396}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -63,21 +60,19 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &3163405605044565810
+--- !u!23 &5596198550523124304
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908723654597829535}
+  m_GameObject: {fileID: 8965347957123641396}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -120,37 +115,34 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7805608695806785716
+--- !u!114 &7295565285684886709
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908723654597829535}
+  m_GameObject: {fileID: 8965347957123641396}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Fusion.Runtime.dll::Fusion.NetworkObject
-  SortKey: 2279424090
+  SortKey: 1102019308
   SendPriority: 1
   EnableInterpolation: 1
   Flags: 262402
   NestedObjects: []
   NetworkedBehaviours:
-  - {fileID: 6908055136152484837}
-  - {fileID: 5419966529165574621}
-  - {fileID: 535834606331885221}
-  - {fileID: 5841958488391571184}
-  - {fileID: 8900131096346332200}
+  - {fileID: 5243838710319376084}
+  - {fileID: 4128384035163826784}
   ForceRemoteRenderTimeframe: 0
---- !u!114 &6908055136152484837
+--- !u!114 &5243838710319376084
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908723654597829535}
+  m_GameObject: {fileID: 8965347957123641396}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
@@ -184,67 +176,15 @@ MonoBehaviour:
     MinImpactfulCollisionAlignment: 0.3
     ImpactStartCorrectionTime: 0.1
     ImpactCorrectionTimeComplete: 0.3
---- !u!114 &5419966529165574621
+--- !u!114 &4128384035163826784
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908723654597829535}
+  m_GameObject: {fileID: 8965347957123641396}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2a97a26671d5f64f99dcd1e2f33d454, type: 3}
+  m_Script: {fileID: 11500000, guid: b3e8de9bee643b741bd557a5a29deeae, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JiuyaoTianxu.Combat.PlayerMovement
-  _moveSpeed: 4
---- !u!114 &535834606331885221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908723654597829535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a256665b91733d46a137c4f81693bba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JiuyaoTianxu.Combat.Health
-  _maxHp: 100
-  _HP: 0
---- !u!114 &5841958488391571184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908723654597829535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f2d636d8c252de4a878cad80e1e578c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JiuyaoTianxu.Combat.Framework.CombatState
-  _Phase: 0
-  _ComboStep: 0
-  _BufferedNextAttack:
-    RawValue: 0
---- !u!114 &8900131096346332200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908723654597829535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce76658c640540f468bffb48ed432632, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JiuyaoTianxu.Combat.Framework.CombatController
-  _weapons:
-  - {fileID: 11400000, guid: 5aa9748228c06d549befd3a19dcd26dc, type: 2}
-  - {fileID: 11400000, guid: 01a8f443a62816046aea82ccc4a60f86, type: 2}
-  - {fileID: 11400000, guid: 033f4a070f02bd44b920cbf12254b83f, type: 2}
-  - {fileID: 11400000, guid: 48b62469370d2324ca0149cf98ef8e45, type: 2}
-  - {fileID: 11400000, guid: 1ca8f1e9eb3d13b44991e4bc1defec44, type: 2}
-  - {fileID: 11400000, guid: 34052391af22879428fc7822fd586d17, type: 2}
-  _projectilePrefab: {fileID: 7295565285684886709, guid: c39dc4c67acbedb4da84058928255636, type: 3}
-  _MoveSpeedMultiplier: 1
+  m_EditorClassIdentifier: Assembly-CSharp::JiuyaoTianxu.Combat.Framework.Projectile

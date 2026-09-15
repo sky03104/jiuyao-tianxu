@@ -18,5 +18,6 @@ namespace JiuyaoTianxu.Core
     public static class PlayerButton
     {
         public const int Attack = 0;
+        public const int SwitchWeapon = 1;
     }
 }

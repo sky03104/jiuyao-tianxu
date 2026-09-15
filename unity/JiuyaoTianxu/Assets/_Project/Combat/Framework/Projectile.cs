@@ -1,0 +1,56 @@
+using Fusion;
+using JiuyaoTianxu.Combat;
+using UnityEngine;
+
+namespace JiuyaoTianxu.Combat.Framework
+{
+    /// <summary>
+    /// Minimal server-authoritative projectile for Bow/Staff (HANDOFF-006 §4.4/§4.6:
+    /// "可以先使用簡單 Projectile，不需要正式箭矢模型"). Straight-line travel,
+    /// per-tick overlap check, single target, despawns on hit or timeout.
+    /// Not a full CCD/lag-compensated hit system — that's a later phase's job.
+    /// </summary>
+    public class Projectile : NetworkBehaviour
+    {
+        [Networked] private Vector3 Direction { get; set; }
+        [Networked] private float Speed { get; set; }
+        [Networked] private float RemainingLifetime { get; set; }
+
+        private AttackDefinition _attack;
+        private Health _source;
+
+        public static void Initialize(NetworkRunner runner, NetworkObject obj, Vector3 direction, AttackDefinition attack, Health source)
+        {
+            var projectile = obj.GetComponent<Projectile>();
+            projectile.Direction = direction.normalized;
+            projectile.Speed = attack.ProjectileSpeed;
+            projectile.RemainingLifetime = 3f;
+            projectile._attack = attack;
+            projectile._source = source;
+        }
+
+        public override void FixedUpdateNetwork()
+        {
+            if (!Object.HasStateAuthority) return;
+
+            transform.position += Direction * (Speed * Runner.DeltaTime);
+            RemainingLifetime -= Runner.DeltaTime;
+            if (RemainingLifetime <= 0f)
+            {
+                Runner.Despawn(Object);
+                return;
+            }
+
+            var radius = _attack != null && _attack.AreaRadius > 0f ? _attack.AreaRadius : 0.5f;
+            foreach (var hitCollider in Physics.OverlapSphere(transform.position, radius))
+            {
+                var target = hitCollider.GetComponentInParent<Health>();
+                if (target == null || target == _source) continue;
+
+                DamageService.Resolve(new DamageRequest(_source, target, _attack));
+                Runner.Despawn(Object);
+                return;
+            }
+        }
+    }
+}
