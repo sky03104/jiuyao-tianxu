@@ -3,8 +3,11 @@
 ## 版本資訊
 - Unity Editor：**6000.5.5f1**
 - URP：**17.5.0**（隨此 Editor 版本內建）
-- Photon Fusion：**尚未安裝**（Fusion 2 SDK 需從 Photon 帳號的 SDK 下載頁面手動取得
-  `.unitypackage`，無法透過 Package Manager 直接安裝，見下方「已知阻塞」）
+- Photon Fusion：**2.1.2 (stable, build 2279)**，透過 Unity Asset Store「My Assets」
+  取得 `.unitypackage` 後以批次模式匯入
+- 額外相依套件：`com.unity.ugui` 2.5.0（Fusion Statistics面板需要，新專案未內建，
+  已補進manifest.json）、`com.unity.nuget.mono-cecil` 1.10.2（Fusion IL Weaver需要，
+  匯入時自動加入manifest.json）
 
 ## 專案結構
 
@@ -33,22 +36,18 @@ Assets/_Project/
 | 步驟 | 狀態 |
 |---|---|
 | 1. Unity + URP 專案建立 | ✅ 完成 |
-| 2. Photon Fusion 套件／版本確認 | ⚠️ **阻塞**，見下方 |
-| 3~15 | 待步驟2解除阻塞後接續 |
+| 2. Photon Fusion 套件／版本確認 | ✅ 完成（2.1.2 stable，編譯通過無錯誤） |
+| 3. Network Runner 基礎連線 | 待做 |
+| 4~15 | 待步驟3接續 |
 
-## 已知阻塞
+## Photon App ID 設定（每台開發機都要做一次，不進版本控制）
 
-**Photon Fusion 2 SDK 無法透過程式碼或Package Manager直接取得。**
+`Assets/Photon/Fusion/Resources/PhotonAppSettings.asset` 這個檔案**已被gitignore**，
+不會進git——因為它明文存放App ID，公開在GitHub上會讓任何人用我們的免費CCU額度。
 
-Fusion 2 SDK 是以 `.unitypackage` 檔案形式發佈，需要登入 Photon Engine 帳號到
-SDK下載頁面（https://doc.photonengine.com/fusion/v2/getting-started/sdk-download）
-手動下載，這一步只能由使用者（咖哩）操作，Claude Code 無法代為取得帳號或下載檔案。
+Fusion套件本身有自動偵測機制：專案裡若缺這個檔案，Unity開啟或批次模式執行時
+會自動生成一份空白的（`AppIdFusion`欄位是空的）。**每台新的開發機／每次重新clone
+專案後，都需要手動把App ID填進這個檔案的`AppIdFusion`欄位**，來源見
+`local-secrets/photon-app-id.txt`（同樣已gitignore，只在本機留一份備份）。
 
-**目前狀態**：
-- Photon App ID 已取得，存放於 `local-secrets/photon-app-id.txt`（已gitignore，
-  不會進版本控制），待Fusion套件匯入後會遷移進正式的 `PhotonAppSettings` 資產。
-- Fusion 2 `.unitypackage` 檔案尚未取得，等使用者下載後放入專案資料夾，
-  即可用 `Unity.exe -batchmode -importPackage <path> -quit` 匯入。
-
-依 HANDOFF-005 第0-A-02節規則：**遇到此類外部設定阻塞須明確記錄，不得用假資料
-宣稱完成**——本README即為該記錄。
+當前App ID已在本機填好並驗證可編譯通過，Network Runner連線測試（步驟3）尚未執行。

@@ -8,6 +8,10 @@ unity/JiuyaoTianxu/[Ll]ogs/
 unity/JiuyaoTianxu/[Uu]ser[Ss]ettings/
 unity/JiuyaoTianxu/local-secrets/
 
+# Photon App ID lives here — do not commit (would let anyone spend our free CCU quota)
+unity/JiuyaoTianxu/Assets/Photon/Fusion/Resources/PhotonAppSettings.asset
+unity/JiuyaoTianxu/Assets/Photon/Fusion/Resources/PhotonAppSettings.asset.meta
+
 # Setup / batch-mode run logs
 logs/
 
