@@ -1,5 +1,30 @@
 # CHANGELOG — 《九曜：天墟》
 
+## 2026-09-16（第二十三筆，HANDOFF-006：Phase 0-B完成，Combat Framework+六大武器MVP驗證通過）
+
+- 執行HANDOFF-006全部14個子階段(0-B-01~14)，嚴格依序不跳步，未觸碰雙修切換/
+  完整格擋閃避/完整Boss機制/元素暴擊系統/完整裝備靈印養成/PvP/MMO大世界/公會/
+  經濟/商城/抽卡/正式美術動畫/完整手機UI等第11節明確禁止項目。
+- 新增Combat Framework（Assets/_Project/Combat/Framework/）：CombatController
+  取代Phase0A的PlayerCombat成為唯一戰鬥腳本，六武器差異100%來自
+  AttackDefinition/WeaponDefinition(ScriptableObject)資料資產而非程式碼分支；
+  HitDetectionService唯一呼叫Physics.Overlap*；DamageService唯一寫入Health；
+  CombatState獨立持有網路化狀態；Projectile.cs供弓/杖使用。
+- 六大武器MVP：刀(3段近戰+末段重擊擊退)、劍(5段快攻可邊移動)、槍(中距離破甲
+  突刺)、弓(Hold-Charge-Release-Projectile)、重刃(慢速大AOE簡單霸體)、
+  靈杖(Cast延遲後定點AOE)，在節奏/範圍/機制上明顯不同非僅數值差異。
+- 1 Server+2 Client headless自動輪替六武器測試：27次命中(傷害隨武器不同
+  8~22)、12次Projectile發射、HP正確遞減clamp於0、Server Authority guard全程
+  有效、離線事件正確處理、全程0個Exception/NullReference，Phase0A已驗證的
+  連線/移動/同步能力未被破壞。
+- 除錯過程記錄三個已修正的測試工具瑕疵(非Framework本身錯誤)：(1)
+  AutoTestInputProvider改用Time.frameCount導致與Fusion模擬tick脫鉤，劍的
+  連段節奏共振使測試卡在Idle-only切換武器規則上超過30分鐘(log膨脹至4億多
+  bytes)，改用NetworkRunner.Tick.Raw(反射工具查證確認存在)解決；(2)測試玩家
+  生成朝向未面對面導致近戰打不到人，已修正NetworkGameLauncher讓兩玩家面對面
+  生成；(3)靈杖初始Range/AreaRadius相對測試佈局過大，已調整。
+- Phase 0-B全部完成，無阻塞項，可進入Phase 0-C（靈印資料驅動原型）。
+
 ## 2026-09-16（第二十二筆，HANDOFF-005：Phase 0-A完成，2-Client連線+Server權威戰鬥驗證通過）
 
 - 執行HANDOFF-005第5節「建議執行順序」全部15步，未跳步、未提前擴張範圍（六大

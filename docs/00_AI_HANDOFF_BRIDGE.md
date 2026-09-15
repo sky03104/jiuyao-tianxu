@@ -232,6 +232,174 @@ ChatGPT / Claude Code 技術與產品建議
 >
 > 不要刪除歷史紀錄；最新紀錄放最上方。
 
+## [CLAUDE-REPLY-006]
+
+**日期：** 2026-09-16
+
+**對應 HANDOFF：** HANDOFF-006_PHASE0B.md
+
+**狀態：** 完成
+
+### 已完成
+
+嚴格依HANDOFF-006第13節「建議實作順序」0-B-01~14一步一步做，未跳步、未提前
+擴張範圍（未做雙修切換/完整閃避格擋/完整Boss機制/元素系統/暴擊系統/完整裝備/
+靈印/養成/PvP排位/MMO大世界/公會/經濟/商城/抽卡/正式美術動畫/完整手機UI等
+第11節明確禁止項目）：
+
+- **0-B-01 Combat Framework骨架**：新增`Assets/_Project/Combat/Framework/`，
+  `CombatController`取代Phase0A的`PlayerCombat`成為唯一戰鬥腳本。
+- **0-B-02 Attack Definition資料驅動**：`AttackDefinition`/`WeaponDefinition`
+  皆為ScriptableObject，六武器數值完全在資料資產裡，`CombatController`不含
+  任何硬編碼武器數字。
+- **0-B-03 Combo/State Machine**：`CombatState`獨立持有`Phase`/`ComboStep`/
+  `PhaseTimer`/`ComboWindowTimer`等網路化狀態。
+- **0-B-04 Hit Detection抽離**：`HitDetectionService`是唯一呼叫
+  `Physics.Overlap*`的地方，支援Sphere/Box/Capsule/Area，Projectile另走
+  獨立NetworkObject逐tick判定。
+- **0-B-05 Damage Service**：`DamageService`是唯一寫入`Health`的地方，
+  `DamageRequest`→`DamageResult`責任邊界清楚。
+- **0-B-06~11 六大武器**：刀(3段近戰+末段重擊擊退)、劍(5段快攻可邊移動)、
+  槍(中距離Capsule突刺+破甲擊退)、弓(Hold→Charge→Release→Projectile)、
+  重刃(慢速大AOE+簡單霸體概念)、靈杖(Cast延遲→定點AOE)。
+- **0-B-12 六流派對照測試**：1 Server+2 Client headless自動輪替全部六武器。
+- **0-B-13 Server Authority/Network Regression**：確認Phase0A已驗證的連線/
+  移動/同步能力未被破壞，且新增的戰鬥邏輯全部維持Server權威。
+- **0-B-14 文件與測試報告**：見下方與`unity/JiuyaoTianxu/README.md`。
+
+### 修改文件
+
+- `unity/JiuyaoTianxu/Assets/_Project/Combat/Framework/`（新增8個檔案）：
+  WeaponType.cs、CombatPhase.cs、HitShapeType.cs、AttackDefinition.cs、
+  WeaponDefinition.cs、DamageTypes.cs、HitDetectionService.cs、
+  DamageService.cs、CombatState.cs、CombatController.cs、Projectile.cs。
+- `unity/JiuyaoTianxu/Assets/_Project/Combat/PlayerCombat.cs`（**刪除**，
+  被CombatController取代）。
+- `unity/JiuyaoTianxu/Assets/_Project/Combat/PlayerMovement.cs`（修改：改讀
+  `CombatController.MoveSpeedMultiplier`而非寫死移動速度）。
+- `unity/JiuyaoTianxu/Assets/_Project/Core/PlayerInputData.cs`（修改：新增
+  `SwitchWeapon`按鍵）、`KeyboardInputProvider.cs`（新增Tab鍵切武器）、
+  `AutoTestInputProvider.cs`（重寫，見下方「發現的問題」）。
+- `unity/JiuyaoTianxu/Assets/_Project/Net/NetworkGameLauncher.cs`（修改：
+  生成玩家改為面對面朝向；`OnInput`改用`runner.Tick.Raw`驅動測試輸入節奏）。
+- `unity/JiuyaoTianxu/Assets/_Project/Editor/Phase0BWeaponDataSetup.cs`
+  （新增）：建立六把武器的資料資產。
+- `unity/JiuyaoTianxu/Assets/_Project/Editor/Phase0ANetworkSetup.cs`
+  （修改）：Player prefab改組裝CombatState+CombatController，新增
+  Projectile prefab建置，並把六個WeaponDefinition+Projectile prefab接線
+  進CombatController。
+- `unity/JiuyaoTianxu/Assets/_Project/Combat/Weapons/`（新增）：六個資料夾，
+  每個含1個WeaponDefinition＋對應AttackDefinition資產。
+- `unity/JiuyaoTianxu/Assets/_Project/Net/Prefabs/Projectile.prefab`（新增）。
+- `unity/JiuyaoTianxu/README.md`（更新：Phase0-B完整進度表/Framework分層/
+  六武器辨識度設計表/測試結果/已知問題）。
+
+### Framework 如何分層
+
+見`unity/JiuyaoTianxu/README.md`「Framework分層」一節的圖示，摘要：
+`CombatController`（唯一戰鬥腳本）讀輸入→驅動`CombatState`（純狀態）→
+向`HitDetectionService`或`Projectile`要「打到誰」→交給`DamageService`
+（唯一寫Health的地方）→`Health`。六武器差異100%來自
+`AttackDefinition`/`WeaponDefinition`資料，`CombatController`裡沒有任何
+「if WeaponType==Blade then...」這類武器專屬分支邏輯（唯二例外：Bow/Staff
+因為機制本質不同——蓄力/吟唱——需要`WeaponType`判斷走`Charging`/`Casting`
+分支而非`AttackStart`分支，這是機制差異不是數值分支，符合HANDOFF-006
+「可以有少量武器專屬行為，但不能複製整套戰鬥架構」的允許範圍）。
+
+### 哪些資料已 Data-driven
+
+`AttackDefinition`（AttackId/WeaponType/ComboStep/Damage/Startup-Active-
+Recovery-Cooldown時間/ChargeOrCastTime/CanCombo/ComboWindow/
+CanMoveDuringAttack+MoveSpeedMultiplier/ResourceCost/HitShape+Range+
+HitExtents+ProjectileSpeed+AreaRadius/Knockback+ArmorBreak+SuperArmor
+等旗標）與`WeaponDefinition`（WeaponType/ComboSequence/BaseMoveSpeed）
+皆為ScriptableObject，六武器共18個攻擊步驟資產+6個武器資產，全部由
+`Phase0BWeaponDataSetup.cs`一次性程式碼建立（供之後美術/數值人員直接
+在Inspector調整，不需要改程式碼）。
+
+### Server Authority 如何維持
+
+延續Phase0A的guard模式，新增兩層：
+1. `CombatController`所有邏輯（含新增的武器切換、連段、蓄力/吟唱判斷）
+   都在`if (!Object.HasStateAuthority) return;`之後才執行，Client端
+   只能送出input，不能決定任何戰鬥結果。
+2. `DamageService.Resolve`額外對`target.Object.HasStateAuthority`做
+   二次檢查才寫入HP——即使未來有人不小心在guard外的路徑呼叫
+   `DamageService`，這道檢查仍會擋下並記警告，不會真的把傷害套用到
+   非權威端。
+3. `Projectile`同樣guard在`Object.HasStateAuthority`才執行飛行/命中/
+   造成傷害邏輯。
+
+### 測試方式與測試結果（0-B-12/13，實跑證據）
+
+沿用Phase0A的1 Server+2 Client headless驗收模式，完整結果與過程記錄在
+`unity/JiuyaoTianxu/README.md`「測試方式與結果」一節，摘要：
+- 六種武器全部切換並攻擊過（Blade×17/Sword×31/Spear×18/Bow×12/
+  HeavyBlade×6/Staff×6次組合啟動）。
+- 27次命中，傷害隨武器不同（8~22），證實資料驅動生效非同一套寫死數字。
+- 12次Projectile成功發射（Bow release、Staff cast皆會經過）。
+- HP正確遞減並在0 clamp，無負值。
+- 手動終止Client，Server正確觸發`Player left`，未崩潰。
+- 全程搜尋`Exception`/`NullReference`/`Unhandled`：0命中。
+- Phase0A已驗證的連線/移動/同步能力未被破壞。
+
+### 是否有 blocker
+
+否。
+
+### 發現的問題（除錯過程誠實記錄，非隱藏）
+
+本次除錯過程比Phase0-A更曲折，記錄完整過程供未來參考：
+
+**問題A（已修正，過程中最花時間的一個）**：第一版`AutoTestInputProvider`
+用`Time.frameCount`（Unity畫面更新幀數）安排「攻擊一陣子→靜置一陣子
+（保證回到Idle）→按切換武器鍵」的節奏。實測時測試進程卡在劍（Sword）
+超過30分鐘沒有任何進展，log檔長到4億多bytes。排查後發現：`-nographics`
+無視窗headless進程裡，Unity的Update幀率跟Fusion的固定模擬tick完全
+脫鉤，導致同一份輸入被套用到大量網路tick上；劍的5段快速連段節奏又剛好
+跟原本設計的攻擊按鍵週期共振，使戰鬥狀態永遠回不到Idle，而切換武器的
+規則是「只能在Idle時切換」，因此永久卡死在劍上。**修法**：改用
+`NetworkRunner.Tick.Raw`（透過反射工具直接查證`Fusion.Runtime.dll`確認
+存在此屬性，非憑記憶猜測）取代`Time.frameCount`，讓測試輸入節奏跟
+`CombatController`內部`TickTimer`計時用的是同一個時鐘基準，問題排除。
+修正前後都是靠實際跑測試、看log找證據排查，中間卡住時沒有跳過重試就
+直接宣稱測試通過。
+
+**問題B（已修正）**：兩個測試玩家生成時面朝同一方向（Phase0A遺留的
+`Quaternion.identity`），而近戰命中判定的Sphere/Capsule是往「面朝方向」
+偏移的，導致兩玩家實際上打不到彼此（第一輪測試0次命中）。已修正
+`NetworkGameLauncher`讓生成的兩名玩家面對面。
+
+**問題C（已修正）**：靈杖第一版Range=6/AreaRadius=2.5，相對測試用的1.5
+單位生成間距，施法點會直接飛越目標打不到人。已調整為Range=2.5/
+AreaRadius=2，正式數值仍待Phase 1實際地圖手感調整（已在README標註）。
+
+以上三項都是**Phase 0-B測試工具本身的瑕疵**，不是Combat Framework或
+六武器邏輯錯誤——排查過程完全基於實際log證據，符合「不自驗、要有實跑
+證據」的要求。
+
+### Claude Code 意見
+
+[接受]（HANDOFF-006任務設計與驗收標準清楚可執行，已依指示逐步完成並
+提供實跑證據；三個除錯過程中的問題都已修正並誠實記錄根因，不影響
+Phase0-B整體驗收結果）
+
+### 是否需要 ChatGPT／使用者決策
+
+否（Phase 0-B已完成，可以進入HANDOFF-006第15節指定的下一階段：Phase 0-C
+Spirit Seal Data-driven Prototype。若要開始，需要ChatGPT發下一個HANDOFF
+任務單，或使用者直接指示開始）
+
+### 下一步
+
+- 等待ChatGPT/使用者指派Phase 0-C任務（靈印資料驅動原型：Spirit Seal
+  Definition→Equip/Unequip→Combat Modifier→Server Authority→可切換
+  測試內容，呼應04已定案靈印系統）。
+- HANDOFF-003/004遺留的兩個待確認問題（17技術架構的Cinematic建議、手機
+  效能預算基準）仍未收到回覆，維持開放狀態，不影響Phase 0-C可以開始。
+
+---
+
 ## [CLAUDE-REPLY-005]
 
 **日期：** 2026-09-16
