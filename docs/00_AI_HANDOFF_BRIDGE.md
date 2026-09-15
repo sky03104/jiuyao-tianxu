@@ -232,6 +232,160 @@ ChatGPT / Claude Code 技術與產品建議
 >
 > 不要刪除歷史紀錄；最新紀錄放最上方。
 
+## [CLAUDE-REPLY-004]
+
+**日期：** 2026-09-15
+
+**對應 HANDOFF：** HANDOFF-004_ANIMATION_PIPELINE.md
+
+**狀態：** 完成
+
+### 執行方式說明
+
+本次任務要求逐項查證5款AI配音工具與多款動作捕捉工具的真實授權/成本/能力，屬於
+「需查證多個外部來源」的研究工作，我沒有憑訓練知識直接回答，而是派了一個獨立
+研究agent用WebSearch/WebFetch逐項查證官方定價頁/授權文件，完整查證過程與來源
+連結存檔在 `docs/HANDOFF-004_RESEARCH_NOTES.md`（供之後複查來源用，非正式規格
+文件）。以下回覆是我整合查證結果後的結論。
+
+### 最終推薦 Pipeline
+
+```text
+建模／綁骨 → Blender
+動作（泛用：走路/跑步/待機）→ Mixamo（免費商用無額度限制，查證後新增）
+動作（角色專屬招式）→ Rokoko Studio（免費層額度極低，建議搭配Basic付費方案）
+動作整理／清理 → Blender NLA/Graph Editor
+Unity 導入 → FBX＋Humanoid Avatar（glTF僅建議用於靜態道具，動畫角色不夠成熟）
+Cinematic → Unity Timeline＋Cinemachine 3（免費內建，足以支撐演出需求）
+配音 → Chatterbox Multilingual V3／CosyVoice（Tier1，中文表現佳且可商用）；
+        ElevenLabs作為小量高品質正式片段的付費保底
+剪輯 → DaVinci Resolve Free
+發布 → YouTube／Shorts／抖音
+```
+
+與23文件原本的Pipeline方向一致，本次查證只在「動作捕捉」與「配音成本試算」兩處
+補充/修正細節，沒有推翻整體流程設計。
+
+### 工具分級
+
+**Tier 1（現在直接使用）**：Blender、Unity Personal+Timeline+Cinemachine、
+Mixamo（查證後新增）、Chatterbox Multilingual V3。
+
+**Tier 2（必要時使用）**：Rokoko Studio（免費層額度不夠時升Basic付費）、
+DeepMotion付費層（免費層禁止商用，不算Tier1）、Plask、CosyVoice（Apache 2.0
+可商用但情緒表現需EP00實測）、Kokoro（授權最乾淨但情緒/中文聲音選擇有限，
+適合NPC/系統音非主要角色）、ElevenLabs（商用保底）、Fish Audio官方hosted API
+（可行但中文計費需先試算）。
+
+**Tier 3（暫不使用）**：DeepMotion免費層（單獨列出提醒：僅供個人非商業用途，
+不能用於會公開營利的素材）、Fish Speech/Fish Audio本地模型（Research License
+明確禁止商用，除非另簽書面商業授權）。
+
+### AI 配音評估（5款，詳細14維度比對見RESEARCH_NOTES）
+
+- **Chatterbox Multilingual V3**：MIT授權、中文CER 0.41%表現佳、本地可跑、
+  $0成本——23A草案評估準確，唯一補充：輸出音檔預設帶PerTh浮水印，一般用途無感，
+  高保真後製前建議先實測。
+- **Fish Speech/Fish Audio**：23A草案這部分寫得最準確——本地模型Research
+  License明確禁止商用需另簽授權，草案已正確識別並警示。**查證補充**：官方
+  hosted API採UTF-8 bytes計費，中文字每字約3 bytes、英文約1 byte，實際中文
+  配音成本會比英文範例換算貴2~3倍，這點23A沒提到，已補進23A文件。
+- **ElevenLabs**：Starter（$6/月）起含商用授權，草案方向正確。**修正**：
+  Creator草案寫$22/月，查證確認$22是首月促銷價，常態價$11/月，已修正23A文件
+  避免預算誤算。
+- **CosyVoice**：最新主線版本（CosyVoice2/Fun-CosyVoice3）程式碼與模型權重
+  皆為Apache 2.0可商用，23A「不應只因Apache 2.0就忽略模型權重授權」的謹慎
+  提醒經查證確實有依據（曾有歷史版本授權敘述不一致的社群案例），建議保留
+  這個提醒，不需要修改。
+- **Kokoro**：Apache 2.0授權最乾淨（比Chatterbox的MIT更沒有浮水印問題），
+  但中文聲音選擇與情緒表現力確實有限，23A給的★評分方向正確，適合NPC/系統
+  提示音，不適合江祈璟等主要角色配音。
+
+### 成本與授權
+
+- **免費**：Blender、Mixamo（商用無額度限制但動畫庫較舊）、Chatterbox、
+  CosyVoice、Kokoro（皆為自架情況下，運算成本另計）。
+- **免費但有限制**：Unity Personal（營收門檻US$20萬/滾動12個月）、Rokoko
+  Starter（Video-to-Motion每月僅30秒、僅能匯出FBX）、Plask（15秒/日）、
+  DeepMotion Freemium（60秒/月但**禁止商用**）、ElevenLabs Free（不可商用）。
+- **需要付費**：Rokoko Basic起（US$10/月起）、DeepMotion付費方案（商用必須）、
+  ElevenLabs Starter起（US$6/月起，常態）。
+- **商業授權需另談**：Fish Speech/Fish Audio本地模型商用。
+
+### 技術風險
+
+- 角色一致性：**中**（Character DNA制度設計合理，但AI Motion產出是否破壞
+  模型比例/穿模尚未實測，需EP00驗證）。
+- 動作品質：**中**（免費方案額度普遍偏低，Rokoko最緊，可能需多次調整拖慢
+  EP00進度）。
+- 手機效能：**低~中**（本次查證未涉及具體Poly Count/材質預算數字，見下方
+  「發現問題」延續HANDOFF-003已提過的同一個缺口）。
+- Unity相容性：**低**（FBX→Humanoid流程成熟，Timeline/Cinemachine免費內建）。
+- 授權：**中**（Fish Speech/DeepMotion免費層皆有明確商用限制，需嚴格執行
+  23文件第19節已建立的商用授權檢查表）。
+- 成本：**低~中**（免費工具組合足以完成EP00「技術驗證」目的，但要達到
+  「可公開發布/商用」品質，Rokoko/DeepMotion免費額度大機率不夠，建議EP00
+  預留約US$30~50彈性預算）。
+- 平台鎖定：**低**（各工具皆可輸出FBX/WAV等標準格式，草案的標準格式優先
+  原則落實良好）。
+- 長期維護：**低**（Chatterbox 2.5萬+ star、CosyVoice阿里團隊維護、
+  Blender/Unity皆長期活躍；Fish Audio為新創公司需持續觀察）。
+
+### Phase 0-A 判定
+
+**可以正式開始，不構成阻塞。** Blender→Unity資產流程、Timeline/Cinemachine
+演出能力、Chatterbox/CosyVoice的中文配音可行性，查證結果全部支持23/23A草案的
+技術方向是對的。建議先把下方「發現問題」的3點回饋給咖哩/ChatGPT做預算與流程
+微調，但不需要等這些微調完成才能啟動Phase 0-A技術Spike——兩者可並行。
+
+### 發現的問題
+
+**問題A（已直接修正，非阻塞）**：23文件對Rokoko/DeepMotion免費額度的假設過於
+樂觀——Rokoko免費層Video-to-Motion每月僅30秒，DeepMotion免費層明文禁止商用。
+已直接修正`23_ANIMATION_PRODUCTION_PIPELINE_V1.0.md`工具表與Pipeline流程圖，
+並補入Mixamo作為免費商用無額度限制的基礎動作庫來源。
+
+**問題B（已直接修正，非阻塞）**：23A文件ElevenLabs Creator價格與Fish Audio
+中文計費換算兩處會讓預算試算失真。已直接修正`23A_AI_VOICE_TOOL_EVALUATION_V1.0.md`
+對應段落。
+
+**問題C（延續自HANDOFF-003 CLAUDE-REPLY-003問題A，尚未解決，再次提出）**：
+本次查證再次確認`16_ART_DIRECTION`與`17_TECH_ARCHITECTURE`都沒有具體的手機
+硬體規格/角色面數/材質/Draw Call預算數字。這代表動畫端查證出的Character DNA
+表情精度/動作資產，目前沒有一份手機效能預算基準可以對照檢查是否超標。這不是
+本次HANDOFF-004新發現的問題，是HANDOFF-003就提過、目前仍未排入處理的同一個
+缺口，這裡再次提出是因為隨著跨媒體資產規劃越來越具體（Character DNA骨架/
+表情規格），這個缺口的急迫性在提高，建議儘快排入17的待辦，而不是繼續累積
+更多依賴這份缺口基準的規劃內容。
+
+**其他查不到的項目（誠實揭露，不影響Phase0-A判定）**：Fish Audio官方條款文字
+上對「非商業原型測試」是否有豁免，查無明確條款，若未來要用，建議直接發信
+詢問官方，不要用推測代替確認。
+
+### Claude Code 意見
+
+[接受]（HANDOFF-004任務設計與查證方向沒有問題，已完成全部驗收標準A~E；
+問題A/B已直接修正落地，問題C是延續性缺口，非本次任務阻塞項但持續存在）
+
+### 需要 ChatGPT／使用者決策
+
+是，兩項：
+
+1. 是否同意EP00製作預留US$30~50彈性測試預算（Rokoko Basic一個月或DeepMotion
+   付費層），避免免費額度卡住EP00進度。
+2. 問題C（手機效能預算基準）是否要正式排入17的待辦事項並指定負責人/時間，
+   這是產品決策（目標機型/最低配置範圍），需要使用者先給範圍我才能動手。
+
+### 下一步
+
+- 等待ChatGPT/使用者對上述兩項與HANDOFF-003遺留兩項問題的回應。
+- 可以並行啟動Phase 0-A純技術Spike（連線/移動/互見/攻擊/受擊），本次查證
+  結論支持技術上沒有阻塞。
+- 若使用者確認EP00預算方向，下一輪可以規劃「EP00 60~90秒技術驗證短片」正式
+  啟動作為後續HANDOFF任務。
+
+---
+
 ## [CLAUDE-REPLY-003]
 
 **日期：** 2026-09-15

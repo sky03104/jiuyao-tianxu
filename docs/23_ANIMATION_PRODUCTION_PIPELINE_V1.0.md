@@ -35,8 +35,9 @@
 | 遊戲開發 | Unity Personal | 免費起步 | 遊戲核心 |
 | 遊戲劇情動畫 | Unity Timeline | 隨 Unity | Cutscene |
 | 鏡頭 | Cinemachine | 隨 Unity | Cinematic Camera |
-| AI 動作捕捉 | Rokoko Studio Starter | 免費起步 | 第一 AI 動作工具 |
-| AI 動作備用 | DeepMotion | 有需要才付費 | 第二 AI 動作工具 |
+| AI 動作捕捉（角色專屬招式） | Rokoko Studio Starter | 免費起步，**但查證後確認免費層Video-to-Motion每月僅30秒額度、且僅能匯出FBX**，EP00反覆調整很可能不夠用，建議直接預留Basic付費方案（US$10~20/月，可隨時取消）作為備案 | 第一 AI 動作工具 |
+| AI 動作捕捉（基礎泛用動作） | Mixamo | 免費，**查證後確認商用無時間額度限制**（走路/跑步/待機等泛用動作可直接用，節省Rokoko額度給角色專屬招式） | 基礎動作庫（HANDOFF-004查證後新增） |
+| AI 動作備用 | DeepMotion | **查證後確認免費方案明文僅供個人非商業用途，禁止商用**；若EP00素材會公開在YouTube等營利管道，免費層動作不能直接用於正式發布，需升級付費方案 | 第二 AI 動作工具 |
 | 影片剪輯 | DaVinci Resolve Free | 免費起步 | 最終剪輯 |
 | 分鏡／概念 | ChatGPT + 生圖工具 | 既有工具優先 | 前期設計 |
 | 配音 | AI Voice | 後期再選 | 角色聲音 |
@@ -225,9 +226,8 @@ Timeline
 ```text
 動作需求
  ↓
-真人影片／文字動作描述
- ↓
-Rokoko / AI Motion
+走路/跑步/待機等泛用動作 → 優先查 Mixamo（免費商用無時間額度限制）
+角色專屬招式/戰鬥動作 → Rokoko / AI Motion
  ↓
 FBX / BVH 等標準格式
  ↓
@@ -244,6 +244,9 @@ Blender
 輸出 Unity 動畫
 ```
 
+**（2026-09-15 HANDOFF-004查證修正）**：Rokoko免費方案的Video-to-Motion每月僅30秒
+額度、僅能匯出FBX，用泛用動作先查Mixamo可以省下這個額度給角色專屬招式。
+
 ## 7.2 第二選擇
 
 若第一工具無法得到理想結果：
@@ -257,6 +260,10 @@ Blender 清理
  ↓
 Unity
 ```
+
+**（2026-09-15 HANDOFF-004查證修正）**：DeepMotion免費方案明文僅供個人非商業用途，
+若產出動作會用在會公開營利的正式素材（EP00若之後公開發布），免費層不能直接商用，
+需升級付費方案或改用商用條件較寬鬆的Rokoko/Mixamo。
 
 不得同時長期訂閱多個 AI 動作服務，除非實際製作測試證明兩者各自有不可替代的價值。
 

@@ -1,5 +1,30 @@
 # CHANGELOG — 《九曜：天墟》
 
+## 2026-09-15（第二十筆，HANDOFF-004：動畫Pipeline與AI配音工具技術可行性查證）
+
+- ChatGPT直接新增`23_ANIMATION_PRODUCTION_PIPELINE_V1.0.md`（動畫製作工具鏈：
+  Blender+AI動作捕捉+Unity Cinematic）與`23A_AI_VOICE_TOOL_EVALUATION_V1.0.md`
+  （5款AI配音工具評估），隨後發HANDOFF-004要求Claude Code獨立查證這兩份草案的
+  真實性（不能只憑訓練知識回答，需用WebSearch/WebFetch逐項核對官方定價頁與授權
+  文件），並判定Phase 0-A是否可以正式開始。
+- 派研究agent查證Blender→Unity資產流程、5款動作捕捉工具（Rokoko/Blender內建/
+  Mixamo/DeepMotion/Plask）、Unity Cinematic能力、5款AI配音工具（Chatterbox/
+  Fish Speech/ElevenLabs/CosyVoice/Kokoro）共14個維度，查證存檔於
+  `docs/HANDOFF-004_RESEARCH_NOTES.md`。
+- 查證發現並修正23/23A草案的3處認知落差：(1) Rokoko免費層Video-to-Motion每月僅
+  30秒額度、DeepMotion免費層明文禁止商用，23文件先前假設過度樂觀，已修正並補入
+  Mixamo（免費商用無額度限制）作為基礎動作庫；(2) Fish Audio官方API按UTF-8
+  bytes計費，中文實際成本比英文範例換算貴2~3倍，23A已補充；(3) ElevenLabs
+  Creator常態價為US$11/月非草案寫的US$22/月（$22是首月促銷價），23A已修正。
+- 查證同時確認23/23A準確的部分（Chatterbox MIT授權、Fish Speech研究授權不可
+  商用的警示、CosyVoice授權謹慎提醒、Unity Timeline/Cinemachine免費內建）皆屬實，
+  沒有過時或錯誤。
+- 最終判定：**Phase 0-A技術上可以正式開始，不構成阻塞**，動畫Pipeline方向正確，
+  僅建議EP00預留US$30~50彈性測試預算因應免費額度不足。
+- 再次提出延續自HANDOFF-003的未解決問題：16/17仍未訂出手機硬體規格/角色面數
+  預算基準，隨跨媒體資產規劃越來越具體，此缺口急迫性提高，已在CLAUDE-REPLY-004
+  中向ChatGPT/使用者重申。
+
 ## 2026-09-15（第十九筆，HANDOFF-003：赤瞳妖將尺度正式收斂＋跨媒體動畫規格V1.0）
 
 - 使用者同意《九曜：天墟》採「遊戲×動畫×短影音」跨媒體IP方向：遊戲為正史，動畫

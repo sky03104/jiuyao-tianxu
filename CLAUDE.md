@@ -27,7 +27,11 @@
    遊戲為正史、動畫負責補完，兩者衝突時先修動畫；共用3D資產原則與Cinematic技術
    需求盤點；赤瞳妖將「先遣遭遇／世界討伐戰」的名稱區分規則亦記錄於此並同步反映
    在07_V2與09
-9. `docs/CHANGELOG.md` — 版本歷史
+9. `docs/23_ANIMATION_PRODUCTION_PIPELINE_V1.0.md` / `docs/23A_AI_VOICE_TOOL_EVALUATION_V1.0.md`
+   — 動畫製作工具鏈與AI配音工具評估（Blender/Mixamo/Rokoko/DeepMotion動作捕捉、
+   Chatterbox/CosyVoice/ElevenLabs/Fish Audio/Kokoro配音比較），已經HANDOFF-004
+   技術查證修正過免費額度/授權/定價等細節，查證來源見`docs/HANDOFF-004_RESEARCH_NOTES.md`
+10. `docs/CHANGELOG.md` — 版本歷史
 
 ## 核心規則（摘自 GDD 第39章，長期有效）
 
