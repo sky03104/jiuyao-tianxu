@@ -1,0 +1,16 @@
+# Unity generated folders (do not commit), covers unity/JiuyaoTianxu/
+unity/JiuyaoTianxu/[Ll]ibrary/
+unity/JiuyaoTianxu/[Tt]emp/
+unity/JiuyaoTianxu/[Oo]bj/
+unity/JiuyaoTianxu/[Bb]uild/
+unity/JiuyaoTianxu/[Bb]uilds/
+unity/JiuyaoTianxu/[Ll]ogs/
+unity/JiuyaoTianxu/[Uu]ser[Ss]ettings/
+unity/JiuyaoTianxu/local-secrets/
+
+# Setup / batch-mode run logs
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
