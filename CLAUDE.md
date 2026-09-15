@@ -9,8 +9,8 @@
    **這份是後補的，跟00有衝突時以01為準**
 3. `docs/02_CHARACTER_BIBLE_V1.0.md` ~ `docs/19_DEVELOPMENT_ROADMAP_V1.0.md` —
    各系統設計文件（角色/戰鬥/靈印/養成/地圖/任務/怪物/BOSS/裝備/生活/社交/公會/經濟/UI/
-   美術/技術架構/路線圖）。**目前多數為「大綱級定案」**（核心方向已鎖定，細節數值/規格
-   待第二階段補完），文件開頭都有狀態標註，動工前先確認該文件是否已補完細節。
+   美術/技術架構/路線圖）。**全數18份已完成「細節定案」**（具體數值為初版示意值，
+   標記為「可調整」，需Phase 0原型測試後校準），文件開頭都有狀態與修正紀錄標註。
 4. `docs/CHANGELOG.md` — 版本歷史
 
 ## 核心規則（摘自 GDD 第39章，長期有效）
@@ -34,12 +34,13 @@
 
 ## 目前最優先的技術待辦
 
-見 `docs/01_ARCHITECTURE_DECISIONS_V1.0.md` 第9節，第一件事是**選定多人連線技術棧**
-（Photon Fusion / Unity Netcode for GameObjects / 自建後端），這件事還沒拍板，
-會決定後面所有多人相關系統的實作方式。
+連線技術棧已拍板（Photon Fusion Dedicated Server，見 `01_ARCHITECTURE_DECISIONS_V1.0.md`
+第1節）。下一步見 `docs/19_DEVELOPMENT_ROADMAP_V1.0.md`：進入 Phase 0 原型驗證
+（引擎框架+連線同步驗證+戰鬥雙搖桿與六流派原型）。
 
 ## 開發階段
 
-目前處於 **Phase 0：企劃**。02~19 共 18 份系統設計文件已完成「大綱級定案」（GPT/Gemini/
-DeepSeek 交叉討論、Claude審查收斂），下一步是逐一把大綱補完成細節規格，之後才進入
-《青嵐城完整城市設計 V1.0》與 Phase 1 Vertical Slice（見GDD第38/41章）。
+**規劃階段（Phase 0企劃）已完成**：02~19 共 18 份系統設計文件全數完成細節定案
+（GPT/Gemini/DeepSeek 交叉討論、Claude審查收斂並修正多次模型自創錯誤世界觀名稱/
+跨系統衝突的問題）。所有數值為初版示意值，標記為「可調整」，需 Phase 0 原型測試後校準。
+下一步依 `19_DEVELOPMENT_ROADMAP_V1.0.md` 進入實際原型開發，不再是純企劃討論階段。
