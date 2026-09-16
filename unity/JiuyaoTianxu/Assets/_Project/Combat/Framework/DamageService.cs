@@ -27,13 +27,32 @@ namespace JiuyaoTianxu.Combat.Framework
                 return new DamageResult(0, 0, false);
             }
 
-            var raw = request.Attack != null ? request.Attack.Damage : 0;
-            // Final damage placeholder — armor/resistance/crit hooks land here later,
-            // Phase 0-B intentionally ships raw==final.
+            var raw = request.FlatDamageOverride ?? (request.Attack != null ? request.Attack.Damage : 0);
+
+            // Phase 0-C: Spirit Seal hooks. DamageService never knows which seal is
+            // equipped or why — SpiritSealSystem loops over its own equipped data.
+            // Status-effect ticks (IsStatusDamage) skip the attacker-side hooks so a
+            // burn tick can't re-trigger the seal that applied it.
+            var sourceSeals = !request.IsStatusDamage && request.Source != null
+                ? request.Source.GetComponent<SpiritSealSystem>()
+                : null;
+            if (sourceSeals != null)
+            {
+                raw = sourceSeals.ModifyOutgoingDamage(raw);
+            }
+
             var final = raw;
+
+            var targetSeals = request.Target.GetComponent<SpiritSealSystem>();
+            if (targetSeals != null)
+            {
+                final = targetSeals.TryPreventFatalDamage(final, request.Target.HP);
+            }
 
             request.Target.ApplyDamage(final);
             var died = request.Target.HP <= 0;
+
+            sourceSeals?.OnAttackHitDealt(request.Target, final);
 
             return new DamageResult(raw, final, died);
         }

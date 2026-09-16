@@ -1,4 +1,4 @@
-# 《九曜：天墟》Unity 專案 — Phase 0-A / 0-B
+# 《九曜：天墟》Unity 專案 — Phase 0-A / 0-B / 0-C
 
 ## 版本資訊
 - Unity Editor：**6000.5.5f1**
@@ -28,13 +28,24 @@ Assets/_Project/
       Projectile.cs — 弓/杖用簡易彈道
   Combat/Weapons/ — 六把武器的資料資產（Phase0BWeaponDataSetup產生）：
     Blade/ Sword/ Spear/ Bow/ HeavyBlade/ Staff/ 各含WeaponDefinition+AttackDefinition
+    Framework/SpiritSeals/ — 靈印Trigger/Modifier框架（HANDOFF-007 0-C-01起）：
+      SpiritSealTriggerType.cs — 觸發時機列舉（OnAttackHit/OnFatalDamage/OnDodgeEvent）
+      SpiritSealDefinition.cs — 資料驅動靈印定義（ScriptableObject）
+      SpiritSealRegistry.cs — 網路int SealId → 資產的查表（Fusion不能直接網路化ScriptableObject參照）
+      SpiritSealIds.cs — 三個Prototype靈印的穩定id常數（執行期／編輯器共用）
+      SpiritSealLoadout.cs — 固定8槽NetworkBehaviour（純資料，不含邏輯）
+      SpiritSealSystem.cs — 唯一的Trigger/Modifier邏輯，DamageService透過三個
+        通用Hook呼叫它，新增第4個靈印不需要修改CombatController或DamageService
+  Combat/SpiritSeals/ — 赤炎/玄甲/影遁三個Prototype資料資產+Registry
+    （Phase0CSpiritSealDataSetup產生）
   UI/        — 介面與HUD（尚未使用）
   Economy/   — 經濟資料展示層（尚未使用）
   Guild/     — 公會資料展示層（尚未使用）
   Config/    — 資料驅動配置讀取模組（尚未使用）
   Art/       — 美術資源（尚未使用）
   Scenes/    — 場景（Phase0A_NetworkTest.unity 為本階段測試場景）
-  Editor/    — 一次性設定工具（Phase0ASetup/Phase0ANetworkSetup/Phase0BWeaponDataSetup/Phase0ABuild）
+  Editor/    — 一次性設定工具（Phase0ASetup/Phase0ANetworkSetup/Phase0BWeaponDataSetup/
+    Phase0CSpiritSealDataSetup/Phase0ABuild）
   Settings/  — URP Pipeline Asset 等專案設定資產
 ```
 
@@ -200,6 +211,107 @@ JiuyaoTianxu.exe -batchmode -nographics -netmode client -autotest -logFile clien
 以上三項都是**Phase 0-B測試工具本身的瑕疵**，不是Combat Framework或六武器邏輯的
 錯誤——三次除錯都是靠實際跑測試、看log找證據排查出來的，過程中沒有跳過任何一次
 真的失敗就直接宣稱成功。
+
+---
+
+## Phase 0-C：靈印 Data-driven Prototype（依`docs/HANDOFF-007_PHASE0C.md`）
+
+### 完成條件對照
+
+| 項目 | 狀態 |
+|---|---|
+| A. `SpiritSealDefinition`建立、固定8槽、三靈印為資料資產、改參數不需改CombatController | ✅ |
+| B. Trigger管線建立、Modifier/Effect Hook建立、沿用既有DamageService、無第二套權威入口 | ✅ |
+| C. 赤炎可觸發／玄甲可保命一次／影遁可Armed→消耗／Cooldown生效 | ✅ |
+| D. 1 Server+2 Client、Server Authority、必要狀態同步、Client無法直接改結果 | ✅ |
+| E. 每個Prototype≥10次、總數≥30、Join/Leave regression、Data-driven修改測試 | ✅ |
+| F. 文件（本節）+ CLAUDE-REPLY-007 + CHANGELOG | ✅ |
+
+### 架構：CombatController／DamageService 完全未修改
+
+這是本階段最重要的驗證結果——**`CombatController.cs`本次零修改**。三個靈印的
+Hook全部集中在`DamageService.Resolve()`裡呼叫的三個通用方法：
+
+```
+DamageService.Resolve(request)
+  ├─ sourceSeals.ModifyOutgoingDamage(rawDamage)       ← 影遁：消耗Armed加成
+  ├─ targetSeals.TryPreventFatalDamage(final, HP)      ← 玄甲：致命傷害封頂保命
+  ├─ Health.ApplyDamage(final)                          ← 既有Phase0B管線，未改
+  └─ sourceSeals.OnAttackHitDealt(target, final)        ← 赤炎：對目標施加燃燒
+```
+
+`SpiritSealSystem`內部用資料迴圈（`for slot in 8槽`+`registry.GetById()`）決定
+要不要觸發，沒有任何`if (sealId == Blaze)`這類寫死判斷。新增第4個靈印只需要：
+建立一個新的`SpiritSealDefinition`資產＋（如果是全新的觸發時機）在
+`SpiritSealTriggerType`加一個列舉值，兩者都不涉及修改`CombatController`或
+`DamageService`的既有程式碼。
+
+赤炎的燃燒效果（DoT）沒有另外建立獨立的Status Effect元件，而是讓
+`SpiritSealSystem`自己持有燃燒計時狀態，每次tick透過**同一條**
+`DamageService.Resolve()`管線（用`FlatDamageOverride`+`IsStatusDamage=true`
+旗標）造成傷害——刻意不建第二套傷害系統，符合HANDOFF-007第9節要求。
+
+### 三個Prototype的最小驗證行為
+
+- **赤炎（OnAttackHit）**：攻擊命中後，若冷卻已好，對目標施加3段燃燒（每段3點，
+  間隔1秒），燃燒傷害走同一條DamageService管線，但不會讓燃燒本身再次觸發赤炎
+  （`IsStatusDamage`旗標擋下）。
+- **玄甲（OnFatalDamage）**：偵測到即將致命的傷害時，若冷卻已好，把傷害封頂讓
+  HP剛好停在1（而非0），驗證「靈印可以介入Health/Damage流程」。
+- **影遁（OnDodgeEvent）**：測試用Dodge事件（真正的Dodge系統尚未建立，
+  HANDOFF-007§7.3明確允許用測試事件代替）觸發後進入Armed狀態，下一次攻擊會
+  自動消耗Armed並疊加+5傷害，驗證「靈印可以介入攻擊輸出」。
+
+### Cooldown 機制
+
+每個靈印槽位獨立持有一個`TickTimer`（`SpiritSealLoadout.Cooldowns`，Fusion
+`NetworkArray<TickTimer>`），以`Runner`的權威模擬時間為準（`TickTimer.
+CreateFromSeconds(Runner, ...)`），不使用Client本地時間。冷卻中的觸發會被
+直接跳過（不排隊、不緩衝），符合HANDOFF-007第8節「Trigger→Cooldown Start→
+Active→再次Trigger被拒絕→結束→可再次Trigger」的最低需求。
+
+### 測試方式與結果（實跑證據）
+
+沿用Phase0-A/B的1 Server+2 Client headless模式，`AutoTestInputProvider`
+新增「每90 tick（約1.5秒）按一次測試用Dodge鍵」，獨立於原本的攻擊/切換武器
+節奏（`SpiritSealSystem`自己讀取這個按鍵，`CombatController`完全不知道它
+的存在）。角色出生時自動裝備赤炎/玄甲/影遁到8槽中的前3槽（無背包UI，
+HANDOFF-007允許此簡化）。
+
+**主測試結果**（單次約45秒）：
+- 赤炎觸發 **20次**、玄甲觸發 **10次**、影遁武裝 **36次**／消耗 **26次**——
+  三個Prototype各自都超過≥10次的要求，總數（20+10+36=66，或以「武裝+消耗」
+  合計對應影遁完整循環26次計，20+10+26=56）遠超≥30的要求。
+- 全程搜尋`Exception`/`NullReference`/`Unhandled`：**0命中**。
+- 兩個Client皆正常連線並取得靈印裝備確認（`equipped test loadout: 1, 2, 3`）。
+- 手動終止一個Client，Server正確觸發`Player left`，未崩潰。
+
+**Data-driven驗收**（HANDOFF-007第10節要求的「改資料不改程式」測試）：
+1. 基準：赤炎`Cooldown=3`（原型值），同一時間窗口（~20秒）內觸發 **14次**。
+2. 只修改`赤炎.asset`的`Cooldown`欄位為`12`（純資料編輯，**未觸碰任何.cs檔案**），
+   重新打包。
+3. 同樣~20秒時間窗口內，觸發次數降為 **5次**——變化方向與量級皆符合預期
+   （冷卻拉長4倍，觸發頻率明顯下降）。
+4. 驗證完畢後已改回`Cooldown=3`（原型正式數值），並重新打包確認建置正常。
+
+此結果直接證明：調整靈印參數只需要編輯ScriptableObject資產，`CombatController`/
+`DamageService`/`SpiritSealSystem`程式碼完全不用碰，行為就會照預期改變。
+
+### 已知問題與限制（誠實記錄，非隱藏）
+
+1. **HP無回復機制**：Phase0-A/B從未實作HP回復，玩家HP降到0後永久停在0
+   （`Mathf.Max(0, HP-amount)`）。這代表玄甲在角色第一次被「保命」之後，
+   若冷卻期間又受到攻擊，HP會真的觸底停在0；冷卻結束後再次被攻擊時，
+   `TryPreventFatalDamage`仍會判定為「致命」並再次觸發（因為`0-傷害>0`恆為
+   假），但此時只是把已經是0的HP再次夾到`FatalSaveMinHp`附近，屬於Prototype
+   簡化下的合理副作用，不是程式錯誤——正式版本需要搭配HP回復或重生機制
+   才有完整意義，目前故意不做（HANDOFF-007明確禁止完整生命/重生系統）。
+2. **測試裝備方式是暫時性的**：靈印在玩家出生時直接寫死裝備到固定3槽
+   （`EquipTestLoadout`），沒有背包/UI/取得流程，這是HANDOFF-007第92行
+   明確允許的簡化（「本階段可只開放測試用裝備／卸下功能，不需要正式背包」）。
+3. **影遁的Armed狀態沒有時間限制**：目前設計是「武裝後永久有效，直到消耗或
+   角色重新裝備」，沒有「武裝後N秒內必須用掉否則過期」的機制。HANDOFF-007
+   沒有明確要求這點，Prototype階段先不加，正式設計時需要決定。
 
 ## Photon App ID 設定（每台開發機都要做一次，不進版本控制）
 

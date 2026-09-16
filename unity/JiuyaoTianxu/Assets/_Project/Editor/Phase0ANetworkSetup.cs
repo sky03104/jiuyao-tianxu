@@ -21,6 +21,7 @@ public static class Phase0ANetworkSetup
     private const string ProjectilePrefabPath = PrefabFolder + "/Projectile.prefab";
     private const string ScenePath = "Assets/_Project/Scenes/Phase0A_NetworkTest.unity";
     private const string WeaponsRoot = "Assets/_Project/Combat/Weapons";
+    private const string SpiritSealsRoot = "Assets/_Project/Combat/SpiritSeals";
 
     private static readonly WeaponType[] WeaponOrder =
     {
@@ -34,6 +35,7 @@ public static class Phase0ANetworkSetup
         EnsureFolder("Assets/_Project/Net", "Prefabs");
 
         Phase0BWeaponDataSetup.Run();
+        Phase0CSpiritSealDataSetup.Run();
 
         BuildPlayerPrefab();
         BuildRunnerPrefab();
@@ -48,6 +50,7 @@ public static class Phase0ANetworkSetup
         // fields null if resolved too early. See README "已知問題" for the full story.
         WireLauncherIntoScene();
         WireCombatControllerOnPrefab();
+        WireSpiritSealSystemOnPrefab();
 
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
@@ -73,6 +76,8 @@ public static class Phase0ANetworkSetup
         go.AddComponent<Health>();
         go.AddComponent<CombatState>();
         go.AddComponent<CombatController>();
+        go.AddComponent<SpiritSealLoadout>();
+        go.AddComponent<SpiritSealSystem>();
 
         var savedPrefab = PrefabUtility.SaveAsPrefabAsset(go, PlayerPrefabPath);
         Object.DestroyImmediate(go);
@@ -196,5 +201,30 @@ public static class Phase0ANetworkSetup
         PrefabUtility.UnloadPrefabContents(root);
 
         Debug.Log($"[Phase0ANetworkSetup] Wired {weapons.Length - missing}/{weapons.Length} weapons + projectile prefab into CombatController.");
+    }
+
+    /// <summary>Wires the Spirit Seal registry into SpiritSealSystem on the Player
+    /// prefab asset, same LoadPrefabContents/SaveAsPrefabAsset round-trip as
+    /// WireCombatControllerOnPrefab (no scene open happens here, so this isn't
+    /// exposed to the "reference invalidated after OpenScene" pitfall).</summary>
+    private static void WireSpiritSealSystemOnPrefab()
+    {
+        var root = PrefabUtility.LoadPrefabContents(PlayerPrefabPath);
+        var sealSystem = root.GetComponent<SpiritSealSystem>();
+
+        var registry = AssetDatabase.LoadAssetAtPath<SpiritSealRegistry>($"{SpiritSealsRoot}/SpiritSealRegistry.asset");
+        if (registry == null)
+        {
+            Debug.LogError("[Phase0ANetworkSetup] SpiritSealRegistry asset failed to load.");
+        }
+
+        var so = new SerializedObject(sealSystem);
+        so.FindProperty("_registry").objectReferenceValue = registry;
+        so.ApplyModifiedPropertiesWithoutUndo();
+
+        PrefabUtility.SaveAsPrefabAsset(root, PlayerPrefabPath);
+        PrefabUtility.UnloadPrefabContents(root);
+
+        Debug.Log($"[Phase0ANetworkSetup] Wired SpiritSealRegistry into SpiritSealSystem: {(registry != null ? "OK" : "FAILED")}.");
     }
 }

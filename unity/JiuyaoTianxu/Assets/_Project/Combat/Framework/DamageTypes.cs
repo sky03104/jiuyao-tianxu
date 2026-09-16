@@ -11,12 +11,22 @@ namespace JiuyaoTianxu.Combat.Framework
         public readonly Health Source;
         public readonly Health Target;
         public readonly AttackDefinition Attack;
+        /// <summary>Phase 0-C: lets status-effect ticks (e.g. 赤炎's burn) supply a
+        /// flat number with no AttackDefinition asset behind them.</summary>
+        public readonly int? FlatDamageOverride;
+        /// <summary>Phase 0-C: true for status-effect ticks. DamageService skips the
+        /// attacker-side Spirit Seal hooks for these, so a burn tick can't
+        /// re-trigger the very seal that applied it.</summary>
+        public readonly bool IsStatusDamage;
 
-        public DamageRequest(Health source, Health target, AttackDefinition attack)
+        public DamageRequest(Health source, Health target, AttackDefinition attack,
+            int? flatDamageOverride = null, bool isStatusDamage = false)
         {
             Source = source;
             Target = target;
             Attack = attack;
+            FlatDamageOverride = flatDamageOverride;
+            IsStatusDamage = isStatusDamage;
         }
     }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Fusion;
 using Fusion.Sockets;
+using JiuyaoTianxu.Combat.Framework;
 using JiuyaoTianxu.Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -123,6 +124,11 @@ namespace JiuyaoTianxu.Net
             var facing = index % 2 == 0 ? Quaternion.LookRotation(Vector3.right) : Quaternion.LookRotation(Vector3.left);
             var playerObject = runner.Spawn(_playerPrefab, spawnPosition, facing, player);
             _spawnedPlayers[player] = playerObject;
+
+            // Phase 0-C: no backpack UI exists yet, so the three prototype Spirit
+            // Seals are simply equipped at spawn (HANDOFF-007 §2/§12).
+            playerObject.GetComponent<SpiritSealSystem>()?.EquipTestLoadout(
+                SpiritSealIds.Blaze, SpiritSealIds.Guard, SpiritSealIds.Shadow);
         }
 
         public void OnPlayerLeft(NetworkRunner runner, PlayerRef player)

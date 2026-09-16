@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 535834606331885221}
   - component: {fileID: 5841958488391571184}
   - component: {fileID: 8900131096346332200}
+  - component: {fileID: 7004344021262371507}
+  - component: {fileID: 8847478763168979749}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -143,6 +145,8 @@ MonoBehaviour:
   - {fileID: 535834606331885221}
   - {fileID: 5841958488391571184}
   - {fileID: 8900131096346332200}
+  - {fileID: 7004344021262371507}
+  - {fileID: 8847478763168979749}
   ForceRemoteRenderTimeframe: 0
 --- !u!114 &6908055136152484837
 MonoBehaviour:
@@ -248,3 +252,30 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 34052391af22879428fc7822fd586d17, type: 2}
   _projectilePrefab: {fileID: 7295565285684886709, guid: c39dc4c67acbedb4da84058928255636, type: 3}
   _MoveSpeedMultiplier: 1
+--- !u!114 &7004344021262371507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908723654597829535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597e975ccd069a74cabe25ae6f198ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JiuyaoTianxu.Combat.Framework.SpiritSealLoadout
+  _SealIds: 
+  _Armed: []
+--- !u!114 &8847478763168979749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908723654597829535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c3395f47cb50a747a74ca770e72e752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JiuyaoTianxu.Combat.Framework.SpiritSealSystem
+  _registry: {fileID: 11400000, guid: 5738d0b9959a55f49bb714ec66f91449, type: 2}

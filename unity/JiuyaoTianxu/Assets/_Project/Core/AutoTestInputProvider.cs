@@ -29,6 +29,7 @@ namespace JiuyaoTianxu.Core
         private const int CycleTicks = 30;          // attack press/release duty cycle.
         private const int WeaponWindowTicks = 360;   // total ticks spent on one weapon before switching.
         private const int RestBeforeSwitchTicks = 120; // ticks of total silence before the switch press.
+        private const int DodgeTestTicks = 90;       // ~1.5s: periodic press to arm 影遁 (HANDOFF-007 §12).
 
         public static PlayerInputData Poll(int tick)
         {
@@ -49,6 +50,13 @@ namespace JiuyaoTianxu.Core
             {
                 // Rest gap has fully elapsed by this tick — safe to switch.
                 data.Buttons.Set(PlayerButton.SwitchWeapon, true);
+            }
+
+            // Independent of the weapon/attack cycle above — SpiritSealSystem reads
+            // this button itself, CombatController never sees it.
+            if (tick % DodgeTestTicks == 0)
+            {
+                data.Buttons.Set(PlayerButton.DodgeTest, true);
             }
 
             return data;

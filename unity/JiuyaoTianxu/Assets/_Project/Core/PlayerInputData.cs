@@ -19,5 +19,9 @@ namespace JiuyaoTianxu.Core
     {
         public const int Attack = 0;
         public const int SwitchWeapon = 1;
+        /// <summary>Phase 0-C test-only hook (HANDOFF-007 §7.3): real Dodge doesn't
+        /// exist yet, this just lets SpiritSealSystem exercise the OnDodgeEvent
+        /// trigger (影遁) without needing a Dodge system built first.</summary>
+        public const int DodgeTest = 2;
     }
 }

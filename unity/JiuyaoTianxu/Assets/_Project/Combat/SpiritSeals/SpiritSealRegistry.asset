@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 734490a5649cefb408858cd92e7d69ec, type: 3}
+  m_Name: SpiritSealRegistry
+  m_EditorClassIdentifier: Assembly-CSharp::JiuyaoTianxu.Combat.Framework.SpiritSealRegistry
+  All:
+  - {fileID: 11400000, guid: 033fad4cd70055148bf3d409154c1b8c, type: 2}
+  - {fileID: 11400000, guid: 5e92b87605d572a448dec0314ebc6108, type: 2}
+  - {fileID: 11400000, guid: fba45176f0d25c444bd198b5386b08d4, type: 2}

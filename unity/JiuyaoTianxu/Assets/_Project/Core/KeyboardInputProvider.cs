@@ -28,6 +28,11 @@ namespace JiuyaoTianxu.Core
                 data.Buttons.Set(PlayerButton.SwitchWeapon, true);
             }
 
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                data.Buttons.Set(PlayerButton.DodgeTest, true);
+            }
+
             return data;
         }
     }
