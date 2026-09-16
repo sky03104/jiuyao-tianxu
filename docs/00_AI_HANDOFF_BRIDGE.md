@@ -232,6 +232,151 @@ ChatGPT / Claude Code 技術與產品建議
 >
 > 不要刪除歷史紀錄；最新紀錄放最上方。
 
+## [CLAUDE-REPLY-007]
+
+**日期：** 2026-09-16
+
+**對應 HANDOFF：** HANDOFF-007_PHASE0C.md
+
+**狀態：** 完成
+
+### 已完成
+
+嚴格依HANDOFF-007完成條件(第14節A~F)逐項達成，未擴張範圍（未做8個靈印全部/
+品質系統/3合1融煉/靈核經濟/靈印背包/正式UI/靈印強化/同屬性共鳴/連鎖組合/
+雙脈重新加權/完整元素系統/完整Status Effect Framework/完整Shield Framework/
+完整Dodge/裝備系統/六武器新增技能/Boss/PvP/MMO/商店抽卡商城等第13節明確禁止
+項目）：
+
+- **A. Data-driven**：`SpiritSealDefinition`(ScriptableObject)建立；固定8槽
+  `SpiritSealLoadout`(`NetworkArray<int>`)建立；赤炎/玄甲/影遁三個皆為資料
+  資產；已用實跑測試證明修改靈印參數不需要修改`CombatController`（見下方
+  Data-driven驗收）。
+- **B. Combat Integration**：Trigger/Modifier管線建立於`SpiritSealSystem`；
+  沿用既有`DamageService`（新增三個通用Hook呼叫，非另建管線）；未建立第二套
+  Health/Damage權威入口——赤炎的燃燒DoT也走同一條`DamageService.Resolve()`。
+- **C. Prototype**：赤炎可觸發（20次）、玄甲可保命一次（10次，且驗證了
+  HP=0後的邊界情況）、影遁可Armed→消耗（36次武裝/26次消耗）、Cooldown對三者
+  皆生效（以`TickTimer`+`Runner`權威時間為準）。
+- **D. Network**：1 Server+2 Client、Server Authority（`DamageService`內
+  `Object.HasStateAuthority`把關）、必要狀態同步（兩Client皆確認裝備靈印
+  1/2/3）、Client無法直接改靈印戰鬥結果。
+- **E. Test**：赤炎20/玄甲10/影遁36+26，每項皆≥10，總數遠超30；Join/Leave
+  regression通過；Data-driven修改測試完成（見下方）。
+- **F. Documentation**：見下方修改文件清單，`unity/JiuyaoTianxu/README.md`
+  新增完整Phase0-C章節，CHANGELOG已更新。
+
+### 修改文件
+
+- `unity/JiuyaoTianxu/Assets/_Project/Combat/Framework/SpiritSeals/`（新增6
+  個檔案）：SpiritSealTriggerType.cs、SpiritSealDefinition.cs、
+  SpiritSealRegistry.cs、SpiritSealIds.cs、SpiritSealLoadout.cs、
+  SpiritSealSystem.cs。
+- `unity/JiuyaoTianxu/Assets/_Project/Combat/Framework/DamageTypes.cs`
+  （修改：`DamageRequest`新增`FlatDamageOverride`/`IsStatusDamage`欄位）。
+- `unity/JiuyaoTianxu/Assets/_Project/Combat/Framework/DamageService.cs`
+  （修改：新增三個Spirit Seal Hook呼叫，`CombatController.cs`**零修改**）。
+- `unity/JiuyaoTianxu/Assets/_Project/Core/PlayerInputData.cs`（新增
+  `DodgeTest`測試按鍵）、`KeyboardInputProvider.cs`（綁E鍵）、
+  `AutoTestInputProvider.cs`（新增獨立於武器循環的定期Dodge測試按鍵）。
+- `unity/JiuyaoTianxu/Assets/_Project/Net/NetworkGameLauncher.cs`（修改：
+  玩家生成後自動裝備測試靈印組合）。
+- `unity/JiuyaoTianxu/Assets/_Project/Editor/Phase0CSpiritSealDataSetup.cs`
+  （新增）：建立三個靈印資產＋Registry。
+- `unity/JiuyaoTianxu/Assets/_Project/Editor/Phase0ANetworkSetup.cs`
+  （修改）：Player prefab新增SpiritSealLoadout+SpiritSealSystem，接線
+  Registry參照。
+- `unity/JiuyaoTianxu/Assets/_Project/Combat/SpiritSeals/`（新增）：
+  赤炎.asset、玄甲.asset、影遁.asset、SpiritSealRegistry.asset。
+- `unity/JiuyaoTianxu/README.md`（更新：完整Phase0-C章節）。
+
+### 哪些資料已 Data-driven
+
+`SpiritSealDefinition`（SealId/DisplayName/Equipable/TriggerType/Cooldown/
+赤炎的Burn三參數/玄甲的FatalSaveMinHp/影遁的ArmsForNextAttack+
+BonusDamageWhenArmed）皆為ScriptableObject欄位，`SpiritSealSystem`只透過
+`SpiritSealRegistry.GetById(int)`查表讀取，沒有任何`if (sealId == 特定值)`
+的寫死分支。
+
+### Server Authority 如何維持
+
+延續Phase0A/B的guard模式：
+1. `SpiritSealLoadout.TryEquip`/`Unequip`皆guard在`Object.HasStateAuthority`。
+2. `SpiritSealSystem`的三個Hook方法（`ModifyOutgoingDamage`/
+   `OnAttackHitDealt`/`TryPreventFatalDamage`）只被`DamageService.Resolve`
+   呼叫，而`DamageService.Resolve`本身已經guard在
+   `request.Target.Object.HasStateAuthority`——即靈印邏輯天生只會在Server
+   端執行，Client端無法繞過。
+3. Cooldown/Armed狀態皆為`[Networked]`欄位（`NetworkArray<TickTimer>`/
+   `NetworkArray<NetworkBool>`），只有Server寫入，Client只能讀取同步結果。
+
+### 測試方式與測試結果（實跑證據）
+
+沿用Phase0A/B的1 Server+2 Client headless模式。完整結果與Data-driven驗收
+記錄在`unity/JiuyaoTianxu/README.md`「Phase 0-C」章節，摘要：
+
+- 主測試（單次~45秒）：赤炎觸發20次、玄甲觸發10次、影遁武裝36次/消耗26次，
+  三個Prototype皆≥10次，總數遠超≥30。全程`Exception`/`NullReference`/
+  `Unhandled`：0命中。兩Client皆正常連線並確認裝備靈印。手動終止Client，
+  Server正確觸發`Player left`未崩潰。
+- **Data-driven驗收**（HANDOFF-007第10節要求）：赤炎`Cooldown`原型值3秒，
+  同一~20秒窗口觸發14次；**只修改ScriptableObject資產**（`赤炎.asset`的
+  `Cooldown`欄位改成12，**未觸碰任何.cs檔案**），重新打包後同樣~20秒窗口
+  觸發降為5次——變化方向與量級符合預期，證實「改資料不改核心程式」可以
+  改變測試結果。驗證後已改回Cooldown=3的原型值並重新打包確認建置正常。
+
+### 是否有 blocker
+
+否。
+
+### 發現的問題（除錯過程與設計限制，誠實記錄）
+
+**問題A（已修正，屬於會讓正式Build失敗的錯誤）**：實作過程中一度讓執行期
+腳本`NetworkGameLauncher.cs`直接引用`Phase0CSpiritSealDataSetup`（一個
+Editor-only腳本，位於`Assets/_Project/Editor/`資料夾）裡定義的常數。
+Editor腳本不會被打包進正式Player build，這樣寫在Unity Editor裡可以正常
+編譯（因為Editor組件在編輯器環境中可見），但實際執行`Phase0ABuild.Build`
+打包Standalone Player時就會編譯失敗——因為Player build會排除Editor資料夾
+的程式碼。**修法**：把三個靈印的穩定id常數抽到獨立的執行期類別
+`SpiritSealIds.cs`（放在`Combat/Framework/SpiritSeals/`而非`Editor/`），
+執行期程式碼與Editor設定腳本都改引用這個共用類別。修正後兩邊都編譯通過
+（已用`Phase0ABuild.Build`實際打包驗證過，不是只在Editor裡確認）。這是
+提醒自己以及未來接手的人：**任何要進正式Build的程式碼，都不能引用
+`Assets/_Project/Editor/`底下的任何類別**，這條規則本次之前沒有明文寫下
+來，藉這次事故正式記錄。
+
+**問題B（設計限制，非bug，已在README記錄）**：Phase0-A/B從未實作HP回復
+機制，HP降到0後永久停在0。這代表玄甲在角色第一次被保命後，若冷卻中又受到
+攻擊，HP會真的觸底停在0；冷卻結束後再受攻擊，`TryPreventFatalDamage`因為
+`currentHp(0) - incomingDamage > 0`恆為假，仍會判定為「致命」並再次觸發，
+但實際上只是把已經是0的HP再夾一次到`FatalSaveMinHp`附近，是Prototype簡化
+下的合理副作用而非邏輯錯誤——正式版本需要搭配HP回復或重生機制才有完整
+意義，本階段依HANDOFF-007禁止範圍故意不做。
+
+### Claude Code 意見
+
+[接受]（HANDOFF-007任務設計與驗收標準清楚可執行，已依指示逐項完成並提供
+實跑證據，包含額外完成的Data-driven修改驗收；問題A已修正並記錄成通用
+規則供未來參考，問題B是明確在允許範圍內的Prototype簡化，皆不影響整體
+驗收結果）
+
+### 是否需要 ChatGPT／使用者決策
+
+否（Phase 0-C已完成，可以進入HANDOFF-007第15節之後的下一階段：Phase 0-D
+Map/Spawn/Quest Skeleton，或依19_DEVELOPMENT_ROADMAP的既定順序。若要開始，
+需要ChatGPT發下一個HANDOFF任務單，或使用者直接指示開始）
+
+### 下一步
+
+- 等待ChatGPT/使用者指派Phase 0-D任務。
+- HANDOFF-003/004遺留的兩個待確認問題（17技術架構的Cinematic建議、手機
+  效能預算基準）仍未收到回覆，維持開放狀態，不影響後續Phase可以開始。
+- 建議未來排入待辦：把問題A記錄的「Editor程式碼不可被執行期程式碼引用」
+  規則正式寫進專案的技術規範文件（例如17_TECH_ARCHITECTURE或本README），
+  避免未來其他協作者重踩同一個坑。
+
+---
+
 ## [CLAUDE-REPLY-006]
 
 **日期：** 2026-09-16

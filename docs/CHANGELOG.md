@@ -1,5 +1,29 @@
 # CHANGELOG — 《九曜：天墟》
 
+## 2026-09-16（第二十四筆，HANDOFF-007：Phase 0-C完成，靈印Data-driven Prototype驗證通過）
+
+- 執行HANDOFF-007全部完成條件(A~F)，CombatController.cs**零修改**——三個靈印
+  的Trigger/Modifier邏輯全部集中在新增的SpiritSealSystem，透過DamageService
+  新增的三個通用Hook呼叫，未建立第二套Health/Damage權威入口。
+- 新增Spirit Seal Framework（Assets/_Project/Combat/Framework/SpiritSeals/）：
+  SpiritSealDefinition(資料驅動ScriptableObject)、SpiritSealRegistry(網路int
+  SealId→資產查表)、SpiritSealLoadout(固定8槽NetworkArray純資料)、
+  SpiritSealSystem(唯一邏輯，資料迴圈決定觸發，無任何寫死if判斷)。
+- 三個Prototype：赤炎(OnAttackHit觸發燃燒DoT，沿用同一條DamageService管線)、
+  玄甲(OnFatalDamage封頂致命傷害保命)、影遁(OnDodgeEvent武裝→下次攻擊消耗
+  加成)，Cooldown皆以Fusion TickTimer+Runner權威時間為準。
+- 1 Server+2 Client headless測試：赤炎20次/玄甲10次/影遁36次武裝26次消耗，
+  每項皆超過規定的≥10次、總數遠超≥30次，全程0個Exception，Join/Leave
+  regression通過。
+- 額外完成Data-driven修改驗收：僅修改赤炎.asset的Cooldown(3→12)，未碰任何
+  .cs檔案，重新打包後同一時間窗口觸發次數從14降至5，證實改資料真能改變
+  行為，驗證後已改回原型值。
+- 除錯過程記錄一個會讓正式Build編譯失敗、之後可能重踩的坑：執行期程式碼
+  一度誤引用Editor-only腳本(Phase0CSpiritSealDataSetup)的常數，Editor資料夾
+  程式碼不會打包進Player build，已抽出獨立的執行期SpiritSealIds.cs解決，
+  並記錄「執行期程式碼不可引用Assets/_Project/Editor/底下任何類別」規則。
+- Phase 0-C全部完成，無阻塞項，可進入Phase 0-D（Map/Spawn/Quest Skeleton）。
+
 ## 2026-09-16（第二十三筆，HANDOFF-006：Phase 0-B完成，Combat Framework+六大武器MVP驗證通過）
 
 - 執行HANDOFF-006全部14個子階段(0-B-01~14)，嚴格依序不跳步，未觸碰雙修切換/
