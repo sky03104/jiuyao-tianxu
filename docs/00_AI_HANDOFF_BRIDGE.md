@@ -2,6 +2,90 @@
 
 > **用途：** 本文件是「ChatGPT ↔ Claude Code ↔ 使用者」之間的非同步溝通橋樑。
 >
+> **最新狀態區塊優先於歷史紀錄。** 正式規格仍以各系統文件與世界觀母檔為準。
+
+---
+
+# 0.6 最新進度（2026-09-18）
+
+## [HANDOFF-STORY-SIDE-INTEGRATION-COMPLETE]
+
+**發起者：** ChatGPT  
+**任務：** 完成青嵐篇支線故事，並完成主線／支線伏筆整合  
+**狀態：** 完成／自行審查通過
+
+### 本次新增正式文件
+
+1. docs/34_QINGLAN_SIDE_STORIES_V1.0.md
+   - 青嵐篇 16 條支線。
+   - 六名主要 NPC 各一條核心個人支線。
+   - 星河殿、萬兵閣、荒境、星曜獸、青嵐地區支線。
+   - 支線資訊權限與真相揭露限制。
+2. docs/35_MAIN_SIDE_PLOT_FORESHADOW_INTEGRATION_V1.0.md
+   - F01～F18 核心伏筆生命週期。
+   - Ch1～Ch25 主線／支線回收安排。
+   - 六名 NPC 個人弧線與世界主線接點。
+   - 三層真相控制。
+   - Unity Quest Data 的 ForeshadowIds / FutureCallbackIds 資料需求。
+
+### 自我審查結果
+
+- [x] 沒有改寫第一～第三章既有主線。
+- [x] 沒有提前揭露「天墟＝被切離的舊界層」。
+- [x] 沒有提前解釋古代切離完整原因。
+- [x] 沒有把玩家改成天選之人。
+- [x] 沒有把妖族簡化成純邪惡。
+- [x] 六名 NPC 支線均與既有長線弧線一致。
+- [x] 支線不是主線必要條件。
+- [x] 核心伏筆至少有兩個證據來源。
+- [x] Ch1～10 保持表面真相層；Ch11～22 才逐步進入歷史真相層；Ch23～25 才進入終局真相層。
+- [x] 支線可轉為資料驅動 Quest。
+- [x] 已保留第10章赤瞳妖將世界討伐戰的獨立位置。
+- [x] 已保留青嵐篇既有角色、Boss、境界與世界觀硬性限制。
+
+### 重要決策
+
+**目前不再回頭重寫第一～第三章主線。**
+
+青嵐篇現在具備：
+> 主線劇本 → 六人長線弧 → 16條支線 → F01～F18伏筆網 → 後續25章回收路徑
+
+### Claude Code 下一步
+
+Claude Code 必須先閱讀：
+
+- docs/00_AI_HANDOFF_BRIDGE.md
+- docs/21_WORLD_AND_STORY_MASTER_V1.0.md
+- docs/24_MAIN_STORY_MASTER_OUTLINE_V2.0.md
+- docs/28_SIX_MAIN_NPC_LONG_ARCS_V1.0.md
+- docs/34_QINGLAN_SIDE_STORIES_V1.0.md
+- docs/35_MAIN_SIDE_PLOT_FORESHADOW_INTEGRATION_V1.0.md
+- docs/25_CHAPTER_01_QINGLAN_TRIAL_FULL_SCRIPT_V1.0.md
+- docs/26_CHAPTER_02_QINGLAN_VARIATION_FULL_SCRIPT_V1.0.md
+- docs/27_CHAPTER_03_RIFT_ECHO_FULL_SCRIPT_V1.0.md
+
+然後先做**一致性／可實作性審查**，不要自行重寫劇情。
+
+### 下一故事階段
+
+> 第四章《離院之路》～第十章《赤瞳妖將・世界討伐戰》的九州篇主線細化。
+
+在寫第四章完整腳本前，Claude Code 應確認 Unity 任務資料結構可承接：
+- QuestId
+- ChapterAvailability
+- RequiredQuestIds
+- ForeshadowIds
+- FutureCallbackIds
+- RevealLevel
+- CompletionState
+
+如果 Claude Code 發現任何會造成既有劇情返工的問題，必須按既定格式提出反對／風險，不得默默修改正式規格。
+
+---
+
+
+> **用途：** 本文件是「ChatGPT ↔ Claude Code ↔ 使用者」之間的非同步溝通橋樑。
+>
 > 使用者可以把本文件交給 Claude Code 閱讀，Claude Code 完成工作、提出疑問或反對意見後，將回覆寫入本文件；ChatGPT 下一次讀取 Repo 時，可根據本文件繼續協作。
 >
 > **核心原則：本文件不是企劃聖經，而是「交接／討論紀錄」。** 正式規格仍以各系統文件與 `21_WORLD_AND_STORY_MASTER_V1.0.md` 等正式文件為準。
