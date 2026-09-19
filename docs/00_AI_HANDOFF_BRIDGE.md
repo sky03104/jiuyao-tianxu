@@ -6,6 +6,76 @@
 
 ---
 
+
+# 0.7 最新進度（2026-09-19）
+
+## [HANDOFF-FIRST-ERA-STORY-SKELETON-COMPLETE]
+
+**發起者：** ChatGPT  
+**任務：** 在 Claude Code 額度恢復前，繼續完成第一紀25章主線劇情細化  
+**狀態：** 完成／自行審查通過
+
+### 本次新增正式文件
+
+1. \`docs/36_CHAPTER_04_10_JIUZHOU_MAIN_STORY_V1.0.md\`
+   - Ch4～Ch10 九州篇主線細化。
+   - Ch10 正式進入20～60人赤瞳妖將世界討伐戰。
+   - 赤瞳妖將不在Ch10死亡。
+2. \`docs/37_CHAPTER_11_16_WILDERNESS_MAIN_STORY_V1.0.md\`
+   - Ch11～Ch16 荒境篇主線細化。
+   - 正式建立妖族文明、異化分類與人妖雙方不完整歷史。
+3. \`docs/38_CHAPTER_17_22_TIANXU_MAIN_STORY_V1.0.md\`
+   - Ch17～Ch22 天墟篇主線細化。
+   - Ch22 正式揭露「天墟＝被切離的舊界層」。
+4. \`docs/39_CHAPTER_23_25_NINE_YAO_ENDGAME_V1.0.md\`
+   - Ch23～Ch25 九曜終局細化。
+   - 三種世界方向、WorldState、角色終局與第一紀收束。
+
+### 第一紀目前狀態
+
+> **Ch1～Ch3：完整任務級腳本**
+>
+> **Ch4～Ch25：完整主線細化骨架**
+>
+> **青嵐篇：16條支線**
+>
+> **F01～F18：主線／支線伏筆整合**
+>
+> **六名主要NPC：長線角色弧**
+>
+> **第一紀：25章故事骨架閉環**
+
+### 自我審查
+
+- [x] Ch1～Ch3既有劇情未改寫。
+- [x] Ch10才正式進入赤瞳妖將世界討伐戰。
+- [x] Ch22才正式揭露天墟＝舊界層。
+- [x] 沒有把玩家寫成天選之人。
+- [x] 妖族、人族、星河殿、萬兵閣均保留獨立立場。
+- [x] 異化沒有被簡化成善惡。
+- [x] 前期伏筆均安排後期回收。
+- [x] 支線不是主線必要條件。
+- [x] Ch23～25仍有真正的終局問題，不會因Ch22真相揭露而失去故事動力。
+- [x] 第一紀結束後可以自然接第二紀MMO內容。
+
+### Claude Code 後續任務
+
+Claude Code 額度恢復後，不要重新規劃第一紀。
+
+先閱讀：
+- docs/36_CHAPTER_04_10_JIUZHOU_MAIN_STORY_V1.0.md
+- docs/37_CHAPTER_11_16_WILDERNESS_MAIN_STORY_V1.0.md
+- docs/38_CHAPTER_17_22_TIANXU_MAIN_STORY_V1.0.md
+- docs/39_CHAPTER_23_25_NINE_YAO_ENDGAME_V1.0.md
+- docs/34_QINGLAN_SIDE_STORIES_V1.0.md
+- docs/35_MAIN_SIDE_PLOT_FORESHADOW_INTEGRATION_V1.0.md
+
+先做一致性／可實作性審查，再進入Unity資料化。
+
+**不得因技術方便自行刪除劇情、伏筆、角色弧線或終局狀態。**
+
+---
+
 # 0.6 最新進度（2026-09-18）
 
 ## [HANDOFF-STORY-SIDE-INTEGRATION-COMPLETE]
