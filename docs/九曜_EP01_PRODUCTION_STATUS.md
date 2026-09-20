@@ -104,7 +104,18 @@
 
 - 症狀：文字/邊框問題確實消失了，但整體變成「超寫實真人風」，跟咖哩指定的參考風格（滄元圖等國風CG動畫/donghua）完全不同方向。
 - 根因：RealVisXL是寫實人像模型，doc 30要的其實是「MMORPG cinematic、realistic stylized 3D」這種半寫實CG動畫感，不是真人攝影感。
-- 對策：查證後換成`John6666/3d-stock-anime-3d-style-checkpoint-v20-sdxl`（diffusers格式，專門做3D動畫風格），Global Style Prompt加重"Chinese donghua 3D animation style"。已推送（commit bd7ea64），待重新用Colab生成第四批驗收。
+- 對策：查證後換成`John6666/3d-stock-anime-3d-style-checkpoint-v20-sdxl`（diffusers格式，專門做3D動畫風格），Global Style Prompt加重"Chinese donghua 3D animation style"。已推送（commit bd7ea64）。
+
+### 2026-09-20：⚠️ 嚴重問題 — John6666模型生成內容不當，立即停用
+
+- 症狀：咖哩回報第四批生成結果出現成人向內容。檢查`PLAYER_REF_01`發現角色被畫成疑似未成年外觀、穿日式水手服的女性角色，完全偏離「年輕成年男性/中性、修行袍」的設定。
+- 根因：`John6666/3d-stock-anime-3d-style-checkpoint-v20-sdxl`是來源不明的匿名Civitai鏡像帳號上傳模型，混入了成人向／疑似未成年外觀的訓練資料，不適合本專案使用。
+- 對策（立即執行）：
+  1. 刪除本機`production/EP01/references/`底下該批所有圖檔與zip
+  2. 模型改回`SG161222/RealVisXL_V4.0`（來源可查證的正規團隊模型，先前驗證過沒有文字/NSFW問題）
+  3. Global Style Prompt與Negative Prompt都加上明確安全防護字詞（adult character/fully clothed/safe for work/nsfw/nudity/underage等）
+  4. **教訓寫入規則**：之後不再使用「John6666」這類匿名Civitai鏡像帳號上傳的模型，只用來源可查證（官方/知名團隊維護）的模型。
+- 已推送修正，待重新用Colab生成第五批驗收。
 
 ---
 

@@ -19,7 +19,9 @@ GLOBAL_STYLE = (
     "(not Japanese, not Korean), ancient cultivation academy, detailed fabric and armor materials, "
     "natural human proportions, cinematic depth of field, volumetric morning mist, subtle "
     "spiritual energy particles, grounded fantasy, mature visual tone, restrained color palette, "
-    "cinematic lighting, cinematic composition, plain simple background, vertical 9:16"
+    "cinematic lighting, cinematic composition, plain simple background, vertical 9:16, "
+    "adult character, fully clothed, modest practical clothing, safe for work, all-ages "
+    "appropriate, family friendly"
 )
 
 GLOBAL_NEGATIVE = (
@@ -36,7 +38,9 @@ GLOBAL_NEGATIVE = (
     "text banner, scroll banner, red seal stamp, name chop stamp, caption, title, subtitle, "
     "label, border, frame, picture frame, ornamental border, UI, game HUD, jpeg artifacts, "
     "photorealistic photo, real photography, real human skin pores, glowing energy blade, "
-    "light saber, lens flare weapon"
+    "light saber, lens flare weapon, nsfw, nudity, sexualized, revealing clothing, underwear, "
+    "swimsuit, child, loli, shota, underage, japanese school uniform, sailor uniform, skirt, "
+    "short shorts, bare skin, cleavage, suggestive pose"
 )
 
 # id -> (子資料夾, 檔名, 專屬 prompt, seed)
@@ -134,7 +138,10 @@ def generate_one(pipe, key: str):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model", default="John6666/3d-stock-anime-3d-style-checkpoint-v20-sdxl")
+    # 只用來源可查證、非匿名合併的模型。RealVisXL是Stability官方生態圈內知名團隊
+    # （SG161222）維護的寫實向模型，沒有文字/NSFW問題；風格偏寫實用prompt調整，
+    # 不再嘗試來源不明的匿名Civitai鏡像模型（如John6666系列，已證實混入成人向資料）。
+    parser.add_argument("--model", default="SG161222/RealVisXL_V4.0")
     parser.add_argument("--only", nargs="*", default=None, help="只生成指定 key，例如 academy corridor")
     args = parser.parse_args()
 
