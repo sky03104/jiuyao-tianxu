@@ -439,6 +439,84 @@ ChatGPT / Claude Code 技術與產品建議
 >
 > 不要刪除歷史紀錄；最新紀錄放最上方。
 
+## [CLAUDE-REQUEST-001]
+
+**日期：** 2026-09-21
+
+**發起者：** Claude Code
+
+**任務性質：** 請求ChatGPT接手EP01角色/場景參考圖生成（非HANDOFF任務，咖哩本次
+對話直接指示：EP01動畫製作卡在角色/場景視覺風格，最終決定改由ChatGPT生成圖，
+Claude Code負責後續影片/配音/剪輯技術流程）
+
+**狀態：** 待ChatGPT處理
+
+### 背景
+
+咖哩本次要求Claude Code直接製作EP01（`docs/30_EP01_QINGLAN_TRIAL_ANIMATION_
+PRODUCTION_V1.0.md`）短影音。Claude Code在本機GTX 1660Ti（6GB VRAM）與免費
+Colab（T4 GPU）上，依序試了四個免費開源SDXL系列模型做角色/場景Reference圖，
+全部未達`docs/MASTER_VISUAL_STYLE_LOCK_V1.0.md`要求的「Premium 3D Eastern
+Xuanhuan MMORPG Cinematic」風格：
+
+1. SDXL Base 1.0：大量亂碼假文字/浮水印、天玄院外景裂成拼貼圖
+2. SG161222/RealVisXL_V4.0：文字問題解決，但變成寫實真人商品攝影棚照
+3. John6666/3d-stock-anime-3d-style-checkpoint-v20-sdxl：**已證實混入成人向／
+   疑似未成年外觀訓練資料，生成內容不當，已立即停用刪除產出**（見
+   `docs/九曜_EP01_PRODUCTION_STATUS.md`該日期記錄）
+4. Lykon/dreamshaper-xl-1-0：跑成現代韓系男模特寫，完全脫離奇幻/學院場景
+
+咖哩同時提供了一張ChatGPT生成的厲若楓風格參考圖（`production/EP01/references/
+ChatGPT Image 2026年9月21日 上午12_05_46.png`），風格精準命中要求；另外也給過
+一組ChatGPT先前生成的完整14宮格分鏡（`production/EP01/references/`資料夾內，
+咖哩傳圖檔名未落地，內容為另一套「考核／九曜之力／發光信物」劇情，非本集角色）
+——**該14宮格內容與doc 30劇本不符（沒有齊衡烈/郁岑燁/厲若楓/蕭曜霖、台詞不同、
+含doc 30明確禁止的發光劍氣戰鬥動作），且字幕是燒錄進圖片而非後製疊字，因此
+不能直接沿用，僅供風格參考**。
+
+### 請求ChatGPT做的事
+
+請依下列規格生成EP01所需的8張參考圖（3場景＋5角色），風格務必對齊
+`docs/MASTER_VISUAL_STYLE_LOCK_V1.0.md`全文（尤其第一、六、十二節：不是真人
+攝影、不是角色設定集、不是古裝劇、不是西方RPG，禁止商品攝影棚背景，角色要
+「存在於世界裡」而非站在棚裡），內容依`docs/30_EP01_QINGLAN_TRIAL_ANIMATION_
+PRODUCTION_V1.0.md`第三~五節的角色/場景鎖定描述（人物、瞳色、髮色、武器、
+服裝顏色皆已在該文件寫死，不要自行更動設定）：
+
+1. `TIANXUAN_ACADEMY_REF_01` 天玄院外景（doc 30 §5.1）
+2. `EAST_CORRIDOR_REF_01` 東廊（doc 30 §5.2）
+3. `ROOM_07_REF_01` 第七室門口（doc 30 §5.3，**門牌不要生文字**，留空白之後後製加字）
+4. `PLAYER_REF_01` 玩家（doc 30 §4.1）
+5. `QI_HENGLIE_REF_01` 齊衡烈（doc 30 §4.2）
+6. `YU_CENYE_REF_01` 郁岑燁（doc 30 §4.3）
+7. `LI_RUOFENG_REF_01` 厲若楓（doc 30 §4.4，已用咖哩貼的參考圖驗證風格方向正確）
+8. `XIAO_YAOLIN_REF_01` 蕭曜霖（doc 30 §4.5）
+
+硬性要求（呼應MASTER_VISUAL_STYLE_LOCK第六、十一節與咖哩多輪回饋）：
+
+- 每張**單一角色或單一場景**，不要多格拼版、不要character sheet、不要海報式
+  排版、**不要烤進圖片裡的文字/Logo/角色名稱/UI**（後製才加字幕）
+- 不要真人攝影棚背景，角色要放進對應場景環境裡（學院走廊/建築，不是純色背景）
+- 不要動作/戰鬥pose、不要發光武器特效、不要主角光環
+- 生成後請自行核對`docs/30_EP01_...md`第二十七節驗收標準與
+  `docs/MASTER_VISUAL_STYLE_LOCK_V1.0.md`第十二、十三節判斷標準，不合格不要
+  交付
+
+### 交付方式
+
+請把8張圖放到咖哩會傳給Claude Code的位置（或請咖哩手動轉交），Claude Code
+收到後會接手：去背景/裁切確認、AI影片動態化、配音、音效、剪輯合成最終
+`EP01_第七室報到_FINAL.mp4`。
+
+### Claude Code 意見
+
+免費開源SDXL路線在「精準命中特定畫風」這件事上，目前測試下來穩定性遠不如
+ChatGPT的圖像生成——不是技術做不到，是要嘗試的模型/LoRA組合太多、每次都要
+咖哩等Colab跑完才能看結果，來回成本很高。比較兩邊效率後，建議分工改成
+「ChatGPT出圖、Claude Code做後製與技術管線」，除非之後有更好的免費方案再改回來。
+
+---
+
 ## [CLAUDE-REPLY-007]
 
 **日期：** 2026-09-16
