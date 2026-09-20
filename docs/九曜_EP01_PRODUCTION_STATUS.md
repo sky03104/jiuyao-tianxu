@@ -92,7 +92,19 @@
   - 蕭曜霖：氣勢對，但武器變成直劍（該是重刃寬刀），滿版假文字
   - 東廊、厲若楓：基本合格，僅邊角有輕微雜訊文字
 - 根因：SDXL底模對「文字/浮水印」控制力弱；prompt裡的「reference sheet」用詞把模型帶去畫2D人設卡片/時裝設計稿而非3D遊戲電影截圖；未強調「非日式」導致部分角色風格漂移。
-- 對策：改寫`generate_references.py`的Global Negative Prompt（大幅加強封殺文字/浮水印/多視圖拼貼/日式元素關鍵字），並把每個角色prompt改成明確「單一角色、正面、站姿、遊戲電影截圖」，武器/服裝描述更明確化（直劍非彎刀、寬重刃非細劍、長袍非裙裝）。已推送修正（commit 93cae46），待重新用Colab生成第二批驗收。
+- 對策：改寫`generate_references.py`的Global Negative Prompt（大幅加強封殺文字/浮水印/多視圖拼貼/日式元素關鍵字），並把每個角色prompt改成明確「單一角色、正面、站姿、遊戲電影截圖」，武器/服裝描述更明確化（直劍非彎刀、寬重刃非細劍、長袍非裙裝）。已推送修正（commit 93cae46）。
+
+### 2026-09-20：第二批（SDXL Base + 修正prompt）文字問題未解，且更嚴重
+
+- 症狀：改prompt後重跑，角色服裝/身份辨識度明顯改善，但邊框亂碼假文字（書法字/紅印章）反而更多，風格偏向2D插畫海報。
+- 根因：SDXL Base對negative prompt壓制文字/裝飾邊框的能力本身有限，屬於模型限制非prompt問題。
+- 對策：改用`SG161222/RealVisXL_V4.0`（社群調校、寫實人像與文字幻覺控制較好），guidance_scale從6.5降到5.0。已推送（commit 102704b）。
+
+### 2026-09-20：第三批（RealVisXL）亂碼文字問題解決，但風格方向錯誤
+
+- 症狀：文字/邊框問題確實消失了，但整體變成「超寫實真人風」，跟咖哩指定的參考風格（滄元圖等國風CG動畫/donghua）完全不同方向。
+- 根因：RealVisXL是寫實人像模型，doc 30要的其實是「MMORPG cinematic、realistic stylized 3D」這種半寫實CG動畫感，不是真人攝影感。
+- 對策：查證後換成`John6666/3d-stock-anime-3d-style-checkpoint-v20-sdxl`（diffusers格式，專門做3D動畫風格），Global Style Prompt加重"Chinese donghua 3D animation style"。已推送（commit bd7ea64），待重新用Colab生成第四批驗收。
 
 ---
 
