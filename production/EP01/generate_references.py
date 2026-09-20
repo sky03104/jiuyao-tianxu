@@ -28,12 +28,14 @@ GLOBAL_NEGATIVE = (
     "duplicate character, duplicate weapon, floating weapon, inconsistent costume, "
     "inconsistent hairstyle, different character identity, modern clothing, modern building, "
     "western medieval castle, sci-fi armor, guns, neon city, chibi, cartoon, anime, manga, "
-    "2D illustration, concept art poster, character design sheet, turnaround sheet, model sheet, "
-    "multiple views, multiple panels, collage, diptych, grid layout, side by side comparison, "
-    "inset panel, close-up inset, Japanese kimono, japanese armor, katana, samurai, shoji screen, "
-    "tatami, torii, exaggerated anime eyes, childish proportions, giant head, watermark, logo, "
-    "signature, text, chinese text, calligraphy, caption, title, subtitle, label, border, frame, "
-    "picture frame, UI, game HUD, jpeg artifacts"
+    "2D illustration, painting, digital painting, artstation poster, concept art poster, "
+    "character design sheet, turnaround sheet, model sheet, multiple views, multiple panels, "
+    "collage, diptych, grid layout, side by side comparison, inset panel, close-up inset, "
+    "Japanese kimono, japanese armor, katana, samurai, shoji screen, tatami mat, torii, "
+    "exaggerated anime eyes, childish proportions, giant head, watermark, logo, signature, "
+    "text, chinese text, chinese calligraphy, hanzi, ink brush text, vertical text column, "
+    "text banner, scroll banner, red seal stamp, name chop stamp, caption, title, subtitle, "
+    "label, border, frame, picture frame, ornamental border, UI, game HUD, jpeg artifacts"
 )
 
 # id -> (子資料夾, 檔名, 專屬 prompt, seed)
@@ -120,7 +122,7 @@ def generate_one(pipe, key: str):
         width=WIDTH,
         height=HEIGHT,
         num_inference_steps=30,
-        guidance_scale=6.5,
+        guidance_scale=5.0,  # 降低guidance，SDXL在高guidance下更容易幻覺出文字/邊框裝飾
         generator=generator,
     ).images[0]
     out_path = os.path.join(out_dir, f"{name}.png")
@@ -131,7 +133,7 @@ def generate_one(pipe, key: str):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model", default="stabilityai/stable-diffusion-xl-base-1.0")
+    parser.add_argument("--model", default="SG161222/RealVisXL_V4.0")
     parser.add_argument("--only", nargs="*", default=None, help="只生成指定 key，例如 academy corridor")
     args = parser.parse_args()
 
