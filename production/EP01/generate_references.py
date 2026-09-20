@@ -13,14 +13,13 @@ from diffusers import StableDiffusionXLPipeline
 OUT_ROOT = os.path.join(os.path.dirname(__file__), "references")
 
 GLOBAL_STYLE = (
-    "premium 3D Eastern fantasy MMORPG cinematic screenshot, unreal engine 5 render, "
-    "photorealistic 3D game cinematic, physically based rendering, ray tracing, single unified "
-    "photo, single scene, original Chinese xuanhuan fantasy world, Han Chinese architecture and "
-    "clothing (not Japanese, not Korean), ancient cultivation academy, realistic stylized 3D "
-    "characters, detailed fabric and armor materials, natural human proportions, cinematic depth "
-    "of field, volumetric morning mist, subtle spiritual energy particles, grounded fantasy, "
-    "mature visual tone, restrained color palette, realistic lighting, cinematic composition, "
-    "plain simple background, vertical 9:16"
+    "Chinese donghua 3D animation style, CG anime cinematic render, premium 3D Eastern fantasy "
+    "MMORPG cinematic screenshot, semi-realistic stylized 3D character, single unified image, "
+    "single scene, original Chinese xuanhuan fantasy world, Han Chinese architecture and clothing "
+    "(not Japanese, not Korean), ancient cultivation academy, detailed fabric and armor materials, "
+    "natural human proportions, cinematic depth of field, volumetric morning mist, subtle "
+    "spiritual energy particles, grounded fantasy, mature visual tone, restrained color palette, "
+    "cinematic lighting, cinematic composition, plain simple background, vertical 9:16"
 )
 
 GLOBAL_NEGATIVE = (
@@ -35,7 +34,9 @@ GLOBAL_NEGATIVE = (
     "exaggerated anime eyes, childish proportions, giant head, watermark, logo, signature, "
     "text, chinese text, chinese calligraphy, hanzi, ink brush text, vertical text column, "
     "text banner, scroll banner, red seal stamp, name chop stamp, caption, title, subtitle, "
-    "label, border, frame, picture frame, ornamental border, UI, game HUD, jpeg artifacts"
+    "label, border, frame, picture frame, ornamental border, UI, game HUD, jpeg artifacts, "
+    "photorealistic photo, real photography, real human skin pores, glowing energy blade, "
+    "light saber, lens flare weapon"
 )
 
 # id -> (子資料夾, 檔名, 專屬 prompt, seed)
@@ -133,7 +134,7 @@ def generate_one(pipe, key: str):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model", default="SG161222/RealVisXL_V4.0")
+    parser.add_argument("--model", default="John6666/3d-stock-anime-3d-style-checkpoint-v20-sdxl")
     parser.add_argument("--only", nargs="*", default=None, help="只生成指定 key，例如 academy corridor")
     args = parser.parse_args()
 
