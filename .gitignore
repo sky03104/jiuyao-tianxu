@@ -18,3 +18,16 @@ logs/
 # OS files
 .DS_Store
 Thumbs.db
+
+# EP01 動畫製作：本機工具與大型產出物，不進版控（模型/影片/音檔太大，且是產物不是原始碼）
+tools/ComfyUI/
+production/EP01/references/
+production/EP01/shots/
+production/EP01/audio/
+production/EP01/edit/
+production/EP01/final/
+# 但保留製作進度追蹤文件與腳本（純文字，需要進版控）
+!production/EP01/*.md
+!production/EP01/*.py
+!production/EP01/*.ipynb
+pipcache/
