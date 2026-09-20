@@ -115,7 +115,12 @@
   2. 模型改回`SG161222/RealVisXL_V4.0`（來源可查證的正規團隊模型，先前驗證過沒有文字/NSFW問題）
   3. Global Style Prompt與Negative Prompt都加上明確安全防護字詞（adult character/fully clothed/safe for work/nsfw/nudity/underage等）
   4. **教訓寫入規則**：之後不再使用「John6666」這類匿名Civitai鏡像帳號上傳的模型，只用來源可查證（官方/知名團隊維護）的模型。
-- 已推送修正，待重新用Colab生成第五批驗收。
+
+### 2026-09-21：⚠️ 咖哩裁定：整體美術方向偏離，暫停批量生產
+
+- 症狀：RealVisXL版本（安全乾淨但寫實）也被判定不合格——變成「電商賣衣服模特兒/攝影棚展示照」，不是要的東方玄幻MMORPG電影級3D遊戲美術。厲若楓測試結果被歸類為「寫實真人+古代獵人/遊俠+攝影棚」，完全不是方向。
+- 處置：咖哩直接下令停止繼續生成EP01其他Shot/角色/場景，不再沿用任何一批舊圖當Reference。建立最高優先級美術規範`docs/MASTER_VISUAL_STYLE_LOCK_V1.0.md`，逐字收錄咖哩裁定的美術方向。
+- 現況：`generate_references.py`已依規範重寫Global Style/Negative Prompt，換用`Lykon/dreamshaper-xl-1-0`（來源可查證、偏藝術化半寫實），新增`li_ruofeng_style_test`單張測試項目（放進學院場景而非灰色攝影棚）。**目前只跑這一張測試圖驗收，風格沒過MASTER_VISUAL_STYLE_LOCK第十三節十項標準前，不恢復EP01其他素材生產。**
 
 ---
 
