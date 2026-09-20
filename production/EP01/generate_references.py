@@ -1,9 +1,13 @@
 """
 EP01《第七室報到》Reference 生成腳本
 規格來源：docs/30_EP01_QINGLAN_TRIAL_ANIMATION_PRODUCTION_V1.0.md 第三、四、五節
+美術方向最高優先權來源：docs/MASTER_VISUAL_STYLE_LOCK_V1.0.md（凌駕本檔任何舊prompt）
 
 流程（照文件第二十五節順序）：場景 -> 人物 -> 關鍵幀
 固定 seed，確保同一角色/場景之後重複使用同一張 Reference，不重新隨機生成。
+
+風格驗收未過（見MASTER_VISUAL_STYLE_LOCK_V1.0.md第十三節）前，只跑
+`--only li_ruofeng_style_test`，不生成其他角色/場景/正式Shot。
 """
 import argparse
 import os
@@ -12,16 +16,20 @@ from diffusers import StableDiffusionXLPipeline
 
 OUT_ROOT = os.path.join(os.path.dirname(__file__), "references")
 
+# 依 MASTER_VISUAL_STYLE_LOCK_V1.0.md 第一~七節重寫：目標是「高品質3D MMORPG遊戲角色
+# ＋東方玄幻電影＋高級動畫電影級角色表現」之間，不是真人照片、不是角色設定集、不是攝影棚。
 GLOBAL_STYLE = (
-    "Chinese donghua 3D animation style, CG anime cinematic render, premium 3D Eastern fantasy "
-    "MMORPG cinematic screenshot, semi-realistic stylized 3D character, single unified image, "
-    "single scene, original Chinese xuanhuan fantasy world, Han Chinese architecture and clothing "
-    "(not Japanese, not Korean), ancient cultivation academy, detailed fabric and armor materials, "
-    "natural human proportions, cinematic depth of field, volumetric morning mist, subtle "
-    "spiritual energy particles, grounded fantasy, mature visual tone, restrained color palette, "
-    "cinematic lighting, cinematic composition, plain simple background, vertical 9:16, "
-    "adult character, fully clothed, modest practical clothing, safe for work, all-ages "
-    "appropriate, family friendly"
+    "premium 3D Eastern xuanhuan MMORPG cinematic game screenshot, high-end mobile MMORPG hero "
+    "splash art, stylized realistic 3D game character render (not a photograph, not real human "
+    "photography), idealized but natural adult proportions, single unified image, single scene, "
+    "original Chinese xuanhuan fantasy world spiritual civilization (not simply ancient China, "
+    "not western fantasy), Han-inspired cultivation robes and architecture, fine fabric and "
+    "leather and jade and wood detail, cinematic environmental lighting, depth of field, "
+    "volumetric light, subtle morning mist, aerial perspective, natural environmental shadows, "
+    "character existing inside the world (not a studio backdrop), deep teal, ink black, dark "
+    "blue, dark brown, warm gold and small amounts of vermillion red color palette, subtle "
+    "spiritual energy glow, vertical 9:16, adult character, fully clothed, modest practical "
+    "clothing, safe for work, all-ages appropriate, family friendly"
 )
 
 GLOBAL_NEGATIVE = (
@@ -29,18 +37,22 @@ GLOBAL_NEGATIVE = (
     "duplicate character, duplicate weapon, floating weapon, inconsistent costume, "
     "inconsistent hairstyle, different character identity, modern clothing, modern building, "
     "western medieval castle, sci-fi armor, guns, neon city, chibi, cartoon, anime, manga, "
-    "2D illustration, painting, digital painting, artstation poster, concept art poster, "
+    "exaggerated anime eyes, childish proportions, giant head, 2D flat illustration, "
     "character design sheet, turnaround sheet, model sheet, multiple views, multiple panels, "
     "collage, diptych, grid layout, side by side comparison, inset panel, close-up inset, "
     "Japanese kimono, japanese armor, katana, samurai, shoji screen, tatami mat, torii, "
-    "exaggerated anime eyes, childish proportions, giant head, watermark, logo, signature, "
-    "text, chinese text, chinese calligraphy, hanzi, ink brush text, vertical text column, "
-    "text banner, scroll banner, red seal stamp, name chop stamp, caption, title, subtitle, "
-    "label, border, frame, picture frame, ornamental border, UI, game HUD, jpeg artifacts, "
-    "photorealistic photo, real photography, real human skin pores, glowing energy blade, "
-    "light saber, lens flare weapon, nsfw, nudity, sexualized, revealing clothing, underwear, "
-    "swimsuit, child, loli, shota, underage, japanese school uniform, sailor uniform, skirt, "
-    "short shorts, bare skin, cleavage, suggestive pose"
+    "watermark, logo, signature, text, chinese text, chinese calligraphy, hanzi, ink brush "
+    "text, vertical text column, text banner, scroll banner, red seal stamp, name chop stamp, "
+    "caption, title, subtitle, label, border, frame, picture frame, ornamental border, UI, "
+    "game HUD, jpeg artifacts, real photograph, real photography, photojournalism, stock photo, "
+    "e-commerce clothing photo, fashion catalog photo, product photography, studio portrait, "
+    "plain gray studio background, seamless backdrop, real human skin pores, bodybuilder "
+    "muscular physique, fitness model physique, western ranger, viking, medieval fantasy armor, "
+    "d&d ranger, hunter cosplay, leather ranger armor, cyberpunk, neon purple blue lighting, "
+    "over-saturated colors, glowing energy blade, light saber, lens flare weapon, nsfw, nudity, "
+    "sexualized, revealing clothing, underwear, swimsuit, child, loli, shota, underage, "
+    "japanese school uniform, sailor uniform, skirt, short shorts, bare skin, cleavage, "
+    "suggestive pose"
 )
 
 # id -> (子資料夾, 檔名, 專屬 prompt, seed)
@@ -94,6 +106,20 @@ REFERENCES = {
         "Chinese cultivation robe, calm standing posture, video game character cinematic "
         "screenshot"
     ), 100007),
+    # 風格驗收測試專用，非正式Reference，先只跑這個確認方向見docs/MASTER_VISUAL_STYLE_LOCK_V1.0.md第十三節
+    "li_ruofeng_style_test": ("characters", "LI_RUOFENG_STYLE_TEST_01", (
+        "one single young adult male cultivator-archer, Li Ruo-Feng, slender toned lean build "
+        "(not bodybuilder, not bulky), Eastern Chinese young man facial features, refined "
+        "idealized game-hero face (not a real photograph face), short dark hair, calm quiet "
+        "amber-colored eyes with an observant watchful gaze, subtle faded old scar on left "
+        "shoulder, dark earth-tone Chinese xuanhuan cultivation robe with fine fabric and subtle "
+        "spiritual talisman patterns (not hunter cosplay, not western ranger leather armor, not "
+        "Viking, not D&D ranger), holding a small Eastern-fantasy three-section short recurve bow "
+        "(not a large western longbow), standing quietly at the edge of an ancient Chinese "
+        "spiritual cultivation academy corridor at dawn, misty mountains and warm lantern light "
+        "visible behind him, he is watching something off-frame rather than posing for camera, "
+        "full body, front-three-quarter view"
+    ), 100107),
     "xiao_yaolin": ("characters", "XIAO_YAOLIN_REF_01", (
         "one single mature adult male instructor standing alone, full body, front view, Xiao "
         "Yao-Lin, heavy-blade instructor, powerful broad build, heavy shoulder guard armor, gold "
@@ -138,10 +164,11 @@ def generate_one(pipe, key: str):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    # 只用來源可查證、非匿名合併的模型。RealVisXL是Stability官方生態圈內知名團隊
-    # （SG161222）維護的寫實向模型，沒有文字/NSFW問題；風格偏寫實用prompt調整，
-    # 不再嘗試來源不明的匿名Civitai鏡像模型（如John6666系列，已證實混入成人向資料）。
-    parser.add_argument("--model", default="SG161222/RealVisXL_V4.0")
+    # 只用來源可查證、非匿名合併的模型。DreamShaper XL由Lykon維護（SD社群知名長期
+    # 創作者，非匿名帳號），偏藝術化/半寫實風格，介於RealVisXL的純寫實與SDXL Base
+    # 的插畫海報化之間，較適合MASTER_VISUAL_STYLE_LOCK要的「遊戲電影級」方向。
+    # 不再使用來源不明的匿名Civitai鏡像模型（如John6666系列，已證實混入成人向資料）。
+    parser.add_argument("--model", default="Lykon/dreamshaper-xl-1-0")
     parser.add_argument("--only", nargs="*", default=None, help="只生成指定 key，例如 academy corridor")
     args = parser.parse_args()
 
