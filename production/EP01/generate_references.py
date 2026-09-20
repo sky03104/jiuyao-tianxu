@@ -13,20 +13,27 @@ from diffusers import StableDiffusionXLPipeline
 OUT_ROOT = os.path.join(os.path.dirname(__file__), "references")
 
 GLOBAL_STYLE = (
-    "premium 3D Eastern fantasy MMORPG cinematic, original Chinese xuanhuan fantasy world, "
-    "ancient cultivation academy, realistic stylized 3D characters, high-end mobile MMORPG "
-    "cinematic quality, physically based rendering, detailed fabric and armor materials, "
-    "natural human proportions, cinematic depth of field, volumetric morning mist, subtle "
-    "spiritual energy particles, elegant Chinese architecture, grounded fantasy, mature visual "
-    "tone, restrained color palette, realistic lighting, cinematic composition, vertical 9:16"
+    "premium 3D Eastern fantasy MMORPG cinematic screenshot, unreal engine 5 render, "
+    "photorealistic 3D game cinematic, physically based rendering, ray tracing, single unified "
+    "photo, single scene, original Chinese xuanhuan fantasy world, Han Chinese architecture and "
+    "clothing (not Japanese, not Korean), ancient cultivation academy, realistic stylized 3D "
+    "characters, detailed fabric and armor materials, natural human proportions, cinematic depth "
+    "of field, volumetric morning mist, subtle spiritual energy particles, grounded fantasy, "
+    "mature visual tone, restrained color palette, realistic lighting, cinematic composition, "
+    "plain simple background, vertical 9:16"
 )
 
 GLOBAL_NEGATIVE = (
     "low quality, blurry face, deformed face, deformed hands, extra fingers, extra limbs, "
     "duplicate character, duplicate weapon, floating weapon, inconsistent costume, "
     "inconsistent hairstyle, different character identity, modern clothing, modern building, "
-    "western medieval castle, sci-fi armor, guns, neon city, chibi, cartoon, exaggerated anime "
-    "eyes, childish proportions, giant head, watermark, logo, text, subtitles, UI, game HUD"
+    "western medieval castle, sci-fi armor, guns, neon city, chibi, cartoon, anime, manga, "
+    "2D illustration, concept art poster, character design sheet, turnaround sheet, model sheet, "
+    "multiple views, multiple panels, collage, diptych, grid layout, side by side comparison, "
+    "inset panel, close-up inset, Japanese kimono, japanese armor, katana, samurai, shoji screen, "
+    "tatami, torii, exaggerated anime eyes, childish proportions, giant head, watermark, logo, "
+    "signature, text, chinese text, calligraphy, caption, title, subtitle, label, border, frame, "
+    "picture frame, UI, game HUD, jpeg artifacts"
 )
 
 # id -> (子資料夾, 檔名, 專屬 prompt, seed)
@@ -44,40 +51,49 @@ REFERENCES = {
         "cultivators passing naturally in background, morning light and soft mist"
     ), 100002),
     "room07": ("scenes", "ROOM_07_REF_01", (
-        "quiet dormitory corridor inside an ancient Chinese cultivation academy, simple dark "
-        "wooden door, small blank carved wooden plaque area above the door with no text, warm "
-        "morning light, subtle spiritual lantern, clean stone floor, cinematic depth of field"
+        "quiet dormitory corridor inside an ancient Chinese cultivation academy, Chinese "
+        "architecture not Japanese, simple dark solid wooden door with no carving and no text, "
+        "small completely blank wooden plaque area above the door, warm morning light, subtle "
+        "spiritual lantern, clean stone floor, cinematic depth of field"
     ), 100003),
     "player": ("characters", "PLAYER_REF_01", (
-        "young adult human cultivator, ordinary newcomer to a cultivation academy, neutral "
-        "appearance, practical dark teal and charcoal cultivation clothing, simple academy "
-        "travel gear, youthful but mature face, average athletic build, calm observant eyes, "
-        "no noble insignia, no royal symbols, no legendary bloodline markings, no glowing eyes, "
-        "no excessive ornaments, front-facing character reference sheet pose"
+        "one single young adult male human cultivator standing alone, full body, front view, "
+        "ordinary newcomer to a Chinese cultivation academy, neutral plain appearance, practical "
+        "dark teal and charcoal traditional Chinese cultivation robe (not a skirt, not a modern "
+        "uniform), simple academy travel gear, youthful but mature face, average athletic build, "
+        "calm observant eyes, no noble insignia, no royal symbols, no legendary bloodline "
+        "markings, no glowing eyes, no excessive ornaments, standing neutral pose, video game "
+        "character cinematic screenshot"
     ), 100004),
     "qi_henglie": ("characters", "QI_HENGLIE_REF_01", (
-        "Qi Heng-Lie, young male saber cultivator, strong broad athletic build, energetic "
-        "expression, short dark reddish-brown hair, red-gold arm-ring markings, heavy saber, "
-        "warm confident smile, practical martial cultivation clothing, powerful stance, "
-        "front-facing character reference sheet pose"
+        "one single young adult male cultivator standing alone, full body, front view, Qi "
+        "Heng-Lie, saber cultivator, strong broad athletic build, energetic expression, short "
+        "dark reddish-brown hair, red-gold arm-ring markings, holding one heavy curved saber, "
+        "warm confident smile, practical Chinese martial cultivation robe, powerful standing "
+        "pose, video game character cinematic screenshot"
     ), 100005),
     "yu_cenye": ("characters", "YU_CENYE_REF_01", (
-        "Yu Cen-Ye, young male sword cultivator, short black-blue hair, luminous meridian mark "
-        "on forehead, right hand wrapped with cloth, lean athletic build, sharp calm eyes, "
-        "restrained expression, dark blue-black cultivation uniform, elegant straight sword at "
-        "waist, precise posture, front-facing character reference sheet pose"
+        "one single young adult male cultivator standing alone, full body, front view, Yu "
+        "Cen-Ye, Chinese sword cultivator (not a Japanese samurai, not wearing kimono), short "
+        "black-blue hair, luminous meridian mark on forehead, right hand wrapped with cloth, "
+        "lean athletic build, sharp calm eyes, restrained expression, dark blue-black Chinese "
+        "cultivation robe, holding one straight double-edged Chinese jian sword (not a curved "
+        "katana), precise standing posture, video game character cinematic screenshot"
     ), 100006),
     "li_ruofeng": ("characters", "LI_RUOFENG_REF_01", (
-        "Li Ruo-Feng, young male archer, amber eyes, quiet observant expression, short dark "
-        "hair, three-section short bow carried on back, subtle old scar on left shoulder, slim "
-        "athletic body, practical dark earth-tone cultivation clothing, calm posture, "
-        "front-facing character reference sheet pose"
+        "one single young adult male archer standing alone, full body, front view, Li Ruo-Feng, "
+        "amber eyes, quiet observant expression, short dark hair, holding a short recurve hunting "
+        "bow, subtle old scar on left shoulder, slim athletic body, practical dark earth-tone "
+        "Chinese cultivation robe, calm standing posture, video game character cinematic "
+        "screenshot"
     ), 100007),
     "xiao_yaolin": ("characters", "XIAO_YAOLIN_REF_01", (
-        "Xiao Yao-Lin, mature male heavy-blade instructor, powerful broad build, heavy shoulder "
-        "guard, gold meridian mark on forehead, dark instructor robe and armor, imposing but "
-        "controlled presence, stern experienced eyes, large heavy blade carried securely, "
-        "veteran warrior, calm authority, front-facing character reference sheet pose"
+        "one single mature adult male instructor standing alone, full body, front view, Xiao "
+        "Yao-Lin, heavy-blade instructor, powerful broad build, heavy shoulder guard armor, gold "
+        "meridian mark visible on forehead, dark Chinese instructor robe and armor, imposing but "
+        "controlled presence, stern experienced eyes, holding one large wide heavy blade (broad "
+        "dao, not a thin straight sword), veteran warrior, calm authority, standing pose, video "
+        "game character cinematic screenshot"
     ), 100008),
 }
 
