@@ -52,7 +52,9 @@ GLOBAL_NEGATIVE = (
     "over-saturated colors, glowing energy blade, light saber, lens flare weapon, nsfw, nudity, "
     "sexualized, revealing clothing, underwear, swimsuit, child, loli, shota, underage, "
     "japanese school uniform, sailor uniform, skirt, short shorts, bare skin, cleavage, "
-    "suggestive pose"
+    "suggestive pose, drawing bow, nocking arrow, action pose, dynamic action shot, heroic "
+    "pose, protagonist aura, chosen one glow, dramatic hero lighting, dramatic wind effect, "
+    "giant flowing cape, oversized weapon, legendary weapon glow"
 )
 
 # id -> (子資料夾, 檔名, 專屬 prompt, seed)
@@ -120,6 +122,28 @@ REFERENCES = {
         "visible behind him, he is watching something off-frame rather than posing for camera, "
         "full body, front-three-quarter view"
     ), 100107),
+    # 第二輪風格測試：咖哩給了逐項極詳細規格（自然站姿、不拉弓、不英雄pose、低調服裝）
+    "li_ruofeng_style_test_2": ("characters", "LI_RUOFENG_STYLE_TEST_02", (
+        "one single young adult male cultivator, Li Ruo-Feng, slender lean fit natural adult "
+        "male build (not a bodybuilder, not a fashion model), Eastern Chinese young man facial "
+        "features, refined but natural idealized high-end MMORPG game character face (not a real "
+        "photograph, not anime big eyes, not over-beautified), short naturally tousled black "
+        "hair (not long, not flowing wuxia hair), calm restrained amber eyes with a quiet "
+        "watchful observant gaze, looking off to the side rather than at camera, relaxed natural "
+        "standing pose with body weight slightly shifted, one hand resting naturally near his "
+        "bow (not drawing it, not an action pose, not a heroic pose), subtle faded old scar on "
+        "left shoulder, low-key dark Tianxuan Academy young cultivator robe in ink black, dark "
+        "brown and deep teal with small muted gray-blue accents, fine fabric with small amounts "
+        "of leather and metal and subtle Eastern craft detailing, deliberately understated (not "
+        "royal costume, not legendary armor, not a giant cape, not heavy armor, not western "
+        "leather ranger armor, not hunter costume), carrying a small reasonably-sized three-"
+        "section short recurve bow of Eastern xuanhuan design that looks well-worn from years of "
+        "use (not a giant western longbow, not glowing, not a legendary weapon, no magic "
+        "effects), standing naturally in the stone corridor of an ancient mountain cultivation "
+        "academy at dawn, dark wood architecture, distant mountains, morning mist, a few other "
+        "students faintly visible far in the background, soft natural morning light, full body, "
+        "vertical portrait"
+    ), 100207),
     "xiao_yaolin": ("characters", "XIAO_YAOLIN_REF_01", (
         "one single mature adult male instructor standing alone, full body, front view, Xiao "
         "Yao-Lin, heavy-blade instructor, powerful broad build, heavy shoulder guard armor, gold "
