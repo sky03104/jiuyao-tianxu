@@ -1,0 +1,185 @@
+[![中文](https://img.shields.io/badge/%E4%B8%AD%E6%96%87-8b1a1a?style=for-the-badge)](README.md)
+[![English](https://img.shields.io/badge/English-f2e3e3?style=for-the-badge&labelColor=f2e3e3&color=b07070)](README.en.md)
+[![關注作者 X](https://img.shields.io/badge/%E5%85%B3%E6%B3%A8%E4%BD%9C%E8%80%85-%40eternityspring-b07070?style=for-the-badge&labelColor=8b1a1a&logo=x&logoColor=f2e3e3)](https://x.com/eternityspring)
+
+# novel-characters
+
+丟一本小說或一篇短故事進去，輸出每個角色的完整設定：
+
+- **角色表** — 誰出場了，主角還是龍套，跨章節的不同稱呼歸併到同一個人
+- **人物畫像** — 性別、年齡、身份、外貌、性情、動機、人物弧光、關係網，每條附**原文逐字引文**
+- **形象提示詞** — 雙語出圖 prompt + negative prompt + 標籤，直接喂 Midjourney / SD / GPT-Image。畫風不寫進提示詞，由呼叫方在出圖時整批附加
+- **音色提示詞** — 音色、音高、語速、口音、情緒，雙語 voice-design prompt，直接喂 Qwen3-TTS / ElevenLabs Voice Design
+- **角色設定圖的版面指令** — **每個角色一條**：16:9 分三區，左側約 34% 證件照式半身像（面部基準）、右上全身三檢視、右下關鍵細節特寫條，白底方便摳圖。**本 skill 不出圖**，交付的是這段指令
+- **關係圖譜** — 報告裡的一個全景檢視：誰跟誰有關係、是什麼關係，一眼看完。懸停一個人亮出他的全部關係，點一下跳到那個人的詳情
+
+產出 `cast.json` + Markdown + 一個雙擊就能開的 `report.html`。
+
+**報告語言可指定**，預設中文：
+
+```
+/novel-characters ./book.txt --lang en
+/novel-characters ./book.txt --lang ja
+```
+
+內建 **中文 / English / 日本語** 三套介面文案。**其他語言一樣支援**——skill 會現場把介面文案翻譯成目標語言，存進 `cast.json` 的 `ui` 欄位，渲染時合併進去。所以法語、韓語、西班牙語都能出完整報告，不會露出英文介面。
+
+想自己準備翻譯：
+
+```bash
+node scripts/novel-characters.mjs ui-template fr   # 列印待翻譯的骨架
+```
+
+![report.html](assets/report.webp)
+
+角色設定圖（自帶樣例《渡口》的沈知微）：
+
+![角色設定圖](assets/sheet.jpg)
+
+## 上游
+
+管線裡**大綱在角色的上游**：
+
+```
+novel-outline    → outline.json （什麼：結構與分集，誰進誰不進）
+novel-characters → cast.json    （誰：角色資產）
+```
+
+有 `outline.json` 就走 `seed`——它的 `characters` 塊已經定死了角色清單：
+
+```bash
+node scripts/novel-characters.mjs seed outline.json > seed.json
+```
+
+搬過來的是大綱拍板過的事實（角色碼、名字、分檔、人物線、由原著的誰合併而來），留空的是這一層才該做的設計（別名、畫像、形象提示詞、音色提示詞）。`tier` 對映成 `importance`：`lead` → protagonist、`support` → supporting、`functional` → minor。
+
+**大綱定的分檔不要在這一層推翻**，覺得不對回去改大綱。主角組內部可以細分——`lead` 是「男女主 + 主反派」一整組，seed 一律給 protagonist，照 `seedNote` 裡的定位把主角之外的改成 major。
+
+**沒有 `outline.json` 也照常跑**，本 skill 不依賴它——跳過 seed，直接丟一本小說進去，自己從原文拆角色表。
+
+## 使用
+
+安裝見[倉庫根 README](../../README.md)。裝好後：
+
+```
+/novel-characters ./你的小說.txt
+```
+
+或者直接說「幫我拆一下這本書的角色」並給出路徑。
+
+### 報告語言
+
+預設中文。用 `--lang`，或者直接說「用英文」「日本語で」：
+
+```
+/novel-characters ./book.txt --lang en
+/novel-characters ./book.txt --lang ja
+```
+
+內建 **中文 / English / 日本語** 三套介面文案。**其他語言一樣支援**——skill 會現場把介面文案翻譯成目標語言，存進 `cast.json` 的 `ui` 欄位，渲染時合併。法語、韓語、西班牙語都能出完整報告，不會露出英文介面。
+
+兩條不跟隨語言：**出圖和 TTS 提示詞永遠英文**（引擎吃英文最穩）；**原文引文永遠保持原文語言**（翻譯了就不是證據了）。
+
+## 報告長什麼樣
+
+三欄工作臺：頂欄搜尋，左欄是故事摘要 + 按戲份排的角色列表，主區一次只看一個角色。
+
+**關係圖譜**在左欄頂部，跟角色詳情互斥。邊直接來自每個角色的 `relationships`，不用模型再跑一趟：
+
+- 按**名字 + 別名**連邊——老周的關係裡寫「老伯」也連到同一個節點
+- 同一對人的兩條單向記述合併成一條邊，兩個方向的說法都留著
+- 弦上標一段關係文字（截到 6 字，全文在懸停提示和右側關係表裡）。邊多了會糊，
+  ≤ 14 條預設標出來，再多預設收起，頂部有開關
+- 懸停一個人亮出他的全部關係線，懸停關係表某一行只亮那一條，點誰跳誰
+
+圓環佈局在 Node 裡算好直接寫進內聯 SVG，**不引任何庫**——report.html 始終是一個能離線雙擊開啟的單檔案。
+
+### 匯出 JSON
+
+頂欄的「匯出 JSON」下載的**就是 `cast.json` 本身的形狀**，不是另一套匯出格式：
+
+```json
+{ "source": "…", "lang": "zh", "summary": "…", "characters": [ … ] }
+```
+
+所以外部工具改完可以**直接喂回 `render` 重新出報告**，也能過 `validate`。角色卡裡的 `sheetImage` 一併帶出，拿得到哪張圖對應哪個人——圖由下游出，`render --images <目錄>` 指到圖所在的目錄就會撿起來（不給就找 cast.json 同級的 `images/`）。
+
+資料以 `<script type="application/json">` 內嵌在報告裡，點匯出只是把它包成 Blob 下載，**不發任何網路請求**。
+
+## 它是怎麼工作的
+
+長文本一次性塞進上下文會丟角色，所以拆成兩趟：
+
+**第一趟 · 掃描**（便宜）
+按段落切成 4 萬字元的重疊塊，每塊併發抽「角色名 + 別名 + 該塊裡的具體描寫 + 逐字引文」。重疊是為了讓卡在切口上的角色兩邊都能看見。
+
+**歸併**
+按名字和別名建索引，`陸行遠` / `陸` / `姑娘` 這類跨塊的不同叫法收斂成同一個人。精確匹配管不到的（「陸」和「陸行遠」沒有共同鍵），指令碼會按名字包含關係列成 `mergeCandidates` 疑似同人候選，由模型複核後寫成 merges.json 確定性落地合併。按出現塊數當戲份權重排序。
+
+**第二趟 · 出卡**
+只對戲份最重的 N 位（**預設 30**），把歸併後的全部描寫喂進去，一次生成完整角色卡。同批角色互相知道對方的名字，避免長相和聲線撞車。族裔、年代、地域從原文推斷後寫死進出圖提示詞——**不跟報告語言走**，報告出成日文不會把民國的老船伕畫成日本人。
+
+**校驗**（這步不能跳）
+三類硬規則，全部由指令碼確定性檢查，不靠模型自覺：
+
+| 規則 | 為什麼 |
+| --- | --- |
+| `evidence` 必須是原文**逐字連續**片段 | 防編造。被「他說」斷開的對白不許拼接 |
+| 出圖 prompt **不許出現人名** | 影像模型對人名偏見極重，會畫成它記憶裡的角色 |
+| 欄位**語言分工** | 人類欄位跟隨 `--lang`、出圖和 TTS 提示詞永遠英文，模型會漂 |
+| 結構 + 列舉 | `importance` 只能是那四個值 |
+
+這三條不是拍腦袋定的——是模型輸出真的違反過、被校驗指令碼當場抓住才立起來的。
+
+## 命令列直接用
+
+指令碼本身不需要 agent 也能跑，只有兩趟模型呼叫需要：
+
+```bash
+node scripts/novel-characters.mjs seed outline.json              # 有大綱就從它預填角色表骨架
+node scripts/novel-characters.mjs chunk book.txt /tmp/wk        # 切塊
+node scripts/novel-characters.mjs merge /tmp/wk                 # 歸併 roster-*.json，附疑似同人候選
+node scripts/novel-characters.mjs merge /tmp/wk --apply m.json   # 落地複核後的合併
+node scripts/novel-characters.mjs assemble /tmp/wk --source 書名 # card-*.json 合成 cast.json，同檔按戲份排序
+node scripts/novel-characters.mjs validate cast.json book.txt   # 校驗
+node scripts/novel-characters.mjs render cast.json --html       # 出 report.html
+node scripts/novel-characters.mjs slug "胡二爺"                  # 安全檔名
+```
+
+## 邊界
+
+- 單次上限 24 塊（淨覆蓋約 93 萬字元）。超了會明確報 `truncated`，**不靜默截斷**
+- 人類可讀欄位跟隨 `--lang`；出圖和 TTS 提示詞**永遠英文**，那些引擎吃英文最穩，跟報告語言無關
+- 預設取戲份最重的 30 位角色，每位一份完整角色卡。想少要就直接給個數，或者說只要主要角色
+- **畫風不進提示詞**：它是出圖那一刻由下游整批附加在提示詞前面的一層。早期把畫風寫死進每條提示詞能壓住一部分漂移，代價是換風格要逐條改，而且跟當時選的那一檔正面打架。同一批角色的一致性因此也歸下游管，見 `references/sheet.md`
+
+## 檔案
+
+```
+SKILL.md                 給 agent 讀的工作流
+scripts/
+  novel-characters.mjs   chunk / merge / assemble / validate / render / slug
+  selftest.mjs           329 項斷言，不調模型
+references/
+  roster-pass.md         第一趟：掃描角色
+  profile-pass.md        第二趟：生成角色卡（8 條硬規則）
+  schema.md              角色卡結構 + 欄位語言歸屬
+  sheet.md               角色設定圖的版面規格
+  report-style.md        report.html 的設計約定
+examples/
+  渡口.txt                自帶短故事，4 個角色
+  渡口-cast.json          產出，同時是校驗自檢夾具
+  渡口-cast.md            渲染結果，品質基準
+```
+
+`examples/渡口.txt` 裡貨郎全程只有綽號、船伕只被叫過「老伯」——專門用來驗別名歸併。
+
+## 自測
+
+```bash
+node scripts/selftest.mjs
+```
+
+329 項斷言，覆蓋分塊 / 別名歸併 / 合成 / 多語言 / 校驗 / 渲染。不調模型、不花額度、1 秒跑完。改完指令碼先跑這個。
+
+**只在 macOS + Node 24 上實測過。** 程式碼沒有平臺相關呼叫，Linux 和更低版本 Node 理論上沒問題，但**沒驗過**。

@@ -31,3 +31,8 @@ production/EP01/final/
 !production/EP01/*.py
 !production/EP01/*.ipynb
 pipcache/
+
+# shuohao-skills 產物：報告 HTML 與分鏡圖可由 render 重新產生，不進版控
+*-report.html
+gallery.html
+production/**/shuohao/**/*.png
