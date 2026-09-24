@@ -33,3 +33,15 @@
 | XIAO_YAOLIN_REF_01 蕭曜霖 | A | 補上重刃 |
 
 所有角色需補全身與武器，由 novel-characters 的設定圖指令補齊。
+
+## 2026-09-24　novel-characters 角色設計取捨
+
+| 角色 | 取捨 | 依據 |
+|---|---|---|
+| 全體 | 族裔寫 East Asian、世界寫 ancient-Chinese-inspired mountain cultivation academy；提示詞不寫畫風，畫風（STYLE LOCK）出圖時統一附加 | skill profile-pass 第 4、5 條；STYLE LOCK「東方年輕人面部特徵」 |
+| 玩家 | 動畫版鎖定約二十歲男性；四人中唯一不帶武器，背行囊為識別錨點；負面提示詞禁琥珀眼 | docs/02 尚未確立流派；避免與厲若楓撞臉 |
+| 齊衡烈 | 「赤金刀紋般的臂環紋」解讀為刻刀紋的赤金金屬臂環（右上臂）；髮色鮮紅；軀幹遮住、不展示肌肉 | GPT 參考稿 A；咖哩指定鮮紅；STYLE LOCK 第二節 |
+| 郁岑燁 | 淡藍曜紋在額頭正中；纏布只在右手 | docs/02 |
+| 厲若楓 | 無兜帽、改三段式摺疊短弓（銅關節）、小圓筒箭匣取代西式箭筒；性別依動畫參考與 STYLE LOCK 為男性 | STYLE LOCK 第九節；docs/02 關係鉤子段落用「她」疑為筆誤，**待確認** |
+| 蕭曜霖 | 淡金曜痕放在兩眉之間的眉骨（正史「眉骨有淡金曜痕」），不照 docs/30 的額頭；重刃斜揹於背 | docs/02 為正史 |
+| 旁白 | 不是角色，不進 cast；配音規格在 novel-script 以 VO 處理 | skill 規則 |
