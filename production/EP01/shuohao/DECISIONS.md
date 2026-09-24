@@ -125,3 +125,16 @@ novel-characters 第一版漏讀 docs/16（Claude 疏漏），補正如下。**�
 1. ~~依 MASTER_VISUAL_STYLE_LOCK 附加畫風，先出角色設定圖與場景／道具設定圖~~ ✅ 2026-09-24 完成（見上節驗圖紀錄），待咖哩驗收
 2. 先只出 **E01-01～E01-02 兩段的分鏡圖**驗收畫風與一致性，再往後補（skill frame.md 建議：先出第一段整套）
 3. 分鏡圖放進 `storyboard/export/h3/<段號>/f<序>.png` 後，逐段送影片模型；配音依劇本台詞本＋角色音色提示詞，旁白音色見上方
+
+## 2026-09-24　出圖工具鏈（imagegen/）
+
+| 項目 | 決策 |
+|---|---|
+| 生成方式 | 由 Claude 直接呼叫 OpenAI 圖像 API（咖哩指定用 GPT 生圖）；腳本 `imagegen/gen_images.py`，預設模型 `chatgpt-image-latest`（與 ChatGPT 介面同款，對齊先前通過畫風的 GPT 參考稿），可用 `--model` 或環境變數 `IMAGE_MODEL` 換成固定版本（如 `gpt-image-2`） |
+| 前置設定 | 金鑰放在雲端環境的 **API credentials**（主機 `api.openai.com`，標頭 `Authorization`、前綴 `Bearer`），由代理附上、工作階段看不到，也不需改網路存取等級；不要放在 Environment variables（所有使用者可見）。API 用量另計費，與 ChatGPT 訂閱分開 |
+| 畫風 | 各段 JSON 不寫畫風，由腳本統一附加 STYLE LOCK 畫風句；設定圖不加「在世界中」的環境光句（白底設定圖），分鏡圖才加 |
+| 參考圖 | `imagegen/refs/*_GPT.png`：從 GPT 參考稿裁出選定格（避開資訊框、色票、logo），出設定圖時只鎖臉與髮型，服裝武器以文字為準 |
+| 順序 | 先 `sheets`（5 角色＋3 場景＋2 道具），驗收後再 `frames`；分鏡圖掛場景設定圖、畫內角色與道具設定圖，第 2 格起再掛該段 f1 保持一致 |
+| 尺寸 | 設定圖 1536×1024（橫）；分鏡圖 1024×1536（直，API 最接近 9:16 的標準尺寸，剪輯時裁成 9:16） |
+| 備援 | `imagegen/IMAGE_JOBS.md`：40 張的完整提示詞＋參考圖清單，可手動貼 ChatGPT |
+| 紀錄 | 每張出圖寫進 `imagegen/manifest.json`（模型、品質、參考圖、提示詞雜湊、時間） |
