@@ -1,5 +1,15 @@
 # CHANGELOG — 《九曜：天墟》
 
+## 2026-09-24（第二十五筆，安裝 shuohao-skills AI短劇製作skill）
+
+- 將第三方開源 skill 集 eternityspring/shuohao-skills（Apache 2.0）內建到
+  `.claude/skills/`：novel-outline／novel-characters／novel-art／novel-script／
+  novel-storyboard 五段短劇管線（大綱→角色→美術→劇本→分鏡）。
+- 放 repo 內而非 `~/.claude/skills`，確保雲端 session 每次都能自動載入；
+  來源版本、授權、更新方式記錄於 `.claude/shuohao/README.md`。
+- 安裝前檢查腳本無對外連線/無外部依賴，Linux+Node 22 全部自測通過。
+- 短影音仍依 `22_TRANSMEDIA_ANIMATION_PLAN` 原則：遊戲為正史，影音衝突時先改影音。
+
 ## 2026-09-16（第二十四筆，HANDOFF-007：Phase 0-C完成，靈印Data-driven Prototype驗證通過）
 
 - 執行HANDOFF-007全部完成條件(A~F)，CombatController.cs**零修改**——三個靈印
