@@ -6,7 +6,9 @@ EP01〈第七室報到〉出圖腳本（OpenAI 圖像 API）
   frames  : 分鏡圖（storyboard/export/h3/<段號>/f<序>.png），掛設定圖當參考
 
 畫風統一在這裡附加（依 docs/MASTER_VISUAL_STYLE_LOCK_V1.0.md），各段 JSON 的提示詞本身不寫畫風。
-需要環境變數 OPENAI_API_KEY，且網路政策放行 api.openai.com。
+金鑰建議放在雲端環境的「API credentials」（主機 api.openai.com，Authorization: Bearer <key>）：
+由代理在請求離開 VM 後附上，工作階段看不到金鑰，也不必另外放行網路。
+本機執行或用環境變數時，照常設 OPENAI_API_KEY。
 
 用法：
   python gen_images.py sheets --dry-run            # 只列工作，不呼叫 API
@@ -180,9 +182,9 @@ def rel(p):
 def run_jobs(jobs, args):
     from openai import OpenAI  # 延後匯入：dry-run / jobs 不需要
 
-    if not os.environ.get("OPENAI_API_KEY"):
-        sys.exit("缺 OPENAI_API_KEY 環境變數，無法呼叫 OpenAI。")
-    client = OpenAI()
+    # 雲端環境用 API credentials 時，代理會替 api.openai.com 的請求附上真正的金鑰；
+    # SDK 仍要求有值，所以沒設環境變數時給一個佔位字串。
+    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY") or "injected-by-agent-proxy")
     manifest = load_manifest()
     done = skipped = failed = 0
     for j in jobs:
