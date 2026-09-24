@@ -40,7 +40,8 @@ GPT_REFS = {
     "C01": "PLAYER_GPT.png",
     "C02": "QI_HENGLIE_GPT.png",
     "C03": "YU_CENYE_GPT.png",
-    "C04": "LI_RUOFENG_FACE_GPT.png",  # 只給臉：全身稿的兜帽／肩箭袋／無袖會被模型照抄
+    # STYLE LOCK v1.1 已放寬兜帽／肩後箭袋／左臂無袖，全身稿是厲若楓畫風與造型的最佳樣板
+    "C04": ["LI_RUOFENG_FACE_GPT.png", "raw/LI_RUOFENG_FULLBODY_GPT.png"],
     "C05": "XIAO_YAOLIN_GPT.png",
     "S01": "TIANXUAN_ACADEMY_GPT.png",
     "S02": "EAST_CORRIDOR_GPT.png",
@@ -70,12 +71,11 @@ STYLE_WORLD = (
 )
 # 逐項補強：參考稿或模型沒守住的規格再寫死一次（依驗圖紀錄累積，見 DECISIONS.md）
 FIX = {
-    "厲若楓": "COSTUME CORRECTIONS (override the references): NO hood anywhere, in every view. NO shoulder quiver "
-              "and no arrows on the back — his arrows are kept only in a small closed cylindrical lacquered arrow "
-              "case at the right hip. The bow is a compact THREE-SECTION folding short bow: three clearly jointed "
-              "segments of dark lacquered wood with bronze joint fittings, slung diagonally across the back. Both "
-              "sleeves are full length (not sleeveless). Exactly ONE leather arm guard, on the LEFT forearm only. "
-              "The academy badge is antique bronze inset with carved jade — no skull or other motif.",
+    "厲若楓": "CORRECTIONS (override the references): the hood of the short cape is always DOWN on the shoulders, "
+              "never over the head. The bow is a compact THREE-SECTION folding short bow — three clearly jointed "
+              "segments of dark lacquered wood with bronze joint fittings — not a one-piece recurve. Exactly ONE "
+              "leather arm guard, on the LEFT forearm only; the right forearm is a plain bound sleeve. The academy "
+              "badge is antique bronze inset with carved jade — no skull or other motif.",
     "齊衡烈": "CORRECTIONS: exactly ONE long leather gauntlet, on the LEFT forearm only; the right forearm has no "
               "gauntlet, only the red-gold arm ring on the right upper arm. Arms strong but lean and relaxed, not a "
               "bodybuilder. The weapon is a single heavy single-edged broad saber (dao) with a thick straight back.",
@@ -91,6 +91,9 @@ def fix_of(name):
     return f"\n\n{FIX[name]}" if name in FIX else ""
 
 
+# 模型常把三視圖畫成四個（多一個 3/4 側）
+SHEET_RULE = ("LAYOUT CHECK: exactly THREE full-body figures in the top-right zone — front, left profile, back. "
+              "Not four, no three-quarter view.")
 SHEET_SIZE = "1536x1024"  # chatgpt-image-latest 只支援 1024x1024／1024x1536／1536x1024
 NO_TEXT = "No text, no letters, no labels, no captions, no logos, no watermark, no UI."
 
@@ -126,7 +129,7 @@ def build_sheet_jobs():
             "references.\n\n"
             if refs else ""
         )
-        prompt = (f"{STYLE_RENDER}\n\n{note}{c['image']['sheet']}{fix_of(c['name'])}\n\n"
+        prompt = (f"{STYLE_RENDER}\n\n{note}{c['image']['sheet']}{fix_of(c['name'])}\n\n{SHEET_RULE}\n\n"
                   f"Avoid: {c['image']['negativePrompt']}. {NO_TEXT}")
         jobs.append({"key": f"角色：{c['name']}", "id": c.get("id"), "name": c["name"], "kind": "sheet",
                      "out": char_sheet_path(c["name"]), "refs": refs, "size": SHEET_SIZE, "prompt": prompt})
