@@ -45,6 +45,8 @@ GPT_REFS = {
     "C05": "XIAO_YAOLIN_GPT.png",
     "S01": "TIANXUAN_ACADEMY_GPT.png",
     "S02": "EAST_CORRIDOR_GPT.png",
+    # 第七室沒有對應的參考格，借東廊的建築語彙與材質；門牌格燒有「第七室」字樣，道具不掛以免模型照抄文字
+    "S03": "EAST_CORRIDOR_GPT.png",
 }
 
 # ---- 畫風層（MASTER_VISUAL_STYLE_LOCK_V1.0 一～七節）----
@@ -76,12 +78,25 @@ FIX = {
               "segments of dark lacquered wood with bronze joint fittings — not a one-piece recurve. Exactly ONE "
               "leather arm guard, on the LEFT forearm only; the right forearm is a plain bound sleeve. The academy "
               "badge is antique bronze inset with carved jade — no skull or other motif.",
-    "齊衡烈": "CORRECTIONS: exactly ONE long leather gauntlet, on the LEFT forearm only; the right forearm has no "
+    "齊衡烈": "CORRECTIONS: overlapping plates of antique bronze armour MUST cover his chest and abdomen over the "
+              "sleeveless hemp tunic, clearly visible in the bust portrait and every full-body view. "
+              "Exactly ONE long leather gauntlet, on the LEFT forearm only; the right forearm has no "
               "gauntlet, only the red-gold arm ring on the right upper arm. Arms strong but lean and relaxed, not a "
               "bodybuilder. The weapon is a single heavy single-edged broad saber (dao) with a thick straight back.",
     "蕭曜霖": "CORRECTIONS: exactly ONE weapon in total — a single huge door-plank heavy sword strapped diagonally "
               "across his back, one long grip rising above the right shoulder; no second sword, no weapon at the "
               "hip. No fur collar. The pale-gold mark sits on the brow bone between the eyebrows.",
+    "郁岑燁": "LAYOUT: exactly THREE full-body figures (front, left profile, back) — his sheet was previously drawn "
+              "with four; do not add a three-quarter view.",
+    "入院憑證": "CORRECTIONS: pure white background in every panel (no grey gradient, no vignette). The carved jade "
+                "relief is an ORIGINAL academy roundel of flowing cloud scrolls around a simple circular star motif — "
+                "NO yin-yang / taiji symbol, no bagua, no real-world religious symbols. The cord is plain deep-blue silk "
+                "with no red beads.",
+    "第七室門牌": "CORRECTIONS: PURE WHITE background (#FFFFFF) in every panel — no grey or brown gradient. The body "
+                  "is DARK HARDWOOD with visible wood grain; bronze is only a NARROW edging, four corner studs, the "
+                  "top ring and the tassel bead. In EVERY panel the plaque is UPRIGHT (taller than wide) — the "
+                  "straight-on front view in the bottom row is drawn as a small upright plaque, never a horizontal "
+                  "one. The recessed panel stays completely blank.",
     "第七室": "CORRECTION: a FOUR-person room — exactly FOUR low sleeping platforms, TWO end to end along the left "
               "wall and TWO along the right wall, each with a wooden chest at its foot, all visible in the main view.",
 }
@@ -145,7 +160,7 @@ def build_sheet_jobs():
         jobs.append({"key": f"場景：{s['name']}", "id": s["id"], "name": s["name"], "kind": "sheet",
                      "out": art_sheet_path(s["name"]), "refs": refs, "size": SHEET_SIZE, "prompt": prompt})
     for p in art.get("props", []):
-        prompt = (f"{STYLE_RENDER}\n\n{p['image']['sheet']}\n\n"
+        prompt = (f"{STYLE_RENDER}\n\n{p['image']['sheet']}{fix_of(p['name'])}\n\n"
                   f"Avoid: {p['image']['negativePrompt']}. {NO_TEXT}")
         jobs.append({"key": f"道具：{p['name']}", "id": p["id"], "name": p["name"], "kind": "sheet",
                      "out": art_sheet_path(p["name"]), "refs": [], "size": SHEET_SIZE, "prompt": prompt})
