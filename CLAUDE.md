@@ -32,6 +32,15 @@
    Chatterbox/CosyVoice/ElevenLabs/Fish Audio/Kokoro配音比較），已經HANDOFF-004
    技術查證修正過免費額度/授權/定價等細節，查證來源見`docs/HANDOFF-004_RESEARCH_NOTES.md`
 10. `docs/CHANGELOG.md` — 版本歷史
+11. `docs/MASTER_VISUAL_STYLE_LOCK_V1.0.md`（內容為 v1.1）— **所有出圖的最高美術規範**：畫風以咖哩選定的
+    GPT 參考稿為準（`production/EP01/shuohao/imagegen/refs/`），出圖一律附參考稿、不可只靠文字 prompt。
+    EP01 出圖工具鏈與逐張驗圖紀錄見 `production/EP01/shuohao/DECISIONS.md`，腳本 `imagegen/gen_images.py`
+
+## 出圖／素材保存規則（2026-09-24 咖哩裁定）
+
+- 雲端 session 重開容器就清空：**參考稿、設定圖、分鏡圖等出圖結果一律 commit 進 repo**，不可只留在 session
+  或對話附件裡（`.gitignore` 已不忽略 shuohao 出圖結果）。使用者在對話中上傳的參考圖，先存進 repo 再使用。
+- 出圖後逐張對照角色卡／美術設定規格驗圖，結果記入 DECISIONS.md；不合格的不拿來當後續參考。
 
 ## 核心規則（摘自 GDD 第39章，長期有效）
 

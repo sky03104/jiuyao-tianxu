@@ -32,10 +32,9 @@ production/EP01/final/
 !production/EP01/*.ipynb
 pipcache/
 
-# shuohao-skills 產物：報告 HTML 與分鏡圖可由 render 重新產生，不進版控
+# shuohao-skills 產物：報告 HTML 可由 render 重新產生，不進版控
 *-report.html
 gallery.html
-production/**/shuohao/**/*.png
-# 例外：咖哩提供的 GPT 參考稿（原檔＋裁切）要進版控，出圖腳本依賴它們
-!production/**/shuohao/imagegen/refs/**/*.png
+# 2026-09-24 咖哩裁定：出圖結果（設定圖、分鏡圖）與 GPT 參考稿一律進版控——
+# 雲端 session 重開容器就清空，不進 repo 就會遺失。（原本的 production/**/shuohao/**/*.png 忽略規則已移除）
 __pycache__/

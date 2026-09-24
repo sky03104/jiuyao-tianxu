@@ -12,6 +12,8 @@
 
 > 主角 · 剛通過入門考核的普通新契修，拿著入院憑證站在陌生的宿舍門口，連自己能不能打都還說不準。
 
+![玩家 左：半身像　右：全身三檢視](images/玩家-sheet.png)
+
 ### 畫像
 
 - **性別**：男（動畫版鎖定；遊戲中可自訂）
@@ -88,6 +90,8 @@ Single character model sheet on ONE 16:9 landscape canvas (widescreen, width to 
 ## 齊衡烈
 
 > 主要角色 · 第七室最先開門的那個人，一見新人就認定是自己人，而且立刻想跟他打一場。
+
+![齊衡烈 左：半身像　右：全身三檢視](images/齊衡烈-sheet.png)
 
 ### 畫像
 
@@ -168,6 +172,8 @@ Single character model sheet on ONE 16:9 landscape canvas (widescreen, width to 
 
 > 主要角色 · 嘴上最挑剔、腰桿最直的劍修，對新人的第一句話就是質疑。
 
+![郁岑燁 左：半身像　右：全身三檢視](images/郁岑燁-sheet.png)
+
 ### 畫像
 
 - **性別**：男
@@ -245,6 +251,8 @@ Single character model sheet on ONE 16:9 landscape canvas (widescreen, width to 
 
 > 主要角色 · 爭論時一句話都不插，等他開口，說的是別人都沒看見的東西。
 
+![厲若楓 左：半身像　右：全身三檢視](images/厲若楓-sheet.png)
+
 ### 畫像
 
 - **性別**：男
@@ -319,6 +327,8 @@ Single character model sheet on ONE 16:9 landscape canvas (widescreen, width to 
 ## 蕭曜霖
 
 > 配角 · 人還沒到，聲音先到；站著不動，就讓一屋子新生安靜下來的戰技堂教官。
+
+![蕭曜霖 左：半身像　右：全身三檢視](images/蕭曜霖-sheet.png)
 
 ### 畫像
 

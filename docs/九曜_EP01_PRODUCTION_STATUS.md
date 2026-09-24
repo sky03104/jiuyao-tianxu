@@ -137,6 +137,7 @@
 - 下一步：設定圖驗收通過後，先出 E01-01～E01-02 分鏡圖。
 - **咖哩裁定畫風與 GPT 參考稿落差太大，整批作廢。** 改用 `imagegen/gen_images.py` 掛參考稿（`chatgpt-image-latest`）重出，先出厲若楓一張確認方向，詳見 DECISIONS.md「設定圖第二批」。
 - 咖哩裁定 **MASTER_VISUAL_STYLE_LOCK 升 v1.1**：GPT 參考稿為畫風最高標準、設定圖例外正式寫入、厲若楓造型照參考稿放寬（見 CHANGELOG 第二十七筆）。
+- 設定圖 10 張定稿並進版控（`.gitignore` 不再忽略 shuohao 出圖結果）；護具兩手的小瑕疵咖哩裁定接受。下一步：E01-01～E01-02 分鏡圖。
 
 ---
 
