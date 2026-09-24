@@ -202,3 +202,11 @@ novel-characters 第一版漏讀 docs/16（Claude 疏漏），補正如下。**�
   不進 repo 就會遺失（第一批參考稿就是這樣弄丟的）。適用設定圖、分鏡圖、參考稿；只有報告 HTML 仍可重產不進版控。
 - `characters/EP01-cast.md`、`report.html`、`art/EP01-art.md` 已重跑 render，嵌入定稿設定圖。
 - 下一步：出 E01-01～E01-02 分鏡圖（`python3 imagegen/gen_images.py frames --segments E01-01,E01-02`）。
+
+## 2026-09-24　成本裁定：分鏡圖改用 ChatGPT 網頁版
+
+- 咖哩評估整集成本（API 分鏡圖 US$8～15＋付費影片模型 US$25～55）後裁定太高，改走省錢路線。
+- **分鏡圖**：在 ChatGPT 網頁版手動出（含在訂閱內），交接檔 `docs/HANDOFF-009_CHATGPT_WEB_STORYBOARD.md`，
+  由 `python3 imagegen/gen_images.py handoff` 從分鏡 JSON 自動產生（提示詞與 API 版同一份）。先做 E01-01、E01-02 共 5 張驗收。
+- **影片**：待分鏡圖驗收後再評估免費方案——Wan 2.2（Apache 2.0 可商用）在 Colab／Kaggle 跑、Wan2GP、
+  可靈／PixVerse 免費額度（有浮水印、免費版無商用授權，只適合內部試片）。原生配音缺口以開源 TTS（CosyVoice／Fish Speech）補。
