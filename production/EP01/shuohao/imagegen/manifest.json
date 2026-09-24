@@ -4,9 +4,50 @@
     "quality": "high",
     "size": "1536x1024",
     "refs": [
-      "imagegen/refs/LI_RUOFENG_FACE_GPT.png"
+      "imagegen/refs/LI_RUOFENG_FACE_GPT.png",
+      "imagegen/refs/raw/LI_RUOFENG_FULLBODY_GPT.png"
     ],
-    "promptSha1": "7da6c8387998770748f7cdf346af8c635dd898b2",
-    "generatedAt": "2026-09-24T15:35:41+00:00"
+    "promptSha1": "a301e31eb869ce50995cede1ac0cfe2e52b2f707",
+    "generatedAt": "2026-09-24T16:04:45+00:00"
+  },
+  "characters/images/玩家-sheet.png": {
+    "model": "chatgpt-image-latest",
+    "quality": "high",
+    "size": "1536x1024",
+    "refs": [
+      "imagegen/refs/PLAYER_GPT.png"
+    ],
+    "promptSha1": "029771bb269c32b11df565e126757740609f14a0",
+    "generatedAt": "2026-09-24T16:05:44+00:00"
+  },
+  "characters/images/齊衡烈-sheet.png": {
+    "model": "chatgpt-image-latest",
+    "quality": "high",
+    "size": "1536x1024",
+    "refs": [
+      "imagegen/refs/QI_HENGLIE_GPT.png"
+    ],
+    "promptSha1": "f0c525b4bbe562e98366eb52785738054f4d6dcf",
+    "generatedAt": "2026-09-24T16:06:34+00:00"
+  },
+  "characters/images/郁岑燁-sheet.png": {
+    "model": "chatgpt-image-latest",
+    "quality": "high",
+    "size": "1536x1024",
+    "refs": [
+      "imagegen/refs/YU_CENYE_GPT.png"
+    ],
+    "promptSha1": "5a1e8dba8941fd27a7e414e72fb07ba47976840c",
+    "generatedAt": "2026-09-24T16:07:26+00:00"
+  },
+  "characters/images/蕭曜霖-sheet.png": {
+    "model": "chatgpt-image-latest",
+    "quality": "high",
+    "size": "1536x1024",
+    "refs": [
+      "imagegen/refs/XIAO_YAOLIN_GPT.png"
+    ],
+    "promptSha1": "bb826d6c0bf5e545f51afd20ec39b36e8deb0393",
+    "generatedAt": "2026-09-24T16:08:15+00:00"
   }
 }
