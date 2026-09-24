@@ -1,0 +1,99 @@
+{
+  "characters/images/厲若楓-sheet.png": {
+    "model": "chatgpt-image-latest",
+    "quality": "high",
+    "size": "1536x1024",
+    "refs": [
+      "imagegen/refs/LI_RUOFENG_FACE_GPT.png",
+      "imagegen/refs/raw/LI_RUOFENG_FULLBODY_GPT.png"
+    ],
+    "promptSha1": "a301e31eb869ce50995cede1ac0cfe2e52b2f707",
+    "generatedAt": "2026-09-24T16:04:45+00:00"
+  },
+  "characters/images/玩家-sheet.png": {
+    "model": "chatgpt-image-latest",
+    "quality": "high",
+    "size": "1536x1024",
+    "refs": [
+      "imagegen/refs/PLAYER_GPT.png"
+    ],
+    "promptSha1": "029771bb269c32b11df565e126757740609f14a0",
+    "generatedAt": "2026-09-24T16:05:44+00:00"
+  },
+  "characters/images/齊衡烈-sheet.png": {
+    "model": "chatgpt-image-latest",
+    "quality": "high",
+    "size": "1536x1024",
+    "refs": [
+      "imagegen/refs/QI_HENGLIE_GPT.png"
+    ],
+    "promptSha1": "5346addfe781e25ab4c2ae70da6503159401d8a0",
+    "generatedAt": "2026-09-24T16:44:31+00:00"
+  },
+  "characters/images/郁岑燁-sheet.png": {
+    "model": "chatgpt-image-latest",
+    "quality": "high",
+    "size": "1536x1024",
+    "refs": [
+      "imagegen/refs/YU_CENYE_GPT.png"
+    ],
+    "promptSha1": "2ee39c009489c5d000e65c76c0307398fcc78480",
+    "generatedAt": "2026-09-24T16:45:22+00:00"
+  },
+  "characters/images/蕭曜霖-sheet.png": {
+    "model": "chatgpt-image-latest",
+    "quality": "high",
+    "size": "1536x1024",
+    "refs": [
+      "imagegen/refs/XIAO_YAOLIN_GPT.png"
+    ],
+    "promptSha1": "bb826d6c0bf5e545f51afd20ec39b36e8deb0393",
+    "generatedAt": "2026-09-24T16:08:15+00:00"
+  },
+  "art/images/天玄院外景-sheet.png": {
+    "model": "chatgpt-image-latest",
+    "quality": "high",
+    "size": "1536x1024",
+    "refs": [
+      "imagegen/refs/TIANXUAN_ACADEMY_GPT.png"
+    ],
+    "promptSha1": "32b72bbde20beb58479b39ffe5a3ef3f6bf6ac58",
+    "generatedAt": "2026-09-24T16:46:15+00:00"
+  },
+  "art/images/天玄院東廊-sheet.png": {
+    "model": "chatgpt-image-latest",
+    "quality": "high",
+    "size": "1536x1024",
+    "refs": [
+      "imagegen/refs/EAST_CORRIDOR_GPT.png"
+    ],
+    "promptSha1": "462320cf0a896ebccef33f43444d75e5cfbac8b3",
+    "generatedAt": "2026-09-24T16:47:24+00:00"
+  },
+  "art/images/第七室-sheet.png": {
+    "model": "chatgpt-image-latest",
+    "quality": "high",
+    "size": "1536x1024",
+    "refs": [
+      "imagegen/refs/EAST_CORRIDOR_GPT.png"
+    ],
+    "promptSha1": "aa9b0117ef31551212883d4ae46f6c770c291330",
+    "generatedAt": "2026-09-24T16:48:12+00:00"
+  },
+  "art/images/入院憑證-sheet.png": {
+    "model": "chatgpt-image-latest",
+    "quality": "high",
+    "size": "1536x1024",
+    "refs": [],
+    "promptSha1": "e59ed778e1a35947026a02ef7dd8c8d0921d2a0a",
+    "generatedAt": "2026-09-24T16:50:29+00:00"
+  },
+  "art/images/第七室門牌-sheet.png": {
+    "model": "chatgpt-image-latest",
+    "quality": "high",
+    "size": "1536x1024",
+    "refs": [],
+    "promptSha1": "80f08238c6bc2a42d16fff988fd2c2cfc1f47f76",
+    "generatedAt": "2026-09-24T16:52:16+00:00"
+  }
+}

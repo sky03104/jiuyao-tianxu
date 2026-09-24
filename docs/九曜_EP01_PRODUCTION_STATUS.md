@@ -129,6 +129,16 @@
 - 詳細決策與選版見 `production/EP01/shuohao/DECISIONS.md`。
 - 五段全部完成（outline／characters／art／script／storyboard，品質門皆通過）：9 段 30 個分鏡、共 80 秒、9:16，H3／Seedance 投產包在 `production/EP01/shuohao/storyboard/export/`；下一步是依 STYLE LOCK 出設定圖與分鏡圖。
 
+### 2026-09-24：設定圖第一批（純文字出圖）——作廢
+
+- 用 `gpt-image-2` 依 shuohao 的 sheet 版面＋STYLE LOCK 畫風層出圖：角色 5 張（`characters/images/`）、場景 3 張＋道具 2 張（`art/images/`），腳本 `production/EP01/shuohao/tools/gen_sheets.py`。
+- 第一輪驗圖抓到 4 處不合規格（厲若楓／齊衡烈雙手護具、蕭曜霖兩把重兵器、第七室只有兩張床），補強提示詞重生後通過；逐張紀錄見 `production/EP01/shuohao/DECISIONS.md`。
+- 待裁定：齊衡烈手臂仍偏壯。PNG 依 `.gitignore` 不進版控。
+- 下一步：設定圖驗收通過後，先出 E01-01～E01-02 分鏡圖。
+- **咖哩裁定畫風與 GPT 參考稿落差太大，整批作廢。** 改用 `imagegen/gen_images.py` 掛參考稿（`chatgpt-image-latest`）重出，先出厲若楓一張確認方向，詳見 DECISIONS.md「設定圖第二批」。
+- 咖哩裁定 **MASTER_VISUAL_STYLE_LOCK 升 v1.1**：GPT 參考稿為畫風最高標準、設定圖例外正式寫入、厲若楓造型照參考稿放寬（見 CHANGELOG 第二十七筆）。
+- 設定圖 10 張定稿並進版控（`.gitignore` 不再忽略 shuohao 出圖結果）；護具兩手的小瑕疵咖哩裁定接受。下一步：E01-01～E01-02 分鏡圖。
+
 ---
 
 ## 六、下一步
