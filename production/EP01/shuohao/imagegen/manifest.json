@@ -1,0 +1,12 @@
+{
+  "characters/images/厲若楓-sheet.png": {
+    "model": "chatgpt-image-latest",
+    "quality": "high",
+    "size": "1536x1024",
+    "refs": [
+      "imagegen/refs/LI_RUOFENG_FACE_GPT.png"
+    ],
+    "promptSha1": "7da6c8387998770748f7cdf346af8c635dd898b2",
+    "generatedAt": "2026-09-24T15:35:41+00:00"
+  }
+}

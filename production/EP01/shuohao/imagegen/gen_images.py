@@ -40,16 +40,24 @@ GPT_REFS = {
     "C01": "PLAYER_GPT.png",
     "C02": "QI_HENGLIE_GPT.png",
     "C03": "YU_CENYE_GPT.png",
-    "C04": "LI_RUOFENG_GPT.png",
+    "C04": "LI_RUOFENG_FACE_GPT.png",  # 只給臉：全身稿的兜帽／肩箭袋／無袖會被模型照抄
     "C05": "XIAO_YAOLIN_GPT.png",
     "S01": "TIANXUAN_ACADEMY_GPT.png",
     "S02": "EAST_CORRIDOR_GPT.png",
 }
 
 # ---- 畫風層（MASTER_VISUAL_STYLE_LOCK_V1.0 一～七節）----
+# 2026-09-24 第一批純文字出圖偏寫實照片感、與咖哩選定的 GPT 參考稿落差大，
+# 改為：掛參考稿＋畫風句明確描述參考稿的渲染質感（見 DECISIONS.md）
 STYLE_RENDER = (
+    "Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art "
+    "CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful "
+    "idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, "
+    "crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold "
+    "filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, "
+    "a 3D scan or a costume-drama still. "
     "Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and "
-    "environment render with the finish of an Eastern fantasy animated feature film. Stylized realistic 3D, "
+    "environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, "
     "NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. "
     "Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the "
     "eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique "
@@ -60,6 +68,30 @@ STYLE_WORLD = (
     "Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, "
     "natural shadows; everything exists inside the world, never a studio backdrop."
 )
+# 逐項補強：參考稿或模型沒守住的規格再寫死一次（依驗圖紀錄累積，見 DECISIONS.md）
+FIX = {
+    "厲若楓": "COSTUME CORRECTIONS (override the references): NO hood anywhere, in every view. NO shoulder quiver "
+              "and no arrows on the back — his arrows are kept only in a small closed cylindrical lacquered arrow "
+              "case at the right hip. The bow is a compact THREE-SECTION folding short bow: three clearly jointed "
+              "segments of dark lacquered wood with bronze joint fittings, slung diagonally across the back. Both "
+              "sleeves are full length (not sleeveless). Exactly ONE leather arm guard, on the LEFT forearm only. "
+              "The academy badge is antique bronze inset with carved jade — no skull or other motif.",
+    "齊衡烈": "CORRECTIONS: exactly ONE long leather gauntlet, on the LEFT forearm only; the right forearm has no "
+              "gauntlet, only the red-gold arm ring on the right upper arm. Arms strong but lean and relaxed, not a "
+              "bodybuilder. The weapon is a single heavy single-edged broad saber (dao) with a thick straight back.",
+    "蕭曜霖": "CORRECTIONS: exactly ONE weapon in total — a single huge door-plank heavy sword strapped diagonally "
+              "across his back, one long grip rising above the right shoulder; no second sword, no weapon at the "
+              "hip. No fur collar. The pale-gold mark sits on the brow bone between the eyebrows.",
+    "第七室": "CORRECTION: a FOUR-person room — exactly FOUR low sleeping platforms, TWO end to end along the left "
+              "wall and TWO along the right wall, each with a wooden chest at its foot, all visible in the main view.",
+}
+
+
+def fix_of(name):
+    return f"\n\n{FIX[name]}" if name in FIX else ""
+
+
+SHEET_SIZE = "1536x1024"  # chatgpt-image-latest 只支援 1024x1024／1024x1536／1536x1024
 NO_TEXT = "No text, no letters, no labels, no captions, no logos, no watermark, no UI."
 
 
@@ -68,9 +100,10 @@ def load(path):
         return json.load(f)
 
 
-def ref_path(key):
-    name = GPT_REFS.get(key)
-    return os.path.join(HERE, "refs", name) if name else None
+def ref_paths(key):
+    names = GPT_REFS.get(key) or []
+    names = [names] if isinstance(names, str) else names
+    return [p for p in (os.path.join(HERE, "refs", n) for n in names) if os.path.exists(p)]
 
 
 def char_sheet_path(name):
@@ -85,33 +118,34 @@ def build_sheet_jobs():
     cast, art = load(CAST), load(ART)
     jobs = []
     for c in cast["characters"]:
-        refs = [p for p in [ref_path(c.get("id"))] if p and os.path.exists(p)]
+        refs = ref_paths(c.get("id"))
         note = (
-            "The attached reference image shows the approved look of this character: match the face, facial "
-            "proportions and hairstyle closely. Where the reference differs from the text below (costume, armour, "
-            "weapon, accessories), follow the text. Ignore any text, logos or UI in the reference.\n\n"
+            "The attached reference images show the approved look of this character: match the rendering style, "
+            "the face, facial proportions and hairstyle closely. Where the references differ from the text below "
+            "(costume, armour, weapon, accessories), follow the text. Ignore any text, logos or UI in the "
+            "references.\n\n"
             if refs else ""
         )
-        prompt = (f"{STYLE_RENDER}\n\n{note}{c['image']['sheet']}\n\n"
+        prompt = (f"{STYLE_RENDER}\n\n{note}{c['image']['sheet']}{fix_of(c['name'])}\n\n"
                   f"Avoid: {c['image']['negativePrompt']}. {NO_TEXT}")
         jobs.append({"key": f"角色：{c['name']}", "id": c.get("id"), "name": c["name"], "kind": "sheet",
-                     "out": char_sheet_path(c["name"]), "refs": refs, "size": "1536x1024", "prompt": prompt})
+                     "out": char_sheet_path(c["name"]), "refs": refs, "size": SHEET_SIZE, "prompt": prompt})
     for s in art["scenes"]:
-        refs = [p for p in [ref_path(s["id"])] if p and os.path.exists(p)]
+        refs = ref_paths(s["id"])
         note = (
             "The attached reference image shows the approved mood and architecture of this location: keep its "
             "architectural language, materials and atmosphere, but follow the text below for layout and details. "
             "The reference may contain people; the sheet must contain none.\n\n" if refs else ""
         )
-        prompt = (f"{STYLE_RENDER} {STYLE_WORLD}\n\n{note}{s['image']['sheet']}\n\n"
+        prompt = (f"{STYLE_RENDER} {STYLE_WORLD}\n\n{note}{s['image']['sheet']}{fix_of(s['name'])}\n\n"
                   f"Avoid: {s['image']['negativePrompt']}. {NO_TEXT}")
         jobs.append({"key": f"場景：{s['name']}", "id": s["id"], "name": s["name"], "kind": "sheet",
-                     "out": art_sheet_path(s["name"]), "refs": refs, "size": "1536x1024", "prompt": prompt})
+                     "out": art_sheet_path(s["name"]), "refs": refs, "size": SHEET_SIZE, "prompt": prompt})
     for p in art.get("props", []):
         prompt = (f"{STYLE_RENDER}\n\n{p['image']['sheet']}\n\n"
                   f"Avoid: {p['image']['negativePrompt']}. {NO_TEXT}")
         jobs.append({"key": f"道具：{p['name']}", "id": p["id"], "name": p["name"], "kind": "sheet",
-                     "out": art_sheet_path(p["name"]), "refs": [], "size": "1536x1024", "prompt": prompt})
+                     "out": art_sheet_path(p["name"]), "refs": [], "size": SHEET_SIZE, "prompt": prompt})
     return jobs
 
 
@@ -179,6 +213,16 @@ def rel(p):
     return os.path.relpath(p, ROOT)
 
 
+def final_b64(stream):
+    b64 = None
+    for ev in stream:
+        if ev.type.endswith(".completed"):
+            b64 = ev.b64_json
+    if not b64:
+        raise RuntimeError("串流結束但沒有收到完成的圖")
+    return b64
+
+
 def run_jobs(jobs, args):
     from openai import OpenAI  # 延後匯入：dry-run / jobs 不需要
 
@@ -200,18 +244,19 @@ def run_jobs(jobs, args):
         print(f"→ 出圖：{j['key']}（{j['size']}，參考圖 {len(j['refs'])} 張）")
         for attempt in range(3):
             try:
+                # 雲端代理 30 秒沒資料就斷線（502），一律串流，讓 partial image 持續有資料
+                opts = dict(model=args.model, prompt=j["prompt"], size=j["size"], quality=args.quality,
+                            stream=True, partial_images=3)
                 if j["refs"]:
                     files = [open(r, "rb") for r in j["refs"]]
                     try:
-                        res = client.images.edit(model=args.model, image=files, prompt=j["prompt"],
-                                                 size=j["size"], quality=args.quality)
+                        b64 = final_b64(client.images.edit(image=files, **opts))
                     finally:
                         for f in files:
                             f.close()
                 else:
-                    res = client.images.generate(model=args.model, prompt=j["prompt"], size=j["size"],
-                                                 quality=args.quality)
-                data = base64.b64decode(res.data[0].b64_json)
+                    b64 = final_b64(client.images.generate(**opts))
+                data = base64.b64decode(b64)
                 os.makedirs(os.path.dirname(j["out"]), exist_ok=True)
                 with open(j["out"], "wb") as f:
                     f.write(data)
