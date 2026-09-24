@@ -1,5 +1,12 @@
 # CHANGELOG — 《九曜：天墟》
 
+## 2026-09-24（第二十六筆，EP01 短影音改用 shuohao-skills 製作＋角色聖經代名詞修正）
+
+- EP01〈第七室報到〉改照 shuohao-skills 五段流程製作，產出放在 `production/EP01/shuohao/`；
+  docs/30 降為參考，劇情台詞以 docs/25 正史為準。決策紀錄見 `production/EP01/shuohao/DECISIONS.md`。
+- `02_CHARACTER_BIBLE_V1.0.md`：厲若楓「與玩家的初步關係鉤子」段落兩處代名詞「她」修正為「他」
+  （筆誤；docs/30 與 MASTER_VISUAL_STYLE_LOCK 均為年輕男性，咖哩確認）。
+
 ## 2026-09-24（第二十五筆，安裝 shuohao-skills AI短劇製作skill）
 
 - 將第三方開源 skill 集 eternityspring/shuohao-skills（Apache 2.0）內建到

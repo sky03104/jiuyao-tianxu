@@ -247,7 +247,7 @@ Single character model sheet on ONE 16:9 landscape canvas (widescreen, width to 
 
 ### 畫像
 
-- **性別**：男（依動畫參考與美術規範；docs/02 部分段落用「她」，疑為筆誤，待確認）
+- **性別**：男
 - **年齡**：約二十歲（推斷）
 - **身份**：天玄院第七室舍友，弓修
 - 寡言 / 敏銳 / 冷靜 / 不愛爭
