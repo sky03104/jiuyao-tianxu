@@ -1,0 +1,72 @@
+{
+  "id": "C01",
+  "name": "玩家",
+  "aliases": [
+    "青嵐新契修",
+    "新契修"
+  ],
+  "importance": "protagonist",
+  "oneLiner": "剛通過入門考核的普通新契修，拿著入院憑證站在陌生的宿舍門口，連自己能不能打都還說不準。",
+  "persona": {
+    "gender": "男（動畫版鎖定；遊戲中可自訂）",
+    "ageRange": "約二十歲的年輕成年人（推斷）",
+    "identity": "天玄院青嵐新契修，非貴胄、非世家嫡系，尚未確立流派",
+    "appearance": "中等運動體格，站姿自然但帶一點初來乍到的拘謹。短而蓬鬆的黑髮，幾綹碎髮落在額前；橢圓臉、鼻樑挺直，深棕色眼睛沉靜地打量四周（推斷）。炭灰色交領分層修行袍配暗青內袍、窄袖、寬布腰帶，背上用皮革交叉背帶綁著捲起的行囊；新發的袍子還留著打包時的摺痕（推斷）。腰帶別著統一的學院徽章（青銅章嵌玉石刻紋），除此之外沒有武器與飾物——四人裡唯一沒帶兵器的人。",
+    "personality": [
+      "沉靜",
+      "謹慎",
+      "觀察型",
+      "不逞強"
+    ],
+    "temperament": "話很少、句子很短，先回答再觀察。被當面打量時不辯解，只把疑問直接問出口；面對教官的命令乾脆應聲。",
+    "motivation": "在天玄院站穩腳跟，靠自己一步步累積修行，不靠出身。",
+    "arc": "從拿著入院憑證、被三名舍友打量的陌生新人，到被教官一聲集合推上起跑線，本集只走到起點",
+    "relationships": [
+      {
+        "name": "齊衡烈",
+        "relation": "第七室舍友，第一個開門把他當自己人"
+      },
+      {
+        "name": "郁岑燁",
+        "relation": "第七室舍友，當場質疑他能不能打"
+      },
+      {
+        "name": "厲若楓",
+        "relation": "第七室舍友，一眼看出他腳步亂"
+      },
+      {
+        "name": "蕭曜霖",
+        "relation": "戰技堂教官，入院當天就點名集合"
+      }
+    ],
+    "evidence": [
+      "玩家站在第七室門口，手中持有入院憑證。",
+      "**玩家：**「應該是。」",
+      "**玩家：**「你們都看得出來？」",
+      "沒有天生救世主光環，成長全靠玩家自己一步步累積。"
+    ]
+  },
+  "image": {
+    "prompt": "An ordinary young East Asian man around twenty, a newly admitted student of an ancient-Chinese-inspired mountain cultivation academy, average athletic build, relaxed upright stance with a trace of newcomer's uncertainty, wearing a plain cross-collar layered training robe in charcoal grey over a muted dark-teal inner robe, narrow sleeves, a wide dark cloth sash, simple brown leather cross-straps with plain iron buckles holding a rolled travel bundle on his back, dark cloth trousers and soft cloth boots; a small fixed-size academy badge of antique bronze inset with carved jade clipped at the sash; no weapon, no jewellery. Balanced oval face with a straight nose and a clean jaw, calm dark-brown eyes that look around attentively, straight natural eyebrows with the left one slightly higher, lips relaxed and closed; short tousled black hair with a few loose strands falling over the forehead, ears partly visible. Matte cotton-hemp weave, the outer robe newly issued and clean, with crisp fold creases still visible from being packed for the journey. Three-quarter view, waist-up, plain neutral background. Soft directional key light from the upper left with a cool fill, gentle falloff, ambient occlusion under the chin and in the folds; shallow depth of field with the face in sharpest focus. muted charcoal and dark teal palette, soft clear morning light, ancient-Chinese-inspired cultivation academy, readable silhouette from every angle.",
+    "promptLocal": "一名約二十歲的普通東亞年輕男子，古代中國風格山岳修行學院的新入院學生，中等運動體格，站姿放鬆挺直、帶一點初來乍到的不確定。身穿炭灰色交領分層修行袍，內搭暗青色內袍，窄袖、寬深色布腰帶，簡單的棕色皮革交叉背帶配素鐵扣，背著一捲行囊，深色布褲與軟布靴；腰帶上別著一枚尺寸固定的古青銅嵌玉石刻紋學院徽章；沒有武器、沒有飾物。臉型勻稱的橢圓臉、鼻樑挺直、下頜乾淨，沉靜的深棕色眼睛專注打量四周，自然平直的眉毛左邊略高，雙唇放鬆閉合；短而蓬鬆的黑髮，幾綹碎髮垂在額前，耳朵半露。霧面棉麻織物，外袍是新發的、乾淨，還看得見打包時留下的摺痕。四分之三視角、半身、純中性背景。左上方柔和主光配冷調補光，光線自然衰減，下巴下方與衣褶有環境遮蔽；淺景深，面部最實。霧炭灰與暗青色調、清晨柔光、古代中國風格修行學院，每個角度輪廓都清楚。",
+    "negativePrompt": "plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, oversized childlike eyes, helmet-like hair with no loose strands, flat untextured fabric, stiff mannequin posing, same face as the other cast members, extra fingers, malformed hands, duplicate weapon, text, watermark, signature, logo, busy or patterned background, amber or golden eyes, glowing eyes, golden aura, bloodline markings, forehead mark, noble crest, crown, ornate jewellery, weapon, armour, heroic power pose",
+    "tags": [
+      "cultivation academy",
+      "newcomer student",
+      "ancient chinese inspired",
+      "charcoal and dark teal",
+      "cotton-hemp weave",
+      "morning light"
+    ],
+    "sheet": "Single character model sheet on ONE 16:9 landscape canvas (widescreen, width to height exactly 16:9). The canvas is divided into three zones by thin hairline rules. LEFT ZONE — a vertical column occupying about 34% of the canvas width, separated from the rest by a thin vertical rule: one bust portrait, head and shoulders, front-facing, centred, framed like an ID photograph. BOTH SHOULDERS ARE FULLY VISIBLE with clear space on either side; do not crop the shoulders at the sides, and do not fade, vignette or round off the bottom edge — the portrait ends in a clean straight horizontal cut just below the chest. The figure wears a plain cross-collar charcoal-grey training robe over a muted dark-teal inner robe, with brown leather cross-straps over both shoulders, with the face rendered in full detail: balanced oval face with a straight nose and a clean jaw, calm dark-brown eyes that look around attentively, straight natural eyebrows with the left one slightly higher, lips relaxed and closed; short tousled black hair with a few loose strands falling over the forehead, ears partly visible. LIGHTING IN THE LEFT ZONE ONLY: a soft directional key light from the upper left with gentle falloff, subtle ambient occlusion under the chin, in the eye sockets and where the collar meets the neck, giving the head real volume. RIGHT-TOP ZONE — the upper part of the remaining 66%, separated from the zone beneath it by a thin horizontal rule: three FULL-BODY views of the SAME character standing side by side — front view, left side profile, and back view — aligned on one shared ground line. PROPORTIONS ARE CRITICAL: all three figures share exactly the same height, head-to-body ratio and costume details; anatomy must be correct and natural — correct limb lengths, correct head size relative to the body, feet planted on the ground line; no stretching, squashing or foreshortening to make a figure fit the space. Each figure is drawn head to toe with clear margin above the head and below the feet. Neutral relaxed standing posture, arms at the sides. The figure is an ordinary young East Asian man around twenty, a newly admitted student of an ancient-Chinese-inspired mountain cultivation academy, average athletic build, relaxed upright stance with a trace of newcomer's uncertainty, wearing a plain cross-collar layered training robe in charcoal grey over a muted dark-teal inner robe, narrow sleeves, a wide dark cloth sash, simple brown leather cross-straps with plain iron buckles holding a rolled travel bundle on his back, dark cloth trousers and soft cloth boots; a small fixed-size academy badge of antique bronze inset with carved jade clipped at the sash; no weapon, no jewellery. Matte cotton-hemp weave, the outer robe newly issued and clean, with crisp fold creases still visible from being packed for the journey. The faces on all three full-body views are fully drawn and must match the bust portrait exactly — same features, same hairstyle, same expression. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows, so the figures stay measurable and cleanly cut out — only the left bust portrait is dramatically lit. RIGHT-BOTTOM ZONE — a detail strip beneath the three views, above which sits the thin horizontal rule: four to five small isolated close-up studies of the character's key details, evenly spaced in a row and clearly smaller than the full-body figures: the rolled travel bundle and its plain iron strap buckles; the cross-collar layering of charcoal robe over dark-teal inner robe; the bronze-and-jade academy badge on the wide dark cloth sash; one soft cloth boot; the fold creases on the newly issued sleeve. If these details do not fit comfortably in one row along the bottom, continue them in a narrow vertical column down the right-hand edge of the canvas — but NEVER shrink or distort the three full-body figures to make room; the detail studies give way, not the figures. Plain pure white background (#FFFFFF) throughout, suitable for clean cut-out. Balanced composition with generous, even white margins; nothing crowded against an edge. muted charcoal and dark teal palette, soft clear morning light, ancient-Chinese-inspired cultivation academy, readable silhouette from every angle."
+  },
+  "voice": {
+    "timbre": "乾淨自然的年輕男聲，輕的男中音",
+    "pitch": "中",
+    "pace": "中速，回答前有一點停頓",
+    "accent": "標準國語（台灣），無明顯地方腔",
+    "emotion": "沉靜，略帶不確定",
+    "referenceHint": "像第一天報到、還在摸清狀況的新生，不帶英雄腔",
+    "prompt": "20-year-old male, clear natural light baritone, mid pitch, moderate chest support, narrow dynamic range. Moderate volume, medium pace, brief pause before answering, plain level phrasing. Standard Mandarin with neutral Taiwanese pronunciation. Calm, slightly unsure."
+  }
+}

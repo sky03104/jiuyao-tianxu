@@ -1,0 +1,68 @@
+{
+  "id": "C04",
+  "name": "厲若楓",
+  "aliases": [],
+  "importance": "major",
+  "oneLiner": "爭論時一句話都不插，等他開口，說的是別人都沒看見的東西。",
+  "persona": {
+    "gender": "男",
+    "ageRange": "約二十歲（推斷）",
+    "identity": "天玄院第七室舍友，弓修",
+    "appearance": "身形修長偏瘦、精實，站姿安靜，重心常落在一條腿上。短而凌亂的黑髮蓋過眉毛，一雙琥珀色眼睛，目光總跟著人的腳步走（推斷）。深大地棕與橄欖褐色合身交領短袍、綁袖，外罩短防風披肩、不戴兜帽，左臂單側皮護臂，腰間掛學院徽飾扣環（推斷）；背後斜掛一把三段式摺疊短弓，深色漆木三節、銅製關節，右腰一只小圓筒漆箭匣（推斷）。左肩頂有一道淡淡的舊傷疤，在領口邊緣隱約可見。弓帶磨過的右肩布料褪色不勻（推斷）。",
+    "personality": [
+      "寡言",
+      "敏銳",
+      "冷靜",
+      "不愛爭"
+    ],
+    "temperament": "大部分時間只用眼睛，不搶話。開口前總有一個停頓，說出來的是觀察結論而不是意見，語氣始終平靜。",
+    "motivation": "看清楚再動手——每次沉默都在計算下一步。",
+    "arc": "不加入爭論、只看玩家腳步，第一章冷眼旁觀、精準解圍，之後才開始承認同伴",
+    "relationships": [
+      {
+        "name": "玩家",
+        "relation": "新室友，他第一眼就看出對方腳步亂"
+      },
+      {
+        "name": "齊衡烈",
+        "relation": "室友，他用一句話讓對方先別急"
+      },
+      {
+        "name": "郁岑燁",
+        "relation": "室友，兩人都看得出新人破綻"
+      },
+      {
+        "name": "蕭曜霖",
+        "relation": "教官"
+      }
+    ],
+    "evidence": [
+      "**厲若楓：**「別急。他的腳步有點亂。」",
+      "- **外觀關鍵特徵**：琥珀色眼、背後斜掛三段式短弓、左肩有舊傷疤",
+      "- **個性一句話**：不愛吵架，但每次沉默都在計算下一箭"
+    ]
+  },
+  "image": {
+    "prompt": "A slim, wiry young East Asian man around twenty, an archer cultivator of an ancient-Chinese-inspired mountain academy, quiet still posture with weight resting on one leg, wearing a close-fitting cross-collar short robe in dark earth brown and olive umber with narrow bound sleeves, a short windproof shoulder cape of dull cloth with no hood, a single leather arm guard on the left bow arm, a woven cloth belt with the academy badge ring of antique bronze inset with carved jade, dark trousers and wrapped soft boots; a compact three-section folding short bow — three jointed segments of dark lacquered wood with bronze joint fittings — slung diagonally across his back; a small cylindrical lacquered arrow case at the right hip; a faint pale old scar across the top of the left shoulder, just visible at the collar edge. Slender face with a narrow chin, slightly deep-set almond eyes with warm amber irises and a steady tracking gaze, straight thin eyebrows, a small closed mouth; short messy black hair falling over the brows, a little longer at the nape. Soft dull-finish cotton and suede, the brown robe faded unevenly at the right shoulder where the bow strap rubs. Three-quarter view, waist-up, plain neutral background. Soft directional key light from the upper left with a cool fill, gentle falloff, ambient occlusion under the chin and in the folds; shallow depth of field with the face in sharpest focus. earth brown, olive umber and bronze palette, soft diffused morning light, ancient-Chinese-inspired cultivation academy, readable silhouette from every angle.",
+    "promptLocal": "一名約二十歲、身形修長偏瘦而精實的東亞年輕男子，古代中國風格山岳學院的弓修，姿態安靜不動、重心落在一條腿上。身穿深大地棕與橄欖褐色合身交領短袍、綁袖，外罩一片短防風披肩、不戴兜帽，左前臂（開弓側）單側皮護臂，編織布腰帶掛著古青銅嵌玉石刻紋學院徽章扣環，深色長褲與綁布軟靴；背後斜掛一把精巧的三段式摺疊短弓——三節深色漆木、銅製關節；右腰一只小圓筒漆箭匣；左肩頂一道淡淡的舊傷疤，在領口邊緣隱約可見。細長臉、下巴窄，略深的杏眼配溫暖的琥珀色虹膜，目光沉穩、追著目標走，細直的眉毛，小嘴閉著；短而凌亂的黑髮垂過眉毛，後頸略長。柔和啞光的棉布與麂皮，弓帶磨過的右肩布料褪色不勻。四分之三視角、半身、純中性背景。左上方柔和主光配冷調補光，光線自然衰減，下巴下方與衣褶有環境遮蔽；淺景深，面部最實。大地棕、橄欖褐與古銅色調、柔和的漫射晨光、古代中國風格修行學院，每個角度輪廓都清楚。",
+    "negativePrompt": "plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, oversized childlike eyes, helmet-like hair with no loose strands, flat untextured fabric, stiff mannequin posing, same face as the other cast members, extra fingers, malformed hands, duplicate weapon, text, watermark, signature, logo, busy or patterned background, hood, hooded cloak, western ranger outfit, hunter costume, large western longbow, full-length recurve bow, back quiver full of feathered arrows, leather ranger armour, female",
+    "tags": [
+      "cultivation academy",
+      "archer cultivator",
+      "ancient chinese inspired",
+      "earth brown and umber",
+      "suede and cotton",
+      "diffused morning light"
+    ],
+    "sheet": "Single character model sheet on ONE 16:9 landscape canvas (widescreen, width to height exactly 16:9). The canvas is divided into three zones by thin hairline rules. LEFT ZONE — a vertical column occupying about 34% of the canvas width, separated from the rest by a thin vertical rule: one bust portrait, head and shoulders, front-facing, centred, framed like an ID photograph. BOTH SHOULDERS ARE FULLY VISIBLE with clear space on either side; do not crop the shoulders at the sides, and do not fade, vignette or round off the bottom edge — the portrait ends in a clean straight horizontal cut just below the chest. The figure wears a close-fitting dark earth-brown cross-collar short robe under a short windproof shoulder cape with no hood, the three-section short bow's strap crossing the chest, with the face rendered in full detail: slender face with a narrow chin, slightly deep-set almond eyes with warm amber irises and a steady tracking gaze, straight thin eyebrows, a small closed mouth; short messy black hair falling over the brows, a little longer at the nape. LIGHTING IN THE LEFT ZONE ONLY: a soft directional key light from the upper left with gentle falloff, subtle ambient occlusion under the chin, in the eye sockets and where the collar meets the neck, giving the head real volume. RIGHT-TOP ZONE — the upper part of the remaining 66%, separated from the zone beneath it by a thin horizontal rule: three FULL-BODY views of the SAME character standing side by side — front view, left side profile, and back view — aligned on one shared ground line. PROPORTIONS ARE CRITICAL: all three figures share exactly the same height, head-to-body ratio and costume details; anatomy must be correct and natural — correct limb lengths, correct head size relative to the body, feet planted on the ground line; no stretching, squashing or foreshortening to make a figure fit the space. Each figure is drawn head to toe with clear margin above the head and below the feet. Neutral relaxed standing posture, arms at the sides. The figure is a slim, wiry young East Asian man around twenty, an archer cultivator of an ancient-Chinese-inspired mountain academy, quiet still posture with weight resting on one leg, wearing a close-fitting cross-collar short robe in dark earth brown and olive umber with narrow bound sleeves, a short windproof shoulder cape of dull cloth with no hood, a single leather arm guard on the left bow arm, a woven cloth belt with the academy badge ring of antique bronze inset with carved jade, dark trousers and wrapped soft boots; a compact three-section folding short bow — three jointed segments of dark lacquered wood with bronze joint fittings — slung diagonally across his back; a small cylindrical lacquered arrow case at the right hip; a faint pale old scar across the top of the left shoulder, just visible at the collar edge. Soft dull-finish cotton and suede, the brown robe faded unevenly at the right shoulder where the bow strap rubs. The faces on all three full-body views are fully drawn and must match the bust portrait exactly — same features, same hairstyle, same expression. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows, so the figures stay measurable and cleanly cut out — only the left bust portrait is dramatically lit. RIGHT-BOTTOM ZONE — a detail strip beneath the three views, above which sits the thin horizontal rule: four to five small isolated close-up studies of the character's key details, evenly spaced in a row and clearly smaller than the full-body figures: the amber eyes in close-up; the three-section folding short bow with its bronze joint fittings; the faint old scar on top of the left shoulder; the single leather arm guard on the left bow arm; the faded patch on the right shoulder where the bow strap rubs. If these details do not fit comfortably in one row along the bottom, continue them in a narrow vertical column down the right-hand edge of the canvas — but NEVER shrink or distort the three full-body figures to make room; the detail studies give way, not the figures. Plain pure white background (#FFFFFF) throughout, suitable for clean cut-out. Balanced composition with generous, even white margins; nothing crowded against an edge. earth brown, olive umber and bronze palette, soft diffused morning light, ancient-Chinese-inspired cultivation academy, readable silhouette from every angle."
+  },
+  "voice": {
+    "timbre": "低沉、安靜的年輕男中低音，帶一點氣聲",
+    "pitch": "中低",
+    "pace": "慢，句與句之間有明顯停頓",
+    "accent": "標準國語（台灣），無明顯地方腔",
+    "emotion": "平靜、專注",
+    "referenceHint": "像在遠處觀察很久之後才低聲提醒你的人",
+    "prompt": "20-year-old male, low soft baritone with a hint of breath, low-mid pitch, relaxed chest resonance, very narrow dynamic range. Quiet volume, slow pace, clear pauses between phrases, even flat intonation. Standard Mandarin with neutral Taiwanese pronunciation. Calm and attentive."
+  }
+}

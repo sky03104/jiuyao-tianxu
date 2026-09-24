@@ -1,0 +1,187 @@
+{
+  "source": "九曜天墟EP01",
+  "lang": "zh",
+  "summary": "",
+  "characters": [
+    {
+      "id": "C01",
+      "name": "玩家",
+      "importance": "protagonist",
+      "aliases": [],
+      "oneLiner": "",
+      "persona": {
+        "gender": "",
+        "ageRange": "",
+        "identity": "",
+        "appearance": "",
+        "personality": [],
+        "temperament": "",
+        "motivation": "",
+        "arc": "從拿著入院憑證、被三名舍友打量的陌生新人，到被教官一聲集合推上起跑線，本集只走到起點",
+        "relationships": [],
+        "evidence": []
+      },
+      "image": {
+        "prompt": "",
+        "promptLocal": "",
+        "negativePrompt": "",
+        "tags": [],
+        "sheet": ""
+      },
+      "voice": {
+        "timbre": "",
+        "pitch": "",
+        "pace": "",
+        "accent": "",
+        "emotion": "",
+        "prompt": "",
+        "referenceHint": ""
+      },
+      "seedNote": "角色碼 C01　大綱定位：視角主角・剛入院的青嵐新契修　大綱分檔：lead　合併自：正史任務 01 玩家、動畫版鎖定為固定外觀的普通年輕成年男性"
+    },
+    {
+      "id": "C02",
+      "name": "齊衡烈",
+      "importance": "protagonist",
+      "aliases": [],
+      "oneLiner": "",
+      "persona": {
+        "gender": "",
+        "ageRange": "",
+        "identity": "",
+        "appearance": "",
+        "personality": [],
+        "temperament": "",
+        "motivation": "",
+        "arc": "第一個開門迎人、主動約戰，第一章以衝動挑戰教官卻自尊受挫，之後學會收刀而非硬拚",
+        "relationships": [],
+        "evidence": []
+      },
+      "image": {
+        "prompt": "",
+        "promptLocal": "",
+        "negativePrompt": "",
+        "tags": [],
+        "sheet": ""
+      },
+      "voice": {
+        "timbre": "",
+        "pitch": "",
+        "pace": "",
+        "accent": "",
+        "emotion": "",
+        "prompt": "",
+        "referenceHint": ""
+      },
+      "seedNote": "角色碼 C02　大綱定位：舍友・熱血刀修　大綱分檔：lead　合併自：正史齊衡烈"
+    },
+    {
+      "id": "C03",
+      "name": "郁岑燁",
+      "importance": "protagonist",
+      "aliases": [],
+      "oneLiner": "",
+      "persona": {
+        "gender": "",
+        "ageRange": "",
+        "identity": "",
+        "appearance": "",
+        "personality": [],
+        "temperament": "",
+        "motivation": "",
+        "arc": "嘴上挑剔新人、下手最先救人，第一章以標準訓練壓人卻不自覺暴露驕氣",
+        "relationships": [],
+        "evidence": []
+      },
+      "image": {
+        "prompt": "",
+        "promptLocal": "",
+        "negativePrompt": "",
+        "tags": [],
+        "sheet": ""
+      },
+      "voice": {
+        "timbre": "",
+        "pitch": "",
+        "pace": "",
+        "accent": "",
+        "emotion": "",
+        "prompt": "",
+        "referenceHint": ""
+      },
+      "seedNote": "角色碼 C03　大綱定位：舍友・挑剔的完美主義劍修　大綱分檔：lead　合併自：正史郁岑燁"
+    },
+    {
+      "id": "C04",
+      "name": "厲若楓",
+      "importance": "protagonist",
+      "aliases": [],
+      "oneLiner": "",
+      "persona": {
+        "gender": "",
+        "ageRange": "",
+        "identity": "",
+        "appearance": "",
+        "personality": [],
+        "temperament": "",
+        "motivation": "",
+        "arc": "不加入爭論、只看玩家腳步，第一章冷眼旁觀、精準解圍，之後才開始承認同伴",
+        "relationships": [],
+        "evidence": []
+      },
+      "image": {
+        "prompt": "",
+        "promptLocal": "",
+        "negativePrompt": "",
+        "tags": [],
+        "sheet": ""
+      },
+      "voice": {
+        "timbre": "",
+        "pitch": "",
+        "pace": "",
+        "accent": "",
+        "emotion": "",
+        "prompt": "",
+        "referenceHint": ""
+      },
+      "seedNote": "角色碼 C04　大綱定位：舍友・沉默觀察者弓修　大綱分檔：lead　合併自：正史厲若楓"
+    },
+    {
+      "id": "C05",
+      "name": "蕭曜霖",
+      "importance": "supporting",
+      "aliases": [],
+      "oneLiner": "",
+      "persona": {
+        "gender": "",
+        "ageRange": "",
+        "identity": "",
+        "appearance": "",
+        "personality": [],
+        "temperament": "",
+        "motivation": "",
+        "arc": "人未到聲先到，一句話定下天玄院的節奏；第一章以嚴苛測試定調天墟不是試膽",
+        "relationships": [],
+        "evidence": []
+      },
+      "image": {
+        "prompt": "",
+        "promptLocal": "",
+        "negativePrompt": "",
+        "tags": [],
+        "sheet": ""
+      },
+      "voice": {
+        "timbre": "",
+        "pitch": "",
+        "pace": "",
+        "accent": "",
+        "emotion": "",
+        "prompt": "",
+        "referenceHint": ""
+      },
+      "seedNote": "角色碼 C05　大綱定位：戰技堂教官・第一章引導者　大綱分檔：support　合併自：正史蕭曜霖"
+    }
+  ]
+}

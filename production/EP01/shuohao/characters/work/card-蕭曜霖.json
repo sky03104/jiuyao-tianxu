@@ -1,0 +1,69 @@
+{
+  "id": "C05",
+  "name": "蕭曜霖",
+  "aliases": [],
+  "importance": "supporting",
+  "oneLiner": "人還沒到，聲音先到；站著不動，就讓一屋子新生安靜下來的戰技堂教官。",
+  "persona": {
+    "gender": "男",
+    "ageRange": "四十出頭（推斷）",
+    "identity": "天玄院戰技堂教官（鋼樁武研導），重刃",
+    "appearance": "高大、胸膛寬厚、脖頸粗，站著幾乎不動。長方臉、眉骨突出，眉骨上一道淡金曜痕；眼窩深、眼神穩，眼角有細紋、眉間一道常皺眉留下的直紋，短鬚夾幾根白絲，黑髮束成髮髻、鬢角垂下幾綹（推斷）。厚重暗灰長道袍，雙肩巨型古青銅鎧甲，胸前鎏金青銅高階教官徽章；背上斜揹一把巨型門板重劍，粗糙隕鐵鑲青銅框，劍柄從右肩後方露出（依 docs/16）。護肩邊緣有多年對練留下的缺口，但保養得當（推斷）。",
+    "personality": [
+      "嚴格",
+      "寡言",
+      "沉穩",
+      "重實戰"
+    ],
+    "temperament": "動作極少，從不吼叫，說話比年輕人慢半拍，說完就不再補充。只要站著，壓迫感就在。",
+    "motivation": "讓新生在挨揍中學會判斷——站位決定生死。",
+    "arc": "人未到聲先到，一句話定下天玄院的節奏；第一章以嚴苛測試定調天墟不是試膽",
+    "relationships": [
+      {
+        "name": "玩家",
+        "relation": "他負責的新生"
+      },
+      {
+        "name": "齊衡烈",
+        "relation": "學生，約戰被他一句話提前"
+      },
+      {
+        "name": "郁岑燁",
+        "relation": "學生"
+      },
+      {
+        "name": "厲若楓",
+        "relation": "學生"
+      }
+    ],
+    "evidence": [
+      "**蕭曜霖（門外）：**「不用等明天。」",
+      "**蕭曜霖：**「半刻鐘後，新生演武場集合。」",
+      "- **外觀關鍵特徵**：厚重護肩、眉骨有淡金曜痕、走路像壓著風聲",
+      "- **個性一句話**：少講道理，多讓你在挨揍中學會判斷"
+    ]
+  },
+  "image": {
+    "prompt": "A mature East Asian man in his early forties, a heavy-blade combat instructor of an ancient-Chinese-inspired mountain academy, tall with a broad deep chest and thick neck, standing squarely and completely still, wearing a heavy long dark grey daoist robe, colossal antique bronze pauldrons on both shoulders, a gilt-bronze senior instructor's badge set with carved jade on the chest, a wide leather belt, dark trousers and heavy boots; a huge door-plank heavy sword — a broad, flat, double-edged slab of rough meteoric iron framed in bronze, faint unlit hairline veins of dull red and blue-grey running across its flat — carried strapped diagonally across his back, the long cord-wrapped grip rising above the right shoulder. Long rectangular face with a strong brow ridge, deep-set steady dark eyes, faint crow's feet and a vertical crease between the brows from habitual frowning, a straight nose with a slightly flattened bridge, a short trimmed beard and moustache with a few grey hairs; black hair drawn back into a topknot with loose strands at the temples; a faint pale-gold meridian mark on the brow bone between the eyebrows. Heavy dense wool robe and thick antique bronze plates, the pauldron edges dulled and nicked from long years of sparring, kept oiled and in good order. Three-quarter view, waist-up, plain neutral background. Soft directional key light from the upper left with a cool fill, gentle falloff, ambient occlusion under the chin and in the folds; shallow depth of field with the face in sharpest focus. dark grey, antique bronze and meteoric iron palette, cool morning backlight, ancient-Chinese-inspired cultivation academy, readable silhouette from every angle.",
+    "promptLocal": "一名四十出頭的成熟東亞男子，古代中國風格山岳學院的重刃戰技教官，身材高大、胸膛寬厚、脖頸粗，站得方正、完全不動。身穿厚重的暗灰長道袍，雙肩巨型古青銅鎧甲，胸前一枚鎏金青銅嵌玉石刻紋的高階教官徽章，寬皮腰帶，深色長褲與厚靴；背上斜揹一把巨型門板重劍——寬扁雙刃、粗糙隕鐵鑲青銅框，劍面有不發光的暗紅與青灰細紋，長柄纏繩，劍柄從右肩後方露出。長方臉、眉骨突出，眼窩深、眼神沉穩，眼角淡淡的魚尾紋、眉間一道常皺眉留下的直紋，鼻樑挺直、鼻梁略平，修剪過的短鬚與八字鬍夾著幾根白絲；黑髮束成髮髻，鬢角垂下幾綹；兩眉之間的眉骨上一道淡金色曜紋。厚重緻密的毛料長袍與厚實古青銅甲，護肩邊緣因多年對練而磨鈍、有缺口，但上油保養得當。四分之三視角、半身、純中性背景。左上方柔和主光配冷調補光，光線自然衰減，下巴下方與衣褶有環境遮蔽；淺景深，面部最實。暗灰、古青銅與隕鐵色調、清冷晨間逆光、古代中國風格修行學院，每個角度輪廓都清楚。",
+    "negativePrompt": "plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, oversized childlike eyes, helmet-like hair with no loose strands, flat untextured fabric, stiff mannequin posing, same face as the other cast members, extra fingers, malformed hands, duplicate weapon, text, watermark, signature, logo, busy or patterned background, youthful face, smirk, playful grin, long loose hair, thin straight sword, single-edged saber, missing sword, fur mantle, barbarian horned helmet, western plate armour, glowing blade",
+    "tags": [
+      "cultivation academy",
+      "combat instructor",
+      "ancient chinese inspired",
+      "charcoal and dark iron",
+      "antique bronze armour",
+      "morning backlight"
+    ],
+    "sheet": "Single character model sheet on ONE 16:9 landscape canvas (widescreen, width to height exactly 16:9). The canvas is divided into three zones by thin hairline rules. LEFT ZONE — a vertical column occupying about 34% of the canvas width, separated from the rest by a thin vertical rule: one bust portrait, head and shoulders, front-facing, centred, framed like an ID photograph. BOTH SHOULDERS ARE FULLY VISIBLE with clear space on either side; do not crop the shoulders at the sides, and do not fade, vignette or round off the bottom edge — the portrait ends in a clean straight horizontal cut just below the chest. The figure wears a heavy dark grey daoist robe with colossal antique bronze pauldrons and a gilt-bronze senior instructor's badge on the chest, with the face rendered in full detail: long rectangular face with a strong brow ridge, deep-set steady dark eyes, faint crow's feet and a vertical crease between the brows from habitual frowning, a straight nose with a slightly flattened bridge, a short trimmed beard and moustache with a few grey hairs; black hair drawn back into a topknot with loose strands at the temples; a faint pale-gold meridian mark on the brow bone between the eyebrows. LIGHTING IN THE LEFT ZONE ONLY: a soft directional key light from the upper left with gentle falloff, subtle ambient occlusion under the chin, in the eye sockets and where the collar meets the neck, giving the head real volume. RIGHT-TOP ZONE — the upper part of the remaining 66%, separated from the zone beneath it by a thin horizontal rule: three FULL-BODY views of the SAME character standing side by side — front view, left side profile, and back view — aligned on one shared ground line. PROPORTIONS ARE CRITICAL: all three figures share exactly the same height, head-to-body ratio and costume details; anatomy must be correct and natural — correct limb lengths, correct head size relative to the body, feet planted on the ground line; no stretching, squashing or foreshortening to make a figure fit the space. Each figure is drawn head to toe with clear margin above the head and below the feet. Neutral relaxed standing posture, arms at the sides. The figure is a mature East Asian man in his early forties, a heavy-blade combat instructor of an ancient-Chinese-inspired mountain academy, tall with a broad deep chest and thick neck, standing squarely and completely still, wearing a heavy long dark grey daoist robe, colossal antique bronze pauldrons on both shoulders, a gilt-bronze senior instructor's badge set with carved jade on the chest, a wide leather belt, dark trousers and heavy boots; a huge door-plank heavy sword — a broad, flat, double-edged slab of rough meteoric iron framed in bronze, faint unlit hairline veins of dull red and blue-grey running across its flat — carried strapped diagonally across his back, the long cord-wrapped grip rising above the right shoulder. Heavy dense wool robe and thick antique bronze plates, the pauldron edges dulled and nicked from long years of sparring, kept oiled and in good order. The faces on all three full-body views are fully drawn and must match the bust portrait exactly — same features, same hairstyle, same expression. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows, so the figures stay measurable and cleanly cut out — only the left bust portrait is dramatically lit. RIGHT-BOTTOM ZONE — a detail strip beneath the three views, above which sits the thin horizontal rule: four to five small isolated close-up studies of the character's key details, evenly spaced in a row and clearly smaller than the full-body figures: the faint pale-gold meridian mark on the brow bone; the colossal antique bronze pauldron with its nicked but oiled edge; the cord-wrapped grip of the door-plank heavy sword rising above the right shoulder; the gilt-bronze instructor's badge set with carved jade; the flat of the meteoric-iron blade with its faint unlit red and blue-grey veins. If these details do not fit comfortably in one row along the bottom, continue them in a narrow vertical column down the right-hand edge of the canvas — but NEVER shrink or distort the three full-body figures to make room; the detail studies give way, not the figures. Plain pure white background (#FFFFFF) throughout, suitable for clean cut-out. Balanced composition with generous, even white margins; nothing crowded against an edge. dark grey, antique bronze and meteoric iron palette, cool morning backlight, ancient-Chinese-inspired cultivation academy, readable silhouette from every angle."
+  },
+  "voice": {
+    "timbre": "成熟、低沉厚實的男低中音，胸腔共鳴重",
+    "pitch": "低",
+    "pace": "慢，字字清楚、不趕",
+    "accent": "標準國語（台灣），咬字沉穩",
+    "emotion": "嚴肅、穩定、不怒自威",
+    "referenceHint": "像不需要提高音量就能讓整個演武場安靜的老教官",
+    "prompt": "42-year-old male, deep dense bass-baritone, low pitch, heavy chest resonance, firm steady support, narrow controlled dynamic range. Moderate volume that carries, slow deliberate pace, level falling intonation. Standard Mandarin with neutral Taiwanese pronunciation. Stern, steady authority."
+  }
+}

@@ -1,0 +1,221 @@
+《九曜：天墟》EP01〈第七室報到〉改編原文摘錄
+（本檔由 docs 逐字摘錄，供 shuohao-skills 比對引文用；不得手改內容。正史以遊戲劇本為準，見 docs/22。）
+
+【一】遊戲正史劇本：docs/25_CHAPTER_01_QINGLAN_TRIAL_FULL_SCRIPT_V1.0.md 任務 01
+
+## 任務 01｜第七室報到
+
+### 任務定位
+角色建立、玩家落腳、第一個情感錨點。
+
+### 場景
+天玄院東廊 → 第七室。
+
+### 開場演出
+鏡頭從天玄院外景慢慢推入東廊。其他新生來回穿梭，遠處傳來演武聲。
+玩家站在第七室門口，手中持有入院憑證。
+
+### NPC 對話
+
+**齊衡烈：**「你就是新來的？」
+
+**玩家：**「應該是。」
+
+**齊衡烈：**「那就對了。第七室最近正缺個能打的。」
+
+**郁岑燁：**「你看都沒看他出手，怎麼知道他能打？」
+
+**齊衡烈：**「所以才要打一場啊。」
+
+**郁岑燁：**「……無聊。」
+
+**厲若楓：**「別急。他的腳步有點亂。」
+
+**玩家：**「你們都看得出來？」
+
+**郁岑燁：**「至少我看得出來。」
+
+**齊衡烈：**「哈哈，那更好！明天演武場見。」
+
+**蕭曜霖（門外）：**「不用等明天。」
+
+三人同時轉頭。
+
+**蕭曜霖：**「半刻鐘後，新生演武場集合。」
+
+### 玩家反應選項
+
+A.「知道了。」→正常
+B.「這麼快？」→齊衡烈笑：「習慣就好。」
+C.「如果不去呢？」→蕭曜霖：「那就不用去了。」
+
+三選項不影響劇情。
+
+### 系統
+- 解鎖天玄院東廊。
+- 建立第七室 NPC 關係。
+- 開啟基礎好感度記錄。
+
+### 任務完成
+玩家將新手物品放入房間，畫面短暫定格在第七室門牌。
+
+**厲若楓：**「明天見。」
+
+### 伏筆
+無直接世界觀伏筆，只建立「人先於世界觀」的原則。
+
+
+【二】角色設定：docs/02_CHARACTER_BIBLE_V1.0.md（第 1、2、4 節）
+
+## 1. 玩家角色身份框架
+
+- **統一稱謂：「青嵐新契修」**——天玄院對所有剛通過入門考核、尚未確立雙脈方向的新人修行者的統一稱呼。
+  「契」指玩家首次覺醒武意／曜脈契點這件事。
+- **院內定位**：非貴胄、非世家嫡系的入門考核通過者，起點公平，靠修行/戰鬥/任務/探索逐步成長。
+- **外界看法**：青嵐城內人族稱新契修為「新芽」；資深修行者評價則是「能打、但還在長」——
+  沒有天生救世主光環，成長全靠玩家自己一步步累積。
+- **玩家自訂範圍**（性別/臉型/髮型/身高/體型）只影響外觀與部分動作表現，所有新契修仍受
+  天玄院統一的同階修行規程約束，不影響核心數值成長路徑。
+- 入院後分配至天玄院東廊「第七室」四人宿舍，與 3 位 NPC 舍友長期同住、一起執行任務與試煉。
+
+---
+
+## 2. 天玄院四人宿舍：第一批舍友（3位）
+
+### 郁岑燁——劍修
+- **流派定位**：劍修（高機動、快速連擊、持續輸出）
+- **外觀關鍵特徵**：黑青短髮、額間細曜紋、右手常覆纏帶像護指
+- **個性一句話**：嘴上認真挑剔、下手最先救人
+- **與玩家的初步關係鉤子**：玩家初入宿舍時被他吐槽「步伐太散」，但會在首次擂台試煉後主動替玩家「補連段節奏」。
+- **前三章人物弧線**：第1章以標準訓練壓人卻不自覺暴露驕氣；第2~3章在同伴受牽連時學會收劍、以團隊為先。
+
+### 厲若楓——弓修
+- **流派定位**：弓修（遠程、輸出、風箏）
+- **外觀關鍵特徵**：琥珀色眼、背後斜掛三段式短弓、左肩有舊傷疤
+- **個性一句話**：不愛吵架，但每次沉默都在計算下一箭
+- **與玩家的初步關係鉤子**：常被她用「觀察角度」糾正錯誤站位；她會要求玩家一起外出偵巡，卻不說原因。
+- **前三章人物弧線**：第1~2章冷眼旁觀、精準解圍；第2~3章舊箭傷／家族任務曝光，選擇掩護而非追擊，開始承認同伴。
+
+### 齊衡烈——刀修
+- **流派定位**：刀修（近戰、爆發、高傷害）
+- **外觀關鍵特徵**：赤金刀紋般的臂環紋、身形偏壯、刀鞘常擦得發亮
+- **個性一句話**：任何練習都能打出氣勢，但他最怕輸給自己
+- **與玩家的初步關係鉤子**：玩家第一次用近戰爆發失控時，他不是嘲笑，而是帶玩家做「力歸節律」訓練。
+- **前三章人物弧線**：第1章以衝動挑戰教官卻自尊受挫；第2~3章護短失敗自責，之後為宿舍擋鋒，學會收刀而非硬拚。
+
+---
+
+## 4. 天玄院導師/教官
+
+### 蕭曜霖——重刃（戰技堂教官）
+- **流派/歸屬**：重刃（防禦、坦克、控場）｜天玄院「鋼樁武研導」
+- **外觀關鍵特徵**：厚重護肩、眉骨有淡金曜痕、走路像壓著風聲
+- **個性一句話**：少講道理，多讓你在挨揍中學會判斷
+- **與玩家的初步關係鉤子**：玩家初期每次任務失誤，他都以「站位決定生死」為核心訓練；
+  但會在玩家真正扛住失敗後，額外授予一段「青嵐禁區」的路線口訣。
+- **前三章人物弧線**：第1~2章以嚴苛測試定調「天墟不是試膽」；第2~3章私下導正青嵐的策略錯誤，逐步透露其規訓背後的目的。
+
+---
+
+
+【三】動畫參考（非正史，僅供外觀與表演參考）：docs/30_EP01_QINGLAN_TRIAL_ANIMATION_PRODUCTION_V1.0.md 第四、五節
+
+# 四、角色鎖定設定
+
+## 4.1 玩家
+
+### 角色用途
+
+第一人稱視角核心，但不是天命主角。
+
+### 固定 Prompt
+
+> young adult human cultivator, ordinary newcomer to a cultivation academy, customizable neutral appearance, practical dark teal and charcoal cultivation clothing, simple academy travel gear, youthful but mature face, average athletic build, calm observant eyes, no noble insignia, no royal symbols, no legendary bloodline markings, no glowing eyes, no excessive ornaments, grounded eastern fantasy character design
+
+### 固定外觀規則
+
+- 不使用金色主角光環。
+- 不使用特殊血脈紋路。
+- 不使用誇張武器。
+- 不比其他角色更華麗。
+- 臉部保持普通、耐看、容易讓玩家代入。
+- 所有鏡頭保持同一髮型、服裝與臉型。
+
+---
+
+## 4.2 齊衡烈
+
+> Qi Heng-Lie, young male saber cultivator, strong broad athletic build, energetic expression, short dark reddish-brown hair, red-gold arm-ring markings, heavy saber, warm confident smile, practical martial cultivation clothing, powerful stance, friendly but competitive personality
+
+### 表演規則
+
+- 動作幅度最大。
+- 表情最容易笑。
+- 說話直接。
+- 身體微微前傾。
+- 喜歡主動靠近新人。
+- 不演成莽夫或搞笑角色。
+
+---
+
+## 4.3 郁岑燁
+
+> Yu Cen-Ye, young male sword cultivator, short black-blue hair, luminous meridian mark on forehead, right hand wrapped with cloth, lean athletic build, sharp calm eyes, restrained expression, dark blue-black cultivation uniform, elegant straight sword at waist, precise posture, disciplined perfectionist personality
+
+### 表演規則
+
+- 背挺直。
+- 動作少。
+- 說話簡短。
+- 眉頭輕微皺起。
+- 不主動靠近。
+- 不演成冷酷反派。
+
+---
+
+## 4.4 厲若楓
+
+> Li Ruo-Feng, young male archer, amber eyes, quiet observant expression, short dark hair, three-section short bow carried on back, subtle old scar on left shoulder, slim athletic body, practical dark earth-tone cultivation clothing, calm posture, highly attentive gaze
+
+### 表演規則
+
+- 大部分時間先觀察。
+- 不搶話。
+- 眼神跟隨玩家腳步。
+- 說話時保持平靜。
+- 情緒主要透過眼神表現。
+
+---
+
+## 4.5 蕭曜霖
+
+> Xiao Yao-Lin, mature male heavy-blade instructor, powerful broad build, heavy shoulder guard, gold meridian mark on forehead, dark instructor robe and armor, imposing but controlled presence, stern experienced eyes, large heavy blade carried securely, veteran warrior, calm authority
+
+### 表演規則
+
+- 動作極少。
+- 不需要大聲吼叫。
+- 只要站著就有壓迫感。
+- 說話速度比年輕角色慢。
+- 眼神穩定。
+
+---
+
+# 五、場景鎖定設定
+
+## 5.1 天玄院外景 Reference
+
+> enormous ancient Chinese cultivation academy built into a mountain, layered dark jade and warm stone architecture, elegant curved roofs, long elevated corridors, training courtyards, distant mountain peaks, morning clouds flowing through the academy, subtle spiritual energy in the air, young cultivators walking in the distance, premium 3D eastern fantasy MMORPG environment, cinematic sunrise, realistic architecture, vertical 9:16
+
+## 5.2 東廊 Reference
+
+> long elegant eastern fantasy academy corridor, dark wooden pillars, stone floor, warm wooden doors, hanging academy lanterns, mountain view visible through open side, young cultivators passing naturally in background, morning light and soft mist, realistic 3D environment, premium Chinese xuanhuan MMORPG cinematic
+
+## 5.3 第七室門口 Reference
+
+> quiet dormitory corridor inside an ancient Chinese cultivation academy, simple dark wooden door, small carved wooden plaque reading 第七室, warm morning light, subtle spiritual lantern, clean stone floor, realistic eastern fantasy architecture, cinematic depth of field, premium 3D MMORPG environment
+
+> **注意：若 AI 文字生成不穩定，門牌「第七室」不要交給生圖模型生成。**
+> 先生成無字門牌，再於剪輯階段後製文字。
+
+---

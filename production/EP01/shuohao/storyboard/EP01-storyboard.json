@@ -1,0 +1,754 @@
+{
+  "source": "九曜天墟EP01",
+  "episodes": [
+    {
+      "ep": 1,
+      "segments": [
+        {
+          "id": "E01-01",
+          "sceneIndex": 1,
+          "cuts": [
+            {
+              "beats": [
+                1,
+                1
+              ],
+              "seconds": 3,
+              "size": "extreme-wide",
+              "camera": "Push In",
+              "characters": [],
+              "props": [],
+              "frame": "大遠景，直式 9:16，清晨的天玄院依山三層疊建，三重簷主殿在最上方，一條白色雲帶橫過院落中層緩緩流動，山腳青銅門樓與兩面深藍學院旗，晨光從右側斜照，天空乾淨無裂痕",
+              "shot": "鏡頭從高空遠處緩緩推向依山疊建的學院，白色雲帶在山腰緩慢流過，遠處旗幟隨風輕擺",
+              "lens": "24mm 廣角，深景深",
+              "cameraPosition": "學院全貌 + 高位平視",
+              "composition": "對稱",
+              "eyeline": "無人物",
+              "focus": "鎖定主殿與雲帶",
+              "stability": "stable"
+            },
+            {
+              "beats": [
+                2,
+                2
+              ],
+              "seconds": 2,
+              "size": "wide",
+              "camera": "Static Shot",
+              "characters": [],
+              "props": [],
+              "frame": "全景，直式 9:16，山腳的古青銅門樓與玉白石臺階，兩面深藍學院旗在晨風中輕擺，門樓匾額無字，後方雲霧中的院落層層往上",
+              "shot": "固定鏡頭，學院山門靜靜佇立，兩面深藍長旗在晨風中輕輕擺動，雲霧從門樓後方緩緩飄過",
+              "lens": "35mm 廣角，深景深",
+              "cameraPosition": "門樓 + 低位仰視 15°",
+              "composition": "中心構圖",
+              "eyeline": "無人物",
+              "focus": "鎖定門樓與旗幟",
+              "stability": "stable"
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Following <Picture 1>, an extreme wide view of a vast mountain academy climbing the ridge in three tiers, a band of white cloud drifting slowly across the middle tier; the camera makes a slow push in toward the triple-eaved main hall while distant banners stir in the morning wind.\n[Shot 2] At 00:03.000, the camera cuts to <Picture 2>: the bronze-framed gatehouse at the foot of the mountain with two deep-blue banners swaying; the camera holds a static shot as a mature narrator with a calm, warm, unhurried voice (S1) says in an off-screen voiceover, no one on screen speaking: <d>[Chinese] 九曜界，天玄院。</d>\n\noverall_soundscape: Mountain wind sweeps softly across the academy, distant birds call from the peaks, and a single faint bell rings once far away.\n\nnon_diegetic_music: A sustained ethereal guqin note opens over a soft airy pad at a very slow tempo.",
+          "blocking": "開場空景，無人物。天玄院三層院落位於畫面中軸，三重簷主殿在上三分之一，白色雲帶橫過中層；第二鏡轉到山腳門樓，門樓居中、兩面旗幟分立左右。",
+          "soundscape": "山間風聲、遠處山鳥、極遠處一聲輕輕的鐘響",
+          "music": "空靈古風長音，古琴單音起頭，極慢速度"
+        },
+        {
+          "id": "E01-02",
+          "sceneIndex": 2,
+          "cuts": [
+            {
+              "beats": [
+                1,
+                1
+              ],
+              "seconds": 3,
+              "size": "medium",
+              "camera": "Tracking Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "中景，直式 9:16，玩家背影偏右，快步走在清晨的東廊上，右手攥著入院憑證，背上綁著行囊，兩側深色木柱往深處延伸，晨光從左側斜照在石板地上",
+              "shot": "鏡頭從背後略低於肩的高度跟拍一名背著行囊的炭灰袍新生，他攥著憑證沿長廊快步前行，步子一快一慢，邊走邊轉頭看右側的房門",
+              "lens": "35mm 廣角，中景深",
+              "cameraPosition": "新生 + 背後肩下平視跟隨",
+              "composition": "三分法",
+              "eyeline": "右側房門",
+              "focus": "鎖定新生背影與手中憑證",
+              "stability": "slight-shake"
+            },
+            {
+              "beats": [
+                2,
+                2
+              ],
+              "seconds": 2,
+              "size": "wide",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "全景，直式 9:16，東廊中段，玩家從畫面中央走過，兩三名穿學院袍的新生從他身邊擦肩而過，左側欄杆外是雲海與遠山",
+              "shot": "固定鏡頭，長廊中段，兩三名穿學院袍的學生迎面走來，與背著行囊的新生擦肩而過，遠處隱約傳來演武的呼喝",
+              "lens": "28mm 廣角，深景深",
+              "cameraPosition": "長廊 + 平視側前方",
+              "composition": "對角線",
+              "eyeline": "前方長廊",
+              "focus": "鎖定新生",
+              "stability": "stable",
+              "note": "背景路人為無名新生，不需角色設定圖；出圖時人數控制在兩到三人"
+            },
+            {
+              "beats": [
+                3,
+                3
+              ],
+              "seconds": 2.5,
+              "size": "medium",
+              "camera": "Push In",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01",
+                "P02"
+              ],
+              "frame": "中景，直式 9:16，玩家在一扇深色木門前停下，從他右肩後方看過去，門楣右側掛著一塊無字的直立小木牌，他抬頭看著木牌，入院憑證握在胸前",
+              "shot": "鏡頭從新生右肩後方小幅緩推向門楣旁的小木牌，他停下腳步抬頭看了一眼木牌，再低頭對照手裡的憑證",
+              "lens": "50mm 標準，淺景深",
+              "cameraPosition": "新生 + 右肩後過肩",
+              "composition": "三分法",
+              "eyeline": "門楣旁的木牌",
+              "focus": "由新生肩膀轉到木牌",
+              "stability": "stable"
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Following <Picture 1>, a young newcomer in a charcoal-grey robe with a rolled travel bundle on his back strides down a long academy corridor, an admission token gripped in his right hand, his steps slightly uneven as he glances at the doors on his right; a tracking shot follows him from behind at below-shoulder height.\n[Shot 2] At 00:03.000, the camera cuts to <Picture 2>: in the middle of the corridor two or three academy students walk past the newcomer from the opposite direction; the camera holds a static shot as distant training shouts echo.\n[Shot 3] At 00:05.000, the camera cuts to <Picture 3>: the newcomer stops before a dark wooden door, looks up at the small blank upright plaque beside the lintel, then down at the token in his hand; the camera makes a slow push in over his right shoulder toward the plaque.\n\noverall_soundscape: Quick, slightly uneven footsteps tap on stone slabs, robes rustle, other students' footsteps pass by, and faint training shouts carry from a distant courtyard; the footsteps stop at a door.\n\nnon_diegetic_music: Light wooden percussion joins at a moderate tempo.",
+          "blocking": "玩家背對鏡頭，從畫面下方偏右沿東廊中線往深處走；右側是一排木門，左側是欄杆與雲海；兩三名新生在他前方約五步外迎面走來。",
+          "soundscape": "石板上一快一慢的腳步聲、衣料摩擦、擦肩而過的新生腳步、遠處演武場的呼喝聲，最後腳步在門前停住",
+          "music": "木質打擊樂輕輕加入，中慢速度"
+        },
+        {
+          "id": "E01-03",
+          "sceneIndex": 3,
+          "cuts": [
+            {
+              "beats": [
+                1,
+                1
+              ],
+              "seconds": 2.5,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C01",
+                "C02"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "中景，直式 9:16，第七室的深色木門從裡面被拉開，齊衡烈從門內探出半個身子，笑著上下打量站在門外左側的玩家，室內晨光從他背後透出",
+              "shot": "固定鏡頭，深色木門從裡面被拉開，一名鮮紅短髮、胸覆青銅甲的壯碩青年探出半個身子，身體微微前傾，好奇地上下打量門外的新生",
+              "lens": "35mm 廣角，中景深",
+              "cameraPosition": "門口雙人 + 平視側面",
+              "composition": "三分法",
+              "eyeline": "壯碩青年看向新生",
+              "focus": "鎖定探出門的壯碩青年",
+              "stability": "stable",
+              "sfx": "木門拉開"
+            },
+            {
+              "beats": [
+                2,
+                3
+              ],
+              "seconds": 3,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C01",
+                "C02"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "中景，直式 9:16，雙人鏡頭，齊衡烈在門內右側身體前傾、爽朗發問，玩家在門外左側握著憑證，略帶不確定地回答",
+              "shot": "固定鏡頭，壯碩青年爽朗直接地發問，背著行囊的新生略帶遲疑、語氣平靜地回答",
+              "lens": "50mm 標準，中淺景深",
+              "cameraPosition": "雙人 + 平視側面",
+              "composition": "三分法",
+              "eyeline": "彼此面部",
+              "focus": "鎖定兩人面部",
+              "stability": "stable"
+            },
+            {
+              "beats": [
+                4,
+                4
+              ],
+              "seconds": 4,
+              "size": "close",
+              "camera": "Push In",
+              "characters": [
+                "C02"
+              ],
+              "props": [],
+              "frame": "特寫，直式 9:16，齊衡烈咧嘴笑開，眼角擠出笑紋，一手拍了拍自己戴著赤金臂環的右上臂，背後是第七室室內的晨光",
+              "shot": "鏡頭小幅緩推向壯碩青年的臉，他咧嘴笑開，抬手拍了一下自己戴著赤金臂環的上臂，神情興奮而不帶挑釁",
+              "lens": "85mm 長焦，淺景深",
+              "cameraPosition": "壯碩青年 + 平視正面",
+              "composition": "中心構圖",
+              "eyeline": "新生面部",
+              "focus": "鎖定壯碩青年面部與臂環",
+              "stability": "stable"
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.50-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Following <Picture 1>, a dark wooden door swings open from inside and a broad-shouldered young man with vivid red spiky hair and bronze chest plates leans halfway out, curious, looking the newcomer up and down; the camera holds a static shot.\n[Shot 2] At 00:02.500, the camera cuts to <Picture 2>, a two-shot across the threshold held in a static shot; the red-haired young man with a bright, forceful, fast voice (S1) asks: <d>[Chinese] 你就是新來的？</d> The newcomer with a clear, calm young voice (S2) answers, slightly unsure: <d>[Chinese] 應該是。</d>\n[Shot 3] At 00:05.500, the camera cuts to the close-up of <Picture 3>: the red-haired young man grins widely and pats his own upper arm with its red-gold arm ring, excited rather than provoking, as the camera makes a slow push in; he (S1) says: <d>[Chinese] 那就對了。第七室最近正缺個能打的。</d>\n\noverall_soundscape: A wooden door swings open, soft morning ambience inside the room, and a light slap of a palm on a metal arm ring.\n\nnon_diegetic_music: Light wooden percussion brightens slightly at a moderate tempo.",
+          "blocking": "玩家站在門外走廊，位於畫面左側、側對鏡頭；齊衡烈從右側門內探出上半身，兩人隔著門檻相距約一步、面對面。",
+          "soundscape": "木門拉開的聲音、室內安靜的晨間環境聲、手掌輕拍金屬臂環的一聲",
+          "music": "木質打擊稍微明亮，中速"
+        },
+        {
+          "id": "E01-04",
+          "sceneIndex": 3,
+          "cuts": [
+            {
+              "beats": [
+                5,
+                5
+              ],
+              "seconds": 2,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C03"
+              ],
+              "props": [],
+              "frame": "中景，直式 9:16，第七室室內，郁岑燁坐在矮桌旁，一手拿布擦拭橫放膝上的長劍，聽見聲音抬起眼看向門口，窗櫺晨光打在他側臉",
+              "shot": "固定鏡頭，一名深藍黑袍、右手纏布的修長劍修坐在矮桌旁擦拭長劍，動作停住，緩緩抬眼看向門口",
+              "lens": "50mm 標準，中淺景深",
+              "cameraPosition": "劍修 + 平視正側面",
+              "composition": "三分法",
+              "eyeline": "門口",
+              "focus": "鎖定劍修雙眼",
+              "stability": "stable"
+            },
+            {
+              "beats": [
+                6,
+                6
+              ],
+              "seconds": 4,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C03"
+              ],
+              "props": [],
+              "frame": "特寫，直式 9:16，郁岑燁的臉，眉頭輕皺，額間淡藍曜紋清晰，目光平直看向門口，語氣平淡地質疑",
+              "shot": "固定鏡頭，修長劍修眉頭微皺，目光平直地看向門口的兩人，語氣平淡地提出質疑，身體幾乎不動",
+              "lens": "85mm 長焦，淺景深",
+              "cameraPosition": "劍修 + 平視正面",
+              "composition": "中心構圖",
+              "eyeline": "門口的壯碩青年",
+              "focus": "鎖定劍修面部",
+              "stability": "stable"
+            },
+            {
+              "beats": [
+                7,
+                8
+              ],
+              "seconds": 5,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C02"
+              ],
+              "props": [],
+              "frame": "中景，直式 9:16，齊衡烈站在門內左側，順手從牆上木製兵器架提起粗鍛黑鐵的厚背重刀，沒有拔刀，咧嘴一笑，把刀提在身側",
+              "shot": "固定鏡頭，壯碩青年轉身從門邊牆上的兵器架順手提起一把帶鞘的厚背重刀，沒有拔刀，只是提在身側，咧嘴笑得躍躍欲試",
+              "lens": "35mm 廣角，中景深",
+              "cameraPosition": "壯碩青年 + 平視側前方",
+              "composition": "三分法",
+              "eyeline": "劍修",
+              "focus": "鎖定壯碩青年與重刀",
+              "stability": "stable",
+              "sfx": "刀鞘輕碰兵器架"
+            },
+            {
+              "beats": [
+                9,
+                9
+              ],
+              "seconds": 2,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C03"
+              ],
+              "props": [],
+              "frame": "特寫，直式 9:16，郁岑燁低下頭繼續擦劍，眉頭輕皺，嘴角沒有笑意",
+              "shot": "固定鏡頭，修長劍修收回目光，低頭繼續擦拭長劍，眉頭輕皺",
+              "lens": "85mm 長焦，淺景深",
+              "cameraPosition": "劍修 + 平視側面",
+              "composition": "三分法",
+              "eyeline": "手中長劍",
+              "focus": "鎖定劍修側臉",
+              "stability": "stable"
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 11.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Following <Picture 1>, inside the dormitory a lean young swordsman in a blue-black robe with a cloth-wrapped right hand sits at a low table wiping a straight sword across his knees; he pauses and slowly raises his eyes toward the door as the camera holds a static shot.\n[Shot 2] At 00:02.000, the camera cuts to the close-up of <Picture 2>, held in a static shot: the swordsman frowns slightly, his gaze level, and with a clean, cool, clipped voice (S2) says flatly: <d>[Chinese] 你看都沒看他出手，怎麼知道他能打？</d>\n[Shot 3] At 00:06.000, the camera cuts to <Picture 3>: the red-haired young man turns and casually lifts a thick-backed heavy saber in its scabbard from the wall rack, without drawing it, grinning with eager excitement; the camera holds a static shot as he (S1) says matter-of-factly: <d>[Chinese] 所以才要打一場啊。</d>\n[Shot 4] At 00:11.000, the camera cuts to <Picture 4>, a static shot: the swordsman lowers his eyes back to his blade and resumes wiping it, muttering (S2): <d>[Chinese] ……無聊。</d>\n\noverall_soundscape: Cloth wipes softly along a steel blade, the scabbard of a heavy saber knocks lightly against a wooden rack, and the room is otherwise quiet.\n\nnon_diegetic_music: Light wooden percussion continues at a moderate tempo.",
+          "blocking": "室內：郁岑燁坐在中央矮桌後、畫面偏右，面朝門口，長劍橫在膝上；齊衡烈站在門內左側，兵器架在他身旁牆上；玩家在門檻外，這一段只露肩背。",
+          "soundscape": "布擦過劍身的細響、重刀刀鞘輕碰木架的一聲、室內安靜的環境聲",
+          "music": "木質打擊持續，中速"
+        },
+        {
+          "id": "E01-05",
+          "sceneIndex": 3,
+          "cuts": [
+            {
+              "beats": [
+                10,
+                10
+              ],
+              "seconds": 2,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C04"
+              ],
+              "props": [],
+              "frame": "中景，直式 9:16，厲若楓靠窗站著，背後方格窗櫺透進晨光，雙手自然垂下，琥珀色的眼睛往下看向門口玩家的腳",
+              "shot": "固定鏡頭，一名琥珀色眼睛、背著摺疊短弓的瘦削弓修靠窗站著，一直沒出聲，視線慢慢往下，落在門口新生的腳上",
+              "lens": "50mm 標準，中淺景深",
+              "cameraPosition": "弓修 + 平視側面",
+              "composition": "三分法",
+              "eyeline": "門口新生的腳",
+              "focus": "鎖定弓修雙眼",
+              "stability": "stable"
+            },
+            {
+              "beats": [
+                11,
+                11
+              ],
+              "seconds": 2,
+              "size": "extreme-close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "大特寫，直式 9:16，玩家的一雙軟布靴停在第七室門檻前的石板上，重心在兩腳之間換了一下",
+              "shot": "固定鏡頭，門檻前一雙軟布靴停在石板上，重心在兩腳之間輕輕換了一下",
+              "lens": "100mm 微距，極淺景深",
+              "cameraPosition": "雙腳 + 低位平視",
+              "composition": "中心構圖",
+              "eyeline": "無",
+              "focus": "鎖定雙腳",
+              "stability": "stable"
+            },
+            {
+              "beats": [
+                12,
+                12
+              ],
+              "seconds": 3,
+              "size": "close",
+              "camera": "Push In",
+              "characters": [
+                "C04"
+              ],
+              "props": [],
+              "frame": "特寫，直式 9:16，厲若楓抬起眼，琥珀色的眼睛平靜地看向玩家，神情沒有起伏",
+              "shot": "鏡頭小幅緩推向瘦削弓修的臉，他停了一拍才抬眼，語氣平靜地開口",
+              "lens": "85mm 長焦，淺景深",
+              "cameraPosition": "弓修 + 平視正面",
+              "composition": "中心構圖",
+              "eyeline": "新生面部",
+              "focus": "鎖定琥珀色眼睛",
+              "stability": "stable"
+            },
+            {
+              "beats": [
+                13,
+                13
+              ],
+              "seconds": 2,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "中景，直式 9:16，玩家站在門檻外愣了一下，先看向右邊窗前的厲若楓，再看向矮桌旁的郁岑燁",
+              "shot": "固定鏡頭，背著行囊的新生愣了一下，先轉頭看向窗邊，再轉頭看向矮桌旁",
+              "lens": "50mm 標準，中淺景深",
+              "cameraPosition": "新生 + 平視正面",
+              "composition": "三分法",
+              "eyeline": "先窗邊、再矮桌",
+              "focus": "鎖定新生面部",
+              "stability": "stable"
+            },
+            {
+              "beats": [
+                14,
+                14
+              ],
+              "seconds": 2,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "特寫，直式 9:16，玩家真心發問的表情，眉頭微揚，手裡仍握著入院憑證",
+              "shot": "固定鏡頭，新生眉頭微揚，真心而不是頂嘴地發問",
+              "lens": "85mm 長焦，淺景深",
+              "cameraPosition": "新生 + 平視正面",
+              "composition": "中心構圖",
+              "eyeline": "屋內三人",
+              "focus": "鎖定新生面部",
+              "stability": "stable"
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 4.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 7.00-second mark of the target video; Picture 5 (from Shot 5) aligns with the 9.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Following <Picture 1>, a slim young archer with amber eyes and a folding short bow on his back stands silently by the lattice window, his gaze drifting down toward the newcomer's feet at the doorway; the camera holds a static shot.\n[Shot 2] At 00:02.000, the camera cuts to the extreme close-up of <Picture 2>: a pair of soft cloth boots at the threshold shift weight from one foot to the other on the stone floor; static shot.\n[Shot 3] At 00:04.000, the camera cuts to the close-up of <Picture 3>; with a slow push in, the archer pauses a beat, lifts his amber eyes, and with a low, quiet, unhurried voice (S1) says: <d>[Chinese] 別急。他的腳步有點亂。</d>\n[Shot 4] At 00:07.000, the camera cuts to <Picture 4>: the newcomer is caught off guard, glancing first toward the window and then toward the low table; static shot.\n[Shot 5] At 00:09.000, the camera cuts to the close-up of <Picture 5>, a static shot: the newcomer raises his brows and, with a clear, calm young voice (S2), asks sincerely: <d>[Chinese] 你們都看得出來？</d>\n\noverall_soundscape: The room falls nearly silent, a soft scuff of cloth boots on stone, and distant birds outside the window.\n\nnon_diegetic_music: Faint sustained strings enter very softly.",
+          "blocking": "厲若楓站在窗邊、畫面右側，側身對著門口，距門約四步；玩家在畫面左側門檻外；郁岑燁坐在中央矮桌後。",
+          "soundscape": "室內幾乎安靜，布靴在石板上輕輕一蹭，窗外遠處的鳥鳴",
+          "music": "極輕的弦樂持續音進入"
+        },
+        {
+          "id": "E01-06",
+          "sceneIndex": 3,
+          "cuts": [
+            {
+              "beats": [
+                15,
+                15
+              ],
+              "seconds": 2,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C03"
+              ],
+              "props": [],
+              "frame": "特寫，直式 9:16，郁岑燁頭也沒抬，繼續擦劍，語氣理所當然",
+              "shot": "固定鏡頭，修長劍修頭也沒抬，手上擦劍的動作沒停",
+              "lens": "85mm 長焦，淺景深",
+              "cameraPosition": "劍修 + 平視側面",
+              "composition": "三分法",
+              "eyeline": "手中長劍",
+              "focus": "鎖定劍修側臉與劍",
+              "stability": "stable"
+            },
+            {
+              "beats": [
+                16,
+                16
+              ],
+              "seconds": 4,
+              "size": "wide",
+              "camera": "Static Shot",
+              "characters": [
+                "C01",
+                "C02",
+                "C03",
+                "C04"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "全景，直式 9:16，第七室群像：玩家在左前方門檻外握著憑證，齊衡烈在他右側門內大笑著把重刀扛上肩，郁岑燁坐在中後方矮桌旁擦劍，厲若楓站在右後方窗邊看著玩家，窗櫺晨光灑滿室內",
+              "shot": "固定鏡頭，壯碩青年仰頭大笑，把帶鞘的厚背重刀扛上肩，劍修低頭擦劍，窗邊弓修安靜看著門口的新生，新生站在門檻外略顯不知所措",
+              "lens": "28mm 廣角，深景深",
+              "cameraPosition": "四人 + 門內斜角平視",
+              "composition": "對角線",
+              "eyeline": "壯碩青年與弓修看向新生",
+              "focus": "鎖定前景兩人",
+              "stability": "stable",
+              "note": "全集唯一一次四人同框（大綱 crowdPlan）。四人靠體型、髮色、武器與位置區分：左前新生、右前紅髮刀修、中後劍修、右後窗邊弓修；分鏡圖需同時掛四張角色設定圖"
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Following <Picture 1>, a lean young swordsman in a blue-black robe keeps wiping his sword without looking up, and with a clean, cool, clipped voice (S1) says: <d>[Chinese] 至少我看得出來。</d> The camera holds a static shot.\n[Shot 2] At 00:02.000, the camera cuts to the wide group shot of <Picture 2>: the red-haired young man throws his head back in a laugh and swings the sheathed heavy saber onto his shoulder, the swordsman keeps wiping his blade, the archer by the window watches quietly, and the newcomer stands at the threshold a little lost; the camera holds a static shot as the red-haired young man with a bright, forceful voice (S2) laughs: <d>[Chinese] 哈哈，那更好！明天演武場見。</d>\n\noverall_soundscape: Cloth whispers along steel, a hearty laugh fills the room, and a scabbard settles onto a shoulder with a soft thud.\n\nnon_diegetic_music: Light strings and wooden percussion lift slightly.",
+          "blocking": "第七室群像：玩家在畫面左前方門檻外，齊衡烈在他右側門內，郁岑燁坐在中後方矮桌，厲若楓在右後方窗邊；四人彼此相距兩到四步。",
+          "soundscape": "布擦劍身的細響、爽朗的笑聲、刀鞘落上肩頭的輕響",
+          "music": "輕弦樂與木質打擊稍微揚起"
+        },
+        {
+          "id": "E01-07",
+          "sceneIndex": 4,
+          "cuts": [
+            {
+              "beats": [
+                1,
+                1
+              ],
+              "seconds": 2,
+              "size": "wide",
+              "camera": "Static Shot",
+              "characters": [],
+              "props": [],
+              "frame": "全景，直式 9:16，從第七室門口望向東廊深處，走廊盡頭一片逆光晨霧，柱列與石板倒影往深處延伸，還看不見人",
+              "shot": "固定鏡頭，長廊深處一片逆光晨霧，柱列與地面倒影安靜地延伸，環境聲忽然壓低",
+              "lens": "35mm 廣角，深景深",
+              "cameraPosition": "走廊 + 平視一點透視",
+              "composition": "對稱",
+              "eyeline": "無",
+              "focus": "鎖定走廊盡頭",
+              "stability": "stable"
+            },
+            {
+              "beats": [
+                2,
+                2
+              ],
+              "seconds": 2,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C01",
+                "C02",
+                "C03",
+                "C04"
+              ],
+              "props": [],
+              "frame": "中景，直式 9:16，從走廊側看向第七室門口，齊衡烈與厲若楓在門口同時轉頭望向走廊，郁岑燁在後方矮桌旁抬頭，玩家在門檻外跟著回頭，四人多為側臉或背影",
+              "shot": "固定鏡頭，門口三名青年同時停住轉頭望向走廊深處，門檻外的新生也跟著回頭",
+              "lens": "35mm 廣角，中景深",
+              "cameraPosition": "門口四人 + 走廊側平視",
+              "composition": "三分法",
+              "eyeline": "走廊盡頭",
+              "focus": "鎖定門口四人",
+              "stability": "stable",
+              "note": "四人同時轉頭的反應鏡頭：以側臉與背影為主，不需要四張正臉；站位沿用上一段群像"
+            },
+            {
+              "beats": [
+                3,
+                3
+              ],
+              "seconds": 2.5,
+              "size": "wide",
+              "camera": "Push In",
+              "characters": [
+                "C05"
+              ],
+              "props": [],
+              "frame": "全景，直式 9:16，東廊盡頭逆光中，蕭曜霖高大的身影靜靜站著，雙肩青銅巨鎧的輪廓被晨光勾出亮邊，背後門板重劍的劍柄高出右肩",
+              "shot": "鏡頭小幅緩推向走廊盡頭，一名雙肩青銅巨鎧、背負巨劍的中年教官站在逆光裡一動不動，晨光勾出他寬厚的輪廓",
+              "lens": "50mm 標準，中景深",
+              "cameraPosition": "教官 + 過門口眾人肩後平視",
+              "composition": "中心構圖",
+              "eyeline": "門口的新生",
+              "focus": "鎖定教官輪廓",
+              "stability": "stable"
+            },
+            {
+              "beats": [
+                4,
+                4
+              ],
+              "seconds": 3,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C05"
+              ],
+              "props": [],
+              "frame": "中景，直式 9:16，蕭曜霖站在走廊上，逆光中神情嚴肅，眉骨淡金曜痕隱約可見，目光穩穩看向門口，開口宣布",
+              "shot": "固定鏡頭，中年教官目光沉穩地看向門口，不提高音量，一字一句地宣布",
+              "lens": "85mm 長焦，淺景深",
+              "cameraPosition": "教官 + 平視正面",
+              "composition": "中心構圖",
+              "eyeline": "門口四人",
+              "focus": "鎖定教官面部",
+              "stability": "stable"
+            },
+            {
+              "beats": [
+                5,
+                5
+              ],
+              "seconds": 3,
+              "size": "wide",
+              "camera": "Static Shot",
+              "characters": [
+                "C05"
+              ],
+              "props": [],
+              "frame": "全景，直式 9:16，蕭曜霖轉身，沿著逆光的東廊往深處走遠，背後重劍隨步伐微晃",
+              "shot": "固定鏡頭，中年教官說完便轉身，沿著逆光的長廊不疾不徐地走遠",
+              "lens": "35mm 廣角，深景深",
+              "cameraPosition": "教官背影 + 平視",
+              "composition": "對稱",
+              "eyeline": "走廊深處",
+              "focus": "鎖定教官背影",
+              "stability": "stable"
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 4.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 6.50-second mark of the target video; Picture 5 (from Shot 5) aligns with the 9.50-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Following <Picture 1>, a long corridor recedes toward a far end glowing with backlit morning haze, no one visible yet, the ambience dropping away; the camera holds a static shot as a mature man with a deep, dense, slow voice (S1) says in an off-screen voiceover, no one on screen speaking: <d>[Chinese] 不用等明天。</d>\n[Shot 2] At 00:02.000, the camera cuts to <Picture 2>: the three young men at the doorway freeze and turn their heads toward the corridor at the same moment, and the newcomer at the threshold looks back too; static shot.\n[Shot 3] At 00:04.000, the camera cuts to <Picture 3>: at the far end of the corridor a mature instructor with colossal bronze pauldrons and a huge heavy sword on his back stands completely still in the backlight; the camera makes a slow push in toward him.\n[Shot 4] At 00:06.500, the camera cuts to <Picture 4>, a static shot: the instructor fixes a steady gaze on the doorway and, without raising his voice, he (S1) announces slowly, word by word: <d>[Chinese] 半刻鐘後，新生演武場集合。</d>\n[Shot 5] At 00:09.500, the camera cuts to <Picture 5>: the instructor turns and walks away down the backlit corridor at an unhurried pace, the heavy sword swaying slightly on his back; static shot.\n\noverall_soundscape: Ambient sound drops noticeably just before the voice, then heavy, measured footsteps on stone recede down the corridor.\n\nnon_diegetic_music: The music drops out, leaving only a low sustained string drone.",
+          "blocking": "門外東廊：鏡頭在第七室門口一側朝走廊深處看；齊衡烈與厲若楓在門口，郁岑燁在門內後方矮桌旁，玩家在門檻外最靠近走廊；蕭曜霖站在走廊盡頭約二十步外的逆光裡。",
+          "soundscape": "說話前環境聲整體壓低，之後是沉重而規律的腳步聲沿石板漸漸走遠",
+          "music": "配樂抽掉，只剩低頻弦樂持續音"
+        },
+        {
+          "id": "E01-08",
+          "sceneIndex": 4,
+          "cuts": [
+            {
+              "beats": [
+                6,
+                6
+              ],
+              "seconds": 2,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C02"
+              ],
+              "props": [],
+              "frame": "特寫，直式 9:16，齊衡烈眼睛一亮，嘴角揚起，握緊肩上重刀的刀柄",
+              "shot": "固定鏡頭，壯碩青年眼睛一亮，嘴角揚起，握緊了肩上重刀的刀柄",
+              "lens": "85mm 長焦，淺景深",
+              "cameraPosition": "壯碩青年 + 平視正面",
+              "composition": "中心構圖",
+              "eyeline": "走廊盡頭",
+              "focus": "鎖定壯碩青年面部",
+              "stability": "stable"
+            },
+            {
+              "beats": [
+                7,
+                7
+              ],
+              "seconds": 2,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C03"
+              ],
+              "props": [],
+              "frame": "中景，直式 9:16，郁岑燁坐在矮桌旁輕輕嘆了口氣，把擦好的長劍收回黑漆劍鞘",
+              "shot": "固定鏡頭，修長劍修輕輕嘆了口氣，把長劍收回黑漆劍鞘裡",
+              "lens": "50mm 標準，中淺景深",
+              "cameraPosition": "劍修 + 平視側面",
+              "composition": "三分法",
+              "eyeline": "手中劍鞘",
+              "focus": "鎖定劍修與長劍",
+              "stability": "stable"
+            },
+            {
+              "beats": [
+                8,
+                8
+              ],
+              "seconds": 2,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C04"
+              ],
+              "props": [],
+              "frame": "特寫，直式 9:16，厲若楓轉過頭，琥珀色的眼睛看向玩家",
+              "shot": "固定鏡頭，瘦削弓修轉過頭，平靜地看向門檻外的新生",
+              "lens": "85mm 長焦，淺景深",
+              "cameraPosition": "弓修 + 平視側面",
+              "composition": "三分法",
+              "eyeline": "新生",
+              "focus": "鎖定弓修雙眼",
+              "stability": "stable"
+            },
+            {
+              "beats": [
+                9,
+                10
+              ],
+              "seconds": 4,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "特寫，直式 9:16，玩家低頭看著手中的入院憑證，淡青白玉面上的學院圓紋映著晨光，表情壓住一點緊張",
+              "shot": "固定鏡頭，新生低頭看了一眼手中的玉面憑證，停了一下，短而乾脆地應聲",
+              "lens": "85mm 長焦，淺景深",
+              "cameraPosition": "新生 + 平視略俯",
+              "composition": "中心構圖",
+              "eyeline": "手中憑證",
+              "focus": "鎖定新生面部與憑證",
+              "stability": "stable"
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.00-second mark of the target video; Picture 3 (from Shot 3) aligns with the 4.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 6.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Following <Picture 1>, the red-haired young man's eyes light up with anticipation and he tightens his grip on the saber hilt resting on his shoulder; static shot.\n[Shot 2] At 00:02.000, the camera cuts to <Picture 2>: the swordsman gives a restrained sigh and slides his straight sword back into its black lacquered scabbard; static shot.\n[Shot 3] At 00:04.000, the camera cuts to the close-up of <Picture 3>: the archer turns his head and calmly looks at the newcomer; static shot.\n[Shot 4] At 00:06.000, the camera cuts to the close-up of <Picture 4>, a static shot: the newcomer looks down at the jade-faced admission token in his hand, pauses, and with a clear, calm young voice (S1) answers briefly, holding back a trace of nerves: <d>[Chinese] 知道了。</d>\n\noverall_soundscape: A leather grip creaks under a tightening hand, a soft sigh, and a sword slides home into its scabbard with a quiet click.\n\nnon_diegetic_music: Light wooden percussion picks the rhythm back up.",
+          "blocking": "門口位置不變：齊衡烈在門內左側扛刀，厲若楓在右側門框旁，郁岑燁在後方矮桌旁，玩家在門檻外、畫面前景偏右，手中握著憑證。",
+          "soundscape": "握緊刀柄時皮革的輕響、一聲輕嘆、長劍入鞘的一聲輕扣",
+          "music": "木質打擊重新提起節奏"
+        },
+        {
+          "id": "E01-09",
+          "sceneIndex": 5,
+          "cuts": [
+            {
+              "beats": [
+                1,
+                1
+              ],
+              "seconds": 2.5,
+              "size": "medium",
+              "camera": "Tracking Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "中景，直式 9:16，玩家走進第七室，把背上的行囊放在靠窗那張鋪蓋整齊的空床上，窗櫺晨光斜照",
+              "shot": "鏡頭跟拍新生走進宿舍，他卸下背上的行囊，輕輕放在靠窗那張鋪蓋整齊的空床上",
+              "lens": "35mm 廣角，中景深",
+              "cameraPosition": "新生 + 側後方跟隨",
+              "composition": "三分法",
+              "eyeline": "空床",
+              "focus": "鎖定新生與行囊",
+              "stability": "slight-shake"
+            },
+            {
+              "beats": [
+                2,
+                2
+              ],
+              "seconds": 3,
+              "size": "close",
+              "camera": "Push In",
+              "characters": [],
+              "props": [
+                "P02"
+              ],
+              "frame": "特寫，直式 9:16，門楣右側的第七室門牌，深色硬木牌、古青銅包邊、青藍流蘇，牌面刻框留空，晨光斜照，畫面在此定格",
+              "shot": "鏡頭小幅緩推向門楣旁的深色木門牌，遠處傳來一聲鐘響，畫面在門牌上停住",
+              "lens": "85mm 長焦，淺景深",
+              "cameraPosition": "門牌 + 平視正面",
+              "composition": "中心構圖",
+              "eyeline": "無",
+              "focus": "鎖定門牌",
+              "stability": "stable"
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Following <Picture 1>, a tracking shot follows the newcomer into the dormitory as he slips the travel bundle off his back and sets it on the neatly made empty bed by the lattice window.\n[Shot 2] At 00:02.500, the camera cuts to the close-up of <Picture 2>: a dark hardwood door plaque with bronze edging and a teal-blue tassel hangs beside the lintel, its recessed panel blank; the camera makes a slow push in and settles as a single bell rings from a distant courtyard, the image holding still.\n\noverall_soundscape: A cloth bundle lands softly on bedding, then one clear bell rings from a distant courtyard and fades into silence.\n\nnon_diegetic_music: One final wooden knock, then silence.",
+          "blocking": "第七室室內：玩家從畫面左側門口走進，往右後方窗邊的空床走去；第二鏡轉到門外，門牌在畫面中央。",
+          "soundscape": "布包落在鋪蓋上的輕響，接著遠處一聲清亮的鐘響，漸漸歸於寂靜",
+          "music": "最後一聲木質敲擊，然後靜音",
+          "note": "結尾定格。門牌文字「第七室」剪輯時後製，不交給生成模型"
+        }
+      ]
+    }
+  ],
+  "promptLang": "en"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "C02",
+  "name": "齊衡烈",
+  "aliases": [],
+  "importance": "major",
+  "oneLiner": "第七室最先開門的那個人，一見新人就認定是自己人，而且立刻想跟他打一場。",
+  "persona": {
+    "gender": "男",
+    "ageRange": "約二十歲（推斷）",
+    "identity": "天玄院第七室舍友，刀修",
+    "appearance": "身形偏壯、肩寬背厚，習慣身體微微前傾。鮮紅色的短刺髮向上後梳，方臉、顴骨明顯，笑起來眼角擠出笑紋（推斷）。深色粗麻無袖無領寬肩上衣配深紅內襯，胸腹覆層疊古青銅護甲，左臂單邊皮革長護手，腰帶別學院徽章；右上臂一圈赤金臂環，刻著刀紋（推斷）。左腰掛一把粗鍛黑鐵厚背重刀，刀鞘擦得發亮。",
+    "personality": [
+      "熱血",
+      "直接",
+      "爽快",
+      "好勝"
+    ],
+    "temperament": "開口就是結論，笑聲比話先到。喜歡主動靠近別人、拍自己手臂表示興奮；不是莽夫，只是從不掩飾想打一場的念頭。",
+    "motivation": "打出氣勢、變得更強——最怕的不是輸給別人，而是輸給自己。",
+    "arc": "第一個開門迎人、主動約戰，第一章以衝動挑戰教官卻自尊受挫，之後學會收刀而非硬拚",
+    "relationships": [
+      {
+        "name": "玩家",
+        "relation": "新室友，他一眼就當成隊友"
+      },
+      {
+        "name": "郁岑燁",
+        "relation": "室友，老是拆他的台"
+      },
+      {
+        "name": "厲若楓",
+        "relation": "室友，一句話就能讓他停下來想"
+      },
+      {
+        "name": "蕭曜霖",
+        "relation": "教官，他的約戰被對方一句話提前"
+      }
+    ],
+    "evidence": [
+      "**齊衡烈：**「你就是新來的？」",
+      "**齊衡烈：**「那就對了。第七室最近正缺個能打的。」",
+      "**齊衡烈：**「所以才要打一場啊。」",
+      "**齊衡烈：**「哈哈，那更好！明天演武場見。」",
+      "- **外觀關鍵特徵**：赤金刀紋般的臂環紋、身形偏壯、刀鞘常擦得發亮"
+    ]
+  },
+  "image": {
+    "prompt": "A broad-shouldered, heavily built young East Asian man around twenty, a saber cultivator of an ancient-Chinese-inspired mountain academy, leaning slightly forward with a wide warm grin, wearing a sleeveless collarless broad-shouldered tunic of coarse dark hemp over a deep crimson under-layer, overlapping plates of antique bronze armour covering the chest and abdomen, a single long leather gauntlet on the left forearm, a wide dark leather belt with the academy badge of antique bronze inset with carved jade, dark wrapped trousers and leather boots; a thick red-gold metal arm ring engraved with blade-edge patterns around the right upper arm; a thick-backed heavy broad saber of rough-forged black iron, sheathed in a dark scabbard polished to a bright sheen and worn at the left hip. Square face with strong cheekbones and a slightly broad nose, bright dark eyes creased by laugh lines at the outer corners, thick straight eyebrows, a wide mouth showing teeth in an open grin; short spiky vivid red hair swept up and back, a few strands sticking out untamed. Coarse dark hemp with a visible weave and dull antique bronze plates; the arms are thick and strong but relaxed, not flexed or posed to show muscle. Three-quarter view, waist-up, plain neutral background. Soft directional key light from the upper left with a cool fill, gentle falloff, ambient occlusion under the chin and in the folds; shallow depth of field with the face in sharpest focus. ink black, crimson and red-gold palette, warm morning light, ancient-Chinese-inspired cultivation academy, readable silhouette from every angle.",
+    "promptLocal": "一名約二十歲、肩寬體壯的東亞年輕男子，古代中國風格山岳學院的刀修，身體微微前傾、咧嘴笑得溫暖。身穿深色粗麻無袖無領寬肩上衣，內襯深紅色，胸腹覆蓋層疊的古樸青銅護甲，左前臂單邊皮革長護手，寬深色皮腰帶別著古青銅嵌玉石刻紋學院徽章，深色綁腿褲與皮靴；右上臂一圈厚實的赤金金屬臂環，刻著刀鋒紋；左腰掛一把粗鍛黑鐵的厚背重刀，深色刀鞘擦得發亮。方臉、顴骨明顯、鼻翼略寬，明亮的深色眼睛眼角有笑紋，眉毛濃直，嘴巴寬、咧嘴露齒；鮮紅色短刺髮向上後梳，幾撮頭髮翹著不服貼。深色粗麻可見織紋，配啞光古青銅甲片；手臂粗壯但放鬆，不刻意繃肌肉展示。四分之三視角、半身、純中性背景。左上方柔和主光配冷調補光，光線自然衰減，下巴下方與衣褶有環境遮蔽；淺景深，面部最實。墨黑、深紅與赤金色調、溫暖晨光、古代中國風格修行學院，每個角度輪廓都清楚。",
+    "negativePrompt": "plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, oversized childlike eyes, helmet-like hair with no loose strands, flat untextured fabric, stiff mannequin posing, same face as the other cast members, extra fingers, malformed hands, duplicate weapon, text, watermark, signature, logo, busy or patterned background, bare chest, open shirt showing pecs, flexing bodybuilder pose, dark brown hair, straight sword, katana, comedic exaggerated face",
+    "tags": [
+      "cultivation academy",
+      "saber cultivator",
+      "ancient chinese inspired",
+      "crimson and red-gold",
+      "coarse hemp and bronze",
+      "warm morning light"
+    ],
+    "sheet": "Single character model sheet on ONE 16:9 landscape canvas (widescreen, width to height exactly 16:9). The canvas is divided into three zones by thin hairline rules. LEFT ZONE — a vertical column occupying about 34% of the canvas width, separated from the rest by a thin vertical rule: one bust portrait, head and shoulders, front-facing, centred, framed like an ID photograph. BOTH SHOULDERS ARE FULLY VISIBLE with clear space on either side; do not crop the shoulders at the sides, and do not fade, vignette or round off the bottom edge — the portrait ends in a clean straight horizontal cut just below the chest. The figure wears a sleeveless collarless coarse dark hemp tunic with overlapping antique bronze chest plates, the thick red-gold arm ring visible on the right upper arm, with the face rendered in full detail: square face with strong cheekbones and a slightly broad nose, bright dark eyes creased by laugh lines at the outer corners, thick straight eyebrows, a wide mouth showing teeth in an open grin; short spiky vivid red hair swept up and back, a few strands sticking out untamed. LIGHTING IN THE LEFT ZONE ONLY: a soft directional key light from the upper left with gentle falloff, subtle ambient occlusion under the chin, in the eye sockets and where the collar meets the neck, giving the head real volume. RIGHT-TOP ZONE — the upper part of the remaining 66%, separated from the zone beneath it by a thin horizontal rule: three FULL-BODY views of the SAME character standing side by side — front view, left side profile, and back view — aligned on one shared ground line. PROPORTIONS ARE CRITICAL: all three figures share exactly the same height, head-to-body ratio and costume details; anatomy must be correct and natural — correct limb lengths, correct head size relative to the body, feet planted on the ground line; no stretching, squashing or foreshortening to make a figure fit the space. Each figure is drawn head to toe with clear margin above the head and below the feet. Neutral relaxed standing posture, arms at the sides. The figure is a broad-shouldered, heavily built young East Asian man around twenty, a saber cultivator of an ancient-Chinese-inspired mountain academy, leaning slightly forward with a wide warm grin, wearing a sleeveless collarless broad-shouldered tunic of coarse dark hemp over a deep crimson under-layer, overlapping plates of antique bronze armour covering the chest and abdomen, a single long leather gauntlet on the left forearm, a wide dark leather belt with the academy badge of antique bronze inset with carved jade, dark wrapped trousers and leather boots; a thick red-gold metal arm ring engraved with blade-edge patterns around the right upper arm; a thick-backed heavy broad saber of rough-forged black iron, sheathed in a dark scabbard polished to a bright sheen and worn at the left hip. Coarse dark hemp with a visible weave and dull antique bronze plates; the arms are thick and strong but relaxed, not flexed or posed to show muscle. The faces on all three full-body views are fully drawn and must match the bust portrait exactly — same features, same hairstyle, same expression. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting with no directional key and no cast shadows, so the figures stay measurable and cleanly cut out — only the left bust portrait is dramatically lit. RIGHT-BOTTOM ZONE — a detail strip beneath the three views, above which sits the thin horizontal rule: four to five small isolated close-up studies of the character's key details, evenly spaced in a row and clearly smaller than the full-body figures: the red-gold arm ring with its engraved blade-edge pattern; the brightly polished dark scabbard mouth and the saber's wrapped grip; the overlapping antique bronze chest plates; the single long leather gauntlet on the left forearm; the spiky vivid red hair seen from above. If these details do not fit comfortably in one row along the bottom, continue them in a narrow vertical column down the right-hand edge of the canvas — but NEVER shrink or distort the three full-body figures to make room; the detail studies give way, not the figures. Plain pure white background (#FFFFFF) throughout, suitable for clean cut-out. Balanced composition with generous, even white margins; nothing crowded against an edge. ink black, crimson and red-gold palette, warm morning light, ancient-Chinese-inspired cultivation academy, readable silhouette from every angle."
+  },
+  "voice": {
+    "timbre": "明亮、有力量的年輕男中音，胸腔共鳴足",
+    "pitch": "中高",
+    "pace": "偏快，句首有衝勁",
+    "accent": "標準國語（台灣），無明顯地方腔",
+    "emotion": "熱情、自信、躍躍欲試",
+    "referenceHint": "像練功場上第一個喊開打的人，真誠直接，不是搞笑腔",
+    "prompt": "20-year-old male, bright resonant baritone, mid-to-high pitch, strong chest support, wide dynamic range. Loud volume, fast pace, punchy phrase openings, open easy breath. Standard Mandarin with neutral Taiwanese pronunciation. Warm, eager, confident."
+  }
+}

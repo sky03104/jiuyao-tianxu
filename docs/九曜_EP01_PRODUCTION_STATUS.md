@@ -122,6 +122,13 @@
 - 處置：咖哩直接下令停止繼續生成EP01其他Shot/角色/場景，不再沿用任何一批舊圖當Reference。建立最高優先級美術規範`docs/MASTER_VISUAL_STYLE_LOCK_V1.0.md`，逐字收錄咖哩裁定的美術方向。
 - 現況：`generate_references.py`已依規範重寫Global Style/Negative Prompt，換用`Lykon/dreamshaper-xl-1-0`（來源可查證、偏藝術化半寫實），新增`li_ruofeng_style_test`單張測試項目（放進學院場景而非灰色攝影棚）。**目前只跑這一張測試圖驗收，風格沒過MASTER_VISUAL_STYLE_LOCK第十三節十項標準前，不恢復EP01其他素材生產。**
 
+### 2026-09-24：改用 shuohao-skills 五段流程，docs/30 降為參考
+
+- 咖哩裁定：docs/30 的鏡頭拆法、秒數等為推測方案，改照 shuohao-skills（outline → characters → art → script → storyboard）製作；劇情台詞以 docs/25 正史為準。
+- GPT 生圖參考稿（兩組 8 張）判定畫風方向符合 MASTER_VISUAL_STYLE_LOCK，但解析度不足且燒字，只作風格定案與選版，不直接當 Reference。
+- 詳細決策與選版見 `production/EP01/shuohao/DECISIONS.md`。
+- 五段全部完成（outline／characters／art／script／storyboard，品質門皆通過）：9 段 30 個分鏡、共 80 秒、9:16，H3／Seedance 投產包在 `production/EP01/shuohao/storyboard/export/`；下一步是依 STYLE LOCK 出設定圖與分鏡圖。
+
 ---
 
 ## 六、下一步

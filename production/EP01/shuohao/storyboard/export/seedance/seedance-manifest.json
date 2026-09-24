@@ -1,0 +1,425 @@
+[
+  {
+    "segment": "E01-01",
+    "seconds": 5,
+    "cuts": 2,
+    "prompt": "export/seedance/E01-01/seedance.md",
+    "attachments": [
+      {
+        "ref": "@圖片1",
+        "label": "S01",
+        "kind": "sheet",
+        "path": "export/seedance/E01-01/ref-1.png",
+        "source": "S01-sheet.png",
+        "present": false
+      }
+    ],
+    "missing": [
+      "export/seedance/E01-01/ref-1.png"
+    ]
+  },
+  {
+    "segment": "E01-02",
+    "seconds": 7.5,
+    "cuts": 3,
+    "prompt": "export/seedance/E01-02/seedance.md",
+    "attachments": [
+      {
+        "ref": "@圖片1",
+        "label": "S02",
+        "kind": "sheet",
+        "path": "export/seedance/E01-02/ref-1.png",
+        "source": "S02-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片2",
+        "label": "C01",
+        "kind": "sheet",
+        "path": "export/seedance/E01-02/ref-2.png",
+        "source": "C01-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片3",
+        "label": "P01",
+        "kind": "sheet",
+        "path": "export/seedance/E01-02/ref-3.png",
+        "source": "P01-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片4",
+        "label": "P02",
+        "kind": "sheet",
+        "path": "export/seedance/E01-02/ref-4.png",
+        "source": "P02-sheet.png",
+        "present": false
+      }
+    ],
+    "missing": [
+      "export/seedance/E01-02/ref-1.png",
+      "export/seedance/E01-02/ref-2.png",
+      "export/seedance/E01-02/ref-3.png",
+      "export/seedance/E01-02/ref-4.png"
+    ]
+  },
+  {
+    "segment": "E01-03",
+    "seconds": 9.5,
+    "cuts": 3,
+    "prompt": "export/seedance/E01-03/seedance.md",
+    "attachments": [
+      {
+        "ref": "@圖片1",
+        "label": "S03",
+        "kind": "sheet",
+        "path": "export/seedance/E01-03/ref-1.png",
+        "source": "S03-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片2",
+        "label": "C01",
+        "kind": "sheet",
+        "path": "export/seedance/E01-03/ref-2.png",
+        "source": "C01-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片3",
+        "label": "C02",
+        "kind": "sheet",
+        "path": "export/seedance/E01-03/ref-3.png",
+        "source": "C02-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片4",
+        "label": "P01",
+        "kind": "sheet",
+        "path": "export/seedance/E01-03/ref-4.png",
+        "source": "P01-sheet.png",
+        "present": false
+      }
+    ],
+    "missing": [
+      "export/seedance/E01-03/ref-1.png",
+      "export/seedance/E01-03/ref-2.png",
+      "export/seedance/E01-03/ref-3.png",
+      "export/seedance/E01-03/ref-4.png"
+    ]
+  },
+  {
+    "segment": "E01-04",
+    "seconds": 13,
+    "cuts": 4,
+    "prompt": "export/seedance/E01-04/seedance.md",
+    "attachments": [
+      {
+        "ref": "@圖片1",
+        "label": "S03",
+        "kind": "sheet",
+        "path": "export/seedance/E01-04/ref-1.png",
+        "source": "S03-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片2",
+        "label": "C03",
+        "kind": "sheet",
+        "path": "export/seedance/E01-04/ref-2.png",
+        "source": "C03-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片3",
+        "label": "C02",
+        "kind": "sheet",
+        "path": "export/seedance/E01-04/ref-3.png",
+        "source": "C02-sheet.png",
+        "present": false
+      }
+    ],
+    "missing": [
+      "export/seedance/E01-04/ref-1.png",
+      "export/seedance/E01-04/ref-2.png",
+      "export/seedance/E01-04/ref-3.png"
+    ]
+  },
+  {
+    "segment": "E01-05",
+    "seconds": 11,
+    "cuts": 5,
+    "prompt": "export/seedance/E01-05/seedance.md",
+    "attachments": [
+      {
+        "ref": "@圖片1",
+        "label": "S03",
+        "kind": "sheet",
+        "path": "export/seedance/E01-05/ref-1.png",
+        "source": "S03-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片2",
+        "label": "C04",
+        "kind": "sheet",
+        "path": "export/seedance/E01-05/ref-2.png",
+        "source": "C04-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片3",
+        "label": "C01",
+        "kind": "sheet",
+        "path": "export/seedance/E01-05/ref-3.png",
+        "source": "C01-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片4",
+        "label": "P01",
+        "kind": "sheet",
+        "path": "export/seedance/E01-05/ref-4.png",
+        "source": "P01-sheet.png",
+        "present": false
+      }
+    ],
+    "missing": [
+      "export/seedance/E01-05/ref-1.png",
+      "export/seedance/E01-05/ref-2.png",
+      "export/seedance/E01-05/ref-3.png",
+      "export/seedance/E01-05/ref-4.png"
+    ]
+  },
+  {
+    "segment": "E01-06",
+    "seconds": 6,
+    "cuts": 2,
+    "prompt": "export/seedance/E01-06/seedance.md",
+    "attachments": [
+      {
+        "ref": "@圖片1",
+        "label": "S03",
+        "kind": "sheet",
+        "path": "export/seedance/E01-06/ref-1.png",
+        "source": "S03-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片2",
+        "label": "C03",
+        "kind": "sheet",
+        "path": "export/seedance/E01-06/ref-2.png",
+        "source": "C03-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片3",
+        "label": "C01",
+        "kind": "sheet",
+        "path": "export/seedance/E01-06/ref-3.png",
+        "source": "C01-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片4",
+        "label": "C02",
+        "kind": "sheet",
+        "path": "export/seedance/E01-06/ref-4.png",
+        "source": "C02-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片5",
+        "label": "C04",
+        "kind": "sheet",
+        "path": "export/seedance/E01-06/ref-5.png",
+        "source": "C04-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片6",
+        "label": "P01",
+        "kind": "sheet",
+        "path": "export/seedance/E01-06/ref-6.png",
+        "source": "P01-sheet.png",
+        "present": false
+      }
+    ],
+    "missing": [
+      "export/seedance/E01-06/ref-1.png",
+      "export/seedance/E01-06/ref-2.png",
+      "export/seedance/E01-06/ref-3.png",
+      "export/seedance/E01-06/ref-4.png",
+      "export/seedance/E01-06/ref-5.png",
+      "export/seedance/E01-06/ref-6.png"
+    ]
+  },
+  {
+    "segment": "E01-07",
+    "seconds": 12.5,
+    "cuts": 5,
+    "prompt": "export/seedance/E01-07/seedance.md",
+    "attachments": [
+      {
+        "ref": "@圖片1",
+        "label": "S02",
+        "kind": "sheet",
+        "path": "export/seedance/E01-07/ref-1.png",
+        "source": "S02-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片2",
+        "label": "C01",
+        "kind": "sheet",
+        "path": "export/seedance/E01-07/ref-2.png",
+        "source": "C01-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片3",
+        "label": "C02",
+        "kind": "sheet",
+        "path": "export/seedance/E01-07/ref-3.png",
+        "source": "C02-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片4",
+        "label": "C03",
+        "kind": "sheet",
+        "path": "export/seedance/E01-07/ref-4.png",
+        "source": "C03-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片5",
+        "label": "C04",
+        "kind": "sheet",
+        "path": "export/seedance/E01-07/ref-5.png",
+        "source": "C04-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片6",
+        "label": "C05",
+        "kind": "sheet",
+        "path": "export/seedance/E01-07/ref-6.png",
+        "source": "C05-sheet.png",
+        "present": false
+      }
+    ],
+    "missing": [
+      "export/seedance/E01-07/ref-1.png",
+      "export/seedance/E01-07/ref-2.png",
+      "export/seedance/E01-07/ref-3.png",
+      "export/seedance/E01-07/ref-4.png",
+      "export/seedance/E01-07/ref-5.png",
+      "export/seedance/E01-07/ref-6.png"
+    ]
+  },
+  {
+    "segment": "E01-08",
+    "seconds": 10,
+    "cuts": 4,
+    "prompt": "export/seedance/E01-08/seedance.md",
+    "attachments": [
+      {
+        "ref": "@圖片1",
+        "label": "S02",
+        "kind": "sheet",
+        "path": "export/seedance/E01-08/ref-1.png",
+        "source": "S02-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片2",
+        "label": "C02",
+        "kind": "sheet",
+        "path": "export/seedance/E01-08/ref-2.png",
+        "source": "C02-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片3",
+        "label": "C03",
+        "kind": "sheet",
+        "path": "export/seedance/E01-08/ref-3.png",
+        "source": "C03-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片4",
+        "label": "C04",
+        "kind": "sheet",
+        "path": "export/seedance/E01-08/ref-4.png",
+        "source": "C04-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片5",
+        "label": "C01",
+        "kind": "sheet",
+        "path": "export/seedance/E01-08/ref-5.png",
+        "source": "C01-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片6",
+        "label": "P01",
+        "kind": "sheet",
+        "path": "export/seedance/E01-08/ref-6.png",
+        "source": "P01-sheet.png",
+        "present": false
+      }
+    ],
+    "missing": [
+      "export/seedance/E01-08/ref-1.png",
+      "export/seedance/E01-08/ref-2.png",
+      "export/seedance/E01-08/ref-3.png",
+      "export/seedance/E01-08/ref-4.png",
+      "export/seedance/E01-08/ref-5.png",
+      "export/seedance/E01-08/ref-6.png"
+    ]
+  },
+  {
+    "segment": "E01-09",
+    "seconds": 5.5,
+    "cuts": 2,
+    "prompt": "export/seedance/E01-09/seedance.md",
+    "attachments": [
+      {
+        "ref": "@圖片1",
+        "label": "S03",
+        "kind": "sheet",
+        "path": "export/seedance/E01-09/ref-1.png",
+        "source": "S03-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片2",
+        "label": "C01",
+        "kind": "sheet",
+        "path": "export/seedance/E01-09/ref-2.png",
+        "source": "C01-sheet.png",
+        "present": false
+      },
+      {
+        "ref": "@圖片3",
+        "label": "P02",
+        "kind": "sheet",
+        "path": "export/seedance/E01-09/ref-3.png",
+        "source": "P02-sheet.png",
+        "present": false
+      }
+    ],
+    "missing": [
+      "export/seedance/E01-09/ref-1.png",
+      "export/seedance/E01-09/ref-2.png",
+      "export/seedance/E01-09/ref-3.png"
+    ]
+  }
+]
