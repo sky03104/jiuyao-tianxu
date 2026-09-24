@@ -127,6 +127,7 @@
 - 咖哩裁定：docs/30 的鏡頭拆法、秒數等為推測方案，改照 shuohao-skills（outline → characters → art → script → storyboard）製作；劇情台詞以 docs/25 正史為準。
 - GPT 生圖參考稿（兩組 8 張）判定畫風方向符合 MASTER_VISUAL_STYLE_LOCK，但解析度不足且燒字，只作風格定案與選版，不直接當 Reference。
 - 詳細決策與選版見 `production/EP01/shuohao/DECISIONS.md`。
+- 五段全部完成（outline／characters／art／script／storyboard，品質門皆通過）：9 段 30 個分鏡、共 80 秒、9:16，H3／Seedance 投產包在 `production/EP01/shuohao/storyboard/export/`；下一步是依 STYLE LOCK 出設定圖與分鏡圖。
 
 ---
 

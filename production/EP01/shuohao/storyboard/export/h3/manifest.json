@@ -1,0 +1,200 @@
+[
+  {
+    "segment": "E01-01",
+    "seconds": 5,
+    "cuts": 2,
+    "cutStarts": [
+      0,
+      3
+    ],
+    "prompt": "export/h3/E01-01/prompt.md",
+    "pictures": [
+      "export/h3/E01-01/f1.png",
+      "export/h3/E01-01/f2.png"
+    ],
+    "missing": [
+      "export/h3/E01-01/f1.png",
+      "export/h3/E01-01/f2.png"
+    ]
+  },
+  {
+    "segment": "E01-02",
+    "seconds": 7.5,
+    "cuts": 3,
+    "cutStarts": [
+      0,
+      3,
+      5
+    ],
+    "prompt": "export/h3/E01-02/prompt.md",
+    "pictures": [
+      "export/h3/E01-02/f1.png",
+      "export/h3/E01-02/f2.png",
+      "export/h3/E01-02/f3.png"
+    ],
+    "missing": [
+      "export/h3/E01-02/f1.png",
+      "export/h3/E01-02/f2.png",
+      "export/h3/E01-02/f3.png"
+    ]
+  },
+  {
+    "segment": "E01-03",
+    "seconds": 9.5,
+    "cuts": 3,
+    "cutStarts": [
+      0,
+      2.5,
+      5.5
+    ],
+    "prompt": "export/h3/E01-03/prompt.md",
+    "pictures": [
+      "export/h3/E01-03/f1.png",
+      "export/h3/E01-03/f2.png",
+      "export/h3/E01-03/f3.png"
+    ],
+    "missing": [
+      "export/h3/E01-03/f1.png",
+      "export/h3/E01-03/f2.png",
+      "export/h3/E01-03/f3.png"
+    ]
+  },
+  {
+    "segment": "E01-04",
+    "seconds": 13,
+    "cuts": 4,
+    "cutStarts": [
+      0,
+      2,
+      6,
+      11
+    ],
+    "prompt": "export/h3/E01-04/prompt.md",
+    "pictures": [
+      "export/h3/E01-04/f1.png",
+      "export/h3/E01-04/f2.png",
+      "export/h3/E01-04/f3.png",
+      "export/h3/E01-04/f4.png"
+    ],
+    "missing": [
+      "export/h3/E01-04/f1.png",
+      "export/h3/E01-04/f2.png",
+      "export/h3/E01-04/f3.png",
+      "export/h3/E01-04/f4.png"
+    ]
+  },
+  {
+    "segment": "E01-05",
+    "seconds": 11,
+    "cuts": 5,
+    "cutStarts": [
+      0,
+      2,
+      4,
+      7,
+      9
+    ],
+    "prompt": "export/h3/E01-05/prompt.md",
+    "pictures": [
+      "export/h3/E01-05/f1.png",
+      "export/h3/E01-05/f2.png",
+      "export/h3/E01-05/f3.png",
+      "export/h3/E01-05/f4.png",
+      "export/h3/E01-05/f5.png"
+    ],
+    "missing": [
+      "export/h3/E01-05/f1.png",
+      "export/h3/E01-05/f2.png",
+      "export/h3/E01-05/f3.png",
+      "export/h3/E01-05/f4.png",
+      "export/h3/E01-05/f5.png"
+    ]
+  },
+  {
+    "segment": "E01-06",
+    "seconds": 6,
+    "cuts": 2,
+    "cutStarts": [
+      0,
+      2
+    ],
+    "prompt": "export/h3/E01-06/prompt.md",
+    "pictures": [
+      "export/h3/E01-06/f1.png",
+      "export/h3/E01-06/f2.png"
+    ],
+    "missing": [
+      "export/h3/E01-06/f1.png",
+      "export/h3/E01-06/f2.png"
+    ]
+  },
+  {
+    "segment": "E01-07",
+    "seconds": 12.5,
+    "cuts": 5,
+    "cutStarts": [
+      0,
+      2,
+      4,
+      6.5,
+      9.5
+    ],
+    "prompt": "export/h3/E01-07/prompt.md",
+    "pictures": [
+      "export/h3/E01-07/f1.png",
+      "export/h3/E01-07/f2.png",
+      "export/h3/E01-07/f3.png",
+      "export/h3/E01-07/f4.png",
+      "export/h3/E01-07/f5.png"
+    ],
+    "missing": [
+      "export/h3/E01-07/f1.png",
+      "export/h3/E01-07/f2.png",
+      "export/h3/E01-07/f3.png",
+      "export/h3/E01-07/f4.png",
+      "export/h3/E01-07/f5.png"
+    ]
+  },
+  {
+    "segment": "E01-08",
+    "seconds": 10,
+    "cuts": 4,
+    "cutStarts": [
+      0,
+      2,
+      4,
+      6
+    ],
+    "prompt": "export/h3/E01-08/prompt.md",
+    "pictures": [
+      "export/h3/E01-08/f1.png",
+      "export/h3/E01-08/f2.png",
+      "export/h3/E01-08/f3.png",
+      "export/h3/E01-08/f4.png"
+    ],
+    "missing": [
+      "export/h3/E01-08/f1.png",
+      "export/h3/E01-08/f2.png",
+      "export/h3/E01-08/f3.png",
+      "export/h3/E01-08/f4.png"
+    ]
+  },
+  {
+    "segment": "E01-09",
+    "seconds": 5.5,
+    "cuts": 2,
+    "cutStarts": [
+      0,
+      2.5
+    ],
+    "prompt": "export/h3/E01-09/prompt.md",
+    "pictures": [
+      "export/h3/E01-09/f1.png",
+      "export/h3/E01-09/f2.png"
+    ],
+    "missing": [
+      "export/h3/E01-09/f1.png",
+      "export/h3/E01-09/f2.png"
+    ]
+  }
+]

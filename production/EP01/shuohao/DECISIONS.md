@@ -74,10 +74,29 @@ novel-characters 第一版漏讀 docs/16（Claude 疏漏），補正如下。**�
 | 項目 | 決策 |
 |---|---|
 | 台詞 | 13 句角色台詞與 docs/25 任務 01 逐字相同（腳本比對過）；玩家回應取選項 A「知道了。」 |
-| 旁白「九曜界，天玄院。」 | **動畫補充，非遊戲台詞**（沿用 docs/30 的構想）；只是地名，不與正史衝突。**待咖哩確認去留**，拿掉約少 1.8 秒 |
+| 旁白「九曜界，天玄院。」 | **動畫補充，非遊戲台詞**（沿用 docs/30 的構想）；只是地名，不與正史衝突。**咖哩確認保留** |
 | 鉤子 | 冷開場第 3 拍：玩家攥著憑證快步穿過東廊、腳步一快一慢，替後面「他的腳步有點亂」埋畫面 |
 | 補充的畫面動作（正史未寫、不影響劇情） | 齊衡烈從兵器架提起重刀（沿用 docs/30）、蕭曜霖說完轉身走遠、三人各自反應、結尾遠處演武場鐘聲後定格門牌 |
 | 未採用 | docs/30 的齊衡烈「這才對嘛」（非正史台詞）、片尾字卡「半刻鐘後，他會知道天玄院的第一條規矩。」（非正史，且暗示後續內容） |
 
 **旁白音色提示詞**（旁白不是角色，不進 cast.json）：
 `Mature narrator voice of indeterminate age around forty, neutral warm baritone, low-mid pitch, smooth chest resonance, narrow dynamic range. Moderate-low volume, slow pace, long even phrasing with falling endings. Standard Mandarin with neutral Taiwanese pronunciation. Calm, grounded, unhurried.`
+
+## 2026-09-24　novel-storyboard 分鏡取捨
+
+| 項目 | 決策 |
+|---|---|
+| 結構 | 9 段（一段一次影片生成，≤15 秒）／30 個分鏡（2–5 秒）／共 80 秒（劇本目標 75 秒，+6.7%，容差內） |
+| 畫幅 | skill 預設的 16:9 只影響報告縮圖，沒有品質門；**每格分鏡圖提示詞都寫明「直式 9:16」**，出圖與出片一律 9:16 |
+| 影片提示詞 | H3 用英文（官方口徑，`promptLang: en`），台詞逐字進 `<d>[Chinese]`；Seedance 版由 skill 程式從同一份分鏡現拼 |
+| 名字規則 | 分鏡圖提示詞（中文）直呼角色名＝指向要掛的角色設定圖；影片提示詞一律用通用身份（紅髮壯碩青年、藍黑袍劍修……） |
+| 四人同框 | 只有 E01-06 第 2 格（群像）與 E01-07 第 2 格（轉頭反應，以側臉背影為主），皆附拆解說明 |
+| 開場 | 第 1 格是雲帶流動＋鏡頭推進的空景（劇本冷開場順序），主體運動的鉤子在 E01-02 第 1 格（跟拍玩家腳步） |
+| 門牌 | E01-02、E01-09 的門牌都是無字版，「第七室」三字剪輯後製 |
+| 投產包 | `storyboard/export/h3/`（每段 prompt.md，分鏡圖放 f1..fN.png）、`storyboard/export/seedance/`；分鏡圖尚未生成，manifest 已列缺圖 |
+
+## 下一步（生成階段，不在 shuohao-skills 範圍內）
+
+1. 依 MASTER_VISUAL_STYLE_LOCK 附加畫風，先出角色設定圖（`characters/images/<角色名>-sheet.png`）與場景／道具設定圖（`art/images/`），可掛 GPT 參考稿選定的那一格當參考
+2. 先只出 **E01-01～E01-02 兩段的分鏡圖**驗收畫風與一致性，再往後補（skill frame.md 建議：先出第一段整套）
+3. 分鏡圖放進 `storyboard/export/h3/<段號>/f<序>.png` 後，逐段送影片模型；配音依劇本台詞本＋角色音色提示詞，旁白音色見上方
