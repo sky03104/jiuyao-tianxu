@@ -21,7 +21,18 @@
 | novel-storyboard | 分鏡：段(≤15秒)→分鏡(2–5秒)→分鏡圖，輸出 MiniMax H3 / Seedance 投產包 |
 
 順序建議：outline → characters → art → script → storyboard。
-輸出以簡體中文為主（原作者設定），需要時可要求改用繁體。
+
+## 繁體中文化（本專案修改）
+
+上游原本是簡體。本專案已用 `to-traditional.py`（OpenCC `s2twp` 台灣正體＋用語轉換）
+把 SKILL.md、references、腳本內建介面文字、品質門關鍵字、範例與測試夾具**全部一起轉成繁體**，
+並在每個 SKILL.md 開頭加上「人類可讀內容一律繁體中文（台灣用語）」的規則。
+報告介面預設語言 `zh` 現在就是繁體；出圖提示詞與 TTS 音色提示詞仍依原設計維持英文。
+
+轉換腳本的處理細節：
+- 以 NUL 字元分段轉換（novel-characters.mjs 用 NUL 當分隔符，OpenCC 遇到會截斷內容）
+- 補轉 OpenCC 漏掉的「里→裡」，並把「質量→品質」「對賬→對帳」改成台灣慣用詞
+- 可重複執行，已轉過的檔案不會再變
 
 ## 合成單頁報告
 
@@ -37,6 +48,7 @@ for n in novel-outline novel-characters novel-art novel-script novel-storyboard;
   rm -rf .claude/skills/$n && cp -r /tmp/shuohao/skills/$n .claude/skills/ && rm -rf .claude/skills/$n/assets
 done
 cp /tmp/shuohao/scripts/report*.mjs .claude/shuohao/
+pip install opencc && python3 .claude/shuohao/to-traditional.py   # 重新繁體化
 for f in .claude/skills/novel-*/scripts/selftest.mjs; do node "$f"; done
 ```
 更新後記得改上方 commit 版本號。

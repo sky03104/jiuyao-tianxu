@@ -1,11 +1,11 @@
 ---
 name: novel-characters
 description: |
-  从小说或短故事里拆出角色表、人物画像、形象提示词、音色提示词，
-  其中形象提示词含一张角色设定图的完整版面指令（左半身像 + 右全身三视图 + 细节条），
-  产出 JSON + Markdown + 可交互的 report.html。
-  报告语言可指定（--lang），默认中文，任意语言都支持；零依赖、零 API key、不出图。
-  Use when asked to 拆小说角色、分析人物、生成角色卡、character sheets from a novel。
+  從小說或短故事裡拆出角色表、人物畫像、形象提示詞、音色提示詞，
+  其中形象提示詞含一張角色設定圖的完整版面指令（左半身像 + 右全身三檢視 + 細節條），
+  產出 JSON + Markdown + 可互動的 report.html。
+  報告語言可指定（--lang），預設中文，任意語言都支援；零依賴、零 API key、不出圖。
+  Use when asked to 拆小說角色、分析人物、生成角色卡、character sheets from a novel。
 allowed-tools:
   - Read
   - Write
@@ -17,223 +17,225 @@ metadata:
   triggers:
     - novel-characters
     - 拆角色
-    - 拆书角色
-    - 小说角色
-    - 人物画像
+    - 拆書角色
+    - 小說角色
+    - 人物畫像
     - 角色卡
-    - 三视图
+    - 三檢視
     - character sheet from novel
   license: Apache-2.0
   requires:
     bins:
-      - node          # >= 18，只用标准库，无 npm 依赖
+      - node          # >= 18，只用標準庫，無 npm 依賴
   runtimes:
     - claude-code
     - codex
 ---
 
+> **本專案語言規則（九曜：天墟）**：所有人類可讀內容（改編說明、梗概、人物畫像、場景/道具說明、劇本動作與臺詞、分鏡說明、報告文字）一律使用**繁體中文（臺灣用語）**；輸入素材若是簡體也要以繁體輸出。`lang` 維持 `zh`（內建介面已轉為繁體）。出圖提示詞、TTS 音色提示詞照原規則維持英文。
+
 ## novel-characters
 
-输入一篇小说/短故事，输出每个角色的：人物画像、形象提示词、音色提示词、角色设定图的版面指令。
+輸入一篇小說/短故事，輸出每個角色的：人物畫像、形象提示詞、音色提示詞、角色設定圖的版面指令。
 
-**本 skill 不出图，只产提示词。**出图是下游的事——它要选模型、选画风、选画幅，那三件事在这里一个都答不了。
+**本 skill 不出圖，只產提示詞。**出圖是下游的事——它要選模型、選畫風、選畫幅，那三件事在這裡一個都答不了。
 
-`{baseDir}` = 本文件所在目录。脚本 `{baseDir}/scripts/novel-characters.mjs`，零依赖，`node` 直接跑。
+`{baseDir}` = 本檔案所在目錄。指令碼 `{baseDir}/scripts/novel-characters.mjs`，零依賴，`node` 直接跑。
 
-**运行环境**：Claude Code 和 codex 都能跑，没有差别——这条管线全是 node 脚本加模型读写，不碰任何本机可执行文件。
+**執行環境**：Claude Code 和 codex 都能跑，沒有差別——這條管線全是 node 指令碼加模型讀寫，不碰任何本機執行檔。
 
 ---
 
-### Step 0 — 确定报告语言
+### Step 0 — 確定報告語言
 
-用户可以指定语言，比如「用英文」「--lang en」「日本語で」。**没说就是中文（`zh`）。**
+使用者可以指定語言，比如「用英文」「--lang en」「日本語で」。**沒說就是中文（`zh`）。**
 
-这个 `lang` 会一路传下去：第二趟生成角色卡时决定人类可读字段用什么语言，`validate` 和 `render` 也都要带上。
+這個 `lang` 會一路傳下去：第二趟生成角色卡時決定人類可讀欄位用什麼語言，`validate` 和 `render` 也都要帶上。
 
-**界面文案分两种情况：**
+**介面文案分兩種情況：**
 
-- `zh` / `en` / `ja` —— 内置，不用管
-- **其他任何语言** —— 你要现场翻一份。跑
+- `zh` / `en` / `ja` —— 內建，不用管
+- **其他任何語言** —— 你要現場翻一份。跑
 
   ```bash
   node {baseDir}/scripts/novel-characters.mjs ui-template <lang>
   ```
 
-  它打印一份英文骨架，把每个值翻译成目标语言，整块放进 `cast.json` 顶层的 `ui` 字段。渲染时会合并进内置表。
+  它列印一份英文骨架，把每個值翻譯成目標語言，整塊放進 `cast.json` 頂層的 `ui` 欄位。渲染時會合並進內建表。
 
-  **不给 `ui` 的话 `validate` 会直接报错**——否则报告会是「角色内容是法语、界面标签是英文」的半吊子状态。
+  **不給 `ui` 的話 `validate` 會直接報錯**——否則報告會是「角色內容是法語、介面標籤是英文」的半吊子狀態。
 
-支持的语言不受内置表限制，法语韩语西班牙语都能出完整报告。
+支援的語言不受內建表限制，法語韓語西班牙語都能出完整報告。
 
-### Step 1 — 定位输入
+### Step 1 — 定位輸入
 
-用户给文件路径就直接用。直接粘正文的，**先落到一个临时 .txt**——后面校验「引文是否逐字」要拿原文比对，没有原文文件这步就没法做。
+使用者給檔案路徑就直接用。直接粘正文的，**先落到一個臨時 .txt**——後面校驗「引文是否逐字」要拿原文比對，沒有原檔案案這步就沒法做。
 
-确定输出目录：用户指定就用；没指定就用原书同级目录。
+確定輸出目錄：使用者指定就用；沒指定就用原書同級目錄。
 
-**有 `outline.json`（novel-outline 的产出）就一起要过来，走 seed**——大纲是角色设定的上游，它的 `characters` 块已经定死了角色清单：
+**有 `outline.json`（novel-outline 的產出）就一起要過來，走 seed**——大綱是角色設定的上游，它的 `characters` 塊已經定死了角色清單：
 
 ```bash
 node {baseDir}/scripts/novel-characters.mjs seed <outline.json> > <workdir>/seed.json
 ```
 
-搬过来的是大纲已经拍板的事实，留空的是这一层才该做的设计：
+搬過來的是大綱已經拍板的事實，留空的是這一層才該做的設計：
 
-| outline 的字段 | seed 之后 |
+| outline 的欄位 | seed 之後 |
 | --- | --- |
-| `id` | 原样保留成角色码——下游 script / storyboard 用它引用角色 |
-| `name` | 角色表就照这份，**不再自己判断谁该进** |
-| `tier` | 映射成 `importance`：`lead` → `protagonist`、`support` → `supporting`、`functional` → `minor` |
-| `arc` | 直接落进 `persona.arc` |
-| `role` / `from` | 进 `seedNote`——定位（女主 / 反派）与「由原著的谁合并而来」，扫原文时知道该收哪几条线的戏 |
+| `id` | 原樣保留成角色碼——下游 script / storyboard 用它引用角色 |
+| `name` | 角色表就照這份，**不再自己判斷誰該進** |
+| `tier` | 對映成 `importance`：`lead` → `protagonist`、`support` → `supporting`、`functional` → `minor` |
+| `arc` | 直接落進 `persona.arc` |
+| `role` / `from` | 進 `seedNote`——定位（女主 / 反派）與「由原著的誰合併而來」，掃原文時知道該收哪幾條線的戲 |
 
-留空待填：`aliases`（要读原文才知道）、`oneLiner`、`persona` 其余各项、`image`、`voice`。**seed 出来的是骨架不是成品**，直接跑 `validate` 会报一堆字段缺失，那是预期的——后面 Step 2–6 就是来填它的。
+留空待填：`aliases`（要讀原文才知道）、`oneLiner`、`persona` 其餘各項、`image`、`voice`。**seed 出來的是骨架不是成品**，直接跑 `validate` 會報一堆欄位缺失，那是預期的——後面 Step 2–6 就是來填它的。
 
-两处口径要守住：
+兩處口徑要守住：
 
-- **大纲定的分档不要推翻**。谁重要是改编阶段拍板的事，这一层只负责把定下来的人做深。真觉得分档不对，回去改大纲，别在这里悄悄改一个不一样的
-- **主角组内部可以细分**。outline 的 `lead` 是「男女主 + 主反派」一整组，对应 `protagonist` 与 `major` 两档，seed 一律给 `protagonist`；照 `seedNote` 里的定位把主角之外的改成 `major`，这不算推翻分档
+- **大綱定的分檔不要推翻**。誰重要是改編階段拍板的事，這一層只負責把定下來的人做深。真覺得分檔不對，回去改大綱，別在這裡悄悄改一個不一樣的
+- **主角組內部可以細分**。outline 的 `lead` 是「男女主 + 主反派」一整組，對應 `protagonist` 與 `major` 兩檔，seed 一律給 `protagonist`；照 `seedNote` 裡的定位把主角之外的改成 `major`，這不算推翻分檔
 
-**没有 `outline.json` 也照常跑**，本 skill 不依赖它——跳过 seed，从 Step 2 开始自己从原文拆角色表。
+**沒有 `outline.json` 也照常跑**，本 skill 不依賴它——跳過 seed，從 Step 2 開始自己從原文拆角色表。
 
-### Step 2 — 分块
+### Step 2 — 分塊
 
 ```bash
 node {baseDir}/scripts/novel-characters.mjs chunk <book.txt> <workdir>
 ```
 
-打印 `{"chunks": N, ...}`。
+列印 `{"chunks": N, ...}`。
 
-- **N == 1**：跳过 Step 3，直接在当前会话读原文做第一趟，结果自己写成 `<workdir>/roster-00.json`
-- **N > 1**：进 Step 3
-- `truncated: true`：明确告诉用户尾部没扫到，别闷着
+- **N == 1**：跳過 Step 3，直接在當前會話讀原文做第一趟，結果自己寫成 `<workdir>/roster-00.json`
+- **N > 1**：進 Step 3
+- `truncated: true`：明確告訴使用者尾部沒掃到，別悶著
 
-### Step 3 — 第一趟扫描（仅 N > 1）
+### Step 3 — 第一趟掃描（僅 N > 1）
 
-**当前环境支持子代理就并发**（Claude Code 的 Task、codex 的 subagent）：每块一个子代理，**所有调用放在同一条消息里**才是真并发。不支持就一块一块串行读，结果一样，只是慢。
+**當前環境支援子代理就併發**（Claude Code 的 Task、codex 的 subagent）：每塊一個子代理，**所有呼叫放在同一條訊息裡**才是真併發。不支援就一塊一塊序列讀，結果一樣，只是慢。
 
-每个子代理的任务：
-1. 读 `{baseDir}/references/roster-pass.md`，照它执行
-2. 读 `<workdir>/chunk-NN.txt`
-3. 把 roster JSON 写到 `<workdir>/roster-NN.json`
-4. 只回一句「done NN，抽到 X 个角色」
+每個子代理的任務：
+1. 讀 `{baseDir}/references/roster-pass.md`，照它執行
+2. 讀 `<workdir>/chunk-NN.txt`
+3. 把 roster JSON 寫到 `<workdir>/roster-NN.json`
+4. 只回一句「done NN，抽到 X 個角色」
 
-### Step 4 — 归并 + 复核
+### Step 4 — 歸併 + 複核
 
 ```bash
 node {baseDir}/scripts/novel-characters.mjs merge <workdir> | tee <workdir>/merged.json
 ```
 
-落到 `merged.json` 不只是留档：Step 6 的 assemble 靠它拿同档角色的戏份顺序。
+落到 `merged.json` 不只是留檔：Step 6 的 assemble 靠它拿同檔角色的戲份順序。
 
-按名字+别名精确收敛（某块把「陆」列成「陆行远」的别名，两条就并成一个人），notes 累加、quotes 去重，按出现块数降序——出现的块越多戏份越重。
+按名字+別名精確收斂（某塊把「陸」列成「陸行遠」的別名，兩條就併成一個人），notes 累加、quotes 去重，按出現塊數降序——出現的塊越多戲份越重。
 
-输出是 `{ "characters": [...], "mergeCandidates": [...] }`。**`mergeCandidates` 要逐条复核**：精确匹配只能收敛两块恰好写了相同称呼的情况，剩下的是语义判断，脚本做不了。候选来自名字包含关系（`「陆」⊂「陆行远」`）——是强信号不是判决，同姓的父子、兄弟就不能合。候选之外你自己看出来的同人（「陆先生」和「行远」没有包含关系，不会进候选）也要合。
+輸出是 `{ "characters": [...], "mergeCandidates": [...] }`。**`mergeCandidates` 要逐條複核**：精確匹配只能收斂兩塊恰好寫了相同稱呼的情況，剩下的是語義判斷，指令碼做不了。候選來自名字包含關係（`「陸」⊂「陸行遠」`）——是強訊號不是判決，同姓的父子、兄弟就不能合。候選之外你自己看出來的同人（「陸先生」和「行遠」沒有包含關係，不會進候選）也要合。
 
-要合并就写一份 merges.json 再落地：
+要合併就寫一份 merges.json 再落地：
 
 ```json
-{ "merges": [{ "keep": "陆行远", "absorb": ["陆", "陆先生"] }] }
+{ "merges": [{ "keep": "陸行遠", "absorb": ["陸", "陸先生"] }] }
 ```
 
 ```bash
 node {baseDir}/scripts/novel-characters.mjs merge <workdir> --apply merges.json | tee <workdir>/merged.json
 ```
 
-`keep`/`absorb` 用名字或任一别名定位都行，找不到会直接报错。输出仍带 `mergeCandidates`，剩下的都确认是不同的人（或清空）再进下一步。没有要合的就直接往下走——但 `merged.json` 必须留着。
+`keep`/`absorb` 用名字或任一別名定位都行，找不到會直接報錯。輸出仍帶 `mergeCandidates`，剩下的都確認是不同的人（或清空）再進下一步。沒有要合的就直接往下走——但 `merged.json` 必須留著。
 
-### Step 5 — 选角
+### Step 5 — 選角
 
-取前 N 位。默认 30，用户说了就听用户的。剩下的角色在最后汇报里提一句「还识别出 X 位没做画像」。
+取前 N 位。預設 30，使用者說了就聽使用者的。剩下的角色在最後彙報裡提一句「還識別出 X 位沒做畫像」。
 
 ### Step 6 — 第二趟出卡
 
-每个角色一份，同样能并发就并发。
+每個角色一份，同樣能併發就併發。
 
-每份任务拿到：
-- `{baseDir}/references/profile-pass.md` 和 `{baseDir}/references/schema.md`（读它们，照着做）
-- **报告语言 `lang`**（Step 0 定的）
-- 该角色归并后的 `name` / `aliases` / `notes` / `quotes`
-- **同批其他角色的名字**（避免长相声线撞车）
+每份任務拿到：
+- `{baseDir}/references/profile-pass.md` 和 `{baseDir}/references/schema.md`（讀它們，照著做）
+- **報告語言 `lang`**（Step 0 定的）
+- 該角色歸併後的 `name` / `aliases` / `notes` / `quotes`
+- **同批其他角色的名字**（避免長相聲線撞車）
 
-按 `profile-pass.md` 完成身份—外观语义自检后再交卡：人物档案、形象提示词、本地译文与设定图主体不能各说一种身份。大纲决定名单和改编取舍，原文观察补足外形依据；不要只给大纲而跳过 Step 2–4 的原文扫描。
+按 `profile-pass.md` 完成身份—外觀語義自檢後再交卡：人物檔案、形象提示詞、本地譯文與設定圖主體不能各說一種身份。大綱決定名單和改編取捨，原文觀察補足外形依據；不要只給大綱而跳過 Step 2–4 的原文掃描。
 
-角色卡 JSON 写到 `<workdir>/card-<slug>.json`。**断点续跑**：`card-<slug>.json` 已存在的角色不必重跑。
+角色卡 JSON 寫到 `<workdir>/card-<slug>.json`。**斷點續跑**：`card-<slug>.json` 已存在的角色不必重跑。
 
-**同时写一段故事摘要**：用 `lang` 指定的语言，3–5 句，交代时空背景、核心情境、这几个人聚在一起的由头。短篇直接从原文写；长篇从各块的 roster note 归纳。不剧透结局，不写成推荐语。写到 `<workdir>/summary.txt`。非内置语言的话，把 Step 0 翻好的 ui 整块存成 `<workdir>/ui.json`。
+**同時寫一段故事摘要**：用 `lang` 指定的語言，3–5 句，交代時空背景、核心情境、這幾個人聚在一起的由頭。短篇直接從原文寫；長篇從各塊的 roster note 歸納。不劇透結局，不寫成推薦語。寫到 `<workdir>/summary.txt`。非內建語言的話，把 Step 0 翻好的 ui 整塊存成 `<workdir>/ui.json`。
 
-然后合成 cast.json——**用 assemble，不要手拼**（手拼会丢字段、写错顶层键）：
+然後合成 cast.json——**用 assemble，不要手拼**（手拼會丟欄位、寫錯頂層鍵）：
 
 ```bash
 node {baseDir}/scripts/novel-characters.mjs assemble <workdir> \
-  --source <书名> --lang <lang> \
-  --out <输出目录>/<书名>-cast.json
+  --source <書名> --lang <lang> \
+  --out <輸出目錄>/<書名>-cast.json
 ```
 
-坏卡会被逐个点名——哪份 `card-*.json` 坏了就只重跑那个角色，其他不用动。
+壞卡會被逐個點名——哪份 `card-*.json` 壞了就只重跑那個角色，其他不用動。
 
-同档角色的先后是戏份顺序，来自 Step 4 留下的 `<workdir>/merged.json`（assemble 自动读，也可用 `--order` 指别的文件）。报告左栏「按戏份排序」的序号就靠它——看到「同档角色将按文件名序」的警告说明 merged.json 丢了，回 Step 4 重新生成。
+同檔角色的先後是戲份順序，來自 Step 4 留下的 `<workdir>/merged.json`（assemble 自動讀，也可用 `--order` 指別的檔案）。報告左欄「按戲份排序」的序號就靠它——看到「同檔角色將按檔名序」的警告說明 merged.json 丟了，回 Step 4 重新生成。
 
-### Step 7 — 校验 ⛔ 不能跳
+### Step 7 — 校驗 ⛔ 不能跳
 
 ```bash
 node {baseDir}/scripts/novel-characters.mjs validate <cast.json> <book.txt>
 ```
 
-记得带上 `--lang`（Step 0 定的）。检查：结构、`importance` 枚举、**引文逐字**、**出图提示词不含人名**、**语言分工**（人类字段跟随 `lang`、出图/TTS 提示词永远英文）、以及**非内置语言必须带 `ui`**。
+記得帶上 `--lang`（Step 0 定的）。檢查：結構、`importance` 列舉、**引文逐字**、**出圖提示詞不含人名**、**語言分工**（人類欄位跟隨 `lang`、出圖/TTS 提示詞永遠英文）、以及**非內建語言必須帶 `ui`**。
 
-**有违规就按报错逐条修，改完重跑，直到通过。** 这四类错模型真的会犯——这套检查就是被真实输出打出来的。
+**有違規就按報錯逐條修，改完重跑，直到通過。** 這四類錯模型真的會犯——這套檢查就是被真實輸出打出來的。
 
-### Step 8 — 输出
+### Step 8 — 輸出
 
 ```bash
-cd <输出目录>
-node {baseDir}/scripts/novel-characters.mjs render <cast.json> --md   > <书名>-cast.md
+cd <輸出目錄>
+node {baseDir}/scripts/novel-characters.mjs render <cast.json> --md   > <書名>-cast.md
 node {baseDir}/scripts/novel-characters.mjs render <cast.json> --html > report.html
 ```
 
-语言取 `cast.json` 里的 `lang`，要临时覆盖就加 `--lang <code>`。
+語言取 `cast.json` 裡的 `lang`，要臨時覆蓋就加 `--lang <code>`。
 
-`render` 默认去 cast.json 同级的 `images/<slug>-sheet.png` 找图；图在别处就用 `--images <目录>`
-指过去（任意路径）。**本 skill 不产生这些文件**——下游出完图，重跑一次 render 就能把图嵌进报告。
+`render` 預設去 cast.json 同級的 `images/<slug>-sheet.png` 找圖；圖在別處就用 `--images <目錄>`
+指過去（任意路徑）。**本 skill 不產生這些檔案**——下游出完圖，重跑一次 render 就能把圖嵌進報告。
 
-report.html 的样式约定见 `{baseDir}/references/report-style.md`——要改样式先读它，别把它改回通用卡片墙。
+report.html 的樣式約定見 `{baseDir}/references/report-style.md`——要改樣式先讀它，別把它改回通用卡片牆。
 
-最终落地：
+最終落地：
 
 ```
-<输出目录>/
-├── <书名>-cast.json
-├── <书名>-cast.md
-├── report.html                    ← 双击就能开
-└── images/                        ← 本 skill 不写这个目录
-    └── <slug>-sheet.png           ← 下游出完图放这儿，render 会捡起来
+<輸出目錄>/
+├── <書名>-cast.json
+├── <書名>-cast.md
+├── report.html                    ← 雙擊就能開
+└── images/                        ← 本 skill 不寫這個目錄
+    └── <slug>-sheet.png           ← 下游出完圖放這兒，render 會撿起來
 ```
 
-### Step 9 — 汇报
+### Step 9 — 彙報
 
-一句话说清：角色数、报告路径。校验一次没过的话，说明修了什么。原文被截断要明确说清楚。
+一句話說清：角色數、報告路徑。校驗一次沒過的話，說明修了什麼。原文被截斷要明確說清楚。
 
-**不要说「已出图」或「已生成设定图」**——这一步不存在了，交付的是提示词。
+**不要說「已出圖」或「已生成設定圖」**——這一步不存在了，交付的是提示詞。
 
 ---
 
-## 边界
+## 邊界
 
-- 单次上限 24 块（净覆盖约 93 万字符），超了会明确报 `truncated`，不静默截断
-- 人类可读字段跟随 `--lang`（默认中文）；出图和 TTS 提示词**永远英文**，那些引擎吃英文最稳
-- **本 skill 不出图。**`image.sheet` 是给下游的版面指令，版面最容易崩的几处（一张图两个长相、
-  为了塞细节把人物压扁、左栏收口）靠提示词里写死的几句压住，见 `references/sheet.md`
-- 想要能实时编辑、边跑边看的交互界面，那是另一个东西，不在这个 skill 里
+- 單次上限 24 塊（淨覆蓋約 93 萬字元），超了會明確報 `truncated`，不靜默截斷
+- 人類可讀欄位跟隨 `--lang`（預設中文）；出圖和 TTS 提示詞**永遠英文**，那些引擎吃英文最穩
+- **本 skill 不出圖。**`image.sheet` 是給下游的版面指令，版面最容易崩的幾處（一張圖兩個長相、
+  為了塞細節把人物壓扁、左欄收口）靠提示詞裡寫死的幾句壓住，見 `references/sheet.md`
+- 想要能即時編輯、邊跑邊看的互動介面，那是另一個東西，不在這個 skill 裡
 
-## 自测
+## 自測
 
 ```bash
 node {baseDir}/scripts/selftest.mjs
 ```
 
-329 项断言，不调模型、不花额度，覆盖分块 / 归并 / 合成 / 多语言 / 校验 / 渲染的全部确定性逻辑。改完脚本先跑这个。
+329 項斷言，不調模型、不花額度，覆蓋分塊 / 歸併 / 合成 / 多語言 / 校驗 / 渲染的全部確定性邏輯。改完指令碼先跑這個。
 
-## 自带样例
+## 自帶樣例
 
-`{baseDir}/examples/渡口.txt` 是一篇短故事，4 个角色，其中货郎全程只有绰号、船夫只被叫过「老伯」——专门用来验别名归并。对应产出 `渡口-cast.json` / `渡口-cast.md` 可以当质量基准，也是校验的自检夹具。
+`{baseDir}/examples/渡口.txt` 是一篇短故事，4 個角色，其中貨郎全程只有綽號、船伕只被叫過「老伯」——專門用來驗別名歸併。對應產出 `渡口-cast.json` / `渡口-cast.md` 可以當品質基準，也是校驗的自檢夾具。

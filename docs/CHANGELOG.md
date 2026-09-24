@@ -9,6 +9,9 @@
   來源版本、授權、更新方式記錄於 `.claude/shuohao/README.md`。
 - 安裝前檢查腳本無對外連線/無外部依賴，Linux+Node 22 全部自測通過。
 - 短影音仍依 `22_TRANSMEDIA_ANIMATION_PLAN` 原則：遊戲為正史，影音衝突時先改影音。
+- 預設語言改為繁體中文（台灣用語）：以 `.claude/shuohao/to-traditional.py`（OpenCC s2twp）
+  將 skill 指示、腳本介面文字、品質門關鍵字、範例與測試夾具一併轉換，並在各 SKILL.md
+  加上繁體輸出規則；轉換後全部自測仍通過。出圖/TTS 提示詞維持英文。
 
 ## 2026-09-16（第二十四筆，HANDOFF-007：Phase 0-C完成，靈印Data-driven Prototype驗證通過）
 

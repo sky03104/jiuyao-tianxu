@@ -36,7 +36,7 @@ Same stance as the other four skills in this repo: **a checklist the model grade
 | Episode total | Σ segments within ±15% of the script's `targetSeconds` |
 | On-screen cap | ≤ 3 characters per cut, more requires a breakdown note |
 | Segment ID discipline | `E01-01` format, sequential — the segment ID is the asset filename |
-| Size word | the Chinese shot-size word (e.g. 特写) must appear in the cut's frame prompt |
+| Size word | the Chinese shot-size word (e.g. 特寫) must appear in the cut's frame prompt |
 | Camera vocabulary | camera moves use H3's official terms (`Push In` / `Pan Left` / `Tracking Shot`…) and must appear inside **that cut's own [Shot k] passage** |
 | **H3 structure** | the alignment line is **derived from the cut structure and audited verbatim**; three fields in order; every `[Shot k]` cut time equals the running sum of prior cut durations |
 | **H3 dialogue verbatim** | every claimed line appears verbatim inside a `<d>` block — one changed punctuation mark fails |
