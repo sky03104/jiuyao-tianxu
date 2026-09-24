@@ -68,3 +68,16 @@ novel-characters 第一版漏讀 docs/16（Claude 疏漏），補正如下。**�
 | 變體 | 本集三景互不為變體，全部是主場景；EP10 返院、EP11 夜談時再以 variantOf 從這三景派生 | skill scene-pass 第 7 條 |
 | 第七室門牌 | 一律出無字版，「第七室」三字直書於剪輯時後製；GPT 參考稿雖然生成對了字，影片生成時仍會扭曲 | outline 風險對策 |
 | 入院憑證 | 新設計：掌心大小、古青銅框嵌淡青白玉、淺浮雕學院圓紋、深藍絲繩；背面刻框留空不生成文字；全新無磨損 | docs/16 學院徽飾語彙；正史僅寫「入院憑證」無外觀描述 |
+
+## 2026-09-24　novel-script 劇本取捨
+
+| 項目 | 決策 |
+|---|---|
+| 台詞 | 13 句角色台詞與 docs/25 任務 01 逐字相同（腳本比對過）；玩家回應取選項 A「知道了。」 |
+| 旁白「九曜界，天玄院。」 | **動畫補充，非遊戲台詞**（沿用 docs/30 的構想）；只是地名，不與正史衝突。**待咖哩確認去留**，拿掉約少 1.8 秒 |
+| 鉤子 | 冷開場第 3 拍：玩家攥著憑證快步穿過東廊、腳步一快一慢，替後面「他的腳步有點亂」埋畫面 |
+| 補充的畫面動作（正史未寫、不影響劇情） | 齊衡烈從兵器架提起重刀（沿用 docs/30）、蕭曜霖說完轉身走遠、三人各自反應、結尾遠處演武場鐘聲後定格門牌 |
+| 未採用 | docs/30 的齊衡烈「這才對嘛」（非正史台詞）、片尾字卡「半刻鐘後，他會知道天玄院的第一條規矩。」（非正史，且暗示後續內容） |
+
+**旁白音色提示詞**（旁白不是角色，不進 cast.json）：
+`Mature narrator voice of indeterminate age around forty, neutral warm baritone, low-mid pitch, smooth chest resonance, narrow dynamic range. Moderate-low volume, slow pace, long even phrasing with falling endings. Standard Mandarin with neutral Taiwanese pronunciation. Calm, grounded, unhurried.`
