@@ -16,6 +16,7 @@ EP01〈第七室報到〉出圖腳本（OpenAI 圖像 API）
   python gen_images.py sheets --only 齊衡烈 --force  # 重出指定一張
   python gen_images.py frames --segments E01-01,E01-02
   python gen_images.py jobs                        # 寫 IMAGE_JOBS.md（手動貼 ChatGPT 用的備援清單）
+  python gen_images.py handoff                     # 寫 docs/HANDOFF-009（ChatGPT 網頁版分鏡圖交接檔）
 """
 import argparse
 import base64
@@ -311,9 +312,99 @@ def write_jobs_md(jobs):
     print(f"✓ {rel(out)}（{len(jobs)} 張）")
 
 
+REPO_RAW = "https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/"
+REPO_BLOB = "https://github.com/sky03104/jiuyao-tianxu/blob/main/production/EP01/shuohao/"
+REPO_TREE = "https://github.com/sky03104/jiuyao-tianxu/tree/main/production/EP01/shuohao/"
+HANDOFF = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(HERE)))),
+                       "docs", "HANDOFF-009_CHATGPT_WEB_STORYBOARD.md")
+
+
+def write_handoff_md(jobs):
+    """給 ChatGPT 網頁版的分鏡圖交接檔：每張的參考圖下載連結＋完整提示詞，照順序貼就能出圖。"""
+    from urllib.parse import quote
+    segs = []
+    for j in jobs:
+        seg = j["id"].rsplit("-f", 1)[0]
+        if not segs or segs[-1][0] != seg:
+            segs.append((seg, []))
+        segs[-1][1].append(j)
+    L = []
+    for seg, js in segs:
+        L += [f"## {seg}（{len(js)} 張）", "",
+              f"上傳位置：[{REPO_TREE}storyboard/export/h3/{seg}]({REPO_TREE}storyboard/export/h3/{quote(seg)})", ""]
+        for k, j in enumerate(js, start=1):
+            L += [f"### {seg} f{k}　→ 存成 `f{k}.png`", "", "**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**", ""]
+            for n, r in enumerate(j["refs"], start=1):
+                rp = rel(r)
+                if rp.endswith("/f1.png"):
+                    L.append(f"{n}. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）")
+                else:
+                    L.append(f"{n}. [{os.path.basename(rp)}]({REPO_RAW}{quote(rp)})")
+            L += ["", "**提示詞（整段複製貼上）：**", "", "```text", j["prompt"], "```", ""]
+    head = f"""# 《九曜：天墟》HANDOFF-009
+
+## EP01 分鏡圖：用 ChatGPT 網頁版出圖（免 API 費用）
+
+**日期：2026-09-24**
+**狀態：READY TO EXECUTE**
+**執行者：咖哩（在 ChatGPT 網頁版操作）；ChatGPT 讀本檔協助**
+**前置：EP01 設定圖 10 張已定稿（PR #3 已合併 main）**
+
+> 本檔由 `production/EP01/shuohao/imagegen/gen_images.py handoff` 自動產生，提示詞與分鏡／設定圖同步。
+> 分鏡或設定圖改了就重跑產生，不要手改提示詞。
+
+---
+
+# 1. 為什麼用網頁版
+
+API 出圖要另外付費（30 張約 US$8～15），ChatGPT 網頁版的生圖包含在訂閱裡。
+而且本作的官方畫風樣板（GPT 參考稿）本來就是在 ChatGPT 出的，同一個模型畫風最接近。
+
+# 2. 給 ChatGPT 的規則（每個對話開頭先貼這段）
+
+```text
+你現在協助《九曜：天墟》EP01 分鏡圖出圖。規則：
+1. 畫風以我附上的設定圖為準（國風仙俠 MMORPG 主視覺 CG／國漫 3D 動畫質感），不要改成寫實照片、日式動漫或西方奇幻。
+2. 角色的臉、髮型、服裝、武器必須和我附上的角色設定圖一模一樣，不可重新設計。
+3. 場景的建築、材質、擺設必須和場景設定圖一致。
+4. 畫面裡不要出現任何文字、字幕、浮水印、邊框；門牌一律無字。
+5. 一律出直式圖（9:16，做不到就 2:3 直式），單一完整畫面，不要拼貼、不要設定表版面。
+6. 天空乾淨，不要出現裂縫、裂隙、紅色裂痕。
+7. 每次只出我指定的那一張，照我貼的提示詞畫。
+```
+
+# 3. 操作流程
+
+1. **一段開一個新對話**（例如 E01-01 一個對話），先貼第 2 節的規則。
+2. 照下面每張的清單，**按順序**下載並附上參考圖（點連結→右鍵另存；順序對應提示詞裡的 Image 1、2、3…）。
+3. 貼上該張的提示詞送出。
+4. 滿意就下載，**檔名改成 `f1.png`、`f2.png`…**；不滿意就在同一個對話說哪裡不對、請它重畫。
+5. 同一段的 f2 之後都在**同一個對話**裡做，清單會提醒你再附一次 f1（保持光線、角色一致）。
+6. 一段做完，把圖上傳回 GitHub：打開該段的「上傳位置」連結 → 右上 **Add file → Upload files** → 拖進 f1.png、f2.png… → Commit。
+   （或直接貼回 Claude 的 session，由 Claude 存進 repo。）
+
+**建議先只做 E01-01、E01-02（共 5 張）**，上傳後請 Claude 逐張驗圖，畫風與一致性沒問題再做後面 7 段。
+
+# 4. 驗圖重點（自己先看一遍）
+
+- 畫風跟設定圖、參考稿放在一起像同一部作品
+- 角色沒被重新設計：髮色、瞳色（厲若楓琥珀眼、玩家深棕眼）、武器、配件位置
+- 沒有文字、沒有天空裂隙、門牌無字
+- 只出現提示詞點名的角色
+
+# 5. 逐張清單
+
+共 {len(jobs)} 張、{len(segs)} 段。
+
+"""
+    with open(HANDOFF, "w", encoding="utf-8") as f:
+        f.write(head + "\n".join(L))
+    print(f"✓ {os.path.relpath(HANDOFF, ROOT)}（{len(jobs)} 張）")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("phase", choices=["sheets", "frames", "jobs"])
+    ap.add_argument("phase", choices=["sheets", "frames", "jobs", "handoff"])
     ap.add_argument("--only", help="只做名稱或 id 相符的項目，逗號分隔（例：齊衡烈,S01）")
     ap.add_argument("--segments", help="frames 用：段號，逗號分隔（例：E01-01,E01-02）")
     ap.add_argument("--model", default=os.environ.get("IMAGE_MODEL", "chatgpt-image-latest"))
@@ -324,6 +415,9 @@ def main():
 
     if args.phase == "jobs":
         write_jobs_md(build_sheet_jobs() + build_frame_jobs())
+        return
+    if args.phase == "handoff":
+        write_handoff_md(build_frame_jobs())
         return
     segs = set(args.segments.split(",")) if args.segments else None
     jobs = build_sheet_jobs() if args.phase == "sheets" else build_frame_jobs(segs)

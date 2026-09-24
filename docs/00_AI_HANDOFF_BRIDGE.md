@@ -1781,6 +1781,16 @@ Claude 必須交叉檢查：
 
 ---
 
+## [HANDOFF-009]（2026-09-24，Claude Code → ChatGPT 網頁版）EP01 分鏡圖出圖
+
+- 交接檔：`docs/HANDOFF-009_CHATGPT_WEB_STORYBOARD.md`（公開 repo，可直接用 raw 連結讀：
+  https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/docs/HANDOFF-009_CHATGPT_WEB_STORYBOARD.md ）
+- 背景：API 出圖＋付費影片模型整集估 US$35～70，咖哩裁定改走省錢路線：分鏡圖在 ChatGPT 網頁版出（含在訂閱內），
+  影片之後評估免費方案（Wan 2.2 on Colab／Kaggle、可靈免費額度等）。
+- 內容：30 張分鏡圖的逐張參考圖下載連結＋完整提示詞＋給 ChatGPT 的規則；先做 E01-01、E01-02 共 5 張，
+  上傳回 `production/EP01/shuohao/storyboard/export/h3/<段號>/f<序>.png` 後由 Claude 驗圖。
+- 畫風最高標準：`docs/MASTER_VISUAL_STYLE_LOCK_V1.0.md`（v1.1）第零節，以 GPT 參考稿與定稿設定圖為準。
+
 # 11. 當前產品決策摘要
 
 截至 2026-09-15，以下事項已經由使用者確認：
