@@ -16,6 +16,8 @@
 > - Host 模式（Editor 按 Play 用的模式）不用開 Editor 也能測：
 >   `Builds/Phase0D/JiuyaoTianxu.exe -batchmode -nographics -autotest -quitafter 60 -netmode host -logFile Logs/HostTest/host.log`，
 >   看 log 裡 `requesting accept` 與 `Available → Accepted` 次數是否相同。
+>   要測「Host＋遠端 Client」：Host 用 `-quitafter 80` 先開，8 秒後再開一個 `-netmode client -quitafter 65`，
+>   Host log 應該同時有 `[ClientCommands] command 1(...) from [Player:1]` 與 `from [Player:2]`，且沒有 `no handler`。
 > - 報表的 `quest accepted` 應等於兩個 Client 的 `requesting accept` 總數（一次請求一次接取），`REJECTED` 應為 0。
 
 ---

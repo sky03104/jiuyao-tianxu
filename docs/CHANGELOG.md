@@ -4,14 +4,15 @@
 
 - 本機 Unity 6000.5.5f1＋Fusion 2.1.2 (build 2279) 照 `PHASE0_LOCAL_VERIFICATION_RUNBOOK.md` 跑完步驟 0～5。
 - **Phase 0-D 標記 COMPLETE**：1 Server + 2 Client 自動測試 PASS、例外 0、Join/Leave 正常；結果寫進
-  CLAUDE-REPLY-008。**Phase 0-E** 資料表免重新打包（赤炎 45→18）、目標鎖定、燒怪、死亡重生都通過，
+  CLAUDE-REPLY-008。**Phase 0-E** 資料表免重新打包（赤炎 43→18）、目標鎖定、燒怪、死亡重生都通過，
   觸控未測，暫不標 COMPLETE（CLAUDE-NOTE-006）。
 - 修正：Fusion 2.1.2 的 `[Rpc]` 在 Mono 打包版丟 `MethodAccessException`（weaver 呼叫 internal 方法）。
   新增 `Core/ClientCommands`（Fusion `SendReliableDataToServer`）處理一次性 Client→Server 命令，接任務改走它；
-  Host loopback 的 sender 是 `PlayerRef.None`，已對應成 Host 的 LocalPlayer。**專案目前不能新增 `[Rpc]`**，
-  是否定為專案標準請 ChatGPT 在 Code Review 裁定。
-- 審查：三方審查（ChatGPT／DeepSeek／GLM＋獨立 Claude 程式審查＋文件查證；Codex 登入過期、Gemini 503 未參與），
-  抓到中間版本（請求放進輸入結構）的重送 bug，因而改用 `ClientCommands`；文件寫得比證據樂觀的地方已修正。
+  命令只送到發送者本人註冊的處理者（API 統一把關）；Host 自己的命令在本機直接處理，sender 是 None 的命令一律丟棄。
+  **專案目前不能新增 `[Rpc]`**，是否定為專案標準請 ChatGPT 在 Code Review 裁定。
+- 審查：三方審查（ChatGPT／DeepSeek／GLM＋獨立 Claude 程式審查兩輪＋文件查證兩輪；Codex 登入過期、Gemini 503
+  未參與），抓到中間版本（請求放進輸入結構）的重送 bug、Host sender 推定無法證明安全，都已修正並重跑；
+  補測 Host＋遠端 Client；文件寫得比證據樂觀的地方已修正。
 - 修正：測試腳本在 PowerShell 5.1／中文路徑可用（csproj 改 UTF-8）；`Player left` 檢查改在結束前 35 秒砍 client2；
   `validate_tables.py` 讀得懂 Unity 折行的長字串（CI 誤報）。
 - 新增：debug HUD 顯示目前武器（咖哩手感測試回報看不出拿什麼武器）。

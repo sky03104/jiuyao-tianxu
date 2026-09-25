@@ -370,9 +370,10 @@ DamageService.Resolve()  ── 只在 HP 由 >0 變 0 的那一擊 ──→ Co
 - 轉移表在 `QuestStateMachine`（純 C#），任務差異全部來自 `QuestDefinition` 資料，
   沒有任何 `if (questId == ...)`。
 - Accept：Client 呼叫 `QuestTracker.RequestAccept` → `ClientCommands.Send`（Fusion `SendReliableDataToServer`，
-  可靠送達、每次請求送一次）→ Server 的 `NetworkGameLauncher.OnReliableDataReceived` → `ClientCommands.Received`
-  → 發送者本人的 `QuestTracker` 驗證狀態才轉移；非法請求會印 `accept REJECTED`。發送者 PlayerRef 由傳輸層決定，
-  Client 無法冒充別人。**不用 `[Rpc]`**，原因見「已知問題」。
+  可靠送達、每次請求送一次）→ Server 的 `NetworkGameLauncher.OnReliableDataReceived` → `ClientCommands.Dispatch`
+  → 只交給**發送者本人**註冊的處理者（每個 Server 端 `QuestTracker` 用自己的玩家註冊）→ 驗證狀態才轉移；
+  非法請求會印 `accept REJECTED`。發送者 PlayerRef 由傳輸層決定，Client 無法冒充別人。Host 自己的請求不經網路，
+  直接在本機交給處理者。**不用 `[Rpc]`**，原因見「已知問題」。
 - 完成時發測試獎勵（`DebugRewardPoints`），並把「前置任務 = 本任務」的 Locked 任務解鎖。
 - 網路只同步 `QuestNumId / State / Progress` 三個 int，定義資料各端從 `QuestRegistry` 查。
 
@@ -419,16 +420,20 @@ Exception 數。**Server 的 PASS 條件**：≥2 名玩家完成 Q_PHASE0D_001�
 | 項目 | 結果 | 期望 |
 |---|---|---|
 | StartGame / Player joined / Player left | 1 / 2 / 1 | 1 / 2 / 1 |
-| 怪物生成 / EnemyKilled | 69 / 63 | ≥3 / >0 |
+| 怪物生成 / EnemyKilled | 68 / 65 | ≥3 / >0 |
 | Client 送出接任務請求 / Server 收到 / 接任務成功 | 4 / 4 / 4（REJECTED 0） | 一次請求一次接取 |
 | Progress 行 | 16 | ≥10 |
 | Q_PHASE0D_001 完成 / 002 解鎖 | 2 / 2 | 2 / ≥1 |
 | PASS 行 | 1 | 1 |
-| Client1 / Client2 `[QuestSync]` | 20 / 21 | >0 |
+| Client1 / Client2 `[QuestSync]` | 21 / 20 | >0 |
 | Exception / NullReference | **0** | 0 |
 
 **Host 模式**（headless：`JiuyaoTianxu.exe -batchmode -nographics -autotest -quitafter 60 -netmode host`）：
-Host 自己的玩家送出 2 次請求 → 2 次接取，001 完成、002 解鎖並完成，REJECTED 0、例外 0。
+- 只有 Host：Host 自己的玩家送出 2 次請求 → 2 次接取，001 完成、002 解鎖→接取→完成，REJECTED 0、例外 0。
+- Host＋1 個遠端 Client（`-netmode client`）：Host 收到 `[Player:1]`（自己）2 次、`[Player:2]`（遠端）2 次命令——
+  **遠端 Client 的發送者是它自己的編號，不是 None**；兩名玩家都完成 001、002，PASS 1、REJECTED 0、例外 0，
+  Client 端看得到 Host 玩家的任務同步（`[QuestSync] (remote [Player:1])` 8 行）。
+- log：`Logs/Final/HostOnly/`、`Logs/Final/HostClient/`（Logs 不進版控）。
 
 **手動**（咖哩在 Editor 按 Play，截圖可見 Hierarchy 顯示 `Host P1`）：咖哩先回報「看不出來現在拿什麼武器」→
 debug HUD 加上「武器：劍（Tab 切換）」一行、請他重新 Play 後，他回報「測完了都可以按」（沒有逐項說明看到什麼）。
@@ -436,7 +441,7 @@ debug HUD 加上「武器：劍（Tab 切換）」一行、請他重新 Play 後
 還沒有人在 Editor 裡手動按 Q 試過最終版。
 
 原本的三個風險點實跑結論：Fusion 自動註冊怪物 prefab 正常；headless 下 `Render()` 有呼叫（`[QuestSync]` 有 log）；
-命中怪物的 log：刀 23、劍 21、槍 47、重刃 18、靈杖 36 次；弓射出 28 支箭，但 `Projectile` 沒有命中 log，
+命中怪物的 log：刀 19、劍 16、槍 46、重刃 24、靈杖 27 次；弓射出 28 支箭，但 `Projectile` 沒有命中 log，
 **無法從 log 確認弓有打中怪物**（不影響任務邏輯）。
 
 ### 已知問題
@@ -445,10 +450,13 @@ debug HUD 加上「武器：劍（Tab 切換）」一行、請他重新 Play 後
    internal 方法的呼叫（`CheckInvokeRpc`、`CreateRpcBuilder`、`NotifyRpcError`、`NetworkRunnerDebugRpcEvent.*`，
    掃描打包後 `Assembly-CSharp.dll` 對 Fusion 的參照確認），Mono 執行時拒絕 → `MethodAccessException`。
    `[IgnoresAccessChecksTo]` 無效（Unity 的 Mono 不認）。**專案目前不能新增 `[Rpc]`**；Client→Server 的一次性請求
-   請走 `Core/ClientCommands`（加一個命令編號，Server 端訂閱 `ClientCommands.Received`、用 sender 過濾）。
+   請走 `Core/ClientCommands`（加一個命令編號；Server 端用 `ClientCommands.Register(runner, 玩家, 命令, 處理函式)`
+   註冊、Despawned 時 `Unregister`；Client 端 `ClientCommands.Send`）。
    升級 Fusion 或改用 IL2CPP 打包時要重新測。`[Networked]` 屬性不受影響。
-   - Host 自己送的命令經 loopback 回來時 sender 是 `PlayerRef.None`（官方文件沒寫，實測發現），
-     `ClientCommands.Dispatch` 會把它換成 Host 的 `LocalPlayer`。
+   - Host 自己的命令**不經** Fusion 的 loopback（loopback 回來的 sender 是 `PlayerRef.None`，官方文件沒寫，
+     實測發現），而是直接在本機交給處理者；Server 收到 sender 是 None 的命令一律丟棄（沒有人註冊 None）。
+   - 處理者按「(runner, 發送者, 命令)」註冊，命令只會送到發送者本人的處理者——等於原本 RPC 的
+     `RpcSources.InputAuthority` 限制，由 `ClientCommands` 統一把關，新功能不會漏寫。
 2. 測試出生點很擠（玩家與怪只差 1.5m），是為了讓 `-autotest` 固定往前打就能命中，數值可調整。
 
 ---
@@ -531,17 +539,17 @@ pwsh Tools/Phase0D/run_autotest.ps1 -Seconds 90 -LockOn
 
 | 項目 | 一般版（`-LockOn`） | 改數值版（`-ConfigDir`，赤炎冷卻 3→12） |
 |---|---|---|
-| `[TargetLock]` 行 | 102 | 0（沒加 `-LockOn`，預期） |
+| `[TargetLock]` 行 | 101 | 0（沒加 `-LockOn`，預期） |
 | `[ConfigOverride] applied` | 0 | 2 |
-| 赤炎觸發（其中打在怪物上） | 45（33） | **18**（7）— 明顯下降 |
-| 玄甲觸發 | 7 | 9 |
-| 影遁 armed／consumed | 41／37 | 42／38 |
-| 玩家倒地／復活 | 6／6 | 8／7（最後一次倒地時測試剛好結束） |
+| 赤炎觸發（其中打在怪物上） | 43（32） | **18**（8）— 明顯下降 |
+| 玄甲觸發 | 6 | 8 |
+| 影遁 armed／consumed | 42／37 | 43／39 |
+| 玩家倒地／復活 | 5／5 | 7／7 |
 | PASS／Exception | 1／0 | 1／0 |
 
 - 兩次都用同一個最終版 build，改數值版**沒有重新打包**（兩次之間 `Assembly-CSharp.dll` 時間戳相同）。
-- 燃燒確實扣怪物血：一般版 server.log 有 9 筆由 `BurnStatus` 呼叫 `DamageService` 造成的怪物扣血
-  （例：`Logs/Phase0D/server.log:8781` `Phase0D_TestMonster#22 took 3 damage`）。
+- 燃燒確實扣怪物血：一般版 server.log 有 11 筆由 `BurnStatus` 呼叫 `DamageService` 造成的怪物扣血
+  （例：`Logs/Final/Phase0D/server.log:8844` `Phase0D_TestMonster#22 took 3 damage`）。
 - 玄甲少於 0-C 的 10 次是死亡重生後的預期變化（見下方「對 0-C 靈印 regression 數字的影響」）。
 - 手感：見 Phase 0-D「本機實跑結果」的手動段落（咖哩回報「測完了都可以按」，沒有提出數值調整）。
 - **未測**：`-touchui` 與手機實機的虛擬搖桿（兩指同時操作只能在手機上測）。

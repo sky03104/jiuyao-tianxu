@@ -552,12 +552,12 @@ Unity 實跑、手感、觸控實機**尚未測**，細節與驗收步驟見 `un
 
 | Roadmap Phase 0 項目 | 證據 | 結果 |
 |---|---|---|
-| 資料表切換測試不需重新編譯 | `-ConfigDir` 把赤炎冷卻 3→12：`[ConfigOverride] applied` 2、赤炎觸發 45→18；兩次之間 build 檔時間戳不變 | ✅ |
-| 目標鎖定（Server 權威） | `-LockOn` 自動測試 `[TargetLock]` 102 行，例外 0 | ✅ |
-| 受擊判定 | 自動測試命中怪物 log：刀 23、劍 21、槍 47、重刃 18、靈杖 36；弓射出 28 箭但 `Projectile` 沒有命中 log，無法確認 | ✅（弓未確認） |
+| 資料表切換測試不需重新編譯 | `-ConfigDir` 把赤炎冷卻 3→12：`[ConfigOverride] applied` 2、赤炎觸發 43→18；兩次之間 build 檔時間戳不變 | ✅ |
+| 目標鎖定（Server 權威） | `-LockOn` 自動測試 `[TargetLock]` 101 行，例外 0 | ✅ |
+| 受擊判定 | 自動測試命中怪物 log：刀 19、劍 16、槍 46、重刃 24、靈杖 27；弓射出 28 箭但 `Projectile` 沒有命中 log，無法確認 | ✅（弓未確認） |
 | 基礎回饋 | 咖哩 Editor 截圖可見傷害數字「3」與頭上血條；受擊閃紅沒有單獨確認；咖哩回報「測完了都可以按」 | ✅（閃紅未確認） |
-| 赤炎燒怪（D1） | 赤炎打在怪物上 33 次；server.log 有 9 筆 `BurnStatus → DamageService` 的怪物扣血（例：第 8781 行） | ✅ |
-| 死亡重生測試版（D3） | 倒地 6／復活 6（改數值版 8／7，最後一次倒地時測試剛好結束） | ✅ |
+| 赤炎燒怪（D1） | 赤炎打在怪物上 32 次；server.log 有 11 筆 `BurnStatus → DamageService` 的怪物扣血（例：`Logs/Final/Phase0D/server.log:8844`） | ✅ |
+| 死亡重生測試版（D3） | 倒地 5／復活 5（改數值版 7／7） | ✅ |
 | 觸控虛擬搖桿 | `-touchui`／手機實機**未測**。曾嘗試在桌機用 `-touchui` 自動點擊測試，但桌面上開著咖哩的個人視窗，為避免誤點而中止 | ⏳ |
 
 **判斷：暫不標記 Phase 0-E COMPLETE**，唯一缺的是觸控實測（Roadmap 明列手機操作；兩指同時操作的雙搖桿只能在
@@ -659,7 +659,8 @@ Claude 會補上實跑結果並決定是否標記 COMPLETE。
 **環境：** Windows 10、Unity 6000.5.5f1、Photon Fusion 2.1.2 stable build 2279（版本來源：
 `unity/JiuyaoTianxu/Assets/Photon/Fusion/build_info.txt`；`Logs/setup0d.log` 載入 Fusion.Runtime 2.1.2.0）、
 Windows Standalone（Mono）。依 `docs/PHASE0_LOCAL_VERIFICATION_RUNBOOK.md` 步驟 0～5 執行。以下數字全部來自
-**最終版 build**（含下方修正）；一份沒看過過程的獨立 agent 已用 grep 逐一重算過文件數字。
+**最終版 build**（含下方修正；log 在 `unity/JiuyaoTianxu/Logs/Final/`，不進版控）。文件數字曾由沒看過過程的
+獨立 agent 用 grep 逐一重算兩輪，之後依最終審查改了一次程式、全部重跑，數字已換成重跑結果。
 
 **自動測試**（`run_autotest.ps1 -Seconds 150 -LockOn`）：1 Dedicated Server + 2 Client 是**同一台電腦上的 3 個
 獨立行程**，經 Photon 雲端連線（有真實網路往返，但不是多台機器或手機網路）。
@@ -667,17 +668,18 @@ Windows Standalone（Mono）。依 `docs/PHASE0_LOCAL_VERIFICATION_RUNBOOK.md` �
 | §15 項目 | 證據 | 結果 |
 |---|---|---|
 | A 場景啟動、Player Spawn、2 Client 同場景 | StartGame 1、Player joined 2 | ✅ |
-| B 怪物 Server Spawn、沿用 Health、可被攻擊、死亡事件 | 生成 69、EnemyKilled 63 | ✅ |
+| B 怪物 Server Spawn、沿用 Health、可被攻擊、死亡事件 | 生成 68、EnemyKilled 65 | ✅ |
 | C Accept／Progress／Complete | Client 送出請求 4、Server 收到 4、接任務 4（REJECTED 0）、Progress 16、001 完成 2、002 解鎖 2 | ✅ |
-| D 1 Server + 2 Client、Server 權威、同步、Join/Leave | Client `[QuestSync]` 20／21、Player left 1；接任務由 Server 驗證狀態機，發送者由傳輸層決定 | ✅ |
-| E-1 Combat → EnemyKilled → Quest Tracker | EnemyKilled 63 → Progress 16 | ✅ |
+| D 1 Server + 2 Client、Server 權威、同步、Join/Leave | Client `[QuestSync]` 21／20、Player left 1；接任務由 Server 驗證狀態機，發送者由傳輸層決定 | ✅ |
+| E-1 Combat → EnemyKilled → Quest Tracker | EnemyKilled 65 → Progress 16 | ✅ |
 | E-2 不建立第二套 Damage/Health | 專案內 `Health.cs`／`DamageService.cs` 各只有一份；燃燒傷害也經 `DamageService`（server.log 呼叫鏈 `BurnStatus → DamageService.Resolve → Health.ApplyDamage`） | ✅ |
-| E-3 Phase 0-C 靈印 regression | 赤炎 45、玄甲 7、影遁 armed 41／consumed 37（玄甲少於 0-C 的 10 次是死亡重生後的預期變化，見 README） | ✅ |
+| E-3 Phase 0-C 靈印 regression | 赤炎 43、玄甲 6、影遁 armed 42／consumed 37（玄甲少於 0-C 的 10 次是死亡重生後的預期變化，見 README） | ✅ |
 | F ≥1 次完整 3 Kill、≥10 次 Progress、自動／手動分開記錄 | PASS 1（2 名玩家完成）、Progress 16；手動測試另列於下 | ✅ |
 | 例外 | Exception／NullReference 0 | ✅ |
 
-**Host 模式**（headless `-netmode host -autotest`）：Host 自己的玩家送出 2 次請求 → 2 次接取，001 完成、
-002 解鎖並完成，例外 0。
+**Host 模式**（headless `-netmode host -autotest`）：只有 Host——2 次請求 → 2 次接取，001、002 都完成；
+Host＋1 個遠端 Client——Host 收到自己 `[Player:1]` 2 次、遠端 `[Player:2]` 2 次命令（遠端發送者是它自己的編號，
+不是 None），兩名玩家都完成 001、002，PASS 1、REJECTED 0、例外 0。
 
 **手動測試**（分開記錄，§15 F）：咖哩在 Editor 按 Play（截圖可見 `Host P1`）。先回報「看不出來現在拿什麼
 武器」→ debug HUD 加一行「武器：劍（Tab 切換）」；請他重新 Play 後回報「測完了都可以按」（沒有逐項說明）。
@@ -695,8 +697,10 @@ Windows Standalone（Mono）。依 `docs/PHASE0_LOCAL_VERIFICATION_RUNBOOK.md` �
    - (2) 請求放進 `PlayerInputData` 每 tick 送、Server 邊緣偵測：跑得過，但審查抓到**高風險 bug**——逾時後
      同一 Update 內對同一任務重送，Server 看不到變化而永遠忽略（autotest 下必現）。已放棄。
    - (3) **採用**：新增 `Core/ClientCommands`，用 Fusion 公開 API `SendReliableDataToServer`（可靠送達、送一次；
-     Server 由傳輸層得知發送者，Client 無法冒充）。實測發現 Host 自己送的命令 loopback 回來時 sender 是
-     `PlayerRef.None`（官方文件沒寫），`Dispatch` 換成 Host 的 `LocalPlayer` 後 Host 模式正常。
+     Server 由傳輸層得知發送者，Client 無法冒充）。處理者按「(runner, 發送者, 命令)」註冊，命令只送到發送者本人
+     的處理者（等於 RPC 的 `RpcSources.InputAuthority`，由 API 統一把關）。實測發現 Host 自己送的命令經 loopback
+     回來時 sender 是 `PlayerRef.None`（官方文件沒寫）；最終版改成 Host 自己的命令直接在本機交給處理者、
+     sender 是 None 的命令一律丟棄，不做「None 當成 Host」的推定（最終審查指出該推定無法證明安全）。
    HANDOFF-008 §9 只要求「Accept Request → Server Validate」，沒指定傳輸方式，Server 權威不變，**不算偏離規格**。
 2. 測試腳本：PowerShell 5.1 以系統編碼寫 csproj，中文路徑變亂碼 → 加 `-Encoding UTF8`；
    `Player left` 檢查因 ConnectionTimeout 10 秒邊界太緊時有時無 → client2 改在結束前 35 秒砍。
@@ -711,12 +715,15 @@ Windows Standalone（Mono）。依 `docs/PHASE0_LOCAL_VERIFICATION_RUNBOOK.md` �
 | Gemini（llm-council） | ❌ 兩次都 503（Google 服務暫時不可用） | — | — |
 | ChatGPT／DeepSeek／GLM（llm-council） | ✅ | 三者都指出嘗試 (2) 的重送 bug；三者都建議一次性命令的專案標準用 `SendReliableDataToServer` | 採用 → 嘗試 (3) |
 | 獨立 Claude 程式審查 | ✅ | 嘗試 (2) 的重送 bug（高）、靜態信箱在同行程多 runner 會互蓋（中）、HUD 每次 OnGUI 都 GetComponent（低） | 前兩項隨改用 (3) 消失；HUD 改快取 |
-| 獨立 Claude 文件查證 | ✅ | 數字全部可重現；指出 268 無留存證據、E 列未附「無第二套 Damage」證據、手動測試描述超出咖哩原話、「實際網路」易誤讀 | 本節已全部修正 |
+| 獨立 Claude 文件查證（第 1 輪） | ✅ | 數字全部可重現；指出 268 無留存證據、E 列未附「無第二套 Damage」證據、手動測試描述超出咖哩原話、「實際網路」易誤讀 | 本節已全部修正 |
+| 獨立 Claude 程式審查（最終版） | ✅ | (高)「sender 是 None 就當成 Host」無法證明安全，且沒測過 Host＋遠端 Client；(中) 發送者檢查要靠每個接收者自己寫，比 RPC 容易漏 | 改成 Host 本機直送＋None 一律丟棄；改成按發送者註冊處理者；補測 Host＋遠端 Client 通過 |
+| 獨立 Claude 文件查證（第 2 輪） | ✅ | 25 項以上數字、4 處行號全部重現；手動測試描述沒有加碼；一句「A～F 全部有最終版證據」易誤讀成包含手動測試 | 已改寫；程式修改後全部重跑、數字已更新 |
 
 ### Claude Code 意見（實跑後）
 
-[接受] Phase 0-D 可標記 COMPLETE：§15 A～F 全部有最終版 build 的實跑證據；G 文件（README、本節、CHANGELOG、
-版本紀錄、已知問題）同步更新。
+[接受] Phase 0-D 可標記 COMPLETE：§15 A～F 的自動測試項目都有最終版 build 的實跑證據（手動 Editor 測試是改版前
+做的，最終版的 Host 路徑由 headless Host 測試補驗，見上）；G 文件（README、本節、CHANGELOG、版本紀錄、已知問題）
+同步更新。
 
 **請 ChatGPT 在 Phase 0 Code Review 時裁定：**
 1. 目前**整個專案不能用 `[Rpc]`**（Mono 打包版）。一次性 Client→Server 命令暫以 `ClientCommands`
