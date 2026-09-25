@@ -183,9 +183,7 @@ namespace JiuyaoTianxu.Net
 
         public void OnInput(NetworkRunner runner, NetworkInput input)
         {
-            var data = CommandLineFlags.AutoTest ? AutoTestInputProvider.Poll(runner.Tick.Raw) : LocalInputProvider.Poll();
-            data.QuestAcceptId = InputRequests.QuestAcceptId;
-            input.Set(data);
+            input.Set(CommandLineFlags.AutoTest ? AutoTestInputProvider.Poll(runner.Tick.Raw) : LocalInputProvider.Poll());
         }
 
         public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input) { }
@@ -211,7 +209,8 @@ namespace JiuyaoTianxu.Net
             Debug.Log("[NetworkGameLauncher] Scene load start.");
         public void OnObjectExitAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player) { }
         public void OnObjectEnterAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player) { }
-        public void OnReliableDataReceived(NetworkRunner runner, PlayerRef player, ReliableKey key, ReadOnlySpan<byte> data) { }
+        public void OnReliableDataReceived(NetworkRunner runner, PlayerRef player, ReliableKey key, ReadOnlySpan<byte> data) =>
+            ClientCommands.Dispatch(runner, player, key, data);
         public void OnReliableDataProgress(NetworkRunner runner, PlayerRef player, ReliableKey key, float progress) { }
     }
 }
