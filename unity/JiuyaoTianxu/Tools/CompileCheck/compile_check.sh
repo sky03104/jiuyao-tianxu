@@ -25,6 +25,10 @@ fetch() { # name version dir
     curl -sSfL "$url" -o "$CACHE/$3.zip"
     mkdir -p "$CACHE/$3" && (cd "$CACHE/$3" && unzip -qo "../$3.zip")
   fi
+  # Some packages (UnityEngine.Modules) store their DLLs with mode 000. Root can read
+  # them anyway; a normal user (the CI runner) gets CS0009 "access denied". Always
+  # normalise, which also repairs a cache restored from an earlier run.
+  chmod -R u+rwX,go+rX "$CACHE/$3"
 }
 fetch microsoft.net.compilers 4.2.0 roslyn
 fetch unityengine.modules 2021.3.33 unityengine
@@ -60,7 +64,7 @@ compile() { # label extra-args... ; prints the compiler output
 # otherwise the compiler itself never ran (missing runtime piece, crash…), and
 # "0 errors" would be a false pass. First seen on the CI runner.
 require_output() { # label log
-  if [ ! -s "$OUT/$1.dll" ] && ! grep -qE ': error ' <<<"$2"; then
+  if [ ! -s "$OUT/$1.dll" ] && ! grep -qE '(^|: )error CS' <<<"$2"; then
     echo "$1: compiler produced no output and no diagnostics — compiler did not run. Log:"
     head -40 <<<"$2"
     FAIL=1
@@ -72,7 +76,7 @@ FAIL=0
 
 echo "== runtime (${#RUNTIME[@]} files) =="
 RLOG="$(compile runtime "$STUBS" "${RUNTIME[@]}")"
-R_ERR="$(grep -E ': error ' <<<"$RLOG" || true)"
+R_ERR="$(grep -E '(^|: )error CS' <<<"$RLOG" || true)"
 R_WARN="$(grep -E ': warning ' <<<"$RLOG" || true)"
 [ -n "$R_WARN" ] && echo "$R_WARN" | sed "s#$ASSETS/##"
 if [ -n "$R_ERR" ]; then echo "$R_ERR" | sed "s#$ASSETS/##"; FAIL=1
@@ -83,9 +87,9 @@ ELOG="$(compile editor -r:"$CACHE/unityeditor/lib/UnityEditor.dll" "$STUBS" "${R
 # Known false positives: these PrefabUtility APIs arrived in Unity 2018.3, after the
 # 2018.1 reference DLL; Phase0ANetworkSetup has used them successfully in Unity 6.
 KNOWN="PrefabUtility' does not contain a definition for '(SaveAsPrefabAsset|LoadPrefabContents|UnloadPrefabContents)'"
-E_ERR="$(grep -E ': error ' <<<"$ELOG" | grep -Ev "$KNOWN" || true)"
+E_ERR="$(grep -E '(^|: )error CS' <<<"$ELOG" | grep -Ev "$KNOWN" || true)"
 if [ -n "$E_ERR" ]; then echo "$E_ERR" | sed "s#$ASSETS/##"; FAIL=1
-elif ! grep -qE ': error ' <<<"$ELOG" && ! require_output editor "$ELOG"; then :
+elif ! grep -qE '(^|: )error CS' <<<"$ELOG" && ! require_output editor "$ELOG"; then :
 else echo "editor: 0 unexpected errors"; fi
 
 if [ "${1:-}" = "--self-test" ]; then
