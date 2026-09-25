@@ -681,6 +681,11 @@ Windows Standalone（Mono）。依 `docs/PHASE0_LOCAL_VERIFICATION_RUNBOOK.md` �
 Host＋1 個遠端 Client——Host 收到自己 `[Player:1]` 2 次、遠端 `[Player:2]` 2 次命令（遠端發送者是它自己的編號，
 不是 None），兩名玩家都完成 001、002，PASS 1、REJECTED 0、例外 0。
 
+**最終 build 回歸（commit `b178fc0`）：** 上面的數字來自 `a478bf2` 的 build。最終審查後又加了兩個防禦性修正
+（取消註冊前比對處理者、runner 關閉時清掉註冊，不影響正常流程），在最終 build 重跑：1 Server + 2 Client 150 秒
+PASS 1、Client 請求 4／Server 收到 4／接取 4、no handler 0、REJECTED 0、例外 0；Host＋遠端 Client 兩人都完成
+001、002、PASS 1、例外 0（log 在 `Logs/Final2/`）。
+
 **手動測試**（分開記錄，§15 F）：咖哩在 Editor 按 Play（截圖可見 `Host P1`）。先回報「看不出來現在拿什麼
 武器」→ debug HUD 加一行「武器：劍（Tab 切換）」；請他重新 Play 後回報「測完了都可以按」（沒有逐項說明）。
 ⚠️ 手動測試時接任務還是改版前的做法；最終版的 Host 接任務只有上面 headless Host 測試驗過。
@@ -718,6 +723,7 @@ Host＋1 個遠端 Client——Host 收到自己 `[Player:1]` 2 次、遠端 `[P
 | 獨立 Claude 文件查證（第 1 輪） | ✅ | 數字全部可重現；指出 268 無留存證據、E 列未附「無第二套 Damage」證據、手動測試描述超出咖哩原話、「實際網路」易誤讀 | 本節已全部修正 |
 | 獨立 Claude 程式審查（最終版） | ✅ | (高)「sender 是 None 就當成 Host」無法證明安全，且沒測過 Host＋遠端 Client；(中) 發送者檢查要靠每個接收者自己寫，比 RPC 容易漏 | 改成 Host 本機直送＋None 一律丟棄；改成按發送者註冊處理者；補測 Host＋遠端 Client 通過 |
 | 獨立 Claude 文件查證（第 2 輪） | ✅ | 25 項以上數字、4 處行號全部重現；手動測試描述沒有加碼；一句「A～F 全部有最終版證據」易誤讀成包含手動測試 | 已改寫；程式修改後全部重跑、數字已更新 |
+| 獨立 Claude 最終驗收（第 3 輪） | ✅ 可交付 | 數字抽查全部吻合；(中) 斷線重連時舊物件取消註冊可能刪掉新註冊；(低) runner 關閉沒有統一清理；(不確定) Host 本機直送在 `Update` 裡改 `[Networked]` 狀態，Fusion 是否有限制查不到 | 前兩項已修（`b178fc0`）並回歸通過；第三項列為待裁定（見下） |
 
 ### Claude Code 意見（實跑後）
 
@@ -731,6 +737,9 @@ Host＋1 個遠端 Client——Host 收到自己 `[Player:1]` 2 次、遠端 `[P
    01_ARCHITECTURE_DECISIONS**，請裁定是否定為專案標準（之後的交易、組隊邀請、NPC 對話選項、商店都會用到）。
 2. 手機正式打包會用 IL2CPP（不做這種存取檢查），`[Rpc]` 在手機上可能正常；但 Dedicated Server 若用 Mono 就不行。
    建議 Server 打包方式（Mono／IL2CPP）一起定案，或等 Photon 修正後重新驗證。
+3. `ClientCommands` 的處理者在 `FixedUpdateNetwork` 之外執行（遠端命令在 Fusion 收資料的回呼裡、Host 自己的命令在
+   `Update` 裡），並在那裡修改 `[Networked]` 狀態。實跑全部正常，但 Fusion 官方對「State Authority 在 tick 外改
+   狀態」有沒有限制，我們查不到明文。若要當專案標準，建議改成「收到命令先排隊、在下一個 tick 處理」，或向 Photon 確認。
 
 ---
 

@@ -435,6 +435,10 @@ Exception 數。**Server 的 PASS 條件**：≥2 名玩家完成 Q_PHASE0D_001�
   Client 端看得到 Host 玩家的任務同步（`[QuestSync] (remote [Player:1])` 8 行）。
 - log：`Logs/Final/HostOnly/`、`Logs/Final/HostClient/`（Logs 不進版控）。
 
+**最終 build 回歸（`b178fc0`）**：以上數字來自前一版 build（`a478bf2`）；之後只加了兩個防禦性修正（取消註冊前比對
+處理者、runner 關閉時清掉註冊），在最終 build 重跑：1 Server + 2 Client 150 秒 PASS 1、請求 4／收到 4／接取 4、
+例外 0；Host＋遠端 Client 兩人都完成 001、002、例外 0（`Logs/Final2/`）。
+
 **手動**（咖哩在 Editor 按 Play，截圖可見 Hierarchy 顯示 `Host P1`）：咖哩先回報「看不出來現在拿什麼武器」→
 debug HUD 加上「武器：劍（Tab 切換）」一行、請他重新 Play 後，他回報「測完了都可以按」（沒有逐項說明看到什麼）。
 ⚠️ 手動測試時接任務還是改版前的做法；最終版的 Host 接任務是上面 headless Host 測試驗的，

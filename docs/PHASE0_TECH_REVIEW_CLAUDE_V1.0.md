@@ -102,7 +102,8 @@
   `MethodAccessException`。手機正式包用 IL2CPP 可能不受影響，但 Dedicated Server 若用 Mono 就會壞。
 - 目前做法：一次性 Client→Server 命令走 `Core/ClientCommands`（`SendReliableDataToServer`），接任務已改用。
 - 待裁定：是否定為專案標準並寫進 01_ARCHITECTURE_DECISIONS；Server 打包方式（Mono／IL2CPP）；
-  或等 Photon 修正後恢復 `[Rpc]`。細節見 CLAUDE-REPLY-008。
+  或等 Photon 修正後恢復 `[Rpc]`；命令處理者目前在 tick 外改 `[Networked]` 狀態，要不要改成排隊到下一個 tick 處理。
+  細節見 CLAUDE-REPLY-008。
 
 ### P1
 
