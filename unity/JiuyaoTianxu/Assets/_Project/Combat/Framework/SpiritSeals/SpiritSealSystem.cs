@@ -56,7 +56,7 @@ namespace JiuyaoTianxu.Combat.Framework
             _loadout.TryEquip(0, slot0SealId);
             _loadout.TryEquip(1, slot1SealId);
             _loadout.TryEquip(2, slot2SealId);
-            Debug.Log($"[SpiritSealSystem] {name} equipped test loadout: {slot0SealId}, {slot1SealId}, {slot2SealId}.");
+            GameLog.Info($"[SpiritSealSystem] {name} equipped test loadout: {slot0SealId}, {slot1SealId}, {slot2SealId}.");
         }
 
         // ---- Hooks called by DamageService ----
@@ -72,7 +72,7 @@ namespace JiuyaoTianxu.Combat.Framework
                 if (!_loadout.Armed[slot]) continue;
 
                 _loadout.Armed.Set(slot, false);
-                Debug.Log($"[SpiritSealSystem] {name} consumed armed seal '{def.DisplayName}' for +{def.BonusDamageWhenArmed} damage.");
+                GameLog.Info($"[SpiritSealSystem] {name} consumed armed seal '{def.DisplayName}' for +{def.BonusDamageWhenArmed} damage.");
                 return baseDamage + def.BonusDamageWhenArmed;
             }
             return baseDamage;
@@ -100,7 +100,7 @@ namespace JiuyaoTianxu.Combat.Framework
                 }
 
                 _loadout.Cooldowns.Set(slot, TickTimer.CreateFromSeconds(Runner, def.Cooldown));
-                Debug.Log($"[SpiritSealSystem] {name} triggered '{def.DisplayName}' on {target.name}.");
+                GameLog.Info($"[SpiritSealSystem] {name} triggered '{def.DisplayName}' on {target.name}.");
             }
         }
 
@@ -118,7 +118,7 @@ namespace JiuyaoTianxu.Combat.Framework
 
                 _loadout.Cooldowns.Set(slot, TickTimer.CreateFromSeconds(Runner, def.Cooldown));
                 var adjusted = Mathf.Max(0, currentHp - def.FatalSaveMinHp);
-                Debug.Log($"[SpiritSealSystem] {name} triggered '{def.DisplayName}', capping fatal damage " +
+                GameLog.Info($"[SpiritSealSystem] {name} triggered '{def.DisplayName}', capping fatal damage " +
                           $"{incomingDamage}->{adjusted} to survive at {def.FatalSaveMinHp} HP.");
                 return adjusted;
             }
@@ -138,7 +138,7 @@ namespace JiuyaoTianxu.Combat.Framework
 
                 _loadout.Armed.Set(slot, true);
                 _loadout.Cooldowns.Set(slot, TickTimer.CreateFromSeconds(Runner, def.Cooldown));
-                Debug.Log($"[SpiritSealSystem] {name} armed '{def.DisplayName}' from test dodge event.");
+                GameLog.Info($"[SpiritSealSystem] {name} armed '{def.DisplayName}' from test dodge event.");
             }
         }
     }

@@ -94,7 +94,7 @@ namespace JiuyaoTianxu.Gameplay.Quests
 
                 var state = QuestStateMachine.InitialState(def.PrerequisiteQuestNumId != 0);
                 _log.Entries.Set(i, new QuestEntry { QuestNumId = def.QuestNumId, State = (int)state, Progress = 0 });
-                Debug.Log($"[QuestTracker] {Owner} init {def.QuestId} → {state}.");
+                GameLog.Info($"[QuestTracker] {Owner} init {def.QuestId} → {state}.");
             }
         }
 
@@ -140,7 +140,7 @@ namespace JiuyaoTianxu.Gameplay.Quests
             var entry = _log.Entries[slot];
             if (!QuestStateMachine.TryTransition(entry.QuestState, QuestTrigger.Accept, out _))
             {
-                Debug.Log($"[QuestTracker] {Owner} accept REJECTED: {def.QuestId} is {entry.QuestState}.");
+                GameLog.Info($"[QuestTracker] {Owner} accept REJECTED: {def.QuestId} is {entry.QuestState}.");
                 return;
             }
 
@@ -166,7 +166,7 @@ namespace JiuyaoTianxu.Gameplay.Quests
 
                 entry.Progress = newProgress;
                 _log.Entries.Set(i, entry);
-                Debug.Log($"[QuestTracker] {Owner} {def.QuestId} progress {newProgress}/{def.RequiredCount} " +
+                GameLog.Info($"[QuestTracker] {Owner} {def.QuestId} progress {newProgress}/{def.RequiredCount} " +
                           $"(killed {evt.TargetId}).");
                 QuestEvents.Raise(new QuestChangedEvent(Runner, Owner, def.QuestNumId, entry.QuestState,
                     entry.QuestState, newProgress, def.RequiredCount));
@@ -201,7 +201,7 @@ namespace JiuyaoTianxu.Gameplay.Quests
             {
                 case QuestRewardType.DebugCounter:
                     _log.DebugRewardPoints += def.RewardAmount;
-                    Debug.Log($"[QuestTracker] {Owner} reward {def.RewardId} +{def.RewardAmount} " +
+                    GameLog.Info($"[QuestTracker] {Owner} reward {def.RewardId} +{def.RewardAmount} " +
                               $"(DebugRewardPoints={_log.DebugRewardPoints}).");
                     break;
             }
@@ -214,7 +214,7 @@ namespace JiuyaoTianxu.Gameplay.Quests
 
             entry.State = (int)next;
             _log.Entries.Set(slot, entry);
-            Debug.Log($"[QuestTracker] {Owner} {def.QuestId} {old} → {next} ({entry.Progress}/{def.RequiredCount}).");
+            GameLog.Info($"[QuestTracker] {Owner} {def.QuestId} {old} → {next} ({entry.Progress}/{def.RequiredCount}).");
             QuestEvents.Raise(new QuestChangedEvent(Runner, Owner, def.QuestNumId, old, next, entry.Progress,
                 def.RequiredCount));
             return true;
@@ -228,7 +228,7 @@ namespace JiuyaoTianxu.Gameplay.Quests
         public void RequestAccept(int questNumId)
         {
             if (!_spawned || !Object.HasInputAuthority) return;
-            Debug.Log($"[QuestTracker] {Owner} requesting accept of quest {questNumId}.");
+            GameLog.Info($"[QuestTracker] {Owner} requesting accept of quest {questNumId}.");
             RPC_RequestAccept(questNumId);
         }
 
@@ -275,7 +275,7 @@ namespace JiuyaoTianxu.Gameplay.Quests
                 if (def == null) continue;
 
                 var who = Object.HasInputAuthority ? "local" : "remote";
-                Debug.Log($"[QuestSync] ({who} {Owner}) {def.QuestId} {entry.QuestState} " +
+                GameLog.Info($"[QuestSync] ({who} {Owner}) {def.QuestId} {entry.QuestState} " +
                           $"{entry.Progress}/{def.RequiredCount}");
             }
         }

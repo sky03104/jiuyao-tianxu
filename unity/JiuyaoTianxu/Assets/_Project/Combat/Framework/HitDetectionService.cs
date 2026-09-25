@@ -7,14 +7,28 @@ namespace JiuyaoTianxu.Combat.Framework
     /// <summary>
     /// The only place in the project allowed to call Physics.Overlap* for combat
     /// (HANDOFF-006 §8). CombatController asks this "who did I hit", it never
-    /// queries Physics itself. Projectile hits are the one exception — a
-    /// Projectile is a spawned NetworkObject that resolves its own hit on trigger
-    /// and calls DamageService directly, since "a thing flying through the world
-    /// over time" isn't an instantaneous overlap query.
+    /// queries Physics itself. Projectiles also query through here (tech review
+    /// D8) — they still resolve their own hit per tick and call DamageService,
+    /// but no longer run their own allocating Physics.OverlapSphere.
     /// </summary>
     public static class HitDetectionService
     {
-        private static readonly Collider[] Buffer = new Collider[16];
+        // Tech review D7: 16 silently dropped targets in crowds; 64 covers Phase 1's
+        // 2~5-player dungeons with monster packs. Revisit before 20~50-player content.
+        private const int BufferSize = 64;
+        private static readonly Collider[] Buffer = new Collider[BufferSize];
+        private static int _lastFullWarningFrame = -1;
+
+        /// <summary>A full buffer means some colliders were not returned at all.</summary>
+        private static int Checked(int count)
+        {
+            if (count >= BufferSize && _lastFullWarningFrame != Time.frameCount)
+            {
+                _lastFullWarningFrame = Time.frameCount;
+                Debug.LogWarning($"[HitDetectionService] Overlap buffer full ({BufferSize}); targets beyond it were ignored.");
+            }
+            return count;
+        }
 
         /// <summary>
         /// Resolves Sphere/Box/Capsule/Area shapes as an instantaneous overlap
@@ -31,7 +45,7 @@ namespace JiuyaoTianxu.Combat.Framework
                 return results;
             }
 
-            var count = attack.HitShape switch
+            var count = Checked(attack.HitShape switch
             {
                 HitShapeType.Sphere => Physics.OverlapSphereNonAlloc(
                     origin.position + origin.forward * (attack.Range * 0.5f), attack.Range * 0.5f, Buffer),
@@ -42,7 +56,7 @@ namespace JiuyaoTianxu.Combat.Framework
                     origin.position, origin.position + origin.forward * attack.Range, attack.HitExtents.x, Buffer),
                 HitShapeType.Area => Physics.OverlapSphereNonAlloc(origin.position, attack.AreaRadius, Buffer),
                 _ => 0,
-            };
+            });
 
             for (var i = 0; i < count; i++)
             {
@@ -60,7 +74,7 @@ namespace JiuyaoTianxu.Combat.Framework
         public static List<Health> FindHealthInRadius(Vector3 center, float radius, Health self)
         {
             var results = new List<Health>();
-            var count = Physics.OverlapSphereNonAlloc(center, radius, Buffer);
+            var count = Checked(Physics.OverlapSphereNonAlloc(center, radius, Buffer));
             for (var i = 0; i < count; i++)
             {
                 var target = Buffer[i].GetComponentInParent<Health>();
@@ -70,12 +84,29 @@ namespace JiuyaoTianxu.Combat.Framework
             return results;
         }
 
+        /// <summary>First Health within <paramref name="radius"/> that isn't
+        /// <paramref name="exclude"/>, without allocating — for per-tick callers
+        /// such as Projectile (tech review D8).</summary>
+        public static bool TryFindFirstHealth(Vector3 center, float radius, Health exclude, out Health target)
+        {
+            var count = Checked(Physics.OverlapSphereNonAlloc(center, radius, Buffer));
+            for (var i = 0; i < count; i++)
+            {
+                var candidate = Buffer[i].GetComponentInParent<Health>();
+                if (candidate == null || candidate == exclude) continue;
+                target = candidate;
+                return true;
+            }
+            target = null;
+            return false;
+        }
+
         /// <summary>Area query centered at an arbitrary world point (e.g. a staff ground AOE).</summary>
         public static List<Health> FindTargetsAt(AttackDefinition attack, Vector3 center, Health self)
         {
             var results = new List<Health>();
             var radius = attack.AreaRadius > 0f ? attack.AreaRadius : attack.Range;
-            var count = Physics.OverlapSphereNonAlloc(center, radius, Buffer);
+            var count = Checked(Physics.OverlapSphereNonAlloc(center, radius, Buffer));
             for (var i = 0; i < count; i++)
             {
                 if (Buffer[i].gameObject == self.gameObject) continue;

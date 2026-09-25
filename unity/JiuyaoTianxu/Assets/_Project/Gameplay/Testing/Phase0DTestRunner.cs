@@ -53,7 +53,7 @@ namespace JiuyaoTianxu.Gameplay.Testing
         private void OnEnemyKilled(EnemyKilledEvent evt)
         {
             _enemyKilled++;
-            Debug.Log($"[Phase0DTestRunner] EnemyKilled #{_enemyKilled}: {evt.TargetId} " +
+            GameLog.Info($"[Phase0DTestRunner] EnemyKilled #{_enemyKilled}: {evt.TargetId} " +
                       $"by {(evt.Killer != null ? evt.Killer.name : "<none>")}");
         }
 
@@ -92,7 +92,7 @@ namespace JiuyaoTianxu.Gameplay.Testing
             if (playersDone < _requiredPlayers || _progressEvents < _requiredProgressEvents) return;
 
             _passed = true;
-            Debug.Log($"[Phase0DTestRunner] PASS: {playersDone} player(s) completed Q_PHASE0D_001, " +
+            GameLog.Info($"[Phase0DTestRunner] PASS: {playersDone} player(s) completed Q_PHASE0D_001, " +
                       $"{_progressEvents} progress events, {_enemyKilled} EnemyKilled events.");
         }
 
@@ -108,7 +108,7 @@ namespace JiuyaoTianxu.Gameplay.Testing
             {
                 _quitAt = 0f;
                 LogSummary();
-                Debug.Log("[Phase0DTestRunner] -quitafter reached; quitting.");
+                GameLog.Info("[Phase0DTestRunner] -quitafter reached; quitting.");
                 Application.Quit();
             }
         }
@@ -117,7 +117,7 @@ namespace JiuyaoTianxu.Gameplay.Testing
         {
             var completed = string.Join(", ",
                 _completedByQuest.OrderBy(kv => kv.Key).Select(kv => $"{kv.Key}:{kv.Value.Count}p"));
-            Debug.Log($"[Phase0DTestRunner] SUMMARY enemyKilled={_enemyKilled} accepts={_accepts} " +
+            GameLog.Info($"[Phase0DTestRunner] SUMMARY enemyKilled={_enemyKilled} accepts={_accepts} " +
                       $"progress={_progressEvents} unlocks={_unlocks} completed=[{completed}] passed={_passed}");
         }
     }
