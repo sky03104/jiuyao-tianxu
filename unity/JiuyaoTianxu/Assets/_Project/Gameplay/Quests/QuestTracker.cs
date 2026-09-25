@@ -74,7 +74,7 @@ namespace JiuyaoTianxu.Gameplay.Quests
             if (_subscribed)
             {
                 GameplayEvents.EnemyKilled -= OnEnemyKilled;
-                ClientCommands.Unregister(runner, _commandOwner, ClientCommands.QuestAccept);
+                ClientCommands.Unregister(runner, _commandOwner, ClientCommands.QuestAccept, ServerHandleAccept);
                 _subscribed = false;
             }
             _spawned = false;

@@ -187,8 +187,11 @@ namespace JiuyaoTianxu.Net
         }
 
         public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input) { }
-        public void OnShutdown(NetworkRunner runner, ShutdownReason shutdownReason) =>
+        public void OnShutdown(NetworkRunner runner, ShutdownReason shutdownReason)
+        {
+            ClientCommands.ClearRunner(runner);
             Debug.Log($"[NetworkGameLauncher] Shutdown: {shutdownReason}");
+        }
         public void OnConnectedToServer(NetworkRunner runner) =>
             Debug.Log("[NetworkGameLauncher] Connected to server.");
         public void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason) =>

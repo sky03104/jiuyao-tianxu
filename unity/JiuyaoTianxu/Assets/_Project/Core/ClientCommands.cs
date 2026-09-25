@@ -33,8 +33,24 @@ namespace JiuyaoTianxu.Core
         public static void Register(NetworkRunner runner, PlayerRef owner, int command, Action<int> handler) =>
             Handlers[(runner, owner, command)] = handler;
 
-        public static void Unregister(NetworkRunner runner, PlayerRef owner, int command) =>
-            Handlers.Remove((runner, owner, command));
+        /// <summary>Removes the registration only if it is still <paramref name="handler"/>: a
+        /// reconnecting player's new object may register the same key before the old one despawns.</summary>
+        public static void Unregister(NetworkRunner runner, PlayerRef owner, int command, Action<int> handler)
+        {
+            var key = (runner, owner, command);
+            if (Handlers.TryGetValue(key, out var current) && current == handler) Handlers.Remove(key);
+        }
+
+        /// <summary>Drops every registration of a runner that is shutting down.</summary>
+        public static void ClearRunner(NetworkRunner runner)
+        {
+            var stale = new List<(NetworkRunner, PlayerRef, int)>();
+            foreach (var key in Handlers.Keys)
+            {
+                if (ReferenceEquals(key.Item1, runner)) stale.Add(key);
+            }
+            foreach (var key in stale) Handlers.Remove(key);
+        }
 
         /// <summary>Called on the peer with input authority.</summary>
         public static void Send(NetworkRunner runner, int command, int argument)
