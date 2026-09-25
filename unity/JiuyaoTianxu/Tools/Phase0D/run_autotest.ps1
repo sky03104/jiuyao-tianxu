@@ -32,7 +32,9 @@ $c1 = Start-Process $Exe -PassThru -ArgumentList ($common + @("-netmode", "clien
 $c2 = Start-Process $Exe -PassThru -ArgumentList ($common + @("-netmode", "client", "-logFile", "$LogDir/client2.log"))
 
 # Join/Leave regression: kill client2 before the run ends (it has had time to finish Q_PHASE0D_001).
-Start-Sleep -Seconds ([Math]::Max(10, $Seconds - 15))
+# The server only logs "Player left" after NetworkProjectConfig ConnectionTimeout (10s) and its
+# -quitafter clock starts after scene load, so leave a wide margin (15s was flaky: 1 of 2 runs missed it).
+Start-Sleep -Seconds ([Math]::Max(10, $Seconds - 35))
 if (-not $c2.HasExited) { Stop-Process -Id $c2.Id -Force; Write-Host "client2 killed (Join/Leave regression)" }
 
 foreach ($p in @($server, $c1)) { if (-not $p.WaitForExit(($Seconds + 30) * 1000)) { Stop-Process -Id $p.Id -Force } }

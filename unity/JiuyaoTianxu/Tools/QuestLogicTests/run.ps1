@@ -14,6 +14,6 @@ New-Item -ItemType Directory -Force $work | Out-Null
     <Compile Include="$q\QuestStateMachine.cs" />
   </ItemGroup>
 </Project>
-"@ | Set-Content (Join-Path $work "QuestLogicTests.csproj")
+"@ | Set-Content -Encoding UTF8 (Join-Path $work "QuestLogicTests.csproj")
 dotnet run --project (Join-Path $work "QuestLogicTests.csproj")
 exit $LASTEXITCODE
