@@ -45,6 +45,7 @@
 | F8（=D10） | 每次命中/觸發都 `Debug.Log` | 新增 `Core/GameLog.Info`（`[Conditional]`：Editor／Development build／`JIUYAO_GAMELOG` 才編進去），戰鬥、靈印、任務、鎖定、怪物的逐事件 log 改用它；Phase 0 驗收 build 都是 Development，log 與 autotest 比對不受影響；警告/錯誤與啟動訊息維持 `Debug.*` |
 | F9（=D13） | 有人離開再加入時出生點重疊 | 改為分配「目前沒人佔用的最小出生點編號」，離開時釋放 |
 | F10（=D15） | `CombatState.Spawned` 在所有端寫同步屬性 | 只有 state authority 寫 |
+| F11（=D3 測試版＋D11） | 沒有死亡／重生；死掉的目標還會吃掉攻擊 | 咖哩同意先做**測試版**：`Health.IsDead`（HP 0）；新增 `Gameplay/World/PlayerLifecycle`，倒地 5 秒（可調整）後在自己第一次出生的位置滿血復活，無懲罰；倒地時戰鬥/移動/鎖定/閃避測試都不接受輸入、鎖定解除、燃燒停止；`HitDetectionService` 不再把死亡目標當命中對象。**正式死亡規則（懲罰、復活點、副本規則）仍需 HANDOFF** |
 | F2 | Server 直接使用 Client 送來的搖桿值：改過的 Client 送 NaN 會讓角色座標變 NaN 並同步給所有人；送超長向量＝加速外掛 | 新增 `Core/InputSanitizer`，`PlayerMovement` 在碰 transform 前先清洗（NaN/Infinity→0、長度夾到 1）；單元測試 4 項 |
 
 ---
@@ -73,7 +74,7 @@
 - 方案：`AttackDefinition` 新增 `InputMode { Tap, HoldRelease, Cast }`，attacks.csv 加一欄，
   CombatController 改讀這欄；現有 13 筆資產同步填值，行為不變。
 
-**D3. 沒有死亡／重生**
+**D3. 沒有死亡／重生——🟡 測試版已做（F11），正式規則待 HANDOFF**
 - 位置：`Combat/Health.cs:40`（HP 夾在 0，玩家 HP 0 仍可移動攻擊）
 - 影響：Phase 1 的「副本通關」「主線→世界事件」都需要倒地與復活；0-C 的玄甲在 HP=0 時會反覆觸發
   （0-C README 已記錄）。
@@ -104,7 +105,7 @@
 | D8 | ✅ 已修正（F7）：Projectile 每 tick 用會配置記憶體的 `Physics.OverlapSphere`，且不經過 HitDetectionService | `Projectile.cs:45` | 改用 NonAlloc，或移進 HitDetectionService |
 | D9 | 擊退直接改目標 transform，沒有碰撞檢查，可能把角色推進牆裡 | `CombatController.cs:243` | 改成經 PlayerMovement／CharacterController 的位移 |
 | D10 | ✅ 已修正（F8）：每次命中、每次靈印觸發都 `Debug.Log`；Server 在多人時會被 log 拖慢 | `CombatController`、`SpiritSealSystem`、`QuestTracker` 等 | 包一層 `[Conditional]` 的 GameLog，Release／正式 Server 關閉，驗收用 build 保留 |
-| D11 | 死掉的目標（HP 0，消失前 0.5 秒）仍會吃掉近戰命中與箭矢 | `HitDetectionService`、`Projectile` | 與 D3 一起做：IsDead 目標不列入命中 |
+| D11 | ✅ 已修正（F11）：死掉的目標（HP 0，消失前 0.5 秒）仍會吃掉近戰命中與箭矢 | `HitDetectionService`、`Projectile` | 與 D3 一起做：IsDead 目標不列入命中 |
 | D12 | `PlayerCount: 10`（每房上限） | `NetworkProjectConfig.fusion` | Phase 2 的 20~50 人副本前調整並做負載測試 |
 | D13 | ✅ 已修正（F9）：出生點索引用「目前人數」，有人離開再加入時兩人會疊在同一點 | `NetworkGameLauncher.cs:142` | 改成找目前沒人站的出生點，或用 PlayerRef 分配 |
 
@@ -143,4 +144,4 @@
 
 1. ~~D1 選方案 A 還是 B？~~ 咖哩裁定 A，已實作。
 2. D5 Client 預測要做到哪裡：只有移動？還是連攻擊起手也預測？
-3. D3 死亡懲罰與復活規則要在 Phase 1 定，還是先做「原地 5 秒復活」的測試版？
+3. ~~D3 要不要先做測試版？~~ 咖哩同意，已做（5 秒後回出生點滿血，無懲罰）；正式規則仍待定。

@@ -496,6 +496,30 @@ pwsh Tools/Phase0D/run_autotest.ps1 -Seconds 90 -LockOn
 2. 單元測試：ConfigTableTests 37/37、ControlsTests 31/31、QuestLogicTests 46/46；`validate_tables.py` OK，
    並用故意改錯的 CSV 確認驗證器會抓到（錯的列舉名＋與資產不一致）。
 
+---
+
+## 死亡／重生（測試版，技術自審 D3＋D11）
+
+> 咖哩 2026-09-25 同意先做測試版，讓戰鬥循環可以一直重複；**正式死亡規則（懲罰、復活點、組隊救援、
+> 副本內規則）仍需 HANDOFF 定規格**。數值可調整。
+
+- `Health.IsDead`＝HP 0。怪物照舊由 `MonsterLifecycle` 0.5 秒後消失；玩家由新的
+  `Gameplay/World/PlayerLifecycle` 處理：倒地 5 秒（`_respawnSeconds`）後，在**自己第一次出生的位置**
+  滿血復活（`NetworkTransform.Teleport`，Client 不會看到角色滑過整張地圖）。
+- 倒地期間：`CombatController`／`PlayerMovement`／`TargetLock`／`SpiritSealSystem`（閃避測試）都不接受
+  輸入（但持續記錄按鍵，復活瞬間不會誤觸），鎖定自動解除，身上的燃燒停止，模型隱藏，
+  自己畫面中央顯示「倒地中…… N 秒後復活」。
+- **死亡目標不再被命中**（D11）：`HitDetectionService` 的近戰／施法範圍／箭矢查詢都略過 HP 0 的目標，
+  所以不會再鞭屍，箭也不會被屍體擋掉。鎖定搜尋本來就會略過死亡目標。
+- 驗收：`run_autotest.ps1` 報表多了「player down」「player respawned」兩項，兩者應大致相等且大於 0
+  （0-A 場景的玩家互打、0-D 場景的槍/杖波及都會打倒對方）。
+
+### ⚠️ 對 0-C 靈印 regression 數字的影響
+
+0-C 當時玩家 HP 會一直停在 0，玄甲在 HP 0 時會反覆觸發（0-C README「已知問題 1」）。現在 HP 0 的玩家
+會倒地、不能被打，**玄甲的觸發次數會比 0-C 那次少**，屬預期變化，不是退步。若要湊滿 HANDOFF-007 的
+「每個靈印 ≥10 次」，把測試時間拉長（例如 `run_autotest.ps1 -Seconds 150`）。0-C 已知問題 1 同時解除。
+
 ## Photon App ID 設定（每台開發機都要做一次，不進版本控制）
 
 `Assets/Photon/Fusion/Resources/PhotonAppSettings.asset` 這個檔案**已被gitignore**，

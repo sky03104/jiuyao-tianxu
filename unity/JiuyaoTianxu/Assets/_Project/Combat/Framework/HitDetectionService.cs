@@ -10,6 +10,8 @@ namespace JiuyaoTianxu.Combat.Framework
     /// queries Physics itself. Projectiles also query through here (tech review
     /// D8) — they still resolve their own hit per tick and call DamageService,
     /// but no longer run their own allocating Physics.OverlapSphere.
+    /// Dead targets (HP 0) are never returned as hit targets (tech review D11);
+    /// FindHealthInRadius is a raw query and leaves that choice to its caller.
     /// </summary>
     public static class HitDetectionService
     {
@@ -62,7 +64,7 @@ namespace JiuyaoTianxu.Combat.Framework
             {
                 if (Buffer[i].gameObject == self.gameObject) continue;
                 var target = Buffer[i].GetComponentInParent<Health>();
-                if (target != null && !results.Contains(target)) results.Add(target);
+                if (target != null && !target.IsDead && !results.Contains(target)) results.Add(target);
             }
 
             return results;
@@ -93,7 +95,7 @@ namespace JiuyaoTianxu.Combat.Framework
             for (var i = 0; i < count; i++)
             {
                 var candidate = Buffer[i].GetComponentInParent<Health>();
-                if (candidate == null || candidate == exclude) continue;
+                if (candidate == null || candidate == exclude || candidate.IsDead) continue;
                 target = candidate;
                 return true;
             }
@@ -111,7 +113,7 @@ namespace JiuyaoTianxu.Combat.Framework
             {
                 if (Buffer[i].gameObject == self.gameObject) continue;
                 var target = Buffer[i].GetComponentInParent<Health>();
-                if (target != null && !results.Contains(target)) results.Add(target);
+                if (target != null && !target.IsDead && !results.Contains(target)) results.Add(target);
             }
 
             return results;

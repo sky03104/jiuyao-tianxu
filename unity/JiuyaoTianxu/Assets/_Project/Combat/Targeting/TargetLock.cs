@@ -56,8 +56,14 @@ namespace JiuyaoTianxu.Combat.Targeting
 
             if (GetInput(out PlayerInputData input))
             {
-                if (input.Buttons.WasPressed(PreviousButtons, PlayerButton.LockOn)) Cycle();
+                if (!_self.IsDead && input.Buttons.WasPressed(PreviousButtons, PlayerButton.LockOn)) Cycle();
                 PreviousButtons = input.Buttons;
+            }
+
+            if (_self.IsDead && LockedTargetId.IsValid)
+            {
+                LockedTargetId = default; // tech review D3: dying drops the lock
+                return;
             }
 
             if (TryGetLockedTarget(out var target))

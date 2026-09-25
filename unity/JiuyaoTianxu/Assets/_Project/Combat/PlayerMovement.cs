@@ -21,6 +21,7 @@ namespace JiuyaoTianxu.Combat
 
         private CombatController _combat;
         private TargetLock _targetLock;
+        private Health _health;
 
         /// <summary>This peer's own player (null on a dedicated server). Camera follow reads it.</summary>
         public static PlayerMovement Local { get; private set; }
@@ -29,6 +30,7 @@ namespace JiuyaoTianxu.Combat
         {
             _combat = GetComponent<CombatController>();
             _targetLock = GetComponent<TargetLock>();
+            _health = GetComponent<Health>();
             if (Object.HasInputAuthority) Local = this;
         }
 
@@ -46,6 +48,8 @@ namespace JiuyaoTianxu.Combat
             // before anything touches the authoritative transform.
             input.Move = Sanitize(input.Move);
             input.Aim = Sanitize(input.Aim);
+
+            if (_health != null && _health.IsDead) return; // tech review D3
 
             var move = new Vector3(input.Move.x, 0f, input.Move.y);
 

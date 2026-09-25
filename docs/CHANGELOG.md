@@ -1,5 +1,16 @@
 # CHANGELOG — 《九曜：天墟》
 
+## 2026-09-25（第三十三筆，死亡／重生測試版＋死亡目標不可命中（技術自審 D3 測試版、D11））
+
+- 咖哩同意先做測試版。`Health` 新增 `IsDead`、`ServerRestoreFull()`；新增 `Gameplay/World/PlayerLifecycle`：
+  HP 0 倒地 5 秒（可調整）→ 在自己第一次出生的位置滿血復活（`NetworkTransform.Teleport`），無懲罰。
+- 倒地期間 CombatController／PlayerMovement／TargetLock／SpiritSealSystem 不接受輸入（持續記錄按鍵避免
+  復活誤觸），鎖定解除、燃燒停止、模型隱藏；HUD 顯示復活倒數。
+- `HitDetectionService` 近戰／施法範圍／箭矢查詢略過死亡目標（D11）。
+- Setup 把 PlayerLifecycle 加到 Player prefab；`run_autotest.ps1` 新增 player down／respawned 計數。
+- 影響：0-C 的玄甲觸發次數會比當初少（HP 0 不再被反覆攻擊），README 已說明；0-C 已知問題 1 解除。
+- **正式死亡規則仍待 HANDOFF。** 離線編譯 0 error；單元測試全過；未在 Unity 實跑。
+
 ## 2026-09-25（第三十二筆，技術自審 P1/P2 清理：D7/D8/D10/D13/D15）
 
 - D7：`HitDetectionService` 緩衝 16→64，滿格時警告。
