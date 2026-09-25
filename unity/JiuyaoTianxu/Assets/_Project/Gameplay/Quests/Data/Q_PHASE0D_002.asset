@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850d136640a948558292be0097f1b49d, type: 3}
+  m_Name: Q_PHASE0D_002
+  m_EditorClassIdentifier: Assembly-CSharp::JiuyaoTianxu.Gameplay.Quests.QuestDefinition
+  QuestNumId: 1002
+  QuestId: Q_PHASE0D_002
+  DisplayName: "\u6E05\u7406\u6E2C\u8A66\u5340\uFF08\u7E8C\uFF09"
+  Description: "\u5B8C\u6210\u300C\u6E05\u7406\u6E2C\u8A66\u5340\u300D\u5F8C\u89E3\u9396\uFF1A\u518D\u64CA\u6557
+    Phase0D_TestMonster \xD7 5\u3002"
+  ObjectiveType: 0
+  TargetId: Phase0D_TestMonster
+  RequiredCount: 5
+  PrerequisiteQuestNumId: 1001
+  RewardType: 1
+  RewardId: PHASE0D_DEBUG_POINTS
+  RewardAmount: 20

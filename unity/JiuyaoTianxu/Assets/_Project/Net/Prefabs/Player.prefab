@@ -20,6 +20,12 @@ GameObject:
   - component: {fileID: 8900131096346332200}
   - component: {fileID: 7004344021262371507}
   - component: {fileID: 8847478763168979749}
+  - component: {fileID: 8047869979428567272}
+  - component: {fileID: 117196502759058463}
+  - component: {fileID: 8610809807247569983}
+  - component: {fileID: 8602674455399379331}
+  - component: {fileID: 1365197612552677523}
+  - component: {fileID: 4133250227608062895}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -147,6 +153,12 @@ MonoBehaviour:
   - {fileID: 8900131096346332200}
   - {fileID: 7004344021262371507}
   - {fileID: 8847478763168979749}
+  - {fileID: 8047869979428567272}
+  - {fileID: 117196502759058463}
+  - {fileID: 8610809807247569983}
+  - {fileID: 8602674455399379331}
+  - {fileID: 1365197612552677523}
+  - {fileID: 4133250227608062895}
   ForceRemoteRenderTimeframe: 0
 --- !u!114 &6908055136152484837
 MonoBehaviour:
@@ -201,6 +213,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JiuyaoTianxu.Combat.PlayerMovement
   _moveSpeed: 4
+  _turnSpeedDegPerSec: 900
+  _stickDeadzone: 0.2
 --- !u!114 &535834606331885221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,3 +293,89 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JiuyaoTianxu.Combat.Framework.SpiritSealSystem
   _registry: {fileID: 11400000, guid: 5738d0b9959a55f49bb714ec66f91449, type: 2}
+--- !u!114 &8047869979428567272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908723654597829535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98f5a2818a1346e5b449f0731c0d5756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JiuyaoTianxu.Gameplay.Quests.PlayerQuestLog
+  _DebugRewardPoints: 0
+--- !u!114 &117196502759058463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908723654597829535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a11fd6e16941d28ea5ae9690ad0ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JiuyaoTianxu.Gameplay.Quests.QuestTracker
+  _registry: {fileID: 11400000, guid: e7bb04ae4037fe7418c6cded57aeb936, type: 2}
+--- !u!114 &8610809807247569983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908723654597829535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943fc0d33f1f4f06bf67f5fd0078d3f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JiuyaoTianxu.Combat.Targeting.TargetLock
+  _lockRange: 12
+  _breakRange: 16
+  _anglePenaltyPerDeg: 0.03
+  _LockedTargetId:
+    Raw: 0
+--- !u!114 &8602674455399379331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908723654597829535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec2a93502334f80940476b218693042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JiuyaoTianxu.UI.Hud.HealthFeedback
+  _flashColor: {r: 1, g: 0.35, b: 0.3, a: 1}
+  _flashSeconds: 0.12
+--- !u!114 &1365197612552677523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908723654597829535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32efe3a96bef4b7db93e4b80828b008e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JiuyaoTianxu.Combat.Framework.BurnStatus
+  _TicksRemaining: 0
+--- !u!114 &4133250227608062895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908723654597829535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814b4a66a4194c5481e6d94edbc711d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JiuyaoTianxu.Gameplay.World.PlayerLifecycle
+  _respawnSeconds: 5
+  _IsDown:
+    RawValue: 0
+  _DeathCount: 0
