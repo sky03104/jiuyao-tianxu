@@ -1,0 +1,15 @@
+﻿# 攻擊/連段資料（AttackDefinition）。一列一段攻擊，欄名=欄位名，列舉填英文名稱。數值為Phase0示意值（可調整）。
+AttackId,WeaponType,ComboStep,Damage,StartupTime,ActiveTime,RecoveryTime,Cooldown,ChargeOrCastTime,CanCombo,ComboWindow,CanMoveDuringAttack,MoveSpeedMultiplier,ResourceCost,HitShape,Range,HitExtents,ProjectileSpeed,AreaRadius,AppliesKnockback,KnockbackForce,AppliesArmorBreak,GrantsSuperArmor
+Blade_Step1,Blade,1,8,0.08,0.12,0.18,0,0,true,0.35,false,0,0,Sphere,1.5,1;1;1,15,0,false,0,false,false
+Blade_Step2,Blade,2,10,0.08,0.12,0.18,0,0,true,0.35,false,0,0,Sphere,1.5,1;1;1,15,0,false,0,false,false
+Blade_Step3_Heavy,Blade,3,22,0.15,0.15,0.4,0,0,false,0.2,false,0,0,Sphere,1.7,1;1;1,15,0,true,4,false,false
+Sword_Step1,Sword,1,5,0.05,0.07,0.08,0,0,true,0.5,true,0.6,0,Sphere,1.3,1;1;1,15,0,false,0,false,false
+Sword_Step2,Sword,2,5,0.05,0.07,0.08,0,0,true,0.5,true,0.6,0,Sphere,1.3,1;1;1,15,0,false,0,false,false
+Sword_Step3,Sword,3,5,0.05,0.07,0.08,0,0,true,0.5,true,0.6,0,Sphere,1.3,1;1;1,15,0,false,0,false,false
+Sword_Step4,Sword,4,5,0.05,0.07,0.08,0,0,true,0.5,true,0.6,0,Sphere,1.3,1;1;1,15,0,false,0,false,false
+Sword_Step5,Sword,5,5,0.05,0.07,0.08,0,0,true,0.5,true,0.6,0,Sphere,1.3,1;1;1,15,0,false,0,false,false
+Spear_Thrust1,Spear,1,12,0.12,0.1,0.25,0,0,true,0.3,false,0,0,Capsule,3.5,1;1;1,15,0,false,0,true,false
+Spear_Thrust2,Spear,2,14,0.12,0.1,0.3,0,0,false,0.2,false,0,0,Capsule,3.5,1;1;1,15,0,true,2,true,false
+Bow_Shot,Bow,1,16,0,0,0.3,0,0,false,0.1,false,0,0,Projectile,12,1;1;1,22,0,false,0,false,false
+HeavyBlade_Swing,HeavyBlade,1,30,0.45,0.2,0.55,0,0,false,0.1,false,0,0,Sphere,2.8,1;1;1,15,0,true,6,false,true
+Staff_Cast,Staff,1,12,0,0,0.35,0,0.6,false,0.1,false,0,0,Area,2.5,1;1;1,15,2,false,0,false,false

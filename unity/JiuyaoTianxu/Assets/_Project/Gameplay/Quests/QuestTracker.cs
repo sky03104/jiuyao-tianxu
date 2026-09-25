@@ -38,12 +38,18 @@ namespace JiuyaoTianxu.Gameplay.Quests
         private readonly QuestEntry[] _lastSeen = new QuestEntry[PlayerQuestLog.Capacity];
 
         public QuestRegistry Registry => _registry;
+        public PlayerQuestLog Log => _log;
+
+        /// <summary>This peer's own player's tracker (null on a dedicated server).
+        /// Read by the debug quest list in the HUD.</summary>
+        public static QuestTracker Local { get; private set; }
 
         public override void Spawned()
         {
             _log = GetComponent<PlayerQuestLog>();
             _health = GetComponent<Health>();
             _spawned = true;
+            if (Object.HasInputAuthority) Local = this;
 
             if (_registry == null)
             {
@@ -67,6 +73,7 @@ namespace JiuyaoTianxu.Gameplay.Quests
                 _subscribed = false;
             }
             _spawned = false;
+            if (Local == this) Local = null;
         }
 
         // ---------------- Server ----------------
@@ -229,7 +236,7 @@ namespace JiuyaoTianxu.Gameplay.Quests
         {
             if (!_spawned || !Object.HasInputAuthority || _registry == null) return;
 
-            var wantsAccept = KeyboardInputProvider.QuestAcceptPressed();
+            var wantsAccept = LocalInputProvider.QuestAcceptPressed();
             if (CommandLineFlags.AutoTest && Time.unscaledTime >= _nextAutoAcceptTime)
             {
                 _nextAutoAcceptTime = Time.unscaledTime + AutoAcceptIntervalSeconds;

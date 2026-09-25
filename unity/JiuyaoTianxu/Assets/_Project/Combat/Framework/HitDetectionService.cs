@@ -54,6 +54,22 @@ namespace JiuyaoTianxu.Combat.Framework
             return results;
         }
 
+        /// <summary>Every Health within <paramref name="radius"/> of a point, excluding
+        /// <paramref name="self"/>. Used by lock-on target search (never applies damage)
+        /// so Physics queries still live only in this class.</summary>
+        public static List<Health> FindHealthInRadius(Vector3 center, float radius, Health self)
+        {
+            var results = new List<Health>();
+            var count = Physics.OverlapSphereNonAlloc(center, radius, Buffer);
+            for (var i = 0; i < count; i++)
+            {
+                var target = Buffer[i].GetComponentInParent<Health>();
+                if (target == null || target == self || results.Contains(target)) continue;
+                results.Add(target);
+            }
+            return results;
+        }
+
         /// <summary>Area query centered at an arbitrary world point (e.g. a staff ground AOE).</summary>
         public static List<Health> FindTargetsAt(AttackDefinition attack, Vector3 center, Health self)
         {

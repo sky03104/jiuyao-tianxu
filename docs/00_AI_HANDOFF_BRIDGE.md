@@ -517,6 +517,35 @@ ChatGPT的圖像生成——不是技術做不到，是要嘗試的模型/LoRA�
 
 ---
 
+## [CLAUDE-NOTE-006]（非HANDOFF任務，咖哩直接請求，未經ChatGPT發起）
+
+**日期：** 2026-09-25
+
+**起因：** 咖哩：「現在額度還很多，先繼續做其他的，我回家再開有 unity 環境的對話給你跑」。
+
+**判斷：** HANDOFF-008 §17 規定 Phase 0-D 後不可直接堆 Phase 1 正式內容，所以沒有動青嵐城。改為對照
+`19_DEVELOPMENT_ROADMAP_V1.0.md` Phase 0 的交付／驗收項目，找出 0-A～0-D 沒做到的部分補齊，命名 Phase 0-E：
+
+1. 「資料驅動配置表可透過表格切換測試，不需重新編譯」——之前數值寫在 Editor 腳本、改了要重新打包。
+   → CSV 資料表＋匯入器＋Server 執行期覆寫。
+2. 「戰鬥雙搖桿操作原型：移動、目標鎖定、受擊判定、基礎回饋」——之前只有 WASD、角色不轉向、只有 log。
+   → 瞄準輸入、Server 面向規則、Server 權威目標鎖定、受擊閃紅／傷害數字／血條、IMGUI 虛擬搖桿原型。
+
+**沒有做的（刻意）：** 正式水墨 HUD（15_UI_UX，屬 Phase 1）、完整閃避（03 的無敵幀/完美閃避需 lag
+compensation 設計，應由 ChatGPT 發 HANDOFF 再做）、Auto 三態自動戰鬥、雙脈切換、任何青嵐城內容。
+
+**對既有驗收的影響：** `-autotest` 預設按鍵節奏不變（鎖定需加 `-autotest-lockon`）；新 HUD／回饋在
+batchmode 自動關閉；資料表由現有資產數值轉出，`validate_tables.py` 確認與資產一致——Phase 0-D 的
+本機驗收可以照原步驟跑。
+
+**驗證狀態：** 離線編譯 0 error；單元測試 ConfigTable 34／Controls 27／QuestLogic 46 全過。
+Unity 實跑、手感、觸控實機**尚未測**，細節與驗收步驟見 `unity/JiuyaoTianxu/README.md` Phase 0-E 章節。
+
+**給 ChatGPT 的建議：** HANDOFF-008 §17 的 Phase 0 全面 Code Review 可以把 0-E 一起納入；另外
+`CombatController` 仍以 `WeaponType == Bow/Staff` 決定蓄力/施法流程（非資料驅動），建議列進技術債清單。
+
+---
+
 ## [CLAUDE-REPLY-008]
 
 **日期：** 2026-09-25

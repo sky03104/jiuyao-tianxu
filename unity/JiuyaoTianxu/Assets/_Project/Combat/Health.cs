@@ -14,6 +14,9 @@ namespace JiuyaoTianxu.Combat
 
         [Networked] public int HP { get; private set; }
 
+        /// <summary>Read-only, for HUD bars (Phase 0-E).</summary>
+        public int MaxHp => _maxHp;
+
         public override void Spawned()
         {
             if (Object.HasStateAuthority)

@@ -1,4 +1,4 @@
-# 《九曜：天墟》Unity 專案 — Phase 0-A / 0-B / 0-C / 0-D
+# 《九曜：天墟》Unity 專案 — Phase 0-A / 0-B / 0-C / 0-D / 0-E
 
 ## 版本資訊
 - Unity Editor：**6000.5.5f1**
@@ -16,7 +16,8 @@ Assets/_Project/
   Core/      — 輸入抽象層（PlayerInputData/KeyboardInputProvider/AutoTestInputProvider）
   Net/       — NetworkGameLauncher（Fusion啟動/回呼）
                Net/Prefabs/（Player, NetworkRunner, Projectile）
-  Combat/    — PlayerMovement、Health（Server權威狀態持有者）
+  Combat/    — PlayerMovement（移動＋Phase0-E雙搖桿面向）、Health（Server權威狀態持有者）
+    Targeting/ — Phase 0-E：TargetingMath（純C#面向/鎖定規則）、TargetLock（Server權威目標鎖定）
     Framework/ — 共用Combat Framework（HANDOFF-006 0-B-01~05），六種武器共用同一套：
       WeaponType.cs / CombatPhase.cs / HitShapeType.cs — 列舉
       AttackDefinition.cs / WeaponDefinition.cs — 資料驅動攻擊/武器定義（ScriptableObject）
@@ -48,10 +49,14 @@ Assets/_Project/
                 PlayerQuestLog（網路狀態）、QuestTracker（唯一任務邏輯）、QuestEvents、QuestIds
                 Quests/Data/（Q_PHASE0D_001/002 + QuestRegistry，Phase0DSetup產生）
     Testing/  — Phase0DTestRunner（Server端觀察者，印SUMMARY/PASS）
-  UI/        — 介面與HUD（尚未使用）
+  UI/        — Phase 0-E 原型介面（IMGUI，非正式版）：
+    TouchControls/VirtualControlsOverlay — 虛擬搖桿＋攻擊鍵兼瞄準搖桿＋閃/鎖/換/任務鍵
+    Hud/ — CombatHudOverlay（血條/傷害數字/鎖定標記/debug任務清單）、HealthFeedback（受擊閃紅）、
+           LocalPlayerCameraFollow
   Economy/   — 經濟資料展示層（尚未使用）
   Guild/     — 公會資料展示層（尚未使用）
-  Config/    — 資料驅動配置讀取模組（尚未使用）
+  Config/    — Phase 0-E 資料表：Tables/*.csv（attacks/weapons/spirit_seals/quests，所有Phase0數值的來源）、
+               Core/（CsvTable/TableBinder，純C#）、ConfigOverrideLoader（Server執行期覆寫）
   Art/       — 美術資源（尚未使用）
   Scenes/    — 場景（Phase0A_NetworkTest.unity；Phase0D_TestScene.unity 由Phase0DSetup產生）
   Editor/    — 一次性設定工具（Phase0ASetup/Phase0ANetworkSetup/Phase0BWeaponDataSetup/
@@ -59,6 +64,8 @@ Assets/_Project/
   Settings/  — URP Pipeline Asset 等專案設定資產
 Tools/       — Unity不會匯入的外部工具（資料夾在Assets外）：
   QuestLogicTests/ — 任務狀態機單元測試（不需Unity，run.ps1 / run.sh）
+  ConfigTableTests/ — CSV解析/綁定單元測試＋validate_tables.py（欄名/型別/交叉參照/與資產一致）
+  ControlsTests/ — 面向/鎖定/搖桿曲線單元測試
   Phase0D/run_autotest.ps1 — Phase 0-D 1 Server+2 Client 自動驗收
 ```
 
@@ -406,6 +413,81 @@ Exception 數。**Server 的 PASS 條件**：≥2 名玩家完成 Q_PHASE0D_001�
 - Fusion 對 `Phase0D_TestMonster.prefab` 的自動 prefab 註冊（Projectile 當初同樣方式成功）。
 - headless `-nographics` 下 `Render()` 的呼叫——只影響 Client 的 `[QuestSync]` 證據 log。
 - 測試佈局距離是否讓六武器都打得到中間怪；打不到只影響擊殺速度，不影響任務邏輯。
+
+---
+
+## Phase 0-E：Roadmap Phase 0 缺口補齊（資料表／雙搖桿／目標鎖定／基礎回饋）
+
+> **狀態：程式碼完成，Unity 實跑驗收尚未執行。** 不是 ChatGPT 發的 HANDOFF，是咖哩交代「先繼續做
+> 其他的」後，Claude 對照 `docs/19_DEVELOPMENT_ROADMAP_V1.0.md` Phase 0 交付／驗收項目補上尚缺的部分
+> （紀錄見 `docs/00_AI_HANDOFF_BRIDGE.md` CLAUDE-NOTE-006）。全部是原型等級，數值皆可調整。
+
+| Roadmap Phase 0 項目 | 0-A～0-D 狀態 | Phase 0-E 補上 |
+|---|---|---|
+| 資料驅動配置表可透過表格切換測試，不需重新編譯 | ScriptableObject，數值寫在 Editor 腳本裡 | CSV 資料表＋匯入器＋Server 執行期覆寫 |
+| 戰鬥雙搖桿：移動、目標鎖定 | 只有 WASD 移動，角色不會轉向 | 瞄準搖桿、面向規則、Server 權威目標鎖定 |
+| 受擊判定、基礎回饋 | 只有 log | 受擊閃紅、傷害數字、血條 |
+| 手機操作 | 無 | 虛擬搖桿原型（觸控裝置自動顯示） |
+
+### 1. 資料表（`Assets/_Project/Config/Tables/`）
+
+- `attacks.csv`／`weapons.csv`／`spirit_seals.csv`／`quests.csv`：**欄名＝定義類別的欄位名**，列舉填英文名稱
+  （Blade、Sphere…），布林 true/false，Vector3 寫 `1;1;1`，`#` 開頭的列是註解。可以直接用 Excel／
+  Google 試算表編輯（UTF-8）。初始內容由目前 commit 的資產數值轉出，**行為完全不變**。
+- **Editor 匯入**：選單 `JiuyaoTianxu/Config/Import All Tables`，或
+  `Unity.exe -batchmode -projectPath . -executeMethod ConfigTableImporter.ImportAll -quit`。
+  依鍵（AttackId／WeaponType／SealId／QuestNumId）找到既有資產**原地更新**，GUID 與所有參照不變；
+  batch 模式有任何錯誤會拋例外（exit code ≠ 0）。`Phase0BWeaponDataSetup`／`Phase0CSpiritSealDataSetup`／
+  `Phase0DSetup` 的數值部分都改成呼叫匯入器，程式碼裡不再寫死數值。
+- **Server 執行期覆寫（不用重新打包）**：打包後在 `<Build>_Data/StreamingAssets/ConfigOverrides/`（或
+  `-configdir <路徑>`）放同名 CSV，**只要寫鍵欄＋要改的欄**，重啟 Server 即生效。限制：只改 build 內已有的
+  id、只在 Server 生效（戰鬥/靈印/任務結果本來就由 Server 決定）、Editor 內不套用（避免把測試值寫回資產）。
+- 驗證：`Tools/ConfigTableTests`（解析/綁定 34 項）＋`validate_tables.py`（欄名是否存在、型別、鍵重複、
+  連段/前置任務參照、**CSV 與已 commit 資產是否一致**——改了 CSV 忘了匯入會被抓出來）。
+
+### 2. 雙搖桿與目標鎖定
+
+- `PlayerInputData` 新增 `Aim`（右搖桿）與 `LockOn` 按鍵。
+- **面向（Server 決定，NetworkTransform 同步）**：瞄準搖桿 ＞ 鎖定目標 ＞ 移動方向 ＞ 維持原方向；
+  轉向速度 900°/秒。攻擊仍沿用 `transform.forward`，所以面向＝攻擊方向，戰鬥框架沒改。
+- **目標鎖定 `TargetLock`**：按一次鎖定最佳目標 → 再按換下一個 → 最後一個之後解除。排序：非玩家目標
+  優先，其次「距離＋角度懲罰」（正前方稍遠的勝過背後較近的）；目標死亡或超過 16m 自動解除（鎖定範圍
+  12m，差距避免邊界閃爍）。只同步一個 NetworkId。鎖定**不影響命中判定**，只影響面向。
+- 物理查詢仍只在 `HitDetectionService`（新增 `FindHealthInRadius`）。
+- 鍵盤：WASD 移動、IJKL 瞄準、F 鎖定（原有 Space/左鍵攻擊、Tab 換武器、E 閃避測試、Q 接任務不變）。
+
+### 3. 觸控操作與基礎回饋（IMGUI 原型，不是 15_UI_UX 的正式水墨 HUD）
+
+- `VirtualControlsOverlay`：左下固定移動搖桿；右下「攻」鍵按住＝攻擊、拖曳＝瞄準（雙搖桿）；
+  閃／鎖／換／任務四個小鍵。觸控裝置自動顯示；桌機加 `-touchui` 參數可用滑鼠模擬一根手指。
+  單次點擊會鎖存到下一個網路 tick，不會因為點太快而遺失。
+- `HealthFeedback`＋`CombatHudOverlay`：HP 下降時閃紅、跳傷害數字；頭上血條；鎖定目標標記；
+  左上 debug 任務清單（HANDOFF-008 §14 不做正式任務追蹤 UI，所以只是文字）。全部只讀取同步狀態，
+  headless（batchmode）自動關閉。
+- `LocalPlayerCameraFollow`：鏡頭跟著自己的角色。
+
+### 本機驗收步驟（在 Phase 0-D 步驟之後）
+
+```
+Unity.exe -batchmode -projectPath . -executeMethod ConfigTableImporter.ImportAll -quit
+Unity.exe -batchmode -projectPath . -executeMethod Phase0ESetup.Run -quit      # Phase0DSetup 已自動呼叫，可略
+Unity.exe -batchmode -projectPath . -executeMethod Phase0DBuild.Build -quit
+pwsh Tools/Phase0D/run_autotest.ps1 -Seconds 90 -LockOn
+```
+
+- **資料表不重新打包的驗收**：把 `Config/Tables/spirit_seals.csv` 複製到別的資料夾，只留 `SealId,Cooldown`
+  兩欄、把赤炎（1）改成 12，執行 `run_autotest.ps1 -ConfigDir <那個資料夾>`，比較赤炎觸發次數是否像 0-C
+  那次一樣明顯下降（0-C 當時要重新打包，這次不用）。
+- **手感（需要人看）**：Editor 開 `Phase0D_TestScene` 按 Play（Host），WASD＋IJKL＋F 試面向與鎖定；
+  加 `-touchui` 打包或用手機測虛擬搖桿。
+- 預設的 `-autotest` 按鍵節奏**完全沒變**（鎖定要加 `-autotest-lockon` 才會按），Phase 0-D 驗收結果不受影響。
+
+### 已做的驗證（雲端環境，無 Unity）
+
+1. 離線編譯（Roslyn＋UnityEngine 參考組件＋Fusion DLL）：執行期程式碼 0 error / 0 warning；
+   Editor 腳本除 2018 版參考組件缺的 `PrefabUtility` 新 API 外全部通過。
+2. 單元測試：ConfigTableTests 34/34、ControlsTests 27/27、QuestLogicTests 46/46；`validate_tables.py` OK，
+   並用故意改錯的 CSV 確認驗證器會抓到（錯的列舉名＋與資產不一致）。
 
 ## Photon App ID 設定（每台開發機都要做一次，不進版本控制）
 
