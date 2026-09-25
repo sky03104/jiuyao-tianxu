@@ -12,6 +12,9 @@ namespace JiuyaoTianxu.Core
     public struct PlayerInputData : INetworkInput
     {
         public Vector2 Move;
+        /// <summary>Phase 0-E twin-stick right stick: facing/attack direction in
+        /// world X/Z. Zero = not aiming (face lock target or movement instead).</summary>
+        public Vector2 Aim;
         public NetworkButtons Buttons;
     }
 
@@ -23,5 +26,7 @@ namespace JiuyaoTianxu.Core
         /// exist yet, this just lets SpiritSealSystem exercise the OnDodgeEvent
         /// trigger (影遁) without needing a Dodge system built first.</summary>
         public const int DodgeTest = 2;
+        /// <summary>Phase 0-E: lock nearest target / cycle to next / clear.</summary>
+        public const int LockOn = 3;
     }
 }

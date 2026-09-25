@@ -1,0 +1,4 @@
+﻿# 任務（QuestDefinition）。QuestNumId 會上網路同步，定案後不可改號；PrerequisiteQuestNumId=0 表示開局可接。列順序即 QuestRegistry 順序（PlayerQuestLog 最多 8 筆）。
+QuestNumId,QuestId,DisplayName,Description,ObjectiveType,TargetId,RequiredCount,PrerequisiteQuestNumId,RewardType,RewardId,RewardAmount
+1001,Q_PHASE0D_001,清理測試區,擊敗測試區的 Phase0D_TestMonster × 3。,KillTarget,Phase0D_TestMonster,3,0,DebugCounter,PHASE0D_DEBUG_POINTS,10
+1002,Q_PHASE0D_002,清理測試區（續）,完成「清理測試區」後解鎖：再擊敗 Phase0D_TestMonster × 5。,KillTarget,Phase0D_TestMonster,5,1001,DebugCounter,PHASE0D_DEBUG_POINTS,20

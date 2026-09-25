@@ -1,5 +1,22 @@
 # CHANGELOG — 《九曜：天墟》
 
+## 2026-09-25（第二十九筆，Phase 0-E：Roadmap Phase 0 缺口補齊——資料表／雙搖桿／目標鎖定／基礎回饋）
+
+- 咖哩交代等 Unity 環境期間「先繼續做其他的」；對照 `19_DEVELOPMENT_ROADMAP` Phase 0 交付／驗收項目，
+  補上 0-A～0-D 尚缺的部分（非 ChatGPT HANDOFF，紀錄見 bridge CLAUDE-NOTE-006）。
+- **資料表**：`Assets/_Project/Config/Tables/{attacks,weapons,spirit_seals,quests}.csv` 成為所有 Phase 0
+  數值的來源（由現有資產數值轉出，行為不變）；純 C# `CsvTable`/`TableBinder`；Editor `ConfigTableImporter`
+  依鍵原地更新資產；Phase0B/C/D setup 改讀表；Server 執行期可從 `StreamingAssets/ConfigOverrides` 或
+  `-configdir` 覆寫數值，不必重新打包（對應 Roadmap「不需重新編譯即可切換測試內容」）。
+- **雙搖桿／目標鎖定**：`PlayerInputData` 加 `Aim`、`LockOn`；Server 面向規則（瞄準＞鎖定＞移動＞維持）；
+  `TargetLock` Server 權威鎖定（最佳→下一個→解除，死亡/超距自動解除）；`HitDetectionService.FindHealthInRadius`。
+- **觸控與回饋（IMGUI 原型）**：`VirtualControlsOverlay` 虛擬搖桿、`HealthFeedback` 受擊閃紅＋傷害數字、
+  `CombatHudOverlay` 血條/鎖定標記/debug 任務清單、`LocalPlayerCameraFollow`；`Phase0ESetup` 把元件加到
+  prefab 與兩個測試場景（Phase0DSetup 會自動呼叫）。
+- `-autotest` 預設節奏不變；新增 opt-in `-autotest-lockon`、`-configdir`；`run_autotest.ps1` 加 `-LockOn`、`-ConfigDir`。
+- 驗證（雲端無 Unity）：離線編譯 0 error；ConfigTableTests 34/34、ControlsTests 27/27、QuestLogicTests 46/46、
+  `validate_tables.py` OK。**Unity 實跑與手感測試尚未執行。**
+
 ## 2026-09-25（第二十八筆，HANDOFF-008：Phase 0-D Map/Spawn/Quest Skeleton 程式碼完成，Unity 實跑驗收待執行）
 
 - 咖哩指示 GPT 生圖暫停期間先做遊戲本體，依 HANDOFF-008 實作 Phase 0-D。

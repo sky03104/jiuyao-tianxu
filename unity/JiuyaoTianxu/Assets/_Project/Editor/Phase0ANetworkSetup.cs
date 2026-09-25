@@ -78,6 +78,8 @@ public static class Phase0ANetworkSetup
         go.AddComponent<CombatController>();
         go.AddComponent<SpiritSealLoadout>();
         go.AddComponent<SpiritSealSystem>();
+        go.AddComponent<JiuyaoTianxu.Combat.Targeting.TargetLock>();  // Phase 0-E
+        go.AddComponent<JiuyaoTianxu.UI.Hud.HealthFeedback>();         // Phase 0-E
 
         var savedPrefab = PrefabUtility.SaveAsPrefabAsset(go, PlayerPrefabPath);
         Object.DestroyImmediate(go);

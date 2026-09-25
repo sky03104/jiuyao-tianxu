@@ -30,6 +30,7 @@ namespace JiuyaoTianxu.Core
         private const int WeaponWindowTicks = 360;   // total ticks spent on one weapon before switching.
         private const int RestBeforeSwitchTicks = 120; // ticks of total silence before the switch press.
         private const int DodgeTestTicks = 90;       // ~1.5s: periodic press to arm 影遁 (HANDOFF-007 §12).
+        private const int LockOnTestTicks = 240;     // ~4s: Phase 0-E lock-on cycle (opt-in).
 
         public static PlayerInputData Poll(int tick)
         {
@@ -57,6 +58,13 @@ namespace JiuyaoTianxu.Core
             if (tick % DodgeTestTicks == 0)
             {
                 data.Buttons.Set(PlayerButton.DodgeTest, true);
+            }
+
+            // Phase 0-E, opt-in (-autotest-lockon): lock → cycle → clear through
+            // TargetLock. Offset from the dodge tick so the two never coincide.
+            if (CommandLineFlags.AutoTestLockOn && tick % LockOnTestTicks == LockOnTestTicks / 2)
+            {
+                data.Buttons.Set(PlayerButton.LockOn, true);
             }
 
             return data;

@@ -6,17 +6,27 @@
 #   Unity.exe -batchmode -projectPath . -executeMethod Phase0DBuild.Build -quit
 #
 # Usage (from unity/JiuyaoTianxu):  pwsh Tools/Phase0D/run_autotest.ps1 [-Seconds 90]
+#
+# Phase 0-E extras (optional):
+#   -LockOn             also press LockOn every ~4s (-autotest-lockon) and count [TargetLock] lines
+#   -ConfigDir <path>   server reads override tables from <path> (-configdir), e.g. a copy of
+#                       Assets/_Project/Config/Tables with one number changed
 param(
     [int]$Seconds = 90,
     [string]$Exe = "Builds/Phase0D/JiuyaoTianxu.exe",
-    [string]$LogDir = "Logs/Phase0D"
+    [string]$LogDir = "Logs/Phase0D",
+    [switch]$LockOn,
+    [string]$ConfigDir = ""
 )
 $ErrorActionPreference = "Stop"
 if (-not (Test-Path $Exe)) { throw "Build not found: $Exe (run Phase0DBuild.Build first)" }
 New-Item -ItemType Directory -Force $LogDir | Out-Null
 
 $common = @("-batchmode", "-nographics", "-autotest", "-quitafter", "$Seconds")
-$server = Start-Process $Exe -PassThru -ArgumentList ($common + @("-netmode", "server", "-logFile", "$LogDir/server.log"))
+if ($LockOn) { $common += "-autotest-lockon" }
+$serverArgs = $common + @("-netmode", "server", "-logFile", "$LogDir/server.log")
+if ($ConfigDir) { $serverArgs += @("-configdir", (Resolve-Path $ConfigDir).Path) }
+$server = Start-Process $Exe -PassThru -ArgumentList $serverArgs
 Start-Sleep -Seconds 8   # let the server register the session before clients join
 $c1 = Start-Process $Exe -PassThru -ArgumentList ($common + @("-netmode", "client", "-logFile", "$LogDir/client1.log"))
 $c2 = Start-Process $Exe -PassThru -ArgumentList ($common + @("-netmode", "client", "-logFile", "$LogDir/client2.log"))
@@ -41,6 +51,8 @@ $report = [ordered]@{
     "server: Q_PHASE0D_002 unlocked"       = Count $s "Q_PHASE0D_002 Locked → Available"
     "server: PASS line"                    = Count $s "\[Phase0DTestRunner\] PASS"
     "server: 赤炎/玄甲/影遁 regression"      = Count $s "\[SpiritSealSystem\]"
+    "server: [TargetLock] lines (-LockOn)" = Count $s "\[TargetLock\]"
+    "server: [ConfigOverride] applied"     = Count $s "\[ConfigOverride\] .*applied"
     "client1: QuestSync lines"             = Count "$LogDir/client1.log" "\[QuestSync\]"
     "client2: QuestSync lines"             = Count "$LogDir/client2.log" "\[QuestSync\]"
     "ALL: Exception/NullReference"         = (Count $s "Exception|NullReference|Unhandled") +

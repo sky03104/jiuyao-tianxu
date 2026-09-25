@@ -1,0 +1,5 @@
+﻿# 靈印（SpiritSealDefinition）。SealId 會上網路同步，定案後不可改號。列順序即 SpiritSealRegistry 順序。
+SealId,DisplayName,Equipable,TriggerType,Cooldown,BurnDamagePerTick,BurnTickCount,BurnTickInterval,FatalSaveMinHp,ArmsForNextAttack,BonusDamageWhenArmed
+1,赤炎,true,OnAttackHit,3,3,3,1,1,false,0
+2,玄甲,true,OnFatalDamage,10,0,0,0,1,false,0
+3,影遁,true,OnDodgeEvent,5,0,0,0,1,true,5

@@ -18,7 +18,9 @@ namespace JiuyaoTianxu.Core
                 Move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"))
             };
 
-            if (Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0))
+            // While touch controls are shown, a mouse click is a (simulated) finger on
+            // the overlay, not an attack.
+            if (Input.GetKey(KeyCode.Space) || (!TouchInputState.Active && Input.GetMouseButton(0)))
             {
                 data.Buttons.Set(PlayerButton.Attack, true);
             }
@@ -31,6 +33,17 @@ namespace JiuyaoTianxu.Core
             if (Input.GetKeyDown(KeyCode.E))
             {
                 data.Buttons.Set(PlayerButton.DodgeTest, true);
+            }
+
+            // Phase 0-E: IJKL = aim stick stand-in on keyboard (arrow keys already
+            // feed the default Horizontal/Vertical move axes). F = lock-on.
+            data.Aim = new Vector2(
+                (Input.GetKey(KeyCode.L) ? 1f : 0f) - (Input.GetKey(KeyCode.J) ? 1f : 0f),
+                (Input.GetKey(KeyCode.I) ? 1f : 0f) - (Input.GetKey(KeyCode.K) ? 1f : 0f));
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                data.Buttons.Set(PlayerButton.LockOn, true);
             }
 
             return data;

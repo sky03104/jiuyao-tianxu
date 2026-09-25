@@ -1,0 +1,8 @@
+﻿# 武器（WeaponDefinition）。ComboSequence 以 | 分隔 attacks.csv 的 AttackId，順序即連段順序。
+WeaponType,BaseMoveSpeed,ComboSequence
+Blade,4,Blade_Step1|Blade_Step2|Blade_Step3_Heavy
+Sword,4.5,Sword_Step1|Sword_Step2|Sword_Step3|Sword_Step4|Sword_Step5
+Spear,3.8,Spear_Thrust1|Spear_Thrust2
+Bow,3.5,Bow_Shot
+HeavyBlade,2.8,HeavyBlade_Swing
+Staff,3.5,Staff_Cast

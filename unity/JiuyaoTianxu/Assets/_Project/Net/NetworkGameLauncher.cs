@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Fusion;
 using Fusion.Sockets;
 using JiuyaoTianxu.Combat.Framework;
+using JiuyaoTianxu.Config;
 using JiuyaoTianxu.Core;
 using JiuyaoTianxu.Gameplay.World;
 using UnityEngine;
@@ -37,6 +38,13 @@ namespace JiuyaoTianxu.Net
         {
             var mode = ResolveGameModeFromArgs();
             Debug.Log($"[NetworkGameLauncher] Starting as {mode}, session '{_sessionName}'.");
+
+            // Server decides every combat/seal/quest number, so only it reads the
+            // table overrides (roadmap Phase 0: switch test data without rebuilding).
+            if (mode is GameMode.Server or GameMode.Host)
+            {
+                ConfigOverrideLoader.ApplyServerOverrides();
+            }
 
             _runner = Instantiate(_runnerPrefab);
             _runner.name = $"NetworkRunner-{mode}";
@@ -169,7 +177,7 @@ namespace JiuyaoTianxu.Net
 
         public void OnInput(NetworkRunner runner, NetworkInput input)
         {
-            input.Set(CommandLineFlags.AutoTest ? AutoTestInputProvider.Poll(runner.Tick.Raw) : KeyboardInputProvider.Poll());
+            input.Set(CommandLineFlags.AutoTest ? AutoTestInputProvider.Poll(runner.Tick.Raw) : LocalInputProvider.Poll());
         }
 
         public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input) { }

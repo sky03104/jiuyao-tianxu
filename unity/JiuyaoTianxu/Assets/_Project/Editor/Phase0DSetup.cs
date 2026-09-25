@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Fusion;
 using JiuyaoTianxu.Combat;
 using JiuyaoTianxu.Gameplay.Quests;
@@ -10,8 +11,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// One-off Phase 0-D bootstrap (HANDOFF-008): builds the two test quest assets
-/// + QuestRegistry, the Phase0D_TestMonster prefab, adds PlayerQuestLog/
+/// One-off Phase 0-D bootstrap (HANDOFF-008): imports quests.csv (the two test
+/// quests + QuestRegistry), the Phase0D_TestMonster prefab, adds PlayerQuestLog/
 /// QuestTracker to the shared Player prefab, and builds Phase0D_TestScene.
 /// Requires Phase0ANetworkSetup to have been run first (Player/NetworkRunner
 /// prefabs must exist).
@@ -51,6 +52,10 @@ public static class Phase0DSetup
         BuildScene();
         RegisterScenesInBuildSettings();
 
+        // Phase 0-E components (lock-on, hit feedback, touch controls, HUD) on the
+        // freshly built prefab/scene.
+        Phase0ESetup.Run();
+
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
         Debug.Log("[Phase0DSetup] Quest data, test monster, Player quest components and Phase0D_TestScene built.");
@@ -71,49 +76,13 @@ public static class Phase0DSetup
 
     // ---------------- Quest data ----------------
 
+    /// <summary>Quest values live in Assets/_Project/Config/Tables/quests.csv
+    /// (Q_PHASE0D_001 / Q_PHASE0D_002); this just imports that table.</summary>
     private static void BuildQuestData()
     {
-        var q1 = MakeQuest(QuestIds.Phase0DClearTestArea, "Q_PHASE0D_001", "清理測試區",
-            "擊敗測試區的 Phase0D_TestMonster × 3。", QuestIds.Phase0DTestMonsterTargetId, 3,
-            prerequisite: 0, rewardAmount: 10);
-        var q2 = MakeQuest(QuestIds.Phase0DClearTestAreaFollowUp, "Q_PHASE0D_002", "清理測試區（續）",
-            "完成「清理測試區」後解鎖：再擊敗 Phase0D_TestMonster × 5。", QuestIds.Phase0DTestMonsterTargetId, 5,
-            prerequisite: QuestIds.Phase0DClearTestArea, rewardAmount: 20);
-
-        var registry = LoadOrCreate<QuestRegistry>(RegistryPath);
-        registry.All = new[] { q1, q2 };
-        EditorUtility.SetDirty(registry);
-    }
-
-    private static QuestDefinition MakeQuest(int numId, string questId, string displayName, string description,
-        string targetId, int required, int prerequisite, int rewardAmount)
-    {
-        var q = LoadOrCreate<QuestDefinition>($"{QuestDataFolder}/{questId}.asset");
-        q.QuestNumId = numId;
-        q.QuestId = questId;
-        q.DisplayName = displayName;
-        q.Description = description;
-        q.ObjectiveType = QuestObjectiveType.KillTarget;
-        q.TargetId = targetId;
-        q.RequiredCount = required;
-        q.PrerequisiteQuestNumId = prerequisite;
-        q.RewardType = QuestRewardType.DebugCounter;
-        q.RewardId = "PHASE0D_DEBUG_POINTS";
-        q.RewardAmount = rewardAmount;
-        EditorUtility.SetDirty(q);
-        return q;
-    }
-
-    /// <summary>Re-running the setup updates assets in place so their GUIDs (and
-    /// every reference to them) survive.</summary>
-    private static T LoadOrCreate<T>(string path) where T : ScriptableObject
-    {
-        var existing = AssetDatabase.LoadAssetAtPath<T>(path);
-        if (existing != null) return existing;
-
-        var created = ScriptableObject.CreateInstance<T>();
-        AssetDatabase.CreateAsset(created, path);
-        return created;
+        var errors = new List<string>();
+        ConfigTableImporter.ImportQuests(errors);
+        ConfigTableImporter.Finish(errors, "quests.csv");
     }
 
     // ---------------- Monster prefab ----------------
