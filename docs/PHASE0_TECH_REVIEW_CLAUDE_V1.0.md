@@ -129,8 +129,8 @@
 - **D19**（2026-09-26 實跑發現）Unity 6000.5 編譯有 CS0618 過時 API 警告：`FindObjectsSortMode`
   （`MonsterSpawner.cs:45`、`NetworkGameLauncher.cs:154`）、`SimulationMessagePtr`（`NetworkGameLauncher.cs:199`）。
   目前不影響執行，升級 Unity 前換成新 API。
-- **D20**（2026-09-26 實跑發現）`Projectile` 命中沒有 log，regression 無法從 log 確認弓有打中目標
-  （刀／劍／槍／重刃／靈杖都有命中 log）。之後加一行命中 log（走 D10 的 GameLog）。
+- **D20** ✅ 已修正（2026-09-26，`1d366a7`）：`Projectile` 命中原本沒有 log，regression 無法確認弓有打中目標；
+  已比照 CombatController 加一行命中 log（走 D10 的 GameLog），實跑確認弓命中怪物 14 次。
 
 ---
 

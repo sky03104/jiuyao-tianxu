@@ -554,7 +554,7 @@ Unity 實跑、手感、觸控實機**尚未測**，細節與驗收步驟見 `un
 |---|---|---|
 | 資料表切換測試不需重新編譯 | `-ConfigDir` 把赤炎冷卻 3→12：`[ConfigOverride] applied` 2、赤炎觸發 43→18；兩次之間 build 檔時間戳不變 | ✅ |
 | 目標鎖定（Server 權威） | `-LockOn` 自動測試 `[TargetLock]` 101 行，例外 0 | ✅ |
-| 受擊判定 | 自動測試命中怪物 log：刀 19、劍 16、槍 46、重刃 24、靈杖 27；弓射出 28 箭但 `Projectile` 沒有命中 log，無法確認 | ✅（弓未確認） |
+| 受擊判定 | 自動測試命中怪物 log：刀 19、劍 16、槍 46、重刃 24、靈杖 27；弓補上命中 log 後（`1d366a7`）射出 29 箭、命中怪物 14 次（例：`Logs/Final3/Phase0D/server.log:4602`） | ✅ |
 | 基礎回饋 | 咖哩 Editor 截圖可見傷害數字「3」與頭上血條；受擊閃紅沒有單獨確認；咖哩回報「測完了都可以按」 | ✅（閃紅未確認） |
 | 赤炎燒怪（D1） | 赤炎打在怪物上 32 次；server.log 有 11 筆 `BurnStatus → DamageService` 的怪物扣血（例：`Logs/Final/Phase0D/server.log:8844`） | ✅ |
 | 死亡重生測試版（D3） | 倒地 5／復活 5（改數值版 7／7） | ✅ |
@@ -684,7 +684,8 @@ Host＋1 個遠端 Client——Host 收到自己 `[Player:1]` 2 次、遠端 `[P
 **最終 build 回歸（commit `b178fc0`）：** 上面的數字來自 `a478bf2` 的 build。最終審查後又加了兩個防禦性修正
 （取消註冊前比對處理者、runner 關閉時清掉註冊，不影響正常流程），在最終 build 重跑：1 Server + 2 Client 150 秒
 PASS 1、Client 請求 4／Server 收到 4／接取 4、no handler 0、REJECTED 0、例外 0；Host＋遠端 Client 兩人都完成
-001、002、PASS 1、例外 0（log 在 `Logs/Final2/`）。
+001、002、PASS 1、例外 0（log 在 `Logs/Final2/`）。之後只再加了箭矢命中 log（`1d366a7`），又跑一次 150 秒：
+PASS 1、接取 4、Player left 1、例外 0（`Logs/Final3/`）。
 
 **手動測試**（分開記錄，§15 F）：咖哩在 Editor 按 Play（截圖可見 `Host P1`）。先回報「看不出來現在拿什麼
 武器」→ debug HUD 加一行「武器：劍（Tab 切換）」；請他重新 Play 後回報「測完了都可以按」（沒有逐項說明）。

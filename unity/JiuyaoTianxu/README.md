@@ -437,7 +437,8 @@ Exception 數。**Server 的 PASS 條件**：≥2 名玩家完成 Q_PHASE0D_001�
 
 **最終 build 回歸（`b178fc0`）**：以上數字來自前一版 build（`a478bf2`）；之後只加了兩個防禦性修正（取消註冊前比對
 處理者、runner 關閉時清掉註冊），在最終 build 重跑：1 Server + 2 Client 150 秒 PASS 1、請求 4／收到 4／接取 4、
-例外 0；Host＋遠端 Client 兩人都完成 001、002、例外 0（`Logs/Final2/`）。
+例外 0；Host＋遠端 Client 兩人都完成 001、002、例外 0（`Logs/Final2/`）。再加上箭矢命中 log（`1d366a7`）後又跑一次
+150 秒：PASS 1、接取 4、Player left 1、例外 0（`Logs/Final3/`）。
 
 **手動**（咖哩在 Editor 按 Play，截圖可見 Hierarchy 顯示 `Host P1`）：咖哩先回報「看不出來現在拿什麼武器」→
 debug HUD 加上「武器：劍（Tab 切換）」一行、請他重新 Play 後，他回報「測完了都可以按」（沒有逐項說明看到什麼）。
@@ -445,8 +446,9 @@ debug HUD 加上「武器：劍（Tab 切換）」一行、請他重新 Play 後
 還沒有人在 Editor 裡手動按 Q 試過最終版。
 
 原本的三個風險點實跑結論：Fusion 自動註冊怪物 prefab 正常；headless 下 `Render()` 有呼叫（`[QuestSync]` 有 log）；
-命中怪物的 log：刀 19、劍 16、槍 46、重刃 24、靈杖 27 次；弓射出 28 支箭，但 `Projectile` 沒有命中 log，
-**無法從 log 確認弓有打中怪物**（不影響任務邏輯）。
+命中怪物的 log：刀 19、劍 16、槍 46、重刃 24、靈杖 27 次（`Logs/Final/`）；弓原本沒有命中 log，補上後
+（`1d366a7`）實跑：射出 29 箭、命中 18（怪物 14、玩家 4），例：`Logs/Final3/Phase0D/server.log:4602`
+`projectile-hit Phase0D_TestMonster#9 for 21 (Bow_Shot)`——**六種武器都確認打得到怪**。
 
 ### 已知問題
 

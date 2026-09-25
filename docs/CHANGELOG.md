@@ -15,7 +15,7 @@
   補測 Host＋遠端 Client；文件寫得比證據樂觀的地方已修正。
 - 修正：測試腳本在 PowerShell 5.1／中文路徑可用（csproj 改 UTF-8）；`Player left` 檢查改在結束前 35 秒砍 client2；
   `validate_tables.py` 讀得懂 Unity 折行的長字串（CI 誤報）。
-- 新增：debug HUD 顯示目前武器（咖哩手感測試回報看不出拿什麼武器）。
+- 新增：debug HUD 顯示目前武器（咖哩手感測試回報看不出拿什麼武器）；箭矢命中 log（技術債 D20），補上弓的命中證據。
 - Commit Phase0DSetup 產生的任務資產、測試怪 prefab、`Phase0D_TestScene`、Build Settings。
 
 ## 2026-09-25（第三十五筆，離線檢查工具化＋GitHub Actions）
