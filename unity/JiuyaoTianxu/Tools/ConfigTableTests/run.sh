@@ -4,6 +4,6 @@ set -e
 cd "$(dirname "$0")"
 C=../../Assets/_Project/Config/Core
 OUT=${TMPDIR:-/tmp}/ConfigTableTests.exe
-mono "${CSC:?set CSC to Roslyn csc.exe}" -nologo -langversion:9 -out:"$OUT" ConfigTableTests.cs "$C/CsvTable.cs" "$C/TableBinder.cs" "$C/MonsterTableRow.cs"
+mono "${CSC:?set CSC to Roslyn csc.exe}" -nologo -langversion:9 -nowarn:0649 -out:"$OUT" ConfigTableTests.cs "$C/CsvTable.cs" "$C/TableBinder.cs" "$C/MonsterTableRow.cs"
 MONSTERS_CSV=../../Assets/_Project/Config/Tables/monsters.csv mono "$OUT"
 python3 validate_tables.py

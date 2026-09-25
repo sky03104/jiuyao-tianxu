@@ -1,0 +1,24 @@
+// Compile-check only (Tools/CompileCheck): minimal stand-ins for the two Fusion types our code
+// uses from Fusion.Unity.cs source, which cannot be compiled outside Unity. Never shipped.
+namespace Fusion {
+  public class NetworkSceneManagerDefault : UnityEngine.MonoBehaviour, INetworkSceneManager {
+    public void Initialize(NetworkRunner runner) {} public void Shutdown() {}
+    public bool IsBusy => false; public UnityEngine.SceneManagement.Scene MainRunnerScene => default;
+    public bool IsRunnerScene(UnityEngine.SceneManagement.Scene sc) => true;
+    public bool TryGetPhysicsScene2D(out UnityEngine.PhysicsScene2D s) { s = default; return false; }
+    public bool TryGetPhysicsScene3D(out UnityEngine.PhysicsScene s) { s = default; return false; }
+    public void MakeDontDestroyOnLoad(UnityEngine.GameObject go) {}
+    public bool MoveGameObjectToScene(UnityEngine.GameObject go, SceneRef r) => true;
+    public NetworkSceneAsyncOp LoadScene(SceneRef r, NetworkLoadSceneParameters p) => default;
+    public NetworkSceneAsyncOp UnloadScene(SceneRef r) => default;
+    public SceneRef GetSceneRef(UnityEngine.GameObject go) => default;
+    public SceneRef GetSceneRef(string p) => default;
+    public bool OnSceneInfoChanged(NetworkSceneInfo a, NetworkSceneInfoChangeSource b) => false;
+  }
+  public class NetworkObjectProviderDefault : UnityEngine.MonoBehaviour, INetworkObjectProvider {
+    public NetworkObjectAcquireResult AcquireInstance(NetworkRunner runner, in NetworkObjectAcquireContext context, out NetworkObject result) { result = null; return default; }
+    public NetworkObjectAcquireResult AcquirePrefabInstance(NetworkRunner runner, in NetworkPrefabAcquireContext context, out NetworkObject result) { result = null; return default; }
+    public void ReleaseInstance(NetworkRunner runner, in NetworkObjectReleaseContext context) {}
+    public NetworkPrefabId GetPrefabId(NetworkRunner runner, NetworkObjectGuid prefabGuid) => default;
+  }
+}

@@ -63,6 +63,8 @@ Assets/_Project/
     Phase0CSpiritSealDataSetup/Phase0ABuild/Phase0DSetup/Phase0DBuild）
   Settings/  — URP Pipeline Asset 等專案設定資產
 Tools/       — Unity不會匯入的外部工具（資料夾在Assets外）：
+  run_all_checks.sh — 不需Unity的全部檢查一次跑完（離線編譯＋三組單元測試＋資料表驗證），CI 也用它
+  CompileCheck/ — 離線編譯檢查（Roslyn on mono＋UnityEngine/UnityEditor參考組件＋專案Fusion DLL，含 --self-test）
   QuestLogicTests/ — 任務狀態機單元測試（不需Unity，run.ps1 / run.sh）
   ConfigTableTests/ — CSV解析/綁定單元測試＋validate_tables.py（欄名/型別/交叉參照/與資產一致）
   ControlsTests/ — 面向/鎖定/搖桿曲線單元測試

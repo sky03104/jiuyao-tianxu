@@ -1,5 +1,15 @@
 # CHANGELOG — 《九曜：天墟》
 
+## 2026-09-25（第三十五筆，離線檢查工具化＋GitHub Actions）
+
+- 把雲端 session 一直手動做的離線編譯檢查整理進 repo：`unity/JiuyaoTianxu/Tools/CompileCheck/compile_check.sh`
+  （自動下載 Roslyn、UnityEngine 2021.3 與 UnityEditor 參考組件並快取；runtime＋Editor 腳本都檢查；
+  已知的 2018 參考組件 PrefabUtility 誤報會被排除；`--self-test` 確認故意寫錯的程式碼一定會被抓到）。
+- `Tools/run_all_checks.sh`：離線編譯＋QuestLogic／ConfigTable（含 validate_tables）／Controls 三組測試一次跑完。
+- `.github/workflows/unity-offline-checks.yml`：PR 與 main 有動到 `unity/JiuyaoTianxu/**` 時自動跑上述檢查
+  （ubuntu-24.04＋apt mono-devel，參考組件有快取）。**只證明能編譯、測試通過，不取代本機 Unity 驗收。**
+- CLAUDE.md、README 更新使用方式。
+
 ## 2026-09-25（第三十四筆，Phase 0 本機驗收操作手冊）
 
 - 新增 `docs/PHASE0_LOCAL_VERIFICATION_RUNBOOK.md`：PR #5～#10 都只做過離線編譯與單元測試，這份手冊把

@@ -69,8 +69,9 @@
 
 Phase 0 進度：0-A 連線／0-B 戰鬥框架＋六武器／0-C 靈印 已完成實跑驗收；**0-D 地圖/Spawn/任務骨架
 程式碼已完成（2026-09-25），尚待本機 Unity 實跑驗收**（步驟見 `unity/JiuyaoTianxu/README.md` Phase 0-D 章節，
-結果補進 `docs/00_AI_HANDOFF_BRIDGE.md` CLAUDE-REPLY-008）。雲端 session 沒有 Unity，只能做離線編譯檢查
-（Roslyn on mono）與 `unity/JiuyaoTianxu/Tools/*Tests` 單元測試，不可宣稱網路實跑通過。
+結果補進 `docs/00_AI_HANDOFF_BRIDGE.md` CLAUDE-REPLY-008）。雲端 session 沒有 Unity，只能做離線檢查：
+**改完程式跑 `unity/JiuyaoTianxu/Tools/run_all_checks.sh`**（需 `apt-get install mono-devel`；離線編譯＋單元測試＋
+資料表驗證，PR 上 GitHub Actions「Unity offline checks」也會自動跑同一支），不可宣稱網路實跑通過。
 **0-E（Roadmap Phase 0 缺口：資料表／雙搖桿／目標鎖定／基礎回饋）程式碼已完成（2026-09-25），同樣待本機驗收**；
 Phase 0 數值來源已改為 `unity/JiuyaoTianxu/Assets/_Project/Config/Tables/*.csv`（改數值改 CSV 再跑匯入器，
 不要改 Editor 腳本）。進 Phase 1 前的技術債與待裁定問題見 `docs/PHASE0_TECH_REVIEW_CLAUDE_V1.0.md`。
