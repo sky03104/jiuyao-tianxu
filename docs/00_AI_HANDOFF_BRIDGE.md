@@ -548,19 +548,20 @@ Unity 實跑、手感、觸控實機**尚未測**，細節與驗收步驟見 `un
 依武器類型判斷蓄力/施法（D2）、`monsters.csv`（D6）、**赤炎燃燒改為 `BurnStatus` 元件、怪物也會燃燒（D1，
 咖哩裁定方案 A）**。D3 死亡/重生、D4 延遲補償、D5 Client 預測待 ChatGPT 審查後發 HANDOFF。
 
-**本機實跑結果（2026-09-26）：** 與 CLAUDE-REPLY-008 同一次驗收。
+**本機實跑結果（2026-09-26）：** 與 CLAUDE-REPLY-008 同一次驗收，數字來自同一個最終版 build。
 
 | Roadmap Phase 0 項目 | 證據 | 結果 |
 |---|---|---|
-| 資料表切換測試不需重新編譯 | `-ConfigDir` 把赤炎冷卻 3→12：`[ConfigOverride] applied` 2、赤炎觸發 51→18；build 檔時間戳不變 | ✅ |
-| 目標鎖定（Server 權威） | `-LockOn` 自動測試 `[TargetLock]` 119 行，例外 0 | ✅ |
-| 受擊判定、基礎回饋 | 咖哩 Editor 實測回報「都可以按」；debug HUD 補上目前武器顯示 | ✅ |
-| 赤炎燒怪（D1） | 赤炎打在怪物上 45 次，log 有 `BurnStatus` 造成的怪物扣血 | ✅ |
-| 死亡重生測試版（D3） | 倒地 2／復活 2（改數值版 7／7） | ✅ |
-| 觸控虛擬搖桿 | `-touchui`／手機實機**未測** | ⏳ |
+| 資料表切換測試不需重新編譯 | `-ConfigDir` 把赤炎冷卻 3→12：`[ConfigOverride] applied` 2、赤炎觸發 45→18；兩次之間 build 檔時間戳不變 | ✅ |
+| 目標鎖定（Server 權威） | `-LockOn` 自動測試 `[TargetLock]` 102 行，例外 0 | ✅ |
+| 受擊判定 | 自動測試命中怪物 log：刀 23、劍 21、槍 47、重刃 18、靈杖 36；弓射出 28 箭但 `Projectile` 沒有命中 log，無法確認 | ✅（弓未確認） |
+| 基礎回饋 | 咖哩 Editor 截圖可見傷害數字「3」與頭上血條；受擊閃紅沒有單獨確認；咖哩回報「測完了都可以按」 | ✅（閃紅未確認） |
+| 赤炎燒怪（D1） | 赤炎打在怪物上 33 次；server.log 有 9 筆 `BurnStatus → DamageService` 的怪物扣血（例：第 8781 行） | ✅ |
+| 死亡重生測試版（D3） | 倒地 6／復活 6（改數值版 8／7，最後一次倒地時測試剛好結束） | ✅ |
+| 觸控虛擬搖桿 | `-touchui`／手機實機**未測**。曾嘗試在桌機用 `-touchui` 自動點擊測試，但桌面上開著咖哩的個人視窗，為避免誤點而中止 | ⏳ |
 
-**判斷：暫不標記 Phase 0-E COMPLETE**，唯一缺的是觸控實測（Roadmap 明列手機操作）。其餘項目都已實跑通過；
-觸控測完即可標記。
+**判斷：暫不標記 Phase 0-E COMPLETE**，唯一缺的是觸控實測（Roadmap 明列手機操作；兩指同時操作的雙搖桿只能在
+手機上驗）。其餘項目都已實跑通過；觸控測完即可標記。
 
 ---
 
@@ -603,7 +604,7 @@ HANDOFF-008 §12「不要只測本地單機就宣稱 Network Quest 完成」，�
   InProgress→Completed），純 C# 無 Unity 依賴；全專案**沒有任何 `if (questId == ...)`**。
 - **Network**：`PlayerQuestLog`（`NetworkArray<QuestEntry>`，每筆只有
   QuestNumId/State/Progress 三個 int）；Client 以 RPC 提出 Accept（2026-09-26 實跑後改為
-  隨輸入送出，見本節「本機實跑結果」），Server 驗證
+  `ClientCommands`，見本節「本機實跑結果」），Server 驗證
   狀態後才改；Progress/Complete/Reward 全部 Server 決定。Client 端 `[QuestSync]`
   log 用來證明同步。
 - **Reward**：只有測試用 `DebugRewardPoints` 計數器（未做 Inventory/Economy）。
@@ -655,46 +656,74 @@ Claude 會補上實跑結果並決定是否標記 COMPLETE。
 
 ### 本機實跑結果（2026-09-26，本機 Claude Code session 代跑＋咖哩手動）
 
-**環境：** Windows 10、Unity 6000.5.5f1、Photon Fusion 2.1.2 (stable, build 2279)、Windows Standalone
-（Mono）。依 `docs/PHASE0_LOCAL_VERIFICATION_RUNBOOK.md` 步驟 0～5 執行。
+**環境：** Windows 10、Unity 6000.5.5f1、Photon Fusion 2.1.2 stable build 2279（版本來源：
+`unity/JiuyaoTianxu/Assets/Photon/Fusion/build_info.txt`；`Logs/setup0d.log` 載入 Fusion.Runtime 2.1.2.0）、
+Windows Standalone（Mono）。依 `docs/PHASE0_LOCAL_VERIFICATION_RUNBOOK.md` 步驟 0～5 執行。以下數字全部來自
+**最終版 build**（含下方修正）；一份沒看過過程的獨立 agent 已用 grep 逐一重算過文件數字。
 
-**自動測試**（`run_autotest.ps1 -Seconds 150 -LockOn`；1 Dedicated Server + 2 Client 各自獨立行程，經
-Photon 雲端連線——這是實際網路，不是單機模擬）：
+**自動測試**（`run_autotest.ps1 -Seconds 150 -LockOn`）：1 Dedicated Server + 2 Client 是**同一台電腦上的 3 個
+獨立行程**，經 Photon 雲端連線（有真實網路往返，但不是多台機器或手機網路）。
 
 | §15 項目 | 證據 | 結果 |
 |---|---|---|
 | A 場景啟動、Player Spawn、2 Client 同場景 | StartGame 1、Player joined 2 | ✅ |
-| B 怪物 Server Spawn、沿用 Health、可被攻擊、死亡事件 | 生成 79、EnemyKilled 76 | ✅ |
-| C Accept／Progress／Complete | 接任務 4、Progress 16、001 完成 2 次、002 解鎖 2 次 | ✅ |
-| D 1 Server + 2 Client、Server 權威、同步、Join/Leave | Client `[QuestSync]` 25／23、Player left 1 | ✅ |
-| E 事件鏈、無第二套 Damage/Health、0-C 靈印 regression | 赤炎 51、玄甲 4、影遁 44 次都有觸發 | ✅ |
-| F ≥1 次完整 3 Kill、≥10 次 Progress | PASS 1（2 名玩家完成）、Progress 16 | ✅ |
+| B 怪物 Server Spawn、沿用 Health、可被攻擊、死亡事件 | 生成 69、EnemyKilled 63 | ✅ |
+| C Accept／Progress／Complete | Client 送出請求 4、Server 收到 4、接任務 4（REJECTED 0）、Progress 16、001 完成 2、002 解鎖 2 | ✅ |
+| D 1 Server + 2 Client、Server 權威、同步、Join/Leave | Client `[QuestSync]` 20／21、Player left 1；接任務由 Server 驗證狀態機，發送者由傳輸層決定 | ✅ |
+| E-1 Combat → EnemyKilled → Quest Tracker | EnemyKilled 63 → Progress 16 | ✅ |
+| E-2 不建立第二套 Damage/Health | 專案內 `Health.cs`／`DamageService.cs` 各只有一份；燃燒傷害也經 `DamageService`（server.log 呼叫鏈 `BurnStatus → DamageService.Resolve → Health.ApplyDamage`） | ✅ |
+| E-3 Phase 0-C 靈印 regression | 赤炎 45、玄甲 7、影遁 armed 41／consumed 37（玄甲少於 0-C 的 10 次是死亡重生後的預期變化，見 README） | ✅ |
+| F ≥1 次完整 3 Kill、≥10 次 Progress、自動／手動分開記錄 | PASS 1（2 名玩家完成）、Progress 16；手動測試另列於下 | ✅ |
 | 例外 | Exception／NullReference 0 | ✅ |
 
-**手動測試**（分開記錄，§15 F）：咖哩在 Editor 以 Host 模式遊玩 `Phase0D_TestScene`，回報「都可以按」
-（含 Q 接任務）；另回報看不出目前武器 → debug HUD 已補一行「武器：劍（Tab 切換）」。
+**Host 模式**（headless `-netmode host -autotest`）：Host 自己的玩家送出 2 次請求 → 2 次接取，001 完成、
+002 解鎖並完成，例外 0。
+
+**手動測試**（分開記錄，§15 F）：咖哩在 Editor 按 Play（截圖可見 `Host P1`）。先回報「看不出來現在拿什麼
+武器」→ debug HUD 加一行「武器：劍（Tab 切換）」；請他重新 Play 後回報「測完了都可以按」（沒有逐項說明）。
+⚠️ 手動測試時接任務還是改版前的做法；最終版的 Host 接任務只有上面 headless Host 測試驗過。
 
 **實跑中發現並修正的問題：**
 
-1. **接任務完全失敗（Client 268 次 `MethodAccessException`）。** 根因：Fusion 2.1.2 的 weaver 在每個
-   `[Rpc]` 方法插入對 `Fusion.Runtime` internal 方法的呼叫（`NetworkBehaviourUtils.CheckInvokeRpc`、
-   `NetworkRunner.CreateRpcBuilder`、`NotifyRpcError`、`NetworkRunnerDebugRpcEvent.*`），Mono 打包版執行時
-   做存取檢查而拒絕。QuestTracker 是專案第一個 RPC，所以 0-A～0-C 沒踩到。試過
-   `[assembly: IgnoresAccessChecksTo("Fusion.Runtime")]` 無效（Unity 的 Mono 不支援，只有 .NET Core 認）。
-   **修法**：接任務請求改放 `PlayerInputData.QuestAcceptId` 隨輸入送出，Server 在 `FixedUpdateNetwork`
-   邊緣偵測只處理一次；維持「Accepted → InProgress 在下一 tick」原時序。HANDOFF-008 §9 只要求
-   「Accept Request → Server Validate」，沒指定傳輸方式，Server 權威不變，**不算偏離規格**。
+1. **接任務完全失敗。** 第一次 150 秒實跑，兩個 Client 每次請求都丟 `MethodAccessException`（該次報表合計
+   268 筆；那次的 log 資料夾在後續重跑時被覆蓋，磁碟上已無留存）。根因：Fusion 2.1.2 的 weaver 在每個 `[Rpc]`
+   方法插入對 `Fusion.Runtime` internal 方法的呼叫（`NetworkBehaviourUtils.CheckInvokeRpc`、
+   `NetworkRunner.CreateRpcBuilder`、`NotifyRpcError`、`NetworkRunnerDebugRpcEvent.*`——掃描打包後
+   `Assembly-CSharp.dll` 對 Fusion 的參照確認），Mono 打包版執行時做存取檢查而拒絕。QuestTracker 是專案第一個
+   RPC，所以 0-A～0-C 沒踩到。嘗試紀錄：
+   - (1) `[assembly: IgnoresAccessChecksTo("Fusion.Runtime")]`：無效（Unity 的 Mono 不支援，只有 .NET Core 認）。
+   - (2) 請求放進 `PlayerInputData` 每 tick 送、Server 邊緣偵測：跑得過，但審查抓到**高風險 bug**——逾時後
+     同一 Update 內對同一任務重送，Server 看不到變化而永遠忽略（autotest 下必現）。已放棄。
+   - (3) **採用**：新增 `Core/ClientCommands`，用 Fusion 公開 API `SendReliableDataToServer`（可靠送達、送一次；
+     Server 由傳輸層得知發送者，Client 無法冒充）。實測發現 Host 自己送的命令 loopback 回來時 sender 是
+     `PlayerRef.None`（官方文件沒寫），`Dispatch` 換成 Host 的 `LocalPlayer` 後 Host 模式正常。
+   HANDOFF-008 §9 只要求「Accept Request → Server Validate」，沒指定傳輸方式，Server 權威不變，**不算偏離規格**。
 2. 測試腳本：PowerShell 5.1 以系統編碼寫 csproj，中文路徑變亂碼 → 加 `-Encoding UTF8`；
    `Player left` 檢查因 ConnectionTimeout 10 秒邊界太緊時有時無 → client2 改在結束前 35 秒砍。
+3. CI：`validate_tables.py` 讀不懂 Unity 折行的長字串，誤報 quests.csv 不一致 → 修正解析，並用故意改錯的 CSV
+   確認仍會抓到不一致。
+
+### 三方審查紀錄（2026-09-26，咖哩授權自主進行）
+
+| 角色 | 狀態 | 重點意見 | 處理 |
+|---|---|---|---|
+| Codex | ❌ 無法執行：登入 token 過期（需咖哩重新登入） | — | 以獨立 Claude 程式審查代替 |
+| Gemini（llm-council） | ❌ 兩次都 503（Google 服務暫時不可用） | — | — |
+| ChatGPT／DeepSeek／GLM（llm-council） | ✅ | 三者都指出嘗試 (2) 的重送 bug；三者都建議一次性命令的專案標準用 `SendReliableDataToServer` | 採用 → 嘗試 (3) |
+| 獨立 Claude 程式審查 | ✅ | 嘗試 (2) 的重送 bug（高）、靜態信箱在同行程多 runner 會互蓋（中）、HUD 每次 OnGUI 都 GetComponent（低） | 前兩項隨改用 (3) 消失；HUD 改快取 |
+| 獨立 Claude 文件查證 | ✅ | 數字全部可重現；指出 268 無留存證據、E 列未附「無第二套 Damage」證據、手動測試描述超出咖哩原話、「實際網路」易誤讀 | 本節已全部修正 |
 
 ### Claude Code 意見（實跑後）
 
-[接受] Phase 0-D 可標記 COMPLETE：§15 A～F 全部有實跑證據；G 文件（README、本節、CHANGELOG、
+[接受] Phase 0-D 可標記 COMPLETE：§15 A～F 全部有最終版 build 的實跑證據；G 文件（README、本節、CHANGELOG、
 版本紀錄、已知問題）同步更新。
 
-**請 ChatGPT 注意（Phase 0 Code Review 時一併裁定）：** 目前**整個專案不能用 `[Rpc]`**。之後所有
-Client→Server 請求都要走輸入結構，或等 Fusion 修正／改 IL2CPP 打包後重新驗證。這會影響之後
-需要一次性請求的系統（交易、組隊邀請、NPC 對話選項等），建議在正式開發前決定統一做法。
+**請 ChatGPT 在 Phase 0 Code Review 時裁定：**
+1. 目前**整個專案不能用 `[Rpc]`**（Mono 打包版）。一次性 Client→Server 命令暫以 `ClientCommands`
+   （`SendReliableDataToServer`）處理——這是三個外部模型一致推薦的做法，但屬於**跨系統的架構約定，尚未寫進
+   01_ARCHITECTURE_DECISIONS**，請裁定是否定為專案標準（之後的交易、組隊邀請、NPC 對話選項、商店都會用到）。
+2. 手機正式打包會用 IL2CPP（不做這種存取檢查），`[Rpc]` 在手機上可能正常；但 Dedicated Server 若用 Mono 就不行。
+   建議 Server 打包方式（Mono／IL2CPP）一起定案，或等 Photon 修正後重新驗證。
 
 ---
 

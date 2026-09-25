@@ -13,6 +13,10 @@
 > - batchmode 指令執行時，Editor **不能**同時開著這個專案（專案會被鎖住）。
 > - 影遁的 log 字樣是 `armed '影遁'`／`consumed armed seal '影遁'`，不是 `triggered`，報表的靈印總數有算進去。
 > - Unity Hub 裡九曜是獨立專案（路徑 `jiuyao-tianxu/unity/JiuyaoTianxu`），別開成其他專案。
+> - Host 模式（Editor 按 Play 用的模式）不用開 Editor 也能測：
+>   `Builds/Phase0D/JiuyaoTianxu.exe -batchmode -nographics -autotest -quitafter 60 -netmode host -logFile Logs/HostTest/host.log`，
+>   看 log 裡 `requesting accept` 與 `Available → Accepted` 次數是否相同。
+> - 報表的 `quest accepted` 應等於兩個 Client 的 `requesting accept` 總數（一次請求一次接取），`REJECTED` 應為 0。
 
 ---
 

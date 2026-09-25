@@ -96,6 +96,14 @@
 - 方案：先讓移動在 Client 預測（Fusion 的 `NetworkCharacterController` 或自寫 predicted movement），
   攻擊動畫可先本地播放、傷害仍由 Server 決定。需要 ChatGPT 決定預測範圍。
 
+**D18. `[Rpc]` 在 Mono 打包版整個不能用（2026-09-26 本機實跑發現）——⚠️ 已繞過，待裁定專案標準**
+- 位置：Fusion 2.1.2 weaver（`Assets/Photon/Fusion/CodeGen/Fusion.CodeGen.cs:1201`）
+- 現象：weaver 在每個 `[Rpc]` 方法插入對 `Fusion.Runtime` internal 方法的呼叫，Mono 執行時丟
+  `MethodAccessException`。手機正式包用 IL2CPP 可能不受影響，但 Dedicated Server 若用 Mono 就會壞。
+- 目前做法：一次性 Client→Server 命令走 `Core/ClientCommands`（`SendReliableDataToServer`），接任務已改用。
+- 待裁定：是否定為專案標準並寫進 01_ARCHITECTURE_DECISIONS；Server 打包方式（Mono／IL2CPP）；
+  或等 Photon 修正後恢復 `[Rpc]`。細節見 CLAUDE-REPLY-008。
+
 ### P1
 
 | # | 問題 | 位置 | 方案 |
@@ -117,6 +125,11 @@
 - **D16** IMGUI 原型每幀有少量 GC；Phase 1 換正式 UI 時一併淘汰，不值得現在優化。
 - **D17** 靜態事件（CombatEvents／GameplayEvents／QuestEvents）已用 runner 過濾；若之後改成同一個
   process 開多個 runner（Fusion 多 peer 測試模式），需再確認每個訂閱者都有過濾。
+- **D19**（2026-09-26 實跑發現）Unity 6000.5 編譯有 CS0618 過時 API 警告：`FindObjectsSortMode`
+  （`MonsterSpawner.cs:45`、`NetworkGameLauncher.cs:154`）、`SimulationMessagePtr`（`NetworkGameLauncher.cs:199`）。
+  目前不影響執行，升級 Unity 前換成新 API。
+- **D20**（2026-09-26 實跑發現）`Projectile` 命中沒有 log，regression 無法從 log 確認弓有打中目標
+  （刀／劍／槍／重刃／靈杖都有命中 log）。之後加一行命中 log（走 D10 的 GameLog）。
 
 ---
 
@@ -133,7 +146,7 @@
 
 ## 5. 建議的 Phase 1 前順序
 
-1. 本機跑完 Phase 0-D／0-E 驗收（CLAUDE-REPLY-008、CLAUDE-NOTE-006）。
+1. ~~本機跑完 Phase 0-D／0-E 驗收~~ 2026-09-26 完成：0-D COMPLETE；0-E 只差手機觸控（CLAUDE-REPLY-008、CLAUDE-NOTE-006）。
 2. ChatGPT 審這份清單，裁定 P0 範圍 → 發 HANDOFF。
 3. D1、D2、D6 已完成（待本機 regression）。
 4. D3（死亡／重生）需要規則 → HANDOFF 定規格後做。
@@ -145,3 +158,4 @@
 1. ~~D1 選方案 A 還是 B？~~ 咖哩裁定 A，已實作。
 2. D5 Client 預測要做到哪裡：只有移動？還是連攻擊起手也預測？
 3. ~~D3 要不要先做測試版？~~ 咖哩同意，已做（5 秒後回出生點滿血，無懲罰）；正式規則仍待定。
+4. D18：一次性 Client→Server 命令是否以 `ClientCommands` 為專案標準？Dedicated Server 用 Mono 還是 IL2CPP 打包？

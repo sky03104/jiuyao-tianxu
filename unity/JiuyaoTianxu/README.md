@@ -340,7 +340,7 @@ HANDOFF-007允許此簡化）。
 ## Phase 0-D：Map / Spawn / Quest State Machine Skeleton（依`docs/HANDOFF-008_PHASE0D.md`）
 
 > **狀態：COMPLETE（2026-09-26 本機 Unity 6000.5.5f1 實跑驗收通過）。** 結果見下方「本機實跑結果」。
-> 實跑時發現 Fusion 2.1.2 的 `[Rpc]` 在 Mono 打包版不能用，接任務已改走 NetworkInput（見「已知問題」）。
+> 實跑時發現 Fusion 2.1.2 的 `[Rpc]` 在 Mono 打包版不能用，接任務已改走 `ClientCommands`（見「已知問題」）。
 
 ### 事件鏈（Combat 與 Quest 分離）
 
@@ -369,9 +369,10 @@ DamageService.Resolve()  ── 只在 HP 由 >0 變 0 的那一擊 ──→ Co
 
 - 轉移表在 `QuestStateMachine`（純 C#），任務差異全部來自 `QuestDefinition` 資料，
   沒有任何 `if (questId == ...)`。
-- Accept：Client 呼叫 `QuestTracker.RequestAccept` → 把 QuestNumId 放進 `PlayerInputData.QuestAcceptId`
-  隨每個 tick 的輸入送出（直到同步狀態離開 Available 或 2 秒逾時）→ Server 在 `FixedUpdateNetwork`
-  邊緣偵測、只處理一次 → 驗證狀態才轉移；非法請求會印 `accept REJECTED`。**不用 `[Rpc]`**，原因見「已知問題」。
+- Accept：Client 呼叫 `QuestTracker.RequestAccept` → `ClientCommands.Send`（Fusion `SendReliableDataToServer`，
+  可靠送達、每次請求送一次）→ Server 的 `NetworkGameLauncher.OnReliableDataReceived` → `ClientCommands.Received`
+  → 發送者本人的 `QuestTracker` 驗證狀態才轉移；非法請求會印 `accept REJECTED`。發送者 PlayerRef 由傳輸層決定，
+  Client 無法冒充別人。**不用 `[Rpc]`**，原因見「已知問題」。
 - 完成時發測試獎勵（`DebugRewardPoints`），並把「前置任務 = 本任務」的 Locked 任務解鎖。
 - 網路只同步 `QuestNumId / State / Progress` 三個 int，定義資料各端從 `QuestRegistry` 查。
 
@@ -412,31 +413,42 @@ Exception 數。**Server 的 PASS 條件**：≥2 名玩家完成 Q_PHASE0D_001�
 
 ### 本機實跑結果（2026-09-26，Windows Standalone Mono，Unity 6000.5.5f1＋Fusion 2.1.2 build 2279）
 
-**自動測試**（`run_autotest.ps1 -Seconds 150 -LockOn`，1 Dedicated Server + 2 Client 走 Photon 雲端）：
+**自動測試**（`run_autotest.ps1 -Seconds 150 -LockOn`，最終版 build）：1 Dedicated Server + 2 Client 是
+**同一台電腦上的 3 個獨立行程**，經 Photon 雲端連線（有真實網路往返，但不是多台機器或手機網路）。
 
 | 項目 | 結果 | 期望 |
 |---|---|---|
 | StartGame / Player joined / Player left | 1 / 2 / 1 | 1 / 2 / 1 |
-| 怪物生成 / EnemyKilled | 79 / 76 | ≥3 / >0 |
-| 接任務 / Progress 行 | 4 / 16 | ≥2 / ≥10 |
+| 怪物生成 / EnemyKilled | 69 / 63 | ≥3 / >0 |
+| Client 送出接任務請求 / Server 收到 / 接任務成功 | 4 / 4 / 4（REJECTED 0） | 一次請求一次接取 |
+| Progress 行 | 16 | ≥10 |
 | Q_PHASE0D_001 完成 / 002 解鎖 | 2 / 2 | 2 / ≥1 |
 | PASS 行 | 1 | 1 |
-| Client1 / Client2 `[QuestSync]` | 25 / 23 | >0 |
+| Client1 / Client2 `[QuestSync]` | 20 / 21 | >0 |
 | Exception / NullReference | **0** | 0 |
 
-**手動**（Editor Play＝Host，咖哩親測）：回報「都可以按」（含 Q 接任務）。
-另回報「看不出拿什麼武器」→ debug HUD 已加「武器：劍（Tab 切換）」一行。
+**Host 模式**（headless：`JiuyaoTianxu.exe -batchmode -nographics -autotest -quitafter 60 -netmode host`）：
+Host 自己的玩家送出 2 次請求 → 2 次接取，001 完成、002 解鎖並完成，REJECTED 0、例外 0。
 
-原本的三個風險點實跑結論：Fusion 自動註冊怪物 prefab 正常；headless 下 `Render()` 有呼叫
-（`[QuestSync]` 有 log）；六武器都打得到中間怪（76 次擊殺）。
+**手動**（咖哩在 Editor 按 Play，截圖可見 Hierarchy 顯示 `Host P1`）：咖哩先回報「看不出來現在拿什麼武器」→
+debug HUD 加上「武器：劍（Tab 切換）」一行、請他重新 Play 後，他回報「測完了都可以按」（沒有逐項說明看到什麼）。
+⚠️ 手動測試時接任務還是改版前的做法；最終版的 Host 接任務是上面 headless Host 測試驗的，
+還沒有人在 Editor 裡手動按 Q 試過最終版。
+
+原本的三個風險點實跑結論：Fusion 自動註冊怪物 prefab 正常；headless 下 `Render()` 有呼叫（`[QuestSync]` 有 log）；
+命中怪物的 log：刀 23、劍 21、槍 47、重刃 18、靈杖 36 次；弓射出 28 支箭，但 `Projectile` 沒有命中 log，
+**無法從 log 確認弓有打中怪物**（不影響任務邏輯）。
 
 ### 已知問題
 
 1. **Fusion 2.1.2 的 `[Rpc]` 在 Mono 打包版不能用**：weaver 在 RPC 方法裡插入對 `Fusion.Runtime`
-   internal 方法的呼叫（`CheckInvokeRpc`、`CreateRpcBuilder`、`NotifyRpcError`、`NetworkRunnerDebugRpcEvent.*`），
-   Mono 執行時拒絕 → `MethodAccessException`。`[IgnoresAccessChecksTo]` 無效（Unity 的 Mono 不認）。
-   **專案目前不能新增 `[Rpc]`**；Client→Server 的請求請走 `PlayerInputData`（參考 `QuestAcceptId`）。
+   internal 方法的呼叫（`CheckInvokeRpc`、`CreateRpcBuilder`、`NotifyRpcError`、`NetworkRunnerDebugRpcEvent.*`，
+   掃描打包後 `Assembly-CSharp.dll` 對 Fusion 的參照確認），Mono 執行時拒絕 → `MethodAccessException`。
+   `[IgnoresAccessChecksTo]` 無效（Unity 的 Mono 不認）。**專案目前不能新增 `[Rpc]`**；Client→Server 的一次性請求
+   請走 `Core/ClientCommands`（加一個命令編號，Server 端訂閱 `ClientCommands.Received`、用 sender 過濾）。
    升級 Fusion 或改用 IL2CPP 打包時要重新測。`[Networked]` 屬性不受影響。
+   - Host 自己送的命令經 loopback 回來時 sender 是 `PlayerRef.None`（官方文件沒寫，實測發現），
+     `ClientCommands.Dispatch` 會把它換成 Host 的 `LocalPlayer`。
 2. 測試出生點很擠（玩家與怪只差 1.5m），是為了讓 `-autotest` 固定往前打就能命中，數值可調整。
 
 ---
@@ -519,19 +531,20 @@ pwsh Tools/Phase0D/run_autotest.ps1 -Seconds 90 -LockOn
 
 | 項目 | 一般版（`-LockOn`） | 改數值版（`-ConfigDir`，赤炎冷卻 3→12） |
 |---|---|---|
-| `[TargetLock]` 行 | 119 | 0（沒加 `-LockOn`，預期） |
+| `[TargetLock]` 行 | 102 | 0（沒加 `-LockOn`，預期） |
 | `[ConfigOverride] applied` | 0 | 2 |
-| 赤炎觸發（其中打在怪物上） | 51（45） | **18**（7）— 明顯下降 |
-| 玄甲觸發 | 4 | 9 |
-| 影遁 armed／consumed | 44／44 | 40／37 |
-| 玩家倒地／復活 | 2／2 | 7／7 |
+| 赤炎觸發（其中打在怪物上） | 45（33） | **18**（7）— 明顯下降 |
+| 玄甲觸發 | 7 | 9 |
+| 影遁 armed／consumed | 41／37 | 42／38 |
+| 玩家倒地／復活 | 6／6 | 8／7（最後一次倒地時測試剛好結束） |
 | PASS／Exception | 1／0 | 1／0 |
 
-- 改數值版**沒有重新打包**（`Assembly-CSharp.dll` 時間戳前後相同）。
-- 燃燒確實扣怪物血（log：`Phase0D_TestMonster#8 took 3 damage`，呼叫來源 `BurnStatus`）。
+- 兩次都用同一個最終版 build，改數值版**沒有重新打包**（兩次之間 `Assembly-CSharp.dll` 時間戳相同）。
+- 燃燒確實扣怪物血：一般版 server.log 有 9 筆由 `BurnStatus` 呼叫 `DamageService` 造成的怪物扣血
+  （例：`Logs/Phase0D/server.log:8781` `Phase0D_TestMonster#22 took 3 damage`）。
 - 玄甲少於 0-C 的 10 次是死亡重生後的預期變化（見下方「對 0-C 靈印 regression 數字的影響」）。
-- 手感：咖哩 Editor 實測，回報「都可以按」（各按鍵都有反應），沒有提出數值調整。
-- **未測**：`-touchui` 與手機實機的虛擬搖桿。
+- 手感：見 Phase 0-D「本機實跑結果」的手動段落（咖哩回報「測完了都可以按」，沒有提出數值調整）。
+- **未測**：`-touchui` 與手機實機的虛擬搖桿（兩指同時操作只能在手機上測）。
 
 ### 已做的驗證（雲端環境，無 Unity）
 
