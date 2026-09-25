@@ -110,6 +110,7 @@ public static class Phase0DSetup
         go.AddComponent<Health>(); // MaxHp comes from monsters.csv (ImportMonsters below)
         var identity = go.AddComponent<EnemyIdentity>();
         go.AddComponent<MonsterLifecycle>();
+        go.AddComponent<JiuyaoTianxu.Combat.Framework.BurnStatus>(); // 赤炎 can burn monsters (tech review D1)
 
         var idSo = new SerializedObject(identity);
         idSo.FindProperty("_targetId").stringValue = QuestIds.Phase0DTestMonsterTargetId;

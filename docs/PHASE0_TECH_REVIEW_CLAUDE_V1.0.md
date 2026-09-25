@@ -39,6 +39,7 @@
 | F1 | Phase 0-E 虛擬搖桿用 `Input.touchSupported` 判斷顯示：有觸控螢幕的 Windows 筆電會跳出搖桿，而且滑鼠左鍵攻擊會被關掉 | 改用 `Application.isMobilePlatform`（桌機仍可用 `-touchui` 測試） |
 | F3（=D2） | 蓄力／施法流程寫死在武器類型上 | 見下方 D2：已改為 `AttackDefinition.InputMode`（Tap／HoldRelease／Cast），attacks.csv 新增一欄、13 筆資產同步填值，行為不變 |
 | F4（=D6） | 怪物數值寫死在 Editor 腳本 | 見下方 D6：新增 `monsters.csv`（MonsterId／DisplayName／MaxHp／DespawnDelay），匯入器寫進 `EnemyIdentity.TargetId` 相符的 prefab；validate_tables 另外檢查任務 TargetId 必須是表內怪物 |
+| F5（=D1） | 赤炎燃燒對怪物無效、冷卻卻照樣消耗 | 咖哩裁定方案 A：新增 `Combat/Framework/StatusEffects/BurnStatus`（只有燃燒的最小元件），玩家與怪物 prefab 都掛；`SpiritSealSystem` 找不到 BurnStatus 時不觸發、不消耗冷卻；燃燒傷害仍走 DamageService。需重跑 0-C 靈印 regression |
 | F2 | Server 直接使用 Client 送來的搖桿值：改過的 Client 送 NaN 會讓角色座標變 NaN 並同步給所有人；送超長向量＝加速外掛 | 新增 `Core/InputSanitizer`，`PlayerMovement` 在碰 transform 前先清洗（NaN/Infinity→0、長度夾到 1）；單元測試 4 項 |
 
 ---
@@ -50,7 +51,7 @@
 
 ### P0
 
-**D1. 赤炎燃燒對怪物無效（功能缺陷）**
+**D1. 赤炎燃燒對怪物無效（功能缺陷）——✅ 已修正（F5，咖哩 2026-09-25 裁定方案 A）**
 - 位置：`Combat/Framework/SpiritSeals/SpiritSealSystem.cs:100`
 - 現象：燃燒狀態存在「被打者」的 `SpiritSealSystem` 裡；Phase 0-D 的怪物沒有這個元件，所以
   `targetSeals?.ApplyBurn(...)` 靜默跳過——**但冷卻照樣被消耗、log 照樣寫「triggered」**。
@@ -128,13 +129,13 @@
 
 1. 本機跑完 Phase 0-D／0-E 驗收（CLAUDE-REPLY-008、CLAUDE-NOTE-006）。
 2. ChatGPT 審這份清單，裁定 P0 範圍 → 發 HANDOFF。
-3. 先做 D1（小、局部修改；D2、D6 已完成）。
+3. D1、D2、D6 已完成（待本機 regression）。
 4. D3（死亡／重生）需要規則 → HANDOFF 定規格後做。
 5. D4、D5（延遲補償、Client 預測）是 Phase 1 手感的關鍵，建議獨立一個 Phase 0-F／1-0 技術驗證，
    並在手機 4G 環境實測。
 
 ## 6. 待決問題（給 ChatGPT／咖哩）
 
-1. D1 選方案 A（BurnStatus 元件）還是 B（怪物掛靈印系統）？
+1. ~~D1 選方案 A 還是 B？~~ 咖哩裁定 A，已實作。
 2. D5 Client 預測要做到哪裡：只有移動？還是連攻擊起手也預測？
 3. D3 死亡懲罰與復活規則要在 Phase 1 定，還是先做「原地 5 秒復活」的測試版？
