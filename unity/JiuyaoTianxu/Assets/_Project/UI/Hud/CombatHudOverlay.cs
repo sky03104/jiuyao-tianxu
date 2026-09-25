@@ -1,5 +1,6 @@
 using JiuyaoTianxu.Combat.Targeting;
 using JiuyaoTianxu.Gameplay.Quests;
+using JiuyaoTianxu.Gameplay.World;
 using UnityEngine;
 
 namespace JiuyaoTianxu.UI.Hud
@@ -62,6 +63,13 @@ namespace JiuyaoTianxu.UI.Hud
             }
 
             DrawQuestList();
+
+            var me = PlayerLifecycle.Local;
+            if (me != null && me.IsDown)
+            {
+                GUI.Label(new Rect(0, Screen.height * 0.4f, Screen.width, 40),
+                    $"倒地中…… {Mathf.CeilToInt(me.SecondsUntilRespawn)} 秒後復活", _numberStyle);
+            }
         }
 
         private void DrawQuestList()

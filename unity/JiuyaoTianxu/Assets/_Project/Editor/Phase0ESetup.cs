@@ -31,6 +31,7 @@ public static class Phase0ESetup
             AddIfMissing<TargetLock>(root);
             AddIfMissing<HealthFeedback>(root);
             AddIfMissing<BurnStatus>(root); // tech review D1
+            AddIfMissing<JiuyaoTianxu.Gameplay.World.PlayerLifecycle>(root); // tech review D3 (test respawn)
         });
         EnsurePrefab(MonsterPrefabPath, root =>
         {

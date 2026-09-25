@@ -38,7 +38,7 @@ namespace JiuyaoTianxu.Combat.Framework
 
             if (GetInput(out PlayerInputData input))
             {
-                if (input.Buttons.WasPressed(_previousButtons, PlayerButton.DodgeTest))
+                if (!_health.IsDead && input.Buttons.WasPressed(_previousButtons, PlayerButton.DodgeTest))
                 {
                     TriggerDodgeTestEvent();
                 }

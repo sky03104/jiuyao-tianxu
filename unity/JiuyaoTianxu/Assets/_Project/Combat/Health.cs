@@ -18,6 +18,10 @@ namespace JiuyaoTianxu.Combat
         /// <summary>Read-only, for HUD bars (Phase 0-E).</summary>
         public int MaxHp => _maxHp;
 
+        /// <summary>Tech review D3/D11: HP 0 means dead — can't act, can't be hit.
+        /// Monsters leave via MonsterLifecycle, players come back via PlayerLifecycle.</summary>
+        public bool IsDead => HP <= 0;
+
         public override void Spawned()
         {
             if (Object.HasStateAuthority)
@@ -40,6 +44,14 @@ namespace JiuyaoTianxu.Combat
 
             HP = Mathf.Max(0, HP - amount);
             GameLog.Info($"[Health] {name} took {amount} damage, HP now {HP}");
+        }
+
+        /// <summary>Server-only. Refill to max (respawn). Not a heal system — there is
+        /// none yet; only PlayerLifecycle's test respawn calls this.</summary>
+        public void ServerRestoreFull()
+        {
+            if (!Object.HasStateAuthority) return;
+            HP = _maxHp;
         }
     }
 }

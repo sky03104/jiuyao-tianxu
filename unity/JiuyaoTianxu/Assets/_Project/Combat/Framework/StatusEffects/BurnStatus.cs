@@ -50,6 +50,7 @@ namespace JiuyaoTianxu.Combat.Framework
         {
             if (!Object.HasStateAuthority) return;
             if (TicksRemaining <= 0) return;
+            if (_health.IsDead) { TicksRemaining = 0; return; } // no burning corpses (D3)
             if (!TickTimer.ExpiredOrNotRunning(Runner)) return;
 
             DamageService.Resolve(new DamageRequest(_source, _health, null, DamagePerTick, isStatusDamage: true));

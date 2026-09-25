@@ -45,6 +45,15 @@ namespace JiuyaoTianxu.Combat.Framework
             if (!Object.HasStateAuthority) return;
             if (!GetInput(out PlayerInputData input)) return;
 
+            // Tech review D3: the dead don't fight. Keep tracking buttons so a press
+            // held while dead doesn't fire the instant the player respawns.
+            if (_health.IsDead)
+            {
+                if (!_state.IsIdle) ReturnToIdle();
+                PreviousButtons = input.Buttons;
+                return;
+            }
+
             var attackPressed = input.Buttons.WasPressed(PreviousButtons, PlayerButton.Attack);
             var attackHeld = input.Buttons.IsSet(PlayerButton.Attack);
             var attackReleased = PreviousButtons.IsSet(PlayerButton.Attack) && !attackHeld;
