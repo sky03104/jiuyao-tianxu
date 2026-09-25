@@ -35,6 +35,7 @@ public static class ConfigTableImporter
         ImportAttacksAndWeapons(errors);
         ImportSpiritSeals(errors);
         ImportQuests(errors);
+        ImportMonsters(errors);
         Finish(errors, "all tables");
     }
 
@@ -99,6 +100,69 @@ public static class ConfigTableImporter
         var registry = LoadOrCreate<QuestRegistry>(QuestRegistryPath);
         registry.All = quests.ToArray();
         EditorUtility.SetDirty(registry);
+    }
+
+    /// <summary>
+    /// monsters.csv → monster prefabs. Rows bind onto MonsterTableRow (same binder
+    /// rules as every other table), then the values are written into the prefab
+    /// under Assets/_Project whose EnemyIdentity.TargetId matches MonsterId. A row
+    /// with no prefab yet is only a warning (Phase0DSetup builds the test monster).
+    /// </summary>
+    public static void ImportMonsters(List<string> errors)
+    {
+        var table = Load(ConfigTableNames.Monsters, errors);
+        if (table == null) return;
+        if (!table.HasColumn(ConfigTableNames.MonsterKey))
+        {
+            errors.Add($"{table.Name}: missing key column '{ConfigTableNames.MonsterKey}'.");
+            return;
+        }
+
+        var prefabs = new Dictionary<string, string>();
+        foreach (var guid in AssetDatabase.FindAssets("t:Prefab", new[] { "Assets/_Project" }))
+        {
+            var path = AssetDatabase.GUIDToAssetPath(guid);
+            var go = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+            var identity = go != null ? go.GetComponent<JiuyaoTianxu.Gameplay.World.EnemyIdentity>() : null;
+            if (identity != null && !prefabs.ContainsKey(identity.TargetId)) prefabs[identity.TargetId] = path;
+        }
+
+        var seen = new HashSet<string>();
+        foreach (var row in table.Rows)
+        {
+            var data = new MonsterTableRow();
+            errors.AddRange(TableBinder.Bind(data, row));
+            if (string.IsNullOrEmpty(data.MonsterId)) { errors.Add($"{row.Where(ConfigTableNames.MonsterKey)}: empty key."); continue; }
+            if (!seen.Add(data.MonsterId)) { errors.Add($"{row.Where(ConfigTableNames.MonsterKey)}: duplicate key '{data.MonsterId}'."); continue; }
+            if (data.MaxHp <= 0) errors.Add($"{row.Where("MaxHp")}: must be > 0.");
+
+            if (!prefabs.TryGetValue(data.MonsterId, out var prefabPath))
+            {
+                Debug.LogWarning($"[ConfigTableImporter] monsters.csv: no prefab with TargetId '{data.MonsterId}' yet; skipped.");
+                continue;
+            }
+
+            var root = PrefabUtility.LoadPrefabContents(prefabPath);
+            var healthComponent = root.GetComponent<JiuyaoTianxu.Combat.Health>();
+            if (healthComponent == null)
+            {
+                errors.Add($"{row.Where(ConfigTableNames.MonsterKey)}: prefab {prefabPath} has no Health.");
+                PrefabUtility.UnloadPrefabContents(root);
+                continue;
+            }
+            var health = new SerializedObject(healthComponent);
+            health.FindProperty("_maxHp").intValue = data.MaxHp;
+            health.ApplyModifiedPropertiesWithoutUndo();
+            var lifecycle = root.GetComponent<JiuyaoTianxu.Gameplay.World.MonsterLifecycle>();
+            if (lifecycle != null)
+            {
+                var so = new SerializedObject(lifecycle);
+                so.FindProperty("_despawnDelay").floatValue = data.DespawnDelay;
+                so.ApplyModifiedPropertiesWithoutUndo();
+            }
+            PrefabUtility.SaveAsPrefabAsset(root, prefabPath);
+            PrefabUtility.UnloadPrefabContents(root);
+        }
     }
 
     /// <summary>Saves and reports. In batch mode any error throws, so a CI /

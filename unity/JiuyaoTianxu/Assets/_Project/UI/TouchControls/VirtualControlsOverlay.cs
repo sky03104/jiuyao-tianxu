@@ -13,7 +13,7 @@ namespace JiuyaoTianxu.UI.TouchControls
     /// testing, not the ink-wash production HUD (that is Phase 1 UI work).
     ///
     /// Writes only TouchInputState; the network layer never sees this class.
-    /// Shows automatically on touch devices, or anywhere with -touchui (then the
+    /// Shows automatically on mobile platforms, or anywhere with -touchui (then the
     /// mouse acts as one finger, for testing in the Editor/desktop).
     /// Layout numbers are fractions of screen height, all 可調整.
     /// </summary>
@@ -38,7 +38,11 @@ namespace JiuyaoTianxu.UI.TouchControls
         private void Awake()
         {
             _show = !Application.isBatchMode &&
-                    (_forceShow || Input.touchSupported || Array.IndexOf(Environment.GetCommandLineArgs(), "-touchui") >= 0);
+                    // isMobilePlatform, not Input.touchSupported: touchscreen Windows laptops
+                    // report touch support, and showing the overlay there would also switch
+                    // off mouse-click attacks (TouchInputState.Active).
+                    (_forceShow || Application.isMobilePlatform ||
+                     Array.IndexOf(Environment.GetCommandLineArgs(), "-touchui") >= 0);
             TouchInputState.Active = _show;
             if (_show) _circle = MakeCircleTexture(64);
         }
@@ -87,7 +91,7 @@ namespace JiuyaoTianxu.UI.TouchControls
                     HandlePointer(t.fingerId, t.position, t.phase == TouchPhase.Began, ended);
                 }
             }
-            else if (!Input.touchSupported)
+            else if (!Application.isMobilePlatform)
             {
                 // Desktop/Editor testing with -touchui: the mouse is one finger.
                 HandlePointer(MousePointerId, Input.mousePosition, Input.GetMouseButtonDown(0), Input.GetMouseButtonUp(0));

@@ -29,6 +29,7 @@ def cs_enum(rel, name):
 ENUMS = {
     'WeaponType': cs_enum('Combat/Framework/WeaponType.cs', 'WeaponType'),
     'HitShapeType': cs_enum('Combat/Framework/HitShapeType.cs', 'HitShapeType'),
+    'AttackInputMode': cs_enum('Combat/Framework/AttackInputMode.cs', 'AttackInputMode'),
     'SpiritSealTriggerType': cs_enum('Combat/Framework/SpiritSeals/SpiritSealTriggerType.cs', 'SpiritSealTriggerType'),
     'QuestObjectiveType': cs_enum('Gameplay/Quests/QuestState.cs', 'QuestObjectiveType'),
     'QuestRewardType': cs_enum('Gameplay/Quests/QuestState.cs', 'QuestRewardType'),
@@ -78,6 +79,14 @@ atk_fields, attacks = check_table('attacks.csv', 'Combat/Framework/AttackDefinit
 wpn_fields, weapons = check_table('weapons.csv', 'Combat/Framework/WeaponDefinition.cs', 'WeaponType', ('ComboSequence',))
 seal_fields, seals = check_table('spirit_seals.csv', 'Combat/Framework/SpiritSeals/SpiritSealDefinition.cs', 'SealId')
 q_fields, quests = check_table('quests.csv', 'Gameplay/Quests/QuestDefinition.cs', 'QuestNumId')
+m_fields, monsters = check_table('monsters.csv', 'Config/Core/MonsterTableRow.cs', 'MonsterId')
+for m in monsters:
+    if m.get('MaxHp') and m['MaxHp'].lstrip('-').isdigit() and int(m['MaxHp']) <= 0:
+        errors.append(f'monsters.csv [{m["MonsterId"]}]: MaxHp must be > 0')
+monster_ids = {m['MonsterId'] for m in monsters}
+for q in quests:
+    if q.get('ObjectiveType') == 'KillTarget' and q.get('TargetId') not in monster_ids:
+        errors.append(f'quests.csv [{q["QuestId"]}]: TargetId "{q.get("TargetId")}" is not a MonsterId in monsters.csv')
 
 attack_ids = {a['AttackId'] for a in attacks}
 for w in weapons:
@@ -132,4 +141,4 @@ if errors:
     print('\n'.join('ERROR: ' + e for e in errors))
     print(f'validate_tables: {len(errors)} error(s)')
     sys.exit(1)
-print(f'validate_tables: OK ({len(attacks)} attacks, {len(weapons)} weapons, {len(seals)} seals, {len(quests)} quests)')
+print(f'validate_tables: OK ({len(attacks)} attacks, {len(weapons)} weapons, {len(seals)} seals, {len(quests)} quests, {len(monsters)} monsters)')

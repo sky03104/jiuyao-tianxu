@@ -431,7 +431,7 @@ Exception 數。**Server 的 PASS 條件**：≥2 名玩家完成 Q_PHASE0D_001�
 
 ### 1. 資料表（`Assets/_Project/Config/Tables/`）
 
-- `attacks.csv`／`weapons.csv`／`spirit_seals.csv`／`quests.csv`：**欄名＝定義類別的欄位名**，列舉填英文名稱
+- `attacks.csv`／`weapons.csv`／`spirit_seals.csv`／`quests.csv`／`monsters.csv`：**欄名＝定義類別的欄位名**，列舉填英文名稱
   （Blade、Sphere…），布林 true/false，Vector3 寫 `1;1;1`，`#` 開頭的列是註解。可以直接用 Excel／
   Google 試算表編輯（UTF-8）。初始內容由目前 commit 的資產數值轉出，**行為完全不變**。
 - **Editor 匯入**：選單 `JiuyaoTianxu/Config/Import All Tables`，或
@@ -439,6 +439,10 @@ Exception 數。**Server 的 PASS 條件**：≥2 名玩家完成 Q_PHASE0D_001�
   依鍵（AttackId／WeaponType／SealId／QuestNumId）找到既有資產**原地更新**，GUID 與所有參照不變；
   batch 模式有任何錯誤會拋例外（exit code ≠ 0）。`Phase0BWeaponDataSetup`／`Phase0CSpiritSealDataSetup`／
   `Phase0DSetup` 的數值部分都改成呼叫匯入器，程式碼裡不再寫死數值。
+- `attacks.csv` 的 `InputMode`（Tap／HoldRelease／Cast）決定該招是一般連段、按住蓄力放開發射、還是施法延遲
+  （原本寫死在 CombatController 依武器判斷，技術自審 D2）。
+- `monsters.csv` 寫進 `EnemyIdentity.TargetId` 相符的怪物 prefab（MaxHp、DespawnDelay；技術自審 D6），
+  只在 Editor 匯入，不在 Server 執行期覆寫範圍。
 - **Server 執行期覆寫（不用重新打包）**：打包後在 `<Build>_Data/StreamingAssets/ConfigOverrides/`（或
   `-configdir <路徑>`）放同名 CSV，**只要寫鍵欄＋要改的欄**，重啟 Server 即生效。限制：只改 build 內已有的
   id、只在 Server 生效（戰鬥/靈印/任務結果本來就由 Server 決定）、Editor 內不套用（避免把測試值寫回資產）。
@@ -486,7 +490,7 @@ pwsh Tools/Phase0D/run_autotest.ps1 -Seconds 90 -LockOn
 
 1. 離線編譯（Roslyn＋UnityEngine 參考組件＋Fusion DLL）：執行期程式碼 0 error / 0 warning；
    Editor 腳本除 2018 版參考組件缺的 `PrefabUtility` 新 API 外全部通過。
-2. 單元測試：ConfigTableTests 34/34、ControlsTests 27/27、QuestLogicTests 46/46；`validate_tables.py` OK，
+2. 單元測試：ConfigTableTests 37/37、ControlsTests 31/31、QuestLogicTests 46/46；`validate_tables.py` OK，
    並用故意改錯的 CSV 確認驗證器會抓到（錯的列舉名＋與資產不一致）。
 
 ## Photon App ID 設定（每台開發機都要做一次，不進版本控制）

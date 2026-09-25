@@ -108,15 +108,13 @@ namespace JiuyaoTianxu.Combat.Framework
             _state.BufferedNextAttack = false;
             MoveSpeedMultiplier = attack.CanMoveDuringAttack ? attack.MoveSpeedMultiplier : 0f;
 
-            var isChargeWeapon = weapon.WeaponType == WeaponType.Bow;
-            var isCastWeapon = weapon.WeaponType == WeaponType.Staff;
-
-            if (isChargeWeapon)
+            // Tech review D2: driven by the attack's data, not by which weapon it is.
+            if (attack.InputMode == AttackInputMode.HoldRelease)
             {
                 _state.Phase = CombatPhase.Charging;
                 // No PhaseTimer needed: Charging ends on button release, not on a timer.
             }
-            else if (isCastWeapon)
+            else if (attack.InputMode == AttackInputMode.Cast)
             {
                 _state.Phase = CombatPhase.Casting;
                 _state.PhaseTimer = TickTimer.CreateFromSeconds(Runner, Mathf.Max(0.05f, attack.ChargeOrCastTime));

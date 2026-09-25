@@ -73,7 +73,7 @@ Phase 0 進度：0-A 連線／0-B 戰鬥框架＋六武器／0-C 靈印 已完�
 （Roslyn on mono）與 `unity/JiuyaoTianxu/Tools/*Tests` 單元測試，不可宣稱網路實跑通過。
 **0-E（Roadmap Phase 0 缺口：資料表／雙搖桿／目標鎖定／基礎回饋）程式碼已完成（2026-09-25），同樣待本機驗收**；
 Phase 0 數值來源已改為 `unity/JiuyaoTianxu/Assets/_Project/Config/Tables/*.csv`（改數值改 CSV 再跑匯入器，
-不要改 Editor 腳本）。
+不要改 Editor 腳本）。進 Phase 1 前的技術債與待裁定問題見 `docs/PHASE0_TECH_REVIEW_CLAUDE_V1.0.md`。
 
 ## 開發階段
 

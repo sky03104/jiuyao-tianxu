@@ -1,0 +1,3 @@
+﻿# 怪物（寫入 prefab：EnemyIdentity.TargetId=MonsterId 的 Health 與 MonsterLifecycle）。MonsterId 也是任務 TargetId。只在 Editor 匯入，Server 執行期覆寫不含怪物。數值為示意值（可調整）。
+MonsterId,DisplayName,MaxHp,DespawnDelay
+Phase0D_TestMonster,測試怪,30,0.5
