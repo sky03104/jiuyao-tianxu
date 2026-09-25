@@ -1,3 +1,4 @@
+using JiuyaoTianxu.Combat.Framework;
 using JiuyaoTianxu.Combat.Targeting;
 using JiuyaoTianxu.Gameplay.Quests;
 using JiuyaoTianxu.Gameplay.World;
@@ -78,6 +79,12 @@ namespace JiuyaoTianxu.UI.Hud
             if (tracker == null || tracker.Log == null || tracker.Registry == null) return;
 
             var y = 10f;
+            var combat = tracker.GetComponent<CombatController>();
+            if (combat != null && combat.CurrentWeaponType is { } weapon)
+            {
+                GUI.Label(new Rect(10, y, 400, 22), $"武器：{WeaponName(weapon)}  （Tab 切換）", _textStyle);
+                y += 22f;
+            }
             GUI.Label(new Rect(10, y, 400, 22), "任務 (debug)  Q/任務鍵 接取", _textStyle);
             for (var i = 0; i < PlayerQuestLog.Capacity; i++)
             {
@@ -89,6 +96,17 @@ namespace JiuyaoTianxu.UI.Hud
                     $"{def.DisplayName}  [{e.QuestState}]  {e.Progress}/{def.RequiredCount}", _textStyle);
             }
         }
+
+        private static string WeaponName(WeaponType w) => w switch
+        {
+            WeaponType.Blade => "刀",
+            WeaponType.Sword => "劍",
+            WeaponType.Spear => "槍",
+            WeaponType.Bow => "弓（按住蓄力、放開射）",
+            WeaponType.HeavyBlade => "重刃",
+            WeaponType.Staff => "靈杖（有施法延遲）",
+            _ => w.ToString(),
+        };
 
         private static bool ToGui(Camera cam, Vector3 world, out Vector2 gui)
         {

@@ -34,6 +34,9 @@ namespace JiuyaoTianxu.Combat.Framework
 
         private AttackDefinition CurrentAttack => CurrentWeapon?.GetStep(_state.ComboStep);
 
+        /// <summary>Read by the debug HUD; null when no weapons are configured.</summary>
+        public WeaponType? CurrentWeaponType => CurrentWeapon != null ? CurrentWeapon.WeaponType : (WeaponType?)null;
+
         public override void Spawned()
         {
             _state = GetComponent<CombatState>();
