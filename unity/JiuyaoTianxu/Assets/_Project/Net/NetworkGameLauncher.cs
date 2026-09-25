@@ -183,7 +183,9 @@ namespace JiuyaoTianxu.Net
 
         public void OnInput(NetworkRunner runner, NetworkInput input)
         {
-            input.Set(CommandLineFlags.AutoTest ? AutoTestInputProvider.Poll(runner.Tick.Raw) : LocalInputProvider.Poll());
+            var data = CommandLineFlags.AutoTest ? AutoTestInputProvider.Poll(runner.Tick.Raw) : LocalInputProvider.Poll();
+            data.QuestAcceptId = InputRequests.QuestAcceptId;
+            input.Set(data);
         }
 
         public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input) { }

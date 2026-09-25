@@ -16,6 +16,20 @@ namespace JiuyaoTianxu.Core
         /// world X/Z. Zero = not aiming (face lock target or movement instead).</summary>
         public Vector2 Aim;
         public NetworkButtons Buttons;
+        /// <summary>Phase 0-D quest accept request: QuestNumId, 0 = none. Carried in
+        /// input instead of an [Rpc] because Fusion 2.1.2's woven RPC bodies call
+        /// internal Fusion.Runtime methods and Mono player builds throw
+        /// MethodAccessException (found in the 2026-09-25 local run). The server
+        /// edge-detects changes, so resending the same id every tick is harmless.</summary>
+        public int QuestAcceptId;
+    }
+
+    /// <summary>One-shot requests that ride on the next ticks' input. Written by
+    /// gameplay components on the input-authority peer, copied into
+    /// PlayerInputData by NetworkGameLauncher.OnInput.</summary>
+    public static class InputRequests
+    {
+        public static int QuestAcceptId;
     }
 
     public static class PlayerButton

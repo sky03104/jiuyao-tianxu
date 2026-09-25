@@ -49,9 +49,10 @@ namespace JiuyaoTianxu.Core
             return data;
         }
 
-        /// <summary>Phase 0-D: quest accept is a one-shot request (RPC), not
-        /// per-tick simulation input, so it isn't part of PlayerInputData — but the
-        /// key read still lives here to keep this the only class touching Input.</summary>
+        /// <summary>Phase 0-D: quest accept is a one-shot request that QuestTracker
+        /// turns into PlayerInputData.QuestAcceptId (it needs the quest id, not a
+        /// button) — but the key read still lives here to keep this the only class
+        /// touching Input.</summary>
         public static bool QuestAcceptPressed() => Input.GetKeyDown(KeyCode.Q);
     }
 }

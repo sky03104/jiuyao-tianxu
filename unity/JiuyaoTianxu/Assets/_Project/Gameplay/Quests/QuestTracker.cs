@@ -12,7 +12,8 @@ namespace JiuyaoTianxu.Gameplay.Quests
     ///
     /// Server side:
     ///   - initialises every registry quest to Locked/Available from data;
-    ///   - validates accept requests (RPC from the owning client);
+    ///   - validates accept requests (PlayerInputData.QuestAcceptId from the
+    ///     owning client — not an [Rpc], see that field for why);
     ///   - advances Accepted → InProgress on the next tick;
     ///   - consumes GameplayEvents.EnemyKilled for kills credited to this player;
     ///   - completes, grants the test reward and unlocks dependent quests.
@@ -29,12 +30,18 @@ namespace JiuyaoTianxu.Gameplay.Quests
         [SerializeField] private QuestRegistry _registry;
 
         private const float AutoAcceptIntervalSeconds = 1f;
+        /// <summary>How long the client keeps a request in its input before giving
+        /// up (e.g. the server rejected it) and allowing a new one.</summary>
+        private const float AcceptRequestTimeoutSeconds = 2f;
 
         private PlayerQuestLog _log;
         private Health _health;
         private bool _spawned;
         private bool _subscribed;
         private float _nextAutoAcceptTime;
+        private int _lastAcceptInput;           // server: previous tick's QuestAcceptId
+        private int _pendingAcceptId;           // client: request currently riding on input
+        private float _pendingAcceptExpiry;
         private readonly QuestEntry[] _lastSeen = new QuestEntry[PlayerQuestLog.Capacity];
 
         public QuestRegistry Registry => _registry;
@@ -73,7 +80,11 @@ namespace JiuyaoTianxu.Gameplay.Quests
                 _subscribed = false;
             }
             _spawned = false;
-            if (Local == this) Local = null;
+            if (Local == this)
+            {
+                Local = null;
+                InputRequests.QuestAcceptId = 0;
+            }
         }
 
         // ---------------- Server ----------------
@@ -119,12 +130,18 @@ namespace JiuyaoTianxu.Gameplay.Quests
                     Complete(i, def);
                 }
             }
-        }
 
-        [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority)]
-        public void RPC_RequestAccept(int questNumId)
-        {
-            ServerHandleAccept(questNumId);
+            // Accept requests arrive as input (see PlayerInputData.QuestAcceptId).
+            // Handled after the loop so Accepted → InProgress still happens on the
+            // next tick; edge-detected because the client resends the id every tick.
+            if (GetInput(out PlayerInputData input))
+            {
+                if (input.QuestAcceptId != 0 && input.QuestAcceptId != _lastAcceptInput)
+                {
+                    ServerHandleAccept(input.QuestAcceptId);
+                }
+                _lastAcceptInput = input.QuestAcceptId;
+            }
         }
 
         private void ServerHandleAccept(int questNumId)
@@ -229,12 +246,25 @@ namespace JiuyaoTianxu.Gameplay.Quests
         {
             if (!_spawned || !Object.HasInputAuthority) return;
             GameLog.Info($"[QuestTracker] {Owner} requesting accept of quest {questNumId}.");
-            RPC_RequestAccept(questNumId);
+            _pendingAcceptId = questNumId;
+            _pendingAcceptExpiry = Time.unscaledTime + AcceptRequestTimeoutSeconds;
+            InputRequests.QuestAcceptId = questNumId;
         }
 
         private void Update()
         {
             if (!_spawned || !Object.HasInputAuthority || _registry == null) return;
+
+            // Keep the request on input until the replicated state leaves Available
+            // (server accepted) or it times out (server rejected / never arrived).
+            if (_pendingAcceptId != 0)
+            {
+                var slot = _log.FindSlot(_pendingAcceptId);
+                var stillAvailable = slot >= 0 && _log.Entries[slot].QuestState == QuestState.Available;
+                if (stillAvailable && Time.unscaledTime < _pendingAcceptExpiry) return;
+                _pendingAcceptId = 0;
+                InputRequests.QuestAcceptId = 0;
+            }
 
             var wantsAccept = LocalInputProvider.QuestAcceptPressed();
             if (CommandLineFlags.AutoTest && Time.unscaledTime >= _nextAutoAcceptTime)
