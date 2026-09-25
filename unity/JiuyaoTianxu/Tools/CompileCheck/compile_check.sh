@@ -35,7 +35,11 @@ fetch unityengine.modules 2021.3.33 unityengine
 fetch unity3d.unityeditor 2018.1.6-f1 unityeditor
 
 CSC="$CACHE/roslyn/tools/csc.exe"
-FACADE="$(dirname "$(find /usr/lib/mono -name netstandard.dll -path '*Facades*' | head -1)")/netstandard.dll"
+# Fusion.Runtime targets netstandard 2.1. Only mono's runtime facade (4.5/Facades) is
+# 2.1 — the *-api/Facades copies are 2.0 (CS1705), and `find | head` order differs
+# between machines (it picked a 2.0 one on the CI runner), so pin the path.
+FACADE="${MONO_NETSTANDARD_FACADE:-/usr/lib/mono/4.5/Facades/netstandard.dll}"
+[ -f "$FACADE" ] || { echo "netstandard 2.1 facade not found at $FACADE (install mono-devel)"; exit 1; }
 REFS=()
 for d in "$CACHE"/unityengine/lib/net45/*.dll; do REFS+=("-r:$d"); done
 for d in "$ASSETS"/Photon/Fusion/Assemblies/Fusion.*.dll; do REFS+=("-r:$d"); done
