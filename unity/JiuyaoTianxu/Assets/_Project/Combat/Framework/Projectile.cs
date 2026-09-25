@@ -1,5 +1,6 @@
 using Fusion;
 using JiuyaoTianxu.Combat;
+using JiuyaoTianxu.Core;
 using UnityEngine;
 
 namespace JiuyaoTianxu.Combat.Framework
@@ -47,7 +48,10 @@ namespace JiuyaoTianxu.Combat.Framework
             var radius = _attack != null && _attack.AreaRadius > 0f ? _attack.AreaRadius : 0.5f;
             if (HitDetectionService.TryFindFirstHealth(transform.position, radius, _source, out var target))
             {
-                DamageService.Resolve(new DamageRequest(_source, target, _attack));
+                var result = DamageService.Resolve(new DamageRequest(_source, target, _attack));
+                // Tech review D20: without this line a regression run can't tell whether arrows hit.
+                GameLog.Info($"[Projectile] {(_source != null ? _source.name : "<none>")} projectile-hit " +
+                             $"{target.name} for {result.FinalDamage} ({(_attack != null ? _attack.AttackId : "?")}).");
                 Runner.Despawn(Object);
             }
         }
