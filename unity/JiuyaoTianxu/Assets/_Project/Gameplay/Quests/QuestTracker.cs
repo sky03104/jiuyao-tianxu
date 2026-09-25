@@ -35,6 +35,7 @@ namespace JiuyaoTianxu.Gameplay.Quests
         private Health _health;
         private bool _spawned;
         private bool _subscribed;
+        private PlayerRef _commandOwner; // cached: Despawned must unregister the same key
         private float _nextAutoAcceptTime;
         private readonly QuestEntry[] _lastSeen = new QuestEntry[PlayerQuestLog.Capacity];
 
@@ -62,7 +63,8 @@ namespace JiuyaoTianxu.Gameplay.Quests
             {
                 InitializeEntries();
                 GameplayEvents.EnemyKilled += OnEnemyKilled;
-                ClientCommands.Received += OnClientCommand;
+                _commandOwner = Owner;
+                ClientCommands.Register(Runner, _commandOwner, ClientCommands.QuestAccept, ServerHandleAccept);
                 _subscribed = true;
             }
         }
@@ -72,7 +74,7 @@ namespace JiuyaoTianxu.Gameplay.Quests
             if (_subscribed)
             {
                 GameplayEvents.EnemyKilled -= OnEnemyKilled;
-                ClientCommands.Received -= OnClientCommand;
+                ClientCommands.Unregister(runner, _commandOwner, ClientCommands.QuestAccept);
                 _subscribed = false;
             }
             _spawned = false;
@@ -124,14 +126,8 @@ namespace JiuyaoTianxu.Gameplay.Quests
             }
         }
 
-        /// <summary>Every tracker on the server hears every command; only the one
-        /// owned by the sender acts (the sender PlayerRef comes from the transport).</summary>
-        private void OnClientCommand(NetworkRunner runner, PlayerRef sender, int command, int argument)
-        {
-            if (runner != Runner || sender != Owner || command != ClientCommands.QuestAccept) return;
-            ServerHandleAccept(argument);
-        }
-
+        /// <summary>Registered with ClientCommands for this tracker's owner only, so it
+        /// never sees another player's requests.</summary>
         private void ServerHandleAccept(int questNumId)
         {
             var slot = _log.FindSlot(questNumId);
