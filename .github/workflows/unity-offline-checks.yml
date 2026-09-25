@@ -1,0 +1,41 @@
+# Offline checks for the Unity project — runs WITHOUT Unity (no license/Editor on CI).
+# Proves the C# compiles (runtime + Editor scripts) and the Unity-free unit tests and
+# design-table validation pass. It does NOT replace the local Unity run in
+# docs/PHASE0_LOCAL_VERIFICATION_RUNBOOK.md (network/gameplay behaviour).
+name: Unity offline checks
+
+on:
+  pull_request:
+    paths:
+      - "unity/JiuyaoTianxu/**"
+      - ".github/workflows/unity-offline-checks.yml"
+  push:
+    branches: [main]
+    paths:
+      - "unity/JiuyaoTianxu/**"
+      - ".github/workflows/unity-offline-checks.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-checks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install mono
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends mono-devel unzip
+
+      - name: Cache reference assemblies (Roslyn, UnityEngine/UnityEditor refs)
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/jiuyao-compile-check
+          key: jiuyao-compile-check-${{ hashFiles('unity/JiuyaoTianxu/Tools/CompileCheck/compile_check.sh') }}
+
+      - name: Compile check + unit tests + table validation
+        run: unity/JiuyaoTianxu/Tools/run_all_checks.sh
