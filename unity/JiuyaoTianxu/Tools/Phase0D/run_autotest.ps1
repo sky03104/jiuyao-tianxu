@@ -51,6 +51,7 @@ $report = [ordered]@{
     "server: Q_PHASE0D_002 unlocked"       = Count $s "Q_PHASE0D_002 Locked → Available"
     "server: PASS line"                    = Count $s "\[Phase0DTestRunner\] PASS"
     "server: 赤炎/玄甲/影遁 regression"      = Count $s "\[SpiritSealSystem\]"
+    "server: 赤炎 burned a monster (D1)"    = Count $s "triggered '赤炎' on Phase0D_TestMonster"
     "server: [TargetLock] lines (-LockOn)" = Count $s "\[TargetLock\]"
     "server: [ConfigOverride] applied"     = Count $s "\[ConfigOverride\] .*applied"
     "client1: QuestSync lines"             = Count "$LogDir/client1.log" "\[QuestSync\]"

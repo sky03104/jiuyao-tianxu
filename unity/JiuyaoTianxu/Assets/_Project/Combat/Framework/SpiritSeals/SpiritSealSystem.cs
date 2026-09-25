@@ -12,9 +12,8 @@ namespace JiuyaoTianxu.Combat.Framework
     /// new SpiritSealDefinition asset; nothing here or in CombatController/
     /// DamageService changes.
     ///
-    /// Also owns the one active status effect this prototype needs (赤炎's burn)
-    /// rather than spinning up a separate StatusEffect component — HANDOFF-007
-    /// explicitly says not to build a full Status Effect Framework yet.
+    /// 赤炎's burn itself lives on the TARGET's BurnStatus component (tech review
+    /// D1) so monsters can burn too; this class only decides when to apply it.
     /// </summary>
     [RequireComponent(typeof(SpiritSealLoadout))]
     [RequireComponent(typeof(Health))]
@@ -22,15 +21,10 @@ namespace JiuyaoTianxu.Combat.Framework
     {
         [SerializeField] private SpiritSealRegistry _registry;
 
-        [Networked] private int _burnTicksRemaining { get; set; }
-        [Networked] private int _burnDamagePerTick { get; set; }
-        [Networked] private float _burnTickInterval { get; set; }
-        [Networked] private TickTimer _burnTickTimer { get; set; }
         [Networked] private NetworkButtons _previousButtons { get; set; }
 
         private SpiritSealLoadout _loadout;
         private Health _health;
-        private Health _burnSource; // plain ref: only ever read/written server-side.
 
         public override void Spawned()
         {
@@ -50,8 +44,6 @@ namespace JiuyaoTianxu.Combat.Framework
                 }
                 _previousButtons = input.Buttons;
             }
-
-            TickBurn();
         }
 
         // ---- Test/bootstrap helpers ----
@@ -96,8 +88,16 @@ namespace JiuyaoTianxu.Combat.Framework
                 if (def == null || def.TriggerType != SpiritSealTriggerType.OnAttackHit) continue;
                 if (!_loadout.Cooldowns[slot].ExpiredOrNotRunning(Runner)) continue;
 
-                var targetSeals = target.GetComponent<SpiritSealSystem>();
-                targetSeals?.ApplyBurn(_health, def.BurnDamagePerTick, def.BurnTickCount, def.BurnTickInterval);
+                // A burn seal only fires (and only spends its cooldown) if the target
+                // can actually burn. Before D1 this silently no-op'd on monsters while
+                // still consuming the cooldown.
+                var appliesBurn = def.BurnTickCount > 0 && def.BurnDamagePerTick > 0;
+                if (appliesBurn)
+                {
+                    var burn = target.GetComponent<BurnStatus>();
+                    if (burn == null) continue;
+                    burn.Apply(_health, def.BurnDamagePerTick, def.BurnTickCount, def.BurnTickInterval);
+                }
 
                 _loadout.Cooldowns.Set(slot, TickTimer.CreateFromSeconds(Runner, def.Cooldown));
                 Debug.Log($"[SpiritSealSystem] {name} triggered '{def.DisplayName}' on {target.name}.");
@@ -139,31 +139,6 @@ namespace JiuyaoTianxu.Combat.Framework
                 _loadout.Armed.Set(slot, true);
                 _loadout.Cooldowns.Set(slot, TickTimer.CreateFromSeconds(Runner, def.Cooldown));
                 Debug.Log($"[SpiritSealSystem] {name} armed '{def.DisplayName}' from test dodge event.");
-            }
-        }
-
-        // ---- Burn status (minimal hook, not a full Status Effect Framework) ----
-
-        private void ApplyBurn(Health source, int damagePerTick, int tickCount, float tickInterval)
-        {
-            _burnSource = source;
-            _burnDamagePerTick = damagePerTick;
-            _burnTickInterval = tickInterval;
-            _burnTicksRemaining = tickCount;
-            _burnTickTimer = TickTimer.CreateFromSeconds(Runner, tickInterval);
-        }
-
-        private void TickBurn()
-        {
-            if (_burnTicksRemaining <= 0) return;
-            if (!_burnTickTimer.ExpiredOrNotRunning(Runner)) return;
-
-            DamageService.Resolve(new DamageRequest(_burnSource, _health, null, _burnDamagePerTick, isStatusDamage: true));
-            _burnTicksRemaining--;
-
-            if (_burnTicksRemaining > 0)
-            {
-                _burnTickTimer = TickTimer.CreateFromSeconds(Runner, _burnTickInterval);
             }
         }
     }

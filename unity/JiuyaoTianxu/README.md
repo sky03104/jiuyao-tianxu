@@ -484,6 +484,9 @@ pwsh Tools/Phase0D/run_autotest.ps1 -Seconds 90 -LockOn
   那次一樣明顯下降（0-C 當時要重新打包，這次不用）。
 - **手感（需要人看）**：Editor 開 `Phase0D_TestScene` 按 Play（Host），WASD＋IJKL＋F 試面向與鎖定；
   加 `-touchui` 打包或用手機測虛擬搖桿。
+- **赤炎燒怪（技術自審 D1）**：燃燒改由目標身上的 `BurnStatus` 元件處理（玩家、怪物都有），
+  報表的「赤炎 burned a monster」應大於 0；同時確認 0-C 三個靈印的觸發次數仍在合理範圍。
+  **一定要先跑 `Phase0DSetup`（或 `Phase0ESetup`）**，Player prefab 才會加上 BurnStatus，否則玩家之間不會燃燒。
 - 預設的 `-autotest` 按鍵節奏**完全沒變**（鎖定要加 `-autotest-lockon` 才會按），Phase 0-D 驗收結果不受影響。
 
 ### 已做的驗證（雲端環境，無 Unity）

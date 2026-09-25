@@ -1,3 +1,4 @@
+using JiuyaoTianxu.Combat.Framework;
 using JiuyaoTianxu.Combat.Targeting;
 using JiuyaoTianxu.UI.Hud;
 using JiuyaoTianxu.UI.TouchControls;
@@ -7,8 +8,8 @@ using UnityEngine;
 
 /// <summary>
 /// Phase 0-E (roadmap Phase 0 gaps: 雙搖桿/目標鎖定/基礎回饋/資料表): idempotently
-/// adds TargetLock + HealthFeedback to the Player prefab, HealthFeedback to the
-/// Phase 0-D test monster, and the touch controls / debug HUD / camera follow to
+/// adds TargetLock + HealthFeedback + BurnStatus to the Player prefab,
+/// HealthFeedback + BurnStatus to the Phase 0-D test monster, and the touch controls / debug HUD / camera follow to
 /// both test scenes. Safe to re-run; skips anything that doesn't exist yet.
 /// Phase0DSetup.Run calls this at the end, so a fresh 0-D setup is already 0-E.
 /// Run via: Unity.exe -batchmode -projectPath . -executeMethod Phase0ESetup.Run -quit
@@ -29,8 +30,13 @@ public static class Phase0ESetup
         {
             AddIfMissing<TargetLock>(root);
             AddIfMissing<HealthFeedback>(root);
+            AddIfMissing<BurnStatus>(root); // tech review D1
         });
-        EnsurePrefab(MonsterPrefabPath, root => AddIfMissing<HealthFeedback>(root));
+        EnsurePrefab(MonsterPrefabPath, root =>
+        {
+            AddIfMissing<HealthFeedback>(root);
+            AddIfMissing<BurnStatus>(root); // tech review D1
+        });
 
         foreach (var scene in Scenes) EnsureScene(scene);
 

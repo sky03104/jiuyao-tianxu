@@ -541,8 +541,12 @@ batchmode 自動關閉；資料表由現有資產數值轉出，`validate_tables
 **驗證狀態：** 離線編譯 0 error；單元測試 ConfigTable 34／Controls 27／QuestLogic 46 全過。
 Unity 實跑、手感、觸控實機**尚未測**，細節與驗收步驟見 `unity/JiuyaoTianxu/README.md` Phase 0-E 章節。
 
-**給 ChatGPT 的建議：** HANDOFF-008 §17 的 Phase 0 全面 Code Review 可以把 0-E 一起納入；另外
-`CombatController` 仍以 `WeaponType == Bow/Staff` 決定蓄力/施法流程（非資料驅動），建議列進技術債清單。
+**給 ChatGPT 的建議：** HANDOFF-008 §17 的 Phase 0 全面 Code Review 可以把 0-E 一起納入；Claude 已先寫
+預審版 `docs/PHASE0_TECH_REVIEW_CLAUDE_V1.0.md`（17 項技術債）。
+
+**後續（同日）：** 依預審文件已修 F1～F5：觸控判斷、Server 輸入清洗、`AttackDefinition.InputMode` 取代
+依武器類型判斷蓄力/施法（D2）、`monsters.csv`（D6）、**赤炎燃燒改為 `BurnStatus` 元件、怪物也會燃燒（D1，
+咖哩裁定方案 A）**。D3 死亡/重生、D4 延遲補償、D5 Client 預測待 ChatGPT 審查後發 HANDOFF。
 
 ---
 

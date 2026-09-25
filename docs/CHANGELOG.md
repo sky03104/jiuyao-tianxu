@@ -1,5 +1,15 @@
 # CHANGELOG — 《九曜：天墟》
 
+## 2026-09-25（第三十一筆，技術自審 D1：赤炎燃燒改為 BurnStatus 元件，怪物也會燃燒）
+
+- 咖哩裁定方案 A。新增 `Combat/Framework/StatusEffects/BurnStatus.cs`：只處理燃燒的最小 NetworkBehaviour
+  （不是 Status Effect Framework），掛在玩家與怪物 prefab；燃燒傷害仍走 `DamageService`（`IsStatusDamage`），
+  燒死的擊殺照樣發 `CombatEvents.TargetKilled` 並歸給施放者。
+- `SpiritSealSystem` 移除自帶的燃燒狀態；赤炎命中時目標若沒有 `BurnStatus` 就**不觸發、不消耗冷卻**
+  （修正前對怪物靜默失效但冷卻照扣）。
+- `Phase0ANetworkSetup`／`Phase0DSetup`／`Phase0ESetup` 把 BurnStatus 加到 prefab；`run_autotest.ps1` 新增
+  「赤炎 burned a monster」計數。離線編譯 0 error。**需本機重跑 0-C 靈印 regression。**
+
 ## 2026-09-25（第三十筆，Phase 0 技術自審＋低風險修正）
 
 - 新增 `docs/PHASE0_TECH_REVIEW_CLAUDE_V1.0.md`：HANDOFF-008 §17「Phase 0 全面 Code Review」的 Claude 預審版
