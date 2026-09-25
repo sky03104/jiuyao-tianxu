@@ -1,5 +1,22 @@
 # CHANGELOG — 《九曜：天墟》
 
+## 2026-09-25（第二十八筆，HANDOFF-008：Phase 0-D Map/Spawn/Quest Skeleton 程式碼完成，Unity 實跑驗收待執行）
+
+- 咖哩指示 GPT 生圖暫停期間先做遊戲本體，依 HANDOFF-008 實作 Phase 0-D。
+- 新增 `Assets/_Project/Gameplay/`：Events（GameplayEvents、CombatToGameplayEventRouter）、
+  World（PlayerSpawnPoint、MonsterSpawnPoint、MonsterSpawner、MonsterLifecycle、EnemyIdentity）、
+  Quests（QuestDefinition、QuestRegistry、QuestStateMachine、PlayerQuestLog、QuestTracker、QuestEvents、QuestIds）、
+  Testing（Phase0DTestRunner）。
+- 核心檔最小擴充：`DamageService` 只在「HP 由 >0 變 0 的那一擊」發 `CombatEvents.TargetKilled`（新增檔），
+  傷害計算未改；`NetworkGameLauncher` 支援場景出生點＋啟動 MonsterSpawner（無標記的 Phase0A 場景行為不變）；
+  `-autotest` 解析抽到 `Core/CommandLineFlags`（另加 `-quitafter`）；Q 鍵接任務讀取放在 `KeyboardInputProvider`。
+- Editor：`Phase0DSetup.Run`（任務資產、Phase0D_TestMonster prefab、Player prefab 加任務元件、
+  Phase0D_TestScene、Build Settings）、`Phase0DBuild.Build`。
+- 驗證：雲端容器無 Unity，改以 Roslyn（mono）+ UnityEngine 參考組件 + 專案 Fusion DLL 做離線編譯檢查，
+  執行期程式碼 0 error；任務邏輯單元測試 `unity/JiuyaoTianxu/Tools/QuestLogicTests` 46/46 通過。
+- **尚未完成**：1 Server + 2 Client 實跑、靈印 Regression、≥10 次 Progress 實測——需本機 Unity 執行
+  `Tools/Phase0D/run_autotest.ps1`，結果補進 CLAUDE-REPLY-008 後才可標記 COMPLETE。
+
 ## 2026-09-24（第二十七筆，MASTER_VISUAL_STYLE_LOCK v1.1：改以 GPT 參考稿為畫風最高標準）
 
 - 起因：EP01 設定圖第一批只靠文字 prompt 出圖，偏寫實照片感，與咖哩選定的 GPT 參考稿落差大，整批作廢。

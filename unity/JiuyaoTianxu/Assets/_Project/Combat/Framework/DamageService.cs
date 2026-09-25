@@ -49,10 +49,18 @@ namespace JiuyaoTianxu.Combat.Framework
                 final = targetSeals.TryPreventFatalDamage(final, request.Target.HP);
             }
 
+            var wasAlive = request.Target.HP > 0;
             request.Target.ApplyDamage(final);
             var died = request.Target.HP <= 0;
 
             sourceSeals?.OnAttackHitDealt(request.Target, final);
+
+            // Phase 0-D: announce the alive→dead transition exactly once. Quest and
+            // any other gameplay listener only ever consume this event.
+            if (wasAlive && died)
+            {
+                CombatEvents.RaiseTargetKilled(request.Source, request.Target);
+            }
 
             return new DamageResult(raw, final, died);
         }
