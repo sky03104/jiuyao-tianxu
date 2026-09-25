@@ -20,6 +20,8 @@ namespace JiuyaoTianxu.UI.Hud
 
         private Texture2D _white;
         private GUIStyle _numberStyle, _textStyle;
+        private QuestTracker _combatOwner;      // tracker whose CombatController is cached
+        private CombatController _localCombat;  // OnGUI runs several times a frame
 
         private void Awake()
         {
@@ -79,8 +81,12 @@ namespace JiuyaoTianxu.UI.Hud
             if (tracker == null || tracker.Log == null || tracker.Registry == null) return;
 
             var y = 10f;
-            var combat = tracker.GetComponent<CombatController>();
-            if (combat != null && combat.CurrentWeaponType is { } weapon)
+            if (tracker != _combatOwner)
+            {
+                _combatOwner = tracker;
+                _localCombat = tracker.GetComponent<CombatController>();
+            }
+            if (_localCombat != null && _localCombat.CurrentWeaponType is { } weapon)
             {
                 GUI.Label(new Rect(10, y, 400, 22), $"武器：{WeaponName(weapon)}  （Tab 切換）", _textStyle);
                 y += 22f;
