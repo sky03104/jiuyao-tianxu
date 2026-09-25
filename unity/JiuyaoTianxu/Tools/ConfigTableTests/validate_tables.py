@@ -99,14 +99,32 @@ for q in quests:
 if len(quests) > 8: errors.append(f'quests.csv: {len(quests)} quests > PlayerQuestLog.Capacity 8')
 
 # ---- parity with committed assets ----
+def _odd_backslashes_before(s, end):
+    n = 0
+    while end - n - 1 >= 0 and s[end - n - 1] == '\\': n += 1
+    return n % 2 == 1
+
+def _quoted_closed(v):
+    return len(v) >= 2 and v.endswith('"') and not _odd_backslashes_before(v, len(v) - 1)
+
 def asset_values(path):
     vals = {}
-    for ln in open(path, encoding='utf-8'):
-        m = re.match(r'^  (\w+): (.+)$', ln.rstrip('\n'))
-        if m:
-            k, v = m.groups()
-            if v.startswith('"'): v = v.strip('"').encode('utf-8').decode('unicode_escape')
-            vals[k] = v
+    lines = open(path, encoding='utf-8').read().split('\n')
+    i = 0
+    while i < len(lines):
+        m = re.match(r'^  (\w+): (.+)$', lines[i].rstrip('\r'))
+        i += 1
+        if not m: continue
+        k, v = m.groups()
+        if v.startswith('"'):
+            # Unity folds long double-quoted strings onto indented continuation lines.
+            # YAML joins a folded line break as one space, or as nothing after a
+            # line-ending escape backslash.
+            while not _quoted_closed(v) and i < len(lines) and lines[i].startswith('    '):
+                nxt = lines[i].strip(); i += 1
+                v = v[:-1] + nxt if _odd_backslashes_before(v, len(v)) else v + ' ' + nxt
+            v = v[1:-1].encode('utf-8').decode('unicode_escape')
+        vals[k] = v
     return vals
 
 def norm(typ, v):
