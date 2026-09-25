@@ -23,6 +23,7 @@ public static class ControlsTests
         Cycling();
         Breaking();
         Stick();
+        Sanitizer();
         Console.WriteLine($"ControlsTests: {_passed} passed, {_failed} failed");
         return _failed == 0 ? 0 : 1;
     }
@@ -105,5 +106,21 @@ public static class ControlsTests
         Check(Math.Abs(Math.Sqrt(x5 * x5 + y5 * y5) - 1) < 1e-5, "diagonal magnitude never exceeds 1");
         StickMath.Evaluate(50, 0, 0, 0.1f, out var x6, out _);
         Check(x6 == 0, "zero radius is safe");
+    }
+
+    private static void Sanitizer()
+    {
+        float x = float.NaN, y = 0.5f;
+        InputSanitizer.ClampStick(ref x, ref y);
+        Check(x == 0 && y == 0, "NaN stick dropped to zero");
+        x = float.PositiveInfinity; y = 1f;
+        InputSanitizer.ClampStick(ref x, ref y);
+        Check(x == 0 && y == 0, "Infinity stick dropped to zero");
+        x = 300f; y = 400f;
+        InputSanitizer.ClampStick(ref x, ref y);
+        Check(Math.Abs(x - 0.6f) < 1e-5 && Math.Abs(y - 0.8f) < 1e-5, "oversized stick clamped to length 1, direction kept (speed-hack guard)");
+        x = 0.3f; y = -0.4f;
+        InputSanitizer.ClampStick(ref x, ref y);
+        Check(Math.Abs(x - 0.3f) < 1e-6 && Math.Abs(y + 0.4f) < 1e-6, "valid stick untouched");
     }
 }

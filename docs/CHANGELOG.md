@@ -1,5 +1,19 @@
 # CHANGELOG — 《九曜：天墟》
 
+## 2026-09-25（第三十筆，Phase 0 技術自審＋低風險修正）
+
+- 新增 `docs/PHASE0_TECH_REVIEW_CLAUDE_V1.0.md`：HANDOFF-008 §17「Phase 0 全面 Code Review」的 Claude 預審版
+  （架構現況、P0/P1/P2 技術債 17 項、手機效能初步觀察、Phase 1 前建議順序、待決問題），供 ChatGPT 審查。
+- 依自審順手修正（行為不變或純防護）：
+  - F1：虛擬搖桿改用 `Application.isMobilePlatform` 判斷顯示（觸控筆電不再誤開、滑鼠攻擊不再被關）。
+  - F2：新增 `Core/InputSanitizer`，Server 清洗 Client 搖桿值（NaN/Infinity→0、長度夾到 1，防座標污染與加速外掛）。
+  - F3（D2）：`AttackDefinition.InputMode`（Tap/HoldRelease/Cast）取代 CombatController 依武器類型判斷蓄力/施法；
+    attacks.csv 加欄、13 筆資產同步。
+  - F4（D6）：新增 `monsters.csv`，怪物 MaxHp/DespawnDelay 由匯入器寫入 prefab，Phase0DSetup 不再寫死數值。
+- **需要裁定、尚未動手**：D1 赤炎燃燒對怪物無效、D3 死亡/重生、D4 延遲補償、D5 Client 預測（詳見自審文件）。
+- 測試：ConfigTableTests 37/37（含實際 monsters.csv 綁定）、ControlsTests 31/31、QuestLogicTests 46/46、
+  validate_tables OK（含 InputMode 與資產一致、任務目標必須是表內怪物）；離線編譯 0 error。
+
 ## 2026-09-25（第二十九筆，Phase 0-E：Roadmap Phase 0 缺口補齊——資料表／雙搖桿／目標鎖定／基礎回饋）
 
 - 咖哩交代等 Unity 環境期間「先繼續做其他的」；對照 `19_DEVELOPMENT_ROADMAP` Phase 0 交付／驗收項目，

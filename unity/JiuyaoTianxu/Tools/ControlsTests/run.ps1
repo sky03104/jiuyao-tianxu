@@ -12,6 +12,7 @@ New-Item -ItemType Directory -Force $work | Out-Null
     <Compile Include="$here\ControlsTests.cs" />
     <Compile Include="$t\TargetingMath.cs" />
     <Compile Include="$t\..\..\Core\StickMath.cs" />
+    <Compile Include="$t\..\..\Core\InputSanitizer.cs" />
   </ItemGroup>
 </Project>
 "@ | Set-Content (Join-Path $work "ControlsTests.csproj")

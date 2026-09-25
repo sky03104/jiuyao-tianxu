@@ -11,9 +11,11 @@ New-Item -ItemType Directory -Force $work | Out-Null
     <Compile Include="$here\ConfigTableTests.cs" />
     <Compile Include="$c\CsvTable.cs" />
     <Compile Include="$c\TableBinder.cs" />
+    <Compile Include="$c\MonsterTableRow.cs" />
   </ItemGroup>
 </Project>
 "@ | Set-Content (Join-Path $work "ConfigTableTests.csproj")
+$env:MONSTERS_CSV = Join-Path $here "..\..\Assets\_Project\Config\Tables\monsters.csv"
 dotnet run --project (Join-Path $work "ConfigTableTests.csproj")
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 python (Join-Path $here "validate_tables.py")

@@ -31,7 +31,6 @@ public static class Phase0DSetup
     private const string Phase0AScenePath = "Assets/_Project/Scenes/Phase0A_NetworkTest.unity";
     public const string ScenePath = "Assets/_Project/Scenes/Phase0D_TestScene.unity";
 
-    private const int MonsterMaxHp = 30; // 可調整: low so the autotest reaches 3 kills quickly.
 
     public static void Run()
     {
@@ -108,13 +107,9 @@ public static class Phase0DSetup
 
         go.AddComponent<NetworkObject>();
         go.AddComponent<NetworkTransform>();
-        var health = go.AddComponent<Health>();
+        go.AddComponent<Health>(); // MaxHp comes from monsters.csv (ImportMonsters below)
         var identity = go.AddComponent<EnemyIdentity>();
         go.AddComponent<MonsterLifecycle>();
-
-        var healthSo = new SerializedObject(health);
-        healthSo.FindProperty("_maxHp").intValue = MonsterMaxHp;
-        healthSo.ApplyModifiedPropertiesWithoutUndo();
 
         var idSo = new SerializedObject(identity);
         idSo.FindProperty("_targetId").stringValue = QuestIds.Phase0DTestMonsterTargetId;
@@ -123,6 +118,12 @@ public static class Phase0DSetup
         var saved = PrefabUtility.SaveAsPrefabAsset(go, MonsterPrefabPath);
         Object.DestroyImmediate(go);
         if (saved == null) Debug.LogError("[Phase0DSetup] SaveAsPrefabAsset returned null for the test monster.");
+
+        // Stats (MaxHp 30, DespawnDelay 0.5 — 可調整) live in Config/Tables/monsters.csv.
+        AssetDatabase.Refresh(); // make sure FindAssets sees the prefab just saved
+        var errors = new List<string>();
+        ConfigTableImporter.ImportMonsters(errors);
+        ConfigTableImporter.Finish(errors, "monsters.csv");
     }
 
     // ---------------- Player prefab ----------------

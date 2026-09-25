@@ -42,13 +42,23 @@ namespace JiuyaoTianxu.Combat
             if (!Object.HasStateAuthority) return;
             if (!GetInput(out PlayerInputData input)) return;
 
+            // Never trust client sticks: NaN/huge values are dropped/clamped here,
+            // before anything touches the authoritative transform.
+            input.Move = Sanitize(input.Move);
+            input.Aim = Sanitize(input.Aim);
+
             var move = new Vector3(input.Move.x, 0f, input.Move.y);
-            if (move.sqrMagnitude > 1f) move.Normalize();
 
             var speedMultiplier = _combat != null ? _combat.MoveSpeedMultiplier : 1f;
             transform.position += move * (_moveSpeed * speedMultiplier * Runner.DeltaTime);
 
             UpdateFacing(input);
+        }
+
+        private static Vector2 Sanitize(Vector2 v)
+        {
+            InputSanitizer.ClampStick(ref v.x, ref v.y);
+            return v;
         }
 
         /// <summary>Phase 0-E twin-stick facing (server-side, replicated through

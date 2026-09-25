@@ -41,6 +41,7 @@ public static class ConfigTableTests
         ParsingErrors();
         Binding();
         BindingErrors();
+        RealMonsterTable();
         Console.WriteLine($"ConfigTableTests: {_passed} passed, {_failed} failed");
         return _failed == 0 ? 0 : 1;
     }
@@ -124,5 +125,21 @@ public static class ConfigTableTests
         Check(Has("Hidden", "no public field"), "properties/private fields are not bindable");
         Check(s.Damage == 7 && s.HitShape == Shape.Sphere && s.CanCombo, "failed cells leave fields untouched");
         Check(Math.Abs(s.Range - 1f) < 1e-6, "valid cells in a row with errors still bind");
+    }
+
+    /// <summary>The committed monsters.csv binds cleanly through the real binder.</summary>
+    private static void RealMonsterTable()
+    {
+        var path = System.IO.Path.Combine(AppContext.BaseDirectory, "monsters.csv");
+        if (!System.IO.File.Exists(path)) path = Environment.GetEnvironmentVariable("MONSTERS_CSV") ?? path;
+        var table = CsvTable.Parse(System.IO.File.ReadAllText(path), "monsters.csv");
+        Check(table.Rows.Count >= 1, "monsters.csv has rows");
+        foreach (var row in table.Rows)
+        {
+            var m = new MonsterTableRow();
+            var errors = TableBinder.Bind(m, row);
+            Check(errors.Count == 0, "monsters.csv row binds: " + string.Join(" | ", errors));
+            Check(!string.IsNullOrEmpty(m.MonsterId) && m.MaxHp > 0, $"monsters.csv {m.MonsterId}: id and MaxHp valid");
+        }
     }
 }

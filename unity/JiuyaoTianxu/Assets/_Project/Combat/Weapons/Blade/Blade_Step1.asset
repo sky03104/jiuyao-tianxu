@@ -21,6 +21,7 @@ MonoBehaviour:
   RecoveryTime: 0.18
   Cooldown: 0
   ChargeOrCastTime: 0
+  InputMode: 0
   CanCombo: 1
   ComboWindow: 0.35
   CanMoveDuringAttack: 0

@@ -3,5 +3,5 @@
 set -e
 cd "$(dirname "$0")"
 OUT=${TMPDIR:-/tmp}/ControlsTests.exe
-mono "${CSC:?set CSC to Roslyn csc.exe}" -nologo -langversion:9 -out:"$OUT" ControlsTests.cs ../../Assets/_Project/Combat/Targeting/TargetingMath.cs ../../Assets/_Project/Core/StickMath.cs
+mono "${CSC:?set CSC to Roslyn csc.exe}" -nologo -langversion:9 -out:"$OUT" ControlsTests.cs ../../Assets/_Project/Combat/Targeting/TargetingMath.cs ../../Assets/_Project/Core/StickMath.cs ../../Assets/_Project/Core/InputSanitizer.cs
 mono "$OUT"

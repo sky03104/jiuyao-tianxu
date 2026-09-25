@@ -32,6 +32,10 @@ namespace JiuyaoTianxu.Combat.Framework
         [Tooltip("Bow/Staff only: time the button must be held before release/cast resolves.")]
         public float ChargeOrCastTime = 0f;
 
+        [Header("Input")]
+        [Tooltip("Tap = normal combo step; HoldRelease = charge then fire on release; Cast = cast delay then resolve.")]
+        public AttackInputMode InputMode = AttackInputMode.Tap;
+
         [Header("Combo")]
         public bool CanCombo = true;
         [Tooltip("Window after RecoveryTime ends during which the next combo input still chains.")]
