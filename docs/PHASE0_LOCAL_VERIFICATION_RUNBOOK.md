@@ -7,6 +7,13 @@
 
 所有指令都在 `unity/JiuyaoTianxu` 資料夾執行。`Unity.exe` 指 Unity 6000.5.5f1 的執行檔路徑。
 
+> **2026-09-26 已實跑一次**：0-D COMPLETE，0-E 只差觸控（結果見 CLAUDE-REPLY-008／CLAUDE-NOTE-006）。
+> 那次踩到的坑，下次注意：
+> - 沒裝 `pwsh`（PowerShell 7）也可以，改用 `powershell -ExecutionPolicy Bypass -File <腳本>`。
+> - batchmode 指令執行時，Editor **不能**同時開著這個專案（專案會被鎖住）。
+> - 影遁的 log 字樣是 `armed '影遁'`／`consumed armed seal '影遁'`，不是 `triggered`，報表的靈印總數有算進去。
+> - Unity Hub 裡九曜是獨立專案（路徑 `jiuyao-tianxu/unity/JiuyaoTianxu`），別開成其他專案。
+
 ---
 
 ## 步驟 0：先跑不需要 Unity 的檢查（1 分鐘）

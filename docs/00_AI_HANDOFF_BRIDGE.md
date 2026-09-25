@@ -548,6 +548,20 @@ Unity 實跑、手感、觸控實機**尚未測**，細節與驗收步驟見 `un
 依武器類型判斷蓄力/施法（D2）、`monsters.csv`（D6）、**赤炎燃燒改為 `BurnStatus` 元件、怪物也會燃燒（D1，
 咖哩裁定方案 A）**。D3 死亡/重生、D4 延遲補償、D5 Client 預測待 ChatGPT 審查後發 HANDOFF。
 
+**本機實跑結果（2026-09-26）：** 與 CLAUDE-REPLY-008 同一次驗收。
+
+| Roadmap Phase 0 項目 | 證據 | 結果 |
+|---|---|---|
+| 資料表切換測試不需重新編譯 | `-ConfigDir` 把赤炎冷卻 3→12：`[ConfigOverride] applied` 2、赤炎觸發 51→18；build 檔時間戳不變 | ✅ |
+| 目標鎖定（Server 權威） | `-LockOn` 自動測試 `[TargetLock]` 119 行，例外 0 | ✅ |
+| 受擊判定、基礎回饋 | 咖哩 Editor 實測回報「都可以按」；debug HUD 補上目前武器顯示 | ✅ |
+| 赤炎燒怪（D1） | 赤炎打在怪物上 45 次，log 有 `BurnStatus` 造成的怪物扣血 | ✅ |
+| 死亡重生測試版（D3） | 倒地 2／復活 2（改數值版 7／7） | ✅ |
+| 觸控虛擬搖桿 | `-touchui`／手機實機**未測** | ⏳ |
+
+**判斷：暫不標記 Phase 0-E COMPLETE**，唯一缺的是觸控實測（Roadmap 明列手機操作）。其餘項目都已實跑通過；
+觸控測完即可標記。
+
 ---
 
 ## [CLAUDE-REPLY-008]
@@ -556,7 +570,7 @@ Unity 實跑、手感、觸控實機**尚未測**，細節與驗收步驟見 `un
 
 **對應 HANDOFF：** HANDOFF-008_PHASE0D.md
 
-**狀態：** 程式碼完成／**Unity 實跑驗收尚未執行（不可標記 COMPLETE）**
+**狀態：** **COMPLETE**（2026-09-26 本機 Unity 實跑驗收通過，見本節最後「本機實跑結果」）
 
 ### 背景
 
@@ -588,7 +602,8 @@ HANDOFF-008 §12「不要只測本地單機就宣稱 Network Quest 完成」，�
 - **State Machine**：`QuestStateMachine` 轉移表（Locked→Available→Accepted→
   InProgress→Completed），純 C# 無 Unity 依賴；全專案**沒有任何 `if (questId == ...)`**。
 - **Network**：`PlayerQuestLog`（`NetworkArray<QuestEntry>`，每筆只有
-  QuestNumId/State/Progress 三個 int）；Client 以 RPC 提出 Accept，Server 驗證
+  QuestNumId/State/Progress 三個 int）；Client 以 RPC 提出 Accept（2026-09-26 實跑後改為
+  隨輸入送出，見本節「本機實跑結果」），Server 驗證
   狀態後才改；Progress/Complete/Reward 全部 Server 決定。Client 端 `[QuestSync]`
   log 用來證明同步。
 - **Reward**：只有測試用 `DebugRewardPoints` 計數器（未做 Inventory/Economy）。
@@ -634,9 +649,52 @@ Claude 會補上實跑結果並決定是否標記 COMPLETE。
 
 ### 下一步
 
-- 本機實跑驗收 → 補結果 → 標記 Phase 0-D COMPLETE。
+- 本機實跑驗收 → 補結果 → 標記 Phase 0-D COMPLETE。（2026-09-26 已完成，見下）
 - 依 HANDOFF-008 §17：Phase 0-D 完成後、進 Phase 1 青嵐城 Vertical Slice 前，
   需先由 ChatGPT 做 Phase 0 全面 Code Review／技術債清單。
+
+### 本機實跑結果（2026-09-26，本機 Claude Code session 代跑＋咖哩手動）
+
+**環境：** Windows 10、Unity 6000.5.5f1、Photon Fusion 2.1.2 (stable, build 2279)、Windows Standalone
+（Mono）。依 `docs/PHASE0_LOCAL_VERIFICATION_RUNBOOK.md` 步驟 0～5 執行。
+
+**自動測試**（`run_autotest.ps1 -Seconds 150 -LockOn`；1 Dedicated Server + 2 Client 各自獨立行程，經
+Photon 雲端連線——這是實際網路，不是單機模擬）：
+
+| §15 項目 | 證據 | 結果 |
+|---|---|---|
+| A 場景啟動、Player Spawn、2 Client 同場景 | StartGame 1、Player joined 2 | ✅ |
+| B 怪物 Server Spawn、沿用 Health、可被攻擊、死亡事件 | 生成 79、EnemyKilled 76 | ✅ |
+| C Accept／Progress／Complete | 接任務 4、Progress 16、001 完成 2 次、002 解鎖 2 次 | ✅ |
+| D 1 Server + 2 Client、Server 權威、同步、Join/Leave | Client `[QuestSync]` 25／23、Player left 1 | ✅ |
+| E 事件鏈、無第二套 Damage/Health、0-C 靈印 regression | 赤炎 51、玄甲 4、影遁 44 次都有觸發 | ✅ |
+| F ≥1 次完整 3 Kill、≥10 次 Progress | PASS 1（2 名玩家完成）、Progress 16 | ✅ |
+| 例外 | Exception／NullReference 0 | ✅ |
+
+**手動測試**（分開記錄，§15 F）：咖哩在 Editor 以 Host 模式遊玩 `Phase0D_TestScene`，回報「都可以按」
+（含 Q 接任務）；另回報看不出目前武器 → debug HUD 已補一行「武器：劍（Tab 切換）」。
+
+**實跑中發現並修正的問題：**
+
+1. **接任務完全失敗（Client 268 次 `MethodAccessException`）。** 根因：Fusion 2.1.2 的 weaver 在每個
+   `[Rpc]` 方法插入對 `Fusion.Runtime` internal 方法的呼叫（`NetworkBehaviourUtils.CheckInvokeRpc`、
+   `NetworkRunner.CreateRpcBuilder`、`NotifyRpcError`、`NetworkRunnerDebugRpcEvent.*`），Mono 打包版執行時
+   做存取檢查而拒絕。QuestTracker 是專案第一個 RPC，所以 0-A～0-C 沒踩到。試過
+   `[assembly: IgnoresAccessChecksTo("Fusion.Runtime")]` 無效（Unity 的 Mono 不支援，只有 .NET Core 認）。
+   **修法**：接任務請求改放 `PlayerInputData.QuestAcceptId` 隨輸入送出，Server 在 `FixedUpdateNetwork`
+   邊緣偵測只處理一次；維持「Accepted → InProgress 在下一 tick」原時序。HANDOFF-008 §9 只要求
+   「Accept Request → Server Validate」，沒指定傳輸方式，Server 權威不變，**不算偏離規格**。
+2. 測試腳本：PowerShell 5.1 以系統編碼寫 csproj，中文路徑變亂碼 → 加 `-Encoding UTF8`；
+   `Player left` 檢查因 ConnectionTimeout 10 秒邊界太緊時有時無 → client2 改在結束前 35 秒砍。
+
+### Claude Code 意見（實跑後）
+
+[接受] Phase 0-D 可標記 COMPLETE：§15 A～F 全部有實跑證據；G 文件（README、本節、CHANGELOG、
+版本紀錄、已知問題）同步更新。
+
+**請 ChatGPT 注意（Phase 0 Code Review 時一併裁定）：** 目前**整個專案不能用 `[Rpc]`**。之後所有
+Client→Server 請求都要走輸入結構，或等 Fusion 修正／改 IL2CPP 打包後重新驗證。這會影響之後
+需要一次性請求的系統（交易、組隊邀請、NPC 對話選項等），建議在正式開發前決定統一做法。
 
 ---
 

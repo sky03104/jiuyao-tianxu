@@ -1,5 +1,17 @@
 # CHANGELOG — 《九曜：天墟》
 
+## 2026-09-26（第三十六筆，Phase 0 本機實跑驗收：0-D COMPLETE、0-E 除觸控外通過）
+
+- 本機 Unity 6000.5.5f1＋Fusion 2.1.2 (build 2279) 照 `PHASE0_LOCAL_VERIFICATION_RUNBOOK.md` 跑完步驟 0～5。
+- **Phase 0-D 標記 COMPLETE**：1 Server + 2 Client 自動測試 PASS、例外 0、Join/Leave 正常；結果寫進
+  CLAUDE-REPLY-008。**Phase 0-E** 資料表免重新打包（赤炎 51→18）、目標鎖定、燒怪、死亡重生都通過，
+  觸控未測，暫不標 COMPLETE（CLAUDE-NOTE-006）。
+- 修正：Fusion 2.1.2 的 `[Rpc]` 在 Mono 打包版丟 `MethodAccessException`（weaver 呼叫 internal 方法），
+  接任務改走 `PlayerInputData.QuestAcceptId`。**專案目前不能新增 `[Rpc]`**，已請 ChatGPT 在 Code Review 裁定統一做法。
+- 修正：測試腳本在 PowerShell 5.1／中文路徑可用（csproj 改 UTF-8）；`Player left` 檢查改在結束前 35 秒砍 client2。
+- 新增：debug HUD 顯示目前武器（咖哩手感測試回報看不出拿什麼武器）。
+- Commit Phase0DSetup 產生的任務資產、測試怪 prefab、`Phase0D_TestScene`、Build Settings。
+
 ## 2026-09-25（第三十五筆，離線檢查工具化＋GitHub Actions）
 
 - 把雲端 session 一直手動做的離線編譯檢查整理進 repo：`unity/JiuyaoTianxu/Tools/CompileCheck/compile_check.sh`
