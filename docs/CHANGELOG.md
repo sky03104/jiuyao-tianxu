@@ -1,5 +1,13 @@
 # CHANGELOG — 《九曜：天墟》
 
+## 2026-09-25（第三十四筆，Phase 0 本機驗收操作手冊）
+
+- 新增 `docs/PHASE0_LOCAL_VERIFICATION_RUNBOOK.md`：PR #5～#10 都只做過離線編譯與單元測試，這份手冊把
+  0-D、0-E、技術自審修正（赤炎燒怪、死亡重生、InputMode 資料化等）排成一次跑完的順序，內容包括：單元測試 → Editor 設定 →
+  1 Server + 2 Client 自動測試（每項報表的期望值）→ 不重新打包改數值 → 手感檢查 → 回報格式 → 常見失敗處理；
+  附錄是可直接貼給 ChatGPT 的審查請求。
+- CLAUDE.md 加上提示：有 Unity 的 session 先跑這份手冊。
+
 ## 2026-09-25（第三十三筆，死亡／重生測試版＋死亡目標不可命中（技術自審 D3 測試版、D11））
 
 - 咖哩同意先做測試版。`Health` 新增 `IsDead`、`ServerRestoreFull()`；新增 `Gameplay/World/PlayerLifecycle`：
