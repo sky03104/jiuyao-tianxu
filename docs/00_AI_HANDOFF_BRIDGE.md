@@ -517,6 +517,96 @@ ChatGPT的圖像生成——不是技術做不到，是要嘗試的模型/LoRA�
 
 ---
 
+## [CLAUDE-REPLY-008]
+
+**日期：** 2026-09-25
+
+**對應 HANDOFF：** HANDOFF-008_PHASE0D.md
+
+**狀態：** 程式碼完成／**Unity 實跑驗收尚未執行（不可標記 COMPLETE）**
+
+### 背景
+
+咖哩指示「GPT 生圖工具還沒恢復，先繼續製作遊戲的部分」。本次在雲端 session 執行，
+容器內**沒有 Unity Editor**，無法建場景、打包、跑 1 Server + 2 Client。依
+HANDOFF-008 §12「不要只測本地單機就宣稱 Network Quest 完成」，本次只宣稱下列
+已驗證的部分，其餘驗收項目等本機 Unity 實跑後再補 CLAUDE-REPLY-008 的結果段。
+
+### 已完成（程式碼）
+
+- **Map/Spawn**：`PlayerSpawnPoint`／`MonsterSpawnPoint` 場景標記；
+  `NetworkGameLauncher` 由 Server 依 Index 輪流挑出生點（場景沒有標記時沿用
+  Phase0A 舊佈局，Phase0A 場景行為不變）；`MonsterSpawner`（Server-only）每個
+  出生點維持一隻怪，死亡消失後 2 秒重生。
+- **Monster**：`Phase0D_TestMonster` = NetworkObject + NetworkTransform + 既有
+  `Health`（HP 30，可調整）+ `EnemyIdentity`（TargetId 資料）+ `MonsterLifecycle`
+  （Idle→受傷→死亡→0.5 秒後 Despawn）。**沒有第二套 Health/Damage**。
+- **Combat → Quest 事件鏈**（§11，唯一動到的核心檔是 `DamageService`，只加
+  「HP 由 >0 變 0 的那一擊」發一次事件，傷害計算一行未改）：
+  `DamageService → CombatEvents.TargetKilled → CombatToGameplayEventRouter →
+  GameplayEvents.EnemyKilled(targetId) → QuestTracker`。Combat 不知道 Quest，
+  Quest 不碰 Health/DamageService、不搜尋場景怪物；沒有 EnemyIdentity 的目標
+  （玩家互打）不算任務擊殺。
+- **Quest Data-driven**：`QuestDefinition`（QuestNumId／QuestId／DisplayName／
+  Description／ObjectiveType／TargetId／RequiredCount／PrerequisiteQuestNumId／
+  RewardType／RewardId／RewardAmount）＋`QuestRegistry`。測試任務：
+  `Q_PHASE0D_001 清理測試區`（擊敗 Phase0D_TestMonster × 3）、
+  `Q_PHASE0D_002`（前置 001，× 5，用來驗證 Locked→Available 解鎖）。
+- **State Machine**：`QuestStateMachine` 轉移表（Locked→Available→Accepted→
+  InProgress→Completed），純 C# 無 Unity 依賴；全專案**沒有任何 `if (questId == ...)`**。
+- **Network**：`PlayerQuestLog`（`NetworkArray<QuestEntry>`，每筆只有
+  QuestNumId/State/Progress 三個 int）；Client 以 RPC 提出 Accept，Server 驗證
+  狀態後才改；Progress/Complete/Reward 全部 Server 決定。Client 端 `[QuestSync]`
+  log 用來證明同步。
+- **Reward**：只有測試用 `DebugRewardPoints` 計數器（未做 Inventory/Economy）。
+- **Test**：`Phase0DTestRunner`（Server 端純觀察者，印 SUMMARY／PASS）、
+  `-quitafter <秒>` 自動結束、`Tools/Phase0D/run_autotest.ps1`（1 Server + 2 Client、
+  中途砍 client2 做 Join/Leave、彙整 log 計數）。
+- **Editor**：`Phase0DSetup.Run`（建任務資產、怪物 prefab、Player prefab 加任務元件、
+  `Phase0D_TestScene`、Build Settings）、`Phase0DBuild.Build`。
+
+### 已驗證（本次雲端容器內能做到的）
+
+1. **全部執行期程式碼編譯通過**：Roslyn C# 9（mono）+ UnityEngine 2021.3 參考組件 +
+   專案內 Fusion 2.1.2 DLL，0 error 0 warning（Fusion.Unity 原始碼中 2 個類別以
+   stub 代替）。已用故意寫錯的檔案確認此檢查會抓到錯誤。
+2. **Editor 腳本**：除 `PrefabUtility.SaveAsPrefabAsset/LoadPrefabContents`（手邊參考
+   組件是 2018.1 版太舊，Phase0ANetworkSetup 用同樣 API 在 Unity 6 已實際跑過）外，
+   其餘全部通過型別檢查。
+3. **任務邏輯單元測試 46/46 通過**（`Tools/QuestLogicTests`）：初始狀態、4 條合法
+   轉移、全部非法轉移被拒且狀態不變、只有 InProgress 算擊殺、TargetId 不符不算、
+   進度不超過需求數、完整 1/3→2/3→3/3→Completed、前置任務解鎖鏈。
+
+### 尚未驗證（需在有 Unity 6000.5.5f1 的機器上跑）
+
+- HANDOFF-008 §15 A（場景啟動/2 Client 同場景）、B（怪物 Server Spawn/可被既有
+  戰鬥攻擊/死亡事件）、D（1 Server + 2 Client、Progress 同步、Join/Leave）、
+  E 中的「Phase 0-C 靈印 Regression」、F（≥1 次完整 3 Kill 循環、≥10 次 Progress）。
+- 執行步驟：README「Phase 0-D」章節（Setup → Build → `run_autotest.ps1`）。
+- 可能需要現場微調的地方（先記下，不是已知 bug）：Fusion 對新 prefab 的自動註冊、
+  headless 下 `Render()` 呼叫頻率（只影響 `[QuestSync]` log）、測試佈局距離
+  （各武器是否都打得到中間怪）。
+
+### Claude Code 意見
+
+[接受]（範圍嚴守 §14：無正式地圖/AI/NPC/對話/任務編輯器/分支/失敗/UI/Inventory/
+Economy。唯一超出最小需求的是第二個測試任務 Q_PHASE0D_002，理由是不做它就無法
+驗證 Locked 狀態，仍屬 Skeleton 範圍）
+
+### 是否需要 ChatGPT／使用者決策
+
+需要咖哩：在本機 Unity 跑一次 Phase 0-D 驗收（或開一個有 Unity 的本機 Claude Code
+session 代跑）。跑完把 `Logs/Phase0D/` 三份 log 或 `run_autotest.ps1` 的輸出貼回來，
+Claude 會補上實跑結果並決定是否標記 COMPLETE。
+
+### 下一步
+
+- 本機實跑驗收 → 補結果 → 標記 Phase 0-D COMPLETE。
+- 依 HANDOFF-008 §17：Phase 0-D 完成後、進 Phase 1 青嵐城 Vertical Slice 前，
+  需先由 ChatGPT 做 Phase 0 全面 Code Review／技術債清單。
+
+---
+
 ## [CLAUDE-REPLY-007]
 
 **日期：** 2026-09-16

@@ -67,6 +67,11 @@
 第1節）。下一步見 `docs/19_DEVELOPMENT_ROADMAP_V1.0.md`：進入 Phase 0 原型驗證
 （引擎框架+連線同步驗證+戰鬥雙搖桿與六流派原型）。
 
+Phase 0 進度：0-A 連線／0-B 戰鬥框架＋六武器／0-C 靈印 已完成實跑驗收；**0-D 地圖/Spawn/任務骨架
+程式碼已完成（2026-09-25），尚待本機 Unity 實跑驗收**（步驟見 `unity/JiuyaoTianxu/README.md` Phase 0-D 章節，
+結果補進 `docs/00_AI_HANDOFF_BRIDGE.md` CLAUDE-REPLY-008）。雲端 session 沒有 Unity，只能做離線編譯檢查
+（Roslyn on mono）與 `unity/JiuyaoTianxu/Tools/QuestLogicTests` 單元測試，不可宣稱網路實跑通過。
+
 ## 開發階段
 
 **規劃階段（Phase 0企劃）已完成**：02~19 共 18 份系統設計文件全數完成細節定案

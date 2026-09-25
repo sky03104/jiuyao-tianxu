@@ -6,6 +6,7 @@ using Fusion;
 using Fusion.Sockets;
 using JiuyaoTianxu.Combat.Framework;
 using JiuyaoTianxu.Core;
+using JiuyaoTianxu.Gameplay.World;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -31,7 +32,6 @@ namespace JiuyaoTianxu.Net
 
         private NetworkRunner _runner;
         private readonly Dictionary<PlayerRef, NetworkObject> _spawnedPlayers = new();
-        private static bool AutoTestMode => Environment.GetCommandLineArgs().Contains("-autotest");
 
         private async void Start()
         {
@@ -76,7 +76,19 @@ namespace JiuyaoTianxu.Net
             else
             {
                 Debug.Log($"[NetworkGameLauncher] StartGame succeeded as {mode}.");
+                BeginMonsterSpawning(_runner);
             }
+        }
+
+        /// <summary>Phase 0-D: server starts the scene's MonsterSpawner, if the scene
+        /// has one (Phase0A_NetworkTest doesn't, and is unaffected). Idempotent —
+        /// called after StartGame and again from OnSceneLoadDone, whichever finds
+        /// the live spawner instance first.</summary>
+        private static void BeginMonsterSpawning(NetworkRunner runner)
+        {
+            if (runner == null || !runner.IsServer) return;
+            var spawner = FindAnyObjectByType<MonsterSpawner>();
+            if (spawner != null) spawner.Begin(runner);
         }
 
         private static GameMode ResolveGameModeFromArgs()
@@ -122,6 +134,19 @@ namespace JiuyaoTianxu.Net
             var index = _spawnedPlayers.Count;
             var spawnPosition = new Vector3(index * 1.5f, 1f, 0f);
             var facing = index % 2 == 0 ? Quaternion.LookRotation(Vector3.right) : Quaternion.LookRotation(Vector3.left);
+
+            // Phase 0-D: scenes with PlayerSpawnPoint markers use them (server picks,
+            // round-robin by Index); scenes without (Phase0A_NetworkTest) keep the
+            // legacy face-to-face layout above unchanged.
+            var spawnPoints = FindObjectsByType<PlayerSpawnPoint>(FindObjectsSortMode.None)
+                .OrderBy(p => p.Index).ToArray();
+            if (spawnPoints.Length > 0)
+            {
+                var point = spawnPoints[index % spawnPoints.Length].transform;
+                spawnPosition = point.position;
+                facing = point.rotation;
+            }
+
             var playerObject = runner.Spawn(_playerPrefab, spawnPosition, facing, player);
             _spawnedPlayers[player] = playerObject;
 
@@ -144,7 +169,7 @@ namespace JiuyaoTianxu.Net
 
         public void OnInput(NetworkRunner runner, NetworkInput input)
         {
-            input.Set(AutoTestMode ? AutoTestInputProvider.Poll(runner.Tick.Raw) : KeyboardInputProvider.Poll());
+            input.Set(CommandLineFlags.AutoTest ? AutoTestInputProvider.Poll(runner.Tick.Raw) : KeyboardInputProvider.Poll());
         }
 
         public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input) { }
@@ -161,8 +186,11 @@ namespace JiuyaoTianxu.Net
         public void OnSessionListUpdated(NetworkRunner runner, List<SessionInfo> sessionList) { }
         public void OnCustomAuthenticationResponse(NetworkRunner runner, Dictionary<string, object> data) { }
         public void OnHostMigration(NetworkRunner runner, HostMigrationToken hostMigrationToken) { }
-        public void OnSceneLoadDone(NetworkRunner runner) =>
+        public void OnSceneLoadDone(NetworkRunner runner)
+        {
             Debug.Log("[NetworkGameLauncher] Scene load done.");
+            BeginMonsterSpawning(runner);
+        }
         public void OnSceneLoadStart(NetworkRunner runner) =>
             Debug.Log("[NetworkGameLauncher] Scene load start.");
         public void OnObjectExitAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player) { }

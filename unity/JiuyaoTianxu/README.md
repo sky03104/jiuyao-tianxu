@@ -1,4 +1,4 @@
-# 《九曜：天墟》Unity 專案 — Phase 0-A / 0-B / 0-C
+# 《九曜：天墟》Unity 專案 — Phase 0-A / 0-B / 0-C / 0-D
 
 ## 版本資訊
 - Unity Editor：**6000.5.5f1**
@@ -38,15 +38,28 @@ Assets/_Project/
         通用Hook呼叫它，新增第4個靈印不需要修改CombatController或DamageService
   Combat/SpiritSeals/ — 赤炎/玄甲/影遁三個Prototype資料資產+Registry
     （Phase0CSpiritSealDataSetup產生）
+  Gameplay/  — Phase 0-D（HANDOFF-008）地圖/Spawn/怪物/任務骨架：
+    Events/   — GameplayEvents（EnemyKilled）、CombatToGameplayEventRouter
+                （把CombatEvents.TargetKilled轉成EnemyKilled，只認有EnemyIdentity的目標）
+    World/    — PlayerSpawnPoint/MonsterSpawnPoint（場景標記）、MonsterSpawner（Server-only）、
+                MonsterLifecycle（死亡→Despawn）、EnemyIdentity（TargetId資料）
+                World/Prefabs/Phase0D_TestMonster.prefab（Phase0DSetup產生）
+    Quests/   — QuestDefinition/QuestRegistry（資料）、QuestStateMachine（純C#轉移表）、
+                PlayerQuestLog（網路狀態）、QuestTracker（唯一任務邏輯）、QuestEvents、QuestIds
+                Quests/Data/（Q_PHASE0D_001/002 + QuestRegistry，Phase0DSetup產生）
+    Testing/  — Phase0DTestRunner（Server端觀察者，印SUMMARY/PASS）
   UI/        — 介面與HUD（尚未使用）
   Economy/   — 經濟資料展示層（尚未使用）
   Guild/     — 公會資料展示層（尚未使用）
   Config/    — 資料驅動配置讀取模組（尚未使用）
   Art/       — 美術資源（尚未使用）
-  Scenes/    — 場景（Phase0A_NetworkTest.unity 為本階段測試場景）
+  Scenes/    — 場景（Phase0A_NetworkTest.unity；Phase0D_TestScene.unity 由Phase0DSetup產生）
   Editor/    — 一次性設定工具（Phase0ASetup/Phase0ANetworkSetup/Phase0BWeaponDataSetup/
-    Phase0CSpiritSealDataSetup/Phase0ABuild）
+    Phase0CSpiritSealDataSetup/Phase0ABuild/Phase0DSetup/Phase0DBuild）
   Settings/  — URP Pipeline Asset 等專案設定資產
+Tools/       — Unity不會匯入的外部工具（資料夾在Assets外）：
+  QuestLogicTests/ — 任務狀態機單元測試（不需Unity，run.ps1 / run.sh）
+  Phase0D/run_autotest.ps1 — Phase 0-D 1 Server+2 Client 自動驗收
 ```
 
 ## 如何開啟專案
@@ -312,6 +325,87 @@ HANDOFF-007允許此簡化）。
 3. **影遁的Armed狀態沒有時間限制**：目前設計是「武裝後永久有效，直到消耗或
    角色重新裝備」，沒有「武裝後N秒內必須用掉否則過期」的機制。HANDOFF-007
    沒有明確要求這點，Prototype階段先不加，正式設計時需要決定。
+
+---
+
+## Phase 0-D：Map / Spawn / Quest State Machine Skeleton（依`docs/HANDOFF-008_PHASE0D.md`）
+
+> **狀態：程式碼完成，Unity 實跑驗收尚未執行。** 本階段程式碼在沒有 Unity 的雲端環境撰寫，
+> 已做離線編譯檢查與任務邏輯單元測試（見下），但 HANDOFF-008 §15 的網路實跑項目要在本機
+> Unity 跑完才能標記 COMPLETE。
+
+### 事件鏈（Combat 與 Quest 分離）
+
+```
+CombatController / Projectile / 赤炎燃燒
+        ↓
+DamageService.Resolve()  ── 只在 HP 由 >0 變 0 的那一擊 ──→ CombatEvents.TargetKilled(source, target)
+                                                                  ↓
+                                        CombatToGameplayEventRouter（target 有 EnemyIdentity 才轉）
+                                                                  ↓
+                                        GameplayEvents.EnemyKilled(runner, targetId, killer, victim)
+                                                                  ↓
+                                        QuestTracker（擊殺者自己的那一份，TargetId 比對資料）
+                                                                  ↓
+                                        PlayerQuestLog（NetworkArray，同步給所有 Client）
+```
+
+- `DamageService` 只多了「發事件」這一步，傷害計算沒動；Quest 不能碰 Health／DamageService，
+  怪物也不會自己改任務進度。
+- 鞭屍（打 HP 已經是 0 的目標）不會重複發事件；玩家互打（沒有 EnemyIdentity）不算任務擊殺。
+- 擊殺歸屬：最後一擊的玩家（組隊共享不在本階段範圍）。
+
+### 任務狀態機
+
+`Locked →(前置完成) Available →(Accept) Accepted →(下一個 tick) InProgress →(達成) Completed`
+
+- 轉移表在 `QuestStateMachine`（純 C#），任務差異全部來自 `QuestDefinition` 資料，
+  沒有任何 `if (questId == ...)`。
+- Accept：Client 呼叫 `QuestTracker.RequestAccept` → RPC → Server 驗證狀態才轉移；非法請求會
+  印 `accept REJECTED`。
+- 完成時發測試獎勵（`DebugRewardPoints`），並把「前置任務 = 本任務」的 Locked 任務解鎖。
+- 網路只同步 `QuestNumId / State / Progress` 三個 int，定義資料各端從 `QuestRegistry` 查。
+
+| 測試任務 | 目標 | 前置 | 用途 |
+|---|---|---|---|
+| Q_PHASE0D_001 清理測試區 | Phase0D_TestMonster × 3 | 無（開局 Available） | HANDOFF 指定的主驗收任務 |
+| Q_PHASE0D_002 清理測試區（續） | Phase0D_TestMonster × 5 | Q_PHASE0D_001 | 驗證 Locked → Available 解鎖 |
+
+### 測試場景 Phase0D_TestScene（數值皆可調整）
+
+- 兩個玩家出生點 (-1.5,1,0) 面向 +X、(1.5,1,0) 面向 -X，三個怪物出生點在中線
+  (0,1,0)/(0,1,±1.2)，讓 `-autotest` 一直往前攻擊的輸入能用六種武器打到怪。
+- 怪物 HP 30、死亡 0.5 秒後消失、消失 2 秒後原地重生。
+- 手動遊玩（Editor Play = Host）：WASD 移動、Space/左鍵攻擊、Tab 換武器、E 測試閃避、**Q 接任務**。
+- `-autotest` 時 Client 每秒自動對第一個 Available 任務送出 Accept 請求。
+
+### 本機驗收步驟（Unity 6000.5.5f1，從 `unity/JiuyaoTianxu` 執行）
+
+```
+Unity.exe -batchmode -projectPath . -executeMethod Phase0ANetworkSetup.Run -quit   # 只有 prefab 不存在時需要
+Unity.exe -batchmode -projectPath . -executeMethod Phase0DSetup.Run -quit
+Unity.exe -batchmode -projectPath . -executeMethod Phase0DBuild.Build -quit
+pwsh Tools/Phase0D/run_autotest.ps1 -Seconds 90
+```
+
+`run_autotest.ps1` 會開 1 Server + 2 Client（皆 `-autotest -quitafter`），約結束前 15 秒砍掉
+client2 做 Join/Leave regression，最後列出：怪物生成數、EnemyKilled 數、Accept／Progress／
+Completed／解鎖次數、Server 的 `PASS` 行、兩個 Client 的 `[QuestSync]` 行數、靈印 log 數、
+Exception 數。**Server 的 PASS 條件**：≥2 名玩家完成 Q_PHASE0D_001，且 Progress 事件 ≥10。
+
+### 已做的驗證（雲端環境，無 Unity）
+
+1. **離線編譯**：Roslyn C# 9（mono）+ UnityEngine 2021.3 參考組件 + 專案內 Fusion 2.1.2 DLL，
+   `_Project` 全部執行期程式碼 0 error / 0 warning。Editor 腳本除 2018 版參考組件缺少的
+   `PrefabUtility` 新 API（Phase0ANetworkSetup 已在 Unity 6 用過）外皆通過。
+2. **單元測試**：`Tools/QuestLogicTests` 46/46 通過（合法/非法轉移全表、擊殺只在 InProgress 計數、
+   TargetId 比對、進度上限、完整 1/3→2/3→3/3→Completed、前置解鎖鏈）。
+
+### 待實跑確認的風險點（不是已知 bug）
+
+- Fusion 對 `Phase0D_TestMonster.prefab` 的自動 prefab 註冊（Projectile 當初同樣方式成功）。
+- headless `-nographics` 下 `Render()` 的呼叫——只影響 Client 的 `[QuestSync]` 證據 log。
+- 測試佈局距離是否讓六武器都打得到中間怪；打不到只影響擊殺速度，不影響任務邏輯。
 
 ## Photon App ID 設定（每台開發機都要做一次，不進版本控制）
 
