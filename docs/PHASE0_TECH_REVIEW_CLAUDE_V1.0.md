@@ -40,6 +40,11 @@
 | F3（=D2） | 蓄力／施法流程寫死在武器類型上 | 見下方 D2：已改為 `AttackDefinition.InputMode`（Tap／HoldRelease／Cast），attacks.csv 新增一欄、13 筆資產同步填值，行為不變 |
 | F4（=D6） | 怪物數值寫死在 Editor 腳本 | 見下方 D6：新增 `monsters.csv`（MonsterId／DisplayName／MaxHp／DespawnDelay），匯入器寫進 `EnemyIdentity.TargetId` 相符的 prefab；validate_tables 另外檢查任務 TargetId 必須是表內怪物 |
 | F5（=D1） | 赤炎燃燒對怪物無效、冷卻卻照樣消耗 | 咖哩裁定方案 A：新增 `Combat/Framework/StatusEffects/BurnStatus`（只有燃燒的最小元件），玩家與怪物 prefab 都掛；`SpiritSealSystem` 找不到 BurnStatus 時不觸發、不消耗冷卻；燃燒傷害仍走 DamageService。需重跑 0-C 靈印 regression |
+| F6（=D7） | 物理查詢緩衝 16 格，人多漏打 | 加大到 64，滿格時每幀最多一次警告 |
+| F7（=D8） | Projectile 每 tick 配置記憶體且自己查 Physics | 改走 `HitDetectionService.TryFindFirstHealth`（NonAlloc、不配置 List），命中規則不變 |
+| F8（=D10） | 每次命中/觸發都 `Debug.Log` | 新增 `Core/GameLog.Info`（`[Conditional]`：Editor／Development build／`JIUYAO_GAMELOG` 才編進去），戰鬥、靈印、任務、鎖定、怪物的逐事件 log 改用它；Phase 0 驗收 build 都是 Development，log 與 autotest 比對不受影響；警告/錯誤與啟動訊息維持 `Debug.*` |
+| F9（=D13） | 有人離開再加入時出生點重疊 | 改為分配「目前沒人佔用的最小出生點編號」，離開時釋放 |
+| F10（=D15） | `CombatState.Spawned` 在所有端寫同步屬性 | 只有 state authority 寫 |
 | F2 | Server 直接使用 Client 送來的搖桿值：改過的 Client 送 NaN 會讓角色座標變 NaN 並同步給所有人；送超長向量＝加速外掛 | 新增 `Core/InputSanitizer`，`PlayerMovement` 在碰 transform 前先清洗（NaN/Infinity→0、長度夾到 1）；單元測試 4 項 |
 
 ---
@@ -95,19 +100,19 @@
 | # | 問題 | 位置 | 方案 |
 |---|---|---|---|
 | D6 | ✅ 已修正（F4）：怪物數值原本寫死在 Editor 腳本 | `Editor/Phase0DSetup.cs`（原 `MonsterMaxHp = 30`） | 已改為 `monsters.csv` → prefab。**限制**：怪物不在 Server 執行期覆寫範圍（prefab 值不是共用 ScriptableObject），之後若需要可改成 MonsterDefinition 資產 |
-| D7 | 物理查詢緩衝只有 16 格，人多時會漏打目標 | `HitDetectionService.cs:17` | 20~50 人副本前加大（例如 64）並在滿格時 log 警告 |
-| D8 | Projectile 每 tick 用會配置記憶體的 `Physics.OverlapSphere`，且不經過 HitDetectionService | `Projectile.cs:45` | 改用 NonAlloc，或移進 HitDetectionService |
+| D7 | ✅ 已修正（F6）：物理查詢緩衝只有 16 格，人多時會漏打目標 | `HitDetectionService.cs:17` | 20~50 人副本前加大（例如 64）並在滿格時 log 警告 |
+| D8 | ✅ 已修正（F7）：Projectile 每 tick 用會配置記憶體的 `Physics.OverlapSphere`，且不經過 HitDetectionService | `Projectile.cs:45` | 改用 NonAlloc，或移進 HitDetectionService |
 | D9 | 擊退直接改目標 transform，沒有碰撞檢查，可能把角色推進牆裡 | `CombatController.cs:243` | 改成經 PlayerMovement／CharacterController 的位移 |
-| D10 | 每次命中、每次靈印觸發都 `Debug.Log`；Server 在多人時會被 log 拖慢 | `CombatController`、`SpiritSealSystem`、`QuestTracker` 等 | 包一層 `[Conditional]` 的 GameLog，Release／正式 Server 關閉，驗收用 build 保留 |
+| D10 | ✅ 已修正（F8）：每次命中、每次靈印觸發都 `Debug.Log`；Server 在多人時會被 log 拖慢 | `CombatController`、`SpiritSealSystem`、`QuestTracker` 等 | 包一層 `[Conditional]` 的 GameLog，Release／正式 Server 關閉，驗收用 build 保留 |
 | D11 | 死掉的目標（HP 0，消失前 0.5 秒）仍會吃掉近戰命中與箭矢 | `HitDetectionService`、`Projectile` | 與 D3 一起做：IsDead 目標不列入命中 |
 | D12 | `PlayerCount: 10`（每房上限） | `NetworkProjectConfig.fusion` | Phase 2 的 20~50 人副本前調整並做負載測試 |
-| D13 | 出生點索引用「目前人數」，有人離開再加入時兩人會疊在同一點 | `NetworkGameLauncher.cs:142` | 改成找目前沒人站的出生點，或用 PlayerRef 分配 |
+| D13 | ✅ 已修正（F9）：出生點索引用「目前人數」，有人離開再加入時兩人會疊在同一點 | `NetworkGameLauncher.cs:142` | 改成找目前沒人站的出生點，或用 PlayerRef 分配 |
 
 ### P2
 
 - **D14** 三個元件各自存一份 `[Networked] PreviousButtons`（CombatController／SpiritSealSystem／TargetLock），
   可以收斂成一個輸入元件統一算「這個 tick 剛按下」。
-- **D15** `CombatState.Spawned` 在所有端都寫 Networked 屬性（沒有 HasStateAuthority 判斷），無害但不一致。
+- **D15** ✅ 已修正（F10）：`CombatState.Spawned` 在所有端都寫 Networked 屬性。
 - **D16** IMGUI 原型每幀有少量 GC；Phase 1 換正式 UI 時一併淘汰，不值得現在優化。
 - **D17** 靜態事件（CombatEvents／GameplayEvents／QuestEvents）已用 runner 過濾；若之後改成同一個
   process 開多個 runner（Fusion 多 peer 測試模式），需再確認每個訂閱者都有過濾。
@@ -116,8 +121,8 @@
 
 ## 4. 手機效能初步觀察（只看程式碼，無實測）
 
-- 每 tick 的配置：CommandLineFlags 已改為只解析一次（0-E）；HitDetection 用 NonAlloc；
-  主要剩 D8（箭矢）與 D10（log 字串）。
+- 每 tick 的配置：CommandLineFlags 已改為只解析一次（0-E）；HitDetection 與箭矢都用 NonAlloc（F7）；
+  逐事件 log 在 release build 連字串組合一起剝除（F8）。
 - `FindHealthInRadius` 只在按鎖定鍵時配置一個 List，可接受。
 - `ConfigOverrideLoader` 只在 Server 啟動時跑一次。
 - **真正的效能數據需要實機**：建議 Phase 1 前用中階 Android 手機跑一次 Phase0D 場景，記錄 FPS、

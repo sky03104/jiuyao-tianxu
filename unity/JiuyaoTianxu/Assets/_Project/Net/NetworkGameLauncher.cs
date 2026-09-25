@@ -33,6 +33,7 @@ namespace JiuyaoTianxu.Net
 
         private NetworkRunner _runner;
         private readonly Dictionary<PlayerRef, NetworkObject> _spawnedPlayers = new();
+        private readonly Dictionary<PlayerRef, int> _spawnSlots = new();
 
         private async void Start()
         {
@@ -139,7 +140,11 @@ namespace JiuyaoTianxu.Net
             // shapes (offset along transform.forward) actually reach a target —
             // otherwise two players spawned side-by-side both facing +Z (the old
             // Quaternion.identity default) never overlap on short-range weapons.
-            var index = _spawnedPlayers.Count;
+            // Tech review D13: lowest slot nobody currently holds. Using the player
+            // count put a rejoining player on top of someone still in the game.
+            var index = 0;
+            while (_spawnSlots.ContainsValue(index)) index++;
+            _spawnSlots[player] = index;
             var spawnPosition = new Vector3(index * 1.5f, 1f, 0f);
             var facing = index % 2 == 0 ? Quaternion.LookRotation(Vector3.right) : Quaternion.LookRotation(Vector3.left);
 
@@ -173,6 +178,7 @@ namespace JiuyaoTianxu.Net
                 runner.Despawn(playerObject);
                 _spawnedPlayers.Remove(player);
             }
+            _spawnSlots.Remove(player);
         }
 
         public void OnInput(NetworkRunner runner, NetworkInput input)

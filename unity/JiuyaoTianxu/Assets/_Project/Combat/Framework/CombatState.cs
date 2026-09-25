@@ -18,6 +18,8 @@ namespace JiuyaoTianxu.Combat.Framework
 
         public override void Spawned()
         {
+            // Tech review D15: networked state is written by the state authority only.
+            if (!Object.HasStateAuthority) return;
             Phase = CombatPhase.Idle;
             ComboStep = 0;
         }

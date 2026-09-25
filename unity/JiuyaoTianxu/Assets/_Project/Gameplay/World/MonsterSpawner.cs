@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Fusion;
 using UnityEngine;
+using JiuyaoTianxu.Core;
 
 namespace JiuyaoTianxu.Gameplay.World
 {
@@ -49,7 +50,7 @@ namespace JiuyaoTianxu.Gameplay.World
                 SpawnInto(slot);
             }
 
-            Debug.Log($"[MonsterSpawner] Began on server with {_slots.Count} spawn point(s).");
+            GameLog.Info($"[MonsterSpawner] Began on server with {_slots.Count} spawn point(s).");
         }
 
         private void Update()
@@ -81,7 +82,7 @@ namespace JiuyaoTianxu.Gameplay.World
             {
                 slot.Current.name = $"{_monsterPrefab.name}#{_spawnCount}";
             }
-            Debug.Log($"[MonsterSpawner] Spawned {_monsterPrefab.name}#{_spawnCount} at point {slot.Point.Index}.");
+            GameLog.Info($"[MonsterSpawner] Spawned {_monsterPrefab.name}#{_spawnCount} at point {slot.Point.Index}.");
         }
     }
 }

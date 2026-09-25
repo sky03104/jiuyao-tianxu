@@ -1,5 +1,17 @@
 # CHANGELOG — 《九曜：天墟》
 
+## 2026-09-25（第三十二筆，技術自審 P1/P2 清理：D7/D8/D10/D13/D15）
+
+- D7：`HitDetectionService` 緩衝 16→64，滿格時警告。
+- D8：Projectile 改用新的 `HitDetectionService.TryFindFirstHealth`（NonAlloc、不配置 List），不再自己呼叫
+  會配置記憶體的 `Physics.OverlapSphere`；命中規則不變（第一個不是射手的 Health）。
+- D10：新增 `Core/GameLog`（`[Conditional]` Editor／DEVELOPMENT_BUILD／JIUYAO_GAMELOG），戰鬥／靈印／任務／
+  鎖定／怪物的逐事件 log 改用它，release build 連字串組合一起剝除；Phase 0 驗收用 Development build，log 不變。
+- D13：出生點改分配「目前沒人佔用的最小編號」，離開時釋放，避免重新加入時疊在別人身上。
+- D15：`CombatState.Spawned` 只在 state authority 寫同步屬性。
+- 剩餘待裁定：D3 死亡/重生、D4 延遲補償、D5 Client 預測、D9 擊退碰撞、D11 死亡目標命中（隨 D3）、D12 房間人數。
+- 離線編譯 0 error；三組單元測試全過。
+
 ## 2026-09-25（第三十一筆，技術自審 D1：赤炎燃燒改為 BurnStatus 元件，怪物也會燃燒）
 
 - 咖哩裁定方案 A。新增 `Combat/Framework/StatusEffects/BurnStatus.cs`：只處理燃燒的最小 NetworkBehaviour

@@ -1,5 +1,6 @@
 using Fusion;
 using UnityEngine;
+using JiuyaoTianxu.Core;
 
 namespace JiuyaoTianxu.Combat
 {
@@ -38,7 +39,7 @@ namespace JiuyaoTianxu.Combat
             }
 
             HP = Mathf.Max(0, HP - amount);
-            Debug.Log($"[Health] {name} took {amount} damage, HP now {HP}");
+            GameLog.Info($"[Health] {name} took {amount} damage, HP now {HP}");
         }
     }
 }

@@ -65,7 +65,7 @@ namespace JiuyaoTianxu.Combat.Targeting
                 if (LockOnSelector.ShouldBreak(target.HP > 0, ToPlanar(transform.position),
                         ToPlanar(target.transform.position), _breakRange))
                 {
-                    Debug.Log($"[TargetLock] {name} lock on {target.name} broken.");
+                    GameLog.Info($"[TargetLock] {name} lock on {target.name} broken.");
                     LockedTargetId = default;
                 }
             }
@@ -94,7 +94,7 @@ namespace JiuyaoTianxu.Combat.Targeting
             var next = LockOnSelector.Next(ranked, LockedTargetId.IsValid ? LockedTargetId.Raw : 0);
 
             LockedTargetId = next != 0 ? byId[next].Id : default;
-            Debug.Log(next != 0
+            GameLog.Info(next != 0
                 ? $"[TargetLock] {name} locked {byId[next].name} ({ranked.Count} candidate(s))."
                 : $"[TargetLock] {name} lock cleared.");
         }

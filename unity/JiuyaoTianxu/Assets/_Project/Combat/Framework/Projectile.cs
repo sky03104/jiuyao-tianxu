@@ -41,15 +41,14 @@ namespace JiuyaoTianxu.Combat.Framework
                 return;
             }
 
+            // Tech review D8: shared NonAlloc query (was an allocating
+            // Physics.OverlapSphere every tick). Same rule: first Health that
+            // isn't the shooter takes the hit.
             var radius = _attack != null && _attack.AreaRadius > 0f ? _attack.AreaRadius : 0.5f;
-            foreach (var hitCollider in Physics.OverlapSphere(transform.position, radius))
+            if (HitDetectionService.TryFindFirstHealth(transform.position, radius, _source, out var target))
             {
-                var target = hitCollider.GetComponentInParent<Health>();
-                if (target == null || target == _source) continue;
-
                 DamageService.Resolve(new DamageRequest(_source, target, _attack));
                 Runner.Despawn(Object);
-                return;
             }
         }
     }

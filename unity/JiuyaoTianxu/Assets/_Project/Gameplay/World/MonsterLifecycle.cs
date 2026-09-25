@@ -1,6 +1,7 @@
 using Fusion;
 using JiuyaoTianxu.Combat;
 using UnityEngine;
+using JiuyaoTianxu.Core;
 
 namespace JiuyaoTianxu.Gameplay.World
 {
@@ -36,7 +37,7 @@ namespace JiuyaoTianxu.Gameplay.World
             {
                 IsDead = true;
                 DespawnTimer = TickTimer.CreateFromSeconds(Runner, _despawnDelay);
-                Debug.Log($"[MonsterLifecycle] {name} died; despawning in {_despawnDelay}s.");
+                GameLog.Info($"[MonsterLifecycle] {name} died; despawning in {_despawnDelay}s.");
             }
 
             if (IsDead && DespawnTimer.Expired(Runner))

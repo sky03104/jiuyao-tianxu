@@ -53,7 +53,7 @@ namespace JiuyaoTianxu.Combat.Framework
             if (switchPressed && _state.IsIdle && _weapons is { Length: > 0 })
             {
                 WeaponIndex = (WeaponIndex + 1) % _weapons.Length;
-                Debug.Log($"[CombatController] {name} switched to weapon {CurrentWeapon.WeaponType}.");
+                GameLog.Info($"[CombatController] {name} switched to weapon {CurrentWeapon.WeaponType}.");
             }
 
             switch (_state.Phase)
@@ -125,7 +125,7 @@ namespace JiuyaoTianxu.Combat.Framework
                 _state.PhaseTimer = TickTimer.CreateFromSeconds(Runner, Mathf.Max(0.01f, attack.StartupTime));
             }
 
-            Debug.Log($"[CombatController] {name} starts {weapon.WeaponType} combo step {comboStep} ({attack.AttackId}).");
+            GameLog.Info($"[CombatController] {name} starts {weapon.WeaponType} combo step {comboStep} ({attack.AttackId}).");
         }
 
         private void EnterActive()
@@ -155,7 +155,7 @@ namespace JiuyaoTianxu.Combat.Framework
                 {
                     ApplyKnockback(target, attack.KnockbackForce);
                 }
-                Debug.Log($"[CombatController] {name} hit {target.name} for {result.FinalDamage} " +
+                GameLog.Info($"[CombatController] {name} hit {target.name} for {result.FinalDamage} " +
                           $"(step {_state.ComboStep}, {attack.AttackId}).");
             }
         }
@@ -186,7 +186,7 @@ namespace JiuyaoTianxu.Combat.Framework
                 foreach (var target in targets)
                 {
                     var result = DamageService.Resolve(new DamageRequest(_health, target, attack));
-                    Debug.Log($"[CombatController] {name} staff-hit {target.name} for {result.FinalDamage} ({attack.AttackId}).");
+                    GameLog.Info($"[CombatController] {name} staff-hit {target.name} for {result.FinalDamage} ({attack.AttackId}).");
                 }
             }
 
@@ -207,7 +207,7 @@ namespace JiuyaoTianxu.Combat.Framework
             Runner.Spawn(_projectilePrefab, spawnPos, Quaternion.LookRotation(direction), Object.InputAuthority,
                 (runner, obj) => Projectile.Initialize(runner, obj, direction, attack, _health));
 
-            Debug.Log($"[CombatController] {name} fired projectile ({attack.AttackId}).");
+            GameLog.Info($"[CombatController] {name} fired projectile ({attack.AttackId}).");
         }
 
         private void EnterRecovery()
