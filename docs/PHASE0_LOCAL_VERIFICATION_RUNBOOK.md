@@ -89,7 +89,9 @@ Editor 開 `Assets/_Project/Scenes/Phase0D_TestScene.unity`，按 Play（Host �
 - WASD 移動、IJKL 瞄準（角色會轉向）、F 鎖定（目標頭上出現「▼ 鎖定」，再按一次換目標，最後一次解除）
 - Space 攻擊、Tab 換武器、Q 接任務（左上 debug 任務清單會更新）
 - 打怪時怪物閃紅、跳傷害數字、頭上血條減少；弓要按住放開、杖有施法延遲（InputMode 資料化後要跟以前一樣）
-- 觸控 UI：打包時加 `-touchui` 參數，或直接在手機上跑
+- 觸控 UI：打包時加 `-touchui` 參數，或直接在手機上跑。**iPhone（沒有 Mac）用網頁版**：
+  `powershell -ExecutionPolicy Bypass -File Tools/Phase0D/run_webgl_touchtest.ps1`，手機用 Safari 開它印出的網址
+  （選跟手機同一個 Wi-Fi 的那個）、轉橫的測；細節見 README「手機觸控測試（網頁版）」。
 
 有覺得不對的地方都記下來：轉向太快或太慢、鎖定選到不合理的目標、搖桿大小等等（數值都可調整）。
 

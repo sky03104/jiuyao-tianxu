@@ -558,10 +558,16 @@ Unity 實跑、手感、觸控實機**尚未測**，細節與驗收步驟見 `un
 | 基礎回饋 | 咖哩 Editor 截圖可見傷害數字「3」與頭上血條；受擊閃紅沒有單獨確認；咖哩回報「測完了都可以按」 | ✅（閃紅未確認） |
 | 赤炎燒怪（D1） | 赤炎打在怪物上 32 次；server.log 有 11 筆 `BurnStatus → DamageService` 的怪物扣血（例：`Logs/Final/Phase0D/server.log:8844`） | ✅ |
 | 死亡重生測試版（D3） | 倒地 5／復活 5（改數值版 7／7） | ✅ |
-| 觸控虛擬搖桿 | `-touchui`／手機實機**未測**。曾嘗試在桌機用 `-touchui` 自動點擊測試，但桌面上開著咖哩的個人視窗，為避免誤點而中止 | ⏳ |
+| 觸控虛擬搖桿 | 咖哩是 iPhone（Windows 無法打包 iOS）→ 做網頁版給 Safari 測。程式模擬觸控（橫向 740×360）：兩指同時操作兩個搖桿都有反應；鎖／換／任務／閃／攻各一次，Server 紀錄依序出現鎖定、換武器、接任務、影遁、命中並打倒怪物、任務 1/3。**真人手感待咖哩在家用 iPhone 測** | ⏳（邏輯✅、手感待測） |
 
-**判斷：暫不標記 Phase 0-E COMPLETE**，唯一缺的是觸控實測（Roadmap 明列手機操作；兩指同時操作的雙搖桿只能在
-手機上驗）。其餘項目都已實跑通過；觸控測完即可標記。
+**判斷：暫不標記 Phase 0-E COMPLETE**，唯一缺的是真人用手機測手感。其餘項目都已實跑通過，觸控邏輯也用網頁版＋
+模擬觸控驗過；咖哩用 iPhone 測完即可標記。
+
+**網頁版測試時發現並處理（2026-09-26）：** ① Fusion 預設禁止網頁版用 Client-Server（`AllowClientServerModesInWebGL`，
+Photon 不建議）→ 只在打包網頁版期間打開、打包後還原；② 網頁版沒有系統字型，中文全部不顯示 → 加入 Noto Sans TC
+（SIL OFL，咖哩同意下載）當 debug 字型；③ 網頁版與電腦 Server 各自選到不同 Photon 區域 → GameNotFound → 改固定區域
+（預設 `hk`，`-region` 可覆寫）；④ iPhone 3 倍螢幕 debug 字太小 → 網頁版在手機上用 1 倍解析度。用法與細節見 README
+「手機觸控測試（網頁版）」，一鍵腳本 `Tools/Phase0D/run_webgl_touchtest.ps1`。
 
 ---
 

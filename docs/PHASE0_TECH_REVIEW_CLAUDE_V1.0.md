@@ -127,8 +127,17 @@
 - **D17** 靜態事件（CombatEvents／GameplayEvents／QuestEvents）已用 runner 過濾；若之後改成同一個
   process 開多個 runner（Fusion 多 peer 測試模式），需再確認每個訂閱者都有過濾。
 - **D19**（2026-09-26 實跑發現）Unity 6000.5 編譯有 CS0618 過時 API 警告：`FindObjectsSortMode`
-  （`MonsterSpawner.cs:45`、`NetworkGameLauncher.cs:154`）、`SimulationMessagePtr`（`NetworkGameLauncher.cs:199`）。
-  目前不影響執行，升級 Unity 前換成新 API。
+  （`MonsterSpawner.cs:45`、`NetworkGameLauncher.cs:174`）、`SimulationMessagePtr`（`NetworkGameLauncher.cs:222` 的
+  `OnUserSimulationMessage`，行號以 2026-09-26 版本為準）。目前不影響執行；**暫時不能改**：CI 離線編譯用 UnityEngine 2021.3 參考組件，新 API 在那裡
+  不存在，改了 CI 會壞。等 CI 參考組件升級時一起改。
+- **D21**（2026-09-26）Photon 區域目前固定 `hk`（`NetworkGameLauncher._photonRegion`，`-region` 可覆寫），因為各端自己
+  測速會選到不同區域而互相找不到（網頁版實測 GameNotFound；手機行動網路也可能發生）。正式上線的區域策略（多區、
+  依玩家選擇、Server 部署地點）待定。
+- **D22**（2026-09-26）debug 字型 Noto Sans TC（12 MB）放在 `UI/Resources/Fonts/`，所有打包都會帶上。正式 UI 字型
+  與只保留用到的字（子集化）待 15_UI_UX／16_ART_DIRECTION 決定。
+- **D23**（2026-09-26）網頁版（WebGL）只當手機觸控的測試工具：Photon 官方不建議 WebGL 用 Client-Server，
+  打包時才暫時打開 `AllowClientServerModesInWebGL`。正式平台仍是 iOS／Android App；iOS 打包需要 Mac（或雲端打包）
+  加 Apple 開發者帳號（每年約 US$99，要花錢，待咖哩決定時機）。
 - **D20** ✅ 已修正（2026-09-26，`1d366a7`）：`Projectile` 命中原本沒有 log，regression 無法確認弓有打中目標；
   已比照 CombatController 加一行命中 log（走 D10 的 GameLog），實跑確認弓命中怪物 14 次。
 

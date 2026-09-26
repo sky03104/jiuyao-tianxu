@@ -1,5 +1,15 @@
 # CHANGELOG — 《九曜：天墟》
 
+## 2026-09-26（第三十七筆，iPhone 觸控測試用網頁版）
+
+- 咖哩是 iPhone、Windows 無法打包 iOS → 新增 `Phase0DBuild.BuildWebGL`（網頁版以 Client 加入電腦 Server），
+  打包期間暫時打開 Fusion `AllowClientServerModesInWebGL`、關壓縮，打包後還原並切回 Windows；手機上用 1 倍解析度。
+- 網頁版沒有系統字型、中文全部不顯示 → 加入 Noto Sans TC（SIL OFL，咖哩同意下載）作為 debug HUD／觸控按鈕字型。
+- 網頁版與 Server 選到不同 Photon 區域（GameNotFound）→ `NetworkGameLauncher` 固定區域（預設 `hk`，`-region` 可覆寫）。
+- 新增 `Tools/Phase0D/run_webgl_touchtest.ps1`：一鍵開伺服器＋網頁、印手機網址、結束時列出操作紀錄。
+- 內建瀏覽器模擬觸控：兩指同時操作、五個按鈕都讓 Server 記錄到正確動作（含打倒怪物、任務 1/3）。真人手感待測。
+- 技術債清單加 D21（固定區域）、D22（debug 字型）、D23（網頁版只當測試工具、iOS 打包要花錢）；D19 註明暫時不能改的原因。
+
 ## 2026-09-26（第三十六筆，Phase 0 本機實跑驗收：0-D COMPLETE、0-E 除觸控外通過）
 
 - 本機 Unity 6000.5.5f1＋Fusion 2.1.2 (build 2279) 照 `PHASE0_LOCAL_VERIFICATION_RUNBOOK.md` 跑完步驟 0～5。

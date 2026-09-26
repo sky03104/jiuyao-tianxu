@@ -469,7 +469,8 @@ debug HUD 加上「武器：劍（Tab 切換）」一行、請他重新 Play 後
 
 ## Phase 0-E：Roadmap Phase 0 缺口補齊（資料表／雙搖桿／目標鎖定／基礎回饋）
 
-> **狀態：鍵盤／網路／資料表部分 2026-09-26 本機實跑通過；觸控（`-touchui`／手機）尚未測，暫不標 COMPLETE。**
+> **狀態：鍵盤／網路／資料表部分 2026-09-26 本機實跑通過；觸控已做成網頁版、程式模擬雙指觸控通過，
+> 真人用 iPhone 的手感還沒測，暫不標 COMPLETE（見「手機觸控測試（網頁版）」）。**
 > 結果見本章「本機實跑結果」。不是 ChatGPT 發的 HANDOFF，是咖哩交代「先繼續做
 > 其他的」後，Claude 對照 `docs/19_DEVELOPMENT_ROADMAP_V1.0.md` Phase 0 交付／驗收項目補上尚缺的部分
 > （紀錄見 `docs/00_AI_HANDOFF_BRIDGE.md` CLAUDE-NOTE-006）。全部是原型等級，數值皆可調整。
@@ -558,7 +559,39 @@ pwsh Tools/Phase0D/run_autotest.ps1 -Seconds 90 -LockOn
   （例：`Logs/Final/Phase0D/server.log:8844` `Phase0D_TestMonster#22 took 3 damage`）。
 - 玄甲少於 0-C 的 10 次是死亡重生後的預期變化（見下方「對 0-C 靈印 regression 數字的影響」）。
 - 手感：見 Phase 0-D「本機實跑結果」的手動段落（咖哩回報「測完了都可以按」，沒有提出數值調整）。
-- **未測**：`-touchui` 與手機實機的虛擬搖桿（兩指同時操作只能在手機上測）。
+- **未測（真人）**：手機實際手感。觸控邏輯已用網頁版＋模擬觸控驗過，見下一節。
+
+### 手機觸控測試（網頁版，2026-09-26）
+
+咖哩的手機是 iPhone，Windows 不能打包 iOS，所以做成**網頁版**，用 Safari 以 Client 加入電腦上的 Server 來測觸控。
+網頁版只是測試工具，正式平台仍是 iOS／Android App。
+
+**用法**（打包一次後，從 `unity/JiuyaoTianxu` 執行）：
+
+```
+Unity.exe -batchmode -projectPath . -executeMethod Phase0DBuild.Build -quit       # 電腦版（Server 用）
+Unity.exe -batchmode -projectPath . -executeMethod Phase0DBuild.BuildWebGL -quit  # 網頁版
+powershell -ExecutionPolicy Bypass -File Tools/Phase0D/run_webgl_touchtest.ps1
+```
+
+腳本會開專用伺服器＋網頁伺服器，印出手機要開的網址（同一個 Wi-Fi），手機轉橫的測；按 Enter 關閉並列出操作紀錄。
+
+**做網頁版時發現並處理的問題：**
+
+1. Fusion 預設不讓網頁版用 Client-Server 模式（`AllowClientServerModesInWebGL`，Photon 說不建議）。
+   `BuildWebGL` 只在打包期間打開，打包後還原；壓縮也只在打包期間關掉；打包前後設定檔逐位元組相同。
+2. **網頁版沒有系統字型，中文全部不顯示**（按鈕「攻閃鎖換任務」看不到）→ 加入 Noto Sans TC
+   （`UI/Resources/Fonts/`，SIL OFL 1.1，12 MB，`DebugFont` 給 debug HUD 與觸控按鈕用；正式字型待美術定案）。
+3. **網頁版和電腦 Server 各自測速選到不同 Photon 區域 → GameNotFound**。改成固定區域
+   （`NetworkGameLauncher._photonRegion`，預設 `hk`＝本機實測最快，`-region xx` 可覆寫），連上時 log 會印區域。
+4. iPhone 是 3 倍密度螢幕，固定大小的 debug 文字會變得很小 → 打包後把範本裡手機用的
+   `config.devicePixelRatio = 1` 打開。
+5. 按鈕位置是照**橫向**設計的，直拿時移動搖桿和「攻」會重疊，測試時要轉橫。
+
+**模擬觸控測試（程式送出的觸控事件，不是真手指）**：內建瀏覽器模擬橫向手機（740×360、Android），
+網頁版以 `[Player:5]` 加入 `hk` 區的 Server：兩指同時按（左移動＋右瞄準）兩個搖桿都有反應、角色會走；
+鎖／換／任務／閃／攻各按一次，Server 依序記錄鎖定目標、換成劍、接任務（`Available → Accepted → InProgress`）、
+影遁準備、劍第一招命中並打倒怪物、任務進度 1/3。**真人手感（大小、位置、靈敏度、Safari 手勢干擾）仍待咖哩用 iPhone 測。**
 
 ### 已做的驗證（雲端環境，無 Unity）
 
