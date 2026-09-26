@@ -371,7 +371,8 @@ DamageService.Resolve()  ── 只在 HP 由 >0 變 0 的那一擊 ──→ Co
   沒有任何 `if (questId == ...)`。
 - Accept：Client 呼叫 `QuestTracker.RequestAccept` → `ClientCommands.Send`（Fusion `SendReliableDataToServer`，
   可靠送達、每次請求送一次）→ Server 的 `NetworkGameLauncher.OnReliableDataReceived` → `ClientCommands.Dispatch`
-  → 只交給**發送者本人**註冊的處理者（每個 Server 端 `QuestTracker` 用自己的玩家註冊）→ 驗證狀態才轉移；
+  → 只交給**發送者本人**註冊的處理者（每個 Server 端 `QuestTracker` 用自己的玩家註冊）→ 先排隊，到下一個網路 tick
+  （`FixedUpdateNetwork`）才驗證狀態並轉移，跟 RPC 一樣在 tick 內生效（每 tick 最多 8 筆）；
   非法請求會印 `accept REJECTED`。發送者 PlayerRef 由傳輸層決定，Client 無法冒充別人。Host 自己的請求不經網路，
   直接在本機交給處理者。**不用 `[Rpc]`**，原因見「已知問題」。
 - 完成時發測試獎勵（`DebugRewardPoints`），並把「前置任務 = 本任務」的 Locked 任務解鎖。
@@ -438,7 +439,8 @@ Exception 數。**Server 的 PASS 條件**：≥2 名玩家完成 Q_PHASE0D_001�
 **最終 build 回歸（`b178fc0`）**：以上數字來自前一版 build（`a478bf2`）；之後只加了兩個防禦性修正（取消註冊前比對
 處理者、runner 關閉時清掉註冊），在最終 build 重跑：1 Server + 2 Client 150 秒 PASS 1、請求 4／收到 4／接取 4、
 例外 0；Host＋遠端 Client 兩人都完成 001、002、例外 0（`Logs/Final2/`）。再加上箭矢命中 log（`1d366a7`）後又跑一次
-150 秒：PASS 1、接取 4、Player left 1、例外 0（`Logs/Final3/`）。
+150 秒：PASS 1、接取 4、Player left 1、例外 0（`Logs/Final3/`）。接任務改成排隊到下一個 tick（`31b1795`）後再回歸：
+150 秒 PASS 1、請求 4／收到 4／接取 4、例外 0；Host＋遠端 Client 兩人都完成 001、002（`Logs/Final4/`）。
 
 **手動**（咖哩在 Editor 按 Play，截圖可見 Hierarchy 顯示 `Host P1`）：咖哩先回報「看不出來現在拿什麼武器」→
 debug HUD 加上「武器：劍（Tab 切換）」一行、請他重新 Play 後，他回報「測完了都可以按」（沒有逐項說明看到什麼）。

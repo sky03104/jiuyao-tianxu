@@ -691,7 +691,8 @@ Host＋1 個遠端 Client——Host 收到自己 `[Player:1]` 2 次、遠端 `[P
 （取消註冊前比對處理者、runner 關閉時清掉註冊，不影響正常流程），在最終 build 重跑：1 Server + 2 Client 150 秒
 PASS 1、Client 請求 4／Server 收到 4／接取 4、no handler 0、REJECTED 0、例外 0；Host＋遠端 Client 兩人都完成
 001、002、PASS 1、例外 0（log 在 `Logs/Final2/`）。之後只再加了箭矢命中 log（`1d366a7`），又跑一次 150 秒：
-PASS 1、接取 4、Player left 1、例外 0（`Logs/Final3/`）。
+PASS 1、接取 4、Player left 1、例外 0（`Logs/Final3/`）。接任務改成排隊到下一個 tick（`31b1795`）後再回歸：
+150 秒 PASS 1、請求 4／收到 4／接取 4、REJECTED 0、例外 0；Host＋遠端 Client 兩人都完成 001、002（`Logs/Final4/`）。
 
 **手動測試**（分開記錄，§15 F）：咖哩在 Editor 按 Play（截圖可見 `Host P1`）。先回報「看不出來現在拿什麼
 武器」→ debug HUD 加一行「武器：劍（Tab 切換）」；請他重新 Play 後回報「測完了都可以按」（沒有逐項說明）。
@@ -744,9 +745,9 @@ PASS 1、接取 4、Player left 1、例外 0（`Logs/Final3/`）。
    01_ARCHITECTURE_DECISIONS**，請裁定是否定為專案標準（之後的交易、組隊邀請、NPC 對話選項、商店都會用到）。
 2. 手機正式打包會用 IL2CPP（不做這種存取檢查），`[Rpc]` 在手機上可能正常；但 Dedicated Server 若用 Mono 就不行。
    建議 Server 打包方式（Mono／IL2CPP）一起定案，或等 Photon 修正後重新驗證。
-3. `ClientCommands` 的處理者在 `FixedUpdateNetwork` 之外執行（遠端命令在 Fusion 收資料的回呼裡、Host 自己的命令在
-   `Update` 裡），並在那裡修改 `[Networked]` 狀態。實跑全部正常，但 Fusion 官方對「State Authority 在 tick 外改
-   狀態」有沒有限制，我們查不到明文。若要當專案標準，建議改成「收到命令先排隊、在下一個 tick 處理」，或向 Photon 確認。
+3. ~~`ClientCommands` 的處理者在 tick 外改 `[Networked]` 狀態~~ **已處理（2026-09-26，`31b1795`）**：Photon 官方手冊
+   （NetworkBehaviour & [Networked] Properties）沒寫 tick 外能不能改，查不到明文就不賭——命令收到後先排隊，在下一個
+   `FixedUpdateNetwork` 才處理，跟 RPC 一樣在 tick 內生效。之後用 `ClientCommands` 的新命令也請照這個做法。
 
 ---
 

@@ -123,7 +123,7 @@ Editor 開 `Assets/_Project/Scenes/Phase0D_TestScene.unity`，按 Play（Host �
 > (1) **D18（最優先）**：Fusion 2.1.2 的 `[Rpc]` 在 Mono 打包版整個不能用（weaver 呼叫 internal 方法 →
 >     MethodAccessException）。目前一次性 Client→Server 命令改走 `Core/ClientCommands`
 >     （`SendReliableDataToServer`，按發送者註冊處理者）。請裁定：是否定為專案標準並寫進 01_ARCHITECTURE_DECISIONS？
->     Dedicated Server 用 Mono 還是 IL2CPP 打包？命令處理者目前在 tick 外改 `[Networked]` 狀態，要不要改成排隊到下一個 tick？
+>     Dedicated Server 用 Mono 還是 IL2CPP 打包？（命令已改成排隊到下一個 tick 才處理，跟 RPC 一樣在 tick 內生效。）
 > (2) D4 延遲補償：Fusion LagCompensation 目前關閉，03 戰鬥文件要求短窗口判定要能回溯；
 > (3) D5 Client 預測：只預測移動，還是連攻擊起手也預測？
 > (4) D3 正式死亡規則：懲罰、復活點、組隊救援、副本內規則；
