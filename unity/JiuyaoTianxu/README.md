@@ -339,9 +339,8 @@ HANDOFF-007允許此簡化）。
 
 ## Phase 0-D：Map / Spawn / Quest State Machine Skeleton（依`docs/HANDOFF-008_PHASE0D.md`）
 
-> **狀態：程式碼完成，Unity 實跑驗收尚未執行。** 本階段程式碼在沒有 Unity 的雲端環境撰寫，
-> 已做離線編譯檢查與任務邏輯單元測試（見下），但 HANDOFF-008 §15 的網路實跑項目要在本機
-> Unity 跑完才能標記 COMPLETE。
+> **狀態：COMPLETE（2026-09-26 本機 Unity 6000.5.5f1 實跑驗收通過）。** 結果見下方「本機實跑結果」。
+> 實跑時發現 Fusion 2.1.2 的 `[Rpc]` 在 Mono 打包版不能用，接任務已改走 `ClientCommands`（見「已知問題」）。
 
 ### 事件鏈（Combat 與 Quest 分離）
 
@@ -370,8 +369,12 @@ DamageService.Resolve()  ── 只在 HP 由 >0 變 0 的那一擊 ──→ Co
 
 - 轉移表在 `QuestStateMachine`（純 C#），任務差異全部來自 `QuestDefinition` 資料，
   沒有任何 `if (questId == ...)`。
-- Accept：Client 呼叫 `QuestTracker.RequestAccept` → RPC → Server 驗證狀態才轉移；非法請求會
-  印 `accept REJECTED`。
+- Accept：Client 呼叫 `QuestTracker.RequestAccept` → `ClientCommands.Send`（Fusion `SendReliableDataToServer`，
+  可靠送達、每次請求送一次）→ Server 的 `NetworkGameLauncher.OnReliableDataReceived` → `ClientCommands.Dispatch`
+  → 只交給**發送者本人**註冊的處理者（每個 Server 端 `QuestTracker` 用自己的玩家註冊）→ 先排隊，到下一個網路 tick
+  （`FixedUpdateNetwork`）才驗證狀態並轉移，跟 RPC 一樣在 tick 內生效（每 tick 最多 8 筆）；
+  非法請求會印 `accept REJECTED`。發送者 PlayerRef 由傳輸層決定，Client 無法冒充別人。Host 自己的請求不經網路，
+  直接在本機交給處理者。**不用 `[Rpc]`**，原因見「已知問題」。
 - 完成時發測試獎勵（`DebugRewardPoints`），並把「前置任務 = 本任務」的 Locked 任務解鎖。
 - 網路只同步 `QuestNumId / State / Progress` 三個 int，定義資料各端從 `QuestRegistry` 查。
 
@@ -397,7 +400,7 @@ Unity.exe -batchmode -projectPath . -executeMethod Phase0DBuild.Build -quit
 pwsh Tools/Phase0D/run_autotest.ps1 -Seconds 90
 ```
 
-`run_autotest.ps1` 會開 1 Server + 2 Client（皆 `-autotest -quitafter`），約結束前 15 秒砍掉
+`run_autotest.ps1` 會開 1 Server + 2 Client（皆 `-autotest -quitafter`），約結束前 35 秒砍掉
 client2 做 Join/Leave regression，最後列出：怪物生成數、EnemyKilled 數、Accept／Progress／
 Completed／解鎖次數、Server 的 `PASS` 行、兩個 Client 的 `[QuestSync]` 行數、靈印 log 數、
 Exception 數。**Server 的 PASS 條件**：≥2 名玩家完成 Q_PHASE0D_001，且 Progress 事件 ≥10。
@@ -410,17 +413,67 @@ Exception 數。**Server 的 PASS 條件**：≥2 名玩家完成 Q_PHASE0D_001�
 2. **單元測試**：`Tools/QuestLogicTests` 46/46 通過（合法/非法轉移全表、擊殺只在 InProgress 計數、
    TargetId 比對、進度上限、完整 1/3→2/3→3/3→Completed、前置解鎖鏈）。
 
-### 待實跑確認的風險點（不是已知 bug）
+### 本機實跑結果（2026-09-26，Windows Standalone Mono，Unity 6000.5.5f1＋Fusion 2.1.2 build 2279）
 
-- Fusion 對 `Phase0D_TestMonster.prefab` 的自動 prefab 註冊（Projectile 當初同樣方式成功）。
-- headless `-nographics` 下 `Render()` 的呼叫——只影響 Client 的 `[QuestSync]` 證據 log。
-- 測試佈局距離是否讓六武器都打得到中間怪；打不到只影響擊殺速度，不影響任務邏輯。
+**自動測試**（`run_autotest.ps1 -Seconds 150 -LockOn`，最終版 build）：1 Dedicated Server + 2 Client 是
+**同一台電腦上的 3 個獨立行程**，經 Photon 雲端連線（有真實網路往返，但不是多台機器或手機網路）。
+
+| 項目 | 結果 | 期望 |
+|---|---|---|
+| StartGame / Player joined / Player left | 1 / 2 / 1 | 1 / 2 / 1 |
+| 怪物生成 / EnemyKilled | 68 / 65 | ≥3 / >0 |
+| Client 送出接任務請求 / Server 收到 / 接任務成功 | 4 / 4 / 4（REJECTED 0） | 一次請求一次接取 |
+| Progress 行 | 16 | ≥10 |
+| Q_PHASE0D_001 完成 / 002 解鎖 | 2 / 2 | 2 / ≥1 |
+| PASS 行 | 1 | 1 |
+| Client1 / Client2 `[QuestSync]` | 21 / 20 | >0 |
+| Exception / NullReference | **0** | 0 |
+
+**Host 模式**（headless：`JiuyaoTianxu.exe -batchmode -nographics -autotest -quitafter 60 -netmode host`）：
+- 只有 Host：Host 自己的玩家送出 2 次請求 → 2 次接取，001 完成、002 解鎖→接取→完成，REJECTED 0、例外 0。
+- Host＋1 個遠端 Client（`-netmode client`）：Host 收到 `[Player:1]`（自己）2 次、`[Player:2]`（遠端）2 次命令——
+  **遠端 Client 的發送者是它自己的編號，不是 None**；兩名玩家都完成 001、002，PASS 1、REJECTED 0、例外 0，
+  Client 端看得到 Host 玩家的任務同步（`[QuestSync] (remote [Player:1])` 8 行）。
+- log：`Logs/Final/HostOnly/`、`Logs/Final/HostClient/`（Logs 不進版控）。
+
+**最終 build 回歸（`b178fc0`）**：以上數字來自前一版 build（`a478bf2`）；之後只加了兩個防禦性修正（取消註冊前比對
+處理者、runner 關閉時清掉註冊），在最終 build 重跑：1 Server + 2 Client 150 秒 PASS 1、請求 4／收到 4／接取 4、
+例外 0；Host＋遠端 Client 兩人都完成 001、002、例外 0（`Logs/Final2/`）。再加上箭矢命中 log（`1d366a7`）後又跑一次
+150 秒：PASS 1、接取 4、Player left 1、例外 0（`Logs/Final3/`）。接任務改成排隊到下一個 tick（`31b1795`）後再回歸：
+150 秒 PASS 1、請求 4／收到 4／接取 4、例外 0；Host＋遠端 Client 兩人都完成 001、002（`Logs/Final4/`）。
+
+**手動**（咖哩在 Editor 按 Play，截圖可見 Hierarchy 顯示 `Host P1`）：咖哩先回報「看不出來現在拿什麼武器」→
+debug HUD 加上「武器：劍（Tab 切換）」一行、請他重新 Play 後，他回報「測完了都可以按」（沒有逐項說明看到什麼）。
+⚠️ 手動測試時接任務還是改版前的做法；最終版的 Host 接任務是上面 headless Host 測試驗的，
+還沒有人在 Editor 裡手動按 Q 試過最終版。
+
+原本的三個風險點實跑結論：Fusion 自動註冊怪物 prefab 正常；headless 下 `Render()` 有呼叫（`[QuestSync]` 有 log）；
+命中怪物的 log：刀 19、劍 16、槍 46、重刃 24、靈杖 27 次（`Logs/Final/`）；弓原本沒有命中 log，補上後
+（`1d366a7`）實跑：射出 29 箭、命中 18（怪物 14、玩家 4），例：`Logs/Final3/Phase0D/server.log:4602`
+`projectile-hit Phase0D_TestMonster#9 for 21 (Bow_Shot)`——**六種武器都確認打得到怪**。
+
+### 已知問題
+
+1. **Fusion 2.1.2 的 `[Rpc]` 在 Mono 打包版不能用**：weaver 在 RPC 方法裡插入對 `Fusion.Runtime`
+   internal 方法的呼叫（`CheckInvokeRpc`、`CreateRpcBuilder`、`NotifyRpcError`、`NetworkRunnerDebugRpcEvent.*`，
+   掃描打包後 `Assembly-CSharp.dll` 對 Fusion 的參照確認），Mono 執行時拒絕 → `MethodAccessException`。
+   `[IgnoresAccessChecksTo]` 無效（Unity 的 Mono 不認）。**專案目前不能新增 `[Rpc]`**；Client→Server 的一次性請求
+   請走 `Core/ClientCommands`（加一個命令編號；Server 端用 `ClientCommands.Register(runner, 玩家, 命令, 處理函式)`
+   註冊、Despawned 時 `Unregister`；Client 端 `ClientCommands.Send`）。
+   升級 Fusion 或改用 IL2CPP 打包時要重新測。`[Networked]` 屬性不受影響。
+   - Host 自己的命令**不經** Fusion 的 loopback（loopback 回來的 sender 是 `PlayerRef.None`，官方文件沒寫，
+     實測發現），而是直接在本機交給處理者；Server 收到 sender 是 None 的命令一律丟棄（沒有人註冊 None）。
+   - 處理者按「(runner, 發送者, 命令)」註冊，命令只會送到發送者本人的處理者——等於原本 RPC 的
+     `RpcSources.InputAuthority` 限制，由 `ClientCommands` 統一把關，新功能不會漏寫。
+2. 測試出生點很擠（玩家與怪只差 1.5m），是為了讓 `-autotest` 固定往前打就能命中，數值可調整。
 
 ---
 
 ## Phase 0-E：Roadmap Phase 0 缺口補齊（資料表／雙搖桿／目標鎖定／基礎回饋）
 
-> **狀態：程式碼完成，Unity 實跑驗收尚未執行。** 不是 ChatGPT 發的 HANDOFF，是咖哩交代「先繼續做
+> **狀態：鍵盤／網路／資料表部分 2026-09-26 本機實跑通過；觸控已做成網頁版、程式模擬雙指觸控通過，
+> 真人用 iPhone 的手感還沒測，暫不標 COMPLETE（見「手機觸控測試（網頁版）」）。**
+> 結果見本章「本機實跑結果」。不是 ChatGPT 發的 HANDOFF，是咖哩交代「先繼續做
 > 其他的」後，Claude 對照 `docs/19_DEVELOPMENT_ROADMAP_V1.0.md` Phase 0 交付／驗收項目補上尚缺的部分
 > （紀錄見 `docs/00_AI_HANDOFF_BRIDGE.md` CLAUDE-NOTE-006）。全部是原型等級，數值皆可調整。
 
@@ -490,6 +543,57 @@ pwsh Tools/Phase0D/run_autotest.ps1 -Seconds 90 -LockOn
   報表的「赤炎 burned a monster」應大於 0；同時確認 0-C 三個靈印的觸發次數仍在合理範圍。
   **一定要先跑 `Phase0DSetup`（或 `Phase0ESetup`）**，Player prefab 才會加上 BurnStatus，否則玩家之間不會燃燒。
 - 預設的 `-autotest` 按鍵節奏**完全沒變**（鎖定要加 `-autotest-lockon` 才會按），Phase 0-D 驗收結果不受影響。
+
+### 本機實跑結果（2026-09-26）
+
+| 項目 | 一般版（`-LockOn`） | 改數值版（`-ConfigDir`，赤炎冷卻 3→12） |
+|---|---|---|
+| `[TargetLock]` 行 | 101 | 0（沒加 `-LockOn`，預期） |
+| `[ConfigOverride] applied` | 0 | 2 |
+| 赤炎觸發（其中打在怪物上） | 43（32） | **18**（8）— 明顯下降 |
+| 玄甲觸發 | 6 | 8 |
+| 影遁 armed／consumed | 42／37 | 43／39 |
+| 玩家倒地／復活 | 5／5 | 7／7 |
+| PASS／Exception | 1／0 | 1／0 |
+
+- 兩次都用同一個最終版 build，改數值版**沒有重新打包**（兩次之間 `Assembly-CSharp.dll` 時間戳相同）。
+- 燃燒確實扣怪物血：一般版 server.log 有 11 筆由 `BurnStatus` 呼叫 `DamageService` 造成的怪物扣血
+  （例：`Logs/Final/Phase0D/server.log:8844` `Phase0D_TestMonster#22 took 3 damage`）。
+- 玄甲少於 0-C 的 10 次是死亡重生後的預期變化（見下方「對 0-C 靈印 regression 數字的影響」）。
+- 手感：見 Phase 0-D「本機實跑結果」的手動段落（咖哩回報「測完了都可以按」，沒有提出數值調整）。
+- **未測（真人）**：手機實際手感。觸控邏輯已用網頁版＋模擬觸控驗過，見下一節。
+
+### 手機觸控測試（網頁版，2026-09-26）
+
+咖哩的手機是 iPhone，Windows 不能打包 iOS，所以做成**網頁版**，用 Safari 以 Client 加入電腦上的 Server 來測觸控。
+網頁版只是測試工具，正式平台仍是 iOS／Android App。
+
+**用法**（打包一次後，從 `unity/JiuyaoTianxu` 執行）：
+
+```
+Unity.exe -batchmode -projectPath . -executeMethod Phase0DBuild.Build -quit       # 電腦版（Server 用）
+Unity.exe -batchmode -projectPath . -executeMethod Phase0DBuild.BuildWebGL -quit  # 網頁版
+powershell -ExecutionPolicy Bypass -File Tools/Phase0D/run_webgl_touchtest.ps1
+```
+
+腳本會開專用伺服器＋網頁伺服器，印出手機要開的網址（同一個 Wi-Fi），手機轉橫的測；按 Enter 關閉並列出操作紀錄。
+
+**做網頁版時發現並處理的問題：**
+
+1. Fusion 預設不讓網頁版用 Client-Server 模式（`AllowClientServerModesInWebGL`，Photon 說不建議）。
+   `BuildWebGL` 只在打包期間打開，打包後還原；壓縮也只在打包期間關掉；打包前後設定檔逐位元組相同。
+2. **網頁版沒有系統字型，中文全部不顯示**（按鈕「攻閃鎖換任務」看不到）→ 加入 Noto Sans TC
+   （`UI/Resources/Fonts/`，SIL OFL 1.1，12 MB，`DebugFont` 給 debug HUD 與觸控按鈕用；正式字型待美術定案）。
+3. **網頁版和電腦 Server 各自測速選到不同 Photon 區域 → GameNotFound**。改成固定區域
+   （`NetworkGameLauncher._photonRegion`，預設 `hk`＝本機實測最快，`-region xx` 可覆寫），連上時 log 會印區域。
+4. iPhone 是 3 倍密度螢幕，固定大小的 debug 文字會變得很小 → 打包後把範本裡手機用的
+   `config.devicePixelRatio = 1` 打開。
+5. 按鈕位置是照**橫向**設計的，直拿時移動搖桿和「攻」會重疊，測試時要轉橫。
+
+**模擬觸控測試（程式送出的觸控事件，不是真手指）**：內建瀏覽器模擬橫向手機（740×360、Android），
+網頁版以 `[Player:5]` 加入 `hk` 區的 Server：兩指同時按（左移動＋右瞄準）兩個搖桿都有反應、角色會走；
+鎖／換／任務／閃／攻各按一次，Server 依序記錄鎖定目標、換成劍、接任務（`Available → Accepted → InProgress`）、
+影遁準備、劍第一招命中並打倒怪物、任務進度 1/3。**真人手感（大小、位置、靈敏度、Safari 手勢干擾）仍待咖哩用 iPhone 測。**
 
 ### 已做的驗證（雲端環境，無 Unity）
 

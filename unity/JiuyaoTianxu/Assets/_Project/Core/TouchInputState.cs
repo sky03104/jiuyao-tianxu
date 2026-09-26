@@ -49,7 +49,8 @@ namespace JiuyaoTianxu.Core
             if (_lockOn) { data.Buttons.Set(PlayerButton.LockOn, true); _lockOn = false; }
         }
 
-        /// <summary>Quest accept is an RPC request, not tick input (see QuestTracker).</summary>
+        /// <summary>Quest accept is a one-shot request sent via ClientCommands, not
+        /// tick input (see QuestTracker).</summary>
         public static bool ConsumeQuestAccept()
         {
             var pressed = _questAccept;

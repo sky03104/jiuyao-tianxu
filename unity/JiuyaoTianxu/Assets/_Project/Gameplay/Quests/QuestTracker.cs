@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Fusion;
 using JiuyaoTianxu.Combat;
 using JiuyaoTianxu.Core;
@@ -12,7 +13,8 @@ namespace JiuyaoTianxu.Gameplay.Quests
     ///
     /// Server side:
     ///   - initialises every registry quest to Locked/Available from data;
-    ///   - validates accept requests (RPC from the owning client);
+    ///   - validates accept requests (ClientCommands.QuestAccept from the owning
+    ///     client — not an [Rpc], see ClientCommands for why);
     ///   - advances Accepted → InProgress on the next tick;
     ///   - consumes GameplayEvents.EnemyKilled for kills credited to this player;
     ///   - completes, grants the test reward and unlocks dependent quests.
@@ -34,6 +36,12 @@ namespace JiuyaoTianxu.Gameplay.Quests
         private Health _health;
         private bool _spawned;
         private bool _subscribed;
+        private PlayerRef _commandOwner; // cached: Despawned must unregister the same key
+        /// <summary>Server: accept requests received since the last tick. ClientCommands
+        /// arrive outside the simulation (a callback, or Update on a host), so they are
+        /// applied in FixedUpdateNetwork like an RPC would be.</summary>
+        private readonly List<int> _pendingAccepts = new();
+        private const int MaxPendingAccepts = 8; // a flooding client can't grow this
         private float _nextAutoAcceptTime;
         private readonly QuestEntry[] _lastSeen = new QuestEntry[PlayerQuestLog.Capacity];
 
@@ -61,6 +69,8 @@ namespace JiuyaoTianxu.Gameplay.Quests
             {
                 InitializeEntries();
                 GameplayEvents.EnemyKilled += OnEnemyKilled;
+                _commandOwner = Owner;
+                ClientCommands.Register(Runner, _commandOwner, ClientCommands.QuestAccept, QueueAccept);
                 _subscribed = true;
             }
         }
@@ -70,6 +80,7 @@ namespace JiuyaoTianxu.Gameplay.Quests
             if (_subscribed)
             {
                 GameplayEvents.EnemyKilled -= OnEnemyKilled;
+                ClientCommands.Unregister(runner, _commandOwner, ClientCommands.QuestAccept, QueueAccept);
                 _subscribed = false;
             }
             _spawned = false;
@@ -119,12 +130,23 @@ namespace JiuyaoTianxu.Gameplay.Quests
                     Complete(i, def);
                 }
             }
+
+            // After the loop, so a request accepted this tick still becomes InProgress on
+            // the next one (same timing as before).
+            foreach (var questNumId in _pendingAccepts) ServerHandleAccept(questNumId);
+            _pendingAccepts.Clear();
         }
 
-        [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority)]
-        public void RPC_RequestAccept(int questNumId)
+        /// <summary>Registered with ClientCommands for this tracker's owner only, so it
+        /// never sees another player's requests.</summary>
+        private void QueueAccept(int questNumId)
         {
-            ServerHandleAccept(questNumId);
+            if (_pendingAccepts.Count >= MaxPendingAccepts)
+            {
+                Debug.LogWarning($"[QuestTracker] {Owner} sent more than {MaxPendingAccepts} accept requests in one tick; ignored.");
+                return;
+            }
+            _pendingAccepts.Add(questNumId);
         }
 
         private void ServerHandleAccept(int questNumId)
@@ -229,7 +251,7 @@ namespace JiuyaoTianxu.Gameplay.Quests
         {
             if (!_spawned || !Object.HasInputAuthority) return;
             GameLog.Info($"[QuestTracker] {Owner} requesting accept of quest {questNumId}.");
-            RPC_RequestAccept(questNumId);
+            ClientCommands.Send(Runner, ClientCommands.QuestAccept, questNumId);
         }
 
         private void Update()

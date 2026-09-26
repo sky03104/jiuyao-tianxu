@@ -7,6 +7,19 @@
 
 所有指令都在 `unity/JiuyaoTianxu` 資料夾執行。`Unity.exe` 指 Unity 6000.5.5f1 的執行檔路徑。
 
+> **2026-09-26 已實跑一次**：0-D COMPLETE，0-E 只差觸控（結果見 CLAUDE-REPLY-008／CLAUDE-NOTE-006）。
+> 那次踩到的坑，下次注意：
+> - 沒裝 `pwsh`（PowerShell 7）也可以，改用 `powershell -ExecutionPolicy Bypass -File <腳本>`。
+> - batchmode 指令執行時，Editor **不能**同時開著這個專案（專案會被鎖住）。
+> - 影遁的 log 字樣是 `armed '影遁'`／`consumed armed seal '影遁'`，不是 `triggered`，報表的靈印總數有算進去。
+> - Unity Hub 裡九曜是獨立專案（路徑 `jiuyao-tianxu/unity/JiuyaoTianxu`），別開成其他專案。
+> - Host 模式（Editor 按 Play 用的模式）不用開 Editor 也能測：
+>   `Builds/Phase0D/JiuyaoTianxu.exe -batchmode -nographics -autotest -quitafter 60 -netmode host -logFile Logs/HostTest/host.log`，
+>   看 log 裡 `requesting accept` 與 `Available → Accepted` 次數是否相同。
+>   要測「Host＋遠端 Client」：Host 用 `-quitafter 80` 先開，8 秒後再開一個 `-netmode client -quitafter 65`，
+>   Host log 應該同時有 `[ClientCommands] command 1(...) from [Player:1]` 與 `from [Player:2]`，且沒有 `no handler`。
+> - 報表的 `quest accepted` 應等於兩個 Client 的 `requesting accept` 總數（一次請求一次接取），`REJECTED` 應為 0。
+
 ---
 
 ## 步驟 0：先跑不需要 Unity 的檢查（1 分鐘）
@@ -76,7 +89,9 @@ Editor 開 `Assets/_Project/Scenes/Phase0D_TestScene.unity`，按 Play（Host �
 - WASD 移動、IJKL 瞄準（角色會轉向）、F 鎖定（目標頭上出現「▼ 鎖定」，再按一次換目標，最後一次解除）
 - Space 攻擊、Tab 換武器、Q 接任務（左上 debug 任務清單會更新）
 - 打怪時怪物閃紅、跳傷害數字、頭上血條減少；弓要按住放開、杖有施法延遲（InputMode 資料化後要跟以前一樣）
-- 觸控 UI：打包時加 `-touchui` 參數，或直接在手機上跑
+- 觸控 UI：打包時加 `-touchui` 參數，或直接在手機上跑。**iPhone（沒有 Mac）用網頁版**：
+  `powershell -ExecutionPolicy Bypass -File Tools/Phase0D/run_webgl_touchtest.ps1`，手機用 Safari 開它印出的網址
+  （選跟手機同一個 Wi-Fi 的那個）、轉橫的測；細節見 README「手機觸控測試（網頁版）」。
 
 有覺得不對的地方都記下來：轉向太快或太慢、鎖定選到不合理的目標、搖桿大小等等（數值都可調整）。
 
@@ -99,11 +114,20 @@ Editor 開 `Assets/_Project/Scenes/Phase0D_TestScene.unity`，按 Play（Host �
 
 ## 附錄：交給 ChatGPT 的審查請求（可直接複製）
 
-> 請依 HANDOFF-008 §17 審查《九曜：天墟》Phase 0 程式碼。Claude 已先寫預審版
-> `docs/PHASE0_TECH_REVIEW_CLAUDE_V1.0.md`：17 項技術債，已修 13 項，其中死亡重生是測試版。
+> 2026-09-26 更新：本機實跑後多了 D18～D23，Phase 0-D 已 COMPLETE（CLAUDE-REPLY-008）。
+
+> 請依 HANDOFF-008 §17 審查《九曜：天墟》Phase 0 程式碼。Claude 的預審版在
+> `docs/PHASE0_TECH_REVIEW_CLAUDE_V1.0.md`，本機實跑結果在 `docs/00_AI_HANDOFF_BRIDGE.md` 的
+> CLAUDE-REPLY-008（0-D，已 COMPLETE）與 CLAUDE-NOTE-006（0-E，只差真人手機手感）。
 > 請針對尚未處理的項目給出裁定並發 HANDOFF：
-> (1) D4 延遲補償：Fusion LagCompensation 目前關閉，03 戰鬥文件要求短窗口判定要能回溯；
-> (2) D5 Client 預測：只預測移動，還是連攻擊起手也預測？
-> (3) D3 正式死亡規則：懲罰、復活點、組隊救援、副本內規則；
-> (4) D9 擊退碰撞、D12 房間人數上限的處理時機。
-> 另請確認：Phase 0-E（資料表／雙搖桿／目標鎖定／基礎回饋）是否符合 Roadmap Phase 0 的驗收意圖。
+> (1) **D18（最優先）**：Fusion 2.1.2 的 `[Rpc]` 在 Mono 打包版整個不能用（weaver 呼叫 internal 方法 →
+>     MethodAccessException）。目前一次性 Client→Server 命令改走 `Core/ClientCommands`
+>     （`SendReliableDataToServer`，按發送者註冊處理者）。請裁定：是否定為專案標準並寫進 01_ARCHITECTURE_DECISIONS？
+>     Dedicated Server 用 Mono 還是 IL2CPP 打包？（命令已改成排隊到下一個 tick 才處理，跟 RPC 一樣在 tick 內生效。）
+> (2) D4 延遲補償：Fusion LagCompensation 目前關閉，03 戰鬥文件要求短窗口判定要能回溯；
+> (3) D5 Client 預測：只預測移動，還是連攻擊起手也預測？
+> (4) D3 正式死亡規則：懲罰、復活點、組隊救援、副本內規則；
+> (5) D21 Photon 區域：目前固定 `hk`（各端自己測速會選到不同區域而互相找不到），正式上線的區域策略？
+> (6) D9 擊退碰撞、D12 房間人數上限的處理時機。
+> 另請確認：Phase 0-E（資料表／雙搖桿／目標鎖定／基礎回饋）是否符合 Roadmap Phase 0 的驗收意圖；
+> 以及 iOS 正式打包（需要 Mac 或雲端打包＋Apple 開發者帳號，每年約 US$99）要排在哪個階段（D23）。

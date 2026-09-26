@@ -1,5 +1,35 @@
 # CHANGELOG — 《九曜：天墟》
 
+## 2026-09-26（第三十七筆，iPhone 觸控測試用網頁版）
+
+- 咖哩是 iPhone、Windows 無法打包 iOS → 新增 `Phase0DBuild.BuildWebGL`（網頁版以 Client 加入電腦 Server），
+  打包期間暫時打開 Fusion `AllowClientServerModesInWebGL`、關壓縮，打包後還原並切回 Windows；手機上用 1 倍解析度。
+- 網頁版沒有系統字型、中文全部不顯示 → 加入 Noto Sans TC（SIL OFL，咖哩同意下載）作為 debug HUD／觸控按鈕字型。
+- 網頁版與 Server 選到不同 Photon 區域（GameNotFound）→ `NetworkGameLauncher` 固定區域（預設 `hk`，`-region` 可覆寫）。
+- 新增 `Tools/Phase0D/run_webgl_touchtest.ps1`：一鍵開伺服器＋網頁、印手機網址、結束時列出操作紀錄。
+- 內建瀏覽器模擬觸控：兩指同時操作、五個按鈕都讓 Server 記錄到正確動作（含打倒怪物、任務 1/3）。真人手感待測。
+- 技術債清單加 D21（固定區域）、D22（debug 字型）、D23（網頁版只當測試工具、iOS 打包要花錢）；D19 註明暫時不能改的原因。
+- 接任務命令改成排隊到下一個網路 tick 才處理（Photon 手冊查不到 tick 外改狀態的規則，不賭；每 tick 最多 8 筆）；回歸通過。
+- CI 離線編譯檢查改成先編 Photon.Realtime 原始碼（固定區域用到的 FixedRegion 在它的基底類別）。
+
+## 2026-09-26（第三十六筆，Phase 0 本機實跑驗收：0-D COMPLETE、0-E 除觸控外通過）
+
+- 本機 Unity 6000.5.5f1＋Fusion 2.1.2 (build 2279) 照 `PHASE0_LOCAL_VERIFICATION_RUNBOOK.md` 跑完步驟 0～5。
+- **Phase 0-D 標記 COMPLETE**：1 Server + 2 Client 自動測試 PASS、例外 0、Join/Leave 正常；結果寫進
+  CLAUDE-REPLY-008。**Phase 0-E** 資料表免重新打包（赤炎 43→18）、目標鎖定、燒怪、死亡重生都通過，
+  觸控未測，暫不標 COMPLETE（CLAUDE-NOTE-006）。
+- 修正：Fusion 2.1.2 的 `[Rpc]` 在 Mono 打包版丟 `MethodAccessException`（weaver 呼叫 internal 方法）。
+  新增 `Core/ClientCommands`（Fusion `SendReliableDataToServer`）處理一次性 Client→Server 命令，接任務改走它；
+  命令只送到發送者本人註冊的處理者（API 統一把關）；Host 自己的命令在本機直接處理，sender 是 None 的命令一律丟棄。
+  **專案目前不能新增 `[Rpc]`**，是否定為專案標準請 ChatGPT 在 Code Review 裁定。
+- 審查：三方審查（ChatGPT／DeepSeek／GLM＋獨立 Claude 程式審查兩輪＋文件查證兩輪；Codex 登入過期、Gemini 503
+  未參與），抓到中間版本（請求放進輸入結構）的重送 bug、Host sender 推定無法證明安全，都已修正並重跑；
+  補測 Host＋遠端 Client；文件寫得比證據樂觀的地方已修正。
+- 修正：測試腳本在 PowerShell 5.1／中文路徑可用（csproj 改 UTF-8）；`Player left` 檢查改在結束前 35 秒砍 client2；
+  `validate_tables.py` 讀得懂 Unity 折行的長字串（CI 誤報）。
+- 新增：debug HUD 顯示目前武器（咖哩手感測試回報看不出拿什麼武器）；箭矢命中 log（技術債 D20），補上弓的命中證據。
+- Commit Phase0DSetup 產生的任務資產、測試怪 prefab、`Phase0D_TestScene`、Build Settings。
+
 ## 2026-09-25（第三十五筆，離線檢查工具化＋GitHub Actions）
 
 - 把雲端 session 一直手動做的離線編譯檢查整理進 repo：`unity/JiuyaoTianxu/Tools/CompileCheck/compile_check.sh`

@@ -96,6 +96,16 @@
 - 方案：先讓移動在 Client 預測（Fusion 的 `NetworkCharacterController` 或自寫 predicted movement），
   攻擊動畫可先本地播放、傷害仍由 Server 決定。需要 ChatGPT 決定預測範圍。
 
+**D18. `[Rpc]` 在 Mono 打包版整個不能用（2026-09-26 本機實跑發現）——⚠️ 已繞過，待裁定專案標準**
+- 位置：Fusion 2.1.2 weaver（`Assets/Photon/Fusion/CodeGen/Fusion.CodeGen.cs:1201`）
+- 現象：weaver 在每個 `[Rpc]` 方法插入對 `Fusion.Runtime` internal 方法的呼叫，Mono 執行時丟
+  `MethodAccessException`。手機正式包用 IL2CPP 可能不受影響，但 Dedicated Server 若用 Mono 就會壞。
+- 目前做法：一次性 Client→Server 命令走 `Core/ClientCommands`（`SendReliableDataToServer`），接任務已改用。
+- 待裁定：是否定為專案標準並寫進 01_ARCHITECTURE_DECISIONS；Server 打包方式（Mono／IL2CPP）；
+  或等 Photon 修正後恢復 `[Rpc]`。（命令在 tick 外改狀態的疑慮已處理：收到後排隊、下一個 `FixedUpdateNetwork` 才處理，
+  `31b1795`。）
+  細節見 CLAUDE-REPLY-008。
+
 ### P1
 
 | # | 問題 | 位置 | 方案 |
@@ -117,6 +127,20 @@
 - **D16** IMGUI 原型每幀有少量 GC；Phase 1 換正式 UI 時一併淘汰，不值得現在優化。
 - **D17** 靜態事件（CombatEvents／GameplayEvents／QuestEvents）已用 runner 過濾；若之後改成同一個
   process 開多個 runner（Fusion 多 peer 測試模式），需再確認每個訂閱者都有過濾。
+- **D19**（2026-09-26 實跑發現）Unity 6000.5 編譯有 CS0618 過時 API 警告：`FindObjectsSortMode`
+  （`MonsterSpawner.cs:45`、`NetworkGameLauncher.cs:174`）、`SimulationMessagePtr`（`NetworkGameLauncher.cs:222` 的
+  `OnUserSimulationMessage`，行號以 2026-09-26 版本為準）。目前不影響執行；**暫時不能改**：CI 離線編譯用 UnityEngine 2021.3 參考組件，新 API 在那裡
+  不存在，改了 CI 會壞。等 CI 參考組件升級時一起改。
+- **D21**（2026-09-26）Photon 區域目前固定 `hk`（`NetworkGameLauncher._photonRegion`，`-region` 可覆寫），因為各端自己
+  測速會選到不同區域而互相找不到（網頁版實測 GameNotFound；手機行動網路也可能發生）。正式上線的區域策略（多區、
+  依玩家選擇、Server 部署地點）待定。
+- **D22**（2026-09-26）debug 字型 Noto Sans TC（12 MB）放在 `UI/Resources/Fonts/`，所有打包都會帶上。正式 UI 字型
+  與只保留用到的字（子集化）待 15_UI_UX／16_ART_DIRECTION 決定。
+- **D23**（2026-09-26）網頁版（WebGL）只當手機觸控的測試工具：Photon 官方不建議 WebGL 用 Client-Server，
+  打包時才暫時打開 `AllowClientServerModesInWebGL`。正式平台仍是 iOS／Android App；iOS 打包需要 Mac（或雲端打包）
+  加 Apple 開發者帳號（每年約 US$99，要花錢，待咖哩決定時機）。
+- **D20** ✅ 已修正（2026-09-26，`1d366a7`）：`Projectile` 命中原本沒有 log，regression 無法確認弓有打中目標；
+  已比照 CombatController 加一行命中 log（走 D10 的 GameLog），實跑確認弓命中怪物 14 次。
 
 ---
 
@@ -133,7 +157,7 @@
 
 ## 5. 建議的 Phase 1 前順序
 
-1. 本機跑完 Phase 0-D／0-E 驗收（CLAUDE-REPLY-008、CLAUDE-NOTE-006）。
+1. ~~本機跑完 Phase 0-D／0-E 驗收~~ 2026-09-26 完成：0-D COMPLETE；0-E 只差手機觸控（CLAUDE-REPLY-008、CLAUDE-NOTE-006）。
 2. ChatGPT 審這份清單，裁定 P0 範圍 → 發 HANDOFF。
 3. D1、D2、D6 已完成（待本機 regression）。
 4. D3（死亡／重生）需要規則 → HANDOFF 定規格後做。
@@ -145,3 +169,4 @@
 1. ~~D1 選方案 A 還是 B？~~ 咖哩裁定 A，已實作。
 2. D5 Client 預測要做到哪裡：只有移動？還是連攻擊起手也預測？
 3. ~~D3 要不要先做測試版？~~ 咖哩同意，已做（5 秒後回出生點滿血，無懲罰）；正式規則仍待定。
+4. D18：一次性 Client→Server 命令是否以 `ClientCommands` 為專案標準？Dedicated Server 用 Mono 還是 IL2CPP 打包？

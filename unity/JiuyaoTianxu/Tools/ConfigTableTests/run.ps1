@@ -14,7 +14,7 @@ New-Item -ItemType Directory -Force $work | Out-Null
     <Compile Include="$c\MonsterTableRow.cs" />
   </ItemGroup>
 </Project>
-"@ | Set-Content (Join-Path $work "ConfigTableTests.csproj")
+"@ | Set-Content -Encoding UTF8 (Join-Path $work "ConfigTableTests.csproj")
 $env:MONSTERS_CSV = Join-Path $here "..\..\Assets\_Project\Config\Tables\monsters.csv"
 dotnet run --project (Join-Path $work "ConfigTableTests.csproj")
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

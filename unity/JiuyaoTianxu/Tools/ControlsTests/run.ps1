@@ -15,6 +15,6 @@ New-Item -ItemType Directory -Force $work | Out-Null
     <Compile Include="$t\..\..\Core\InputSanitizer.cs" />
   </ItemGroup>
 </Project>
-"@ | Set-Content (Join-Path $work "ControlsTests.csproj")
+"@ | Set-Content -Encoding UTF8 (Join-Path $work "ControlsTests.csproj")
 dotnet run --project (Join-Path $work "ControlsTests.csproj")
 exit $LASTEXITCODE

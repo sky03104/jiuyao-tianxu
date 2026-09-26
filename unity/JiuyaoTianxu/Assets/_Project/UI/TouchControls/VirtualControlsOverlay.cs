@@ -177,6 +177,7 @@ namespace JiuyaoTianxu.UI.TouchControls
 
             _labelStyle ??= new GUIStyle(GUI.skin.label)
             {
+                font = DebugFont.Get(),
                 alignment = TextAnchor.MiddleCenter,
                 normal = { textColor = Color.white },
             };

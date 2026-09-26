@@ -50,6 +50,21 @@ trap 'rm -rf "$OUT"' EXIT
 STUBS="$OUT/FusionUnityStubs.cs"
 cp "$HERE/FusionUnityStubs.cs.txt" "$STUBS"  # .txt so Unity never imports it
 
+# Photon.Realtime ships as source (its own asmdef) and Fusion.Realtime's public types derive
+# from it (FusionAppSettings : AppSettings, e.g. FixedRegion), so build it first like Unity
+# does. No UNITY_* defines: every UnityEngine use in it is behind SUPPORTED_UNITY, and only
+# its API matters here.
+PHOTON_CLIENT="$ASSETS/Photon/PhotonLibs/netstandard2.0/release/PhotonClient.dll"
+mapfile -t REALTIME < <(find "$ASSETS/Photon/PhotonRealtime/Code" -name '*.cs' | sort)
+REALTIME_LOG="$(mono "$CSC" -nologo -langversion:9 -t:library -unsafe -nowarn:1701,1702,0618,0649 \
+  -out:"$OUT/Photon.Realtime.dll" -r:"$FACADE" -r:"$PHOTON_CLIENT" "${REALTIME[@]}" 2>&1 || true)"
+if [ ! -s "$OUT/Photon.Realtime.dll" ]; then
+  echo "Photon.Realtime reference build failed (${#REALTIME[@]} files):"
+  grep -E '(^|: )error CS' <<<"$REALTIME_LOG" | head -20 | sed "s#$ASSETS/##"
+  exit 1
+fi
+REFS+=("-r:$OUT/Photon.Realtime.dll" "-r:$PHOTON_CLIENT")
+
 mapfile -t RUNTIME < <(find "$ASSETS/_Project" -name '*.cs' -not -path '*/Editor/*' | sort)
 # Phase0ASetup needs the URP package (not in the reference set); everything else is checked.
 mapfile -t EDITOR < <(find "$ASSETS/_Project/Editor" -name '*.cs' -not -name 'Phase0ASetup.cs' | sort)

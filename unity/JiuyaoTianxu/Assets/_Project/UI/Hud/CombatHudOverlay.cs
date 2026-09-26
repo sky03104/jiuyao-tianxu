@@ -1,3 +1,4 @@
+using JiuyaoTianxu.Combat.Framework;
 using JiuyaoTianxu.Combat.Targeting;
 using JiuyaoTianxu.Gameplay.Quests;
 using JiuyaoTianxu.Gameplay.World;
@@ -19,6 +20,8 @@ namespace JiuyaoTianxu.UI.Hud
 
         private Texture2D _white;
         private GUIStyle _numberStyle, _textStyle;
+        private QuestTracker _combatOwner;      // tracker whose CombatController is cached
+        private CombatController _localCombat;  // OnGUI runs several times a frame
 
         private void Awake()
         {
@@ -78,6 +81,16 @@ namespace JiuyaoTianxu.UI.Hud
             if (tracker == null || tracker.Log == null || tracker.Registry == null) return;
 
             var y = 10f;
+            if (tracker != _combatOwner)
+            {
+                _combatOwner = tracker;
+                _localCombat = tracker.GetComponent<CombatController>();
+            }
+            if (_localCombat != null && _localCombat.CurrentWeaponType is { } weapon)
+            {
+                GUI.Label(new Rect(10, y, 400, 22), $"武器：{WeaponName(weapon)}  （Tab 切換）", _textStyle);
+                y += 22f;
+            }
             GUI.Label(new Rect(10, y, 400, 22), "任務 (debug)  Q/任務鍵 接取", _textStyle);
             for (var i = 0; i < PlayerQuestLog.Capacity; i++)
             {
@@ -89,6 +102,17 @@ namespace JiuyaoTianxu.UI.Hud
                     $"{def.DisplayName}  [{e.QuestState}]  {e.Progress}/{def.RequiredCount}", _textStyle);
             }
         }
+
+        private static string WeaponName(WeaponType w) => w switch
+        {
+            WeaponType.Blade => "刀",
+            WeaponType.Sword => "劍",
+            WeaponType.Spear => "槍",
+            WeaponType.Bow => "弓（按住蓄力、放開射）",
+            WeaponType.HeavyBlade => "重刃",
+            WeaponType.Staff => "靈杖（有施法延遲）",
+            _ => w.ToString(),
+        };
 
         private static bool ToGui(Camera cam, Vector3 world, out Vector2 gui)
         {
@@ -110,10 +134,14 @@ namespace JiuyaoTianxu.UI.Hud
             if (_numberStyle != null) return;
             _numberStyle = new GUIStyle(GUI.skin.label)
             {
+                font = DebugFont.Get(),
                 alignment = TextAnchor.MiddleCenter, fontSize = 20, fontStyle = FontStyle.Bold,
                 normal = { textColor = Color.white },
             };
-            _textStyle = new GUIStyle(GUI.skin.label) { fontSize = 16, normal = { textColor = Color.white } };
+            _textStyle = new GUIStyle(GUI.skin.label)
+            {
+                font = DebugFont.Get(), fontSize = 16, normal = { textColor = Color.white },
+            };
         }
     }
 }

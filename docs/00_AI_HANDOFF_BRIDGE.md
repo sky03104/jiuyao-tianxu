@@ -548,6 +548,27 @@ Unity 實跑、手感、觸控實機**尚未測**，細節與驗收步驟見 `un
 依武器類型判斷蓄力/施法（D2）、`monsters.csv`（D6）、**赤炎燃燒改為 `BurnStatus` 元件、怪物也會燃燒（D1，
 咖哩裁定方案 A）**。D3 死亡/重生、D4 延遲補償、D5 Client 預測待 ChatGPT 審查後發 HANDOFF。
 
+**本機實跑結果（2026-09-26）：** 與 CLAUDE-REPLY-008 同一次驗收，數字來自同一個最終版 build。
+
+| Roadmap Phase 0 項目 | 證據 | 結果 |
+|---|---|---|
+| 資料表切換測試不需重新編譯 | `-ConfigDir` 把赤炎冷卻 3→12：`[ConfigOverride] applied` 2、赤炎觸發 43→18；兩次之間 build 檔時間戳不變 | ✅ |
+| 目標鎖定（Server 權威） | `-LockOn` 自動測試 `[TargetLock]` 101 行，例外 0 | ✅ |
+| 受擊判定 | 自動測試命中怪物 log：刀 19、劍 16、槍 46、重刃 24、靈杖 27；弓補上命中 log 後（`1d366a7`）射出 29 箭、命中怪物 14 次（例：`Logs/Final3/Phase0D/server.log:4602`） | ✅ |
+| 基礎回饋 | 咖哩 Editor 截圖可見傷害數字「3」與頭上血條；受擊閃紅沒有單獨確認；咖哩回報「測完了都可以按」 | ✅（閃紅未確認） |
+| 赤炎燒怪（D1） | 赤炎打在怪物上 32 次；server.log 有 11 筆 `BurnStatus → DamageService` 的怪物扣血（例：`Logs/Final/Phase0D/server.log:8844`） | ✅ |
+| 死亡重生測試版（D3） | 倒地 5／復活 5（改數值版 7／7） | ✅ |
+| 觸控虛擬搖桿 | 咖哩是 iPhone（Windows 無法打包 iOS）→ 做網頁版給 Safari 測。程式模擬觸控（橫向 740×360）：兩指同時操作兩個搖桿都有反應；鎖／換／任務／閃／攻各一次，Server 紀錄依序出現鎖定、換武器、接任務、影遁、命中並打倒怪物、任務 1/3。**真人手感待咖哩在家用 iPhone 測** | ⏳（邏輯✅、手感待測） |
+
+**判斷：暫不標記 Phase 0-E COMPLETE**，唯一缺的是真人用手機測手感。其餘項目都已實跑通過，觸控邏輯也用網頁版＋
+模擬觸控驗過；咖哩用 iPhone 測完即可標記。
+
+**網頁版測試時發現並處理（2026-09-26）：** ① Fusion 預設禁止網頁版用 Client-Server（`AllowClientServerModesInWebGL`，
+Photon 不建議）→ 只在打包網頁版期間打開、打包後還原；② 網頁版沒有系統字型，中文全部不顯示 → 加入 Noto Sans TC
+（SIL OFL，咖哩同意下載）當 debug 字型；③ 網頁版與電腦 Server 各自選到不同 Photon 區域 → GameNotFound → 改固定區域
+（預設 `hk`，`-region` 可覆寫）；④ iPhone 3 倍螢幕 debug 字太小 → 網頁版在手機上用 1 倍解析度。用法與細節見 README
+「手機觸控測試（網頁版）」，一鍵腳本 `Tools/Phase0D/run_webgl_touchtest.ps1`。
+
 ---
 
 ## [CLAUDE-REPLY-008]
@@ -556,7 +577,7 @@ Unity 實跑、手感、觸控實機**尚未測**，細節與驗收步驟見 `un
 
 **對應 HANDOFF：** HANDOFF-008_PHASE0D.md
 
-**狀態：** 程式碼完成／**Unity 實跑驗收尚未執行（不可標記 COMPLETE）**
+**狀態：** **COMPLETE**（2026-09-26 本機 Unity 實跑驗收通過，見本節最後「本機實跑結果」）
 
 ### 背景
 
@@ -588,7 +609,8 @@ HANDOFF-008 §12「不要只測本地單機就宣稱 Network Quest 完成」，�
 - **State Machine**：`QuestStateMachine` 轉移表（Locked→Available→Accepted→
   InProgress→Completed），純 C# 無 Unity 依賴；全專案**沒有任何 `if (questId == ...)`**。
 - **Network**：`PlayerQuestLog`（`NetworkArray<QuestEntry>`，每筆只有
-  QuestNumId/State/Progress 三個 int）；Client 以 RPC 提出 Accept，Server 驗證
+  QuestNumId/State/Progress 三個 int）；Client 以 RPC 提出 Accept（2026-09-26 實跑後改為
+  `ClientCommands`，見本節「本機實跑結果」），Server 驗證
   狀態後才改；Progress/Complete/Reward 全部 Server 決定。Client 端 `[QuestSync]`
   log 用來證明同步。
 - **Reward**：只有測試用 `DebugRewardPoints` 計數器（未做 Inventory/Economy）。
@@ -634,9 +656,98 @@ Claude 會補上實跑結果並決定是否標記 COMPLETE。
 
 ### 下一步
 
-- 本機實跑驗收 → 補結果 → 標記 Phase 0-D COMPLETE。
+- 本機實跑驗收 → 補結果 → 標記 Phase 0-D COMPLETE。（2026-09-26 已完成，見下）
 - 依 HANDOFF-008 §17：Phase 0-D 完成後、進 Phase 1 青嵐城 Vertical Slice 前，
   需先由 ChatGPT 做 Phase 0 全面 Code Review／技術債清單。
+
+### 本機實跑結果（2026-09-26，本機 Claude Code session 代跑＋咖哩手動）
+
+**環境：** Windows 10、Unity 6000.5.5f1、Photon Fusion 2.1.2 stable build 2279（版本來源：
+`unity/JiuyaoTianxu/Assets/Photon/Fusion/build_info.txt`；`Logs/setup0d.log` 載入 Fusion.Runtime 2.1.2.0）、
+Windows Standalone（Mono）。依 `docs/PHASE0_LOCAL_VERIFICATION_RUNBOOK.md` 步驟 0～5 執行。以下數字全部來自
+**最終版 build**（含下方修正；log 在 `unity/JiuyaoTianxu/Logs/Final/`，不進版控）。文件數字曾由沒看過過程的
+獨立 agent 用 grep 逐一重算兩輪，之後依最終審查改了一次程式、全部重跑，數字已換成重跑結果。
+
+**自動測試**（`run_autotest.ps1 -Seconds 150 -LockOn`）：1 Dedicated Server + 2 Client 是**同一台電腦上的 3 個
+獨立行程**，經 Photon 雲端連線（有真實網路往返，但不是多台機器或手機網路）。
+
+| §15 項目 | 證據 | 結果 |
+|---|---|---|
+| A 場景啟動、Player Spawn、2 Client 同場景 | StartGame 1、Player joined 2 | ✅ |
+| B 怪物 Server Spawn、沿用 Health、可被攻擊、死亡事件 | 生成 68、EnemyKilled 65 | ✅ |
+| C Accept／Progress／Complete | Client 送出請求 4、Server 收到 4、接任務 4（REJECTED 0）、Progress 16、001 完成 2、002 解鎖 2 | ✅ |
+| D 1 Server + 2 Client、Server 權威、同步、Join/Leave | Client `[QuestSync]` 21／20、Player left 1；接任務由 Server 驗證狀態機，發送者由傳輸層決定 | ✅ |
+| E-1 Combat → EnemyKilled → Quest Tracker | EnemyKilled 65 → Progress 16 | ✅ |
+| E-2 不建立第二套 Damage/Health | 專案內 `Health.cs`／`DamageService.cs` 各只有一份；燃燒傷害也經 `DamageService`（server.log 呼叫鏈 `BurnStatus → DamageService.Resolve → Health.ApplyDamage`） | ✅ |
+| E-3 Phase 0-C 靈印 regression | 赤炎 43、玄甲 6、影遁 armed 42／consumed 37（玄甲少於 0-C 的 10 次是死亡重生後的預期變化，見 README） | ✅ |
+| F ≥1 次完整 3 Kill、≥10 次 Progress、自動／手動分開記錄 | PASS 1（2 名玩家完成）、Progress 16；手動測試另列於下 | ✅ |
+| 例外 | Exception／NullReference 0 | ✅ |
+
+**Host 模式**（headless `-netmode host -autotest`）：只有 Host——2 次請求 → 2 次接取，001、002 都完成；
+Host＋1 個遠端 Client——Host 收到自己 `[Player:1]` 2 次、遠端 `[Player:2]` 2 次命令（遠端發送者是它自己的編號，
+不是 None），兩名玩家都完成 001、002，PASS 1、REJECTED 0、例外 0。
+
+**最終 build 回歸（commit `b178fc0`）：** 上面的數字來自 `a478bf2` 的 build。最終審查後又加了兩個防禦性修正
+（取消註冊前比對處理者、runner 關閉時清掉註冊，不影響正常流程），在最終 build 重跑：1 Server + 2 Client 150 秒
+PASS 1、Client 請求 4／Server 收到 4／接取 4、no handler 0、REJECTED 0、例外 0；Host＋遠端 Client 兩人都完成
+001、002、PASS 1、例外 0（log 在 `Logs/Final2/`）。之後只再加了箭矢命中 log（`1d366a7`），又跑一次 150 秒：
+PASS 1、接取 4、Player left 1、例外 0（`Logs/Final3/`）。接任務改成排隊到下一個 tick（`31b1795`）後再回歸：
+150 秒 PASS 1、請求 4／收到 4／接取 4、REJECTED 0、例外 0；Host＋遠端 Client 兩人都完成 001、002（`Logs/Final4/`）。
+
+**手動測試**（分開記錄，§15 F）：咖哩在 Editor 按 Play（截圖可見 `Host P1`）。先回報「看不出來現在拿什麼
+武器」→ debug HUD 加一行「武器：劍（Tab 切換）」；請他重新 Play 後回報「測完了都可以按」（沒有逐項說明）。
+⚠️ 手動測試時接任務還是改版前的做法；最終版的 Host 接任務只有上面 headless Host 測試驗過。
+
+**實跑中發現並修正的問題：**
+
+1. **接任務完全失敗。** 第一次 150 秒實跑，兩個 Client 每次請求都丟 `MethodAccessException`（該次報表合計
+   268 筆；那次的 log 資料夾在後續重跑時被覆蓋，磁碟上已無留存）。根因：Fusion 2.1.2 的 weaver 在每個 `[Rpc]`
+   方法插入對 `Fusion.Runtime` internal 方法的呼叫（`NetworkBehaviourUtils.CheckInvokeRpc`、
+   `NetworkRunner.CreateRpcBuilder`、`NotifyRpcError`、`NetworkRunnerDebugRpcEvent.*`——掃描打包後
+   `Assembly-CSharp.dll` 對 Fusion 的參照確認），Mono 打包版執行時做存取檢查而拒絕。QuestTracker 是專案第一個
+   RPC，所以 0-A～0-C 沒踩到。嘗試紀錄：
+   - (1) `[assembly: IgnoresAccessChecksTo("Fusion.Runtime")]`：無效（Unity 的 Mono 不支援，只有 .NET Core 認）。
+   - (2) 請求放進 `PlayerInputData` 每 tick 送、Server 邊緣偵測：跑得過，但審查抓到**高風險 bug**——逾時後
+     同一 Update 內對同一任務重送，Server 看不到變化而永遠忽略（autotest 下必現）。已放棄。
+   - (3) **採用**：新增 `Core/ClientCommands`，用 Fusion 公開 API `SendReliableDataToServer`（可靠送達、送一次；
+     Server 由傳輸層得知發送者，Client 無法冒充）。處理者按「(runner, 發送者, 命令)」註冊，命令只送到發送者本人
+     的處理者（等於 RPC 的 `RpcSources.InputAuthority`，由 API 統一把關）。實測發現 Host 自己送的命令經 loopback
+     回來時 sender 是 `PlayerRef.None`（官方文件沒寫）；最終版改成 Host 自己的命令直接在本機交給處理者、
+     sender 是 None 的命令一律丟棄，不做「None 當成 Host」的推定（最終審查指出該推定無法證明安全）。
+   HANDOFF-008 §9 只要求「Accept Request → Server Validate」，沒指定傳輸方式，Server 權威不變，**不算偏離規格**。
+2. 測試腳本：PowerShell 5.1 以系統編碼寫 csproj，中文路徑變亂碼 → 加 `-Encoding UTF8`；
+   `Player left` 檢查因 ConnectionTimeout 10 秒邊界太緊時有時無 → client2 改在結束前 35 秒砍。
+3. CI：`validate_tables.py` 讀不懂 Unity 折行的長字串，誤報 quests.csv 不一致 → 修正解析，並用故意改錯的 CSV
+   確認仍會抓到不一致。
+
+### 三方審查紀錄（2026-09-26，咖哩授權自主進行）
+
+| 角色 | 狀態 | 重點意見 | 處理 |
+|---|---|---|---|
+| Codex | ❌ 無法執行：登入 token 過期（需咖哩重新登入） | — | 以獨立 Claude 程式審查代替 |
+| Gemini（llm-council） | ❌ 兩次都 503（Google 服務暫時不可用） | — | — |
+| ChatGPT／DeepSeek／GLM（llm-council） | ✅ | 三者都指出嘗試 (2) 的重送 bug；三者都建議一次性命令的專案標準用 `SendReliableDataToServer` | 採用 → 嘗試 (3) |
+| 獨立 Claude 程式審查 | ✅ | 嘗試 (2) 的重送 bug（高）、靜態信箱在同行程多 runner 會互蓋（中）、HUD 每次 OnGUI 都 GetComponent（低） | 前兩項隨改用 (3) 消失；HUD 改快取 |
+| 獨立 Claude 文件查證（第 1 輪） | ✅ | 數字全部可重現；指出 268 無留存證據、E 列未附「無第二套 Damage」證據、手動測試描述超出咖哩原話、「實際網路」易誤讀 | 本節已全部修正 |
+| 獨立 Claude 程式審查（最終版） | ✅ | (高)「sender 是 None 就當成 Host」無法證明安全，且沒測過 Host＋遠端 Client；(中) 發送者檢查要靠每個接收者自己寫，比 RPC 容易漏 | 改成 Host 本機直送＋None 一律丟棄；改成按發送者註冊處理者；補測 Host＋遠端 Client 通過 |
+| 獨立 Claude 文件查證（第 2 輪） | ✅ | 25 項以上數字、4 處行號全部重現；手動測試描述沒有加碼；一句「A～F 全部有最終版證據」易誤讀成包含手動測試 | 已改寫；程式修改後全部重跑、數字已更新 |
+| 獨立 Claude 最終驗收（第 3 輪） | ✅ 可交付 | 數字抽查全部吻合；(中) 斷線重連時舊物件取消註冊可能刪掉新註冊；(低) runner 關閉沒有統一清理；(不確定) Host 本機直送在 `Update` 裡改 `[Networked]` 狀態，Fusion 是否有限制查不到 | 前兩項已修（`b178fc0`）並回歸通過；第三項列為待裁定（見下） |
+
+### Claude Code 意見（實跑後）
+
+[接受] Phase 0-D 可標記 COMPLETE：§15 A～F 的自動測試項目都有最終版 build 的實跑證據（手動 Editor 測試是改版前
+做的，最終版的 Host 路徑由 headless Host 測試補驗，見上）；G 文件（README、本節、CHANGELOG、版本紀錄、已知問題）
+同步更新。
+
+**請 ChatGPT 在 Phase 0 Code Review 時裁定：**
+1. 目前**整個專案不能用 `[Rpc]`**（Mono 打包版）。一次性 Client→Server 命令暫以 `ClientCommands`
+   （`SendReliableDataToServer`）處理——這是三個外部模型一致推薦的做法，但屬於**跨系統的架構約定，尚未寫進
+   01_ARCHITECTURE_DECISIONS**，請裁定是否定為專案標準（之後的交易、組隊邀請、NPC 對話選項、商店都會用到）。
+2. 手機正式打包會用 IL2CPP（不做這種存取檢查），`[Rpc]` 在手機上可能正常；但 Dedicated Server 若用 Mono 就不行。
+   建議 Server 打包方式（Mono／IL2CPP）一起定案，或等 Photon 修正後重新驗證。
+3. ~~`ClientCommands` 的處理者在 tick 外改 `[Networked]` 狀態~~ **已處理（2026-09-26，`31b1795`）**：Photon 官方手冊
+   （NetworkBehaviour & [Networked] Properties）沒寫 tick 外能不能改，查不到明文就不賭——命令收到後先排隊，在下一個
+   `FixedUpdateNetwork` 才處理，跟 RPC 一樣在 tick 內生效。之後用 `ClientCommands` 的新命令也請照這個做法。
 
 ---
 
