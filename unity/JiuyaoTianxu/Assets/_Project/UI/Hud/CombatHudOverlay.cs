@@ -134,10 +134,14 @@ namespace JiuyaoTianxu.UI.Hud
             if (_numberStyle != null) return;
             _numberStyle = new GUIStyle(GUI.skin.label)
             {
+                font = DebugFont.Get(),
                 alignment = TextAnchor.MiddleCenter, fontSize = 20, fontStyle = FontStyle.Bold,
                 normal = { textColor = Color.white },
             };
-            _textStyle = new GUIStyle(GUI.skin.label) { fontSize = 16, normal = { textColor = Color.white } };
+            _textStyle = new GUIStyle(GUI.skin.label)
+            {
+                font = DebugFont.Get(), fontSize = 16, normal = { textColor = Color.white },
+            };
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Fusion;
+using Fusion.Photon.Realtime;
 using Fusion.Sockets;
 using JiuyaoTianxu.Combat.Framework;
 using JiuyaoTianxu.Config;
@@ -30,6 +31,11 @@ namespace JiuyaoTianxu.Net
         [SerializeField] private NetworkRunner _runnerPrefab;
         [SerializeField] private NetworkObject _playerPrefab;
         [SerializeField] private string _sessionName = "Phase0ATest";
+        /// <summary>Photon region every peer joins (可調整; -region &lt;code&gt; overrides).
+        /// Empty = each peer pings for its own best region: on 2026-09-26 a WebGL client
+        /// and the PC server picked different regions and the client got GameNotFound.
+        /// "hk" is what the Taiwan dev PC measured as its best region that day.</summary>
+        [SerializeField] private string _photonRegion = "hk";
 
         private NetworkRunner _runner;
         private readonly Dictionary<PlayerRef, NetworkObject> _spawnedPlayers = new();
@@ -69,10 +75,14 @@ namespace JiuyaoTianxu.Net
             var sceneRef = SceneRef.FromIndex(activeScene.buildIndex >= 0 ? activeScene.buildIndex : 0);
             sceneInfo.AddSceneRef(sceneRef, LoadSceneMode.Single);
 
+            var appSettings = PhotonAppSettings.Global.AppSettings.GetCopy();
+            appSettings.FixedRegion = ResolveRegionFromArgs(_photonRegion);
+
             var result = await _runner.StartGame(new StartGameArgs
             {
                 GameMode = mode,
                 SessionName = _sessionName,
+                CustomPhotonAppSettings = appSettings,
                 Scene = sceneInfo,
                 SceneManager = sceneManager,
                 ObjectProvider = objectProvider,
@@ -84,7 +94,7 @@ namespace JiuyaoTianxu.Net
             }
             else
             {
-                Debug.Log($"[NetworkGameLauncher] StartGame succeeded as {mode}.");
+                Debug.Log($"[NetworkGameLauncher] StartGame succeeded as {mode} (region '{_runner.SessionInfo.Region}').");
                 BeginMonsterSpawning(_runner);
             }
         }
@@ -98,6 +108,16 @@ namespace JiuyaoTianxu.Net
             if (runner == null || !runner.IsServer) return;
             var spawner = FindAnyObjectByType<MonsterSpawner>();
             if (spawner != null) spawner.Begin(runner);
+        }
+
+        private static string ResolveRegionFromArgs(string fallback)
+        {
+            var args = Environment.GetCommandLineArgs();
+            for (var i = 0; i < args.Length - 1; i++)
+            {
+                if (args[i] == "-region") return args[i + 1].ToLowerInvariant();
+            }
+            return fallback;
         }
 
         private static GameMode ResolveGameModeFromArgs()

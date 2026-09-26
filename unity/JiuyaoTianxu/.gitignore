@@ -8,6 +8,8 @@
 [Mm]emoryCaptures/
 [Rr]ecordings/
 [Uu]ser[Ss]ettings/
+# Burst leaves lib_burst_generated.* here during WebGL builds (root only: Assets/**/Data is real data)
+/Data/
 
 # Visual Studio / Rider cache
 .vs/
