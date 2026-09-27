@@ -10,6 +10,17 @@
 > 本檔由 `production/LF01/tools/lf01_handoff.py` 自動產生。分鏡或設定圖改了就重跑，不要手改提示詞。
 > 連結指向 `claude/video-tool-evaluation-5bqhvg` 分支。
 
+# 0. 建議做法：用 Codex 自動跑完（不用一張一張停）
+
+一般 ChatGPT 對話的 GitHub 連接器是唯讀，存不回 repo。要「出一張、自己存、接著出下一張」請用 **Codex**，
+開一個 Codex 任務（repo：`sky03104/jiuyao-tianxu`，分支：`claude/video-tool-evaluation-5bqhvg`），貼這一句：
+
+```text
+請照 production/LF01/CODEX_RUNBOOK.md 執行，依 production/LF01/codex_jobs.json 從頭到尾自動出圖、存檔、commit，不用停下來問我。
+```
+
+下面第 1～4 節是**手動備援**（在一般 ChatGPT 對話一張一張出圖時用）。
+
 # 1. 目的
 
 驗證 AI 出圖／出影片撐不撐得住長篇的兩個難點：**多人同框的對話戲**（第 2 場）與**多角色戰鬥＋巨大怪物**（第 12 場）。

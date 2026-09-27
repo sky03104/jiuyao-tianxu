@@ -2,6 +2,9 @@
 
 ## 2026-09-27（第四十一筆，長篇試片 LF01 出圖準備）
 
+- 查證：ChatGPT 對話的 GitHub 連接器為唯讀，無法把圖存回 repo；改為 **Codex 自動出圖**：新增 `production/LF01/CODEX_RUNBOOK.md`、
+  `codex_jobs.json`（45 個工作，參考圖直接給 repo 路徑、含前置依賴）、`codex_log.md`；Codex 出一張、自我檢查、存檔、commit、接著下一張，
+  額度用完可從中斷處續跑。HANDOFF-010 改為手動備援。
 - 咖哩選定下一步：長篇試片（`43` 第 2 場＋第 12 場）。新增 `production/LF01/`：分鏡資料 `lf01.json`（21 段 41 張、橫式 16:9）、
   交接產生器 `tools/lf01_handoff.py`（沿用 EP01 畫風規則與參考拼圖）、`docs/HANDOFF-010_LF01_LONGFORM_TEST.md`。
 - 新設定（正史）：江祈璟、聞人澈外觀依 `02` 細化；**赤瞳妖將外觀首次定義**（約人的 2.5 倍高、瘦長、長成的暗紅黑鱗甲、

@@ -228,6 +228,17 @@ def write_handoff():
 > 本檔由 `production/LF01/tools/lf01_handoff.py` 自動產生。分鏡或設定圖改了就重跑，不要手改提示詞。
 > 連結指向 `{BRANCH}` 分支。
 
+# 0. 建議做法：用 Codex 自動跑完（不用一張一張停）
+
+一般 ChatGPT 對話的 GitHub 連接器是唯讀，存不回 repo。要「出一張、自己存、接著出下一張」請用 **Codex**，
+開一個 Codex 任務（repo：`sky03104/jiuyao-tianxu`，分支：`{BRANCH}`），貼這一句：
+
+```text
+請照 production/LF01/CODEX_RUNBOOK.md 執行，依 production/LF01/codex_jobs.json 從頭到尾自動出圖、存檔、commit，不用停下來問我。
+```
+
+下面第 1～4 節是**手動備援**（在一般 ChatGPT 對話一張一張出圖時用）。
+
 # 1. 目的
 
 驗證 AI 出圖／出影片撐不撐得住長篇的兩個難點：**多人同框的對話戲**（第 2 場）與**多角色戰鬥＋巨大怪物**（第 12 場）。
@@ -270,5 +281,41 @@ def write_handoff():
     print(f"✓ {rel(HANDOFF)}：設定圖 {len(sj)} 張、分鏡 {len(fj)} 張（第 12 場 {n_b}、第 2 場 {n_a}）")
 
 
+# ---------- Codex 自動出圖佇列 ----------
+QUEUE = os.path.join(LF, "codex_jobs.json")
+
+
+def write_codex_queue():
+    """給 Codex（可讀寫 repo、內建 $imagegen）照順序自動出圖用：參考圖直接給 repo 路徑，不需要拼圖。"""
+    jobs = []
+    for j in sheet_jobs():
+        lines = [f"Image {i + 1}: {rel(r)} — {d}" for i, (r, d) in enumerate(zip(j["refs"], j["descs"]))]
+        jobs.append({"id": "sheet:" + j["key"], "phase": 1, "kind": "sheet", "out": rel(j["out"]),
+                     "size": "1536x1024", "refs": [rel(r) for r in j["refs"]], "after": [],
+                     "prompt": "Reference images:\n" + "\n".join(lines) + "\n\n" + j["body"]})
+    sheet_out = {rel(j["out"]) for j in sheet_jobs()}
+    for j in frame_jobs():
+        seg, k = j["seg"], j["k"]
+        refs = list(j["refs"])
+        descs = list(j["descs"])
+        if k > 1:
+            refs.append(os.path.join(LF, "storyboard", "frames", seg["id"], "f1.png"))
+            descs.append("the opening frame of this same sequence — keep the world, lighting, mist and every "
+                         "character's look consistent with it; do not copy its composition")
+        lines = [f"Image {i + 1}: {rel(r)} — {d}" for i, (r, d) in enumerate(zip(refs, descs))]
+        rrefs = [rel(r) for r in refs]
+        jobs.append({"id": f"{seg['id']}-f{k}", "phase": 2 if seg["id"].startswith("B") else 3, "kind": "frame",
+                     "out": rel(j["out"]), "size": FRAME_SIZE, "refs": rrefs,
+                     "after": [r for r in rrefs if r in sheet_out or r.endswith("/f1.png")],
+                     "seconds": j["cut"]["sec"], "lines": j["cut"]["lines"],
+                     "prompt": "Reference images:\n" + "\n".join(lines) + "\n\n" + j["body"]})
+    jobs.sort(key=lambda x: x["phase"])
+    with open(QUEUE, "w", encoding="utf-8") as f:
+        json.dump({"_how": "見 production/LF01/CODEX_RUNBOOK.md；依陣列順序處理，out 已存在就跳過", "jobs": jobs},
+                  f, ensure_ascii=False, indent=1)
+    print(f"✓ {rel(QUEUE)}：{len(jobs)} 個工作")
+
+
 if __name__ == "__main__":
     write_handoff()
+    write_codex_queue()
