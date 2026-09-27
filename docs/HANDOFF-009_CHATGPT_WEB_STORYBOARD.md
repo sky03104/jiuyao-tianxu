@@ -33,10 +33,11 @@ API 出圖要另外付費（30 張約 US$8～15），ChatGPT 網頁版的生圖�
 # 3. 操作流程
 
 1. **一段開一個新對話**（例如 E01-01 一個對話），先貼第 2 節的規則。
-2. 照下面每張的清單，**按順序**下載並附上參考圖（點連結→右鍵另存；順序對應提示詞裡的 Image 1、2、3…）。
+2. 照下面每張的清單，**按順序**下載並附上參考圖（點連結→右鍵另存）。**每張最多只要上傳 2 張圖**：
+   多張設定圖已預先拼成一張「參考拼圖」（`storyboard/export/chatgpt/`），第二張是本段的 f1。
 3. 貼上該張的提示詞送出。
 4. 滿意就下載，**檔名改成 `f1.png`、`f2.png`…**；不滿意就在同一個對話說哪裡不對、請它重畫。
-5. 同一段的 f2 之後都在**同一個對話**裡做，清單會提醒你再附一次 f1（保持光線、角色一致）。
+5. 同一段的 f2 之後都在**同一個對話**裡做，每張都再附一次本段 f1（保持光線、角色、行囊一致）。
 6. 一段做完，把圖上傳回 GitHub：打開該段的「上傳位置」連結 → 右上 **Add file → Upload files** → 拖進 f1.png、f2.png… → Commit。
    （或直接貼回 Claude 的 session，由 Claude 存進 repo。）
 
@@ -59,7 +60,7 @@ API 出圖要另外付費（30 張約 US$8～15），ChatGPT 網頁版的生圖�
 
 ### E01-01 f1　→ 存成 `f1.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
 1. [天玄院外景-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%A4%A9%E7%8E%84%E9%99%A2%E5%A4%96%E6%99%AF-sheet.png)
 
@@ -84,17 +85,17 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-01 f2　→ 存成 `f2.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
 1. [天玄院外景-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%A4%A9%E7%8E%84%E9%99%A2%E5%A4%96%E6%99%AF-sheet.png)
-2. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）
+2. 本段已完成的 **f1.png**
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
 Image 1: environment sheet of this location (天玄院外景) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it; do not copy its composition.
+Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it (where a character's costume or luggage here differs from the model sheet, follow this frame); do not copy its composition.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -115,19 +116,18 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-02 f1　→ 存成 `f1.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [天玄院東廊-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%A4%A9%E7%8E%84%E9%99%A2%E6%9D%B1%E5%BB%8A-sheet.png)
-2. [玩家-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E7%8E%A9%E5%AE%B6-sheet.png)
-3. [入院憑證-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%85%A5%E9%99%A2%E6%86%91%E8%AD%89-sheet.png)
+1. [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-02/f1-refs.jpg)（3 張設定圖拼成一張）
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 3: prop sheet of 入院憑證 — match this object exactly; any plaque or token surface stays blank, with no characters on it.
+Image 1: a reference board of 3 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+  - Panel 3 (bottom-left): prop sheet of 入院憑證 — match this object exactly; any plaque or token surface stays blank, with no characters on it.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -144,19 +144,19 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-02 f2　→ 存成 `f2.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [天玄院東廊-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%A4%A9%E7%8E%84%E9%99%A2%E6%9D%B1%E5%BB%8A-sheet.png)
-2. [玩家-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E7%8E%A9%E5%AE%B6-sheet.png)
-3. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）
+1. [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-02/f2-refs.jpg)（2 張設定圖拼成一張）
+2. 本段已完成的 **f1.png**
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 3: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it; do not copy its composition.
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it (where a character's costume or luggage here differs from the model sheet, follow this frame); do not copy its composition.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -173,23 +173,21 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-02 f3　→ 存成 `f3.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [天玄院東廊-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%A4%A9%E7%8E%84%E9%99%A2%E6%9D%B1%E5%BB%8A-sheet.png)
-2. [玩家-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E7%8E%A9%E5%AE%B6-sheet.png)
-3. [入院憑證-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%85%A5%E9%99%A2%E6%86%91%E8%AD%89-sheet.png)
-4. [第七室門牌-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E7%AC%AC%E4%B8%83%E5%AE%A4%E9%96%80%E7%89%8C-sheet.png)
-5. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）
+1. [參考拼圖 f3-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-02/f3-refs.jpg)（4 張設定圖拼成一張）
+2. 本段已完成的 **f1.png**
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 3: prop sheet of 入院憑證 — match this object exactly; any plaque or token surface stays blank, with no characters on it.
-Image 4: prop sheet of 第七室門牌 — match this object exactly; any plaque or token surface stays blank, with no characters on it.
-Image 5: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it; do not copy its composition.
+Image 1: a reference board of 4 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+  - Panel 3 (bottom-left): prop sheet of 入院憑證 — match this object exactly; any plaque or token surface stays blank, with no characters on it.
+  - Panel 4 (bottom-right): prop sheet of 第七室門牌 — match this object exactly; any plaque or token surface stays blank, with no characters on it.
+Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it (where a character's costume or luggage here differs from the model sheet, follow this frame); do not copy its composition.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -210,21 +208,19 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-03 f1　→ 存成 `f1.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [第七室-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E7%AC%AC%E4%B8%83%E5%AE%A4-sheet.png)
-2. [玩家-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E7%8E%A9%E5%AE%B6-sheet.png)
-3. [齊衡烈-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E9%BD%8A%E8%A1%A1%E7%83%88-sheet.png)
-4. [入院憑證-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%85%A5%E9%99%A2%E6%86%91%E8%AD%89-sheet.png)
+1. [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-03/f1-refs.jpg)（4 張設定圖拼成一張）
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 3: character model sheet of 齊衡烈 — this is the person called 齊衡烈 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 4: prop sheet of 入院憑證 — match this object exactly; any plaque or token surface stays blank, with no characters on it.
+Image 1: a reference board of 4 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+  - Panel 3 (bottom-left): character model sheet of 齊衡烈 — this is the person called 齊衡烈 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+  - Panel 4 (bottom-right): prop sheet of 入院憑證 — match this object exactly; any plaque or token surface stays blank, with no characters on it.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -241,23 +237,21 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-03 f2　→ 存成 `f2.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [第七室-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E7%AC%AC%E4%B8%83%E5%AE%A4-sheet.png)
-2. [玩家-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E7%8E%A9%E5%AE%B6-sheet.png)
-3. [齊衡烈-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E9%BD%8A%E8%A1%A1%E7%83%88-sheet.png)
-4. [入院憑證-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%85%A5%E9%99%A2%E6%86%91%E8%AD%89-sheet.png)
-5. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）
+1. [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-03/f2-refs.jpg)（4 張設定圖拼成一張）
+2. 本段已完成的 **f1.png**
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 3: character model sheet of 齊衡烈 — this is the person called 齊衡烈 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 4: prop sheet of 入院憑證 — match this object exactly; any plaque or token surface stays blank, with no characters on it.
-Image 5: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it; do not copy its composition.
+Image 1: a reference board of 4 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+  - Panel 3 (bottom-left): character model sheet of 齊衡烈 — this is the person called 齊衡烈 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+  - Panel 4 (bottom-right): prop sheet of 入院憑證 — match this object exactly; any plaque or token surface stays blank, with no characters on it.
+Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it (where a character's costume or luggage here differs from the model sheet, follow this frame); do not copy its composition.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -274,19 +268,19 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-03 f3　→ 存成 `f3.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [第七室-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E7%AC%AC%E4%B8%83%E5%AE%A4-sheet.png)
-2. [齊衡烈-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E9%BD%8A%E8%A1%A1%E7%83%88-sheet.png)
-3. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）
+1. [參考拼圖 f3-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-03/f3-refs.jpg)（2 張設定圖拼成一張）
+2. 本段已完成的 **f1.png**
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 齊衡烈 — this is the person called 齊衡烈 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 3: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it; do not copy its composition.
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 齊衡烈 — this is the person called 齊衡烈 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it (where a character's costume or luggage here differs from the model sheet, follow this frame); do not copy its composition.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -307,17 +301,17 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-04 f1　→ 存成 `f1.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [第七室-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E7%AC%AC%E4%B8%83%E5%AE%A4-sheet.png)
-2. [郁岑燁-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E9%83%81%E5%B2%91%E7%87%81-sheet.png)
+1. [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-04/f1-refs.jpg)（2 張設定圖拼成一張）
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 郁岑燁 — this is the person called 郁岑燁 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 郁岑燁 — this is the person called 郁岑燁 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -334,19 +328,19 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-04 f2　→ 存成 `f2.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [第七室-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E7%AC%AC%E4%B8%83%E5%AE%A4-sheet.png)
-2. [郁岑燁-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E9%83%81%E5%B2%91%E7%87%81-sheet.png)
-3. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）
+1. [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-04/f2-refs.jpg)（2 張設定圖拼成一張）
+2. 本段已完成的 **f1.png**
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 郁岑燁 — this is the person called 郁岑燁 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 3: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it; do not copy its composition.
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 郁岑燁 — this is the person called 郁岑燁 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it (where a character's costume or luggage here differs from the model sheet, follow this frame); do not copy its composition.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -363,19 +357,19 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-04 f3　→ 存成 `f3.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [第七室-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E7%AC%AC%E4%B8%83%E5%AE%A4-sheet.png)
-2. [齊衡烈-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E9%BD%8A%E8%A1%A1%E7%83%88-sheet.png)
-3. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）
+1. [參考拼圖 f3-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-04/f3-refs.jpg)（2 張設定圖拼成一張）
+2. 本段已完成的 **f1.png**
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 齊衡烈 — this is the person called 齊衡烈 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 3: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it; do not copy its composition.
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 齊衡烈 — this is the person called 齊衡烈 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it (where a character's costume or luggage here differs from the model sheet, follow this frame); do not copy its composition.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -392,19 +386,19 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-04 f4　→ 存成 `f4.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [第七室-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E7%AC%AC%E4%B8%83%E5%AE%A4-sheet.png)
-2. [郁岑燁-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E9%83%81%E5%B2%91%E7%87%81-sheet.png)
-3. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）
+1. [參考拼圖 f4-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-04/f4-refs.jpg)（2 張設定圖拼成一張）
+2. 本段已完成的 **f1.png**
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 郁岑燁 — this is the person called 郁岑燁 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 3: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it; do not copy its composition.
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 郁岑燁 — this is the person called 郁岑燁 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it (where a character's costume or luggage here differs from the model sheet, follow this frame); do not copy its composition.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -425,17 +419,17 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-05 f1　→ 存成 `f1.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [第七室-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E7%AC%AC%E4%B8%83%E5%AE%A4-sheet.png)
-2. [厲若楓-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E5%8E%B2%E8%8B%A5%E6%A5%93-sheet.png)
+1. [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-05/f1-refs.jpg)（2 張設定圖拼成一張）
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 厲若楓 — this is the person called 厲若楓 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 厲若楓 — this is the person called 厲若楓 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -452,19 +446,19 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-05 f2　→ 存成 `f2.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [第七室-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E7%AC%AC%E4%B8%83%E5%AE%A4-sheet.png)
-2. [玩家-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E7%8E%A9%E5%AE%B6-sheet.png)
-3. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）
+1. [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-05/f2-refs.jpg)（2 張設定圖拼成一張）
+2. 本段已完成的 **f1.png**
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 3: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it; do not copy its composition.
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it (where a character's costume or luggage here differs from the model sheet, follow this frame); do not copy its composition.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -481,19 +475,19 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-05 f3　→ 存成 `f3.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [第七室-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E7%AC%AC%E4%B8%83%E5%AE%A4-sheet.png)
-2. [厲若楓-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E5%8E%B2%E8%8B%A5%E6%A5%93-sheet.png)
-3. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）
+1. [參考拼圖 f3-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-05/f3-refs.jpg)（2 張設定圖拼成一張）
+2. 本段已完成的 **f1.png**
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 厲若楓 — this is the person called 厲若楓 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 3: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it; do not copy its composition.
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 厲若楓 — this is the person called 厲若楓 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it (where a character's costume or luggage here differs from the model sheet, follow this frame); do not copy its composition.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -510,19 +504,19 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-05 f4　→ 存成 `f4.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [第七室-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E7%AC%AC%E4%B8%83%E5%AE%A4-sheet.png)
-2. [玩家-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E7%8E%A9%E5%AE%B6-sheet.png)
-3. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）
+1. [參考拼圖 f4-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-05/f4-refs.jpg)（2 張設定圖拼成一張）
+2. 本段已完成的 **f1.png**
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 3: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it; do not copy its composition.
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it (where a character's costume or luggage here differs from the model sheet, follow this frame); do not copy its composition.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -539,21 +533,20 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-05 f5　→ 存成 `f5.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [第七室-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E7%AC%AC%E4%B8%83%E5%AE%A4-sheet.png)
-2. [玩家-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E7%8E%A9%E5%AE%B6-sheet.png)
-3. [入院憑證-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%85%A5%E9%99%A2%E6%86%91%E8%AD%89-sheet.png)
-4. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）
+1. [參考拼圖 f5-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-05/f5-refs.jpg)（3 張設定圖拼成一張）
+2. 本段已完成的 **f1.png**
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 3: prop sheet of 入院憑證 — match this object exactly; any plaque or token surface stays blank, with no characters on it.
-Image 4: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it; do not copy its composition.
+Image 1: a reference board of 3 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+  - Panel 3 (bottom-left): prop sheet of 入院憑證 — match this object exactly; any plaque or token surface stays blank, with no characters on it.
+Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it (where a character's costume or luggage here differs from the model sheet, follow this frame); do not copy its composition.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -574,17 +567,17 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-06 f1　→ 存成 `f1.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [第七室-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E7%AC%AC%E4%B8%83%E5%AE%A4-sheet.png)
-2. [郁岑燁-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E9%83%81%E5%B2%91%E7%87%81-sheet.png)
+1. [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-06/f1-refs.jpg)（2 張設定圖拼成一張）
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 郁岑燁 — this is the person called 郁岑燁 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 郁岑燁 — this is the person called 郁岑燁 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -601,27 +594,23 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-06 f2　→ 存成 `f2.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [第七室-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E7%AC%AC%E4%B8%83%E5%AE%A4-sheet.png)
-2. [玩家-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E7%8E%A9%E5%AE%B6-sheet.png)
-3. [齊衡烈-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E9%BD%8A%E8%A1%A1%E7%83%88-sheet.png)
-4. [郁岑燁-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E9%83%81%E5%B2%91%E7%87%81-sheet.png)
-5. [厲若楓-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E5%8E%B2%E8%8B%A5%E6%A5%93-sheet.png)
-6. [入院憑證-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%85%A5%E9%99%A2%E6%86%91%E8%AD%89-sheet.png)
-7. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）
+1. [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-06/f2-refs.jpg)（6 張設定圖拼成一張）
+2. 本段已完成的 **f1.png**
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 3: character model sheet of 齊衡烈 — this is the person called 齊衡烈 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 4: character model sheet of 郁岑燁 — this is the person called 郁岑燁 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 5: character model sheet of 厲若楓 — this is the person called 厲若楓 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 6: prop sheet of 入院憑證 — match this object exactly; any plaque or token surface stays blank, with no characters on it.
-Image 7: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it; do not copy its composition.
+Image 1: a reference board of 6 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-middle): character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+  - Panel 3 (top-right): character model sheet of 齊衡烈 — this is the person called 齊衡烈 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+  - Panel 4 (bottom-left): character model sheet of 郁岑燁 — this is the person called 郁岑燁 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+  - Panel 5 (bottom-middle): character model sheet of 厲若楓 — this is the person called 厲若楓 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+  - Panel 6 (bottom-right): prop sheet of 入院憑證 — match this object exactly; any plaque or token surface stays blank, with no characters on it.
+Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it (where a character's costume or luggage here differs from the model sheet, follow this frame); do not copy its composition.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -642,7 +631,7 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-07 f1　→ 存成 `f1.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
 1. [天玄院東廊-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%A4%A9%E7%8E%84%E9%99%A2%E6%9D%B1%E5%BB%8A-sheet.png)
 
@@ -667,25 +656,22 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-07 f2　→ 存成 `f2.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [天玄院東廊-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%A4%A9%E7%8E%84%E9%99%A2%E6%9D%B1%E5%BB%8A-sheet.png)
-2. [玩家-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E7%8E%A9%E5%AE%B6-sheet.png)
-3. [齊衡烈-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E9%BD%8A%E8%A1%A1%E7%83%88-sheet.png)
-4. [郁岑燁-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E9%83%81%E5%B2%91%E7%87%81-sheet.png)
-5. [厲若楓-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E5%8E%B2%E8%8B%A5%E6%A5%93-sheet.png)
-6. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）
+1. [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-07/f2-refs.jpg)（5 張設定圖拼成一張）
+2. 本段已完成的 **f1.png**
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 3: character model sheet of 齊衡烈 — this is the person called 齊衡烈 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 4: character model sheet of 郁岑燁 — this is the person called 郁岑燁 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 5: character model sheet of 厲若楓 — this is the person called 厲若楓 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 6: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it; do not copy its composition.
+Image 1: a reference board of 5 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-middle): character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+  - Panel 3 (top-right): character model sheet of 齊衡烈 — this is the person called 齊衡烈 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+  - Panel 4 (bottom-left): character model sheet of 郁岑燁 — this is the person called 郁岑燁 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+  - Panel 5 (bottom-middle): character model sheet of 厲若楓 — this is the person called 厲若楓 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it (where a character's costume or luggage here differs from the model sheet, follow this frame); do not copy its composition.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -702,19 +688,19 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-07 f3　→ 存成 `f3.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [天玄院東廊-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%A4%A9%E7%8E%84%E9%99%A2%E6%9D%B1%E5%BB%8A-sheet.png)
-2. [蕭曜霖-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E8%95%AD%E6%9B%9C%E9%9C%96-sheet.png)
-3. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）
+1. [參考拼圖 f3-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-07/f3-refs.jpg)（2 張設定圖拼成一張）
+2. 本段已完成的 **f1.png**
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 蕭曜霖 — this is the person called 蕭曜霖 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 3: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it; do not copy its composition.
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 蕭曜霖 — this is the person called 蕭曜霖 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it (where a character's costume or luggage here differs from the model sheet, follow this frame); do not copy its composition.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -731,19 +717,19 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-07 f4　→ 存成 `f4.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [天玄院東廊-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%A4%A9%E7%8E%84%E9%99%A2%E6%9D%B1%E5%BB%8A-sheet.png)
-2. [蕭曜霖-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E8%95%AD%E6%9B%9C%E9%9C%96-sheet.png)
-3. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）
+1. [參考拼圖 f4-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-07/f4-refs.jpg)（2 張設定圖拼成一張）
+2. 本段已完成的 **f1.png**
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 蕭曜霖 — this is the person called 蕭曜霖 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 3: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it; do not copy its composition.
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 蕭曜霖 — this is the person called 蕭曜霖 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it (where a character's costume or luggage here differs from the model sheet, follow this frame); do not copy its composition.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -760,19 +746,19 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-07 f5　→ 存成 `f5.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [天玄院東廊-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%A4%A9%E7%8E%84%E9%99%A2%E6%9D%B1%E5%BB%8A-sheet.png)
-2. [蕭曜霖-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E8%95%AD%E6%9B%9C%E9%9C%96-sheet.png)
-3. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）
+1. [參考拼圖 f5-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-07/f5-refs.jpg)（2 張設定圖拼成一張）
+2. 本段已完成的 **f1.png**
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 蕭曜霖 — this is the person called 蕭曜霖 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 3: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it; do not copy its composition.
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 蕭曜霖 — this is the person called 蕭曜霖 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it (where a character's costume or luggage here differs from the model sheet, follow this frame); do not copy its composition.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -793,17 +779,17 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-08 f1　→ 存成 `f1.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [天玄院東廊-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%A4%A9%E7%8E%84%E9%99%A2%E6%9D%B1%E5%BB%8A-sheet.png)
-2. [齊衡烈-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E9%BD%8A%E8%A1%A1%E7%83%88-sheet.png)
+1. [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-08/f1-refs.jpg)（2 張設定圖拼成一張）
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 齊衡烈 — this is the person called 齊衡烈 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 齊衡烈 — this is the person called 齊衡烈 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -820,19 +806,19 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-08 f2　→ 存成 `f2.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [天玄院東廊-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%A4%A9%E7%8E%84%E9%99%A2%E6%9D%B1%E5%BB%8A-sheet.png)
-2. [郁岑燁-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E9%83%81%E5%B2%91%E7%87%81-sheet.png)
-3. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）
+1. [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-08/f2-refs.jpg)（2 張設定圖拼成一張）
+2. 本段已完成的 **f1.png**
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 郁岑燁 — this is the person called 郁岑燁 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 3: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it; do not copy its composition.
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 郁岑燁 — this is the person called 郁岑燁 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it (where a character's costume or luggage here differs from the model sheet, follow this frame); do not copy its composition.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -849,19 +835,19 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-08 f3　→ 存成 `f3.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [天玄院東廊-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%A4%A9%E7%8E%84%E9%99%A2%E6%9D%B1%E5%BB%8A-sheet.png)
-2. [厲若楓-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E5%8E%B2%E8%8B%A5%E6%A5%93-sheet.png)
-3. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）
+1. [參考拼圖 f3-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-08/f3-refs.jpg)（2 張設定圖拼成一張）
+2. 本段已完成的 **f1.png**
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 厲若楓 — this is the person called 厲若楓 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 3: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it; do not copy its composition.
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 厲若楓 — this is the person called 厲若楓 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it (where a character's costume or luggage here differs from the model sheet, follow this frame); do not copy its composition.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -878,21 +864,20 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-08 f4　→ 存成 `f4.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [天玄院東廊-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%A4%A9%E7%8E%84%E9%99%A2%E6%9D%B1%E5%BB%8A-sheet.png)
-2. [玩家-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E7%8E%A9%E5%AE%B6-sheet.png)
-3. [入院憑證-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%85%A5%E9%99%A2%E6%86%91%E8%AD%89-sheet.png)
-4. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）
+1. [參考拼圖 f4-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-08/f4-refs.jpg)（3 張設定圖拼成一張）
+2. 本段已完成的 **f1.png**
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
-Image 3: prop sheet of 入院憑證 — match this object exactly; any plaque or token surface stays blank, with no characters on it.
-Image 4: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it; do not copy its composition.
+Image 1: a reference board of 3 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (天玄院東廊) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+  - Panel 3 (bottom-left): prop sheet of 入院憑證 — match this object exactly; any plaque or token surface stays blank, with no characters on it.
+Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it (where a character's costume or luggage here differs from the model sheet, follow this frame); do not copy its composition.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -913,17 +898,17 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-09 f1　→ 存成 `f1.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [第七室-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E7%AC%AC%E4%B8%83%E5%AE%A4-sheet.png)
-2. [玩家-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E7%8E%A9%E5%AE%B6-sheet.png)
+1. [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-09/f1-refs.jpg)（2 張設定圖拼成一張）
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): character model sheet of 玩家 — this is the person called 玩家 in the shot text; match the SAME face, hairstyle, costume and weapon exactly.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -940,19 +925,19 @@ Vertical 9:16 portrait frame. Only the characters named in the shot text appear,
 
 ### E01-09 f2　→ 存成 `f2.png`
 
-**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**
+**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**
 
-1. [第七室-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E7%AC%AC%E4%B8%83%E5%AE%A4-sheet.png)
-2. [第七室門牌-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E7%AC%AC%E4%B8%83%E5%AE%A4%E9%96%80%E7%89%8C-sheet.png)
-3. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）
+1. [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/storyboard/export/chatgpt/E01-09/f2-refs.jpg)（2 張設定圖拼成一張）
+2. 本段已完成的 **f1.png**
 
 **提示詞（整段複製貼上）：**
 
 ```text
 Reference images:
-Image 1: environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
-Image 2: prop sheet of 第七室門牌 — match this object exactly; any plaque or token surface stays blank, with no characters on it.
-Image 3: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it; do not copy its composition.
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location (第七室) — match its architecture, materials, layout and wear exactly; the frame shows the same place.
+  - Panel 2 (top-right): prop sheet of 第七室門牌 — match this object exactly; any plaque or token surface stays blank, with no characters on it.
+Image 2: the opening frame of this same sequence — keep the world, lighting, mist density and every character's look consistent with it (where a character's costume or luggage here differs from the model sheet, follow this frame); do not copy its composition.
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 

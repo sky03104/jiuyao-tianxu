@@ -211,6 +211,12 @@ novel-characters 第一版漏讀 docs/16（Claude 疏漏），補正如下。**�
 - **影片**：待分鏡圖驗收後再評估免費方案——Wan 2.2（Apache 2.0 可商用）在 Colab／Kaggle 跑、Wan2GP、
   可靈／PixVerse 免費額度（有浮水印、免費版無商用授權，只適合內部試片）。原生配音缺口以開源 TTS（CosyVoice／Fish Speech）補。
 
+## 2026-09-27　ChatGPT 網頁版一次只能上傳 2 張圖 → 參考拼圖
+
+- 多張設定圖預先拼成一張「參考拼圖」（`storyboard/export/chatgpt/<段號>/f<序>-refs.jpg`，無文字、白色間隔，
+  提示詞以 Panel 1～N 與位置說明各格內容），每張分鏡只需上傳 2 張：參考拼圖＋本段 f1。由 `gen_images.py handoff` 產生。
+- f1 參考說明加上「角色服裝／行囊與設定圖不同時以 f1 為準」，對應 E01-02 f1 背包連戲裁定。
+
 ## 分鏡圖驗圖紀錄（ChatGPT 網頁版出圖）
 
 | 分鏡 | 結果 | 備註 |
