@@ -1,5 +1,12 @@
 # CHANGELOG — 《九曜：天墟》
 
+## 2026-09-27（第三十八筆，短影音程式動畫試片 S01）
+
+- 評估 Higgsfield（Seedance／Kling 整合平台）與網路流傳的「162 個 Claude 作品指令包」：前者只適合正片試片抽卡，
+  後者的「程式逐格動畫＋程式配樂」做法適合不需角色一致性的短影音日更。結論記在 `production/shorts/README.md`。
+- 新增世界觀短篇試片 S01「九曜界是什麼？」（30 秒、9:16、程式動畫＋程式合成配樂、中文字幕、無旁白），
+  內容只用 `docs/21` 表層認知，不揭露中層／長期真相。檔案在 `production/shorts/S01_what_is_jiuyao/`。
+
 ## 2026-09-26（第三十七筆，iPhone 觸控測試用網頁版）
 
 - 咖哩是 iPhone、Windows 無法打包 iOS → 新增 `Phase0DBuild.BuildWebGL`（網頁版以 Client 加入電腦 Server），
