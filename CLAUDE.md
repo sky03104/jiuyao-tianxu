@@ -36,6 +36,13 @@
     GPT 參考稿為準（`production/EP01/shuohao/imagegen/refs/`），出圖一律附參考稿、不可只靠文字 prompt。
     EP01 出圖工具鏈與逐張驗圖紀錄見 `production/EP01/shuohao/DECISIONS.md`，腳本 `imagegen/gen_images.py`
 
+## 劇情分工（2026-09-27 咖哩裁定）
+
+- **劇情（動畫、小說、補完內容）由 Claude 設計，咖哩以觀眾身分看成品**，不必每個劇情選擇都先問。
+- 仍受本文件「核心規則」約束：不改核心世界觀、遵守 `21` 真相揭露節奏與各章硬性規則；新增劇情一律標記並寫進 `/docs`。
+- 會改動已定案正式設定（世界觀、角色身分、正史歸屬等）的事，仍要先問咖哩。
+- 長篇動畫試點：`docs/43_LONGFORM_ANIMATION_EP01_QINGLAN_TRIAL_PILOT_SCRIPT_V1.0.md`（第一章＝一集約 28 分鐘，方向已通過）。
+
 ## 出圖／素材保存規則（2026-09-24 咖哩裁定）
 
 - 雲端 session 重開容器就清空：**參考稿、設定圖、分鏡圖等出圖結果一律 commit 進 repo**，不可只留在 session
