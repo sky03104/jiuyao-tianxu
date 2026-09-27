@@ -1,47 +1,99 @@
 {
   "_note": "長篇動畫第一集試片（docs/43 第 2 場＋第 12 場）。橫式 16:9。沿用 EP01 已定稿設定圖（C01–C05、S01–S03、P01–P02），新增 C06–C08、S04。由 tools/lf01_handoff.py 讀取產生 docs/HANDOFF-010。",
   "reuse": {
-    "characters": {"C01": "玩家", "C02": "齊衡烈", "C03": "郁岑燁", "C04": "厲若楓", "C05": "蕭曜霖"},
-    "scenes": {"S01": "天玄院外景", "S02": "天玄院東廊", "S03": "第七室"},
-    "props": {"P01": "入院憑證", "P02": "第七室門牌"},
-    "displayName": {"C01": "机遙"}
+    "characters": {
+      "C01": "玩家",
+      "C02": "齊衡烈",
+      "C03": "郁岑燁",
+      "C04": "厲若楓",
+      "C05": "蕭曜霖"
+    },
+    "scenes": {
+      "S01": "天玄院外景",
+      "S02": "天玄院東廊",
+      "S03": "第七室"
+    },
+    "props": {
+      "P01": "入院憑證",
+      "P02": "第七室門牌"
+    },
+    "displayName": {
+      "C01": "机遙"
+    }
   },
   "newCharacters": [
     {
-      "id": "C06", "name": "江祈璟",
-      "styleRefs": ["C03", "C02"],
+      "id": "C06",
+      "name": "江祈璟",
+      "styleRefs": [
+        "C03",
+        "C02"
+      ],
       "bust": "a composed, sharp-featured young East Asian man around twenty with a narrow oval face, high cheekbones, clean jawline, straight nose, calm narrow dark eyes under straight dark brows that give a faintly appraising look, lips closed in a neutral line; long glossy black hair drawn back into a high single ponytail bound with a dark silver cord, a few fine strands at the temples; the collar of a deep navy cross-collar robe with silver-white trim and a small antique bronze academy badge inset with jade",
       "figure": "a lean, upright young East Asian man around twenty, a spear cultivator of an ancient-Chinese-inspired mountain academy from a respected family, posture straight and economical, wearing a fitted deep navy cross-collar robe with silver-white trim over a pale grey inner robe, narrow sleeves bound by dark leather bracers on both forearms, a slim dark leather belt with the academy badge of antique bronze inset with carved jade, dark trousers and soft leather boots; a long spear of straight dark hardwood with a leaf-shaped polished steel head, a small antique bronze bell tied just below the head with a short dark cord; fine calluses visible on the knuckles; long black hair in a high single ponytail reaching between the shoulder blades",
-      "details": ["the small antique bronze bell tied below the spearhead", "the leaf-shaped polished steel spearhead", "the high ponytail bound with a dark silver cord", "the calloused knuckles of his right hand on the spear shaft", "the dark leather forearm bracer"],
+      "details": [
+        "the small antique bronze bell tied below the spearhead",
+        "the leaf-shaped polished steel spearhead",
+        "the high ponytail bound with a dark silver cord",
+        "the calloused knuckles of his right hand on the spear shaft",
+        "the dark leather forearm bracer"
+      ],
       "palette": "deep navy, silver-white and polished steel palette, cool clear light",
       "negative": "smirk, arrogant sneer, villain look, heavy armour, cape, twin ponytails, bun, short hair, halberd, trident, glowing weapon, western knight, text, watermark"
     },
     {
-      "id": "C07", "name": "聞人澈",
-      "styleRefs": ["C04", "C03"],
-      "bust": "a quiet, slightly slender young East Asian man around twenty with a soft oval face, gentle downturned dark eyes that look calm and a little tired, straight thin brows, a small straight nose, lips closed; dark hair falling just past the jaw, half of it loosely tied back at the crown with a plain wooden pin; the collar of a grey-blue hooded over-robe with the hood down, a dark inner robe beneath",
-      "figure": "a slender young East Asian man around twenty, a spell-staff cultivator of an ancient-Chinese-inspired mountain academy who gathers medicinal herbs, standing quietly with slightly rounded shoulders, wearing a long grey-blue hooded over-robe with the hood down over a dark charcoal inner robe, a cloth sash with the academy badge of antique bronze inset with carved jade, a small worn leather herb pouch at the right hip, dark trousers and soft cloth boots; in his right hand a short staff of dark xuan wood about forearm length with a rounded head carved with fine rune grooves; around his left wrist three thin interlocking talisman rings of antique bronze and pale jade; dark jaw-length hair half tied back with a wooden pin",
-      "details": ["the short dark xuan-wood staff with its carved rune grooves", "the three interlocking talisman rings of bronze and pale jade on the left wrist", "the worn leather herb pouch", "the grey-blue hood lying down on the shoulders", "the wooden hair pin"],
+      "id": "C07",
+      "name": "聞人澈",
+      "styleRefs": [
+        "C05"
+      ],
+      "bust": "a quiet, slightly slender young East Asian man around twenty with a soft oval face, gentle downturned dark eyes that look calm and a little tired, straight thin brows, a small straight nose, lips closed; dark hair falling just past the jaw, half of it loosely tied back at the crown with a plain wooden pin; the collar of a grey-blue hooded over-robe with the hood down, a dark inner robe beneath; a clean forehead with NO mark or tattoo",
+      "figure": "a slender young East Asian man around twenty, a spell-staff cultivator of an ancient-Chinese-inspired mountain academy who gathers medicinal herbs, standing quietly with slightly rounded shoulders, wearing a long grey-blue hooded over-robe with the hood down over a dark charcoal inner robe, a cloth sash with the academy badge of antique bronze inset with carved jade, a small worn leather herb pouch at the right hip, dark trousers and soft cloth boots; in his right hand a short staff of dark xuan wood about forearm length with a rounded head carved with fine rune grooves; around his left wrist three thin interlocking talisman rings of antique bronze and pale jade; dark jaw-length hair half tied back with a wooden pin; he carries NO sword and NO blade of any kind — his only tool is the short staff",
+      "details": [
+        "the short dark xuan-wood staff with its carved rune grooves",
+        "the three interlocking talisman rings of bronze and pale jade on the left wrist",
+        "the worn leather herb pouch",
+        "the grey-blue hood lying down on the shoulders",
+        "the wooden hair pin"
+      ],
       "palette": "grey-blue, charcoal and pale jade palette, soft overcast light",
-      "negative": "long wizard staff, crystal orb, pointed wizard hat, glowing eyes, western mage robe, smug expression, heavy armour, text, watermark"
+      "negative": "sword, sabre, blade, scabbard at the hip, forehead mark, forehead tattoo, bandaged or wrapped hand, spiky short hair, dark navy robe, bronze shoulder armour, pauldrons, long wizard staff, crystal orb, pointed wizard hat, glowing eyes, western mage robe, smug expression, heavy armour, text, watermark",
+      "_fixNote": "2026-09-27 第 1 次出圖把郁岑燁的額紋、右手纏帶、佩劍照抄過來（參考拼圖含郁岑燁）→ 改用外型差異大的蕭曜霖當畫風參考，並在提示詞排除劍與額紋"
     },
     {
-      "id": "C08", "name": "赤瞳妖將",
-      "styleRefs": ["C05"],
+      "id": "C08",
+      "name": "赤瞳妖將",
+      "styleRefs": [
+        "C05"
+      ],
       "creature": true,
       "bust": "the head and shoulders of a towering demon general of an Eastern fantasy world: a long, noble, half-beast half-human face with an elongated jaw and high sharp cheekbones, skin of dark ash-grey with fine lacquer-like scale texture along the temples and throat, two deep crimson eyes with dark sclera and a calm, heavy, unreadable gaze, two short swept-back horn ridges of black horn rising from above the brows along the skull, a long mane of ink-grey hair falling loose behind the shoulders; faint hairline seams of dull crimson light running along the scale edges at the neck; the collar of layered crimson-black scale plates",
       "figure": "a towering humanoid demon general about two and a half times the height of the academy students, long-limbed and lean rather than bulky, standing completely still with a regal, patient bearing; the body is covered in layered crimson-black scale plates that look grown rather than forged, like lacquered armour, with faint seams of dull crimson light along the plate edges; long dark-grey forearms ending in hands with long black claws; around the waist a torn, faded ceremonial sash of deep blue cloth with frayed edges, the only cloth on him; bare clawed feet; no weapon; long ink-grey mane falling to the middle of the back; two short swept-back black horn ridges; deep crimson eyes",
-      "details": ["the deep crimson eyes with dark sclera", "the short swept-back black horn ridges", "the layered crimson-black scale plates with dull crimson seams", "the long black claws", "the torn faded deep-blue ceremonial sash at the waist"],
+      "details": [
+        "the deep crimson eyes with dark sclera",
+        "the short swept-back black horn ridges",
+        "the layered crimson-black scale plates with dull crimson seams",
+        "the long black claws",
+        "the torn faded deep-blue ceremonial sash at the waist"
+      ],
       "palette": "crimson-black, ash grey and faded deep blue palette, cold misty forest light",
       "negative": "western devil, bat wings, huge ram horns, goat legs, fire and brimstone, gore, blood, exposed bones, skull face, zombie, grotesque drooling mouth, bulging muscles, cute, chibi, weapon, armour made of metal, text, watermark"
     }
   ],
   "newScenes": [
     {
-      "id": "S04", "name": "陣眼遺跡",
-      "styleRefs": ["S01"],
+      "id": "S04",
+      "name": "陣眼遺跡",
+      "styleRefs": [
+        "S01"
+      ],
       "master": "a circular sunken stone courtyard deep inside an ancient misty forest: concentric rings of weathered grey stone slabs carved with broken, worn rune grooves, half swallowed by moss and huge twisting tree roots; at the centre a round stone pedestal holding a dark faceted crystal about the size of a person's head, set in a bronze-green corroded clasp; three waist-high carved stone pillars standing in a wide triangle around the courtyard, each with a flat top carved with a small circular sigil; enormous ancient trees closing overhead, shafts of light and mist between the trunks; the stone is old but sound — this place was built long before the academy",
-      "details": ["the dark faceted crystal on its stone pedestal with the corroded bronze-green clasp", "one of the three carved stone pillars with the circular sigil on its flat top", "a section of the concentric rune rings with broken worn grooves and moss", "huge tree roots gripping the edge of the stone courtyard"],
+      "details": [
+        "the dark faceted crystal on its stone pedestal with the corroded bronze-green clasp",
+        "one of the three carved stone pillars with the circular sigil on its flat top",
+        "a section of the concentric rune rings with broken worn grooves and moss",
+        "huge tree roots gripping the edge of the stone courtyard"
+      ],
       "lighting": {
         "午後林光": "late afternoon light falling through the high forest canopy in soft shafts, cool green mist between the trunks, the crystal dark and quiet",
         "暗紅異變": "the three stone pillars erupt with columns of dark crimson light shooting up through the canopy, the crystal pulsing with a deep red glow from within, a crimson glare seeping through the canopy from the sky above, the mist lit red from below, harsh red rim light on every surface"
@@ -50,89 +102,772 @@
     }
   ],
   "segments": [
-    {"id": "A01", "scene": "S01", "light": "clear early morning, a long band of white cloud drifting across the middle of the mountain, first sunlight turning the top hall pale gold", "blocking": "開場空景接門樓人潮；机遙獨自一人拾級而上", "cuts": [
-      {"sec": 8, "size": "大遠景", "camera": "Push In", "chars": [], "props": [], "frame": "大遠景，橫式 16:9。依山疊建的天玄院三層院落，白色雲帶從山腰緩緩流過，最上方三重簷主殿被晨光照成淡金色。", "lines": [["旁白", "九曜界，天玄院。"]]},
-      {"sec": 7, "size": "全景", "camera": "Static Shot", "chars": ["C01"], "props": [], "frame": "全景，橫式 16:9。山腳銅框門樓，兩面深藍學院旗分立左右；石階上新生與送行家人來來往往，有人挑著箱籠，机遙一個人背著捲布行囊走在石階中段，畫面右三分之一。", "lines": []}
-    ]},
-    {"id": "A02", "scene": "S01", "light": "clear early morning, soft warm light on the gatehouse", "blocking": "門樓下，机遙抬頭；閃回去年冬天考核失敗", "cuts": [
-      {"sec": 8, "size": "中景", "camera": "Static Shot", "chars": ["C01"], "props": ["P01"], "frame": "中景低角度，橫式 16:9。机遙站在門樓下仰頭，看匾額位置上的圓形雲星徽紋（無字），右手握著入院憑證垂在身側。", "lines": []},
-      {"sec": 7, "size": "全景", "camera": "Static Shot", "chars": ["C01"], "props": [], "frame": "全景，橫式 16:9，冷灰色調的回憶畫面。同一座門樓在冬天是灰的，地上殘雪；考核場的站樁石圈裡，机遙被推出圈外、單膝跌在雪泥上，圈外考官背影模糊。", "lines": []}
-    ]},
-    {"id": "A03", "scene": "S01", "light": "morning light in the shade under the gatehouse roof", "blocking": "報到木案，執事驗憑證", "cuts": [
-      {"sec": 7, "size": "特寫", "camera": "Static Shot", "chars": [], "props": ["P01"], "frame": "特寫，橫式 16:9。報到木案上一塊銅盤，一隻手把玉白入院憑證按在銅盤上，銅盤亮起淡淡青光。", "lines": []},
-      {"sec": 8, "size": "中景", "camera": "Static Shot", "chars": ["C01"], "props": [], "frame": "過肩中景，橫式 16:9。從院方執事（深色制服、背影與肩膀）肩後看出去，机遙站在木案前，身上沒有任何兵器；背景是排隊的新生。", "lines": [["院方執事", "青嵐新契修，机遙。東廊，第七室。"]]}
-    ]},
-    {"id": "A04", "scene": "S02", "light": "early morning sun slanting in low from the open left side, long parallel bands of warm light and pillar shadows across the floor", "blocking": "東廊跟拍机遙；新生擦肩", "cuts": [
-      {"sec": 8, "size": "中景", "camera": "Tracking Shot", "chars": ["C01"], "props": ["P01"], "frame": "中景跟拍，橫式 16:9。机遙背影在畫面右三分之一，快步走在東廊上，左側欄杆外是雲海，柱影一條條鋪在石板地；他邊走邊看右側的房門。", "lines": []},
-      {"sec": 7, "size": "中景", "camera": "Static Shot", "chars": ["C01"], "props": [], "frame": "中景，橫式 16:9。一個背大包袱的新生從机遙身邊擠過，包袱撞到机遙背上的行囊，那人回頭揮手道歉已經跑遠；机遙把行囊背帶往上拉。", "lines": []}
-    ]},
-    {"id": "A05", "scene": "S02", "light": "morning, the far end of the corridor quieter, sunlight narrowing to a strip along the wall", "blocking": "第七室門前；門被拉開，齊衡烈探身", "cuts": [
-      {"sec": 6, "size": "中景", "camera": "Push In", "chars": ["C01"], "props": ["P02"], "frame": "中景，橫式 16:9。机遙站在一扇深色舊木門前，抬頭看門楣旁的直立小門牌（無字），手裡拿著入院憑證。", "lines": []},
-      {"sec": 9, "size": "中景", "camera": "Static Shot", "chars": ["C01", "C02"], "props": [], "frame": "雙人中景，橫式 16:9。門從裡面被拉開，齊衡烈一手撐門框、探出半個身子上下打量机遙；机遙站在門檻外，兩人側面相對。", "lines": [["齊衡烈", "你就是新來的？"], ["机遙", "應該是。"]]}
-    ]},
-    {"id": "A06", "scene": "S03", "light": "morning sunlight entering through the large square lattice window opposite the door, crisp lattice shadows across the floor", "blocking": "第七室門口與屋內：齊衡烈、郁岑燁", "cuts": [
-      {"sec": 7, "size": "近景", "camera": "Static Shot", "chars": ["C02"], "props": [], "frame": "近景，橫式 16:9。齊衡烈咧嘴大笑，抬手拍在自己右上臂的赤金臂環上。", "lines": [["齊衡烈", "那就對了。第七室最近正缺個能打的。"]]},
-      {"sec": 8, "size": "中景", "camera": "Static Shot", "chars": ["C03"], "props": [], "frame": "中景，橫式 16:9。屋內矮桌旁，郁岑燁坐著用布擦長劍，聽到話才抬起眼，目光冷淡；窗格光影落在桌面。", "lines": [["郁岑燁", "你看都沒看他出手，怎麼知道他能打？"]]}
-    ]},
-    {"id": "A07", "scene": "S03", "light": "morning sunlight through the lattice window", "blocking": "齊衡烈提刀；郁岑燁低頭", "cuts": [
-      {"sec": 8, "size": "中景", "camera": "Static Shot", "chars": ["C02"], "props": [], "frame": "中景，橫式 16:9。齊衡烈從門邊兵器架提起單刃厚背重刀扛上肩，咧嘴一笑。", "lines": [["齊衡烈", "所以才要打一場啊。"]]},
-      {"sec": 7, "size": "近景", "camera": "Static Shot", "chars": ["C03"], "props": [], "frame": "近景，橫式 16:9。郁岑燁低頭繼續擦劍，眉頭輕皺。", "lines": [["郁岑燁", "……無聊。"]]}
-    ]},
-    {"id": "A08", "scene": "S03", "light": "morning sunlight through the lattice window, the window side bright", "blocking": "厲若楓看机遙的腳；机遙愣住", "cuts": [
-      {"sec": 8, "size": "中景", "camera": "Static Shot", "chars": ["C04"], "props": [], "frame": "中景，橫式 16:9。厲若楓靠在窗邊牆上，背後三段式短弓，琥珀色眼睛往下看著門口的方向（看的是机遙的腳），窗光在他半邊臉上。", "lines": [["厲若楓", "別急。他的腳步有點亂。"]]},
-      {"sec": 7, "size": "近景", "camera": "Static Shot", "chars": ["C01"], "props": [], "frame": "近景，橫式 16:9。机遙站在門檻前愣了一下，視線從窗邊移向矮桌，表情是真心的疑問。", "lines": [["机遙", "你們都看得出來？"]]}
-    ]},
-    {"id": "A09", "scene": "S03", "light": "morning sunlight through the lattice window", "blocking": "郁岑燁頭也不抬；齊衡烈大笑", "cuts": [
-      {"sec": 7, "size": "近景", "camera": "Static Shot", "chars": ["C03"], "props": [], "frame": "近景，橫式 16:9。郁岑燁頭也沒抬，布在劍身上滑過。", "lines": [["郁岑燁", "至少我看得出來。"]]},
-      {"sec": 8, "size": "中景", "camera": "Static Shot", "chars": ["C02"], "props": [], "frame": "中景，橫式 16:9。齊衡烈仰頭大笑，把肩上的重刀顛了一下。", "lines": [["齊衡烈", "哈哈，那更好！明天演武場見。"]]}
-    ]},
-    {"id": "A10", "scene": "S02", "light": "looking down the corridor toward its far end with the morning sun directly behind the far opening, strong soft backlight and glowing haze", "blocking": "三人轉頭；走廊盡頭逆光中的蕭曜霖", "cuts": [
-      {"sec": 6, "size": "全景", "camera": "Static Shot", "chars": ["C01", "C02", "C03", "C04"], "props": [], "frame": "全景，橫式 16:9，鏡頭在東廊上看進第七室敞開的門口。屋內齊衡烈、郁岑燁、厲若楓同時轉頭望向走廊（朝鏡頭方向），站在門檻上的机遙跟著回頭；四人都在門框之內。", "lines": [["蕭曜霖（畫外）", "不用等明天。"]]},
-      {"sec": 9, "size": "全景", "camera": "Push In", "chars": ["C05"], "props": [], "frame": "全景逆光，橫式 16:9。東廊盡頭晨光最亮處，蕭曜霖站著不動，厚重護肩邊緣有補過的痕跡，背後門板重劍的劍柄高出肩頭；身影在光霧中近乎剪影。", "lines": [["蕭曜霖", "半刻鐘後，新生演武場集合。"]]}
-    ]},
-    {"id": "A11", "scene": "S02", "light": "strong morning backlight at the far end of the corridor", "blocking": "蕭曜霖離去；机遙與齊衡烈", "cuts": [
-      {"sec": 7, "size": "全景", "camera": "Static Shot", "chars": ["C05"], "props": [], "frame": "全景，橫式 16:9。蕭曜霖轉身沿走廊走遠的背影，兩旁房門口探頭的新生紛紛縮回頭。", "lines": []},
-      {"sec": 8, "size": "中景", "camera": "Static Shot", "chars": ["C01", "C02"], "props": [], "frame": "雙人中景，橫式 16:9。第七室門口，机遙看著走廊盡頭；齊衡烈握緊肩上的刀柄，眼睛發亮地笑。", "lines": [["机遙", "這麼快？"], ["齊衡烈", "習慣就好。"]]}
-    ]},
-    {"id": "A12", "scene": "S03", "light": "morning sunlight through the lattice window", "blocking": "机遙放下行囊；齊衡烈自我介紹", "cuts": [
-      {"sec": 7, "size": "中景", "camera": "Static Shot", "chars": ["C01"], "props": [], "frame": "中景，橫式 16:9。机遙把捲布行囊放在靠窗那張疊得方正的空床上，窗外看得到更高一層院子的演武場一角。", "lines": []},
-      {"sec": 8, "size": "中景", "camera": "Static Shot", "chars": ["C01", "C02"], "props": [], "frame": "雙人中景，橫式 16:9。齊衡烈已經走到門口，扛著刀回頭用拇指往身後一比；机遙在窗邊床前轉過身。", "lines": [["齊衡烈", "喂，新來的。我叫齊衡烈。你呢？"], ["机遙", "机遙。"]]}
-    ]},
-
-    {"id": "B01", "scene": "S04", "light": "暗紅異變", "blocking": "陣眼遺跡外，異化妖獸從隊伍身邊奔過", "cuts": [
-      {"sec": 7, "size": "大遠景", "camera": "Static Shot", "chars": [], "props": [], "frame": "大遠景，橫式 16:9，從林中仰望。古林樹冠縫隙間透出暗紅色的光，霧被映成紅色，遠處林梢在搖動。", "lines": []},
-      {"sec": 8, "size": "全景", "camera": "Static Shot", "chars": ["C01", "C02", "C06"], "props": [], "frame": "全景，橫式 16:9。一群眼睛血紅、背上有暗色脈紋的異化狼與狐從前景奔過，繞開站在石庭邊緣的机遙、齊衡烈、江祈璟，全都往林外跑。", "lines": [["齊衡烈", "它們在逃？"], ["江祈璟", "不是逃。是在讓路。"]]}
-    ]},
-    {"id": "B02", "scene": "S04", "light": "暗紅異變", "blocking": "赤瞳妖將現身，看陣眼再看机遙", "cuts": [
-      {"sec": 8, "size": "全景", "camera": "Push In", "chars": ["C08"], "props": [], "frame": "全景低角度，橫式 16:9。紅霧向兩側散開讓出一條路，赤瞳妖將從霧中走出，身高是人的兩倍多，姿態靜而沉，沒有吼叫；背後林木被映紅。", "lines": []},
-      {"sec": 7, "size": "特寫", "camera": "Static Shot", "chars": ["C08"], "props": [], "frame": "特寫，橫式 16:9。赤瞳妖將的臉與一雙暗紅眼睛，目光從畫面左側（陣眼方向）慢慢移向右側（机遙方向）。", "lines": [["赤瞳妖將", "……人族。你們也開始聽見了嗎？"], ["机遙", "你在說什麼？"]]}
-    ]},
-    {"id": "B03", "scene": "S04", "light": "暗紅異變", "blocking": "三陣點失控；妖將抬手推飛齊衡烈", "cuts": [
-      {"sec": 8, "size": "大遠景", "camera": "Static Shot", "chars": ["C01", "C02", "C03", "C04", "C06", "C07", "C08"], "props": [], "frame": "大遠景，橫式 16:9，高位俯視。圓形石庭三個石柱同時噴出暗紅光柱直衝樹冠，中央晶體發紅光；六名年輕修行者分散在石庭四周，赤瞳妖將站在石庭另一端。", "lines": []},
-      {"sec": 7, "size": "中景", "camera": "Static Shot", "chars": ["C02", "C08"], "props": [], "frame": "中景，橫式 16:9。赤瞳妖將只是抬起一隻手，一股無形壓力把舉刀衝上來的齊衡烈連人帶刀往後推飛，地上石板翻起碎片。", "lines": []}
-    ]},
-    {"id": "B04", "scene": "S04", "light": "暗紅異變", "blocking": "郁岑燁被看穿；厲若楓的箭被彈開", "cuts": [
-      {"sec": 7, "size": "中景", "camera": "Static Shot", "chars": ["C03", "C08"], "props": [], "frame": "中景，橫式 16:9。郁岑燁從側面持劍切入，赤瞳妖將的眼睛已經轉向他，郁岑燁被迫硬生生收劍後撤。", "lines": []},
-      {"sec": 8, "size": "中景", "camera": "Static Shot", "chars": ["C04", "C08"], "props": [], "frame": "中景，橫式 16:9。厲若楓站在樹根上拉開三段式短弓連射，箭矢打在赤瞳妖將的鱗甲上被彈開，火星四濺。", "lines": []}
-    ]},
-    {"id": "B05", "scene": "S04", "light": "暗紅異變", "blocking": "聞人澈法陣；江祈璟與机遙並肩", "cuts": [
-      {"sec": 7, "size": "中景", "camera": "Static Shot", "chars": ["C07"], "props": [], "frame": "中景，橫式 16:9。聞人澈短杖點地，地面展開一圈淡青色曜紋法陣擋住紅色衝擊波，他咬著牙，嘴角滲出一絲血。", "lines": []},
-      {"sec": 8, "size": "中景", "camera": "Static Shot", "chars": ["C01", "C06"], "props": [], "frame": "雙人中景，橫式 16:9。江祈璟與机遙背靠背站在石庭中，江祈璟長槍斜指左方，机遙持新生制式長刀面向右方。", "lines": [["江祈璟", "我左邊，你右邊。"], ["机遙", "你不是一直不服我？"], ["江祈璟", "現在不是比這個的時候。"]]}
-    ]},
-    {"id": "B06", "scene": "S04", "light": "暗紅異變", "blocking": "兩人衝向兩根光柱", "cuts": [
-      {"sec": 7, "size": "中景", "camera": "Tracking Shot", "chars": ["C06"], "props": [], "frame": "中景動態，橫式 16:9。江祈璟衝向左側石柱，長槍刺進石柱頂端發光的圓形印紋，槍頭下的小銅鈴甩動。", "lines": []},
-      {"sec": 8, "size": "中景", "camera": "Tracking Shot", "chars": ["C01"], "props": [], "frame": "中景動態，橫式 16:9。机遙衝向右側石柱，一刀橫斬砍斷暗紅光柱與石柱之間的連結，紅光碎散。", "lines": []}
-    ]},
-    {"id": "B07", "scene": "S04", "light": "暗紅異變 fading", "blocking": "第三陣點被壓下；光柱熄滅", "cuts": [
-      {"sec": 7, "size": "中景", "camera": "Static Shot", "chars": ["C02", "C03"], "props": [], "frame": "中景，橫式 16:9。郁岑燁和齊衡烈一左一右，劍與刀同時壓在第三根石柱頂端的印紋上，紅光從他們手下往外噴。", "lines": []},
-      {"sec": 8, "size": "全景", "camera": "Static Shot", "chars": [], "props": [], "frame": "全景，橫式 16:9，空景。三根石柱的暗紅光柱一根一根熄滅，中央晶體的紅光暗下去，紅霧開始變淡。", "lines": []}
-    ]},
-    {"id": "B08", "scene": "S04", "light": "the crimson light dying away, cold grey-green forest mist returning", "blocking": "妖將收手、看机遙、轉身消失", "cuts": [
-      {"sec": 7, "size": "中景", "camera": "Static Shot", "chars": ["C01", "C08"], "props": [], "frame": "過肩中景，橫式 16:9。從机遙肩後看出去，赤瞳妖將放下手，看著熄滅的石柱，然後把目光落在机遙身上。", "lines": []},
-      {"sec": 8, "size": "全景", "camera": "Static Shot", "chars": ["C08"], "props": [], "frame": "全景，橫式 16:9。赤瞳妖將轉身走入霧中，霧在他身後合攏，只剩破舊的深藍腰帶最後一角沒入白霧。", "lines": [["赤瞳妖將", "這裡不是你們該來的地方。"]]}
-    ]},
-    {"id": "B09", "scene": "S04", "light": "cold grey-green forest mist, late afternoon, quiet", "blocking": "所有人站在原地", "cuts": [
-      {"sec": 10, "size": "全景", "camera": "Static Shot", "chars": ["C01", "C02", "C03", "C04", "C06", "C07"], "props": [], "frame": "全景，橫式 16:9。石庭恢復灰暗安靜，六名年輕修行者站在原地沒有人說話；齊衡烈握刀的手還在發抖，聞人澈扶著短杖喘氣。", "lines": []}
-    ]}
+    {
+      "id": "A01",
+      "scene": "S01",
+      "light": "clear early morning, a long band of white cloud drifting across the middle of the mountain, first sunlight turning the top hall pale gold",
+      "blocking": "開場空景接門樓人潮；机遙獨自一人拾級而上",
+      "cuts": [
+        {
+          "sec": 8,
+          "size": "大遠景",
+          "camera": "Push In",
+          "chars": [],
+          "props": [],
+          "frame": "大遠景，橫式 16:9。依山疊建的天玄院三層院落，白色雲帶從山腰緩緩流過，最上方三重簷主殿被晨光照成淡金色。",
+          "lines": [
+            [
+              "旁白",
+              "九曜界，天玄院。"
+            ]
+          ]
+        },
+        {
+          "sec": 7,
+          "size": "全景",
+          "camera": "Static Shot",
+          "chars": [
+            "C01"
+          ],
+          "props": [],
+          "frame": "全景，橫式 16:9。山腳銅框門樓，兩面深藍學院旗分立左右；石階上新生與送行家人來來往往，有人挑著箱籠，机遙一個人背著捲布行囊走在石階中段，畫面右三分之一。",
+          "lines": []
+        }
+      ]
+    },
+    {
+      "id": "A02",
+      "scene": "S01",
+      "light": "clear early morning, soft warm light on the gatehouse",
+      "blocking": "門樓下，机遙抬頭；閃回去年冬天考核失敗",
+      "cuts": [
+        {
+          "sec": 8,
+          "size": "中景",
+          "camera": "Static Shot",
+          "chars": [
+            "C01"
+          ],
+          "props": [
+            "P01"
+          ],
+          "frame": "中景低角度，橫式 16:9。机遙站在門樓下仰頭，看匾額位置上的圓形雲星徽紋（無字），右手握著入院憑證垂在身側。",
+          "lines": []
+        },
+        {
+          "sec": 7,
+          "size": "全景",
+          "camera": "Static Shot",
+          "chars": [
+            "C01"
+          ],
+          "props": [],
+          "frame": "全景，橫式 16:9，冷灰色調的回憶畫面。同一座門樓在冬天是灰的，地上殘雪；考核場的站樁石圈裡，机遙被推出圈外、單膝跌在雪泥上，圈外考官背影模糊。",
+          "lines": []
+        }
+      ]
+    },
+    {
+      "id": "A03",
+      "scene": "S01",
+      "light": "morning light in the shade under the gatehouse roof",
+      "blocking": "報到木案，執事驗憑證",
+      "cuts": [
+        {
+          "sec": 7,
+          "size": "特寫",
+          "camera": "Static Shot",
+          "chars": [],
+          "props": [
+            "P01"
+          ],
+          "frame": "特寫，橫式 16:9。報到木案上一塊銅盤，一隻手把玉白入院憑證按在銅盤上，銅盤亮起淡淡青光。",
+          "lines": []
+        },
+        {
+          "sec": 8,
+          "size": "中景",
+          "camera": "Static Shot",
+          "chars": [
+            "C01"
+          ],
+          "props": [],
+          "frame": "過肩中景，橫式 16:9。從院方執事（深色制服、背影與肩膀）肩後看出去，机遙站在木案前，身上沒有任何兵器；背景是排隊的新生。",
+          "lines": [
+            [
+              "院方執事",
+              "青嵐新契修，机遙。東廊，第七室。"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A04",
+      "scene": "S02",
+      "light": "early morning sun slanting in low from the open left side, long parallel bands of warm light and pillar shadows across the floor",
+      "blocking": "東廊跟拍机遙；新生擦肩",
+      "cuts": [
+        {
+          "sec": 8,
+          "size": "中景",
+          "camera": "Tracking Shot",
+          "chars": [
+            "C01"
+          ],
+          "props": [
+            "P01"
+          ],
+          "frame": "中景跟拍，橫式 16:9。机遙背影在畫面右三分之一，快步走在東廊上，左側欄杆外是雲海，柱影一條條鋪在石板地；他邊走邊看右側的房門。",
+          "lines": []
+        },
+        {
+          "sec": 7,
+          "size": "中景",
+          "camera": "Static Shot",
+          "chars": [
+            "C01"
+          ],
+          "props": [],
+          "frame": "中景，橫式 16:9。一個背大包袱的新生從机遙身邊擠過，包袱撞到机遙背上的行囊，那人回頭揮手道歉已經跑遠；机遙把行囊背帶往上拉。",
+          "lines": []
+        }
+      ]
+    },
+    {
+      "id": "A05",
+      "scene": "S02",
+      "light": "morning, the far end of the corridor quieter, sunlight narrowing to a strip along the wall",
+      "blocking": "第七室門前；門被拉開，齊衡烈探身",
+      "cuts": [
+        {
+          "sec": 6,
+          "size": "中景",
+          "camera": "Push In",
+          "chars": [
+            "C01"
+          ],
+          "props": [
+            "P02"
+          ],
+          "frame": "中景，橫式 16:9。机遙站在一扇深色舊木門前，抬頭看門楣旁的直立小門牌（無字），手裡拿著入院憑證。",
+          "lines": []
+        },
+        {
+          "sec": 9,
+          "size": "中景",
+          "camera": "Static Shot",
+          "chars": [
+            "C01",
+            "C02"
+          ],
+          "props": [],
+          "frame": "雙人中景，橫式 16:9。門從裡面被拉開，齊衡烈一手撐門框、探出半個身子上下打量机遙；机遙站在門檻外，兩人側面相對。",
+          "lines": [
+            [
+              "齊衡烈",
+              "你就是新來的？"
+            ],
+            [
+              "机遙",
+              "應該是。"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A06",
+      "scene": "S03",
+      "light": "morning sunlight entering through the large square lattice window opposite the door, crisp lattice shadows across the floor",
+      "blocking": "第七室門口與屋內：齊衡烈、郁岑燁",
+      "cuts": [
+        {
+          "sec": 7,
+          "size": "近景",
+          "camera": "Static Shot",
+          "chars": [
+            "C02"
+          ],
+          "props": [],
+          "frame": "近景，橫式 16:9。齊衡烈咧嘴大笑，抬手拍在自己右上臂的赤金臂環上。",
+          "lines": [
+            [
+              "齊衡烈",
+              "那就對了。第七室最近正缺個能打的。"
+            ]
+          ]
+        },
+        {
+          "sec": 8,
+          "size": "中景",
+          "camera": "Static Shot",
+          "chars": [
+            "C03"
+          ],
+          "props": [],
+          "frame": "中景，橫式 16:9。屋內矮桌旁，郁岑燁坐著用布擦長劍，聽到話才抬起眼，目光冷淡；窗格光影落在桌面。",
+          "lines": [
+            [
+              "郁岑燁",
+              "你看都沒看他出手，怎麼知道他能打？"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A07",
+      "scene": "S03",
+      "light": "morning sunlight through the lattice window",
+      "blocking": "齊衡烈提刀；郁岑燁低頭",
+      "cuts": [
+        {
+          "sec": 8,
+          "size": "中景",
+          "camera": "Static Shot",
+          "chars": [
+            "C02"
+          ],
+          "props": [],
+          "frame": "中景，橫式 16:9。齊衡烈從門邊兵器架提起單刃厚背重刀扛上肩，咧嘴一笑。",
+          "lines": [
+            [
+              "齊衡烈",
+              "所以才要打一場啊。"
+            ]
+          ]
+        },
+        {
+          "sec": 7,
+          "size": "近景",
+          "camera": "Static Shot",
+          "chars": [
+            "C03"
+          ],
+          "props": [],
+          "frame": "近景，橫式 16:9。郁岑燁低頭繼續擦劍，眉頭輕皺。",
+          "lines": [
+            [
+              "郁岑燁",
+              "……無聊。"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A08",
+      "scene": "S03",
+      "light": "morning sunlight through the lattice window, the window side bright",
+      "blocking": "厲若楓看机遙的腳；机遙愣住",
+      "cuts": [
+        {
+          "sec": 8,
+          "size": "中景",
+          "camera": "Static Shot",
+          "chars": [
+            "C04"
+          ],
+          "props": [],
+          "frame": "中景，橫式 16:9。厲若楓靠在窗邊牆上，背後三段式短弓，琥珀色眼睛往下看著門口的方向（看的是机遙的腳），窗光在他半邊臉上。",
+          "lines": [
+            [
+              "厲若楓",
+              "別急。他的腳步有點亂。"
+            ]
+          ]
+        },
+        {
+          "sec": 7,
+          "size": "近景",
+          "camera": "Static Shot",
+          "chars": [
+            "C01"
+          ],
+          "props": [],
+          "frame": "近景，橫式 16:9。机遙站在門檻前愣了一下，視線從窗邊移向矮桌，表情是真心的疑問。",
+          "lines": [
+            [
+              "机遙",
+              "你們都看得出來？"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A09",
+      "scene": "S03",
+      "light": "morning sunlight through the lattice window",
+      "blocking": "郁岑燁頭也不抬；齊衡烈大笑",
+      "cuts": [
+        {
+          "sec": 7,
+          "size": "近景",
+          "camera": "Static Shot",
+          "chars": [
+            "C03"
+          ],
+          "props": [],
+          "frame": "近景，橫式 16:9。郁岑燁頭也沒抬，布在劍身上滑過。",
+          "lines": [
+            [
+              "郁岑燁",
+              "至少我看得出來。"
+            ]
+          ]
+        },
+        {
+          "sec": 8,
+          "size": "中景",
+          "camera": "Static Shot",
+          "chars": [
+            "C02"
+          ],
+          "props": [],
+          "frame": "中景，橫式 16:9。齊衡烈仰頭大笑，把肩上的重刀顛了一下。",
+          "lines": [
+            [
+              "齊衡烈",
+              "哈哈，那更好！明天演武場見。"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A10",
+      "scene": "S02",
+      "light": "looking down the corridor toward its far end with the morning sun directly behind the far opening, strong soft backlight and glowing haze",
+      "blocking": "三人轉頭；走廊盡頭逆光中的蕭曜霖",
+      "cuts": [
+        {
+          "sec": 6,
+          "size": "全景",
+          "camera": "Static Shot",
+          "chars": [
+            "C01",
+            "C02",
+            "C03",
+            "C04"
+          ],
+          "props": [],
+          "frame": "全景，橫式 16:9，鏡頭在東廊上看進第七室敞開的門口。屋內齊衡烈、郁岑燁、厲若楓同時轉頭望向走廊（朝鏡頭方向），站在門檻上的机遙跟著回頭；四人都在門框之內。",
+          "lines": [
+            [
+              "蕭曜霖（畫外）",
+              "不用等明天。"
+            ]
+          ]
+        },
+        {
+          "sec": 9,
+          "size": "全景",
+          "camera": "Push In",
+          "chars": [
+            "C05"
+          ],
+          "props": [],
+          "frame": "全景逆光，橫式 16:9。東廊盡頭晨光最亮處，蕭曜霖站著不動，厚重護肩邊緣有補過的痕跡，背後門板重劍的劍柄高出肩頭；身影在光霧中近乎剪影。",
+          "lines": [
+            [
+              "蕭曜霖",
+              "半刻鐘後，新生演武場集合。"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A11",
+      "scene": "S02",
+      "light": "strong morning backlight at the far end of the corridor",
+      "blocking": "蕭曜霖離去；机遙與齊衡烈",
+      "cuts": [
+        {
+          "sec": 7,
+          "size": "全景",
+          "camera": "Static Shot",
+          "chars": [
+            "C05"
+          ],
+          "props": [],
+          "frame": "全景，橫式 16:9。蕭曜霖轉身沿走廊走遠的背影，兩旁房門口探頭的新生紛紛縮回頭。",
+          "lines": []
+        },
+        {
+          "sec": 8,
+          "size": "中景",
+          "camera": "Static Shot",
+          "chars": [
+            "C01",
+            "C02"
+          ],
+          "props": [],
+          "frame": "雙人中景，橫式 16:9。第七室門口，机遙看著走廊盡頭；齊衡烈握緊肩上的刀柄，眼睛發亮地笑。",
+          "lines": [
+            [
+              "机遙",
+              "這麼快？"
+            ],
+            [
+              "齊衡烈",
+              "習慣就好。"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A12",
+      "scene": "S03",
+      "light": "morning sunlight through the lattice window",
+      "blocking": "机遙放下行囊；齊衡烈自我介紹",
+      "cuts": [
+        {
+          "sec": 7,
+          "size": "中景",
+          "camera": "Static Shot",
+          "chars": [
+            "C01"
+          ],
+          "props": [],
+          "frame": "中景，橫式 16:9。机遙把捲布行囊放在靠窗那張疊得方正的空床上，窗外看得到更高一層院子的演武場一角。",
+          "lines": []
+        },
+        {
+          "sec": 8,
+          "size": "中景",
+          "camera": "Static Shot",
+          "chars": [
+            "C01",
+            "C02"
+          ],
+          "props": [],
+          "frame": "雙人中景，橫式 16:9。齊衡烈已經走到門口，扛著刀回頭用拇指往身後一比；机遙在窗邊床前轉過身。",
+          "lines": [
+            [
+              "齊衡烈",
+              "喂，新來的。我叫齊衡烈。你呢？"
+            ],
+            [
+              "机遙",
+              "机遙。"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B01",
+      "scene": "S04",
+      "light": "暗紅異變",
+      "blocking": "陣眼遺跡外，異化妖獸從隊伍身邊奔過",
+      "cuts": [
+        {
+          "sec": 7,
+          "size": "大遠景",
+          "camera": "Static Shot",
+          "chars": [],
+          "props": [],
+          "frame": "大遠景，橫式 16:9，從林中仰望。古林樹冠縫隙間透出暗紅色的光，霧被映成紅色，遠處林梢在搖動。",
+          "lines": []
+        },
+        {
+          "sec": 8,
+          "size": "全景",
+          "camera": "Static Shot",
+          "chars": [
+            "C01",
+            "C02",
+            "C06"
+          ],
+          "props": [],
+          "frame": "全景，橫式 16:9。一群眼睛血紅、背上有暗色脈紋的異化狼與狐從前景奔過，繞開站在石庭邊緣的机遙、齊衡烈、江祈璟，全都往林外跑。",
+          "lines": [
+            [
+              "齊衡烈",
+              "它們在逃？"
+            ],
+            [
+              "江祈璟",
+              "不是逃。是在讓路。"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B02",
+      "scene": "S04",
+      "light": "暗紅異變",
+      "blocking": "赤瞳妖將現身，看陣眼再看机遙",
+      "cuts": [
+        {
+          "sec": 8,
+          "size": "全景",
+          "camera": "Push In",
+          "chars": [
+            "C08"
+          ],
+          "props": [],
+          "frame": "全景低角度，橫式 16:9。紅霧向兩側散開讓出一條路，赤瞳妖將從霧中走出，身高是人的兩倍多，姿態靜而沉，沒有吼叫；背後林木被映紅。",
+          "lines": []
+        },
+        {
+          "sec": 7,
+          "size": "特寫",
+          "camera": "Static Shot",
+          "chars": [
+            "C08"
+          ],
+          "props": [],
+          "frame": "特寫，橫式 16:9。赤瞳妖將的臉與一雙暗紅眼睛，目光從畫面左側（陣眼方向）慢慢移向右側（机遙方向）。",
+          "lines": [
+            [
+              "赤瞳妖將",
+              "……人族。你們也開始聽見了嗎？"
+            ],
+            [
+              "机遙",
+              "你在說什麼？"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B03",
+      "scene": "S04",
+      "light": "暗紅異變",
+      "blocking": "三陣點失控；妖將抬手推飛齊衡烈",
+      "cuts": [
+        {
+          "sec": 8,
+          "size": "大遠景",
+          "camera": "Static Shot",
+          "chars": [
+            "C01",
+            "C02",
+            "C03",
+            "C04",
+            "C06",
+            "C07",
+            "C08"
+          ],
+          "props": [],
+          "frame": "大遠景，橫式 16:9，高位俯視。圓形石庭三個石柱同時噴出暗紅光柱直衝樹冠，中央晶體發紅光；六名年輕修行者分散在石庭四周，赤瞳妖將站在石庭另一端。",
+          "lines": []
+        },
+        {
+          "sec": 7,
+          "size": "中景",
+          "camera": "Static Shot",
+          "chars": [
+            "C02",
+            "C08"
+          ],
+          "props": [],
+          "frame": "中景，橫式 16:9。赤瞳妖將只是抬起一隻手，一股無形壓力把舉刀衝上來的齊衡烈連人帶刀往後推飛，地上石板翻起碎片。",
+          "lines": []
+        }
+      ]
+    },
+    {
+      "id": "B04",
+      "scene": "S04",
+      "light": "暗紅異變",
+      "blocking": "郁岑燁被看穿；厲若楓的箭被彈開",
+      "cuts": [
+        {
+          "sec": 7,
+          "size": "中景",
+          "camera": "Static Shot",
+          "chars": [
+            "C03",
+            "C08"
+          ],
+          "props": [],
+          "frame": "中景，橫式 16:9。郁岑燁從側面持劍切入，赤瞳妖將的眼睛已經轉向他，郁岑燁被迫硬生生收劍後撤。",
+          "lines": []
+        },
+        {
+          "sec": 8,
+          "size": "中景",
+          "camera": "Static Shot",
+          "chars": [
+            "C04",
+            "C08"
+          ],
+          "props": [],
+          "frame": "中景，橫式 16:9。厲若楓站在樹根上拉開三段式短弓連射，箭矢打在赤瞳妖將的鱗甲上被彈開，火星四濺。",
+          "lines": []
+        }
+      ]
+    },
+    {
+      "id": "B05",
+      "scene": "S04",
+      "light": "暗紅異變",
+      "blocking": "聞人澈法陣；江祈璟與机遙並肩",
+      "cuts": [
+        {
+          "sec": 7,
+          "size": "中景",
+          "camera": "Static Shot",
+          "chars": [
+            "C07"
+          ],
+          "props": [],
+          "frame": "中景，橫式 16:9。聞人澈短杖點地，地面展開一圈淡青色曜紋法陣擋住紅色衝擊波，他咬著牙，嘴角滲出一絲血。",
+          "lines": []
+        },
+        {
+          "sec": 8,
+          "size": "中景",
+          "camera": "Static Shot",
+          "chars": [
+            "C01",
+            "C06"
+          ],
+          "props": [],
+          "frame": "雙人中景，橫式 16:9。江祈璟與机遙背靠背站在石庭中，江祈璟長槍斜指左方，机遙持新生制式長刀面向右方。",
+          "lines": [
+            [
+              "江祈璟",
+              "我左邊，你右邊。"
+            ],
+            [
+              "机遙",
+              "你不是一直不服我？"
+            ],
+            [
+              "江祈璟",
+              "現在不是比這個的時候。"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B06",
+      "scene": "S04",
+      "light": "暗紅異變",
+      "blocking": "兩人衝向兩根光柱",
+      "cuts": [
+        {
+          "sec": 7,
+          "size": "中景",
+          "camera": "Tracking Shot",
+          "chars": [
+            "C06"
+          ],
+          "props": [],
+          "frame": "中景動態，橫式 16:9。江祈璟衝向左側石柱，長槍刺進石柱頂端發光的圓形印紋，槍頭下的小銅鈴甩動。",
+          "lines": []
+        },
+        {
+          "sec": 8,
+          "size": "中景",
+          "camera": "Tracking Shot",
+          "chars": [
+            "C01"
+          ],
+          "props": [],
+          "frame": "中景動態，橫式 16:9。机遙衝向右側石柱，一刀橫斬砍斷暗紅光柱與石柱之間的連結，紅光碎散。",
+          "lines": []
+        }
+      ]
+    },
+    {
+      "id": "B07",
+      "scene": "S04",
+      "light": "暗紅異變 fading",
+      "blocking": "第三陣點被壓下；光柱熄滅",
+      "cuts": [
+        {
+          "sec": 7,
+          "size": "中景",
+          "camera": "Static Shot",
+          "chars": [
+            "C02",
+            "C03"
+          ],
+          "props": [],
+          "frame": "中景，橫式 16:9。郁岑燁和齊衡烈一左一右，劍與刀同時壓在第三根石柱頂端的印紋上，紅光從他們手下往外噴。",
+          "lines": []
+        },
+        {
+          "sec": 8,
+          "size": "全景",
+          "camera": "Static Shot",
+          "chars": [],
+          "props": [],
+          "frame": "全景，橫式 16:9，空景。三根石柱的暗紅光柱一根一根熄滅，中央晶體的紅光暗下去，紅霧開始變淡。",
+          "lines": []
+        }
+      ]
+    },
+    {
+      "id": "B08",
+      "scene": "S04",
+      "light": "the crimson light dying away, cold grey-green forest mist returning",
+      "blocking": "妖將收手、看机遙、轉身消失",
+      "cuts": [
+        {
+          "sec": 7,
+          "size": "中景",
+          "camera": "Static Shot",
+          "chars": [
+            "C01",
+            "C08"
+          ],
+          "props": [],
+          "frame": "過肩中景，橫式 16:9。從机遙肩後看出去，赤瞳妖將放下手，看著熄滅的石柱，然後把目光落在机遙身上。",
+          "lines": []
+        },
+        {
+          "sec": 8,
+          "size": "全景",
+          "camera": "Static Shot",
+          "chars": [
+            "C08"
+          ],
+          "props": [],
+          "frame": "全景，橫式 16:9。赤瞳妖將轉身走入霧中，霧在他身後合攏，只剩破舊的深藍腰帶最後一角沒入白霧。",
+          "lines": [
+            [
+              "赤瞳妖將",
+              "這裡不是你們該來的地方。"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B09",
+      "scene": "S04",
+      "light": "cold grey-green forest mist, late afternoon, quiet",
+      "blocking": "所有人站在原地",
+      "cuts": [
+        {
+          "sec": 10,
+          "size": "全景",
+          "camera": "Static Shot",
+          "chars": [
+            "C01",
+            "C02",
+            "C03",
+            "C04",
+            "C06",
+            "C07"
+          ],
+          "props": [],
+          "frame": "全景，橫式 16:9。石庭恢復灰暗安靜，六名年輕修行者站在原地沒有人說話；齊衡烈握刀的手還在發抖，聞人澈扶著短杖喘氣。",
+          "lines": []
+        }
+      ]
+    }
   ]
 }

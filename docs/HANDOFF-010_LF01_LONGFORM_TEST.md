@@ -83,21 +83,19 @@ Avoid: smirk, arrogant sneer, villain look, heavy armour, cape, twin ponytails, 
 
 ## 聞人澈　→ 存成 `production/LF01/characters/聞人澈-sheet.png`
 
-**上傳：** [參考拼圖 聞人澈-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/sheets/%E8%81%9E%E4%BA%BA%E6%BE%88-refs.jpg)（2 張拼成一張）
+**上傳：** [蕭曜霖-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/EP01/shuohao/characters/images/%E8%95%AD%E6%9B%9C%E9%9C%96-sheet.png)
 
 ```text
 Reference images:
-Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
-  - Panel 1 (top-left): approved character sheet of a DIFFERENT character (厲若楓) — use it ONLY as the rendering-style and sheet-layout reference; do not copy the face, hair, costume or weapon
-  - Panel 2 (top-right): approved character sheet of a DIFFERENT character (郁岑燁) — use it ONLY as the rendering-style and sheet-layout reference; do not copy the face, hair, costume or weapon
+Image 1: approved character sheet of a DIFFERENT character (蕭曜霖) — use it ONLY as the rendering-style and sheet-layout reference; do not copy the face, hair, costume or weapon
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed.
 
-Single character model sheet on ONE 16:9 landscape canvas (widescreen, width to height exactly 16:9). The canvas is divided into three zones by thin hairline rules. LEFT ZONE — a vertical column occupying about 34% of the canvas width: one bust portrait, head and shoulders, front-facing, centred; both shoulders fully visible; the portrait ends in a clean straight horizontal cut just below the chest. The bust shows a quiet, slightly slender young East Asian man around twenty with a soft oval face, gentle downturned dark eyes that look calm and a little tired, straight thin brows, a small straight nose, lips closed; dark hair falling just past the jaw, half of it loosely tied back at the crown with a plain wooden pin; the collar of a grey-blue hooded over-robe with the hood down, a dark inner robe beneath. LIGHTING IN THE LEFT ZONE ONLY: soft directional key light from the upper left with gentle falloff and subtle ambient occlusion. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character standing side by side — front view, left side profile, back view — on one shared ground line, identical height and proportions, head to toe with clear margins, neutral relaxed standing posture. The figure is a slender young East Asian man around twenty, a spell-staff cultivator of an ancient-Chinese-inspired mountain academy who gathers medicinal herbs, standing quietly with slightly rounded shoulders, wearing a long grey-blue hooded over-robe with the hood down over a dark charcoal inner robe, a cloth sash with the academy badge of antique bronze inset with carved jade, a small worn leather herb pouch at the right hip, dark trousers and soft cloth boots; in his right hand a short staff of dark xuan wood about forearm length with a rounded head carved with fine rune grooves; around his left wrist three thin interlocking talisman rings of antique bronze and pale jade; dark jaw-length hair half tied back with a wooden pin. The faces on all three full-body views match the bust portrait exactly. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting, no cast shadows. RIGHT-BOTTOM ZONE: a row of four to five small isolated close-up studies: the short dark xuan-wood staff with its carved rune grooves; the three interlocking talisman rings of bronze and pale jade on the left wrist; the worn leather herb pouch; the grey-blue hood lying down on the shoulders; the wooden hair pin. Never shrink the full-body figures to make room. Plain pure white background (#FFFFFF) throughout. grey-blue, charcoal and pale jade palette, soft overcast light, readable silhouette from every angle.
+Single character model sheet on ONE 16:9 landscape canvas (widescreen, width to height exactly 16:9). The canvas is divided into three zones by thin hairline rules. LEFT ZONE — a vertical column occupying about 34% of the canvas width: one bust portrait, head and shoulders, front-facing, centred; both shoulders fully visible; the portrait ends in a clean straight horizontal cut just below the chest. The bust shows a quiet, slightly slender young East Asian man around twenty with a soft oval face, gentle downturned dark eyes that look calm and a little tired, straight thin brows, a small straight nose, lips closed; dark hair falling just past the jaw, half of it loosely tied back at the crown with a plain wooden pin; the collar of a grey-blue hooded over-robe with the hood down, a dark inner robe beneath; a clean forehead with NO mark or tattoo. LIGHTING IN THE LEFT ZONE ONLY: soft directional key light from the upper left with gentle falloff and subtle ambient occlusion. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character standing side by side — front view, left side profile, back view — on one shared ground line, identical height and proportions, head to toe with clear margins, neutral relaxed standing posture. The figure is a slender young East Asian man around twenty, a spell-staff cultivator of an ancient-Chinese-inspired mountain academy who gathers medicinal herbs, standing quietly with slightly rounded shoulders, wearing a long grey-blue hooded over-robe with the hood down over a dark charcoal inner robe, a cloth sash with the academy badge of antique bronze inset with carved jade, a small worn leather herb pouch at the right hip, dark trousers and soft cloth boots; in his right hand a short staff of dark xuan wood about forearm length with a rounded head carved with fine rune grooves; around his left wrist three thin interlocking talisman rings of antique bronze and pale jade; dark jaw-length hair half tied back with a wooden pin; he carries NO sword and NO blade of any kind — his only tool is the short staff. The faces on all three full-body views match the bust portrait exactly. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting, no cast shadows. RIGHT-BOTTOM ZONE: a row of four to five small isolated close-up studies: the short dark xuan-wood staff with its carved rune grooves; the three interlocking talisman rings of bronze and pale jade on the left wrist; the worn leather herb pouch; the grey-blue hood lying down on the shoulders; the wooden hair pin. Never shrink the full-body figures to make room. Plain pure white background (#FFFFFF) throughout. grey-blue, charcoal and pale jade palette, soft overcast light, readable silhouette from every angle.
 
 LAYOUT CHECK: exactly THREE full-body figures in the top-right zone — front, left profile, back. Not four, no three-quarter view.
 
-Avoid: long wizard staff, crystal orb, pointed wizard hat, glowing eyes, western mage robe, smug expression, heavy armour, text, watermark. No text, no letters, no labels, no captions, no logos, no watermark, no UI.
+Avoid: sword, sabre, blade, scabbard at the hip, forehead mark, forehead tattoo, bandaged or wrapped hand, spiky short hair, dark navy robe, bronze shoulder armour, pauldrons, long wizard staff, crystal orb, pointed wizard hat, glowing eyes, western mage robe, smug expression, heavy armour, text, watermark. No text, no letters, no labels, no captions, no logos, no watermark, no UI.
 ```
 
 ## 赤瞳妖將　→ 存成 `production/LF01/characters/赤瞳妖將-sheet.png`
@@ -808,7 +806,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜全景｜Static Shot｜台詞：齊衡烈：「它們在逃？」；江祈璟：「不是逃。是在讓路。」
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B01/f2-refs.jpg`（**待 陣眼遺跡、江祈璟 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B01/f2-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -891,7 +889,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜大遠景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B03/f1-refs.jpg`（**待 陣眼遺跡、江祈璟、聞人澈、赤瞳妖將 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B03/f1-refs.jpg`（**待 陣眼遺跡、聞人澈、赤瞳妖將 設定圖驗收後由 Claude 重跑產生**）
 
 ```text
 Reference images:
@@ -1031,7 +1029,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜中景｜Static Shot｜台詞：江祈璟：「我左邊，你右邊。」；机遙：「你不是一直不服我？」；江祈璟：「現在不是比這個的時候。」
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B05/f2-refs.jpg`（**待 陣眼遺跡、江祈璟 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B05/f2-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -1060,7 +1058,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜中景｜Tracking Shot｜台詞：（無台詞）
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B06/f1-refs.jpg`（**待 陣眼遺跡、江祈璟 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B06/f1-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）
 
 ```text
 Reference images:
@@ -1219,7 +1217,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 10 秒｜全景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B09/f1-refs.jpg`（**待 陣眼遺跡、江祈璟、聞人澈 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B09/f1-refs.jpg`（**待 陣眼遺跡、聞人澈 設定圖驗收後由 Claude 重跑產生**）
 
 ```text
 Reference images:
