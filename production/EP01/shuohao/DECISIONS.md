@@ -237,3 +237,11 @@ novel-characters 第一版漏讀 docs/16（Claude 疏漏），補正如下。**�
 | 影片 | 結果 | 備註 |
 |---|---|---|
 | E01-01 kling-v1 | 通過（內部試片） | 鏡 1 忠實還原 f1：三層院落、主殿、中層雲帶、山門與兩面深藍旗，旗幟與雲有動態，推鏡幅度很小；約 2.8 秒硬切到 f2（規格 3.00 秒，差 0.2 秒可剪輯時補）。鏡 2 與 f2 一致：低角度門樓、圓形徽紋、石獅、燈籠，旗幟擺動；無人物、無文字。總長 5 秒（規格 6 秒），旁白「九曜界，天玄院。」與配樂需另外配（無音軌）。右下 KlingAI 浮水印 |
+
+## 2026-09-27　Wan 2.2 TI2V-5B 在 Kaggle 免費 GPU 試跑（準備中）
+
+- 筆記本：`videogen/wan22_kaggle_E01-01.ipynb`（Kaggle 上傳後依序執行；GPU T4 x2、Internet On）。
+  選 TI2V-5B 而非 A14B：A14B 官方需 80GB 顯存，5B 官方標 24GB（開 offload），T4 16GB 只能靠 CPU offload 硬塞。
+- T4 不支援 bf16、UMT5 用 fp16 易溢位 → 文字編碼器在 CPU 上以 bf16 先把提示詞編碼完再丟掉；transformer fp16＋
+  model CPU offload；VAE fp32＋tiling。**雲端 session 連不到 Hugging Face，筆記本未實跑過**，第一次請先跑 `QUALITY="test"`。
+- TI2V-5B 只吃首幀（不支援尾幀），E01-01 兩鏡各用 f1、f2 分開生成 3 秒（73 幀），剪輯時再接。
