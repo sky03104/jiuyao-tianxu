@@ -199,10 +199,10 @@ def build_frame_jobs(segments_filter=None):
             if k > 1:
                 refs.append(os.path.join(seg_dir, "f1.png"))
                 lines.append(f"Image {len(refs)}: the opening frame of this same sequence — keep the world, "
-                             "lighting, mist density and every character's look consistent with it; do not copy "
-                             "its composition.")
-            prompt = (
-                "Reference images:\n" + "\n".join(lines) + "\n\n"
+                             "lighting, mist density and every character's look consistent with it (where a "
+                             "character's costume or luggage here differs from the model sheet, follow this frame); "
+                             "do not copy its composition.")
+            body = (
                 f"{STYLE_RENDER} {STYLE_WORLD}\n\n"
                 f"Lighting: {light}\n\n"
                 f"Blocking (Chinese): {seg['blocking']}\n\n"
@@ -213,9 +213,11 @@ def build_frame_jobs(segments_filter=None):
                 "background students the shot text explicitly mentions. "
                 "No text, no watermark, no borders — a single clean full-bleed frame."
             )
+            prompt = "Reference images:\n" + "\n".join(lines) + "\n\n" + body
+            descs = [l.split(": ", 1)[1] for l in lines]
             jobs.append({"key": f"分鏡：{seg['id']} f{k}", "id": f"{seg['id']}-f{k}", "kind": "frame",
                          "out": os.path.join(seg_dir, f"f{k}.png"), "refs": refs, "size": "1024x1536",
-                         "prompt": prompt})
+                         "prompt": prompt, "descs": descs, "body": body})
     return jobs
 
 
@@ -319,8 +321,60 @@ HANDOFF = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.d
                        "docs", "HANDOFF-009_CHATGPT_WEB_STORYBOARD.md")
 
 
+BOARD_DIR = os.path.join(ROOT, "storyboard", "export", "chatgpt")
+
+
+def make_board(paths, out):
+    """把多張設定圖拼成一張參考拼圖（無文字，閱讀順序＝左→右、上→下），ChatGPT 一次只能上傳 2 張圖。"""
+    from PIL import Image
+    n = len(paths)
+    cols = 2 if n <= 4 else 3
+    rows = (n + cols - 1) // cols
+    tw, th, gap = (1024, 683) if cols == 2 else (768, 512), None, 16
+    tw, th = tw
+    board = Image.new("RGB", (cols * tw + (cols + 1) * gap, rows * th + (rows + 1) * gap), "white")
+    for i, pth in enumerate(paths):
+        im = Image.open(pth).convert("RGB")
+        im.thumbnail((tw, th))
+        x = gap + (i % cols) * (tw + gap) + (tw - im.width) // 2
+        y = gap + (i // cols) * (th + gap) + (th - im.height) // 2
+        board.paste(im, (x, y))
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    board.save(out, quality=90)
+    return cols, rows
+
+
+POS = {2: ["top-left", "top-right", "bottom-left", "bottom-right"],
+       3: ["top-left", "top-middle", "top-right", "bottom-left", "bottom-middle", "bottom-right"]}
+
+
+def handoff_upload(j):
+    """回傳 (上傳清單, 提示詞)：設定圖拼成一張參考拼圖，本段 f1 另外上傳，每張最多 2 張圖。"""
+    from urllib.parse import quote
+    seg, k = j["id"].rsplit("-f", 1)
+    sheets = [(r, d) for r, d in zip(j["refs"], j["descs"]) if not r.endswith("/f1.png")]
+    f1 = [(r, d) for r, d in zip(j["refs"], j["descs"]) if r.endswith("/f1.png")]
+    uploads, lines = [], []
+    if len(sheets) == 1:
+        r, d = sheets[0]
+        uploads.append(f"[{os.path.basename(r)}]({REPO_RAW}{quote(rel(r))})")
+        lines.append(f"Image 1: {d}")
+    else:
+        out = os.path.join(BOARD_DIR, seg, f"f{k}-refs.jpg")
+        cols, _ = make_board([r for r, _ in sheets], out)
+        uploads.append(f"[參考拼圖 f{k}-refs.jpg]({REPO_RAW}{quote(rel(out))})（{len(sheets)} 張設定圖拼成一張）")
+        lines.append(f"Image 1: a reference board of {len(sheets)} panels separated by white gaps "
+                     "(it is a reference sheet only — do NOT reproduce the board layout):")
+        for i, (_, d) in enumerate(sheets):
+            lines.append(f"  - Panel {i + 1} ({POS[cols][i]}): {d}")
+    if f1:
+        uploads.append("本段已完成的 **f1.png**")
+        lines.append(f"Image 2: {f1[0][1]}")
+    return uploads, "Reference images:\n" + "\n".join(lines) + "\n\n" + j["body"]
+
+
 def write_handoff_md(jobs):
-    """給 ChatGPT 網頁版的分鏡圖交接檔：每張的參考圖下載連結＋完整提示詞，照順序貼就能出圖。"""
+    """給 ChatGPT 網頁版的分鏡圖交接檔：每張最多上傳 2 張圖（參考拼圖＋f1）＋完整提示詞，照順序貼就能出圖。"""
     from urllib.parse import quote
     segs = []
     for j in jobs:
@@ -333,14 +387,10 @@ def write_handoff_md(jobs):
         L += [f"## {seg}（{len(js)} 張）", "",
               f"上傳位置：[{REPO_TREE}storyboard/export/h3/{seg}]({REPO_TREE}storyboard/export/h3/{quote(seg)})", ""]
         for k, j in enumerate(js, start=1):
-            L += [f"### {seg} f{k}　→ 存成 `f{k}.png`", "", "**依序附上參考圖（順序＝提示詞裡的 Image 1、2、3…）：**", ""]
-            for n, r in enumerate(j["refs"], start=1):
-                rp = rel(r)
-                if rp.endswith("/f1.png"):
-                    L.append(f"{n}. 本段你剛生成的 **f1.png**（同一個對話裡直接再附一次）")
-                else:
-                    L.append(f"{n}. [{os.path.basename(rp)}]({REPO_RAW}{quote(rp)})")
-            L += ["", "**提示詞（整段複製貼上）：**", "", "```text", j["prompt"], "```", ""]
+            uploads, prompt = handoff_upload(j)
+            L += [f"### {seg} f{k}　→ 存成 `f{k}.png`", "", "**上傳這幾張（順序＝提示詞裡的 Image 1、2）：**", ""]
+            L += [f"{n}. {u}" for n, u in enumerate(uploads, start=1)]
+            L += ["", "**提示詞（整段複製貼上）：**", "", "```text", prompt, "```", ""]
     head = f"""# 《九曜：天墟》HANDOFF-009
 
 ## EP01 分鏡圖：用 ChatGPT 網頁版出圖（免 API 費用）
@@ -376,10 +426,11 @@ API 出圖要另外付費（30 張約 US$8～15），ChatGPT 網頁版的生圖�
 # 3. 操作流程
 
 1. **一段開一個新對話**（例如 E01-01 一個對話），先貼第 2 節的規則。
-2. 照下面每張的清單，**按順序**下載並附上參考圖（點連結→右鍵另存；順序對應提示詞裡的 Image 1、2、3…）。
+2. 照下面每張的清單，**按順序**下載並附上參考圖（點連結→右鍵另存）。**每張最多只要上傳 2 張圖**：
+   多張設定圖已預先拼成一張「參考拼圖」（`storyboard/export/chatgpt/`），第二張是本段的 f1。
 3. 貼上該張的提示詞送出。
 4. 滿意就下載，**檔名改成 `f1.png`、`f2.png`…**；不滿意就在同一個對話說哪裡不對、請它重畫。
-5. 同一段的 f2 之後都在**同一個對話**裡做，清單會提醒你再附一次 f1（保持光線、角色一致）。
+5. 同一段的 f2 之後都在**同一個對話**裡做，每張都再附一次本段 f1（保持光線、角色、行囊一致）。
 6. 一段做完，把圖上傳回 GitHub：打開該段的「上傳位置」連結 → 右上 **Add file → Upload files** → 拖進 f1.png、f2.png… → Commit。
    （或直接貼回 Claude 的 session，由 Claude 存進 repo。）
 
