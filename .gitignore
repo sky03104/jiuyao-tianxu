@@ -46,3 +46,7 @@ production/shorts/**/stills/
 production/EP01/shuohao/animatic/node_modules
 production/EP01/shuohao/animatic/music.wav
 production/EP01/shuohao/animatic/stills/
+
+# animatic 影片暫存（render.mjs 自動產生）
+production/EP01/shuohao/animatic/cache/
+production/EP01/shuohao/animatic/node_modules

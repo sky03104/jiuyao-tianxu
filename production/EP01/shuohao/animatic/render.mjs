@@ -1,9 +1,9 @@
 // EP01 動態分鏡輸出：先跑 build.mjs、audio.mjs，再用 headless Chromium 逐格截圖交給 ffmpeg。
-// 用法：node render.mjs                 → EP01_animatic_v0.mp4
+// 用法：node render.mjs                 → EP01_animatic_v1.mp4
 //       node render.mjs --stills 1,16,40 → 只輸出指定秒數的 PNG 到 stills/
 import { chromium } from 'playwright';
 import { spawn, execFileSync } from 'node:child_process';
-import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
@@ -13,6 +13,14 @@ const args = process.argv.slice(2);
 const stillsArg = args.includes('--stills') ? args[args.indexOf('--stills') + 1] : null;
 
 execFileSync('node', [join(here, 'build.mjs')], { stdio: 'inherit' });
+// 生成影片片段轉 VP9 全關鍵幀暫存檔（Playwright 的 Chromium 不能解 H.264；全關鍵幀讓逐格 seek 精準）
+const TLJ = JSON.parse(readFileSync(join(here, 'timeline.json'), 'utf8'));
+for (const c of TLJ.cuts.filter(c => c.clip)) {
+  const src = join(here, '..', c.clip.file), dst = join(here, '..', c.clip.proxy);
+  if (existsSync(dst)) continue;
+  mkdirSync(dirname(dst), { recursive: true });
+  execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', src, '-an', '-c:v', 'libvpx-vp9', '-g', '1', '-crf', '28', '-b:v', '0', '-deadline', 'good', '-cpu-used', '4', dst], { stdio: 'inherit' });
+}
 if (!stillsArg) execFileSync('node', [join(here, 'audio.mjs')], { stdio: 'inherit' });
 
 // 允許 file:// 讀取 repo 內的分鏡圖與設定圖
@@ -31,7 +39,7 @@ if (stillsArg) {
 } else {
   const duration = await page.evaluate(() => window.DURATION);
   const audio = join(here, 'music.wav');
-  const out = join(here, 'EP01_animatic_v0.mp4');
+  const out = join(here, 'EP01_animatic_v1.mp4');
   const ff = spawn('ffmpeg', [
     '-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'mjpeg', '-i', '-',
     ...(existsSync(audio) ? ['-i', audio, '-c:a', 'aac', '-b:a', '160k', '-shortest'] : []),

@@ -1,0 +1,9 @@
+{
+ "_note": "影片片段對應表：哪一切用哪支生成影片的哪一段（秒）。片段長度與分鏡秒數不同時等速拉伸填滿該切。build.mjs 讀取後寫進 timeline。",
+ "clips": [
+  { "seg": "E01-01", "n": 1, "file": "storyboard/export/h3/E01-01/kling-v1.mp4", "in": 0.0,  "out": 2.75, "src": "可靈 3.0 Omni" },
+  { "seg": "E01-01", "n": 2, "file": "storyboard/export/h3/E01-01/kling-v1.mp4", "in": 2.85, "out": 5.0,  "src": "可靈 3.0 Omni" },
+  { "seg": "E01-02", "n": 1, "file": "storyboard/export/h3/E01-02/kling-v1.mp4", "in": 0.0,  "out": 2.25, "src": "可靈 3.0 Omni" },
+  { "seg": "E01-02", "n": 2, "file": "storyboard/export/h3/E01-02/kling-v1.mp4", "in": 2.35, "out": 4.35, "src": "可靈 3.0 Omni" }
+ ]
+}
