@@ -34,7 +34,8 @@ if (!stillsArg && existsSync(SEL)) {
   for (const c of TL0.cuts) c.lines.forEach((l, i) => {
     const id = `${c.seg}_c${c.n}_${i + 1}`, meta = lines.find(x => x.id === id);
     if (!meta) return;
-    const f = join(here, '../voice', sel.version, sel.override[id] || sel.default, `${id}_${meta.name}.wav`);
+    const f = sel.files?.[id] ? join(here, '../voice', sel.files[id])  // 指定到某一版某個 take
+      : join(here, '../voice', sel.version, sel.override[id] || sel.default, `${id}_${meta.name}.wav`);
     if (!existsSync(f)) return;
     const at = c.start + (c.dur / c.lines.length) * i + 0.1;  // 與字幕同一時間點
     inputs.push('-i', f);
