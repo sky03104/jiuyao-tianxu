@@ -38,3 +38,11 @@ gallery.html
 # 2026-09-24 咖哩裁定：出圖結果（設定圖、分鏡圖）與 GPT 參考稿一律進版控——
 # 雲端 session 重開容器就清空，不進 repo 就會遺失。（原本的 production/**/shuohao/**/*.png 忽略規則已移除）
 __pycache__/
+
+# 短影音：可重現的中間檔不進版控（MP4 成品要進）
+production/shorts/**/node_modules
+production/shorts/**/music.wav
+production/shorts/**/stills/
+production/EP01/shuohao/animatic/node_modules
+production/EP01/shuohao/animatic/music.wav
+production/EP01/shuohao/animatic/stills/

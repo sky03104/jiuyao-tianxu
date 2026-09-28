@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP01 動態分鏡</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #05080b; }
+  body { display: flex; align-items: center; justify-content: center; }
+  canvas { height: 100vh; max-width: 100vw; aspect-ratio: 9 / 16; display: block; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script src="timeline.js"></script>
+<script>
+// EP01 動態分鏡（animatic）：依 timeline.js 逐切播放。
+// 有分鏡圖的切：照運鏡做推拉／跟拍；還沒出圖的切：以場景設定圖打暗當底，畫字卡寫出畫面與台詞。
+// renderFrame(t) 為純函數，render.mjs 逐格擷取輸出 MP4。
+const W = 1080, H = 1920, TL = window.TIMELINE, DURATION = TL.total;
+const ctx = document.getElementById('c').getContext('2d');
+const FONT = '"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","PMingLiU",serif';
+const SANS = '"Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif';
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const ease = x => { x = clamp(x); return x * x * (3 - 2 * x); };
+
+const images = {};
+function load(src) {
+  if (!src || images[src]) return;
+  const im = new Image(); im.src = '../' + src; images[src] = im;
+}
+TL.cuts.forEach(c => { load(c.image); load(c.sceneSheet); });
+window.assetsReady = () => Promise.all(Object.values(images).map(im => im.decode().catch(() => null)));
+
+function cover(im, scale, ox, oy) { // 等比填滿 9:16，scale>1 放大，ox/oy 為平移（px）
+  const s = Math.max(W / im.naturalWidth, H / im.naturalHeight) * scale;
+  const w = im.naturalWidth * s, h = im.naturalHeight * s;
+  ctx.drawImage(im, (W - w) / 2 + ox, (H - h) / 2 + oy, w, h);
+}
+
+function wrap(text, maxW) {
+  const out = []; let line = '';
+  for (const ch of text) {
+    // 行首禁則：標點不換到下一行開頭
+    if (ctx.measureText(line + ch).width > maxW && line && !'，。、？！：；」』）…—'.includes(ch)) { out.push(line); line = ''; }
+    line += ch;
+  }
+  if (line) out.push(line); return out;
+}
+
+function drawShot(c, k) { // k = 本切內進度 0..1
+  const im = images[c.image];
+  let scale = 1.02, ox = 0, oy = 0;
+  if (/Push In/i.test(c.camera)) scale = 1.0 + 0.12 * ease(k);
+  else if (/Tracking/i.test(c.camera)) { scale = 1.08; ox = -40 + 80 * k; oy = 8 * Math.sin(k * Math.PI * 6); }
+  else scale = 1.02 + 0.02 * k;
+  if (c.stability === 'slight-shake') { ox += 3 * Math.sin(k * 57); oy += 3 * Math.cos(k * 43); }
+  cover(im, scale, ox, oy);
+}
+
+function drawCard(c, k) {
+  const bg = images[c.sceneSheet];
+  if (bg && bg.naturalWidth) {
+    ctx.save(); ctx.filter = 'blur(18px) brightness(0.35) saturate(0.7)'; cover(bg, 1.15 + 0.03 * k, 0, 0); ctx.restore();
+  } else { ctx.fillStyle = '#0b1216'; ctx.fillRect(0, 0, W, H); }
+  ctx.fillStyle = 'rgba(5,8,11,0.35)'; ctx.fillRect(0, 0, W, H);
+
+  // 取景框示意
+  ctx.strokeStyle = 'rgba(214,168,74,0.35)'; ctx.lineWidth = 2; ctx.setLineDash([14, 10]);
+  ctx.strokeRect(70, 260, W - 140, 1000); ctx.setLineDash([]);
+
+  ctx.textAlign = 'left'; ctx.textBaseline = 'top';
+  ctx.fillStyle = 'rgba(214,168,74,0.95)'; ctx.font = `700 44px ${SANS}`;
+  ctx.fillText(`${c.seg}  #${c.n}`, 110, 300);
+  ctx.fillStyle = 'rgba(239,230,210,0.85)'; ctx.font = `500 34px ${SANS}`;
+  ctx.fillText(`${c.size}｜${c.camera}｜${c.dur} 秒｜${c.scene}`, 110, 364);
+  ctx.fillStyle = 'rgba(192,57,43,0.9)'; ctx.font = `700 30px ${SANS}`;
+  ctx.fillText('● 分鏡圖待補', 110, 418);
+
+  ctx.fillStyle = 'rgba(239,230,210,0.95)'; ctx.font = `500 40px ${FONT}`;
+  let y = 490;
+  for (const l of wrap(c.frame.replace(/^[^，]*，直式 9:16，/, ''), W - 220)) { ctx.fillText(l, 110, y); y += 60; }
+  const who = c.characters.length ? '人物：' + c.characters.join('、') : '人物：無';
+  const props = c.props.length ? '　道具：' + c.props.join('、') : '';
+  y += 20; ctx.fillStyle = 'rgba(168,226,214,0.85)'; ctx.font = `500 32px ${SANS}`;
+  for (const l of wrap(who + props, W - 220)) { ctx.fillText(l, 110, y); y += 48; }
+  if (c.shot) {
+    y += 16; ctx.fillStyle = 'rgba(239,230,210,0.6)'; ctx.font = `400 30px ${SANS}`;
+    for (const l of wrap('鏡頭：' + c.shot, W - 220).slice(0, 5)) { ctx.fillText(l, 110, y); y += 44; }
+  }
+  // 有推鏡的字卡，框線跟著收縮一點，示意運鏡
+  if (/Push In/i.test(c.camera)) {
+    const m = 30 * ease(k); ctx.strokeStyle = 'rgba(214,168,74,0.6)'; ctx.lineWidth = 3;
+    ctx.strokeRect(70 + m, 260 + m * 1.6, W - 140 - 2 * m, 1000 - 3.2 * m);
+  }
+}
+
+function drawSubtitle(c, local) {
+  if (!c.lines.length) return;
+  const per = c.dur / c.lines.length, i = Math.min(c.lines.length - 1, Math.floor(local / per));
+  const l = c.lines[i], a = clamp((local - i * per) / 0.15) * clamp((per * (i + 1) - local) / 0.15);
+  const g = ctx.createLinearGradient(0, 1340, 0, 1640);
+  g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(0.5, `rgba(0,0,0,${0.55 * a})`); g.addColorStop(1, 'rgba(0,0,0,0)');
+  ctx.fillStyle = g; ctx.fillRect(0, 1340, W, 300);
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.font = `500 32px ${SANS}`; ctx.fillStyle = `rgba(214,168,74,${0.9 * a})`;
+  ctx.fillText(l.who, W / 2, 1420);
+  ctx.font = `600 56px ${FONT}`; ctx.fillStyle = `rgba(245,238,222,${a})`;
+  ctx.shadowColor = 'rgba(0,0,0,0.9)'; ctx.shadowBlur = 12;
+  const lines = wrap(l.text, W - 160);
+  lines.forEach((s, j) => ctx.fillText(s, W / 2, 1490 + j * 76));
+  ctx.shadowBlur = 0;
+}
+
+function drawHud(t, c) {
+  ctx.textAlign = 'left'; ctx.textBaseline = 'top';
+  ctx.fillStyle = 'rgba(0,0,0,0.45)'; ctx.fillRect(0, 0, W, 96);
+  ctx.font = `600 30px ${SANS}`; ctx.fillStyle = 'rgba(239,230,210,0.85)';
+  ctx.fillText(`EP01 動態分鏡 v0　${c.seg} #${c.n}`, 40, 30);
+  ctx.textAlign = 'right';
+  const mm = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+  ctx.fillText(`${mm(t)} / ${mm(DURATION)}`, W - 40, 30);
+  // 進度條：金色＝已有分鏡圖，灰＝待補
+  for (const x of TL.cuts) {
+    ctx.fillStyle = x.image ? 'rgba(214,168,74,0.9)' : 'rgba(239,230,210,0.25)';
+    ctx.fillRect(40 + (W - 80) * x.start / DURATION + 1, 80, (W - 80) * x.dur / DURATION - 2, 8);
+  }
+  ctx.fillStyle = '#f5eede'; ctx.fillRect(40 + (W - 80) * t / DURATION - 2, 74, 4, 20);
+}
+
+function cutAt(t) {
+  let c = TL.cuts[0];
+  for (const x of TL.cuts) if (t >= x.start) c = x;
+  return c;
+}
+
+function renderFrame(t) {
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.textAlign = 'left';
+  const c = cutAt(t), local = t - c.start, k = clamp(local / c.dur);
+  if (c.image && images[c.image].naturalWidth) drawShot(c, k); else drawCard(c, k);
+  drawSubtitle(c, local);
+  drawHud(t, c);
+  // 片頭淡入、片尾（最後一聲鐘響後）淡出
+  const fade = 1 - clamp(t / 0.5) + clamp((t - (DURATION - 1.2)) / 1.2);
+  if (fade > 0) { ctx.fillStyle = `rgba(0,0,0,${clamp(fade)})`; ctx.fillRect(0, 0, W, H); }
+}
+
+window.renderFrame = renderFrame;
+window.DURATION = DURATION;
+if (!/[?&]render=1/.test(location.search)) {
+  window.assetsReady().then(() => {
+    const start = performance.now();
+    const loop = now => { renderFrame(((now - start) / 1000) % DURATION); requestAnimationFrame(loop); };
+    requestAnimationFrame(loop);
+  });
+}
+</script>
+</body>
+</html>
