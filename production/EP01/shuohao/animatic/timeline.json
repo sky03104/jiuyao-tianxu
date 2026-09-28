@@ -85,11 +85,11 @@
    "sceneSheet": "art/images/天玄院東廊-sheet.png",
    "image": "storyboard/export/h3/E01-02/f1.png",
    "clip": {
-    "file": "storyboard/export/h3/E01-02/kling-v1.mp4",
+    "file": "storyboard/export/h3/E01-02/hailuo-h3-v1.mp4",
     "in": 0,
-    "out": 2.25,
-    "src": "可靈 3.0 Omni",
-    "proxy": "animatic/cache/E01-02_kling-v1.webm"
+    "out": 3,
+    "src": "海螺 MiniMax H3",
+    "proxy": "animatic/cache/E01-02_hailuo-h3-v1.webm"
    },
    "music": "木質打擊樂輕輕加入，中慢速度"
   },
@@ -115,11 +115,11 @@
    "sceneSheet": "art/images/天玄院東廊-sheet.png",
    "image": "storyboard/export/h3/E01-02/f2.png",
    "clip": {
-    "file": "storyboard/export/h3/E01-02/kling-v1.mp4",
-    "in": 2.35,
-    "out": 4.35,
-    "src": "可靈 3.0 Omni",
-    "proxy": "animatic/cache/E01-02_kling-v1.webm"
+    "file": "storyboard/export/h3/E01-02/hailuo-h3-v1.mp4",
+    "in": 3.05,
+    "out": 5,
+    "src": "海螺 MiniMax H3",
+    "proxy": "animatic/cache/E01-02_hailuo-h3-v1.webm"
    },
    "music": null
   },
@@ -147,7 +147,13 @@
    "scene": "天玄院東廊",
    "sceneSheet": "art/images/天玄院東廊-sheet.png",
    "image": "storyboard/export/h3/E01-02/f3.png",
-   "clip": null,
+   "clip": {
+    "file": "storyboard/export/h3/E01-02/hailuo-h3-v1.mp4",
+    "in": 5.05,
+    "out": 7.55,
+    "src": "海螺 MiniMax H3",
+    "proxy": "animatic/cache/E01-02_hailuo-h3-v1.webm"
+   },
    "music": null
   },
   {

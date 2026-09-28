@@ -20,18 +20,26 @@
   {
    "seg": "E01-02",
    "n": 1,
-   "file": "storyboard/export/h3/E01-02/kling-v1.mp4",
+   "file": "storyboard/export/h3/E01-02/hailuo-h3-v1.mp4",
    "in": 0.0,
-   "out": 2.25,
-   "src": "可靈 3.0 Omni"
+   "out": 3.0,
+   "src": "海螺 MiniMax H3"
   },
   {
    "seg": "E01-02",
    "n": 2,
-   "file": "storyboard/export/h3/E01-02/kling-v1.mp4",
-   "in": 2.35,
-   "out": 4.35,
-   "src": "可靈 3.0 Omni"
+   "file": "storyboard/export/h3/E01-02/hailuo-h3-v1.mp4",
+   "in": 3.05,
+   "out": 5.0,
+   "src": "海螺 MiniMax H3"
+  },
+  {
+   "seg": "E01-02",
+   "n": 3,
+   "file": "storyboard/export/h3/E01-02/hailuo-h3-v1.mp4",
+   "in": 5.05,
+   "out": 7.55,
+   "src": "海螺 MiniMax H3"
   },
   {
    "seg": "E01-03",
