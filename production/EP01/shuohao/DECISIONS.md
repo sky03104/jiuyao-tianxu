@@ -245,3 +245,19 @@ novel-characters 第一版漏讀 docs/16（Claude 疏漏），補正如下。**�
 - T4 不支援 bf16、UMT5 用 fp16 易溢位 → 文字編碼器在 CPU 上以 bf16 先把提示詞編碼完再丟掉；transformer fp16＋
   model CPU offload；VAE fp32＋tiling。**雲端 session 連不到 Hugging Face，筆記本未實跑過**，第一次請先跑 `QUALITY="test"`。
 - TI2V-5B 只吃首幀（不支援尾幀），E01-01 兩鏡各用 f1、f2 分開生成 3 秒（73 幀），剪輯時再接。
+
+### 2026-09-28　Wan 2.2 試跑結果（Kaggle T4、480×832、30 步、fp16、73 幀）
+
+- 跑通。踩到的坑：①CPU offload 只自動搬正向提示詞，反向提示詞留在 CPU → device 錯誤（已修，embeds 先 `.to("cuda:0")`）；
+  ②Kaggle 互動 session 閒置／關分頁會停，要離開改用 Save Version → Save & Run All（背景跑、Output 保留）。
+- 耗時：**每鏡 3 秒約 10.6 分鐘**（13.8 秒／步），含下載與提示詞編碼整本約 40 分鐘。fp16 無全黑／NaN。
+- 成品：`storyboard/export/h3/E01-01/wan22-test-shot1.mp4`、`wan22-test-shot2.mp4`（無浮水印、無音軌）。
+
+| 影片 | 結果 | 備註 |
+|---|---|---|
+| wan22-test-shot1 | 勉強可用（不如可靈） | 首幀忠實 f1、雲帶流動自然；**沒有推鏡**（鏡頭靜止）；中段院落在雲流過時有局部融化（冒出發光藍色建物、綠白色拖影） |
+| wan22-test-shot2 | 不合格 | 門樓、石獅、臺階穩定；右側旗幟約 2.5 秒起變形（白色布片飛出、旗桿形狀改變）。前 2 秒可剪用 |
+
+**比較**：可靈 3.0 Omni（36 點、5 秒 720p、兩鏡一次完成含切鏡）明顯優於 Wan 2.2 TI2V-5B 480p；Wan 勝在免費無浮水印可商用，
+但 T4 上 720p 估每鏡約 40 分鐘、細節穩定性不足。待咖哩裁定是否再試 720p 或改走其他方案。
+
