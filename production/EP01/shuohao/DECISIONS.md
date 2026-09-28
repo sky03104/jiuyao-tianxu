@@ -345,3 +345,13 @@ Wan 的優勢是免費、無浮水印、可商用：**正式版若不付費，�
 - 帳號 Free、20 點（點數沒有每日重置）。最便宜的影片是 PixVerse V6 圖生影片 540p／5 秒 50 點；Seedance 2.0 720p／5 秒 400 點；
   Kling 3 Omni std／5 秒 175 點（同模型在可靈官網每日免費 66 點、一支約 36 點）。**免費額度連一支影片都不夠，不採用**。
 - 若日後付費想用 Seedance，`storyboard/export/seedance/` 已有投產包可直接用。
+
+## 2026-09-28　配音試作：Qwen3-TTS（Kaggle）
+
+- 筆記本 `voice/qwen3tts_kaggle_EP01.ipynb`，台詞與音色 `voice/lines.json`（EP01 全 14 句，旁白＋玩家／齊衡烈／郁岑燁／厲若楓／蕭曜霖）。
+- 選 **Qwen3-TTS**（2026-01 開源、Apache 2.0 可商用）而非 23A 排第一的 Chatterbox：我們還沒有任何角色的參考人聲，
+  Qwen3-TTS 的 **VoiceDesign** 能直接用 cast.json 的英文音色提示詞「設計」聲音，再用 **Base** 模型複製該聲音唸全部台詞，
+  同角色每句一致（官方建議的 design → clone 流程）。另輸出每句直接設計的對照版，比較一致性 vs 語氣。
+  23A 的 Chatterbox／Fish Speech 之後可拿這批參考聲音再比較。
+- T4 無 bf16／flash-attn → float32＋sdpa。**尚未實跑**，待咖哩在 Kaggle 執行。
+

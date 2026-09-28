@@ -1,0 +1,156 @@
+{
+ "lines": [
+  {
+   "id": "E01-01_c2_1",
+   "speaker": "VO",
+   "name": "旁白",
+   "text": "九曜界，天玄院。",
+   "delivery": "旁白：中性成熟、慢；動畫補充的地名旁白，非遊戲台詞",
+   "start": 3,
+   "cutDur": 2
+  },
+  {
+   "id": "E01-03_c2_1",
+   "speaker": "C02",
+   "name": "齊衡烈",
+   "text": "你就是新來的？",
+   "delivery": "爽朗、直接，像認出新隊友；不是搞笑腔",
+   "start": 15,
+   "cutDur": 3
+  },
+  {
+   "id": "E01-03_c2_2",
+   "speaker": "C01",
+   "name": "玩家",
+   "text": "應該是。",
+   "delivery": "有點不確定，但語氣平靜",
+   "start": 15,
+   "cutDur": 3
+  },
+  {
+   "id": "E01-03_c3_1",
+   "speaker": "C02",
+   "name": "齊衡烈",
+   "text": "那就對了。第七室最近正缺個能打的。",
+   "delivery": "笑著拍了一下自己的手臂——是興奮，不是挑釁",
+   "start": 18,
+   "cutDur": 4
+  },
+  {
+   "id": "E01-04_c2_1",
+   "speaker": "C03",
+   "name": "郁岑燁",
+   "text": "你看都沒看他出手，怎麼知道他能打？",
+   "delivery": "平淡，不是故意嗆人，只是對不精確的判斷沒耐心",
+   "start": 24,
+   "cutDur": 4
+  },
+  {
+   "id": "E01-04_c3_1",
+   "speaker": "C02",
+   "name": "齊衡烈",
+   "text": "所以才要打一場啊。",
+   "delivery": "理所當然，躍躍欲試",
+   "start": 28,
+   "cutDur": 5
+  },
+  {
+   "id": "E01-04_c4_1",
+   "speaker": "C03",
+   "name": "郁岑燁",
+   "text": "……無聊。",
+   "delivery": "低頭繼續擦劍，眉頭輕皺",
+   "start": 33,
+   "cutDur": 2
+  },
+  {
+   "id": "E01-05_c3_1",
+   "speaker": "C04",
+   "name": "厲若楓",
+   "text": "別急。他的腳步有點亂。",
+   "delivery": "平靜，開口前先停一拍；句與句之間有停頓",
+   "start": 39,
+   "cutDur": 3
+  },
+  {
+   "id": "E01-05_c5_1",
+   "speaker": "C01",
+   "name": "玩家",
+   "text": "你們都看得出來？",
+   "delivery": "真心發問，不是頂嘴",
+   "start": 44,
+   "cutDur": 2
+  },
+  {
+   "id": "E01-06_c1_1",
+   "speaker": "C03",
+   "name": "郁岑燁",
+   "text": "至少我看得出來。",
+   "delivery": "頭也沒抬，理所當然",
+   "start": 46,
+   "cutDur": 2
+  },
+  {
+   "id": "E01-06_c2_1",
+   "speaker": "C02",
+   "name": "齊衡烈",
+   "text": "哈哈，那更好！明天演武場見。",
+   "delivery": "大笑，把重刀扛上肩",
+   "start": 48,
+   "cutDur": 4
+  },
+  {
+   "id": "E01-07_c1_1",
+   "speaker": "C05",
+   "name": "蕭曜霖",
+   "text": "不用等明天。",
+   "delivery": "畫外音，人還沒現身；低沉平穩，不提高音量——環境聲先壓下來",
+   "start": 52,
+   "cutDur": 2
+  },
+  {
+   "id": "E01-07_c4_1",
+   "speaker": "C05",
+   "name": "蕭曜霖",
+   "text": "半刻鐘後，新生演武場集合。",
+   "delivery": "慢，一字一句；說完不再補充",
+   "start": 58.5,
+   "cutDur": 3
+  },
+  {
+   "id": "E01-08_c4_1",
+   "speaker": "C01",
+   "name": "玩家",
+   "text": "知道了。",
+   "delivery": "短、乾脆，壓住一點緊張",
+   "start": 70.5,
+   "cutDur": 4
+  }
+ ],
+ "voices": {
+  "VO": {
+   "name": "旁白",
+   "prompt": "Mature narrator voice of indeterminate age around forty, neutral warm baritone, low-mid pitch, smooth chest resonance, narrow dynamic range. Moderate-low volume, slow pace, long even phrasing with falling endings. Standard Mandarin with neutral Taiwanese pronunciation. Calm, grounded, unhurried."
+  },
+  "C01": {
+   "name": "玩家",
+   "prompt": "20-year-old male, clear natural light baritone, mid pitch, moderate chest support, narrow dynamic range. Moderate volume, medium pace, brief pause before answering, plain level phrasing. Standard Mandarin with neutral Taiwanese pronunciation. Calm, slightly unsure."
+  },
+  "C02": {
+   "name": "齊衡烈",
+   "prompt": "20-year-old male, bright resonant baritone, mid-to-high pitch, strong chest support, wide dynamic range. Loud volume, fast pace, punchy phrase openings, open easy breath. Standard Mandarin with neutral Taiwanese pronunciation. Warm, eager, confident."
+  },
+  "C03": {
+   "name": "郁岑燁",
+   "prompt": "20-year-old male, clean cool tenor, little breath, mid pitch, firm light support, narrow dynamic range. Low-to-moderate volume, medium-slow pace, clipped short phrases, crisp consonants, falling endings. Standard Mandarin with neutral Taiwanese pronunciation. Reserved, faintly impatient."
+  },
+  "C04": {
+   "name": "厲若楓",
+   "prompt": "20-year-old male, low soft baritone with a hint of breath, low-mid pitch, relaxed chest resonance, very narrow dynamic range. Quiet volume, slow pace, clear pauses between phrases, even flat intonation. Standard Mandarin with neutral Taiwanese pronunciation. Calm and attentive."
+  },
+  "C05": {
+   "name": "蕭曜霖",
+   "prompt": "42-year-old male, deep dense bass-baritone, low pitch, heavy chest resonance, firm steady support, narrow controlled dynamic range. Moderate volume that carries, slow deliberate pace, level falling intonation. Standard Mandarin with neutral Taiwanese pronunciation. Stern, steady authority."
+  }
+ }
+}
