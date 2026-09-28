@@ -22,6 +22,32 @@ for (const c of TLJ.cuts.filter(c => c.clip)) {
   execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', src, '-an', '-c:v', 'libvpx-vp9', '-g', '1', '-crf', '28', '-b:v', '0', '-deadline', 'good', '-cpu-used', '4', dst], { stdio: 'inherit' });
 }
 if (!stillsArg) execFileSync('node', [join(here, 'audio.mjs')], { stdio: 'inherit' });
+// 配音：依 voice/selection.json 選版本，每句去掉開頭靜音後放在字幕出現的時間點，疊在暫定配樂上 → mix.wav
+let AUDIO = join(here, 'music.wav');
+const SEL = join(here, '../voice/selection.json');
+if (!stillsArg && existsSync(SEL)) {
+  const sel = JSON.parse(readFileSync(SEL, 'utf8'));
+  const lines = JSON.parse(readFileSync(join(here, '../voice/lines.json'), 'utf8')).lines;
+  const TL0 = JSON.parse(readFileSync(join(here, 'timeline.json'), 'utf8'));
+  const inputs = ['-i', join(here, 'music.wav')], chains = [];
+  let k = 1;
+  for (const c of TL0.cuts) c.lines.forEach((l, i) => {
+    const id = `${c.seg}_c${c.n}_${i + 1}`, meta = lines.find(x => x.id === id);
+    if (!meta) return;
+    const f = join(here, '../voice', sel.version, sel.override[id] || sel.default, `${id}_${meta.name}.wav`);
+    if (!existsSync(f)) return;
+    const at = c.start + (c.dur / c.lines.length) * i + 0.1;  // 與字幕同一時間點
+    inputs.push('-i', f);
+    chains.push(`[${k}:a]silenceremove=start_periods=1:start_threshold=-40dB,aresample=44100,pan=stereo|c0=c0|c1=c0,adelay=${Math.round(at * 1000)}:all=1[v${k}]`);
+    k++;
+  });
+  if (k > 1) {
+    const mix = join(here, 'mix.wav');
+    const fc = `[0:a]volume=0.55[m];${chains.join(';')};[m]${Array.from({ length: k - 1 }, (_, j) => `[v${j + 1}]`).join('')}amix=inputs=${k}:normalize=0:duration=first[out]`;
+    execFileSync('ffmpeg', ['-y', '-loglevel', 'error', ...inputs, '-filter_complex', fc, '-map', '[out]', mix], { stdio: 'inherit' });
+    AUDIO = mix; console.log(`配音 ${k - 1} 句 → mix.wav`);
+  }
+}
 
 // 允許 file:// 讀取 repo 內的分鏡圖與設定圖
 const browser = await chromium.launch({ args: ['--allow-file-access-from-files'] });
@@ -38,7 +64,7 @@ if (stillsArg) {
   for (const s of stillsArg.split(',').map(Number)) writeFileSync(join(here, 'stills', `t${String(s).replace('.', '_')}.png`), await grab(s, 'png'));
 } else {
   const duration = await page.evaluate(() => window.DURATION);
-  const audio = join(here, 'music.wav');
+  const audio = AUDIO;
   const out = join(here, 'EP01_animatic_v1.mp4');
   const ff = spawn('ffmpeg', [
     '-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'mjpeg', '-i', '-',

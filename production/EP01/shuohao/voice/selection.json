@@ -1,0 +1,11 @@
+{
+ "_note": "動態分鏡要用哪一版配音。預設 clone（同角色聲音一致）；此處列出的句子改用別版。render.mjs 讀取。",
+ "version": "qwen3tts-v1",
+ "default": "clone",
+ "override": {
+  "E01-07_c4_1": "design"
+ },
+ "_why": {
+  "E01-07_c4_1": "clone 版語音辨識兩次都聽不出「演武場集合」（咬字糊），design 版可辨識"
+ }
+}
