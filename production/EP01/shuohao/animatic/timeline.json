@@ -214,7 +214,13 @@
    "scene": "第七室",
    "sceneSheet": "art/images/第七室-sheet.png",
    "image": null,
-   "clip": null,
+   "clip": {
+    "file": "storyboard/export/h3/E01-03/jimeng-c2.mp4",
+    "in": 1.8,
+    "out": 4.8,
+    "src": "即夢 Seedance",
+    "proxy": "animatic/cache/E01-03_jimeng-c2.webm"
+   },
    "music": null
   },
   {

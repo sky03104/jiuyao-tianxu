@@ -40,6 +40,14 @@
    "in": 0.0,
    "out": 2.5,
    "src": "即夢 Seedance"
+  },
+  {
+   "seg": "E01-03",
+   "n": 2,
+   "file": "storyboard/export/h3/E01-03/jimeng-c2.mp4",
+   "in": 1.8,
+   "out": 4.8,
+   "src": "即夢 Seedance"
   }
  ]
 }
