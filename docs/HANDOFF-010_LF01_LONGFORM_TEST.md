@@ -889,7 +889,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜大遠景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B03/f1-refs.jpg`（**待 陣眼遺跡、聞人澈、赤瞳妖將 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B03/f1-refs.jpg`（**待 陣眼遺跡、赤瞳妖將 設定圖驗收後由 Claude 重跑產生**）
 
 ```text
 Reference images:
@@ -1004,7 +1004,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜中景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B05/f1-refs.jpg`（**待 陣眼遺跡、聞人澈 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B05/f1-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）
 
 ```text
 Reference images:
@@ -1217,7 +1217,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 10 秒｜全景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B09/f1-refs.jpg`（**待 陣眼遺跡、聞人澈 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B09/f1-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）
 
 ```text
 Reference images:
