@@ -45,6 +45,7 @@ H3 的「多鏡頭一次生成」提示詞只有 MiniMax H3 能用。可靈、Wa
 | `storyboard/export/h3/E01-01/wan22-test-shot1.mp4`、`-shot2.mp4` | Wan 2.2 TI2V-5B（Kaggle T4，480p） | 鏡 1 勉強、鏡 2 不合格 | 每鏡 3 秒約 10.6 分鐘；建築融化、旗幟變形 |
 | `storyboard/export/h3/E01-02/kling-v1.mp4` | 可靈網頁版 VIDEO 3.0 Omni（f1＋f2＋玩家設定圖） | 通過（內部試片） | 36 點；走路自然、臉一致；路人同向走（非擦肩） |
 | `storyboard/export/h3/E01-02/wan22-test-shot1.mp4`、`-shot2.mp4` | Wan 2.2 TI2V-5B（Kaggle T4，480p） | 鏡 1 通過、鏡 2 勉強 | 走路自然；鏡 2 臉後段漂移、憑證疑似換手 |
+| `storyboard/export/h3/E01-02/jimeng-v1.mp4` | 即夢 Dreamina（AI Agent＋Auto，f1～f3＋玩家設定圖） | 部分可用 | 12 點；一鏡到底、約 2.9 秒人物原地翻轉；各段本身品質好、門牌無字 |
 
 > **2026-09-28 修正上面的「一個分鏡切一段」做法**：可靈 3.0 Omni 可掛多張參考圖、在提示詞寫「第 N 秒硬切到 @圖片2」，
 > 一段內多鏡一次生成可行（實測切點會提早 0.2～0.7 秒）。人物鏡頭加掛角色設定圖當最後一張參考。
