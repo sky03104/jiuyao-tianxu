@@ -240,7 +240,7 @@ novel-characters 第一版漏讀 docs/16（Claude 疏漏），補正如下。**�
 
 ## 2026-09-27　Wan 2.2 TI2V-5B 在 Kaggle 免費 GPU 試跑（準備中）
 
-- 筆記本：`videogen/wan22_kaggle_E01-01.ipynb`（Kaggle 上傳後依序執行；GPU T4 x2、Internet On）。
+- 筆記本：`videogen/wan22_kaggle.ipynb`（Kaggle 上傳後依序執行；GPU T4 x2、Internet On）。
   選 TI2V-5B 而非 A14B：A14B 官方需 80GB 顯存，5B 官方標 24GB（開 offload），T4 16GB 只能靠 CPU offload 硬塞。
 - T4 不支援 bf16、UMT5 用 fp16 易溢位 → 文字編碼器在 CPU 上以 bf16 先把提示詞編碼完再丟掉；transformer fp16＋
   model CPU offload；VAE fp32＋tiling。**雲端 session 連不到 Hugging Face，筆記本未實跑過**，第一次請先跑 `QUALITY="test"`。
@@ -261,3 +261,10 @@ novel-characters 第一版漏讀 docs/16（Claude 疏漏），補正如下。**�
 **比較**：可靈 3.0 Omni（36 點、5 秒 720p、兩鏡一次完成含切鏡）明顯優於 Wan 2.2 TI2V-5B 480p；Wan 勝在免費無浮水印可商用，
 但 T4 上 720p 估每鏡約 40 分鐘、細節穩定性不足。待咖哩裁定是否再試 720p 或改走其他方案。
 
+
+## 2026-09-28　人物動作測試：E01-02（玩家走東廊）
+
+- E01-01 是空景，還沒測到人物動作。改測 E01-02 前兩鏡（f1 背影跟拍走路、f2 正面走路＋路人擦肩；f3 門牌鏡尚未出圖）。
+- 驗片重點：走路步態（滑步、腳交錯、倒著走）、臉與設定圖一致（f2 正臉）、手與憑證、背包／護臂連戲、路人是否穿模或融合。
+- Wan：筆記本改名 `videogen/wan22_kaggle.ipynb`，第 2 格 `SEGMENT` 選段（預設 E01-02），E01-02 的反向提示詞拿掉「人物」並加肢體／換臉類。
+- 可靈：網頁版 VIDEO 3.0 Omni，f1、f2＋玩家設定圖三張參考，5 秒、3 秒切鏡（提示詞見對話交接）。
