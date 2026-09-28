@@ -422,3 +422,6 @@ Wan 的優勢是免費、無浮水印、可商用：**正式版若不付費，�
   **不是免費**。結論：不訂年費；若要用，等無限窗口輪到 Kling 3.0／Seedance 2.0 時訂一個月，只跑 🎬 格子。
   付費前要在方案頁確認：無限窗口現在是哪個模型、是否慢速隊列或降解析度、能否多參考圖、浮水印與商用授權。
   來源：krea.ai/blog/higgsfield-pricing-explained-2026-unlimited-credits-and-real-monthly-costs、techsifted.com/roundups/higgsfield-ai-pricing-2026/
+- 補充（同日）：Higgsfield API 平台（open.higgsfield.ai）「100% 現金回饋」活動：花多少 API 費用，就回饋等額 **API 點數**（不是現金），
+  總額 2,000 萬美元、先到先得，**回饋點數 9/30 到期**。結論：分鏡圖還沒出齊、影片格沒有首幀，兩天內用不完回饋點數，**這次不參加**。
+  來源：x.com/higgsfield/status/2103234987403481500
