@@ -442,3 +442,10 @@ Wan 的優勢是免費、無浮水印、可商用：**正式版若不付費，�
 - **v3 結果（2026-09-29）**：每角色 3 候選中只有 c2 沒被辨識出粵語用字，四角色都採 c2；郁岑燁 c2 會把參考句尾巴接在台詞前，
   已依靜音點剪掉（`voice/qwen3tts-v3/trimmed/`）。蕭曜霖 c2 兩句字全對；旁白專有名詞辨識不準、待試聽。咖哩回報「還是有粵語」→
   Qwen3-TTS VoiceDesign 對「台灣口音」會偏粵語，另查其他開源 TTS。
+
+## 2026-09-29　配音改試 BreezyVoice（台灣國語專用開源 TTS）
+
+- 咖哩：Qwen3-TTS v3 還是有粵語 → 查 GitHub 開源 TTS。選 **BreezyVoice**（聯發科研究院，CosyVoice 改版、專為台灣國語訓練、
+  支援注音指定破音字，Apache 2.0）。F5-TTS 台灣腔評價好但預訓練模型非商用（未再查證）；IndexTTS2、VoxCPM2 授權待查。
+- 做法：Qwen 設計音色 → BreezyVoice 照參考聲音唸台詞。先試旁白＋蕭曜霖（v3 c2 參考聲音內嵌於
+  `voice/breezyvoice_kaggle_EP01.ipynb`），每句 3 次；「九曜」用 `[:ㄧㄠ4]` 指定讀音。Kaggle 需另建 Python 3.10 環境（放 /tmp）。
