@@ -131,12 +131,16 @@
   "VO": {
    "name": "旁白",
    "prompt": "Mature narrator voice of indeterminate age around forty, neutral warm baritone, low-mid pitch, smooth chest resonance, narrow dynamic range. Moderate-low volume, slow pace, long even phrasing with falling endings. Standard Mandarin with neutral Taiwanese pronunciation. Calm, grounded, unhurried.",
-   "prompt_v2": "史詩感東方玄幻動畫的開場旁白，成熟男聲約四十歲，低沉渾厚、帶磁性與胸腔共鳴，語速很慢，每個字都有份量，詞與詞之間有戲劇性的停頓，語氣莊重宏大、帶一點神秘感。台灣國語口音，咬字清楚，不捲舌、不兒化，不要大陸普通話腔調。"
+   "prompt_v2": "史詩感東方玄幻動畫的開場旁白，成熟男聲約四十歲，低沉渾厚、帶磁性與胸腔共鳴，語速很慢，每個字都有份量，詞與詞之間有戲劇性的停頓，語氣莊重宏大、帶一點神秘感。台灣國語口音，咬字清楚，不捲舌、不兒化，不要大陸普通話腔調。",
+   "prompt_v3": "東方玄幻動畫的開場旁白，成熟男聲約四十歲，低沉渾厚、有磁性，胸腔共鳴飽滿，語速很慢，每個字都有份量，詞與詞之間有停頓，語氣莊重宏大、帶一點神秘感。說國語，台灣口音，語調平穩柔和，咬字清楚不捲舌。",
+   "ref_text": "群山之上，雲海翻湧，一座古老的學院，靜靜矗立在那裡。"
   },
   "C01": {
    "name": "玩家",
    "prompt": "20-year-old male, clear natural light baritone, mid pitch, moderate chest support, narrow dynamic range. Moderate volume, medium pace, brief pause before answering, plain level phrasing. Standard Mandarin with neutral Taiwanese pronunciation. Calm, slightly unsure.",
-   "prompt_v2": "約十八歲的少年，清亮乾淨的男高音，音調中偏高，聲音年輕、略帶稚氣，開口前會稍微停頓，語氣平靜、帶一點不確定和好奇，音量中等。台灣國語口音，咬字清楚，不捲舌、不兒化，不要大陸普通話腔調。"
+   "prompt_v2": "約十八歲的少年，清亮乾淨的男高音，音調中偏高，聲音年輕、略帶稚氣，開口前會稍微停頓，語氣平靜、帶一點不確定和好奇，音量中等。台灣國語口音，咬字清楚，不捲舌、不兒化，不要大陸普通話腔調。",
+   "prompt_v3": "十八歲的台灣少年，自然乾淨的男聲，音調中等，不尖、不刻意裝可愛，像平常跟朋友說話一樣自然；語氣平靜，帶一點不確定和好奇，語速正常偏慢。說國語，台灣口音，語調柔和，字尾輕，咬字清楚不捲舌。",
+   "ref_text": "今天天氣很好耶，我們慢慢走過去就好，路上還可以聊一下。"
   },
   "C02": {
    "name": "齊衡烈",
@@ -145,7 +149,9 @@
   "C03": {
    "name": "郁岑燁",
    "prompt": "20-year-old male, clean cool tenor, little breath, mid pitch, firm light support, narrow dynamic range. Low-to-moderate volume, medium-slow pace, clipped short phrases, crisp consonants, falling endings. Standard Mandarin with neutral Taiwanese pronunciation. Reserved, faintly impatient.",
-   "prompt_v2": "約二十歲的青年，冷淡清脆的男聲，音調中高、聲音偏薄偏亮，幾乎沒有氣聲，語速偏快，句子短促乾脆、句尾往下壓，帶點不耐煩和高傲，咬字特別銳利。台灣國語口音，咬字清楚，不捲舌、不兒化，不要大陸普通話腔調。"
+   "prompt_v2": "約二十歲的青年，冷淡清脆的男聲，音調中高、聲音偏薄偏亮，幾乎沒有氣聲，語速偏快，句子短促乾脆、句尾往下壓，帶點不耐煩和高傲，咬字特別銳利。台灣國語口音，咬字清楚，不捲舌、不兒化，不要大陸普通話腔調。",
+   "prompt_v3": "二十歲的青年劍客，冷淡清脆的男聲，音調中高，聲音偏薄偏亮，語速偏快，句子短而乾脆，句尾往下收，帶一點不耐煩和驕傲，但音量不大。說國語，台灣口音，語調平穩，咬字清楚俐落不捲舌。",
+   "ref_text": "今天天氣很好耶，我們慢慢走過去就好，路上還可以聊一下。"
   },
   "C04": {
    "name": "厲若楓",
@@ -155,8 +161,11 @@
   "C05": {
    "name": "蕭曜霖",
    "prompt": "42-year-old male, deep dense bass-baritone, low pitch, heavy chest resonance, firm steady support, narrow controlled dynamic range. Moderate volume that carries, slow deliberate pace, level falling intonation. Standard Mandarin with neutral Taiwanese pronunciation. Stern, steady authority.",
-   "prompt_v2": "約四十二歲、久經沙場的學院教官，低沉厚實有力的男中低音，胸腔共鳴飽滿，聲音像鐵一樣硬，帶強烈的威嚴與壓迫感，不怒自威、一開口就讓全場安靜；語速慢而穩，每個字斬釘截鐵、咬字清楚分明、句尾果斷下壓，命令口吻，完全不溫和、不猶豫，但也不吼叫。台灣國語口音，咬字清楚，不捲舌、不兒化，絕對不要大陸普通話腔調與北京腔。"
+   "prompt_v2": "約四十二歲、久經沙場的學院教官，低沉厚實有力的男中低音，胸腔共鳴飽滿，聲音像鐵一樣硬，帶強烈的威嚴與壓迫感，不怒自威、一開口就讓全場安靜；語速慢而穩，每個字斬釘截鐵、咬字清楚分明、句尾果斷下壓，命令口吻，完全不溫和、不猶豫，但也不吼叫。台灣國語口音，咬字清楚，不捲舌、不兒化，絕對不要大陸普通話腔調與北京腔。",
+   "prompt_v3": "四十多歲的學院教官，低沉厚實的男中低音，胸腔共鳴飽滿，聲音沉穩有力、很有威嚴，不怒自威；語速慢而穩，每個字都很清楚，句尾果斷往下壓，命令口吻，不吼叫。說國語，台灣口音，咬字清楚不捲舌。",
+   "ref_text": "所有人聽好，明天一早到演武場集合，誰都不准遲到。"
   }
  },
- "_v2_note": "2026-09-28 咖哩試聽：旁白改史詩玄幻動畫預告風；机遙／郁岑燁／厲若楓三人分不出來→重新設計各自特色；後段（蕭曜霖、机遙）跑成大陸腔→中文提示詞加台灣國語要求。齊衡烈沿用 v1。"
+ "_v2_note": "2026-09-28 咖哩試聽：旁白改史詩玄幻動畫預告風；机遙／郁岑燁／厲若楓三人分不出來→重新設計各自特色；後段（蕭曜霖、机遙）跑成大陸腔→中文提示詞加台灣國語要求。齊衡烈沿用 v1。",
+ "_v3_note": "2026-09-29 咖哩試聽 v2：旁白、蕭曜霖變粵語、机遙怪、郁岑燁失控→提示詞改正面描述（不寫「不要大陸腔」）、台灣口語參考句、每角色 3 候選。"
 }
