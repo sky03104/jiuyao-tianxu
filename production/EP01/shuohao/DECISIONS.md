@@ -466,5 +466,9 @@ Wan 的優勢是免費、無浮水印、可商用：**正式版若不付費，�
   - 安裝最後印出 torch／numpy／transformers／onnxruntime 版本與可用 GPU，出錯時一看紀錄就知道卡在哪。
 - **台詞改用長篇 LF01**（主力已改長篇）：旁白 A01「九曜[:ㄧㄠ4]界，天玄院。」、蕭曜霖 A10 兩句、**新增机遙**
   （Qwen v3 C01 c2 參考聲音，轉 16kHz 內嵌）A05／A08／B02 三句；每句 3 次，共 18 個檔。檔名 `LF01-<段號>_<角色>_t<n>`。
-- 由 Claude 推 Kaggle 自動執行不可行：本環境代理雖接了 Kaggle，但 API 驗證回 401、新版 CLI 走的 `api.kaggle.com` 被擋，
-  仍需咖哩在 Kaggle 網頁 Save & Run All。
+- **Kaggle 改由 Claude 直接推送執行**（2026-09-30）：原本代理憑證對 `www.kaggle.com/api/v1` 回 401；咖哩改設新版 API token
+  （主機 `api.kaggle.com`）後可用。做法：`POST https://api.kaggle.com/v1/kernels.KernelsApiService/SaveKernel`
+  （私人、GPU T4、開網路、`dockerImage` 用官方 Playground 同款 Python 3.10 映像），
+  `GetKernelSessionStatus` 查狀態、`ListKernelSessionOutput` 取輸出。kaggle CLI 2.x 不認代理附的憑證，直接打 API 即可。
+  Kaggle 筆記本原始碼上限 **1MB** → 參考聲音改用 FLAC 內嵌（執行時轉回 16kHz WAV），筆記本 0.5MB。
+  筆記本：https://www.kaggle.com/code/sky03104/jiuyao-breezyvoice-lf01（私人）
