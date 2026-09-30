@@ -12,4 +12,4 @@
 | `ref-openai/`、`openai-tts-v1/` | OpenAI TTS 台灣國語男聲（參考與直出） | 方向不對（不是國漫腔） |
 | `breezy-v5-twref/` | BreezyVoice＋OpenAI 台灣國語參考（ash／onyx）×2 次 | 換掉 Qwen 參考後字幾乎全對（旁白 t2、蕭曜霖 t2 皆正確），證實先前錯字來自參考聲音；但仍是台灣國語方向，不採用 |
 | `openai-tts-guoman/` | OpenAI TTS 國漫風格提示詞直出（onyx／ballad／ash） | 待咖哩試聽 |
-| `qwen3tts_guoman_kaggle_LF01.ipynb` | Qwen3-TTS VoiceDesign 國漫風格，3 候選 × 2 次 | Kaggle 執行中 |
+| `qwen3tts_guoman_kaggle_LF01.ipynb` | Qwen3-TTS VoiceDesign 國漫風格，3 候選 × 2 次 | 參考聲音（VoiceDesign 直出）字幾乎全對、c3 最好；但 Base 模型照參考唸台詞時錯字多、又冒出粵語「唔好」，待咖哩先判定音色方向（`qwen3tts-guoman-v1/asr.tsv`） |
