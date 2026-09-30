@@ -43,4 +43,4 @@ LF01_BRANCH=<分支名> python3 production/LF01/tools/lf01_handoff.py
   交給 Claude 驗圖後重跑 handoff，第 12 場 17 張分鏡的參考拼圖就會全部產生。
 - **配音**：BreezyVoice 第三版筆記本 `production/EP01/shuohao/voice/breezyvoice_kaggle_EP01.ipynb` 改唸本片台詞
   （旁白 A01、蕭曜霖 A10、机遙 A05／A08／B02），失敗原因分析與修正見 `production/EP01/shuohao/DECISIONS.md` 同日紀錄。
-  試聽通過後再擴到全部 26 句（含江祈璟、赤瞳妖將、院方執事等新角色，需先設計參考聲音）。
+  → 已改走國漫配音風格（Qwen3-TTS），**26 句配齊於 `voice/final/`**，過程見 `voice/README.md`。
