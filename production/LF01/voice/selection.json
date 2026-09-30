@@ -25,6 +25,27 @@
    "engine": "Qwen3-TTS Base 照唸",
    "ref": "production/EP01/shuohao/voice/qwen3tts-v1/ref/C02_齊衡烈.wav",
    "note": "咖哩：用之前（EP01 v1）的比較好"
+  },
+  "机遙": {
+   "engine": "Qwen3-TTS VoiceDesign（簡體提示詞）",
+   "seed": 33,
+   "prompt_ref": "筆記本第 4 版 机遙_簡"
+  },
+  "郁岑燁": {
+   "engine": "Qwen3-TTS VoiceDesign（簡體提示詞）",
+   "seed": 22,
+   "prompt_ref": "筆記本第 4 版 郁岑燁_簡"
+  },
+  "厲若楓": {
+   "engine": "Qwen3-TTS VoiceDesign（簡體提示詞）",
+   "seed": 22,
+   "prompt_ref": "筆記本第 4 版 厲若楓_簡",
+   "note": "咖哩：用簡體（繁體版有粵語）"
+  },
+  "院方執事": {
+   "engine": "Qwen3-TTS VoiceDesign（簡體提示詞）",
+   "seed": 22,
+   "prompt_ref": "筆記本第 4 版 院方執事_簡"
   }
  },
  "lines": {
@@ -36,7 +57,16 @@
   "A05 齊衡烈「你就是新來的？」": "qi-hengle-v1-mix/LF01-A05_齊衡烈_v1_混音.mp3",
   "A06 齊衡烈「那就對了。第七室最近正缺個能打的。」": "qi-hengle-v1-mix/LF01-A06_齊衡烈_v1_混音.mp3",
   "A07 齊衡烈「所以才要打一場啊。」": "qi-hengle-v1-mix/LF01-A07_齊衡烈_v1_混音.mp3",
-  "A09 齊衡烈「哈哈，那更好！明天演武場見。」": "qi-hengle-v1-mix/LF01-A09_齊衡烈_v1_混音.mp3"
+  "A09 齊衡烈「哈哈，那更好！明天演武場見。」": "qi-hengle-v1-mix/LF01-A09_齊衡烈_v1_混音.mp3",
+  "A03 院方執事「青嵐新契修，机遙。東廊，第七室。」": "qwen3tts-guoman-v4/LF01-A03_院方執事_簡_s22_混音.mp3",
+  "A05 机遙「應該是。」": "qwen3tts-guoman-v4/LF01-A05_机遙_簡_s33_混音.mp3",
+  "A06 郁岑燁「你看都沒看他出手，怎麼知道他能打？」": "qwen3tts-guoman-v4/LF01-A06_郁岑燁_簡_s22_混音.mp3",
+  "A07 郁岑燁「……無聊。」": "qwen3tts-guoman-v4/LF01-A07_郁岑燁_簡_s22_混音.mp3",
+  "A08 厲若楓「別急。他的腳步有點亂。」": "qwen3tts-guoman-v4/LF01-A08_厲若楓_簡_s22_混音.mp3",
+  "A08 机遙「你們都看得出來？」": "qwen3tts-guoman-v4/LF01-A08_机遙_簡_s33_混音.mp3",
+  "A11 齊衡烈「習慣就好。」": "qwen3tts-guoman-v4/LF01-A11_齊衡烈_t2_混音.mp3",
+  "A12 齊衡烈「喂，新來的。我叫齊衡烈。你呢？」": "qwen3tts-guoman-v4/LF01-A12_齊衡烈_t2_混音.mp3",
+  "B01 齊衡烈「它們在逃？」": "qwen3tts-guoman-v4/LF01-B01_齊衡烈_t2_混音.mp3"
  },
- "_status": "A10b 由 Claude 依同種子＋語音辨識字全對暫選，未經咖哩單獨試聽"
+ "_status": "咖哩 2026-09-30 試聽第 4 版：全部角色聲音通過（厲若楓用簡體）。未經咖哩逐句試聽的：A05 机遙、A07 郁岑燁、A10b 蕭曜霖、A11／B01 齊衡烈（同種子＋辨識字全對，Claude 暫選）；缺 8 句由第 5 版補"
 }
