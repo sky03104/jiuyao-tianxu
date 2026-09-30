@@ -1,0 +1,17 @@
+
+$ /tmp/bv/bin/python batch_inference.py --csv_file /tmp/bv_input.csv --speaker_prompt_audio_folder /tmp/bv_ref --output_audio_folder /kaggle/working/voice_breezy
+[exit 1]
+
+Traceback (most recent call last):
+  File "/tmp/BreezyVoice/batch_inference.py", line 7, in <module>
+    from single_inference import single_inference, CustomCosyVoice
+  File "/tmp/BreezyVoice/single_inference.py", line 12, in <module>
+    import whisper
+ModuleNotFoundError: No module named 'whisper'
+
+
+$ find /kaggle/working/voice_breezy /tmp/BreezyVoice/results -type f 2>/dev/null | head -50
+[exit 0]
+/tmp/BreezyVoice/results/.gitkeep
+
+
