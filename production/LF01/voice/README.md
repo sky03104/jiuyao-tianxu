@@ -13,3 +13,14 @@
 | `breezy-v5-twref/` | BreezyVoice＋OpenAI 台灣國語參考（ash／onyx）×2 次 | 換掉 Qwen 參考後字幾乎全對（旁白 t2、蕭曜霖 t2 皆正確），證實先前錯字來自參考聲音；但仍是台灣國語方向，不採用 |
 | `openai-tts-guoman/` | OpenAI TTS 國漫風格提示詞直出（onyx／ballad／ash） | 待咖哩試聽 |
 | `qwen3tts_guoman_kaggle_LF01.ipynb` | Qwen3-TTS VoiceDesign 國漫風格，3 候選 × 2 次 | 參考聲音（VoiceDesign 直出）字幾乎全對、c3 最好；但 Base 模型照參考唸台詞時錯字多、又冒出粵語「唔好」，待咖哩先判定音色方向（`qwen3tts-guoman-v1/asr.tsv`） |
+
+## 2026-09-30　參考《鬥破蒼穹》旁白（咖哩指定）
+
+- 查證：旁白配音員各來源說法不一（沈磊／年番海帆／特別篇 2 劉北辰），豆瓣等可核實來源被本環境網路擋住，未能確認；
+  本專案只參考**風格**，不複製任何真人配音員的聲音。
+- 風格拆解（Claude 依國漫開場旁白的慣例整理）：成熟男聲、低沉沙啞、氣聲重、磁性顆粒感、預告片式抑揚頓挫
+  （開頭壓低、關鍵字加重拉長、句尾下沉、戲劇性停頓）、宿命感。
+- **成片旁白都經過混音**：先前試聽檔全是乾聲。新增混音處理（110Hz 低頻加強、3.5kHz 咬字、壓縮、短殘響、響度 -16 LUFS），
+  乾聲／混音版並列供比較。
+- `openai-tts-guoman-v2/`：OpenAI 依上述描述唸長版旁白（onyx／ballad），語音辨識字全對（含「九曜界」）。
+- `qwen3tts_guoman_kaggle_LF01.ipynb` 第 2 版：改為 VoiceDesign 直接唸台詞（4 個亂數種子），不經 Base 照唸。
