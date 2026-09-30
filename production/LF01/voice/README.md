@@ -24,3 +24,6 @@
   乾聲／混音版並列供比較。
 - `openai-tts-guoman-v2/`：OpenAI 依上述描述唸長版旁白（onyx／ballad），語音辨識字全對（含「九曜界」）。
 - `qwen3tts_guoman_kaggle_LF01.ipynb` 第 2 版：改為 VoiceDesign 直接唸台詞（4 個亂數種子），不經 Base 照唸。
+- Qwen 國漫第 2 版結果（`qwen3tts-guoman-v2/`，每句 4 種子，乾聲＋混音）：直接用 VoiceDesign 唸，錯字明顯減少、長度正常。
+  字全對的：旁白 A01 **s11**；蕭曜霖 A10a **s11、s33**、A10b **s11、s33**。長版旁白 4 次都把「天玄院」唸成「天元院」，s11 還有粵語「嘅」→ 不採用。
+  暫選（待咖哩試聽）：旁白 s11、蕭曜霖 s11（同種子，兩句聲音一致）。
