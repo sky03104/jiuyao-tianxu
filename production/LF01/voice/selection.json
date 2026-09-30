@@ -1,0 +1,13 @@
+{
+ "_note": "LF01 正式採用的配音檔（咖哩試聽選定）。國漫配音風格、Qwen3-TTS VoiceDesign 直接唸＋混音。同一角色沿用同一亂數種子以保持聲音一致（VoiceDesign 不保證跨句完全同聲，新句子需再試聽）。",
+ "voices": {
+  "旁白":   {"engine": "Qwen3-TTS-12Hz-1.7B-VoiceDesign", "seed": 11, "prompt_ref": "qwen3tts_guoman_kaggle_LF01.ipynb 第 2 版 VOICES.VO"},
+  "蕭曜霖": {"engine": "Qwen3-TTS-12Hz-1.7B-VoiceDesign", "seed": 11, "prompt_ref": "qwen3tts_guoman_kaggle_LF01.ipynb 第 2 版 VOICES.C05"}
+ },
+ "lines": {
+  "A01 旁白「九曜界，天玄院。」": "qwen3tts-guoman-v2/LF01-A01_旁白_s11_混音.mp3",
+  "A10 蕭曜霖（畫外）「不用等明天。」": "qwen3tts-guoman-v2/LF01-A10a_蕭曜霖_s11_混音.mp3",
+  "A10 蕭曜霖「半刻鐘後，新生演武場集合。」": "qwen3tts-guoman-v2/LF01-A10b_蕭曜霖_s11_混音.mp3"
+ },
+ "_status": "A10b 由 Claude 依同種子＋語音辨識字全對暫選，未經咖哩單獨試聽"
+}
