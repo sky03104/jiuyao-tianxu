@@ -34,3 +34,13 @@ LF01_BRANCH=<分支名> python3 production/LF01/tools/lf01_handoff.py
 短影音 EP01 只是流程測試，暫停出圖；從 EP01 學到的沿用：出圖一律附參考拼圖、逐張驗圖；影片走漫劇式（靜態圖＋運鏡為主，
 關鍵鏡才生影片，每切只生一次）；配音工具仍在試（Qwen3-TTS 會偏粵語，正試 BreezyVoice）。
 出圖順序照 `docs/HANDOFF-010`：赤瞳妖將 → 陣眼遺跡 → 第 12 場（17 張）→ 第 2 場（24 張）。
+
+## 2026-09-30　進度與下一步
+
+- 本分支已併入 `claude/zealous-babbage-jq6k0v` 未合併的進度（聞人澈第 3 次通過、赤瞳妖將通過），並依赤瞳妖將定稿**重跑 `lf01_handoff.py`**：
+  HANDOFF-010 第 12 場各段現在只剩「待陣眼遺跡設定圖」。
+- **下一張要出：陣眼遺跡設定圖**（HANDOFF-010「陣眼遺跡」節，附天玄院外景設定圖當畫風參考）→ 存 `art/陣眼遺跡-sheet.png`，
+  交給 Claude 驗圖後重跑 handoff，第 12 場 17 張分鏡的參考拼圖就會全部產生。
+- **配音**：BreezyVoice 第三版筆記本 `production/EP01/shuohao/voice/breezyvoice_kaggle_EP01.ipynb` 改唸本片台詞
+  （旁白 A01、蕭曜霖 A10、机遙 A05／A08／B02），失敗原因分析與修正見 `production/EP01/shuohao/DECISIONS.md` 同日紀錄。
+  試聽通過後再擴到全部 26 句（含江祈璟、赤瞳妖將、院方執事等新角色，需先設計參考聲音）。

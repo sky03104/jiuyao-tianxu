@@ -449,3 +449,22 @@ Wan 的優勢是免費、無浮水印、可商用：**正式版若不付費，�
   支援注音指定破音字，Apache 2.0）。F5-TTS 台灣腔評價好但預訓練模型非商用（未再查證）；IndexTTS2、VoxCPM2 授權待查。
 - 做法：Qwen 設計音色 → BreezyVoice 照參考聲音唸台詞。先試旁白＋蕭曜霖（v3 c2 參考聲音內嵌於
   `voice/breezyvoice_kaggle_EP01.ipynb`），每句 3 次；「九曜」用 `[:ㄧㄠ4]` 指定讀音。Kaggle 需另建 Python 3.10 環境（放 /tmp）。
+
+### 2026-09-30　BreezyVoice 第一次執行失敗分析與第三版筆記本
+
+- **第一次執行（紀錄 `voice/breezy/log_*.txt`）沒有產出任何聲音**：①`openai-whisper==20231117` 建置失敗（新版 setuptools 已移除
+  `pkg_resources`）→ 生成時 `No module named 'whisper'`；②逐一安裝備援的 `onnxruntime-gpu` 那行引號寫錯（exit 2）；
+  ③逐一安裝讓套件互相覆蓋（torch 被裝成 2.14 再裝回 2.3.1、numpy 2.x、transformers 5.x），就算 whisper 裝好也可能在執行時出錯。
+- **第三版做法（`voice/breezyvoice_kaggle_EP01.ipynb`）**：
+  - 參考 BreezyVoice 官方 Kaggle Playground（`a24998667/breezyvoice-playground`，2026-09-27 仍有人成功執行）：
+    它固定在 Kaggle 舊環境（`dockerImageVersionId 30840`，Python 3.10），直接 pip 安裝精簡版需求
+    （onnxruntime-gpu 1.20.1＋cudnn9-cuda-12）。本筆記本也寫入同一個環境編號；Kaggle 若照用，就走這條最快的路。
+  - Kaggle 若用了新版環境（非 3.10），自動改走另建 Python 3.10 的做法，並修正：建置限定 `setuptools<70`（uv `-b`）、
+    版本上限 `numpy<2`、`transformers<4.50`、`torch==2.3.1`。已在雲端 session 用 `uv pip compile`（Python 3.10）確認這組版本解得出來
+    （numpy 1.26.4、transformers 4.49.0、triton 2.3.1、whisper 可建置）；**Kaggle 實跑仍待咖哩執行**。
+  - 兩條路線都補：g2pw 相依會裝回 CPU 版 onnxruntime 蓋掉 GPU 版 → 裝完後移除並重裝 GPU 版。
+  - 安裝最後印出 torch／numpy／transformers／onnxruntime 版本與可用 GPU，出錯時一看紀錄就知道卡在哪。
+- **台詞改用長篇 LF01**（主力已改長篇）：旁白 A01「九曜[:ㄧㄠ4]界，天玄院。」、蕭曜霖 A10 兩句、**新增机遙**
+  （Qwen v3 C01 c2 參考聲音，轉 16kHz 內嵌）A05／A08／B02 三句；每句 3 次，共 18 個檔。檔名 `LF01-<段號>_<角色>_t<n>`。
+- 由 Claude 推 Kaggle 自動執行不可行：本環境代理雖接了 Kaggle，但 API 驗證回 401、新版 CLI 走的 `api.kaggle.com` 被擋，
+  仍需咖哩在 Kaggle 網頁 Save & Run All。

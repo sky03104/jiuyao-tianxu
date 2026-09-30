@@ -836,7 +836,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜全景｜Push In｜台詞：（無台詞）
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B02/f1-refs.jpg`（**待 陣眼遺跡、赤瞳妖將 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B02/f1-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）
 
 ```text
 Reference images:
@@ -861,7 +861,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜特寫｜Static Shot｜台詞：赤瞳妖將：「……人族。你們也開始聽見了嗎？」；机遙：「你在說什麼？」
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B02/f2-refs.jpg`（**待 陣眼遺跡、赤瞳妖將 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B02/f2-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -889,7 +889,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜大遠景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B03/f1-refs.jpg`（**待 陣眼遺跡、赤瞳妖將 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B03/f1-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）
 
 ```text
 Reference images:
@@ -920,7 +920,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜中景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B03/f2-refs.jpg`（**待 陣眼遺跡、赤瞳妖將 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B03/f2-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -949,7 +949,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜中景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B04/f1-refs.jpg`（**待 陣眼遺跡、赤瞳妖將 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B04/f1-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）
 
 ```text
 Reference images:
@@ -975,7 +975,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜中景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B04/f2-refs.jpg`（**待 陣眼遺跡、赤瞳妖將 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B04/f2-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -1163,7 +1163,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜中景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B08/f1-refs.jpg`（**待 陣眼遺跡、赤瞳妖將 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B08/f1-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）
 
 ```text
 Reference images:
@@ -1189,7 +1189,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜全景｜Static Shot｜台詞：赤瞳妖將：「這裡不是你們該來的地方。」
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B08/f2-refs.jpg`（**待 陣眼遺跡、赤瞳妖將 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B08/f2-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
