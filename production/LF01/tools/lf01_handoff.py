@@ -170,7 +170,10 @@ def frame_jobs():
                 f"Lighting: {light_of(seg)}\n\n"
                 f"Blocking (Chinese): {seg['blocking']}\n\n"
                 f"Shot (Chinese): {cut['frame']}\n\n"
-                f"Shot size: {cut['size']}; camera move: {cut['camera']} (draw the opening moment of the shot).\n\n"
+                + (f"LAYOUT (must follow): {cut['layout']}\n\n" if cut.get("layout") else "")
+                + "".join(f"{char_name(c)} MUST look like this: {data['mustLook'][c]}\n\n"
+                          for c in cut["chars"] if c in data.get("mustLook", {}))
+                + f"Shot size: {cut['size']}; camera move: {cut['camera']} (draw the opening moment of the shot).\n\n"
                 "Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the "
                 "shot text appear, plus any background students or animals the shot text explicitly mentions. "
                 "No text, no subtitles, no watermark, no borders — a single clean full-bleed frame."

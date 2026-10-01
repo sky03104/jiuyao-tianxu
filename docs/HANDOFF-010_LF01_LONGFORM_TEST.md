@@ -852,6 +852,8 @@ Blocking (Chinese): 赤瞳妖將現身，看陣眼再看机遙
 
 Shot (Chinese): 全景低角度，橫式 16:9。紅霧向兩側散開讓出一條路，赤瞳妖將從霧中走出，身高是人的兩倍多，姿態靜而沉，沒有吼叫；背後林木被映紅。
 
+赤瞳妖將 MUST look like this: towering, clearly more than twice the height of the young cultivators; whole torso, arms and legs covered in layered crimson-black scale plates like lacquered armour with faint dull-crimson seams — NO bare chest, NO visible abdominal muscles, lean not muscular; torn faded deep-blue ceremonial sash at the waist; long ink-grey hair; dark ash-grey face, dark sclera with deep crimson eyes, short swept-back horn ridges, no pointed ears; long black claws; no weapon; calm and silent, never roaring. Only crimson light and red mist around him — no purple, no smoke of any other colour.
+
 Shot size: 全景; camera move: Push In (draw the opening moment of the shot).
 
 Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
@@ -877,6 +879,8 @@ Lighting: an ominous crimson glare seeping down through gaps in the high forest 
 Blocking (Chinese): 赤瞳妖將現身，看陣眼再看机遙
 
 Shot (Chinese): 特寫，橫式 16:9。赤瞳妖將的臉與一雙暗紅眼睛，目光從畫面左側（陣眼方向）慢慢移向右側（机遙方向）。
+
+赤瞳妖將 MUST look like this: towering, clearly more than twice the height of the young cultivators; whole torso, arms and legs covered in layered crimson-black scale plates like lacquered armour with faint dull-crimson seams — NO bare chest, NO visible abdominal muscles, lean not muscular; torn faded deep-blue ceremonial sash at the waist; long ink-grey hair; dark ash-grey face, dark sclera with deep crimson eyes, short swept-back horn ridges, no pointed ears; long black claws; no weapon; calm and silent, never roaring. Only crimson light and red mist around him — no purple, no smoke of any other colour.
 
 Shot size: 特寫; camera move: Static Shot (draw the opening moment of the shot).
 
@@ -911,6 +915,8 @@ Blocking (Chinese): 三陣點失控；妖將抬手推飛齊衡烈
 
 Shot (Chinese): 大遠景，橫式 16:9，高位俯視。圓形石庭三個石柱同時噴出暗紅光柱直衝樹冠，中央晶體發紅光；六名年輕修行者分散在石庭四周，赤瞳妖將站在石庭另一端。
 
+赤瞳妖將 MUST look like this: towering, clearly more than twice the height of the young cultivators; whole torso, arms and legs covered in layered crimson-black scale plates like lacquered armour with faint dull-crimson seams — NO bare chest, NO visible abdominal muscles, lean not muscular; torn faded deep-blue ceremonial sash at the waist; long ink-grey hair; dark ash-grey face, dark sclera with deep crimson eyes, short swept-back horn ridges, no pointed ears; long black claws; no weapon; calm and silent, never roaring. Only crimson light and red mist around him — no purple, no smoke of any other colour.
+
 Shot size: 大遠景; camera move: Static Shot (draw the opening moment of the shot).
 
 Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
@@ -937,6 +943,8 @@ Lighting: the three stone pillars erupt with columns of dark crimson light shoot
 Blocking (Chinese): 三陣點失控；妖將抬手推飛齊衡烈
 
 Shot (Chinese): 中景，橫式 16:9。赤瞳妖將只是抬起一隻手，一股無形壓力把舉刀衝上來的齊衡烈連人帶刀往後推飛，地上石板翻起碎片。
+
+赤瞳妖將 MUST look like this: towering, clearly more than twice the height of the young cultivators; whole torso, arms and legs covered in layered crimson-black scale plates like lacquered armour with faint dull-crimson seams — NO bare chest, NO visible abdominal muscles, lean not muscular; torn faded deep-blue ceremonial sash at the waist; long ink-grey hair; dark ash-grey face, dark sclera with deep crimson eyes, short swept-back horn ridges, no pointed ears; long black claws; no weapon; calm and silent, never roaring. Only crimson light and red mist around him — no purple, no smoke of any other colour.
 
 Shot size: 中景; camera move: Static Shot (draw the opening moment of the shot).
 
@@ -966,6 +974,10 @@ Blocking (Chinese): 郁岑燁被看穿；厲若楓的箭被彈開
 
 Shot (Chinese): 中景，橫式 16:9。郁岑燁從側面持劍切入，赤瞳妖將的眼睛已經轉向他，郁岑燁被迫硬生生收劍後撤。
 
+LAYOUT (must follow): two figures only. 郁岑燁 on the left, black-teal short hair, faint blue mark on his forehead, his straight sword in his right hand, caught in the instant he aborts a side lunge — weight thrown back, sword pulled in, feet skidding on the stone. 赤瞳妖將 on the right, towering over him, has NOT moved his body — only his crimson eyes have already turned to lock onto 郁岑燁. Crimson light beams behind them.
+
+赤瞳妖將 MUST look like this: towering, clearly more than twice the height of the young cultivators; whole torso, arms and legs covered in layered crimson-black scale plates like lacquered armour with faint dull-crimson seams — NO bare chest, NO visible abdominal muscles, lean not muscular; torn faded deep-blue ceremonial sash at the waist; long ink-grey hair; dark ash-grey face, dark sclera with deep crimson eyes, short swept-back horn ridges, no pointed ears; long black claws; no weapon; calm and silent, never roaring. Only crimson light and red mist around him — no purple, no smoke of any other colour.
+
 Shot size: 中景; camera move: Static Shot (draw the opening moment of the shot).
 
 Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
@@ -992,6 +1004,10 @@ Lighting: the three stone pillars erupt with columns of dark crimson light shoot
 Blocking (Chinese): 郁岑燁被看穿；厲若楓的箭被彈開
 
 Shot (Chinese): 中景，橫式 16:9。厲若楓站在樹根上拉開三段式短弓連射，箭矢打在赤瞳妖將的鱗甲上被彈開，火星四濺。
+
+LAYOUT (must follow): two figures only. 厲若楓 on the left standing on a huge tree root, amber eyes, drawing his three-section folding short bow, a volley of arrows in flight toward the right. 赤瞳妖將 on the right, towering, arrows striking his crimson-black scale plates and bouncing off in bursts of sparks; he does not even turn.
+
+赤瞳妖將 MUST look like this: towering, clearly more than twice the height of the young cultivators; whole torso, arms and legs covered in layered crimson-black scale plates like lacquered armour with faint dull-crimson seams — NO bare chest, NO visible abdominal muscles, lean not muscular; torn faded deep-blue ceremonial sash at the waist; long ink-grey hair; dark ash-grey face, dark sclera with deep crimson eyes, short swept-back horn ridges, no pointed ears; long black claws; no weapon; calm and silent, never roaring. Only crimson light and red mist around him — no purple, no smoke of any other colour.
 
 Shot size: 中景; camera move: Static Shot (draw the opening moment of the shot).
 
@@ -1020,6 +1036,8 @@ Blocking (Chinese): 聞人澈法陣；江祈璟與机遙並肩
 
 Shot (Chinese): 中景，橫式 16:9。聞人澈短杖點地，地面展開一圈淡青色曜紋法陣擋住紅色衝擊波，他咬著牙，嘴角滲出一絲血。
 
+LAYOUT (must follow): two figures only. 聞人澈 in the foreground, grey-blue hooded robe with the hood down, dark wooden short staff planted on the ground, a ring of pale teal glyph-circle magic spreading across the stones in front of him and blocking a wave of crimson force; teeth gritted, a thin line of blood at the corner of his mouth. The crimson shockwave comes from the right, where 赤瞳妖將 is only a dark towering silhouette in the red mist.
+
 Shot size: 中景; camera move: Static Shot (draw the opening moment of the shot).
 
 Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
@@ -1046,6 +1064,8 @@ Lighting: the three stone pillars erupt with columns of dark crimson light shoot
 Blocking (Chinese): 聞人澈法陣；江祈璟與机遙並肩
 
 Shot (Chinese): 雙人中景，橫式 16:9。江祈璟與机遙背靠背站在石庭中，江祈璟長槍斜指左方，机遙持新生制式長刀面向右方。
+
+LAYOUT (must follow): exactly two figures, back to back in the middle of the stone courtyard. 江祈璟 (high ponytail, deep navy robe, long spear with a small bronze bell under the spearhead) faces left, spear angled toward the left. 机遙 faces right holding a plain academy-issue long saber. Two of the three crimson light beams visible, one on each side of the frame.
 
 Shot size: 中景; camera move: Static Shot (draw the opening moment of the shot).
 
@@ -1074,6 +1094,8 @@ Blocking (Chinese): 兩人衝向兩根光柱
 
 Shot (Chinese): 中景動態，橫式 16:9。江祈璟衝向左側石柱，長槍刺進石柱頂端發光的圓形印紋，槍頭下的小銅鈴甩動。
 
+LAYOUT (must follow): one figure. 江祈璟 lunging at the left stone pillar, driving his spear into the glowing circular sigil on the flat top of the pillar, the small bronze bell under the spearhead swinging; the crimson beam above the pillar flickering.
+
 Shot size: 中景; camera move: Tracking Shot (draw the opening moment of the shot).
 
 Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
@@ -1099,6 +1121,8 @@ Lighting: the three stone pillars erupt with columns of dark crimson light shoot
 Blocking (Chinese): 兩人衝向兩根光柱
 
 Shot (Chinese): 中景動態，橫式 16:9。机遙衝向右側石柱，一刀橫斬砍斷暗紅光柱與石柱之間的連結，紅光碎散。
+
+LAYOUT (must follow): one figure. 机遙 slashing across with his long saber at the right stone pillar, severing the link between the crimson beam and the pillar — the beam shattering into red shards.
 
 Shot size: 中景; camera move: Tracking Shot (draw the opening moment of the shot).
 
@@ -1128,6 +1152,8 @@ Blocking (Chinese): 第三陣點被壓下；光柱熄滅
 
 Shot (Chinese): 中景，橫式 16:9。郁岑燁和齊衡烈一左一右，劍與刀同時壓在第三根石柱頂端的印紋上，紅光從他們手下往外噴。
 
+LAYOUT (must follow): exactly two figures at the third stone pillar. 郁岑燁 on the left with his sword and 齊衡烈 (bright red hair) on the right with his heavy saber, both blades pressed down together on the glowing sigil on the pillar's flat top, crimson light bursting out from under their hands.
+
 Shot size: 中景; camera move: Static Shot (draw the opening moment of the shot).
 
 Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
@@ -1151,6 +1177,8 @@ Lighting: the three stone pillars erupt with columns of dark crimson light shoot
 Blocking (Chinese): 第三陣點被壓下；光柱熄滅
 
 Shot (Chinese): 全景，橫式 16:9，空景。三根石柱的暗紅光柱一根一根熄滅，中央晶體的紅光暗下去，紅霧開始變淡。
+
+LAYOUT (must follow): empty courtyard, no people. The single central pedestal with the crystal, its red glow dimming; the three stone pillars, their crimson beams going out one after another (one already dark, one fading, one still lit); the red mist starting to thin.
 
 Shot size: 全景; camera move: Static Shot (draw the opening moment of the shot).
 
@@ -1180,6 +1208,10 @@ Blocking (Chinese): 妖將收手、看机遙、轉身消失
 
 Shot (Chinese): 過肩中景，橫式 16:9。從机遙肩後看出去，赤瞳妖將放下手，看著熄滅的石柱，然後把目光落在机遙身上。
 
+LAYOUT (must follow): over-the-shoulder shot from behind 机遙's shoulder (his dark hair and shoulder in the near foreground, out of focus). 赤瞳妖將 in the middle distance, towering, lowering his raised hand, looking at the now-dark stone pillars, then his crimson eyes settling on 机遙.
+
+赤瞳妖將 MUST look like this: towering, clearly more than twice the height of the young cultivators; whole torso, arms and legs covered in layered crimson-black scale plates like lacquered armour with faint dull-crimson seams — NO bare chest, NO visible abdominal muscles, lean not muscular; torn faded deep-blue ceremonial sash at the waist; long ink-grey hair; dark ash-grey face, dark sclera with deep crimson eyes, short swept-back horn ridges, no pointed ears; long black claws; no weapon; calm and silent, never roaring. Only crimson light and red mist around him — no purple, no smoke of any other colour.
+
 Shot size: 中景; camera move: Static Shot (draw the opening moment of the shot).
 
 Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
@@ -1205,6 +1237,10 @@ Lighting: the crimson light dying away, cold grey-green forest mist returning
 Blocking (Chinese): 妖將收手、看机遙、轉身消失
 
 Shot (Chinese): 全景，橫式 16:9。赤瞳妖將轉身走入霧中，霧在他身後合攏，只剩破舊的深藍腰帶最後一角沒入白霧。
+
+LAYOUT (must follow): one figure. 赤瞳妖將 seen from behind, walking away into thick white-grey mist that closes behind him; only the last corner of his torn deep-blue sash still visible before it disappears. No crimson beams any more.
+
+赤瞳妖將 MUST look like this: towering, clearly more than twice the height of the young cultivators; whole torso, arms and legs covered in layered crimson-black scale plates like lacquered armour with faint dull-crimson seams — NO bare chest, NO visible abdominal muscles, lean not muscular; torn faded deep-blue ceremonial sash at the waist; long ink-grey hair; dark ash-grey face, dark sclera with deep crimson eyes, short swept-back horn ridges, no pointed ears; long black claws; no weapon; calm and silent, never roaring. Only crimson light and red mist around him — no purple, no smoke of any other colour.
 
 Shot size: 全景; camera move: Static Shot (draw the opening moment of the shot).
 
@@ -1237,6 +1273,8 @@ Lighting: cold grey-green forest mist, late afternoon, quiet
 Blocking (Chinese): 所有人站在原地
 
 Shot (Chinese): 全景，橫式 16:9。石庭恢復灰暗安靜，六名年輕修行者站在原地沒有人說話；齊衡烈握刀的手還在發抖，聞人澈扶著短杖喘氣。
+
+LAYOUT (must follow): exactly six young cultivators standing still in the grey quiet stone courtyard, no one speaking: 机遙, 齊衡烈 (bright red hair, the hand holding his saber trembling), 郁岑燁, 厲若楓, 江祈璟, 聞人澈 (leaning on his short staff, catching his breath). The three pillars dark, the crystal dark, cold grey-green mist.
 
 Shot size: 全景; camera move: Static Shot (draw the opening moment of the shot).
 
