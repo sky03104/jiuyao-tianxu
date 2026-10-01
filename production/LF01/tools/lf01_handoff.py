@@ -3,6 +3,8 @@
 
 讀 production/LF01/lf01.json，沿用 EP01 的畫風規則（STYLE LOCK）與參考拼圖工具，產生：
   - 新設定圖 4 張（江祈璟、聞人澈、赤瞳妖將、陣眼遺跡）的提示詞，掛已定稿設定圖當畫風參考
+  - 故事版（多格板，lf01.json 的 storyboardBoards）提示詞與參考拼圖；故事版驗過後存 storyboard/boards/<id>.png，
+    本腳本會把每一格裁成 storyboard/boards/<id>/pN.jpg，單格出圖時附上當構圖參考
   - 分鏡圖（橫式 16:9）提示詞與參考拼圖（storyboard/chatgpt/<段號>/fN-refs.jpg）
   - docs/HANDOFF-010_LF01_LONGFORM_TEST.md（給 ChatGPT 網頁版照順序貼）
 
@@ -138,6 +140,79 @@ def sheet_jobs():
     return jobs
 
 
+# ---------- 故事版（多格板） ----------
+BOARDS = os.path.join(LF, "storyboard", "boards")
+POS3 = {1: ["only"], 2: ["left", "right"], 3: ["left", "middle", "right"], 4: ["far-left", "left-centre", "right-centre", "far-right"]}
+ROW3 = {1: ["only"], 2: ["top", "bottom"], 3: ["top", "middle", "bottom"]}
+
+
+def board_jobs():
+    """依 storyboardBoards 把同一場的切依序每 perBoard 格分成一張故事版。回傳 [{id, cuts:[(seg, k, cut)], ...}]。"""
+    jobs = []
+    for b in data.get("storyboardBoards", []):
+        cuts = [(seg, k, cut) for seg in data["segments"] if seg["id"].startswith(b["segPrefix"])
+                for k, cut in enumerate(seg["cuts"], start=1)]
+        for n in range(0, len(cuts), b["perBoard"]):
+            part = cuts[n:n + b["perBoard"]]
+            bid = f"{b['id']}-{n // b['perBoard'] + 1}"
+            scenes, chars, props = [], [], []
+            for seg, _, cut in part:
+                scenes += [seg["scene"]] if seg["scene"] not in scenes else []
+                chars += [c for c in cut["chars"] if c not in chars]
+                props += [x for x in cut["props"] if x not in props]
+            refs = [scene_sheet(x) for x in scenes] + [char_sheet(c) for c in chars] + [prop_sheet(x) for x in props]
+            descs = (["environment sheet of a location used in this sequence — match its architecture and materials"] * len(scenes)
+                     + [f"character model sheet of {char_name(c)} — the person called {char_name(c)} in the panel text; "
+                        "same face, hairstyle, costume and weapon in every panel" for c in chars]
+                     + [f"prop sheet of {reuse['props'][x]}" for x in props])
+            cols, rows = b["cols"], b["rows"]
+            panels = []
+            for i, (seg, k, cut) in enumerate(part):
+                where = f"{ROW3[rows][i // cols]} row, {POS3[cols][i % cols]}"
+                who = "、".join(char_name(c) for c in cut["chars"]) or "no people"
+                panels.append(
+                    f"SHOT {i + 1} (grid cell: {where}) — {cut['size']}, {cut['camera']} (opening moment). Characters: {who}. "
+                    f"Lighting: {light_of(seg)}. Shot (Chinese): {cut['frame']}"
+                    + (f" LAYOUT: {cut['layout']}" if cut.get("layout") else "")
+                    + "".join(f" {char_name(c)} MUST look like this: {data['mustLook'][c]}"
+                              for c in cut["chars"] if c in data.get("mustLook", {})))
+            body = (
+                f"{g.STYLE_RENDER} {g.STYLE_WORLD}\n\n"
+                f"STORYBOARD SHEET for one continuous sequence. ONE 16:9 landscape canvas divided into an exact grid of "
+                f"{cols} columns x {rows} rows of equal 16:9 panels, separated by thin pure-white gutters, no outer border. "
+                f"Read left to right, top to bottom; SHOT 1 fills the first cell. {len(part)} cells are used"
+                + (f"; the remaining {cols * rows - len(part)} grid cell(s) at the end stay plain white" if len(part) < cols * rows else "")
+                + ". Each panel is a finished colour frame in the same rendering style as the reference sheets (simpler detail "
+                "is fine, but NOT a pencil sketch). The same character must look identical in every panel — face, hair, "
+                "costume, weapon — and match the character sheets; the location stays consistent across panels. Vary the "
+                "shot sizes exactly as listed. No text, no panel numbers, no captions, no speech bubbles, no arrows.\n\n"
+                + "\n\n".join(panels))
+            jobs.append({"id": bid, "cuts": part, "refs": refs, "descs": descs, "body": body, "cols": cols, "rows": rows,
+                         "out": os.path.join(BOARDS, f"{bid}.png"),
+                         "board": os.path.join(LF, "storyboard", "chatgpt", "boards", f"{bid}-refs.jpg")})
+    return jobs
+
+
+def panel_of():
+    """(段號, k) → 已驗過故事版的那一格裁切檔；故事版存在才裁。"""
+    from PIL import Image
+    out = {}
+    for b in board_jobs():
+        if not os.path.exists(b["out"]):
+            continue
+        im = Image.open(b["out"]).convert("RGB")
+        W, H = im.size
+        pw, ph = W / b["cols"], H / b["rows"]
+        os.makedirs(os.path.join(BOARDS, b["id"]), exist_ok=True)
+        for i, (seg, k, _) in enumerate(b["cuts"]):
+            r, c = divmod(i, b["cols"])
+            box = (int(c * pw), int(r * ph), int((c + 1) * pw), int((r + 1) * ph))
+            dst = os.path.join(BOARDS, b["id"], f"p{i + 1}.jpg")
+            im.crop(box).save(dst, quality=92)
+            out[(seg["id"], k)] = dst
+    return out
+
+
 # ---------- 分鏡圖 ----------
 def light_of(seg):
     s = new_scenes.get(seg["scene"])
@@ -150,6 +225,7 @@ def light_of(seg):
 
 def frame_jobs():
     jobs = []
+    panels = panel_of()
     for seg in data["segments"]:
         seg_dir = os.path.join(LF, "storyboard", "frames", seg["id"])
         for k, cut in enumerate(seg["cuts"], start=1):
@@ -180,7 +256,8 @@ def frame_jobs():
             )
             out_board = os.path.join(LF, "storyboard", "chatgpt", seg["id"], f"f{k}-refs.jpg")
             jobs.append({"seg": seg, "k": k, "cut": cut, "out": os.path.join(seg_dir, f"f{k}.png"),
-                         "refs": refs, "descs": descs, "body": body, "board": out_board})
+                         "refs": refs, "descs": descs, "body": body, "board": out_board,
+                         "panel": panels.get((seg["id"], k))})
     return jobs
 
 
@@ -195,6 +272,18 @@ def write_handoff():
                                                                           f"{j['key']}-refs.jpg"))
         L += [f"## {j['key']}　→ 存成 `{rel(j['out'])}`", "", "**上傳：** " + "、".join(ups), "",
               "```text", "Reference images:\n" + "\n".join(lines) + "\n\n" + j["body"], "```", ""]
+    bj = board_jobs()
+    if bj:
+        L += ["# 故事版（多格板）：出單格之前先做", "",
+              "每張故事版把同一場連續 9 個鏡頭畫在一張 3×3 圖裡，**先確認構圖、角色位置、連戲**，再出單格。"
+              "Claude 驗過後存進 repo、重跑本腳本，單格提示詞會自動多附「故事版這一格」當構圖參考。",
+              "Gemini 用 **Pro**、每張故事版開新對話；只附下面的參考拼圖。", ""]
+        for b in bj:
+            ups, lines = board_or_single(b["refs"], b["descs"], b["board"])
+            span = f"{b['cuts'][0][0]['id']} f{b['cuts'][0][1]}～{b['cuts'][-1][0]['id']} f{b['cuts'][-1][1]}"
+            L += [f"## 故事版 {b['id']}（{span}，{len(b['cuts'])} 格）　→ 存成 `{rel(b['out'])}`", "",
+                  "**上傳：** " + "、".join(ups), "",
+                  "```text", "Reference images:\n" + "\n".join(lines) + "\n\n" + b["body"], "```", ""]
     cur = None
     for j in fj:
         seg = j["seg"]
@@ -208,10 +297,16 @@ def write_handoff():
             L += [f"## {seg['id']}（{secs} 秒，{len(seg['cuts'])} 張）", ""]
         cut = j["cut"]
         ups, lines = board_or_single(j["refs"], j["descs"], j["board"])
+        if j["panel"]:
+            ups.append(f"故事版這一格 {link(j['panel'])}")
+            lines.append(f"Image {len(lines) - sum(1 for x in lines if x.startswith('  -')) + 1}: the approved storyboard "
+                         "panel of THIS shot — follow its framing, camera angle, character positions and poses closely, "
+                         "but render it as a full-quality frame matching the reference sheets exactly.")
         if j["k"] > 1:
             ups.append("本段已完成的 **f1.png**")
-            lines.append("Image 2: the opening frame of this same sequence — keep the world, lighting, mist and every "
-                         "character's look consistent with it; do not copy its composition.")
+            lines.append(f"Image {len(lines) - sum(1 for x in lines if x.startswith('  -')) + 1}: the opening frame of "
+                         "this same sequence — keep the world, lighting and every character's look consistent with it; "
+                         "do not copy its composition.")
         say = "；".join(f"{w}：「{t}」" for w, t in cut["lines"]) or "（無台詞）"
         L += [f"### {seg['id']} f{j['k']}　→ 存成 `{rel(j['out'])}`", "",
               f"{cut['sec']} 秒｜{cut['size']}｜{cut['camera']}｜台詞：{say}", "",
