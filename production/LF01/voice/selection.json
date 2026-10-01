@@ -38,7 +38,7 @@
   },
   "厲若楓": {
    "engine": "Qwen3-TTS VoiceDesign（簡體提示詞）",
-   "seed": 22,
+   "seed": 11,
    "prompt_ref": "筆記本第 4 版 厲若楓_簡",
    "note": "咖哩：用簡體（繁體版有粵語）"
   },
@@ -62,12 +62,12 @@
   "A05 机遙「應該是。」": "qwen3tts-guoman-v4/LF01-A05_机遙_簡_s33_混音.mp3",
   "A06 郁岑燁「你看都沒看他出手，怎麼知道他能打？」": "qwen3tts-guoman-v4/LF01-A06_郁岑燁_簡_s22_混音.mp3",
   "A07 郁岑燁「……無聊。」": "qwen3tts-guoman-v4/LF01-A07_郁岑燁_簡_s22_混音.mp3",
-  "A08 厲若楓「別急。他的腳步有點亂。」": "qwen3tts-guoman-v4/LF01-A08_厲若楓_簡_s22_混音.mp3",
+  "A08 厲若楓「別急。他的腳步有點亂。」": "qwen3tts-guoman-v4/LF01-A08_厲若楓_簡_s11_混音.mp3",
   "A08 机遙「你們都看得出來？」": "qwen3tts-guoman-v4/LF01-A08_机遙_簡_s33_混音.mp3",
   "A11 齊衡烈「習慣就好。」": "qwen3tts-guoman-v4/LF01-A11_齊衡烈_t2_混音.mp3",
   "A12 齊衡烈「喂，新來的。我叫齊衡烈。你呢？」": "qwen3tts-guoman-v4/LF01-A12_齊衡烈_t2_混音.mp3",
   "B01 齊衡烈「它們在逃？」": "qwen3tts-guoman-v4/LF01-B01_齊衡烈_t2_混音.mp3"
  },
- "_status": "2026-09-30 LF01 26 句配齊。咖哩已通過全部角色聲音；逐句未試聽者見 final/README.md，A12 机遙「机遙。」讀音待確認",
+ "_status": "2026-10-01：厲若楓改 s11（咖哩選）；A12 机遙讀音咖哩確認 OK；A10b 蕭曜霖變粵語 → 第 6 版簡體重做中",
  "final": "final/（26 句依劇本順序＋串接試聽檔，清單見 final/README.md）"
 }
