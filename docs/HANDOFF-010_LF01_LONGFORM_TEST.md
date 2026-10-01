@@ -1036,7 +1036,7 @@ Blocking (Chinese): 聞人澈法陣；江祈璟與机遙並肩
 
 Shot (Chinese): 中景，橫式 16:9。聞人澈短杖點地，地面展開一圈淡青色曜紋法陣擋住紅色衝擊波，他咬著牙，嘴角滲出一絲血。
 
-LAYOUT (must follow): two figures only. 聞人澈 in the foreground, grey-blue hooded robe with the hood down, dark wooden short staff planted on the ground, a ring of pale teal glyph-circle magic spreading across the stones in front of him and blocking a wave of crimson force; teeth gritted, a thin line of blood at the corner of his mouth. The crimson shockwave comes from the right, where 赤瞳妖將 is only a dark towering silhouette in the red mist.
+LAYOUT (must follow): two figures only. 聞人澈 in the foreground, grey-blue hooded robe with the hood down, dark wooden short staff planted on the ground, a ring of pale teal magic circle spreading across the stones — concentric rings of Eastern cloud-scroll patterns and star-point dots linked like constellations, NO pentagram, NO letters, no Western occult symbols — in front of him and blocking a wave of crimson force; teeth gritted, a thin line of blood at the corner of his mouth. The crimson shockwave comes from the right, where 赤瞳妖將 is only a dark towering silhouette in the red mist (short swept-back horn ridges, not large curved horns). The single dark crystal still sits on the central pedestal, glowing deep red.
 
 Shot size: 中景; camera move: Static Shot (draw the opening moment of the shot).
 
