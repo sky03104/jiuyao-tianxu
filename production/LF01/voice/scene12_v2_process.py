@@ -63,6 +63,7 @@ def asr():
         json.dump(out, open(os.path.join(D, "asr.json"), "w"), ensure_ascii=False, indent=1)
 
 
+PITCH_TARGET = 150  # Hz；選定的候選高於此值就降調
 MAX_F0 = 165  # Hz；本片角色全是男聲，候選中位音高超過此值多半聽起來像女聲（咖哩 2026-10-01 回報），優先淘汰
 
 
@@ -92,9 +93,15 @@ def dur(path):
     return int(h) * 3600 + int(m) * 60 + float(s)
 
 
-def master(src, dst, inner):
+def master(src, dst, inner, semis=0.0):
+    """混音＋響度；semis<0 時先降調（保持長度：asetrate 降頻再 atempo 拉回）。"""
     tmp = dst + ".tmp.wav"
-    subprocess.run([FF, "-y", "-loglevel", "error", "-i", src, "-af", MIX_INNER if inner else MIX, tmp], check=True)
+    pre = ""
+    if semis:
+        r = 2 ** (semis / 12)
+        pre = f"aresample=24000,asetrate={24000 * r:.0f},aresample=24000,atempo={1 / r:.4f},"
+    subprocess.run([FF, "-y", "-loglevel", "error", "-i", src, "-af", pre + (MIX_INNER if inner else MIX), tmp],
+                   check=True)
     r = subprocess.run([FF, "-i", tmp, "-af", "apad=pad_dur=2,ebur128", "-f", "null", "-"],
                        capture_output=True, text=True).stderr
     i = float(re.findall(r"I:\s+(-?[\d.]+) LUFS", r)[-1])
@@ -129,13 +136,17 @@ def pick():
         best = max(sorted(pool), key=score)
         sim = score(best)[0]
         dst = os.path.join(FIN, m["key"] + ".mp3")
-        master(os.path.join(RAW, best), dst, "心聲" in m["spk"])
+        # 仍高於 PITCH_TARGET 的（多為喊叫或新角色），往目標降調，最多 3 個半音
+        import math
+        semis = -min(3.0, 12 * math.log2(pitch[best] / PITCH_TARGET)) if pitch[best] > PITCH_TARGET else 0.0
+        master(os.path.join(RAW, best), dst, "心聲" in m["spk"], semis)
+        m["pitch_shift"] = round(semis, 1)
         m["file"] = os.path.relpath(dst, HERE)
         m["take"] = best
         m["asr"] = a[best]
         m["sim"] = sim
         m["f0"] = round(pitch[best])
-        report.append((m["key"], f"{sim:.2f}", f"{pitch[best]:.0f}Hz" + ("" if male else " ⚠全部偏高"), a[best]))
+        report.append((m["key"], f"{sim:.2f}", f"{pitch[best]:.0f}Hz" + (f" 降{-semis:.1f}半音" if semis else "") + ("" if male else " ⚠全部偏高"), a[best]))
     json.dump(man, open(MAN, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     for r in report:
         print(*r, sep="\t")
