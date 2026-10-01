@@ -1274,7 +1274,7 @@ Blocking (Chinese): 所有人站在原地
 
 Shot (Chinese): 全景，橫式 16:9。石庭恢復灰暗安靜，六名年輕修行者站在原地沒有人說話；齊衡烈握刀的手還在發抖，聞人澈扶著短杖喘氣。
 
-LAYOUT (must follow): exactly six young cultivators standing still in the grey quiet stone courtyard, no one speaking: 机遙, 齊衡烈 (bright red hair, the hand holding his saber trembling), 郁岑燁, 厲若楓, 江祈璟, 聞人澈 (leaning on his short staff, catching his breath). The three pillars dark, the crystal dark, cold grey-green mist.
+LAYOUT (must follow): exactly six young cultivators standing still in the grey quiet stone courtyard, spread out, no one speaking: 机遙 (messy dark hair, plain grey short jacket, clean face), 齊衡烈 (bright red hair, the hand holding his heavy saber trembling), 郁岑燁 (black-teal hair, deep navy robe, straight sword), 厲若楓 (bow in hand, quiver on his back), 江祈璟 (high ponytail, deep navy robe, spear), 聞人澈 (grey-blue hooded robe, leaning on his short staff, catching his breath). Exactly THREE dark stone pillars in a triangle and ONE central round pedestal with the dark crystal — no light beams anywhere. Cold grey-green mist.
 
 Shot size: 全景; camera move: Static Shot (draw the opening moment of the shot).
 
