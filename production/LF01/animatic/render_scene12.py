@@ -2,7 +2,7 @@
 """LF01 第 12 場動態分鏡：分鏡圖＋運鏡＋配音＋字幕 → MP4。
 
 時間軸全部由 ../lf01.json（段、切、秒數、運鏡、台詞）產生，不手寫時間；分鏡圖或配音更新後重跑即可。
-  python3 production/LF01/animatic/render_scene12.py            → LF01_scene12_animatic_v1.mp4
+  python3 production/LF01/animatic/render_scene12.py            → LF01_scene12_animatic_v2.mp4（台詞補強 v1.2，50 句）
   python3 production/LF01/animatic/render_scene12.py --stills   → 只輸出每切第一格 PNG 到 stills/（快速檢查）
 需要 ffmpeg（含 libass；沒有系統 ffmpeg 時：pip install imageio-ffmpeg）與中文字型（文泉驛正黑或 Noto CJK）。
 """
@@ -12,7 +12,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 LF = os.path.dirname(HERE)
 FRAMES = os.path.join(LF, "storyboard", "frames")
 VOICE = os.path.join(LF, "voice", "final")
-OUT = os.path.join(HERE, "LF01_scene12_animatic_v1.mp4")
+MANIFEST = os.path.join(LF, "voice", "scene12_v2_manifest.json")
+OUT = os.path.join(HERE, "LF01_scene12_animatic_v2.mp4")
 TMP = os.path.join(HERE, "cache")
 W, H, FPS = 1920, 1080, 30
 
@@ -35,14 +36,18 @@ def run(args):
 
 
 def voice_files():
-    """final/ 依劇本順序編號；只取 B 段，照 lf01.json 的台詞順序對上。"""
-    files = sorted(f for f in os.listdir(VOICE) if f[:2].isdigit() and "_B" in f)
+    """配音清單（scene12_v2_manifest.json）依序對上 lf01.json B 段每切的台詞；檔名相對 voice/。"""
+    man = json.load(open(MANIFEST, encoding="utf-8"))
     out, k = {}, 0
     for s in SEGS:
         for ci, c in enumerate(s["cuts"]):
-            for li, _ in enumerate(c.get("lines", [])):
-                out[(s["id"], ci, li)] = os.path.join(VOICE, files[k]); k += 1
-    assert k == len(files), f"台詞 {k} 句、配音檔 {len(files)} 個，對不上"
+            for li, (spk, line) in enumerate(c.get("lines", [])):
+                m = man[k]; k += 1
+                assert m["spk"] == spk and m["text"] == line, f"清單第 {k} 句與 lf01.json 不符：{m['key']}"
+                if not m["file"]:
+                    sys.exit(f"缺配音 {m['key']}")
+                out[(s["id"], ci, li)] = os.path.join(LF, "voice", m["file"])
+    assert k == len(man), f"台詞 {k} 句、清單 {len(man)} 句，對不上"
     return out
 
 
@@ -69,12 +74,19 @@ def motion(camera, sec, mirror_pan):
 def main():
     stills = "--stills" in sys.argv
     os.makedirs(TMP, exist_ok=True)
-    vf = voice_files()
+    vf = {} if stills else voice_files()
     parts, voices, subs, t0, track_i = [], [], [], 0.0, 0
     for s in SEGS:
         for ci, c in enumerate(s["cuts"]):
             img = os.path.join(FRAMES, s["id"], f"f{ci + 1}.png")
-            sec = c["sec"]
+            # 台詞：切開始後 0.4 秒起依序放，句間 0.35 秒；台詞放不下時把這一切拉長（尾端留 0.6 秒）
+            t, lines = t0 + 0.4, []
+            for li, (spk, line) in enumerate([] if stills else c.get("lines", [])):
+                f = vf[(s["id"], ci, li)]
+                d = dur(f)
+                lines.append((f, t, d, spk, line))
+                t += d + 0.35
+            sec = round(max(c["sec"], t - 0.35 + 0.6 - t0), 2)
             if not os.path.exists(img):
                 sys.exit(f"缺分鏡圖 {img}")
             if stills:
@@ -88,14 +100,9 @@ def main():
             run(["-loop", "1", "-i", img, "-t", str(sec), "-vf", motion(c["camera"], sec, mirror),
                  "-r", str(FPS), "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", part])
             parts.append(part)
-            # 台詞：切開始後 0.4 秒起依序放，句間 0.35 秒
-            t = t0 + 0.4
-            for li, (spk, line) in enumerate(c.get("lines", [])):
-                f = vf[(s["id"], ci, li)]
-                d = dur(f)
+            for f, t, d, spk, line in lines:
                 voices.append((f, t))
-                subs.append((t, t + d + 0.3, spk, line))  # 台詞可跨到下一切（J-cut）
-                t += d + 0.35
+                subs.append((t, t + d + 0.3, spk, line))
             t0 += sec
     if stills:
         print("stills →", os.path.join(HERE, "stills")); return
