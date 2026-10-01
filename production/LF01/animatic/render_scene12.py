@@ -113,7 +113,7 @@ def main():
     video = os.path.join(TMP, "video.mp4")
     run(["-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", video])
 
-    # 2) 字幕（ASS：說話人金色小字＋台詞白字）＋開頭結尾淡入淡出
+    # 2) 字幕（ASS：只有台詞白字）＋開頭結尾淡入淡出
     def ts(x):
         return f"{int(x // 3600)}:{int(x % 3600 // 60):02d}:{x % 60:05.2f}"
     ass = os.path.join(TMP, "subs.ass")
@@ -124,7 +124,7 @@ def main():
         f.write(f"Style: D,{FONT_NAME},50,&H00FFFFFF,&H00000000,&H80000000,0,1,3,1,2,60\n\n")
         f.write("[Events]\nFormat: Layer, Start, End, Style, Text\n")
         for a, b, spk, line in subs:
-            f.write(f"Dialogue: 0,{ts(a)},{ts(b)},D,{{\\fs30\\c&H78C8E8&}}{spk}\\N{{\\r}}{line}\n")
+            f.write(f"Dialogue: 0,{ts(a)},{ts(b)},D,{line}\n")  # 只放台詞，不標說話人（咖哩 2026-10-01）
     total = t0
     fdir = os.path.dirname(FONT)
     vfilter = (f"subtitles='{ass}':fontsdir='{fdir}',"
