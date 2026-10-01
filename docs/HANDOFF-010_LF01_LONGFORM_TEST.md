@@ -1122,7 +1122,7 @@ Blocking (Chinese): 兩人衝向兩根光柱
 
 Shot (Chinese): 中景動態，橫式 16:9。机遙衝向右側石柱，一刀橫斬砍斷暗紅光柱與石柱之間的連結，紅光碎散。
 
-LAYOUT (must follow): one figure. 机遙 slashing across with his long saber at the right stone pillar, severing the link between the crimson beam and the pillar — the beam shattering into red shards.
+LAYOUT (must follow): one figure. 机遙 (messy dark hair, dark brown eyes, plain grey short jacket and dark trousers as in the opening frame; clean face, NO blood) slashing across with his long saber at the right stone pillar, severing the link between the crimson beam and the pillar — the beam shattering into red shards. The glowing sigil on the pillar's flat top flaring.
 
 Shot size: 中景; camera move: Tracking Shot (draw the opening moment of the shot).
 
