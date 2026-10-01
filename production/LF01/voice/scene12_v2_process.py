@@ -4,7 +4,7 @@
   python3 scene12_v2_process.py decode <kaggle_log.json>   解碼執行紀錄裡的 @@MP3 → scene12-v2/raw/
   python3 scene12_v2_process.py asr                         gpt-4o-transcribe 逐檔辨識 → scene12-v2/asr.json
   python3 scene12_v2_process.py pick                        每句挑辨識最準的候選（同分取角色選定種子）→ 混音 → final/
-需要 ffmpeg、opencc（pip install opencc-python-reimplemented）、requests；OpenAI 經代理自動帶金鑰。
+需要 ffmpeg、numpy、opencc（pip install opencc-python-reimplemented）、requests；OpenAI 經代理自動帶金鑰。
 """
 import base64, difflib, glob, json, os, re, shutil, subprocess, sys
 
@@ -63,6 +63,29 @@ def asr():
         json.dump(out, open(os.path.join(D, "asr.json"), "w"), ensure_ascii=False, indent=1)
 
 
+MAX_F0 = 165  # Hz；本片角色全是男聲，候選中位音高超過此值多半聽起來像女聲（咖哩 2026-10-01 回報），優先淘汰
+
+
+def f0(path):
+    """粗估中位基頻（自相關，16kHz，只取有聲音框）。"""
+    import numpy as np
+    raw = subprocess.run([FF, "-loglevel", "error", "-i", path, "-ac", "1", "-ar", "16000", "-f", "s16le", "-"],
+                         capture_output=True).stdout
+    x = np.frombuffer(raw, np.int16).astype(float) / 32768
+    fs, n, res = 16000, 640, []
+    for i in range(0, len(x) - n, 320):
+        w = x[i:i + n]
+        if np.sqrt((w ** 2).mean()) < 0.03:
+            continue
+        w = w - w.mean()
+        ac = np.correlate(w, w, "full")[n - 1:]
+        lo, hi = fs // 400, fs // 60
+        k = lo + int(np.argmax(ac[lo:hi]))
+        if ac[k] > 0.4 * ac[0]:
+            res.append(fs / k)
+    return float(np.median(res)) if res else 0.0
+
+
 def dur(path):
     r = subprocess.run([FF, "-i", path], capture_output=True, text=True).stderr
     h, m, s = r.split("Duration: ")[1].split(",")[0].split(":")
@@ -100,7 +123,10 @@ def pick():
             sim = difflib.SequenceMatcher(None, ref, norm(a[k])).ratio()
             seed = re.search(r"_s(\d+)\.mp3$", k)
             return (round(sim, 2), 1 if seed and int(seed.group(1)) == pref else 0)
-        best = max(sorted(cands), key=score)
+        pitch = {k: f0(os.path.join(RAW, k)) for k in cands}
+        male = [k for k in cands if pitch[k] <= MAX_F0]
+        pool = male or [min(cands, key=lambda k: pitch[k])]  # 全部偏高就取最低的，並在報告標出
+        best = max(sorted(pool), key=score)
         sim = score(best)[0]
         dst = os.path.join(FIN, m["key"] + ".mp3")
         master(os.path.join(RAW, best), dst, "心聲" in m["spk"])
@@ -108,7 +134,8 @@ def pick():
         m["take"] = best
         m["asr"] = a[best]
         m["sim"] = sim
-        report.append((m["key"], f"{sim:.2f}", a[best]))
+        m["f0"] = round(pitch[best])
+        report.append((m["key"], f"{sim:.2f}", f"{pitch[best]:.0f}Hz" + ("" if male else " ⚠全部偏高"), a[best]))
     json.dump(man, open(MAN, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     for r in report:
         print(*r, sep="\t")
