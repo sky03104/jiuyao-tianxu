@@ -46,3 +46,9 @@ LF01_BRANCH=<分支名> python3 production/LF01/tools/lf01_handoff.py
 - **配音**：BreezyVoice 第三版筆記本 `production/EP01/shuohao/voice/breezyvoice_kaggle_EP01.ipynb` 改唸本片台詞
   （旁白 A01、蕭曜霖 A10、机遙 A05／A08／B02），失敗原因分析與修正見 `production/EP01/shuohao/DECISIONS.md` 同日紀錄。
   → 已改走國漫配音風格（Qwen3-TTS），**26 句配齊於 `voice/final/`**，過程見 `voice/README.md`。
+
+## 分鏡圖驗圖紀錄
+
+| 分鏡 | 結果 | 備註 |
+|---|---|---|
+| B01 f1 第 1 次（Gemini） | **不通過（留存 `storyboard/frames/_rejected/`）** | 場景與陣眼遺跡設定圖一致、紅霧與遠處奔逃的異化狼氣氛好。**不通過原因是 Claude 資料錯誤**：B01、B02 套了「暗紅異變」光線（三根石柱噴光柱），但劇本光柱要到 B03 才沖天；另外構圖是平視石庭全景，不是分鏡寫的「從林中仰望樹冠紅光」。修正：`lf01.json` 新增光線「紅霧前兆」（天光透紅、霧映紅、晶石微紅、石柱暗、無光柱）套到 B01、B02，重跑交接檔 |
