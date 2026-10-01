@@ -46,7 +46,7 @@
 - 仍受本文件「核心規則」約束：不改核心世界觀、遵守 `21` 真相揭露節奏與各章硬性規則；新增劇情一律標記並寫進 `/docs`。
 - 會改動已定案正式設定（世界觀、角色身分、正史歸屬等）的事，仍要先問咖哩。
 - 長篇動畫試點：`docs/43_LONGFORM_ANIMATION_EP01_QINGLAN_TRIAL_PILOT_SCRIPT_V1.0.md`（第一章＝一集約 28 分鐘，方向已通過）。
-- **動畫製作分工看 `production/roles/`**（編劇／分鏡出圖／驗圖／配音／剪輯五本工作手冊，動工前先讀對應那本）。
+- **動畫製作分工看 `production/roles/`**（編劇／分鏡出圖／驗圖／配音／剪輯／字幕六本工作手冊，動工前先讀對應那本）。
 - **動畫製作進度看這裡**：短影音 EP01〈第七室報到〉→ `production/EP01/shuohao/DECISIONS.md`（分鏡圖 6/30、可靈試片 E01-01／E01-02）；
   長篇 LF01（`43` 第 2、12 場，16:9）→ `production/LF01/README.md`（江祈璟、聞人澈、赤瞳妖將、陣眼遺跡設定圖全數通過；分鏡圖 17/43（第 12 場完成，總覽 `production/LF01/storyboard/frames/LF01_scene12_contact.jpg`；第 2 場 26 張待出，先出 3 張故事版；第 12 場動態分鏡 v1 見 `production/LF01/animatic/`）；配音改走國漫配音風格：Qwen3-TTS VoiceDesign＋混音，26 句配音完成（咖哩確認）於 `production/LF01/voice/final/`；Qwen 提示詞一律用簡體，繁體會變粵語；Kaggle 由 Claude 經 API 直推執行）。
   **2026-09-30 咖哩裁定：主力改做長篇 LF01；短影音 EP01 只是流程測試，暫停出圖**（已驗證的工具鏈、配音、動態分鏡程式沿用到長篇）。

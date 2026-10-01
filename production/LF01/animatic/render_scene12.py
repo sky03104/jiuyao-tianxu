@@ -51,6 +51,21 @@ def voice_files():
     return out
 
 
+def sub_text(line, wrap=18):
+    """字幕排版（production/roles/06_字幕.md）：句中逗號、句號改全形空格，句尾的句號、逗號去掉；
+    問號、驚嘆號、刪節號、引號保留；超過 wrap 字從最靠近中間的空格斷成兩行。"""
+    import re
+    t = re.sub(r"[，。、；：]+$", "", line.strip())
+    t = re.sub(r"[，。、；：]", "　", t)
+    t = re.sub(r"　+", "　", t)
+    if len(t) > wrap:
+        cuts = [i for i, ch in enumerate(t) if ch == "　" or (ch in "？！" and i < len(t) - 1)]
+        if cuts:
+            i = min(cuts, key=lambda k: abs(k - len(t) / 2))
+            t = t[:i + 1].rstrip("　") + "\\N" + t[i + 1:].lstrip("　")
+    return t
+
+
 def dur(path):
     r = subprocess.run([FF, "-i", path], capture_output=True, text=True).stderr
     h, m, s = r.split("Duration: ")[1].split(",")[0].split(":")
@@ -113,7 +128,7 @@ def main():
     video = os.path.join(TMP, "video.mp4")
     run(["-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", video])
 
-    # 2) 字幕（ASS：只有台詞白字）＋開頭結尾淡入淡出
+    # 2) 字幕（ASS：只有台詞；對白白字、心聲淺藍）＋開頭結尾淡入淡出
     def ts(x):
         return f"{int(x // 3600)}:{int(x % 3600 // 60):02d}:{x % 60:05.2f}"
     ass = os.path.join(TMP, "subs.ass")
@@ -121,10 +136,13 @@ def main():
         f.write("[Script Info]\nScriptType: v4.00+\nPlayResX: %d\nPlayResY: %d\n\n" % (W, H))
         f.write("[V4+ Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, "
                 "BorderStyle, Outline, Shadow, Alignment, MarginV\n")
-        f.write(f"Style: D,{FONT_NAME},50,&H00FFFFFF,&H00000000,&H80000000,0,1,3,1,2,60\n\n")
+        f.write(f"Style: D,{FONT_NAME},50,&H00FFFFFF,&H00000000,&H80000000,0,1,3,1,2,60\n")
+        # 心聲：淺藍色，與對白區分（不標名字時觀眾靠顏色分辨內心聲）
+        f.write(f"Style: I,{FONT_NAME},50,&H00FFCC8C,&H00000000,&H80000000,0,1,3,1,2,60\n\n")
         f.write("[Events]\nFormat: Layer, Start, End, Style, Text\n")
         for a, b, spk, line in subs:
-            f.write(f"Dialogue: 0,{ts(a)},{ts(b)},D,{line}\n")  # 只放台詞，不標說話人（咖哩 2026-10-01）
+            # 只放台詞，不標說話人（咖哩 2026-10-01）
+            f.write(f"Dialogue: 0,{ts(a)},{ts(b)},{'I' if '心聲' in spk else 'D'},{sub_text(line)}\n")
     total = t0
     fdir = os.path.dirname(FONT)
     vfilter = (f"subtitles='{ass}':fontsdir='{fdir}',"
