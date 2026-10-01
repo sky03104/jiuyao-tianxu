@@ -8,12 +8,12 @@
 **來源：`docs/43` 第 2、12 場；分鏡資料 `production/LF01/lf01.json`**
 
 > 本檔由 `production/LF01/tools/lf01_handoff.py` 自動產生。分鏡或設定圖改了就重跑，不要手改提示詞。
-> 連結指向 `claude/video-tool-evaluation-5bqhvg` 分支。
+> 連結指向 `main` 分支。
 
 # 0. 建議做法：用 Codex 自動跑完（不用一張一張停）
 
 一般 ChatGPT 對話的 GitHub 連接器是唯讀，存不回 repo。要「出一張、自己存、接著出下一張」請用 **Codex**，
-開一個 Codex 任務（repo：`sky03104/jiuyao-tianxu`，分支：`claude/video-tool-evaluation-5bqhvg`），貼這一句：
+開一個 Codex 任務（repo：`sky03104/jiuyao-tianxu`，分支：`main`），貼這一句：
 
 ```text
 請照 production/LF01/CODEX_RUNBOOK.md 執行，依 production/LF01/codex_jobs.json 從頭到尾自動出圖、存檔、commit，不用停下來問我。
@@ -60,11 +60,11 @@
 # 第一部分：新設定圖（4 張，先做）
 
 新角色與新場景沒有 GPT 參考稿，這裡附上**已定稿的其他設定圖當畫風參考**（提示詞裡已註明「只參考畫風，不抄外型」）。
-做完存成下列檔名，上傳到 [https://github.com/sky03104/jiuyao-tianxu/tree/claude/video-tool-evaluation-5bqhvg/production/LF01](https://github.com/sky03104/jiuyao-tianxu/tree/claude/video-tool-evaluation-5bqhvg/production/LF01) 對應資料夾，或直接貼回 Claude 的 session。
+做完存成下列檔名，上傳到 [https://github.com/sky03104/jiuyao-tianxu/tree/main/production/LF01](https://github.com/sky03104/jiuyao-tianxu/tree/main/production/LF01) 對應資料夾，或直接貼回 Claude 的 session。
 
 ## 江祈璟　→ 存成 `production/LF01/characters/江祈璟-sheet.png`
 
-**上傳：** [參考拼圖 江祈璟-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/sheets/%E6%B1%9F%E7%A5%88%E7%92%9F-refs.jpg)（2 張拼成一張）
+**上傳：** [參考拼圖 江祈璟-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/sheets/%E6%B1%9F%E7%A5%88%E7%92%9F-refs.jpg)（2 張拼成一張）
 
 ```text
 Reference images:
@@ -83,7 +83,7 @@ Avoid: smirk, arrogant sneer, villain look, heavy armour, cape, twin ponytails, 
 
 ## 聞人澈　→ 存成 `production/LF01/characters/聞人澈-sheet.png`
 
-**上傳：** [蕭曜霖-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/EP01/shuohao/characters/images/%E8%95%AD%E6%9B%9C%E9%9C%96-sheet.png)
+**上傳：** [蕭曜霖-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E8%95%AD%E6%9B%9C%E9%9C%96-sheet.png)
 
 ```text
 Reference images:
@@ -100,7 +100,7 @@ Avoid: sword, sabre, blade, scabbard at the hip, forehead mark, forehead tattoo,
 
 ## 赤瞳妖將　→ 存成 `production/LF01/characters/赤瞳妖將-sheet.png`
 
-**上傳：** [蕭曜霖-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/EP01/shuohao/characters/images/%E8%95%AD%E6%9B%9C%E9%9C%96-sheet.png)
+**上傳：** [蕭曜霖-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/characters/images/%E8%95%AD%E6%9B%9C%E9%9C%96-sheet.png)
 
 ```text
 Reference images:
@@ -117,7 +117,7 @@ Avoid: western devil, bat wings, huge ram horns, goat legs, fire and brimstone, 
 
 ## 陣眼遺跡　→ 存成 `production/LF01/art/陣眼遺跡-sheet.png`
 
-**上傳：** [天玄院外景-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/EP01/shuohao/art/images/%E5%A4%A9%E7%8E%84%E9%99%A2%E5%A4%96%E6%99%AF-sheet.png)
+**上傳：** [天玄院外景-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%A4%A9%E7%8E%84%E9%99%A2%E5%A4%96%E6%99%AF-sheet.png)
 
 ```text
 Reference images:
@@ -138,7 +138,7 @@ Avoid: people, characters, modern structures, western temple, greek columns, sto
 
 8 秒｜大遠景｜Push In｜台詞：旁白：「九曜界，天玄院。」
 
-**上傳：** [天玄院外景-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/EP01/shuohao/art/images/%E5%A4%A9%E7%8E%84%E9%99%A2%E5%A4%96%E6%99%AF-sheet.png)
+**上傳：** [天玄院外景-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/EP01/shuohao/art/images/%E5%A4%A9%E7%8E%84%E9%99%A2%E5%A4%96%E6%99%AF-sheet.png)
 
 ```text
 Reference images:
@@ -161,7 +161,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜全景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A01/f2-refs.jpg)（2 張拼成一張）、本段已完成的 **f1.png**
+**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A01/f2-refs.jpg)（2 張拼成一張）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -189,7 +189,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜中景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A02/f1-refs.jpg)（3 張拼成一張）
+**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A02/f1-refs.jpg)（3 張拼成一張）
 
 ```text
 Reference images:
@@ -215,7 +215,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜全景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A02/f2-refs.jpg)（2 張拼成一張）、本段已完成的 **f1.png**
+**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A02/f2-refs.jpg)（2 張拼成一張）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -243,7 +243,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜特寫｜Static Shot｜台詞：（無台詞）
 
-**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A03/f1-refs.jpg)（2 張拼成一張）
+**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A03/f1-refs.jpg)（2 張拼成一張）
 
 ```text
 Reference images:
@@ -268,7 +268,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜中景｜Static Shot｜台詞：院方執事：「青嵐新契修，机遙。東廊，第七室。」
 
-**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A03/f2-refs.jpg)（2 張拼成一張）、本段已完成的 **f1.png**
+**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A03/f2-refs.jpg)（2 張拼成一張）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -296,7 +296,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜中景｜Tracking Shot｜台詞：（無台詞）
 
-**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A04/f1-refs.jpg)（3 張拼成一張）
+**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A04/f1-refs.jpg)（3 張拼成一張）
 
 ```text
 Reference images:
@@ -322,7 +322,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜中景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A04/f2-refs.jpg)（2 張拼成一張）、本段已完成的 **f1.png**
+**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A04/f2-refs.jpg)（2 張拼成一張）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -350,7 +350,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 6 秒｜中景｜Push In｜台詞：（無台詞）
 
-**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A05/f1-refs.jpg)（3 張拼成一張）
+**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A05/f1-refs.jpg)（3 張拼成一張）
 
 ```text
 Reference images:
@@ -376,7 +376,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 9 秒｜中景｜Static Shot｜台詞：齊衡烈：「你就是新來的？」；机遙：「應該是。」
 
-**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A05/f2-refs.jpg)（3 張拼成一張）、本段已完成的 **f1.png**
+**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A05/f2-refs.jpg)（3 張拼成一張）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -405,7 +405,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜近景｜Static Shot｜台詞：齊衡烈：「那就對了。第七室最近正缺個能打的。」
 
-**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A06/f1-refs.jpg)（2 張拼成一張）
+**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A06/f1-refs.jpg)（2 張拼成一張）
 
 ```text
 Reference images:
@@ -430,7 +430,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜中景｜Static Shot｜台詞：郁岑燁：「你看都沒看他出手，怎麼知道他能打？」
 
-**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A06/f2-refs.jpg)（2 張拼成一張）、本段已完成的 **f1.png**
+**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A06/f2-refs.jpg)（2 張拼成一張）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -458,7 +458,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜中景｜Static Shot｜台詞：齊衡烈：「所以才要打一場啊。」
 
-**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A07/f1-refs.jpg)（2 張拼成一張）
+**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A07/f1-refs.jpg)（2 張拼成一張）
 
 ```text
 Reference images:
@@ -483,7 +483,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜近景｜Static Shot｜台詞：郁岑燁：「……無聊。」
 
-**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A07/f2-refs.jpg)（2 張拼成一張）、本段已完成的 **f1.png**
+**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A07/f2-refs.jpg)（2 張拼成一張）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -511,7 +511,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜中景｜Static Shot｜台詞：厲若楓：「別急。他的腳步有點亂。」
 
-**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A08/f1-refs.jpg)（2 張拼成一張）
+**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A08/f1-refs.jpg)（2 張拼成一張）
 
 ```text
 Reference images:
@@ -536,7 +536,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜近景｜Static Shot｜台詞：机遙：「你們都看得出來？」
 
-**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A08/f2-refs.jpg)（2 張拼成一張）、本段已完成的 **f1.png**
+**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A08/f2-refs.jpg)（2 張拼成一張）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -564,7 +564,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜近景｜Static Shot｜台詞：郁岑燁：「至少我看得出來。」
 
-**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A09/f1-refs.jpg)（2 張拼成一張）
+**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A09/f1-refs.jpg)（2 張拼成一張）
 
 ```text
 Reference images:
@@ -589,7 +589,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜中景｜Static Shot｜台詞：齊衡烈：「哈哈，那更好！明天演武場見。」
 
-**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A09/f2-refs.jpg)（2 張拼成一張）、本段已完成的 **f1.png**
+**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A09/f2-refs.jpg)（2 張拼成一張）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -617,7 +617,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 6 秒｜全景｜Static Shot｜台詞：蕭曜霖（畫外）：「不用等明天。」
 
-**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A10/f1-refs.jpg)（5 張拼成一張）
+**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A10/f1-refs.jpg)（5 張拼成一張）
 
 ```text
 Reference images:
@@ -645,7 +645,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 9 秒｜全景｜Push In｜台詞：蕭曜霖：「半刻鐘後，新生演武場集合。」
 
-**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A10/f2-refs.jpg)（2 張拼成一張）、本段已完成的 **f1.png**
+**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A10/f2-refs.jpg)（2 張拼成一張）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -673,7 +673,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜全景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A11/f1-refs.jpg)（2 張拼成一張）
+**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A11/f1-refs.jpg)（2 張拼成一張）
 
 ```text
 Reference images:
@@ -698,7 +698,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜中景｜Static Shot｜台詞：机遙：「這麼快？」；齊衡烈：「習慣就好。」
 
-**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A11/f2-refs.jpg)（3 張拼成一張）、本段已完成的 **f1.png**
+**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A11/f2-refs.jpg)（3 張拼成一張）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -727,7 +727,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜中景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A12/f1-refs.jpg)（2 張拼成一張）
+**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A12/f1-refs.jpg)（2 張拼成一張）
 
 ```text
 Reference images:
@@ -752,7 +752,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜中景｜Static Shot｜台詞：齊衡烈：「喂，新來的。我叫齊衡烈。你呢？」；机遙：「机遙。」
 
-**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/video-tool-evaluation-5bqhvg/production/LF01/storyboard/chatgpt/A12/f2-refs.jpg)（3 張拼成一張）、本段已完成的 **f1.png**
+**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/main/production/LF01/storyboard/chatgpt/A12/f2-refs.jpg)（3 張拼成一張）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -836,7 +836,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜全景｜Push In｜台詞：（無台詞）
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B02/f1-refs.jpg`（**待 陣眼遺跡、赤瞳妖將 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B02/f1-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）
 
 ```text
 Reference images:
@@ -861,7 +861,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜特寫｜Static Shot｜台詞：赤瞳妖將：「……人族。你們也開始聽見了嗎？」；机遙：「你在說什麼？」
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B02/f2-refs.jpg`（**待 陣眼遺跡、赤瞳妖將 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B02/f2-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -889,7 +889,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜大遠景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B03/f1-refs.jpg`（**待 陣眼遺跡、聞人澈、赤瞳妖將 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B03/f1-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）
 
 ```text
 Reference images:
@@ -920,7 +920,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜中景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B03/f2-refs.jpg`（**待 陣眼遺跡、赤瞳妖將 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B03/f2-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -949,7 +949,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜中景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B04/f1-refs.jpg`（**待 陣眼遺跡、赤瞳妖將 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B04/f1-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）
 
 ```text
 Reference images:
@@ -975,7 +975,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜中景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B04/f2-refs.jpg`（**待 陣眼遺跡、赤瞳妖將 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B04/f2-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -1004,7 +1004,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜中景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B05/f1-refs.jpg`（**待 陣眼遺跡、聞人澈 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B05/f1-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）
 
 ```text
 Reference images:
@@ -1163,7 +1163,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜中景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B08/f1-refs.jpg`（**待 陣眼遺跡、赤瞳妖將 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B08/f1-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）
 
 ```text
 Reference images:
@@ -1189,7 +1189,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜全景｜Static Shot｜台詞：赤瞳妖將：「這裡不是你們該來的地方。」
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B08/f2-refs.jpg`（**待 陣眼遺跡、赤瞳妖將 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B08/f2-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -1217,7 +1217,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 10 秒｜全景｜Static Shot｜台詞：（無台詞）
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B09/f1-refs.jpg`（**待 陣眼遺跡、聞人澈 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B09/f1-refs.jpg`（**待 陣眼遺跡 設定圖驗收後由 Claude 重跑產生**）
 
 ```text
 Reference images:

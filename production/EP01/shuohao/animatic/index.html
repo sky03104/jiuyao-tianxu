@@ -30,11 +30,27 @@ function load(src) {
   const im = new Image(); im.src = '../' + src; images[src] = im;
 }
 TL.cuts.forEach(c => { load(c.image); load(c.sceneSheet); });
-window.assetsReady = () => Promise.all(Object.values(images).map(im => im.decode().catch(() => null)));
+// 影片片段：每支檔案一個 <video>，逐格輸出時 seek 到對應時間再畫
+const videos = {};
+TL.cuts.forEach(c => {
+  if (!c.clip || videos[c.clip.file]) return;
+  // Chromium（Playwright）不含 H.264，讀 render.mjs 轉好的 VP9 暫存檔
+  const v = document.createElement('video'); v.src = '../' + c.clip.proxy; v.muted = true; v.preload = 'auto';
+  videos[c.clip.file] = v;
+});
+const seek = (v, s) => new Promise(r => {
+  if (Math.abs(v.currentTime - s) < 0.001 && v.readyState >= 2) return r();
+  v.addEventListener('seeked', () => r(), { once: true }); v.currentTime = s;
+});
+window.assetsReady = () => Promise.all([
+  ...Object.values(images).map(im => im.decode().catch(() => null)),
+  ...Object.values(videos).map(v => new Promise(r => v.readyState >= 2 ? r() : v.addEventListener('loadeddata', r, { once: true }))),
+]);
 
-function cover(im, scale, ox, oy) { // 等比填滿 9:16，scale>1 放大，ox/oy 為平移（px）
-  const s = Math.max(W / im.naturalWidth, H / im.naturalHeight) * scale;
-  const w = im.naturalWidth * s, h = im.naturalHeight * s;
+function cover(im, scale, ox, oy) { // 等比填滿 9:16，scale>1 放大，ox/oy 為平移（px）；im 可為圖片或影片
+  const iw = im.naturalWidth || im.videoWidth, ih = im.naturalHeight || im.videoHeight;
+  const s = Math.max(W / iw, H / ih) * scale;
+  const w = iw * s, h = ih * s;
   ctx.drawImage(im, (W - w) / 2 + ox, (H - h) / 2 + oy, w, h);
 }
 
@@ -116,13 +132,13 @@ function drawHud(t, c) {
   ctx.textAlign = 'left'; ctx.textBaseline = 'top';
   ctx.fillStyle = 'rgba(0,0,0,0.45)'; ctx.fillRect(0, 0, W, 96);
   ctx.font = `600 30px ${SANS}`; ctx.fillStyle = 'rgba(239,230,210,0.85)';
-  ctx.fillText(`EP01 動態分鏡 v0　${c.seg} #${c.n}`, 40, 30);
+  ctx.fillText(`EP01 動態分鏡 v1　${c.seg} #${c.n}${c.clip ? '　▶ ' + c.clip.src : ''}`, 40, 30);
   ctx.textAlign = 'right';
   const mm = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
   ctx.fillText(`${mm(t)} / ${mm(DURATION)}`, W - 40, 30);
-  // 進度條：金色＝已有分鏡圖，灰＝待補
+  // 進度條：青綠＝已有生成影片，金色＝已有分鏡圖，灰＝待補
   for (const x of TL.cuts) {
-    ctx.fillStyle = x.image ? 'rgba(214,168,74,0.9)' : 'rgba(239,230,210,0.25)';
+    ctx.fillStyle = x.clip ? 'rgba(88,196,170,0.95)' : x.image ? 'rgba(214,168,74,0.9)' : 'rgba(239,230,210,0.25)';
     ctx.fillRect(40 + (W - 80) * x.start / DURATION + 1, 80, (W - 80) * x.dur / DURATION - 2, 8);
   }
   ctx.fillStyle = '#f5eede'; ctx.fillRect(40 + (W - 80) * t / DURATION - 2, 74, 4, 20);
@@ -134,10 +150,14 @@ function cutAt(t) {
   return c;
 }
 
-function renderFrame(t) {
+async function renderFrame(t) {
   ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.textAlign = 'left';
   const c = cutAt(t), local = t - c.start, k = clamp(local / c.dur);
-  if (c.image && images[c.image].naturalWidth) drawShot(c, k); else drawCard(c, k);
+  if (c.clip && videos[c.clip.file]) { // 生成影片：片段長度等速拉伸到分鏡秒數
+    const v = videos[c.clip.file];
+    await seek(v, Math.min(c.clip.out, c.clip.in + (c.clip.out - c.clip.in) * k) - 0.001);
+    cover(v, 1, 0, 0);
+  } else if (c.image && images[c.image].naturalWidth) drawShot(c, k); else drawCard(c, k);
   drawSubtitle(c, local);
   drawHud(t, c);
   // 片頭淡入、片尾（最後一聲鐘響後）淡出
@@ -150,7 +170,7 @@ window.DURATION = DURATION;
 if (!/[?&]render=1/.test(location.search)) {
   window.assetsReady().then(() => {
     const start = performance.now();
-    const loop = now => { renderFrame(((now - start) / 1000) % DURATION); requestAnimationFrame(loop); };
+    const loop = async now => { await renderFrame(((now - start) / 1000) % DURATION); requestAnimationFrame(loop); };
     requestAnimationFrame(loop);
   });
 }

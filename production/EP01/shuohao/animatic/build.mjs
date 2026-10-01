@@ -11,6 +11,7 @@ const sb = JSON.parse(readFileSync(join(root, 'storyboard/EP01-storyboard.json')
 const sc = JSON.parse(readFileSync(join(root, 'script/EP01-script.json'), 'utf8'));
 const cast = JSON.parse(readFileSync(join(root, 'characters/EP01-cast.json'), 'utf8'));
 const art = JSON.parse(readFileSync(join(root, 'art/EP01-art.json'), 'utf8'));
+const clips = existsSync(join(here, 'clips.json')) ? JSON.parse(readFileSync(join(here, 'clips.json'), 'utf8')).clips : [];
 
 const names = Object.fromEntries(cast.characters.map(c => [c.id, c.name]));
 names.VO = '旁白';
@@ -39,13 +40,15 @@ for (const seg of sb.episodes[0].segments) {
       scene: sceneNames[scene.sceneId] || scene.sceneId,
       sceneSheet: `art/images/${sceneNames[scene.sceneId]}-sheet.png`,
       image: existsSync(join(root, img)) ? img : null,
+      clip: (({ file, in: a, out: b, src }) => ({ file, in: a, out: b, src, proxy: file && 'animatic/cache/' + file.split('/').slice(-2).join('_').replace(/\.mp4$/, '.webm') }))(clips.find(x => x.seg === seg.id && x.n === i + 1 && existsSync(join(root, x.file))) || {}),
       music: i === 0 ? seg.music : null,
     });
     t += c.seconds;
   });
 }
 const timeline = { episode: 'EP01', total: +t.toFixed(3), cuts };
+for (const c of cuts) if (!c.clip.file) c.clip = null;
+const have = cuts.filter(c => c.image).length, vids = cuts.filter(c => c.clip).length;
 writeFileSync(join(here, 'timeline.json'), JSON.stringify(timeline, null, 1));
 writeFileSync(join(here, 'timeline.js'), '// 由 build.mjs 產生，勿手改\nwindow.TIMELINE = ' + JSON.stringify(timeline) + ';\n');
-const have = cuts.filter(c => c.image).length;
-console.log(`timeline: ${cuts.length} 切、${t} 秒；分鏡圖 ${have}/${cuts.length}`);
+console.log(`timeline: ${cuts.length} 切、${t} 秒；分鏡圖 ${have}/${cuts.length}、影片片段 ${vids}/${cuts.length}`);

@@ -21,6 +21,13 @@
    "scene": "天玄院外景",
    "sceneSheet": "art/images/天玄院外景-sheet.png",
    "image": "storyboard/export/h3/E01-01/f1.png",
+   "clip": {
+    "file": "storyboard/export/h3/E01-01/kling-v1.mp4",
+    "in": 0,
+    "out": 2.75,
+    "src": "可靈 3.0 Omni",
+    "proxy": "animatic/cache/E01-01_kling-v1.webm"
+   },
    "music": "空靈古風長音，古琴單音起頭，極慢速度"
   },
   {
@@ -45,6 +52,13 @@
    "scene": "天玄院外景",
    "sceneSheet": "art/images/天玄院外景-sheet.png",
    "image": "storyboard/export/h3/E01-01/f2.png",
+   "clip": {
+    "file": "storyboard/export/h3/E01-01/kling-v1.mp4",
+    "in": 2.85,
+    "out": 5,
+    "src": "可靈 3.0 Omni",
+    "proxy": "animatic/cache/E01-01_kling-v1.webm"
+   },
    "music": null
   },
   {
@@ -70,6 +84,13 @@
    "scene": "天玄院東廊",
    "sceneSheet": "art/images/天玄院東廊-sheet.png",
    "image": "storyboard/export/h3/E01-02/f1.png",
+   "clip": {
+    "file": "storyboard/export/h3/E01-02/hailuo-h3-v1.mp4",
+    "in": 0,
+    "out": 3,
+    "src": "海螺 MiniMax H3",
+    "proxy": "animatic/cache/E01-02_hailuo-h3-v1.webm"
+   },
    "music": "木質打擊樂輕輕加入，中慢速度"
   },
   {
@@ -93,6 +114,13 @@
    "scene": "天玄院東廊",
    "sceneSheet": "art/images/天玄院東廊-sheet.png",
    "image": "storyboard/export/h3/E01-02/f2.png",
+   "clip": {
+    "file": "storyboard/export/h3/E01-02/hailuo-h3-v1.mp4",
+    "in": 3.05,
+    "out": 5,
+    "src": "海螺 MiniMax H3",
+    "proxy": "animatic/cache/E01-02_hailuo-h3-v1.webm"
+   },
    "music": null
   },
   {
@@ -118,7 +146,14 @@
    ],
    "scene": "天玄院東廊",
    "sceneSheet": "art/images/天玄院東廊-sheet.png",
-   "image": null,
+   "image": "storyboard/export/h3/E01-02/f3.png",
+   "clip": {
+    "file": "storyboard/export/h3/E01-02/hailuo-h3-v1.mp4",
+    "in": 5.05,
+    "out": 7.55,
+    "src": "海螺 MiniMax H3",
+    "proxy": "animatic/cache/E01-02_hailuo-h3-v1.webm"
+   },
    "music": null
   },
   {
@@ -144,7 +179,14 @@
    ],
    "scene": "第七室",
    "sceneSheet": "art/images/第七室-sheet.png",
-   "image": null,
+   "image": "storyboard/export/h3/E01-03/f1.png",
+   "clip": {
+    "file": "storyboard/export/h3/E01-03/jimeng-c1.mp4",
+    "in": 0,
+    "out": 2.5,
+    "src": "即夢 Seedance",
+    "proxy": "animatic/cache/E01-03_jimeng-c1.webm"
+   },
    "music": "木質打擊稍微明亮，中速"
   },
   {
@@ -178,6 +220,13 @@
    "scene": "第七室",
    "sceneSheet": "art/images/第七室-sheet.png",
    "image": null,
+   "clip": {
+    "file": "storyboard/export/h3/E01-03/jimeng-c2.mp4",
+    "in": 1.8,
+    "out": 4.8,
+    "src": "即夢 Seedance",
+    "proxy": "animatic/cache/E01-03_jimeng-c2.webm"
+   },
    "music": null
   },
   {
@@ -204,6 +253,7 @@
    "scene": "第七室",
    "sceneSheet": "art/images/第七室-sheet.png",
    "image": null,
+   "clip": null,
    "music": null
   },
   {
@@ -227,6 +277,7 @@
    "scene": "第七室",
    "sceneSheet": "art/images/第七室-sheet.png",
    "image": null,
+   "clip": null,
    "music": "木質打擊持續，中速"
   },
   {
@@ -253,6 +304,7 @@
    "scene": "第七室",
    "sceneSheet": "art/images/第七室-sheet.png",
    "image": null,
+   "clip": null,
    "music": null
   },
   {
@@ -281,6 +333,7 @@
    "scene": "第七室",
    "sceneSheet": "art/images/第七室-sheet.png",
    "image": null,
+   "clip": null,
    "music": null
   },
   {
@@ -307,6 +360,7 @@
    "scene": "第七室",
    "sceneSheet": "art/images/第七室-sheet.png",
    "image": null,
+   "clip": null,
    "music": null
   },
   {
@@ -330,6 +384,7 @@
    "scene": "第七室",
    "sceneSheet": "art/images/第七室-sheet.png",
    "image": null,
+   "clip": null,
    "music": "極輕的弦樂持續音進入"
   },
   {
@@ -353,6 +408,7 @@
    "scene": "第七室",
    "sceneSheet": "art/images/第七室-sheet.png",
    "image": null,
+   "clip": null,
    "music": null
   },
   {
@@ -379,6 +435,7 @@
    "scene": "第七室",
    "sceneSheet": "art/images/第七室-sheet.png",
    "image": null,
+   "clip": null,
    "music": null
   },
   {
@@ -402,6 +459,7 @@
    "scene": "第七室",
    "sceneSheet": "art/images/第七室-sheet.png",
    "image": null,
+   "clip": null,
    "music": null
   },
   {
@@ -430,6 +488,7 @@
    "scene": "第七室",
    "sceneSheet": "art/images/第七室-sheet.png",
    "image": null,
+   "clip": null,
    "music": null
   },
   {
@@ -456,6 +515,7 @@
    "scene": "第七室",
    "sceneSheet": "art/images/第七室-sheet.png",
    "image": null,
+   "clip": null,
    "music": "輕弦樂與木質打擊稍微揚起"
   },
   {
@@ -487,6 +547,7 @@
    "scene": "第七室",
    "sceneSheet": "art/images/第七室-sheet.png",
    "image": null,
+   "clip": null,
    "music": null
   },
   {
@@ -511,6 +572,7 @@
    "scene": "天玄院東廊",
    "sceneSheet": "art/images/天玄院東廊-sheet.png",
    "image": null,
+   "clip": null,
    "music": "配樂抽掉，只剩低頻弦樂持續音"
   },
   {
@@ -537,6 +599,7 @@
    "scene": "天玄院東廊",
    "sceneSheet": "art/images/天玄院東廊-sheet.png",
    "image": null,
+   "clip": null,
    "music": null
   },
   {
@@ -560,6 +623,7 @@
    "scene": "天玄院東廊",
    "sceneSheet": "art/images/天玄院東廊-sheet.png",
    "image": null,
+   "clip": null,
    "music": null
   },
   {
@@ -586,6 +650,7 @@
    "scene": "天玄院東廊",
    "sceneSheet": "art/images/天玄院東廊-sheet.png",
    "image": null,
+   "clip": null,
    "music": null
   },
   {
@@ -609,6 +674,7 @@
    "scene": "天玄院東廊",
    "sceneSheet": "art/images/天玄院東廊-sheet.png",
    "image": null,
+   "clip": null,
    "music": null
   },
   {
@@ -632,6 +698,7 @@
    "scene": "天玄院東廊",
    "sceneSheet": "art/images/天玄院東廊-sheet.png",
    "image": null,
+   "clip": null,
    "music": "木質打擊重新提起節奏"
   },
   {
@@ -655,6 +722,7 @@
    "scene": "天玄院東廊",
    "sceneSheet": "art/images/天玄院東廊-sheet.png",
    "image": null,
+   "clip": null,
    "music": null
   },
   {
@@ -678,6 +746,7 @@
    "scene": "天玄院東廊",
    "sceneSheet": "art/images/天玄院東廊-sheet.png",
    "image": null,
+   "clip": null,
    "music": null
   },
   {
@@ -708,6 +777,7 @@
    "scene": "天玄院東廊",
    "sceneSheet": "art/images/天玄院東廊-sheet.png",
    "image": null,
+   "clip": null,
    "music": null
   },
   {
@@ -731,6 +801,7 @@
    "scene": "第七室",
    "sceneSheet": "art/images/第七室-sheet.png",
    "image": null,
+   "clip": null,
    "music": "最後一聲木質敲擊，然後靜音"
   },
   {
@@ -754,6 +825,7 @@
    "scene": "第七室",
    "sceneSheet": "art/images/第七室-sheet.png",
    "image": null,
+   "clip": null,
    "music": null
   }
  ]
