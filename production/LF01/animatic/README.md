@@ -1,0 +1,19 @@
+# LF01 動態分鏡（animatic）
+
+## 第 12 場〈赤瞳妖將〉v1（2026-10-01）
+
+`LF01_scene12_animatic_v1.mp4`：130 秒、17 切、1920×1080／30fps。用途是看這場的節奏與聲音，不是成品。
+
+- **畫面**：`storyboard/frames/B01～B09/fN.png` 分鏡圖＋程式運鏡（Push In 推近 15%、Tracking 橫移、Static 極慢微推 4%），硬切。
+- **聲音**：`voice/final/` 已定稿配音 8 句，依台詞順序放在每切開始後 0.4 秒起、句間 0.35 秒；
+  台詞比切長時直接延伸到下一切（J-cut，例如 B02 f2 机遙那句落到 B03）。底下是暫定的低頻環境底噪，正式配樂另做。
+- **字幕**：ASS（說話人金色小字＋台詞白字），文泉驛正黑。
+- 時間軸全部由 `../lf01.json` 產生；分鏡圖或配音更新後重跑：
+
+```bash
+pip install imageio-ffmpeg        # 沒有系統 ffmpeg 時
+python3 production/LF01/animatic/render_scene12.py           # 約 1 分鐘
+python3 production/LF01/animatic/render_scene12.py --stills  # 只輸出每切第一格
+```
+
+已知問題：B05 f2 机遙嘴角血痕未修；秒數照分鏡表（每切 7～8 秒），靜態格偏長，看完再決定要不要縮短或改用影片。
