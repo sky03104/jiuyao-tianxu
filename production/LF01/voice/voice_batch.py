@@ -129,7 +129,11 @@ def pick_one(MAN):
     for m in man:
         if m["file"] and not m["file"].startswith(batch):
             continue  # 已定稿的舊配音
-        cands = [k for k in a if k.startswith(m["key"] + "_")]
+        # 以「角色＋台詞」對上本批次的候選（清單重編號後 key 可能不同；index.json 記錄送 Kaggle 時的 key→簡體台詞）
+        idx = json.load(open(os.path.join(D, "index.json"), encoding="utf-8")) if os.path.exists(os.path.join(D, "index.json")) else {}
+        spk = m["key"].split("_")[-1]
+        keys = [k for k, t in idx.items() if k.split("_")[-1] == spk and norm(t) == norm(m["text"])] or [m["key"]]
+        cands = [k for k in a if any(k.startswith(x + "_") for x in keys)]
         if not cands:
             report.append((m["key"], "缺候選", "")); continue
         ref = norm(m["text"])

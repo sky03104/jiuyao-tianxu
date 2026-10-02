@@ -12,7 +12,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 LF = os.path.dirname(HERE)
 FRAMES = os.path.join(LF, "storyboard", "frames")
 VOICE = os.path.join(LF, "voice", "final")
-MANIFEST = os.path.join(LF, "voice", "scene12_v2_manifest.json")
+MANIFEST = os.path.join(LF, "voice", "scene12_manifest.json")
 OUT = os.path.join(HERE, "LF01_scene12_animatic_v2.mp4")
 TMP = os.path.join(HERE, "cache")
 W, H, FPS = 1920, 1080, 30
@@ -28,6 +28,15 @@ if not FONT:
 FONT_NAME = "Noto Sans CJK TC" if "Noto" in FONT else "WenQuanYi Zen Hei"
 
 data = json.load(open(os.path.join(LF, "lf01.json"), encoding="utf-8"))
+# 畫面文字字型：未選定前退回字幕字型
+_cf = (data.get("captionStyle") or {}).get("font")
+CAP_FILE = os.path.join(LF, "fonts", _cf) if _cf else None
+CAP_DIR = bool(CAP_FILE and os.path.exists(CAP_FILE))
+if CAP_DIR:
+    from fontTools.ttLib import TTFont
+    CAP_FONT = TTFont(CAP_FILE).get("name").getDebugName(1)
+else:
+    CAP_FONT = None  # 下方用 FONT_NAME 代替
 SEGS = [s for s in data["segments"] if s["id"].startswith("B")]
 
 
@@ -90,12 +99,16 @@ def main():
     stills = "--stills" in sys.argv
     os.makedirs(TMP, exist_ok=True)
     vf = {} if stills else voice_files()
-    parts, voices, subs, t0, track_i = [], [], [], 0.0, 0
+    parts, voices, subs, caps, t0, track_i = [], [], [], [], 0.0, 0
     for s in SEGS:
         for ci, c in enumerate(s["cuts"]):
             img = os.path.join(FRAMES, s["id"], f"f{ci + 1}.png")
             # 台詞：切開始後 0.4 秒起依序放，句間 0.35 秒；台詞放不下時把這一切拉長（尾端留 0.6 秒）
-            t, lines = t0 + 0.4, []
+            # 有畫面文字（地點卡）的切：文字 0.5～4 秒顯示，台詞等它淡出後才開始，避免和字幕疊在一起
+            cap = c.get("caption")
+            if cap and not stills:
+                caps.append((t0 + 0.5, t0 + 4.0, cap))
+            t, lines = t0 + (4.2 if cap else 0.4), []
             for li, (spk, line) in enumerate([] if stills else c.get("lines", [])):
                 f = vf[(s["id"], ci, li)]
                 d = dur(f)
@@ -128,7 +141,7 @@ def main():
     video = os.path.join(TMP, "video.mp4")
     run(["-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", video])
 
-    # 2) 字幕（ASS：只有台詞；對白白字、心聲淺藍）＋開頭結尾淡入淡出
+    # 2) 字幕（ASS：只有台詞，一律白字同一字型，咖哩 2026-10-02）＋畫面文字（地點卡）＋開頭結尾淡入淡出
     def ts(x):
         return f"{int(x // 3600)}:{int(x % 3600 // 60):02d}:{x % 60:05.2f}"
     ass = os.path.join(TMP, "subs.ass")
@@ -137,14 +150,24 @@ def main():
         f.write("[V4+ Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, "
                 "BorderStyle, Outline, Shadow, Alignment, MarginV\n")
         f.write(f"Style: D,{FONT_NAME},50,&H00FFFFFF,&H00000000,&H80000000,0,1,3,1,2,60\n")
-        # 心聲：淺藍色，與對白區分（不標名字時觀眾靠顏色分辨內心聲）
-        f.write(f"Style: I,{FONT_NAME},50,&H00FFCC8C,&H00000000,&H80000000,0,1,3,1,2,60\n\n")
+        # 畫面文字（地點卡）：字型由咖哩選定（lf01.json captionStyle.font，字型檔放 production/LF01/fonts/），左下、淡入淡出
+        f.write(f"Style: C,{CAP_FONT or FONT_NAME},120,&H00FFFFFF,&H00000000,&H64000000,0,1,0,4,1,140\n\n")
         f.write("[Events]\nFormat: Layer, Start, End, Style, Text\n")
         for a, b, spk, line in subs:
             # 只放台詞，不標說話人（咖哩 2026-10-01）
-            f.write(f"Dialogue: 0,{ts(a)},{ts(b)},{'I' if '心聲' in spk else 'D'},{sub_text(line)}\n")
+            f.write(f"Dialogue: 0,{ts(a)},{ts(b)},D,{sub_text(line)}\n")
+        for a, b, cap in caps:
+            f.write(f"Dialogue: 1,{ts(a)},{ts(b)},C,{{\\fad(600,600)\\pos(120,920)\\an1\\fsp26}}"
+                    f"{{\\fs48\\fsp18\\c&HC8E1EB&}}{cap['top']}\\N{{\\fs120\\fsp26\\c&HFFFFFF&}}{cap['main']}\n")
     total = t0
     fdir = os.path.dirname(FONT)
+    if caps and CAP_DIR:
+        fdir = TMP + "/fonts"
+        os.makedirs(fdir, exist_ok=True)
+        for x in [FONT, CAP_FILE]:
+            dst = os.path.join(fdir, os.path.basename(x))
+            if not os.path.exists(dst):
+                shutil.copy(x, dst)
     vfilter = (f"subtitles='{ass}':fontsdir='{fdir}',"
                f"fade=t=in:st=0:d=1,fade=t=out:st={total - 1.5:.2f}:d=1.5")
 
