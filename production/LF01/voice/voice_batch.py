@@ -5,7 +5,7 @@
   BATCH=batch-v9 python3 voice_batch.py asr                         gpt-4o-transcribe 逐檔辨識 → <BATCH>/asr.json
   BATCH=batch-v9 python3 voice_batch.py pick                        挑選＋混音 → <BATCH>/final/，寫回 scene02/scene12_manifest.json
   （清單裡 file 為空、或已指向本批次的句子才會處理；已定稿的舊配音不動）
-需要 ffmpeg、numpy、opencc（pip install opencc-python-reimplemented）、requests；OpenAI 經代理自動帶金鑰。
+需要 ffmpeg、numpy、librosa、opencc（pip install opencc-python-reimplemented）、requests；OpenAI 經代理自動帶金鑰。
 """
 import base64, difflib, glob, json, os, re, shutil, subprocess, sys
 
@@ -71,23 +71,12 @@ MAX_F0 = 165  # Hz；本片角色全是男聲，候選中位音高超過此值�
 
 
 def f0(path):
-    """粗估中位基頻（自相關，16kHz，只取有聲音框）。"""
-    import numpy as np
-    raw = subprocess.run([FF, "-loglevel", "error", "-i", path, "-ac", "1", "-ar", "16000", "-f", "s16le", "-"],
-                         capture_output=True).stdout
-    x = np.frombuffer(raw, np.int16).astype(float) / 32768
-    fs, n, res = 16000, 640, []
-    for i in range(0, len(x) - n, 320):
-        w = x[i:i + n]
-        if np.sqrt((w ** 2).mean()) < 0.03:
-            continue
-        w = w - w.mean()
-        ac = np.correlate(w, w, "full")[n - 1:]
-        lo, hi = fs // 400, fs // 60
-        k = lo + int(np.argmax(ac[lo:hi]))
-        if ac[k] > 0.4 * ac[0]:
-            res.append(fs / k)
-    return float(np.median(res)) if res else 0.0
+    """中位基頻（librosa pYIN；舊版自相關法會有八度誤判，2026-10-02 改）。"""
+    import librosa, numpy as np
+    y, sr = librosa.load(path, sr=16000)
+    f, v, _ = librosa.pyin(y, fmin=60, fmax=500, sr=sr)
+    f = f[v]
+    return float(np.median(f)) if len(f) else 0.0
 
 
 def dur(path):
