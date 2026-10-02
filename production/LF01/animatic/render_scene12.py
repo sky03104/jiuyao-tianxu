@@ -2,7 +2,7 @@
 """LF01 第 12 場動態分鏡：分鏡圖＋運鏡＋配音＋字幕 → MP4。
 
 時間軸全部由 ../lf01.json（段、切、秒數、運鏡、台詞）產生，不手寫時間；分鏡圖或配音更新後重跑即可。
-  python3 production/LF01/animatic/render_scene12.py            → LF01_scene12_animatic_v2.mp4（台詞補強 v1.2，50 句）
+  python3 production/LF01/animatic/render_scene12.py            → LF01_scene12_animatic_v3.mp4（台詞 v1.4）
   python3 production/LF01/animatic/render_scene12.py --stills   → 只輸出每切第一格 PNG 到 stills/（快速檢查）
 需要 ffmpeg（含 libass；沒有系統 ffmpeg 時：pip install imageio-ffmpeg）與中文字型（文泉驛正黑或 Noto CJK）。
 """
@@ -13,7 +13,7 @@ LF = os.path.dirname(HERE)
 FRAMES = os.path.join(LF, "storyboard", "frames")
 VOICE = os.path.join(LF, "voice", "final")
 MANIFEST = os.path.join(LF, "voice", "scene12_manifest.json")
-OUT = os.path.join(HERE, "LF01_scene12_animatic_v2.mp4")
+OUT = os.path.join(HERE, "LF01_scene12_animatic_v3.mp4")
 TMP = os.path.join(HERE, "cache")
 W, H, FPS = 1920, 1080, 30
 

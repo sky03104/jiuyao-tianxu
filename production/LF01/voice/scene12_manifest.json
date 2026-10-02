@@ -45,31 +45,56 @@
   "key": "S12-08_B01f2_厲若楓",
   "spk": "厲若楓",
   "text": "……來了。",
-  "file": null
+  "file": "batch-v9/final/S12-08_B01f2_厲若楓.mp3",
+  "pitch_shift": 0.0,
+  "take": "S12-09_B01f2_厲若楓_s11.mp3",
+  "asr": "来了。",
+  "sim": 1.0,
+  "f0": 193
  },
  {
   "key": "S12-09_B01f2_厲若楓",
   "spk": "厲若楓",
   "text": "別動。",
-  "file": null
+  "file": "batch-v9/final/S12-09_B01f2_厲若楓.mp3",
+  "pitch_shift": 0.0,
+  "take": "S12-10_B01f2_厲若楓_s11.mp3",
+  "asr": "别动",
+  "sim": 1.0,
+  "f0": 184
  },
  {
   "key": "S12-10_B02f1_齊衡烈",
   "spk": "齊衡烈",
   "text": "……這比考核場的木樁大多了。",
-  "file": null
+  "file": "batch-v9/final/S12-10_B02f1_齊衡烈.mp3",
+  "pitch_shift": 0.0,
+  "take": "S12-11_B02f1_齊衡烈_t3.mp3",
+  "asr": "这比考核场的木桩大多了。",
+  "sim": 1.0,
+  "f0": 143
  },
  {
   "key": "S12-11_B02f1_郁岑燁",
   "spk": "郁岑燁",
   "text": "閉嘴。",
-  "file": null
+  "file": "batch-v9/final/S12-11_B02f1_郁岑燁.mp3",
+  "pitch_shift": 0.0,
+  "take": "S12-12_B02f1_郁岑燁_s33.mp3",
+  "asr": "闭嘴。",
+  "sim": 1.0,
+  "f0": 146
  },
  {
   "key": "S12-12_B02f1_机遙心聲",
   "spk": "机遙（心聲）",
   "text": "牠在看陣眼。……現在，牠在看我。",
-  "file": null
+  "file": "batch-v9/final/S12-12_B02f1_机遙心聲.mp3",
+  "pitch_shift": 0.0,
+  "take": "S12-13_B02f1_机遙心聲_s33.mp3",
+  "asr": "他在看朕眼，现在他在看我",
+  "sim": 0.73,
+  "f0": 94
  },
  {
   "key": "S12-13_B02f2_赤瞳妖將",
@@ -129,7 +154,12 @@
   "key": "S12-22_B04f2_厲若楓",
   "spk": "厲若楓",
   "text": "牠抬手之前，左肩會先沉。",
-  "file": null
+  "file": "batch-v9/final/S12-22_B04f2_厲若楓.mp3",
+  "pitch_shift": 0.0,
+  "take": "S12-23_B04f2_厲若楓_s11.mp3",
+  "asr": "他抬手之前，左肩会先沉。",
+  "sim": 0.9,
+  "f0": 184
  },
  {
   "key": "S12-23_B05f1_聞人澈",
@@ -159,19 +189,34 @@
   "key": "S12-27_B05f2_江祈璟",
   "spk": "江祈璟",
   "text": "數到三。跟不上就別跟。",
-  "file": null
+  "file": "batch-v9/final/S12-27_B05f2_江祈璟.mp3",
+  "pitch_shift": 0.0,
+  "take": "S12-28_B05f2_江祈璟_s11.mp3",
+  "asr": "数到三，跟不上就别跟。",
+  "sim": 1.0,
+  "f0": 99
  },
  {
   "key": "S12-28_B05f2_机遙",
   "spk": "机遙",
   "text": "你數慢一點就行。",
-  "file": null
+  "file": "batch-v9/final/S12-28_B05f2_机遙.mp3",
+  "pitch_shift": 0.0,
+  "take": "S12-29_B05f2_机遙_s33.mp3",
+  "asr": "你数慢一点就行。",
+  "sim": 1.0,
+  "f0": 101
  },
  {
   "key": "S12-29_B05f2_江祈璟",
   "spk": "江祈璟",
   "text": "一。",
-  "file": null
+  "file": "batch-v9/final/S12-29_B05f2_江祈璟.mp3",
+  "pitch_shift": 0.0,
+  "take": "S12-30_B05f2_江祈璟_s11.mp3",
+  "asr": "Yi",
+  "sim": 0.0,
+  "f0": 145
  },
  {
   "key": "S12-30_B06f2_机遙",
@@ -225,19 +270,34 @@
   "key": "S12-38_B09f1_郁岑燁",
   "spk": "郁岑燁",
   "text": "那就抖著走回去。",
-  "file": null
+  "file": "batch-v9/final/S12-38_B09f1_郁岑燁.mp3",
+  "pitch_shift": 0.0,
+  "take": "S12-39_B09f1_郁岑燁_s22.mp3",
+  "asr": "那就抖着走回去。",
+  "sim": 0.86,
+  "f0": 91
  },
  {
   "key": "S12-39_B09f1_齊衡烈",
   "spk": "齊衡烈",
   "text": "下次……下次我先砍牠的腳。",
-  "file": null
+  "file": "batch-v9/final/S12-39_B09f1_齊衡烈.mp3",
+  "pitch_shift": 0.0,
+  "take": "S12-40_B09f1_齊衡烈_t4.mp3",
+  "asr": "下次，下次我先砍他的脚。",
+  "sim": 0.9,
+  "f0": 136
  },
  {
   "key": "S12-40_B09f1_聞人澈",
   "spk": "聞人澈",
   "text": "下次你先跑。",
-  "file": null
+  "file": "batch-v9/final/S12-40_B09f1_聞人澈.mp3",
+  "pitch_shift": -1.6,
+  "take": "S12-41_B09f1_聞人澈_s33.mp3",
+  "asr": "下次你先跑。",
+  "sim": 1.0,
+  "f0": 165
  },
  {
   "key": "S12-41_B09f1_江祈璟",
@@ -249,13 +309,23 @@
   "key": "S12-42_B09f1_机遙",
   "spk": "机遙",
   "text": "……你在誇我？",
-  "file": null
+  "file": "batch-v9/final/S12-42_B09f1_机遙.mp3",
+  "pitch_shift": 0.0,
+  "take": "S12-43_B09f1_机遙_s22.mp3",
+  "asr": "你在夸我。",
+  "sim": 1.0,
+  "f0": 150
  },
  {
   "key": "S12-43_B09f1_江祈璟",
   "spk": "江祈璟",
   "text": "沒有。",
-  "file": null
+  "file": "batch-v9/final/S12-43_B09f1_江祈璟.mp3",
+  "pitch_shift": 0.0,
+  "take": "S12-44_B09f1_江祈璟_s11.mp3",
+  "asr": "没有。",
+  "sim": 1.0,
+  "f0": 92
  },
  {
   "key": "S12-44_B09f1_机遙心聲",
