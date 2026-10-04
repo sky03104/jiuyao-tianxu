@@ -3,250 +3,462 @@
   "key": "S02-01_A02f1_机遙心聲",
   "spk": "机遙（心聲）",
   "text": "去年，我也站在這裡。",
-  "file": null
+  "file": "batch-v12/final/S02-01_A02f1_机遙心聲.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-01_A02f1_机遙心聲_t1.mp3",
+  "asr": "去年我也站在这里。",
+  "sim": 1.0,
+  "f0": 124
  },
  {
   "key": "S02-02_A02f2_考官助手閃回",
   "spk": "考官助手（閃回）",
   "text": "……步法不穩。",
-  "file": "batch-v9/final/S02-02_A02f2_考官助手閃回.mp3",
-  "pitch_shift": 0.0,
-  "take": "S02-04_A02f2_考官助手閃回_s11.mp3",
-  "asr": "步伐不穩。",
-  "sim": 0.75,
-  "f0": 85
+  "file": "batch-v9/final/S02-02_A02f2_考官助手閃回.mp3"
  },
  {
   "key": "S02-03_A02f2_机遙心聲",
   "spk": "机遙（心聲）",
   "text": "今年，是第二次。",
-  "file": null
+  "file": "batch-v12/final/S02-03_A02f2_机遙心聲.mp3",
+  "tempo": 1.21,
+  "pitch_shift": 0.0,
+  "take": "S02-03_A02f2_机遙心聲_t1.mp3",
+  "asr": "今年是第二次。",
+  "sim": 1.0,
+  "f0": 119
  },
  {
   "key": "S02-04_A03f2_裴含章",
   "spk": "裴含章",
   "text": "青嵐新契修，机遙。東廊，第七室。",
-  "file": null
+  "file": "batch-v12/final/S02-04_A03f2_裴含章.mp3",
+  "tempo": 1.25,
+  "pitch_shift": 0.0,
+  "take": "S02-04_A03f2_裴含章_t2.mp3",
+  "asr": "新兰新气修基瑶，东郎第七室。",
+  "sim": 0.5,
+  "f0": 237
  },
  {
   "key": "S02-05_A03f2_机遙",
   "spk": "机遙",
   "text": "是。",
-  "file": null
+  "file": "batch-v12/final/S02-05_A03f2_机遙.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-05_A03f2_机遙_t1.mp3",
+  "asr": "是。",
+  "sim": 1.0,
+  "f0": 0
  },
  {
   "key": "S02-06_A03f2_裴含章",
   "spk": "裴含章",
-  "text": "新芽都在東廊。順著左手邊的迴廊走到底就是。",
-  "file": null
+  "text": "補錄的。最後一個。",
+  "file": null,
+  "tempo": null,
+  "pitch_shift": null,
+  "take": null,
+  "asr": null,
+  "sim": null,
+  "f0": null
  },
  {
-  "key": "S02-07_A03f2_机遙",
+  "key": "S02-07_A03f2_裴含章",
+  "spk": "裴含章",
+  "text": "新芽都在東廊。順著左手邊的迴廊走到底就是。",
+  "file": "batch-v12/final/S02-07_A03f2_裴含章.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-06_A03f2_裴含章_t1.mp3",
+  "asr": "新芽都在东廊，顺着左手边的回廊走到底就是。",
+  "sim": 0.95,
+  "f0": 213
+ },
+ {
+  "key": "S02-08_A03f2_机遙",
   "spk": "机遙",
   "text": "新芽？",
-  "file": null
+  "file": "batch-v12/final/S02-08_A03f2_机遙.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-07_A03f2_机遙_t1.mp3",
+  "asr": "新芽",
+  "sim": 1.0,
+  "f0": 195
  },
  {
-  "key": "S02-08_A03f2_裴含章",
+  "key": "S02-09_A03f2_裴含章",
   "spk": "裴含章",
   "text": "剛冒頭，還沒長。去年也有個孩子這樣問我。",
-  "file": null
+  "file": "batch-v12/final/S02-09_A03f2_裴含章.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-08_A03f2_裴含章_t2.mp3",
+  "asr": "刚冒头还没长，去年也有个孩子这样问我。",
+  "sim": 1.0,
+  "f0": 233
  },
  {
-  "key": "S02-09_A03f2_机遙",
+  "key": "S02-10_A03f2_机遙",
   "spk": "机遙",
   "text": "……他後來呢？",
-  "file": null
+  "file": "batch-v12/final/S02-10_A03f2_机遙.mp3",
+  "tempo": 1.2,
+  "pitch_shift": 0.0,
+  "take": "S02-09_A03f2_机遙_t1.mp3",
+  "asr": "他后来呢?",
+  "sim": 1.0,
+  "f0": 131
  },
  {
-  "key": "S02-10_A03f2_裴含章",
+  "key": "S02-11_A03f2_裴含章",
   "spk": "裴含章",
   "text": "今年又來排隊了。",
-  "file": null
+  "file": "batch-v12/final/S02-11_A03f2_裴含章.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-10_A03f2_裴含章_t1.mp3",
+  "asr": "今年又來排隊了。",
+  "sim": 1.0,
+  "f0": 180
  },
  {
-  "key": "S02-11_A04f2_陸鳴鸞",
+  "key": "S02-12_A04f2_陸鳴鸞",
   "spk": "陸鳴鸞",
   "text": "抱歉抱歉！——你第幾室？",
-  "file": null
+  "file": "batch-v12/final/S02-12_A04f2_陸鳴鸞.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-11_A04f2_陸鳴鸞_t1.mp3",
+  "asr": "抱歉抱歉，你第几世?",
+  "sim": 0.88,
+  "f0": 302
  },
  {
-  "key": "S02-12_A04f2_机遙",
+  "key": "S02-13_A04f2_机遙",
   "spk": "机遙",
   "text": "第七。",
-  "file": null
+  "file": "batch-v12/final/S02-13_A04f2_机遙.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-12_A04f2_机遙_t1.mp3",
+  "asr": "第七。",
+  "sim": 1.0,
+  "f0": 196
  },
  {
-  "key": "S02-13_A04f2_陸鳴鸞",
+  "key": "S02-14_A04f2_陸鳴鸞",
   "spk": "陸鳴鸞",
   "text": "第七？我隔壁！那間吵死了，祝你好運！",
-  "file": null
+  "file": "batch-v12/final/S02-14_A04f2_陸鳴鸞.mp3",
+  "tempo": 1.18,
+  "pitch_shift": 0.0,
+  "take": "S02-13_A04f2_陸鳴鸞_t1.mp3",
+  "asr": "第七，我隔壁，那间吵死了，祝你好运。",
+  "sim": 1.0,
+  "f0": 379
  },
  {
-  "key": "S02-14_A04f2_演武場遠",
+  "key": "S02-15_A04f2_演武場遠",
   "spk": "演武場（遠）",
   "text": "出——收——轉——定！",
-  "file": "batch-v9/final/S02-14_A04f2_演武場遠.mp3",
-  "pitch_shift": -3.0,
-  "take": "S02-16_A04f2_演武場遠_s22.mp3",
-  "asr": "出手轉定",
-  "sim": 0.75,
-  "f0": 232
+  "file": "batch-v9/final/S02-14_A04f2_演武場遠.mp3"
  },
  {
-  "key": "S02-15_A05f1_机遙心聲",
+  "key": "S02-16_A05f1_机遙心聲",
   "spk": "机遙（心聲）",
   "text": "想了一整年要說什麼……結果一句都沒準備。",
-  "file": null
+  "file": "batch-v12/final/S02-16_A05f1_机遙心聲.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-15_A05f1_机遙心聲_t1.mp3",
+  "asr": "想了一整年要说什么，结果一句都没准备。",
+  "sim": 1.0,
+  "f0": 110
  },
  {
-  "key": "S02-16_A05f2_齊衡烈",
+  "key": "S02-17_A05f2_齊衡烈",
   "spk": "齊衡烈",
   "text": "你就是新來的？",
-  "file": null
+  "file": "batch-v12/final/S02-17_A05f2_齊衡烈.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-16_A05f2_齊衡烈_t1.mp3",
+  "asr": "你就是新来的。",
+  "sim": 1.0,
+  "f0": 121
  },
  {
-  "key": "S02-17_A05f2_机遙",
+  "key": "S02-18_A05f2_机遙",
   "spk": "机遙",
   "text": "應該是。",
-  "file": null
+  "file": "batch-v12/final/S02-18_A05f2_机遙.mp3",
+  "tempo": 1.15,
+  "pitch_shift": 0.0,
+  "take": "S02-17_A05f2_机遙_t1.mp3",
+  "asr": "应该是。",
+  "sim": 1.0,
+  "f0": 131
  },
  {
-  "key": "S02-18_A06f1_齊衡烈",
+  "key": "S02-19_A06f1_齊衡烈",
   "spk": "齊衡烈",
   "text": "那就對了。第七室最近正缺個能打的。",
-  "file": null
+  "file": "batch-v12/final/S02-19_A06f1_齊衡烈.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-18_A06f1_齊衡烈_t1.mp3",
+  "asr": "那就对了，第七世最近正缺个能打的。",
+  "sim": 0.93,
+  "f0": 213
  },
  {
-  "key": "S02-19_A06f2_郁岑燁",
+  "key": "S02-20_A06f2_郁岑燁",
   "spk": "郁岑燁",
   "text": "你看都沒看他出手，怎麼知道他能打？",
-  "file": null
+  "file": "batch-v12/final/S02-20_A06f2_郁岑燁.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-19_A06f2_郁岑燁_t1.mp3",
+  "asr": "你看都没看他出手，怎么知道他能打?",
+  "sim": 1.0,
+  "f0": 103
  },
  {
-  "key": "S02-20_A07f1_齊衡烈",
+  "key": "S02-21_A07f1_齊衡烈",
   "spk": "齊衡烈",
   "text": "所以才要打一場啊。",
-  "file": null
+  "file": "batch-v12/final/S02-21_A07f1_齊衡烈.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-20_A07f1_齊衡烈_t1.mp3",
+  "asr": "所以才要打一场啊。",
+  "sim": 1.0,
+  "f0": 0
  },
  {
-  "key": "S02-21_A07f2_郁岑燁",
+  "key": "S02-22_A07f2_郁岑燁",
   "spk": "郁岑燁",
   "text": "……無聊。",
-  "file": null
+  "file": "batch-v12/final/S02-22_A07f2_郁岑燁.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-21_A07f2_郁岑燁_t1.mp3",
+  "asr": "無聊",
+  "sim": 1.0,
+  "f0": 85
  },
  {
-  "key": "S02-22_A08f1_厲若楓",
+  "key": "S02-23_A08f1_厲若楓",
   "spk": "厲若楓",
   "text": "別急。他的腳步有點亂。",
-  "file": null
+  "file": "batch-v12/final/S02-23_A08f1_厲若楓.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-22_A08f1_厲若楓_t2.mp3",
+  "asr": "别急，她的脚步有点乱。",
+  "sim": 0.89,
+  "f0": 279
  },
  {
-  "key": "S02-23_A08f2_机遙心聲",
+  "key": "S02-24_A08f2_机遙心聲",
   "spk": "机遙（心聲）",
   "text": "步法不穩……揹了一年山路，還是被看出來了。",
-  "file": null
+  "file": "batch-v12/final/S02-24_A08f2_机遙心聲.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-23_A08f2_机遙心聲_t1.mp3",
+  "asr": "步法不稳，饿了一年山路还是被看出来了。",
+  "sim": 0.94,
+  "f0": 159
  },
  {
-  "key": "S02-24_A08f2_机遙",
+  "key": "S02-25_A08f2_机遙",
   "spk": "机遙",
   "text": "你們都看得出來？",
-  "file": null
+  "file": "batch-v12/final/S02-25_A08f2_机遙.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-24_A08f2_机遙_t1.mp3",
+  "asr": "你们都看得出来。",
+  "sim": 1.0,
+  "f0": 121
  },
  {
-  "key": "S02-25_A09f1_郁岑燁",
+  "key": "S02-26_A09f1_郁岑燁",
   "spk": "郁岑燁",
   "text": "至少我看得出來。",
-  "file": null
+  "file": "batch-v12/final/S02-26_A09f1_郁岑燁.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-25_A09f1_郁岑燁_t1.mp3",
+  "asr": "至少我看得出来。",
+  "sim": 1.0,
+  "f0": 0
  },
  {
-  "key": "S02-26_A09f2_齊衡烈",
+  "key": "S02-27_A09f2_齊衡烈",
   "spk": "齊衡烈",
   "text": "哈哈，那更好！明天演武場見。",
-  "file": null
+  "file": "batch-v12/final/S02-27_A09f2_齊衡烈.mp3",
+  "tempo": 1.16,
+  "pitch_shift": 0.0,
+  "take": "S02-26_A09f2_齊衡烈_t1.mp3",
+  "asr": "那更好，明天演武场见。",
+  "sim": 0.9,
+  "f0": 165
  },
  {
-  "key": "S02-27_A10f1_蕭曜霖畫外",
+  "key": "S02-28_A10f1_蕭曜霖畫外",
   "spk": "蕭曜霖（畫外）",
   "text": "不用等明天。",
   "file": "final/13_A10_蕭曜霖.mp3"
  },
  {
-  "key": "S02-28_A10f2_蕭曜霖",
+  "key": "S02-29_A10f2_蕭曜霖",
   "spk": "蕭曜霖",
   "text": "半刻鐘後，新生演武場集合。",
   "file": "final/14_A10_蕭曜霖.mp3"
  },
  {
-  "key": "S02-29_A11f2_机遙",
+  "key": "S02-30_A11f2_机遙",
   "spk": "机遙",
   "text": "這麼快？",
-  "file": null
+  "file": "batch-v12/final/S02-30_A11f2_机遙.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-29_A11f2_机遙_t1.mp3",
+  "asr": "这么快。",
+  "sim": 1.0,
+  "f0": 0
  },
  {
-  "key": "S02-30_A11f2_齊衡烈",
+  "key": "S02-31_A11f2_齊衡烈",
   "spk": "齊衡烈",
   "text": "習慣就好。",
-  "file": null
+  "file": "batch-v12/final/S02-31_A11f2_齊衡烈.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-30_A11f2_齊衡烈_t1.mp3",
+  "asr": "习惯就好。",
+  "sim": 1.0,
+  "f0": 0
  },
  {
-  "key": "S02-31_A12f2_齊衡烈",
+  "key": "S02-32_A12f2_齊衡烈",
   "spk": "齊衡烈",
   "text": "喂，新來的。我叫齊衡烈。擦劍那個是郁岑燁，窗邊那個是厲若楓。你呢？",
-  "file": null
+  "file": "batch-v12/final/S02-32_A12f2_齊衡烈.mp3",
+  "tempo": 1.21,
+  "pitch_shift": 0.0,
+  "take": "S02-31_A12f2_齊衡烈_t2.mp3",
+  "asr": "喂，新来的，我叫齐恒烈。擦剑那个是郁岑叶，窗边那个是厉若风。你呢?",
+  "sim": 0.89,
+  "f0": 228
  },
  {
-  "key": "S02-32_A12f2_厲若楓",
+  "key": "S02-33_A12f2_厲若楓",
   "spk": "厲若楓",
   "text": "……我自己會說。",
-  "file": null
+  "file": "batch-v12/final/S02-33_A12f2_厲若楓.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-32_A12f2_厲若楓_t1.mp3",
+  "asr": "我自己会说。",
+  "sim": 1.0,
+  "f0": 197
  },
  {
-  "key": "S02-33_A12f2_机遙",
+  "key": "S02-34_A12f2_机遙",
   "spk": "机遙",
   "text": "机遙。",
-  "file": null
+  "file": "batch-v12/final/S02-34_A12f2_机遙.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-33_A12f2_机遙_t1.mp3",
+  "asr": "雞窯。",
+  "sim": 0.0,
+  "f0": 120
  },
  {
-  "key": "S02-34_A12f2_齊衡烈",
+  "key": "S02-35_A12f2_齊衡烈",
   "spk": "齊衡烈",
   "text": "机遙。",
-  "file": null
+  "file": "batch-v12/final/S02-35_A12f2_齊衡烈.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-34_A12f2_齊衡烈_t1.mp3",
+  "asr": "雞油。",
+  "sim": 0.0,
+  "f0": 139
  },
  {
-  "key": "S02-35_A12f2_郁岑燁",
+  "key": "S02-36_A12f2_郁岑燁",
   "spk": "郁岑燁",
   "text": "名字倒是比腳步穩。",
-  "file": null
+  "file": "batch-v12/final/S02-36_A12f2_郁岑燁.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-35_A12f2_郁岑燁_t1.mp3",
+  "asr": "名字倒是比较不稳。",
+  "sim": 0.75,
+  "f0": 94
  },
  {
-  "key": "S02-36_A12f2_齊衡烈",
+  "key": "S02-37_A12f2_齊衡烈",
   "spk": "齊衡烈",
   "text": "行。走了，第一天就遲到，那個人會讓你後悔自己考進來。",
-  "file": null
+  "file": "batch-v12/final/S02-37_A12f2_齊衡烈.mp3",
+  "tempo": 1.0,
+  "pitch_shift": 0.0,
+  "take": "S02-36_A12f2_齊衡烈_t1.mp3",
+  "asr": "行，走了。第一天就迟到，那个人会让你后悔自己考进来。",
+  "sim": 1.0,
+  "f0": 241
  },
  {
-  "key": "S02-37_A12f3_机遙",
+  "key": "S02-38_A12f3_机遙",
   "spk": "机遙",
   "text": "那個人是誰？",
-  "file": null
+  "file": "batch-v12/final/S02-38_A12f3_机遙.mp3",
+  "tempo": 1.1,
+  "pitch_shift": 0.0,
+  "take": "S02-37_A12f3_机遙_t1.mp3",
+  "asr": "那个人是谁?",
+  "sim": 1.0,
+  "f0": 152
  },
  {
-  "key": "S02-38_A12f3_郁岑燁",
+  "key": "S02-39_A12f3_郁岑燁",
   "spk": "郁岑燁",
   "text": "蕭曜霖。戰技堂的教官。",
-  "file": null
+  "file": "batch-v12/final/S02-39_A12f3_郁岑燁.mp3",
+  "tempo": 1.25,
+  "pitch_shift": 0.0,
+  "take": "S02-38_A12f3_郁岑燁_t1.mp3",
+  "asr": "萧耀林，战技堂的教官。",
+  "sim": 0.78,
+  "f0": 86
  },
  {
-  "key": "S02-39_A12f3_厲若楓",
+  "key": "S02-40_A12f3_厲若楓",
   "spk": "厲若楓",
-  "text": "……走了。",
+  "text": "厲若楓。……走了。",
   "file": null
  },
  {
-  "key": "S02-40_A12f4_机遙心聲",
+  "key": "S02-41_A12f4_机遙心聲",
   "spk": "机遙（心聲）",
   "text": "第七室。",
-  "file": null
+  "file": "batch-v12/final/S02-41_A12f4_机遙心聲.mp3",
+  "tempo": 1.25,
+  "pitch_shift": 0.0,
+  "take": "S02-40_A12f4_机遙心聲_t1.mp3",
+  "asr": "第七式。",
+  "sim": 0.67,
+  "f0": 174
  }
 ]

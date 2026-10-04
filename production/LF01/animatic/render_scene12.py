@@ -13,7 +13,7 @@ LF = os.path.dirname(HERE)
 FRAMES = os.path.join(LF, "storyboard", "frames")
 VOICE = os.path.join(LF, "voice", "final")
 MANIFEST = os.path.join(LF, "voice", "scene12_manifest.json")
-OUT = os.path.join(HERE, "LF01_scene12_animatic_v3.mp4")
+OUT = os.path.join(HERE, "LF01_scene12_animatic_v4.mp4")
 TMP = os.path.join(HERE, "cache")
 W, H, FPS = 1920, 1080, 30
 

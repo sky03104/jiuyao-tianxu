@@ -79,6 +79,19 @@ def f0(path):
     return float(np.median(f)) if len(f) else 0.0
 
 
+_REF = {}
+
+
+def ref_f0(who):
+    """照唸參考聲音的中位音高（clone-test/refs/<角色>.mp3；齊衡烈用 EP01 參考）。沒有參考回傳 0。"""
+    if who not in _REF:
+        p = os.path.join(HERE, "clone-test", "refs", f"{who}.mp3")
+        if who == "齊衡烈":
+            p = os.path.join(HERE, "..", "..", "EP01", "shuohao", "voice", "qwen3tts-v1", "ref", "C02_齊衡烈.wav")
+        _REF[who] = f0(p) if os.path.exists(p) else 0.0
+    return _REF[who]
+
+
 def dur(path):
     r = subprocess.run([FF, "-i", path], capture_output=True, text=True).stderr
     h, m, s = r.split("Duration: ")[1].split(",")[0].split(":")
@@ -118,12 +131,12 @@ def pick_one(MAN):
     report = []
     batch = os.path.basename(D) + "/"
     for m in man:
-        if m["file"] and not m["file"].startswith(batch):
-            continue  # 已定稿的舊配音
+        if m["file"] and not m["file"].startswith(batch) and not os.environ.get("REDO"):
+            continue  # 已定稿的舊配音（REDO=1 時，本批次有候選的句子一律改用本批次）
         # 以「角色＋台詞」對上本批次的候選（清單重編號後 key 可能不同；index.json 記錄送 Kaggle 時的 key→簡體台詞）
         idx = json.load(open(os.path.join(D, "index.json"), encoding="utf-8")) if os.path.exists(os.path.join(D, "index.json")) else {}
         spk = m["key"].split("_")[-1]
-        keys = [k for k, t in idx.items() if k.split("_")[-1] == spk and norm(t) == norm(m["text"])] or [m["key"]]
+        keys = [k for k, t in idx.items() if k.split("_")[-1] == spk and norm(t) == norm(m["text"])] if idx else [m["key"]]
         cands = [k for k in a if any(k.startswith(x + "_") for x in keys)]
         if not cands:
             report.append((m["key"], "缺候選", "")); continue
@@ -136,14 +149,17 @@ def pick_one(MAN):
             return (round(sim, 2), 1 if seed and int(seed.group(1)) == pref else 0)
         pitch = {k: f0(os.path.join(RAW, k)) for k in cands}
         fem = m["spk"] in FEMALE
-        male = [k for k in cands if (pitch[k] >= MIN_F0_FEMALE if fem else pitch[k] <= MAX_F0)]
+        rf = ref_f0(m["spk"].replace("（心聲）", ""))
+        hi = rf * 1.3 if rf and not fem else MAX_F0   # 照唸版：以該角色參考聲音的音高為準
+        male = [k for k in cands if (pitch[k] >= MIN_F0_FEMALE if fem else (pitch[k] <= hi or pitch[k] == 0))]
         pool = male or [(max if fem else min)(cands, key=lambda k: pitch[k])]  # 全部不合就取最接近的，並在報告標出
         best = max(sorted(pool), key=score)
         sim = score(best)[0]
         dst = os.path.join(FIN, m["key"] + ".mp3")
         # 仍高於 PITCH_TARGET 的（多為喊叫或新角色），往目標降調，最多 3 個半音
         import math
-        semis = -min(3.0, 12 * math.log2(pitch[best] / PITCH_TARGET)) if pitch[best] > PITCH_TARGET and not fem else 0.0
+        tgt = rf * 1.25 if rf else PITCH_TARGET
+        semis = -min(3.0, 12 * math.log2(pitch[best] / tgt)) if pitch[best] > tgt and not fem else 0.0
         # 語速：字數／秒低於 SLOW 就加快到 TARGET_RATE（最多 1.25 倍）；心聲本來就慢一點，目標低一級（咖哩 2026-10-02：講話偏慢）
         inner = "心聲" in m["spk"]
         nchar = len(norm(m["text"]))
