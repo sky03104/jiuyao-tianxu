@@ -134,15 +134,15 @@ Avoid: male, beard, broad masculine jaw, hood up, one-piece recurve longbow, wes
 
 ## 裴含章　→ 存成 `production/LF01/characters/裴含章-sheet.png`
 
-**上傳：** [蕭曜霖-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/EP01/shuohao/characters/images/%E8%95%AD%E6%9B%9C%E9%9C%96-sheet.png)
+**上傳：** [厲若楓-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/characters/%E5%8E%B2%E8%8B%A5%E6%A5%93-sheet.png)
 
 ```text
 Reference images:
-Image 1: approved character sheet of a DIFFERENT character (蕭曜霖) — use it ONLY as the rendering-style and sheet-layout reference; do not copy the face, hair, costume or weapon
+Image 1: approved character sheet of a DIFFERENT character (厲若楓) — use it ONLY as the rendering-style and sheet-layout reference; do not copy the face, hair, costume or weapon
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed.
 
-Single character model sheet on ONE 16:9 landscape canvas (widescreen, width to height exactly 16:9). The canvas is divided into three zones by thin hairline rules. LEFT ZONE — a vertical column occupying about 34% of the canvas width: one bust portrait, head and shoulders, front-facing, centred; both shoulders fully visible; the portrait ends in a clean straight horizontal cut just below the chest. The bust shows a composed East Asian woman in her mid-thirties with an oval face, calm half-lidded dark eyes with faint tiredness beneath, thin straight brows, a slight dry closed-mouth expression; dark hair in a neat tight bun with a plain bronze hairpin, not a strand out of place; the high collar of a dark navy academy steward's uniform with antique-bronze trim, a writing brush clipped at the cuff. LIGHTING IN THE LEFT ZONE ONLY: soft directional key light from the upper left with gentle falloff and subtle ambient occlusion. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character standing side by side — front view, left side profile, back view — on one shared ground line, identical height and proportions, head to toe with clear margins, neutral relaxed standing posture. The figure is a slim East Asian woman in her mid-thirties, a registrar steward of an ancient-Chinese-inspired mountain academy, standing upright with a ledger of bound paper held against her side; long dark navy steward's uniform robe with antique-bronze trim and a dark sash with the academy badge of antique bronze inset with carved jade, a writing brush clipped at the right cuff, a small ink stone pouch at the hip; dark hair in a neat tight bun with a bronze pin; no weapon. She is a young WOMAN — clearly female face and figure, natural adult proportions, fully clothed, practical cultivator clothing, no revealing outfit. The faces on all three full-body views match the bust portrait exactly. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting, no cast shadows. RIGHT-BOTTOM ZONE: a row of four to five small isolated close-up studies: the bound paper ledger; the writing brush clipped at the cuff; the bronze hairpin in the bun; the academy badge on the sash. Never shrink the full-body figures to make room. Plain pure white background (#FFFFFF) throughout. dark navy, ink black and antique bronze palette, soft indoor light, readable silhouette from every angle.
+Single character model sheet on ONE 16:9 landscape canvas (widescreen, width to height exactly 16:9). The canvas is divided into three zones by thin hairline rules. LEFT ZONE — a vertical column occupying about 34% of the canvas width: one bust portrait, head and shoulders, front-facing, centred; both shoulders fully visible; the portrait ends in a clean straight horizontal cut just below the chest. The bust shows a composed East Asian woman in her mid-thirties with an oval face, calm half-lidded dark eyes with faint tiredness beneath, thin straight brows, a slight dry closed-mouth expression; dark hair in a neat tight bun with a plain bronze hairpin, not a strand out of place; the high collar of a dark navy academy steward's uniform with antique-bronze trim, a writing brush clipped at the cuff. LIGHTING IN THE LEFT ZONE ONLY: soft directional key light from the upper left with gentle falloff and subtle ambient occlusion. RIGHT-TOP ZONE: three FULL-BODY views of the SAME character standing side by side — front view, left side profile, back view — on one shared ground line, identical height and proportions, head to toe with clear margins, neutral relaxed standing posture. The figure is a slim East Asian woman in her mid-thirties, a registrar steward of an ancient-Chinese-inspired mountain academy, standing upright with a ledger of bound paper held against her side; long dark navy steward's uniform robe with antique-bronze trim and a dark sash with the academy badge of antique bronze inset with carved jade, a writing brush clipped at the right cuff, a small ink stone pouch at the hip; dark hair in a neat tight bun with a bronze pin; no weapon. She is a WOMAN in her mid-thirties — clearly female face and figure, natural adult proportions, fully clothed, practical cultivator clothing, no revealing outfit. The faces on all three full-body views match the bust portrait exactly. LIGHTING IN THE RIGHT ZONES: flat even orthographic lighting, no cast shadows. RIGHT-BOTTOM ZONE: a row of four to five small isolated close-up studies: the bound paper ledger; the writing brush clipped at the cuff; the bronze hairpin in the bun; the academy badge on the sash. Never shrink the full-body figures to make room. Plain pure white background (#FFFFFF) throughout. dark navy, ink black and antique bronze palette, soft indoor light, readable silhouette from every angle.
 
 LAYOUT CHECK: exactly THREE full-body figures in the top-right zone — front, left profile, back. Not four, no three-quarter view.
 
@@ -151,11 +151,11 @@ Avoid: male, weapon, sword, armour, glamorous makeup, revealing outfit, young gi
 
 ## 陸鳴鸞　→ 存成 `production/LF01/characters/陸鳴鸞-sheet.png`
 
-**上傳：** [蕭曜霖-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/EP01/shuohao/characters/images/%E8%95%AD%E6%9B%9C%E9%9C%96-sheet.png)
+**上傳：** [厲若楓-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/characters/%E5%8E%B2%E8%8B%A5%E6%A5%93-sheet.png)
 
 ```text
 Reference images:
-Image 1: approved character sheet of a DIFFERENT character (蕭曜霖) — use it ONLY as the rendering-style and sheet-layout reference; do not copy the face, hair, costume or weapon
+Image 1: approved character sheet of a DIFFERENT character (厲若楓) — use it ONLY as the rendering-style and sheet-layout reference; do not copy the face, hair, costume or weapon
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed.
 
@@ -225,7 +225,7 @@ SHOT 9 (grid cell: bottom row, right) — 中景, Push In (opening moment). Char
 
 ## 故事版 S02-2（A05 f2～A09 f2，9 格）　→ 存成 `production/LF01/storyboard/boards/S02-2.png`
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/boards/S02-2-refs.jpg`（**待 厲若楓 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** [參考拼圖 S02-2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/boards/S02-2-refs.jpg)（6 張拼成一張）
 
 ```text
 Reference images:
@@ -251,7 +251,7 @@ SHOT 4 (grid cell: middle row, left) — 中景, Static Shot (opening moment). C
 
 SHOT 5 (grid cell: middle row, middle) — 近景, Static Shot (opening moment). Characters: 郁岑燁. Lighting: morning sunlight through the lattice window. Shot (Chinese): 近景，橫式 16:9。郁岑燁低頭繼續擦劍，眉頭輕皺。
 
-SHOT 6 (grid cell: middle row, right) — 中景, Static Shot (opening moment). Characters: 厲若楓. Lighting: morning sunlight through the lattice window, the window side bright. Shot (Chinese): 中景，橫式 16:9。厲若楓靠在窗邊牆上，背後三段式短弓，琥珀色眼睛往下看著門口的方向（看的是机遙的腳），窗光在他半邊臉上。 厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, three-section folding short bow.
+SHOT 6 (grid cell: middle row, right) — 中景, Static Shot (opening moment). Characters: 厲若楓. Lighting: morning sunlight through the lattice window, the window side bright. Shot (Chinese): 中景，橫式 16:9。厲若楓靠在窗邊牆上，背後三段式短弓，琥珀色眼睛往下看著門口的方向（看的是机遙的腳），窗光在他半邊臉上。 厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, sleeveless left arm with an old shoulder scar, quiver behind the right shoulder, three-section folding short bow (match her approved character sheet; arm guards on both forearms are acceptable).
 
 SHOT 7 (grid cell: bottom row, left) — 近景, Static Shot (opening moment). Characters: 机遙. Lighting: morning sunlight through the lattice window, the window side bright. Shot (Chinese): 近景，橫式 16:9。机遙站在門檻前愣了一下，視線從窗邊移向矮桌，表情是真心的疑問。
 
@@ -262,7 +262,7 @@ SHOT 9 (grid cell: bottom row, right) — 中景, Static Shot (opening moment). 
 
 ## 故事版 S02-3（A10 f1～A12 f4，8 格）　→ 存成 `production/LF01/storyboard/boards/S02-3.png`
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/boards/S02-3-refs.jpg`（**待 厲若楓 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** [參考拼圖 S02-3-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/boards/S02-3-refs.jpg)（7 張拼成一張）
 
 ```text
 Reference images:
@@ -279,7 +279,7 @@ Rendering style: match the attached reference images exactly — polished Chines
 
 STORYBOARD SHEET for one continuous sequence. ONE 16:9 landscape canvas divided into an exact grid of 3 columns x 3 rows of equal 16:9 panels, separated by thin pure-white gutters, no outer border. Read left to right, top to bottom; SHOT 1 fills the first cell. 8 cells are used; the remaining 1 grid cell(s) at the end stay plain white. Each panel is a finished colour frame in the same rendering style as the reference sheets (simpler detail is fine, but NOT a pencil sketch). The same character must look identical in every panel — face, hair, costume, weapon — and match the character sheets; the location stays consistent across panels. Vary the shot sizes exactly as listed. No text, no panel numbers, no captions, no speech bubbles, no arrows.
 
-SHOT 1 (grid cell: top row, left) — 全景, Static Shot (opening moment). Characters: 机遙、齊衡烈、郁岑燁、厲若楓. Lighting: looking down the corridor toward its far end with the morning sun directly behind the far opening, strong soft backlight and glowing haze. Shot (Chinese): 全景，橫式 16:9，鏡頭在東廊上看進第七室敞開的門口。屋內齊衡烈、郁岑燁、厲若楓同時轉頭望向走廊（朝鏡頭方向），站在門檻上的机遙跟著回頭；四人都在門框之內。 厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, three-section folding short bow.
+SHOT 1 (grid cell: top row, left) — 全景, Static Shot (opening moment). Characters: 机遙、齊衡烈、郁岑燁、厲若楓. Lighting: looking down the corridor toward its far end with the morning sun directly behind the far opening, strong soft backlight and glowing haze. Shot (Chinese): 全景，橫式 16:9，鏡頭在東廊上看進第七室敞開的門口。屋內齊衡烈、郁岑燁、厲若楓同時轉頭望向走廊（朝鏡頭方向），站在門檻上的机遙跟著回頭；四人都在門框之內。 厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, sleeveless left arm with an old shoulder scar, quiver behind the right shoulder, three-section folding short bow (match her approved character sheet; arm guards on both forearms are acceptable).
 
 SHOT 2 (grid cell: top row, middle) — 全景, Push In (opening moment). Characters: 蕭曜霖. Lighting: looking down the corridor toward its far end with the morning sun directly behind the far opening, strong soft backlight and glowing haze. Shot (Chinese): 全景逆光，橫式 16:9。東廊盡頭晨光最亮處，蕭曜霖站著不動，厚重護肩邊緣有補過的痕跡，背後門板重劍的劍柄高出肩頭；身影在光霧中近乎剪影。
 
@@ -287,11 +287,11 @@ SHOT 3 (grid cell: top row, right) — 全景, Static Shot (opening moment). Cha
 
 SHOT 4 (grid cell: middle row, left) — 中景, Static Shot (opening moment). Characters: 机遙、齊衡烈. Lighting: strong morning backlight at the far end of the corridor. Shot (Chinese): 雙人中景，橫式 16:9。第七室門口，机遙看著走廊盡頭；齊衡烈握緊肩上的刀柄，眼睛發亮地笑。
 
-SHOT 5 (grid cell: middle row, middle) — 中景, Static Shot (opening moment). Characters: 机遙. Lighting: morning sunlight through the lattice window. Shot (Chinese): 中景，橫式 16:9。第七室正廳旁一間小房的門開著，机遙把捲布行囊放在房裡靠窗、疊得方正的床上，窗外看得到更高一層院子的演武場一角。
+SHOT 5 (grid cell: middle row, middle) — 中景, Static Shot (opening moment). Characters: 机遙. Lighting: morning sunlight through the lattice window. Shot (Chinese): 中景，橫式 16:9。第七室修習室裡，机遙把捲布行囊放在角落的兵器架旁；窗外看得到更高一層院子的演武場一角。 LAYOUT: 机遙在畫面右側蹲下、把行囊靠在兵器架旁；畫面左側是方格窗與窗外的演武場；矮桌在前景。只有机遙一人，沒有床。
 
 SHOT 6 (grid cell: middle row, right) — 中景, Static Shot (opening moment). Characters: 机遙、齊衡烈. Lighting: morning sunlight through the lattice window. Shot (Chinese): 雙人中景，橫式 16:9。齊衡烈已經走到門口，扛著刀回頭用拇指往身後一比；机遙在窗邊床前轉過身。
 
-SHOT 7 (grid cell: bottom row, left) — 中景, Static Shot (opening moment). Characters: 机遙、郁岑燁、厲若楓. Lighting: morning sunlight through the lattice window. Shot (Chinese): 中景，橫式 16:9。第七室門口，郁岑燁長劍掛在腰間、從机遙身邊走過沒有停步；厲若楓跟在後面，經過机遙時停了很短的一下、側頭看他；机遙站在門內，看著兩人。 LAYOUT: 机遙在畫面左側門內、面向右；郁岑燁在中間正走出門口、朝右前方、劍在腰側；厲若楓在右後方、半步停住、側臉看向机遙。共三人，齊衡烈已在畫面外。 厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, three-section folding short bow.
+SHOT 7 (grid cell: bottom row, left) — 中景, Static Shot (opening moment). Characters: 机遙、郁岑燁、厲若楓. Lighting: morning sunlight through the lattice window. Shot (Chinese): 中景，橫式 16:9。第七室門口，郁岑燁長劍掛在腰間、從机遙身邊走過沒有停步；厲若楓跟在後面，經過机遙時停了很短的一下、側頭看他；机遙站在門內，看著兩人。 LAYOUT: 机遙在畫面左側門內、面向右；郁岑燁在中間正走出門口、朝右前方、劍在腰側；厲若楓在右後方、半步停住、側臉看向机遙。共三人，齊衡烈已在畫面外。 厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, sleeveless left arm with an old shoulder scar, quiver behind the right shoulder, three-section folding short bow (match her approved character sheet; arm guards on both forearms are acceptable).
 
 SHOT 8 (grid cell: bottom row, middle) — 近景, Push In (opening moment). Characters: 机遙. Lighting: morning sunlight through the lattice window. Shot (Chinese): 近景，橫式 16:9。机遙站在第七室門口回頭看屋內：晨光從窗格照在靠窗床上剛放下的捲布行囊（包袱沾著泥）；門楣旁的小木牌（無字）刻痕被摸圓了，在前景一側。 LAYOUT: 前景右側是門框與直立小木牌（無字）；机遙在畫面左三分之一、側身回頭望向屋內；背景是窗格光與床上的行囊。只有机遙一人。
 ```
@@ -302,7 +302,7 @@ SHOT 8 (grid cell: bottom row, middle) — 近景, Push In (opening moment). Cha
 
 ### A01 f1　→ 存成 `production/LF01/storyboard/frames/A01/f1.png`
 
-8 秒｜大遠景｜Push In｜台詞：旁白：「九曜界，天玄院。」；旁白：「每一年，都有人從這道山門走上去；也有人，走到一半就回頭。」
+8 秒｜大遠景｜Push In｜台詞：（無台詞）
 
 **上傳：** [天玄院外景-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/EP01/shuohao/art/images/%E5%A4%A9%E7%8E%84%E9%99%A2%E5%A4%96%E6%99%AF-sheet.png)
 
@@ -432,7 +432,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 ### A03 f2　→ 存成 `production/LF01/storyboard/frames/A03/f2.png`
 
-8 秒｜中景｜Static Shot｜台詞：裴含章：「青嵐新契修，机遙。東廊，第七室。」；机遙：「是。」；裴含章：「新芽都在東廊。順著左手邊的迴廊走到底就是。」；机遙：「新芽？」；裴含章：「剛冒頭，還沒長。去年也有個孩子這樣問我。」；机遙：「……他後來呢？」；裴含章：「今年又來排隊了。」
+8 秒｜中景｜Static Shot｜台詞：裴含章：「青嵐新契修，机遙。東廊，第七室。」；机遙：「是。」；裴含章：「補錄的。最後一個。」；裴含章：「新芽都在東廊。順著左手邊的迴廊走到底就是。」；机遙：「新芽？」；裴含章：「剛冒頭，還沒長。去年也有個孩子這樣問我。」；机遙：「……他後來呢？」；裴含章：「今年又來排隊了。」
 
 **上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/A03/f2-refs.jpg)（2 張拼成一張）、本段已完成的 **f1.png**
 
@@ -680,7 +680,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜中景｜Static Shot｜台詞：厲若楓：「別急。他的腳步有點亂。」
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/A08/f1-refs.jpg`（**待 厲若楓 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/A08/f1-refs.jpg)（2 張拼成一張）
 
 ```text
 Reference images:
@@ -696,7 +696,7 @@ Blocking (Chinese): 厲若楓看机遙的腳；机遙愣住
 
 Shot (Chinese): 中景，橫式 16:9。厲若楓靠在窗邊牆上，背後三段式短弓，琥珀色眼睛往下看著門口的方向（看的是机遙的腳），窗光在他半邊臉上。
 
-厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, three-section folding short bow.
+厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, sleeveless left arm with an old shoulder scar, quiver behind the right shoulder, three-section folding short bow (match her approved character sheet; arm guards on both forearms are acceptable).
 
 Shot size: 中景; camera move: Static Shot (draw the opening moment of the shot).
 
@@ -788,7 +788,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 6 秒｜全景｜Static Shot｜台詞：蕭曜霖（畫外）：「不用等明天。」
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/A10/f1-refs.jpg`（**待 厲若楓 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/A10/f1-refs.jpg)（5 張拼成一張）
 
 ```text
 Reference images:
@@ -807,7 +807,7 @@ Blocking (Chinese): 三人轉頭；走廊盡頭逆光中的蕭曜霖
 
 Shot (Chinese): 全景，橫式 16:9，鏡頭在東廊上看進第七室敞開的門口。屋內齊衡烈、郁岑燁、厲若楓同時轉頭望向走廊（朝鏡頭方向），站在門檻上的机遙跟著回頭；四人都在門框之內。
 
-厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, three-section folding short bow.
+厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, sleeveless left arm with an old shoulder scar, quiver behind the right shoulder, three-section folding short bow (match her approved character sheet; arm guards on both forearms are acceptable).
 
 Shot size: 全景; camera move: Static Shot (draw the opening moment of the shot).
 
@@ -914,7 +914,9 @@ Lighting: morning sunlight through the lattice window
 
 Blocking (Chinese): 机遙放下行囊；齊衡烈自我介紹
 
-Shot (Chinese): 中景，橫式 16:9。第七室正廳旁一間小房的門開著，机遙把捲布行囊放在房裡靠窗、疊得方正的床上，窗外看得到更高一層院子的演武場一角。
+Shot (Chinese): 中景，橫式 16:9。第七室修習室裡，机遙把捲布行囊放在角落的兵器架旁；窗外看得到更高一層院子的演武場一角。
+
+LAYOUT (must follow): 机遙在畫面右側蹲下、把行囊靠在兵器架旁；畫面左側是方格窗與窗外的演武場；矮桌在前景。只有机遙一人，沒有床。
 
 Shot size: 中景; camera move: Static Shot (draw the opening moment of the shot).
 
@@ -950,9 +952,9 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 ### A12 f3　→ 存成 `production/LF01/storyboard/frames/A12/f3.png`
 
-7 秒｜中景｜Static Shot｜台詞：机遙：「那個人是誰？」；郁岑燁：「蕭曜霖。戰技堂的教官。」；厲若楓：「……走了。」
+7 秒｜中景｜Static Shot｜台詞：机遙：「那個人是誰？」；郁岑燁：「蕭曜霖。戰技堂的教官。」；厲若楓：「厲若楓。……走了。」
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/A12/f3-refs.jpg`（**待 厲若楓 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
+**上傳：** [參考拼圖 f3-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/A12/f3-refs.jpg)（4 張拼成一張）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -973,7 +975,7 @@ Shot (Chinese): 中景，橫式 16:9。第七室門口，郁岑燁長劍掛在�
 
 LAYOUT (must follow): 机遙在畫面左側門內、面向右；郁岑燁在中間正走出門口、朝右前方、劍在腰側；厲若楓在右後方、半步停住、側臉看向机遙。共三人，齊衡烈已在畫面外。
 
-厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, three-section folding short bow.
+厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, sleeveless left arm with an old shoulder scar, quiver behind the right shoulder, three-section folding short bow (match her approved character sheet; arm guards on both forearms are acceptable).
 
 Shot size: 中景; camera move: Static Shot (draw the opening moment of the shot).
 
@@ -1014,7 +1016,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 ### B01 f1　→ 存成 `production/LF01/storyboard/frames/B01/f1.png`
 
-7 秒｜大遠景｜Static Shot｜台詞：齊衡烈：「地在震……」；旁白：「那一日，古林裡所有活著的東西，都在往外走。」；机遙（心聲）：「牠們連看都沒看我們一眼。」；聞人澈：「別擋路，讓牠們過去。」
+7 秒｜大遠景｜Static Shot｜台詞：齊衡烈：「地在震……」；机遙（心聲）：「牠們連看都沒看我們一眼。」；聞人澈：「別擋路，讓牠們過去。」
 
 **上傳：** [陣眼遺跡-sheet.png](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/art/%E9%99%A3%E7%9C%BC%E9%81%BA%E8%B7%A1-sheet.png)
 
@@ -1126,7 +1128,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜大遠景｜Static Shot｜台詞：聞人澈：「陣點失控了——全部退開！」；齊衡烈：「別過來——管牠多高，先吃我一刀！」
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B03/f1-refs.jpg`（**待 厲若楓 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/B03/f1-refs.jpg)（8 張拼成一張）
 
 ```text
 Reference images:
@@ -1148,7 +1150,7 @@ Blocking (Chinese): 三陣點失控；妖將抬手推飛齊衡烈
 
 Shot (Chinese): 大遠景，橫式 16:9，高位俯視。圓形石庭三個石柱同時噴出暗紅光柱直衝樹冠，中央晶體發紅光；六名年輕修行者分散在石庭四周，赤瞳妖將站在石庭另一端。
 
-厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, three-section folding short bow.
+厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, sleeveless left arm with an old shoulder scar, quiver behind the right shoulder, three-section folding short bow (match her approved character sheet; arm guards on both forearms are acceptable).
 
 赤瞳妖將 MUST look like this: towering, clearly more than twice the height of the young cultivators; whole torso, arms and legs covered in layered crimson-black scale plates like lacquered armour with faint dull-crimson seams — NO bare chest, NO visible abdominal muscles, lean not muscular; torn faded deep-blue ceremonial sash at the waist; long ink-grey hair; dark ash-grey face, dark sclera with deep crimson eyes, short swept-back horn ridges, no pointed ears; long black claws; no weapon; calm and silent, never roaring. Only crimson light and red mist around him — no purple, no smoke of any other colour.
 
@@ -1222,7 +1224,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 8 秒｜中景｜Static Shot｜台詞：厲若楓：「牠抬手之前，左肩會先沉。」
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B04/f2-refs.jpg`（**待 厲若楓 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
+**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/B04/f2-refs.jpg)（3 張拼成一張）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
@@ -1242,7 +1244,7 @@ Shot (Chinese): 中景，橫式 16:9。厲若楓站在樹根上拉開三段式�
 
 LAYOUT (must follow): two figures only. 厲若楓 on the left standing on a huge tree root, amber eyes, drawing his three-section folding short bow, a volley of arrows in flight toward the right. 赤瞳妖將 on the right, towering, arrows striking his crimson-black scale plates and bouncing off in bursts of sparks; he does not even turn.
 
-厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, three-section folding short bow.
+厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, sleeveless left arm with an old shoulder scar, quiver behind the right shoulder, three-section folding short bow (match her approved character sheet; arm guards on both forearms are acceptable).
 
 赤瞳妖將 MUST look like this: towering, clearly more than twice the height of the young cultivators; whole torso, arms and legs covered in layered crimson-black scale plates like lacquered armour with faint dull-crimson seams — NO bare chest, NO visible abdominal muscles, lean not muscular; torn faded deep-blue ceremonial sash at the waist; long ink-grey hair; dark ash-grey face, dark sclera with deep crimson eyes, short swept-back horn ridges, no pointed ears; long black claws; no weapon; calm and silent, never roaring. Only crimson light and red mist around him — no purple, no smoke of any other colour.
 
@@ -1490,7 +1492,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 10 秒｜全景｜Static Shot｜台詞：齊衡烈：「……停不下來。」；郁岑燁：「那就抖著走回去。」；齊衡烈：「下次……下次我先砍牠的腳。」；聞人澈：「下次你先跑。」；江祈璟：「剛才那一刀，還行。」；机遙：「……你在誇我？」；江祈璟：「沒有。」；机遙（心聲）：「牠說「你們也」。……所以在我們之前，也有人聽見過。」
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/B09/f1-refs.jpg`（**待 厲若楓 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/B09/f1-refs.jpg)（7 張拼成一張）
 
 ```text
 Reference images:
@@ -1513,7 +1515,7 @@ Shot (Chinese): 全景，橫式 16:9。石庭恢復灰暗安靜，六名年輕�
 
 LAYOUT (must follow): exactly six young cultivators standing still in the grey quiet stone courtyard, spread out, no one speaking: 机遙 (messy dark hair, plain grey short jacket, clean face), 齊衡烈 (bright red hair, the hand holding his heavy saber trembling), 郁岑燁 (black-teal hair, deep navy robe, straight sword), 厲若楓 (bow in hand, quiver on his back), 江祈璟 (high ponytail, deep navy robe, spear), 聞人澈 (grey-blue hooded robe, leaning on his short staff, catching his breath). Exactly THREE dark stone pillars in a triangle and ONE central round pedestal with the dark crystal — no light beams anywhere. Cold grey-green mist.
 
-厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, three-section folding short bow.
+厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, sleeveless left arm with an old shoulder scar, quiver behind the right shoulder, three-section folding short bow (match her approved character sheet; arm guards on both forearms are acceptable).
 
 Shot size: 全景; camera move: Static Shot (draw the opening moment of the shot).
 

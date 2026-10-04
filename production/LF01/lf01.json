@@ -101,10 +101,10 @@
    "id": "C10",
    "name": "裴含章",
    "styleRefs": [
-    "C05"
+    "C04"
    ],
    "bust": "a composed East Asian woman in her mid-thirties with an oval face, calm half-lidded dark eyes with faint tiredness beneath, thin straight brows, a slight dry closed-mouth expression; dark hair in a neat tight bun with a plain bronze hairpin, not a strand out of place; the high collar of a dark navy academy steward's uniform with antique-bronze trim, a writing brush clipped at the cuff",
-   "figure": "a slim East Asian woman in her mid-thirties, a registrar steward of an ancient-Chinese-inspired mountain academy, standing upright with a ledger of bound paper held against her side; long dark navy steward's uniform robe with antique-bronze trim and a dark sash with the academy badge of antique bronze inset with carved jade, a writing brush clipped at the right cuff, a small ink stone pouch at the hip; dark hair in a neat tight bun with a bronze pin; no weapon. She is a young WOMAN — clearly female face and figure, natural adult proportions, fully clothed, practical cultivator clothing, no revealing outfit",
+   "figure": "a slim East Asian woman in her mid-thirties, a registrar steward of an ancient-Chinese-inspired mountain academy, standing upright with a ledger of bound paper held against her side; long dark navy steward's uniform robe with antique-bronze trim and a dark sash with the academy badge of antique bronze inset with carved jade, a writing brush clipped at the right cuff, a small ink stone pouch at the hip; dark hair in a neat tight bun with a bronze pin; no weapon. She is a WOMAN in her mid-thirties — clearly female face and figure, natural adult proportions, fully clothed, practical cultivator clothing, no revealing outfit",
    "details": [
     "the bound paper ledger",
     "the writing brush clipped at the cuff",
@@ -119,7 +119,7 @@
    "id": "C11",
    "name": "陸鳴鸞",
    "styleRefs": [
-    "C05"
+    "C04"
    ],
    "bust": "a lively young East Asian woman around nineteen with a round-ish face, bright wide dark eyes full of mischief, strong expressive brows, a big open grin showing ONE small snaggle tooth; dark hair in a HIGH ponytail tied with a RED cord; the collar of a crimson-and-dark-brown short martial jacket with sleeves rolled to the elbow",
    "figure": "an energetic young East Asian woman around nineteen, a saber cultivator of an ancient-Chinese-inspired mountain academy, standing with hands on hips and weight forward, full of energy; crimson-and-dark-brown short martial jacket with the sleeves rolled up to the elbows, a wide dark sash with the academy badge of antique bronze inset with carved jade, ONE single-edged saber with a slightly curved goose-feather blade (yanling dao) in a dark scabbard at the LEFT hip, dark trousers bound at the shins, cloth boots; high ponytail tied with a red cord. She is a young WOMAN — clearly female face and figure, natural adult proportions, fully clothed, practical cultivator clothing, no revealing outfit",
@@ -1227,7 +1227,7 @@
  ],
  "mustLook": {
   "C08": "towering, clearly more than twice the height of the young cultivators; whole torso, arms and legs covered in layered crimson-black scale plates like lacquered armour with faint dull-crimson seams — NO bare chest, NO visible abdominal muscles, lean not muscular; torn faded deep-blue ceremonial sash at the waist; long ink-grey hair; dark ash-grey face, dark sclera with deep crimson eyes, short swept-back horn ridges, no pointed ears; long black claws; no weapon; calm and silent, never roaring. Only crimson light and red mist around him — no purple, no smoke of any other colour.",
-  "C04": "厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, three-section folding short bow."
+  "C04": "厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, sleeveless left arm with an old shoulder scar, quiver behind the right shoulder, three-section folding short bow (match her approved character sheet; arm guards on both forearms are acceptable)."
  },
  "storyboardBoards": [
   {

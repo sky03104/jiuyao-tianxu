@@ -124,7 +124,7 @@ def sheet_jobs():
     jobs = []
     for c in data["newCharacters"]:
         refs = [char_sheet(r) for r in c["styleRefs"]]
-        descs = [f"approved character sheet of a DIFFERENT character ({reuse['characters'][r]}) — use it ONLY as the "
+        descs = [f"approved character sheet of a DIFFERENT character ({char_name(r)}) — use it ONLY as the "
                  "rendering-style and sheet-layout reference; do not copy the face, hair, costume or weapon"
                  for r in c["styleRefs"]]
         body = (f"{g.STYLE_RENDER}\n\n{char_sheet_text(c)}\n\n{g.SHEET_RULE}\n\n"
