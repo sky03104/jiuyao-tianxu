@@ -1,0 +1,844 @@
+{
+ "_note": "第 12 場鏡頭表 v2（2026-10-04）：先分鏡、後配音。每句台詞決定畫面（說話者或反應）、情緒、音量、速度、前停頓 pre（秒）、與上一句重疊 ovl（秒）。crop=[x,y,w]（皆為畫面寬高比例，16:9 裁切，高=寬）；new＝需新出圖；reuse＝沿用前面新圖。",
+ "emoRef": {
+  "平常": [
+   "冷靜",
+   "冷",
+   "疑惑",
+   "愣",
+   "沉思",
+   "半笑",
+   "輕笑",
+   "笑",
+   "乾笑"
+  ],
+  "低聲緊張": [
+   "緊張",
+   "警覺",
+   "驚",
+   "急",
+   "痛",
+   "喘",
+   "低沉",
+   "咬牙"
+  ],
+  "喊叫": [
+   "喊",
+   "怒"
+  ]
+ },
+ "shots": [
+  {
+   "id": "S01",
+   "src": "storyboard/frames/B01/f1.png",
+   "size": "大遠景",
+   "cam": "Push In",
+   "sfx": "地鳴、樹梢搖、獸群奔跑由遠而近",
+   "lines": [
+    {
+     "spk": "齊衡烈",
+     "text": "地在震……",
+     "emo": "緊張",
+     "vol": "低",
+     "pace": "慢",
+     "pre": 1.5,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S02",
+   "src": "storyboard/frames/B01/f1.png",
+   "crop": [
+    0.58,
+    0.35,
+    0.4
+   ],
+   "size": "中景",
+   "cam": "Static",
+   "sfx": "獸群蹄聲",
+   "lines": [
+    {
+     "spk": "机遙（心聲）",
+     "text": "牠們連看都沒看我們一眼。",
+     "emo": "驚",
+     "vol": "低",
+     "pace": "中",
+     "pre": 0.35,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S03",
+   "src": "storyboard/frames/B01/f2.png",
+   "size": "全景",
+   "cam": "Tracking",
+   "sfx": "獸群掠過",
+   "lines": [
+    {
+     "spk": "聞人澈",
+     "text": "別擋路，讓牠們過去。",
+     "emo": "急",
+     "vol": "中",
+     "pace": "快",
+     "pre": 0.2,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S04",
+   "src": "storyboard/frames/B01/f2.png",
+   "crop": [
+    0.52,
+    0.44,
+    0.32
+   ],
+   "size": "中景",
+   "cam": "Push In",
+   "lines": [
+    {
+     "spk": "齊衡烈",
+     "text": "它們在逃？",
+     "emo": "疑惑",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.35,
+     "ovl": 0.0
+    },
+    {
+     "spk": "江祈璟",
+     "text": "不是逃。是在讓路。",
+     "emo": "冷靜",
+     "vol": "低",
+     "pace": "慢",
+     "pre": 0.6,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S05",
+   "new": "郁岑燁近景：紅霧中側臉，劍半出鞘，眉頭鎖緊看向霧的深處",
+   "size": "近景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "郁岑燁",
+     "text": "讓給誰？",
+     "emo": "緊張",
+     "vol": "低",
+     "pace": "快",
+     "pre": 0.35,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S06",
+   "new": "江祈璟近景：盯著霧的深處，下顎繃緊，長槍尖微微抬起",
+   "size": "近景",
+   "cam": "Push In",
+   "lines": [
+    {
+     "spk": "江祈璟",
+     "text": "讓給比牠們更可怕的東西。",
+     "emo": "冷靜",
+     "vol": "低",
+     "pace": "慢",
+     "pre": 0.5,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S07",
+   "new": "厲若楓近景（女）：弓已拉開一半，琥珀色眼睛一眨不眨看向霧",
+   "size": "近景",
+   "cam": "Static",
+   "sfx": "弓弦繃緊",
+   "lines": [
+    {
+     "spk": "厲若楓",
+     "text": "……來了。",
+     "emo": "警覺",
+     "vol": "低",
+     "pace": "慢",
+     "pre": 0.8,
+     "ovl": 0.0
+    },
+    {
+     "spk": "厲若楓",
+     "text": "別動。",
+     "emo": "警覺",
+     "vol": "低",
+     "pace": "快",
+     "pre": 0.5,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S08",
+   "src": "storyboard/frames/B02/f1.png",
+   "size": "全景",
+   "cam": "Push In",
+   "sec": 3.0,
+   "sfx": "沉重腳步、低頻嗡鳴；配樂壓低",
+   "lines": []
+  },
+  {
+   "id": "S09",
+   "new": "齊衡烈近景：握刀的手在抖，他低頭看了一眼，用另一隻手按住，乾笑",
+   "size": "近景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "齊衡烈",
+     "text": "……這比考核場的木樁大多了。",
+     "emo": "乾笑",
+     "vol": "低",
+     "pace": "中",
+     "pre": 0.3,
+     "ovl": 0.0
+    },
+    {
+     "spk": "郁岑燁",
+     "text": "閉嘴。",
+     "emo": "冷",
+     "vol": "低",
+     "pace": "快",
+     "pre": 0.1,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S10",
+   "src": "storyboard/frames/B02/f1.png",
+   "crop": [
+    0.35,
+    0.23,
+    0.3
+   ],
+   "size": "中景",
+   "cam": "Push In",
+   "lines": [
+    {
+     "spk": "机遙（心聲）",
+     "text": "牠在看陣眼。……現在，牠在看我。",
+     "emo": "驚",
+     "vol": "低",
+     "pace": "慢",
+     "pre": 0.6,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S11",
+   "src": "storyboard/frames/B02/f2.png",
+   "size": "特寫",
+   "cam": "Push In",
+   "sfx": "所有環境音抽掉",
+   "lines": [
+    {
+     "spk": "赤瞳妖將",
+     "text": "……人族。你們也開始聽見了嗎？",
+     "emo": "低沉",
+     "vol": "低",
+     "pace": "慢",
+     "pre": 1.0,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S12",
+   "new": "机遙近景：驚疑，額角有汗，看向妖將（畫面右）",
+   "size": "近景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "机遙（心聲）",
+     "text": "聽見？剛才在陣眼……我看見的，是天空裂開。",
+     "emo": "驚",
+     "vol": "低",
+     "pace": "中",
+     "pre": 0.6,
+     "ovl": 0.0
+    },
+    {
+     "spk": "机遙",
+     "text": "你在說什麼？",
+     "emo": "驚",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.4,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S13",
+   "reuse": "S06",
+   "size": "近景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "江祈璟",
+     "text": "別跟牠說話。",
+     "emo": "急",
+     "vol": "低",
+     "pace": "快",
+     "pre": 0.1,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S14",
+   "src": "storyboard/frames/B03/f1.png",
+   "size": "大遠景",
+   "cam": "Static",
+   "sfx": "三道光柱爆發、轟鳴；配樂起戰鬥",
+   "lines": [
+    {
+     "spk": "聞人澈",
+     "text": "陣點失控了——全部退開！",
+     "emo": "急",
+     "vol": "吼",
+     "pace": "快",
+     "pre": 0.8,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S15",
+   "src": "storyboard/frames/B03/f2.png",
+   "crop": [
+    0.05,
+    0.32,
+    0.45
+   ],
+   "size": "中景",
+   "cam": "Push In",
+   "lines": [
+    {
+     "spk": "齊衡烈",
+     "text": "別過來——管牠多高，先吃我一刀！",
+     "emo": "怒",
+     "vol": "吼",
+     "pace": "快",
+     "pre": 0.2,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S16",
+   "src": "storyboard/frames/B03/f2.png",
+   "size": "中景",
+   "cam": "Static",
+   "sfx": "無形衝擊、石板翻起",
+   "lines": [
+    {
+     "spk": "机遙",
+     "text": "齊衡烈！",
+     "emo": "驚",
+     "vol": "吼",
+     "pace": "快",
+     "pre": 0.3,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S17",
+   "src": "storyboard/frames/B03/f2.png",
+   "crop": [
+    0.1,
+    0.4,
+    0.3
+   ],
+   "size": "近景",
+   "cam": "Static",
+   "sfx": "咳嗽",
+   "lines": [
+    {
+     "spk": "齊衡烈",
+     "text": "……什麼鬼力氣。",
+     "emo": "痛",
+     "vol": "低",
+     "pace": "中",
+     "pre": 0.5,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S18",
+   "src": "storyboard/frames/B04/f1.png",
+   "size": "中景",
+   "cam": "Static",
+   "sfx": "急煞、沙土",
+   "lines": [
+    {
+     "spk": "郁岑燁",
+     "text": "牠在等我出手。",
+     "emo": "咬牙",
+     "vol": "中",
+     "pace": "快",
+     "pre": 0.35,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S19",
+   "src": "storyboard/frames/B04/f2.png",
+   "size": "中景",
+   "cam": "Static",
+   "sec": 2.0,
+   "sfx": "三箭連發、彈開的金屬聲",
+   "lines": [],
+   "note": "畫面厲若楓為舊男版，待重出"
+  },
+  {
+   "id": "S20",
+   "reuse": "S07",
+   "size": "近景",
+   "cam": "Push In",
+   "lines": [
+    {
+     "spk": "厲若楓",
+     "text": "牠抬手之前，左肩會先沉。",
+     "emo": "冷靜",
+     "vol": "低",
+     "pace": "快",
+     "pre": 0.3,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S21",
+   "src": "storyboard/frames/B05/f1.png",
+   "size": "中景",
+   "cam": "Static",
+   "sfx": "法陣嗡鳴、衝擊",
+   "lines": [
+    {
+     "spk": "聞人澈",
+     "text": "撐不了多久……誰去把陣點斷掉！",
+     "emo": "痛",
+     "vol": "吼",
+     "pace": "快",
+     "pre": 0.35,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S22",
+   "src": "storyboard/frames/B05/f2.png",
+   "size": "中景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "江祈璟",
+     "text": "我左邊，你右邊。",
+     "emo": "冷",
+     "vol": "中",
+     "pace": "快",
+     "pre": 0.2,
+     "ovl": 0.0
+    },
+    {
+     "spk": "机遙",
+     "text": "你不是一直不服我？",
+     "emo": "半笑",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.3,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S23",
+   "src": "storyboard/frames/B05/f2.png",
+   "crop": [
+    0.27,
+    0.15,
+    0.3
+   ],
+   "size": "近景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "江祈璟",
+     "text": "現在不是比這個的時候。",
+     "emo": "冷",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.35,
+     "ovl": 0.0
+    },
+    {
+     "spk": "江祈璟",
+     "text": "數到三。跟不上就別跟。",
+     "emo": "冷",
+     "vol": "中",
+     "pace": "快",
+     "pre": 0.2,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S24",
+   "src": "storyboard/frames/B05/f2.png",
+   "crop": [
+    0.41,
+    0.15,
+    0.3
+   ],
+   "size": "近景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "机遙",
+     "text": "你數慢一點就行。",
+     "emo": "輕笑",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.2,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S25",
+   "src": "storyboard/frames/B05/f2.png",
+   "crop": [
+    0.27,
+    0.15,
+    0.3
+   ],
+   "size": "近景",
+   "cam": "Static",
+   "sec": 1.2,
+   "lines": [
+    {
+     "spk": "江祈璟",
+     "text": "一。",
+     "emo": "冷",
+     "vol": "中",
+     "pace": "快",
+     "pre": 0.3,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S26",
+   "src": "storyboard/frames/B03/f2.png",
+   "crop": [
+    0.6,
+    0.18,
+    0.3
+   ],
+   "size": "特寫",
+   "cam": "Push In",
+   "sec": 1.2,
+   "sfx": "鱗甲摩擦；小鈴響第二聲",
+   "lines": [],
+   "note": "妖將左肩一沉（机遙看見了）"
+  },
+  {
+   "id": "S27",
+   "src": "storyboard/frames/B06/f1.png",
+   "size": "中景",
+   "cam": "Tracking",
+   "sec": 2.0,
+   "sfx": "小鈴第三聲、槍刺入",
+   "lines": []
+  },
+  {
+   "id": "S28",
+   "src": "storyboard/frames/B06/f2.png",
+   "size": "中景",
+   "cam": "Tracking",
+   "sfx": "刀斬、光柱碎裂",
+   "lines": [
+    {
+     "spk": "机遙",
+     "text": "右邊斷了！",
+     "emo": "喊",
+     "vol": "吼",
+     "pace": "快",
+     "pre": 0.4,
+     "ovl": 0.0
+    },
+    {
+     "spk": "江祈璟",
+     "text": "左邊也斷了！",
+     "emo": "喊",
+     "vol": "吼",
+     "pace": "快",
+     "pre": 0.0,
+     "ovl": 0.15
+    }
+   ]
+  },
+  {
+   "id": "S29",
+   "src": "storyboard/frames/B07/f1.png",
+   "size": "中景",
+   "cam": "Push In",
+   "sfx": "兩把兵器壓下、紅光噴出",
+   "lines": [
+    {
+     "spk": "郁岑燁",
+     "text": "齊衡烈，第三個！",
+     "emo": "喊",
+     "vol": "吼",
+     "pace": "快",
+     "pre": 0.2,
+     "ovl": 0.0
+    },
+    {
+     "spk": "齊衡烈",
+     "text": "早就在等你這句！",
+     "emo": "笑",
+     "vol": "吼",
+     "pace": "快",
+     "pre": 0.0,
+     "ovl": 0.1
+    }
+   ]
+  },
+  {
+   "id": "S30",
+   "src": "storyboard/frames/B07/f2.png",
+   "size": "全景",
+   "cam": "Static",
+   "sfx": "光柱一根根熄滅；配樂抽掉",
+   "lines": [
+    {
+     "spk": "聞人澈",
+     "text": "……牠停手了？",
+     "emo": "喘",
+     "vol": "低",
+     "pace": "慢",
+     "pre": 1.2,
+     "ovl": 0.0
+    },
+    {
+     "spk": "郁岑燁",
+     "text": "……不是我們擋住了牠。",
+     "emo": "冷",
+     "vol": "低",
+     "pace": "慢",
+     "pre": 0.8,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S31",
+   "src": "storyboard/frames/B08/f1.png",
+   "size": "中景",
+   "cam": "Push In",
+   "lines": [
+    {
+     "spk": "赤瞳妖將",
+     "text": "這裡不是你們該來的地方。",
+     "emo": "低沉",
+     "vol": "低",
+     "pace": "慢",
+     "pre": 1.0,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S32",
+   "src": "storyboard/frames/B08/f2.png",
+   "size": "全景",
+   "cam": "Static",
+   "sec": 4.0,
+   "sfx": "風聲、霧合攏",
+   "lines": []
+  },
+  {
+   "id": "S33",
+   "src": "storyboard/frames/B09/f1.png",
+   "size": "全景",
+   "cam": "Static",
+   "sfx": "遠處鳥叫回來",
+   "lines": [
+    {
+     "spk": "齊衡烈",
+     "text": "……停不下來。",
+     "emo": "乾笑",
+     "vol": "低",
+     "pace": "慢",
+     "pre": 2.0,
+     "ovl": 0.0
+    },
+    {
+     "spk": "郁岑燁",
+     "text": "那就抖著走回去。",
+     "emo": "冷",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.6,
+     "ovl": 0.0
+    }
+   ],
+   "note": "畫面厲若楓為舊男版，待重出"
+  },
+  {
+   "id": "S34",
+   "src": "storyboard/frames/B09/f1.png",
+   "crop": [
+    0.17,
+    0.33,
+    0.26
+   ],
+   "size": "近景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "齊衡烈",
+     "text": "下次……下次我先砍牠的腳。",
+     "emo": "笑",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.3,
+     "ovl": 0.0
+    }
+   ],
+   "note": "B09 f1 重出（厲若楓女版）後依新圖重定裁切"
+  },
+  {
+   "id": "S35",
+   "src": "storyboard/frames/B09/f1.png",
+   "crop": [
+    0.74,
+    0.33,
+    0.26
+   ],
+   "size": "近景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "聞人澈",
+     "text": "下次你先跑。",
+     "emo": "輕笑",
+     "vol": "低",
+     "pace": "中",
+     "pre": 0.3,
+     "ovl": 0.0
+    }
+   ],
+   "note": "B09 f1 重出（厲若楓女版）後依新圖重定裁切"
+  },
+  {
+   "id": "S36",
+   "src": "storyboard/frames/B09/f1.png",
+   "crop": [
+    0.61,
+    0.33,
+    0.26
+   ],
+   "size": "近景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "江祈璟",
+     "text": "剛才那一刀，還行。",
+     "emo": "冷",
+     "vol": "低",
+     "pace": "中",
+     "pre": 0.8,
+     "ovl": 0.0
+    }
+   ],
+   "note": "B09 f1 重出（厲若楓女版）後依新圖重定裁切"
+  },
+  {
+   "id": "S37",
+   "src": "storyboard/frames/B09/f1.png",
+   "crop": [
+    0.04,
+    0.33,
+    0.26
+   ],
+   "size": "近景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "机遙",
+     "text": "……你在誇我？",
+     "emo": "愣",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.4,
+     "ovl": 0.0
+    }
+   ],
+   "note": "B09 f1 重出（厲若楓女版）後依新圖重定裁切"
+  },
+  {
+   "id": "S38",
+   "src": "storyboard/frames/B09/f1.png",
+   "crop": [
+    0.61,
+    0.33,
+    0.26
+   ],
+   "size": "近景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "江祈璟",
+     "text": "沒有。",
+     "emo": "冷",
+     "vol": "低",
+     "pace": "快",
+     "pre": 0.2,
+     "ovl": 0.0
+    }
+   ],
+   "note": "B09 f1 重出（厲若楓女版）後依新圖重定裁切"
+  },
+  {
+   "id": "S39",
+   "src": "storyboard/frames/B08/f1.png",
+   "crop": [
+    0.4,
+    0.25,
+    0.5
+   ],
+   "size": "近景",
+   "cam": "Push In",
+   "sfx": "風",
+   "lines": [
+    {
+     "spk": "机遙（心聲）",
+     "text": "牠說「你們也」。……所以在我們之前，也有人聽見過。",
+     "emo": "沉思",
+     "vol": "低",
+     "pace": "慢",
+     "pre": 0.8,
+     "ovl": 0.0
+    }
+   ]
+  }
+ ]
+}
