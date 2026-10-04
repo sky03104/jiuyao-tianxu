@@ -85,13 +85,15 @@ def dur(path):
     return int(h) * 3600 + int(m) * 60 + float(s)
 
 
-def master(src, dst, inner, semis=0.0):
-    """混音＋響度；semis<0 時先降調（保持長度：asetrate 降頻再 atempo 拉回）。"""
+def master(src, dst, inner, semis=0.0, tempo=1.0):
+    """混音＋響度；semis<0 時先降調（保持長度：asetrate 降頻再 atempo 拉回）；tempo>1 時加快語速（不變調）。"""
     tmp = dst + ".tmp.wav"
-    pre = ""
+    pre = "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
     if semis:
         r = 2 ** (semis / 12)
-        pre = f"aresample=24000,asetrate={24000 * r:.0f},aresample=24000,atempo={1 / r:.4f},"
+        pre += f"aresample=24000,asetrate={24000 * r:.0f},aresample=24000,atempo={1 / r:.4f},"
+    if tempo > 1.001:
+        pre += f"atempo={tempo:.3f},"
     subprocess.run([FF, "-y", "-loglevel", "error", "-i", src, "-af", pre + (MIX_INNER if inner else MIX), tmp],
                    check=True)
     r = subprocess.run([FF, "-i", tmp, "-af", "apad=pad_dur=2,ebur128", "-f", "null", "-"],
@@ -142,7 +144,14 @@ def pick_one(MAN):
         # 仍高於 PITCH_TARGET 的（多為喊叫或新角色），往目標降調，最多 3 個半音
         import math
         semis = -min(3.0, 12 * math.log2(pitch[best] / PITCH_TARGET)) if pitch[best] > PITCH_TARGET and not fem else 0.0
-        master(os.path.join(RAW, best), dst, "心聲" in m["spk"], semis)
+        # 語速：字數／秒低於 SLOW 就加快到 TARGET_RATE（最多 1.25 倍）；心聲本來就慢一點，目標低一級（咖哩 2026-10-02：講話偏慢）
+        inner = "心聲" in m["spk"]
+        nchar = len(norm(m["text"]))
+        rate = nchar / max(dur(os.path.join(RAW, best)) - 0.3, 0.3)
+        goal = 3.8 if inner else 4.3
+        tempo = min(1.25, goal / rate) if rate < goal - 0.3 and nchar >= 3 else 1.0
+        master(os.path.join(RAW, best), dst, inner, semis, tempo)
+        m["tempo"] = round(tempo, 2)
         m["pitch_shift"] = round(semis, 1)
         m["file"] = os.path.relpath(dst, HERE)
         m["take"] = best

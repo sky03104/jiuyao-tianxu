@@ -1235,7 +1235,7 @@
   }
  ],
  "captionStyle": {
-  "font": null,
-  "_note": "畫面文字字型待咖哩從 animatic/字型選擇_畫面文字.jpg 選定（A～F）；選定後把字型檔放 production/LF01/fonts/ 並填檔名"
+  "font": "ZiyuYunyouShoushu-TC.ttf",
+  "_note": "2026-10-02 咖哩選定 J 字嶼雲遊手書（見 fonts/README.md）"
  }
 }

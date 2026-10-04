@@ -14,7 +14,8 @@
   "江祈璟": {
    "engine": "Qwen3-TTS VoiceDesign",
    "seed": 11,
-   "prompt_ref": "筆記本第 3 版 VOICES.C06"
+   "prompt_ref": "筆記本第 3 版 VOICES.C06",
+   "ref": "clone-test/refs/江祈璟.mp3"
   },
   "赤瞳妖將": {
    "engine": "Qwen3-TTS VoiceDesign",
@@ -27,25 +28,36 @@
    "note": "咖哩：用之前（EP01 v1）的比較好"
   },
   "机遙": {
-   "engine": "Qwen3-TTS VoiceDesign（簡體提示詞）",
-   "seed": 33,
-   "prompt_ref": "筆記本第 4 版 机遙_簡"
+   "engine": "Qwen3-TTS Base 照唸",
+   "ref": "clone-test/refs/机遙.mp3（第 2 輪 K1 提示詞、種子 33 的參考句）",
+   "note": "2026-10-04 咖哩選 C（K133），取代 v4 s33"
   },
   "郁岑燁": {
    "engine": "Qwen3-TTS VoiceDesign（簡體提示詞）",
    "seed": 22,
-   "prompt_ref": "筆記本第 4 版 郁岑燁_簡"
+   "prompt_ref": "筆記本第 4 版 郁岑燁_簡",
+   "ref": "clone-test/refs/郁岑燁.mp3"
   },
   "厲若楓": {
    "engine": "Qwen3-TTS VoiceDesign（簡體提示詞）",
    "seed": 11,
    "prompt_ref": "筆記本第 4 版 厲若楓_簡",
-   "note": "咖哩：用簡體（繁體版有粵語）"
+   "note": "咖哩：用簡體（繁體版有粵語）",
+   "ref": "clone-test/refs/厲若楓.mp3"
   },
   "院方執事": {
    "engine": "Qwen3-TTS VoiceDesign（簡體提示詞）",
    "seed": 22,
    "prompt_ref": "筆記本第 4 版 院方執事_簡"
+  },
+  "聞人澈": {
+   "ref": "clone-test/refs/聞人澈.mp3"
+  },
+  "裴含章": {
+   "ref": "clone-test/refs/裴含章.mp3"
+  },
+  "陸鳴鸞": {
+   "ref": "clone-test/refs/陸鳴鸞.mp3"
   }
  },
  "lines": {
@@ -69,5 +81,6 @@
   "B01 齊衡烈「它們在逃？」": "qwen3tts-guoman-v4/LF01-B01_齊衡烈_t2_混音.mp3"
  },
  "_status": "2026-10-01 LF01 26 句配音完成，咖哩逐項確認（厲若楓 s11、机遙讀音、齊衡烈維持 v1、蕭曜霖 A10b 改第 6 版簡體 s33）",
- "final": "final/（26 句依劇本順序＋串接試聽檔，清單見 final/README.md）"
+ "final": "final/（26 句依劇本順序＋串接試聽檔，清單見 final/README.md）",
+ "_method_2026-10-04": "改為照唸：每角色一段固定參考聲音（clone-test/refs/<角色>.mp3），所有台詞 Base 模型照唸；VoiceDesign 只用來設計參考聲音。咖哩確認比較一致。"
 }
