@@ -188,7 +188,7 @@ Gemini 用 **Pro**、每張故事版開新對話；只附下面的參考拼圖�
 
 ## 故事版 S02-1（A01 f1～A05 f1，9 格）　→ 存成 `production/LF01/storyboard/boards/S02-1.png`
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/boards/S02-1-refs.jpg`（**待 陸鳴鸞 設定圖驗收後由 Claude 重跑產生**）
+**上傳：** [參考拼圖 S02-1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/boards/S02-1-refs.jpg)（6 張拼成一張）
 
 ```text
 Reference images:
@@ -488,7 +488,7 @@ Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the c
 
 7 秒｜中景｜Static Shot｜台詞：陸鳴鸞：「抱歉抱歉！——你第幾室？」；机遙：「第七。」；陸鳴鸞：「第七？我隔壁！那間吵死了，祝你好運！」；演武場（遠）：「出——收——轉——定！」
 
-**上傳：** 參考拼圖 `production/LF01/storyboard/chatgpt/A04/f2-refs.jpg`（**待 陸鳴鸞 設定圖驗收後由 Claude 重跑產生**）、本段已完成的 **f1.png**
+**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/A04/f2-refs.jpg)（3 張拼成一張）、本段已完成的 **f1.png**
 
 ```text
 Reference images:
