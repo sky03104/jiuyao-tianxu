@@ -51,7 +51,7 @@
 - **長篇系列總綱已定案（2026-10-04）**：`docs/47_LONGFORM_SERIES_BIBLE_V1.0.md` 是長篇動畫的最高劇情依據（揭露上限仍以 `21` 為準）；改劇情先改總綱、跑 script-reviewer，再改劇本。宿舍男女分開，「室」＝修行小組。
 - **女性角色（2026-10-02 咖哩裁定）**：主要角色男女至少 1：1，厲若楓改為女性，新增 5 位女性角色，見 `docs/46_FEMALE_CAST_EXPANSION_V1.0.md`（優先於 `02` 衝突處）。
 - **動畫製作進度看這裡**：短影音 EP01〈第七室報到〉→ `production/EP01/shuohao/DECISIONS.md`（分鏡圖 6/30、可靈試片 E01-01／E01-02）；
-  長篇 LF01（`43` 第 2、12 場，16:9）→ `production/LF01/README.md`（江祈璟、聞人澈、赤瞳妖將、陣眼遺跡設定圖全數通過；分鏡圖 17/43（第 12 場完成，總覽 `production/LF01/storyboard/frames/LF01_scene12_contact.jpg`；第 2 場 26 張待出，先出 3 張故事版；第 12 場動態分鏡 v1 見 `production/LF01/animatic/`）；配音改走國漫配音風格：Qwen3-TTS VoiceDesign＋混音，26 句配音完成（咖哩確認）於 `production/LF01/voice/final/`；Qwen 提示詞一律用簡體，繁體會變粵語；Kaggle 由 Claude 經 API 直推執行）。
+  長篇 LF01（`43` 第 2、12 場，16:9）→ `production/LF01/README.md`（設定圖：江祈璟、聞人澈、赤瞳妖將、陣眼遺跡，及 2026-10-04 用 ChatGPT 出的厲若楓（女版）、裴含章、陸鳴鸞全數通過；**流程已改為先鏡頭表、後配音**（`production/roles/README.md`），第 12 場鏡頭表 v2 見 `production/LF01/storyboard/scene12_shotlist_v2.md`；分鏡圖 17/43（第 12 場完成，總覽 `production/LF01/storyboard/frames/LF01_scene12_contact.jpg`；第 2 場 26 張待出，先出 3 張故事版；第 12 場動態分鏡 v1 見 `production/LF01/animatic/`）；配音改走國漫配音風格：Qwen3-TTS VoiceDesign＋混音，26 句配音完成（咖哩確認）於 `production/LF01/voice/final/`；Qwen 提示詞一律用簡體，繁體會變粵語；Kaggle 由 Claude 經 API 直推執行）。
   **2026-09-30 咖哩裁定：主力改做長篇 LF01；短影音 EP01 只是流程測試，暫停出圖**（已驗證的工具鏈、配音、動態分鏡程式沿用到長篇）。
   短影音用直式 9:16、長篇用橫式 16:9；角色／場景設定圖（3:2）兩邊共用。
   **影片生成排程與工具分工看 `production/EP01/shuohao/video/PLAN.md`（2026-09-28 起漫劇式：多數格子靜態圖＋運鏡，影片只給關鍵鏡）；每一切只生一次，不要用不同工具重做已完成的片段**（2026-09-28 咖哩裁定）。
