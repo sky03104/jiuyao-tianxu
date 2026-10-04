@@ -48,6 +48,7 @@
 - 長篇動畫試點：`docs/43_LONGFORM_ANIMATION_EP01_QINGLAN_TRIAL_PILOT_SCRIPT_V1.0.md`（第一章＝一集約 28 分鐘，方向已通過）。
 - **動畫製作分工看 `production/roles/`**（編劇／分鏡出圖／驗圖／配音／剪輯／字幕六本工作手冊，動工前先讀對應那本）；
   另有兩個 agent（`.claude/agents/`）：**script-reviewer**（劇本寫完、送配音前必跑，以觀眾身分抓看不懂／怪／死氣沉沉）、**frame-checker**（驗圖）。
+- **長篇系列總綱已定案（2026-10-04）**：`docs/47_LONGFORM_SERIES_BIBLE_V1.0.md` 是長篇動畫的最高劇情依據（揭露上限仍以 `21` 為準）；改劇情先改總綱、跑 script-reviewer，再改劇本。宿舍男女分開，「室」＝修行小組。
 - **女性角色（2026-10-02 咖哩裁定）**：主要角色男女至少 1：1，厲若楓改為女性，新增 5 位女性角色，見 `docs/46_FEMALE_CAST_EXPANSION_V1.0.md`（優先於 `02` 衝突處）。
 - **動畫製作進度看這裡**：短影音 EP01〈第七室報到〉→ `production/EP01/shuohao/DECISIONS.md`（分鏡圖 6/30、可靈試片 E01-01／E01-02）；
   長篇 LF01（`43` 第 2、12 場，16:9）→ `production/LF01/README.md`（江祈璟、聞人澈、赤瞳妖將、陣眼遺跡設定圖全數通過；分鏡圖 17/43（第 12 場完成，總覽 `production/LF01/storyboard/frames/LF01_scene12_contact.jpg`；第 2 場 26 張待出，先出 3 張故事版；第 12 場動態分鏡 v1 見 `production/LF01/animatic/`）；配音改走國漫配音風格：Qwen3-TTS VoiceDesign＋混音，26 句配音完成（咖哩確認）於 `production/LF01/voice/final/`；Qwen 提示詞一律用簡體，繁體會變粵語；Kaggle 由 Claude 經 API 直推執行）。
