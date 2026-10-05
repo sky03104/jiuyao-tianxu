@@ -17,7 +17,7 @@ Rendering style: match the attached reference images exactly — polished Chines
 
 Lighting: an ominous crimson glare seeping down through gaps in the high forest canopy, the mist between the trunks tinted dull red, the crystal at the centre giving off only a faint dark-red pulse, the three stone pillars still dark and silent with NO light beams, deep shadows under the trees
 
-Shot: Medium close-up of 郁岑燁, three-quarter view facing screen-right, standing in drifting red mist; his straight sword half drawn from the scabbard at his hip, brows knitted tight, eyes fixed on the depth of the fog. Background: blurred twisted tree roots and red fog of the ancient forest ruins.
+Shot: Medium close-up of 郁岑燁, three-quarter view facing screen-RIGHT (head and eyes turned toward the RIGHT edge of the frame), standing in drifting red mist; his straight sword half drawn from the scabbard at his hip, brows knitted tight, eyes fixed on the depth of the fog. Background: blurred twisted tree roots and red fog of the ancient forest ruins.
 
 The face is large, sharp and clearly visible (this shot will be used for lip-sync), no hands or objects covering the mouth, no motion blur on the face.
 
@@ -38,7 +38,7 @@ Rendering style: match the attached reference images exactly — polished Chines
 
 Lighting: an ominous crimson glare seeping down through gaps in the high forest canopy, the mist between the trunks tinted dull red, the crystal at the centre giving off only a faint dark-red pulse, the three stone pillars still dark and silent with NO light beams, deep shadows under the trees
 
-Shot: Medium close-up of 江祈璟, three-quarter view facing screen-right, staring into the depth of the red fog; jaw clenched, high ponytail with the silver hair ring, the long spear held upright beside him with its tip slightly raised and the small bronze bell visible under the spearhead. Background: blurred red fog and tree roots.
+Shot: Medium close-up of 江祈璟, three-quarter view facing screen-RIGHT (head and eyes turned toward the RIGHT edge of the frame), staring into the depth of the red fog; jaw clenched, high ponytail with the silver hair ring, the long spear held upright beside him with its tip slightly raised and the small bronze bell visible under the spearhead. Background: blurred red fog and tree roots.
 
 The face is large, sharp and clearly visible (this shot will be used for lip-sync), no hands or objects covering the mouth, no motion blur on the face.
 
@@ -59,7 +59,7 @@ Rendering style: match the attached reference images exactly — polished Chines
 
 Lighting: an ominous crimson glare seeping down through gaps in the high forest canopy, the mist between the trunks tinted dull red, the crystal at the centre giving off only a faint dark-red pulse, the three stone pillars still dark and silent with NO light beams, deep shadows under the trees
 
-Shot: Medium close-up of 厲若楓 (a young WOMAN), three-quarter view facing screen-right, her three-section folding short bow drawn halfway, arrow nocked, amber eyes unblinking and focused on the fog; low ponytail, dark-teal cape with hood down. Background: blurred red fog and tree roots.
+Shot: Medium close-up of 厲若楓 (a young WOMAN), three-quarter view facing screen-RIGHT (head and eyes turned toward the RIGHT edge of the frame), her three-section folding short bow drawn halfway, arrow nocked, amber eyes unblinking and focused on the fog; low ponytail, dark-teal cape with hood down. Background: blurred red fog and tree roots.
 
 厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, sleeveless left arm with an old shoulder scar, quiver behind the right shoulder, three-section folding short bow (match her approved character sheet; arm guards on both forearms are acceptable).
 
@@ -103,7 +103,7 @@ Rendering style: match the attached reference images exactly — polished Chines
 
 Lighting: an ominous crimson glare seeping down through gaps in the high forest canopy, the mist between the trunks tinted dull red, the crystal at the centre giving off only a faint dark-red pulse, the three stone pillars still dark and silent with NO light beams, deep shadows under the trees
 
-Shot: Close-up of 机遙 from the chest up, three-quarter view facing screen-right: startled and suspicious, eyes wide, a bead of sweat at his temple, lips slightly parted as if about to speak, looking toward something huge off-screen right. Red-tinted fog and blurred stone pillars behind him.
+Shot: Close-up of 机遙 from the chest up, three-quarter view facing screen-RIGHT (head and eyes turned toward the RIGHT edge of the frame): startled and suspicious, eyes wide, a bead of sweat at his temple, lips slightly parted as if about to speak, looking toward something huge off-screen right. Red-tinted fog and blurred stone pillars behind him.
 
 The face is large, sharp and clearly visible (this shot will be used for lip-sync), no hands or objects covering the mouth, no motion blur on the face.
 

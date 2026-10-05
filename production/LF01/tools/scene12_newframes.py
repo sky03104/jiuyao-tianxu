@@ -20,19 +20,19 @@ DOC = os.path.join(h.REPO, "docs", "HANDOFF-011_LF01_SCENE12_NEWFRAMES.md")
 
 # 鏡號 → (光線所屬段落, 角色, 英文畫面描述)
 CLOSEUPS = {
-    "S05": ("B01", ["C03"], "Medium close-up of 郁岑燁, three-quarter view facing screen-right, standing in drifting red mist; "
+    "S05": ("B01", ["C03"], "Medium close-up of 郁岑燁, three-quarter view facing screen-RIGHT (head and eyes turned toward the RIGHT edge of the frame), standing in drifting red mist; "
             "his straight sword half drawn from the scabbard at his hip, brows knitted tight, eyes fixed on the depth of the fog. "
             "Background: blurred twisted tree roots and red fog of the ancient forest ruins."),
-    "S06": ("B01", ["C06"], "Medium close-up of 江祈璟, three-quarter view facing screen-right, staring into the depth of the red fog; "
+    "S06": ("B01", ["C06"], "Medium close-up of 江祈璟, three-quarter view facing screen-RIGHT (head and eyes turned toward the RIGHT edge of the frame), staring into the depth of the red fog; "
             "jaw clenched, high ponytail with the silver hair ring, the long spear held upright beside him with its tip slightly "
             "raised and the small bronze bell visible under the spearhead. Background: blurred red fog and tree roots."),
-    "S07": ("B01", ["C04"], "Medium close-up of 厲若楓 (a young WOMAN), three-quarter view facing screen-right, her three-section "
+    "S07": ("B01", ["C04"], "Medium close-up of 厲若楓 (a young WOMAN), three-quarter view facing screen-RIGHT (head and eyes turned toward the RIGHT edge of the frame), her three-section "
             "folding short bow drawn halfway, arrow nocked, amber eyes unblinking and focused on the fog; low ponytail, dark-teal "
             "cape with hood down. Background: blurred red fog and tree roots."),
     "S09": ("B02", ["C02"], "Close-up of 齊衡烈 from the chest up, front three-quarter view: his right hand grips the hilt of his "
             "heavy single-edged saber and is visibly trembling; his left hand presses down on it to stop the shaking; he glances "
             "down at his hands with a forced, nervous grin, a bead of sweat on his temple. Red-tinted fog behind him."),
-    "S12": ("B02", ["C01"], "Close-up of 机遙 from the chest up, three-quarter view facing screen-right: startled and suspicious, "
+    "S12": ("B02", ["C01"], "Close-up of 机遙 from the chest up, three-quarter view facing screen-RIGHT (head and eyes turned toward the RIGHT edge of the frame): startled and suspicious, "
             "eyes wide, a bead of sweat at his temple, lips slightly parted as if about to speak, looking toward something huge "
             "off-screen right. Red-tinted fog and blurred stone pillars behind him."),
 }
