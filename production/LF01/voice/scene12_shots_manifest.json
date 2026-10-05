@@ -1,0 +1,436 @@
+[
+ {
+  "key": "S01_1_齊衡烈",
+  "shot": "S01",
+  "spk": "齊衡烈",
+  "text": "地在震……",
+  "file": null,
+  "ref": "齊衡烈",
+  "cat": "低聲",
+  "post_shout": false
+ },
+ {
+  "key": "S02_1_机遙心聲",
+  "shot": "S02",
+  "spk": "机遙（心聲）",
+  "text": "牠們連看都沒看我們一眼。",
+  "file": null,
+  "ref": "机遙",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S03_1_聞人澈",
+  "shot": "S03",
+  "spk": "聞人澈",
+  "text": "別擋路，讓牠們過去。",
+  "file": null,
+  "ref": "聞人澈",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S04_1_齊衡烈",
+  "shot": "S04",
+  "spk": "齊衡烈",
+  "text": "它們在逃？",
+  "file": null,
+  "ref": "齊衡烈",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S04_2_江祈璟",
+  "shot": "S04",
+  "spk": "江祈璟",
+  "text": "不是逃。是在讓路。",
+  "file": null,
+  "ref": "江祈璟",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S05_1_郁岑燁",
+  "shot": "S05",
+  "spk": "郁岑燁",
+  "text": "讓給誰？",
+  "file": null,
+  "ref": "郁岑燁_低聲",
+  "cat": "低聲",
+  "post_shout": false
+ },
+ {
+  "key": "S06_1_江祈璟",
+  "shot": "S06",
+  "spk": "江祈璟",
+  "text": "讓給比牠們更可怕的東西。",
+  "file": null,
+  "ref": "江祈璟",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S07_1_厲若楓",
+  "shot": "S07",
+  "spk": "厲若楓",
+  "text": "……來了。",
+  "file": null,
+  "ref": "厲若楓",
+  "cat": "低聲",
+  "post_shout": false
+ },
+ {
+  "key": "S07_2_厲若楓",
+  "shot": "S07",
+  "spk": "厲若楓",
+  "text": "別動。",
+  "file": null,
+  "ref": "厲若楓",
+  "cat": "低聲",
+  "post_shout": false
+ },
+ {
+  "key": "S09_1_齊衡烈",
+  "shot": "S09",
+  "spk": "齊衡烈",
+  "text": "……這比考核場的木樁大多了。",
+  "file": null,
+  "ref": "齊衡烈",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S09_2_郁岑燁",
+  "shot": "S09",
+  "spk": "郁岑燁",
+  "text": "閉嘴。",
+  "file": null,
+  "ref": "郁岑燁",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S10_1_机遙心聲",
+  "shot": "S10",
+  "spk": "机遙（心聲）",
+  "text": "牠在看陣眼。……現在，牠在看我。",
+  "file": null,
+  "ref": "机遙",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S11_1_赤瞳妖將",
+  "shot": "S11",
+  "spk": "赤瞳妖將",
+  "text": "……人族。你們也開始聽見了嗎？",
+  "file": "final/21_B02_赤瞳妖將.mp3"
+ },
+ {
+  "key": "S12_1_机遙心聲",
+  "shot": "S12",
+  "spk": "机遙（心聲）",
+  "text": "聽見？剛才在陣眼……我看見的，是天空裂開。",
+  "file": null,
+  "ref": "机遙",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S12_2_机遙",
+  "shot": "S12",
+  "spk": "机遙",
+  "text": "你在說什麼？",
+  "file": null,
+  "ref": "机遙",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S13_1_江祈璟",
+  "shot": "S13",
+  "spk": "江祈璟",
+  "text": "別跟牠說話。",
+  "file": null,
+  "ref": "江祈璟_低聲",
+  "cat": "低聲",
+  "post_shout": false
+ },
+ {
+  "key": "S14_1_聞人澈",
+  "shot": "S14",
+  "spk": "聞人澈",
+  "text": "陣點失控了——全部退開！",
+  "file": null,
+  "ref": "聞人澈_喊叫",
+  "cat": "喊叫",
+  "post_shout": false
+ },
+ {
+  "key": "S15_1_齊衡烈",
+  "shot": "S15",
+  "spk": "齊衡烈",
+  "text": "別過來——管牠多高，先吃我一刀！",
+  "file": null,
+  "ref": "齊衡烈",
+  "cat": "喊叫",
+  "post_shout": true
+ },
+ {
+  "key": "S16_1_机遙",
+  "shot": "S16",
+  "spk": "机遙",
+  "text": "齊衡烈！",
+  "file": null,
+  "ref": "机遙_喊叫",
+  "cat": "喊叫",
+  "post_shout": false
+ },
+ {
+  "key": "S17_1_齊衡烈",
+  "shot": "S17",
+  "spk": "齊衡烈",
+  "text": "……什麼鬼力氣。",
+  "file": null,
+  "ref": "齊衡烈",
+  "cat": "低聲",
+  "post_shout": false
+ },
+ {
+  "key": "S18_1_郁岑燁",
+  "shot": "S18",
+  "spk": "郁岑燁",
+  "text": "牠在等我出手。",
+  "file": null,
+  "ref": "郁岑燁",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S20_1_厲若楓",
+  "shot": "S20",
+  "spk": "厲若楓",
+  "text": "牠抬手之前，左肩會先沉。",
+  "file": null,
+  "ref": "厲若楓",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S21_1_聞人澈",
+  "shot": "S21",
+  "spk": "聞人澈",
+  "text": "撐不了多久……誰去把陣點斷掉！",
+  "file": null,
+  "ref": "聞人澈_喊叫",
+  "cat": "喊叫",
+  "post_shout": false
+ },
+ {
+  "key": "S22_1_江祈璟",
+  "shot": "S22",
+  "spk": "江祈璟",
+  "text": "我左邊，你右邊。",
+  "file": null,
+  "ref": "江祈璟",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S22_2_机遙",
+  "shot": "S22",
+  "spk": "机遙",
+  "text": "你不是一直不服我？",
+  "file": null,
+  "ref": "机遙",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S23_1_江祈璟",
+  "shot": "S23",
+  "spk": "江祈璟",
+  "text": "現在不是比這個的時候。",
+  "file": null,
+  "ref": "江祈璟",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S23_2_江祈璟",
+  "shot": "S23",
+  "spk": "江祈璟",
+  "text": "數到三。跟不上就別跟。",
+  "file": null,
+  "ref": "江祈璟",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S24_1_机遙",
+  "shot": "S24",
+  "spk": "机遙",
+  "text": "你數慢一點就行。",
+  "file": null,
+  "ref": "机遙",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S25_1_江祈璟",
+  "shot": "S25",
+  "spk": "江祈璟",
+  "text": "一。",
+  "file": null,
+  "ref": "江祈璟",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S28_1_机遙",
+  "shot": "S28",
+  "spk": "机遙",
+  "text": "右邊斷了！",
+  "file": null,
+  "ref": "机遙_喊叫",
+  "cat": "喊叫",
+  "post_shout": false
+ },
+ {
+  "key": "S28_2_江祈璟",
+  "shot": "S28",
+  "spk": "江祈璟",
+  "text": "左邊也斷了！",
+  "file": null,
+  "ref": "江祈璟_喊叫",
+  "cat": "喊叫",
+  "post_shout": false
+ },
+ {
+  "key": "S29_1_郁岑燁",
+  "shot": "S29",
+  "spk": "郁岑燁",
+  "text": "齊衡烈，第三個！",
+  "file": null,
+  "ref": "郁岑燁",
+  "cat": "喊叫",
+  "post_shout": true
+ },
+ {
+  "key": "S29_2_齊衡烈",
+  "shot": "S29",
+  "spk": "齊衡烈",
+  "text": "早就在等你這句！",
+  "file": null,
+  "ref": "齊衡烈",
+  "cat": "喊叫",
+  "post_shout": true
+ },
+ {
+  "key": "S30_1_聞人澈",
+  "shot": "S30",
+  "spk": "聞人澈",
+  "text": "……牠停手了？",
+  "file": null,
+  "ref": "聞人澈_低聲",
+  "cat": "低聲",
+  "post_shout": false
+ },
+ {
+  "key": "S30_2_郁岑燁",
+  "shot": "S30",
+  "spk": "郁岑燁",
+  "text": "……不是我們擋住了牠。",
+  "file": null,
+  "ref": "郁岑燁",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S31_1_赤瞳妖將",
+  "shot": "S31",
+  "spk": "赤瞳妖將",
+  "text": "這裡不是你們該來的地方。",
+  "file": "final/26_B08_赤瞳妖將.mp3"
+ },
+ {
+  "key": "S33_1_齊衡烈",
+  "shot": "S33",
+  "spk": "齊衡烈",
+  "text": "……停不下來。",
+  "file": null,
+  "ref": "齊衡烈",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S33_2_郁岑燁",
+  "shot": "S33",
+  "spk": "郁岑燁",
+  "text": "那就抖著走回去。",
+  "file": null,
+  "ref": "郁岑燁",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S34_1_齊衡烈",
+  "shot": "S34",
+  "spk": "齊衡烈",
+  "text": "下次……下次我先砍牠的腳。",
+  "file": null,
+  "ref": "齊衡烈",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S35_1_聞人澈",
+  "shot": "S35",
+  "spk": "聞人澈",
+  "text": "下次你先跑。",
+  "file": null,
+  "ref": "聞人澈",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S36_1_江祈璟",
+  "shot": "S36",
+  "spk": "江祈璟",
+  "text": "剛才那一刀，還行。",
+  "file": null,
+  "ref": "江祈璟",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S37_1_机遙",
+  "shot": "S37",
+  "spk": "机遙",
+  "text": "……你在誇我？",
+  "file": null,
+  "ref": "机遙",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S38_1_江祈璟",
+  "shot": "S38",
+  "spk": "江祈璟",
+  "text": "沒有。",
+  "file": null,
+  "ref": "江祈璟",
+  "cat": "平常",
+  "post_shout": false
+ },
+ {
+  "key": "S39_1_机遙心聲",
+  "shot": "S39",
+  "spk": "机遙（心聲）",
+  "text": "牠說「你們也」。……所以在我們之前，也有人聽見過。",
+  "file": null,
+  "ref": "机遙",
+  "cat": "平常",
+  "post_shout": false
+ }
+]

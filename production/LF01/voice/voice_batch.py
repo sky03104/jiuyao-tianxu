@@ -12,7 +12,7 @@ import base64, difflib, glob, json, os, re, shutil, subprocess, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 D = os.path.join(HERE, os.environ.get("BATCH", "batch-v9"))
 RAW, FIN = os.path.join(D, "raw"), os.path.join(D, "final")
-MANS = [os.path.join(HERE, m) for m in ("scene02_manifest.json", "scene12_manifest.json")]
+MANS = [os.path.join(HERE, m) for m in os.environ.get("VOICE_MANS", "scene02_manifest.json,scene12_manifest.json").split(",")]
 FEMALE = {"厲若楓", "裴含章", "陸鳴鸞"}  # docs/46；女聲音高篩選方向相反、不降調
 MIN_F0_FEMALE = 165
 try:
@@ -98,7 +98,10 @@ def dur(path):
     return int(h) * 3600 + int(m) * 60 + float(s)
 
 
-def master(src, dst, inner, semis=0.0, tempo=1.0):
+SHOUT_POST = "acompressor=threshold=-26dB:ratio=6:attack=2:release=80:makeup=7,"  # 沒有喊叫參考聲音的角色：平常聲音後製加強
+
+
+def master(src, dst, inner, semis=0.0, tempo=1.0, shout=False):
     """混音＋響度；semis<0 時先降調（保持長度：asetrate 降頻再 atempo 拉回）；tempo>1 時加快語速（不變調）。"""
     tmp = dst + ".tmp.wav"
     pre = "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
@@ -107,6 +110,8 @@ def master(src, dst, inner, semis=0.0, tempo=1.0):
         pre += f"aresample=24000,asetrate={24000 * r:.0f},aresample=24000,atempo={1 / r:.4f},"
     if tempo > 1.001:
         pre += f"atempo={tempo:.3f},"
+    if shout:
+        pre += SHOUT_POST
     subprocess.run([FF, "-y", "-loglevel", "error", "-i", src, "-af", pre + (MIX_INNER if inner else MIX), tmp],
                    check=True)
     r = subprocess.run([FF, "-i", tmp, "-af", "apad=pad_dur=2,ebur128", "-f", "null", "-"],
@@ -151,6 +156,8 @@ def pick_one(MAN):
         fem = m["spk"] in FEMALE
         rf = ref_f0(m["spk"].replace("（心聲）", ""))
         hi = rf * 1.3 if rf and not fem else MAX_F0   # 照唸版：以該角色參考聲音的音高為準
+        if m.get("cat") == "喊叫":
+            hi = 450  # 喊叫本來就高，只擋極端值
         male = [k for k in cands if (pitch[k] >= MIN_F0_FEMALE if fem else (pitch[k] <= hi or pitch[k] == 0))]
         pool = male or [(max if fem else min)(cands, key=lambda k: pitch[k])]  # 全部不合就取最接近的，並在報告標出
         best = max(sorted(pool), key=score)
@@ -159,14 +166,14 @@ def pick_one(MAN):
         # 仍高於 PITCH_TARGET 的（多為喊叫或新角色），往目標降調，最多 3 個半音
         import math
         tgt = rf * 1.25 if rf else PITCH_TARGET
-        semis = -min(3.0, 12 * math.log2(pitch[best] / tgt)) if pitch[best] > tgt and not fem else 0.0
+        semis = -min(3.0, 12 * math.log2(pitch[best] / tgt)) if pitch[best] > tgt and not fem and m.get("cat") != "喊叫" else 0.0
         # 語速：字數／秒低於 SLOW 就加快到 TARGET_RATE（最多 1.25 倍）；心聲本來就慢一點，目標低一級（咖哩 2026-10-02：講話偏慢）
         inner = "心聲" in m["spk"]
         nchar = len(norm(m["text"]))
         rate = nchar / max(dur(os.path.join(RAW, best)) - 0.3, 0.3)
         goal = 3.8 if inner else 4.3
         tempo = min(1.25, goal / rate) if rate < goal - 0.3 and nchar >= 3 else 1.0
-        master(os.path.join(RAW, best), dst, inner, semis, tempo)
+        master(os.path.join(RAW, best), dst, inner, semis, tempo, bool(m.get("post_shout")))
         m["tempo"] = round(tempo, 2)
         m["pitch_shift"] = round(semis, 1)
         m["file"] = os.path.relpath(dst, HERE)
