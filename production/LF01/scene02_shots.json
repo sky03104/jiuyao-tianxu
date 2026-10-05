@@ -1,0 +1,707 @@
+{
+ "_note": "第 2 場鏡頭表 v1（2026-10-05，先分鏡、後配音）。格式同 scene12_shots.json；src 指向第 2 場待出的分鏡圖（lf01.json A 段）；new＝另出近景；crop 需等出圖後依實際構圖重定。",
+ "shots": [
+  {
+   "id": "T01",
+   "src": "storyboard/frames/A01/f1.png",
+   "size": "大遠景",
+   "cam": "Push In",
+   "sec": 5.0,
+   "sfx": "晨鐘餘音、風",
+   "lines": [],
+   "caption": {
+    "top": "九曜界",
+    "main": "天玄院"
+   }
+  },
+  {
+   "id": "T02",
+   "src": "storyboard/frames/A01/f2.png",
+   "size": "全景",
+   "cam": "Static",
+   "sec": 3.0,
+   "sfx": "人聲嘈雜、腳步",
+   "lines": []
+  },
+  {
+   "id": "T03",
+   "src": "storyboard/frames/A02/f1.png",
+   "size": "中景",
+   "cam": "Push In",
+   "lines": [
+    {
+     "spk": "机遙（心聲）",
+     "text": "去年，我也站在這裡。",
+     "emo": "沉思",
+     "vol": "低",
+     "pace": "慢",
+     "pre": 0.8,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T04",
+   "src": "storyboard/frames/A02/f2.png",
+   "size": "全景",
+   "cam": "Static",
+   "sfx": "風雪、跌倒",
+   "lines": [
+    {
+     "spk": "考官助手（閃回）",
+     "text": "……步法不穩。",
+     "emo": "冷",
+     "vol": "低",
+     "pace": "慢",
+     "pre": 0.6,
+     "ovl": 0.0
+    },
+    {
+     "spk": "机遙（心聲）",
+     "text": "今年，是第二次。",
+     "emo": "沉思",
+     "vol": "低",
+     "pace": "慢",
+     "pre": 0.8,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T05",
+   "src": "storyboard/frames/A03/f1.png",
+   "size": "特寫",
+   "cam": "Static",
+   "sec": 1.8,
+   "sfx": "銅盤嗡一聲",
+   "lines": []
+  },
+  {
+   "id": "T06",
+   "src": "storyboard/frames/A03/f2.png",
+   "size": "中景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "裴含章",
+     "text": "青嵐新契修，机遙。東廊，第七室。",
+     "emo": "平淡",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.2,
+     "ovl": 0.0
+    },
+    {
+     "spk": "机遙",
+     "text": "是。",
+     "emo": "緊張",
+     "vol": "中",
+     "pace": "快",
+     "pre": 0.3,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T07",
+   "new": "裴含章近景：低頭翻名冊、提筆蓋章，眼皮都沒抬，表情平淡（之後的冷笑話靠這張臉）",
+   "chars": [
+    "C10"
+   ],
+   "size": "近景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "裴含章",
+     "text": "補錄的。最後一個。",
+     "emo": "平淡",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.4,
+     "ovl": 0.0
+    },
+    {
+     "spk": "裴含章",
+     "text": "新芽都在東廊。順著左手邊的迴廊走到底就是。",
+     "emo": "平淡",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.3,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T08",
+   "new": "机遙近景（入院日）：站在木案前，對「新芽」這個詞愣了一下，有點拘謹",
+   "chars": [
+    "C01"
+   ],
+   "size": "近景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "机遙",
+     "text": "新芽？",
+     "emo": "疑惑",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.3,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T09",
+   "reuse": "T07",
+   "size": "近景",
+   "cam": "Push In",
+   "lines": [
+    {
+     "spk": "裴含章",
+     "text": "剛冒頭，還沒長。去年也有個孩子這樣問我。",
+     "emo": "平淡",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.2,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T10",
+   "reuse": "T08",
+   "size": "近景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "机遙",
+     "text": "……他後來呢？",
+     "emo": "警覺",
+     "vol": "低",
+     "pace": "中",
+     "pre": 0.5,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T11",
+   "reuse": "T07",
+   "size": "近景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "裴含章",
+     "text": "今年又來排隊了。",
+     "emo": "平淡",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.6,
+     "ovl": 0.0
+    }
+   ],
+   "note": "笑點：說完立刻叫下一個名字"
+  },
+  {
+   "id": "T12",
+   "src": "storyboard/frames/A04/f1.png",
+   "size": "中景",
+   "cam": "Tracking",
+   "sec": 2.5,
+   "sfx": "腳步、遠處呼喝",
+   "lines": []
+  },
+  {
+   "id": "T13",
+   "src": "storyboard/frames/A04/f2.png",
+   "size": "中景",
+   "cam": "Static",
+   "sfx": "撞上行囊",
+   "lines": [
+    {
+     "spk": "陸鳴鸞",
+     "text": "抱歉抱歉！——你第幾室？",
+     "emo": "笑",
+     "vol": "高",
+     "pace": "快",
+     "pre": 0.1,
+     "ovl": 0.0
+    },
+    {
+     "spk": "机遙",
+     "text": "第七。",
+     "emo": "愣",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.3,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T14",
+   "src": "storyboard/frames/A04/f2.png",
+   "crop": [
+    0.45,
+    0.05,
+    0.5
+   ],
+   "size": "近景",
+   "cam": "Push In",
+   "lines": [
+    {
+     "spk": "陸鳴鸞",
+     "text": "第七？我隔壁！那間吵死了，祝你好運！",
+     "emo": "笑",
+     "vol": "高",
+     "pace": "快",
+     "pre": 0.2,
+     "ovl": 0.0
+    },
+    {
+     "spk": "演武場（遠）",
+     "text": "出——收——轉——定！",
+     "emo": "喊",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.6,
+     "ovl": 0.0
+    }
+   ],
+   "note": "裁切依實際出圖重定"
+  },
+  {
+   "id": "T15",
+   "src": "storyboard/frames/A05/f1.png",
+   "size": "中景",
+   "cam": "Push In",
+   "sfx": "門內笑聲",
+   "lines": [
+    {
+     "spk": "机遙（心聲）",
+     "text": "想了一整年要說什麼……結果一句都沒準備。",
+     "emo": "自嘲",
+     "vol": "低",
+     "pace": "中",
+     "pre": 0.6,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T16",
+   "src": "storyboard/frames/A05/f2.png",
+   "size": "中景",
+   "cam": "Static",
+   "sfx": "開門",
+   "lines": [
+    {
+     "spk": "齊衡烈",
+     "text": "你就是新來的？",
+     "emo": "好奇",
+     "vol": "中",
+     "pace": "快",
+     "pre": 0.3,
+     "ovl": 0.0
+    },
+    {
+     "spk": "机遙",
+     "text": "應該是。",
+     "emo": "愣",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.4,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T17",
+   "src": "storyboard/frames/A06/f1.png",
+   "size": "近景",
+   "cam": "Static",
+   "sfx": "拍臂環",
+   "lines": [
+    {
+     "spk": "齊衡烈",
+     "text": "那就對了。第七室最近正缺個能打的。",
+     "emo": "笑",
+     "vol": "高",
+     "pace": "快",
+     "pre": 0.2,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T18",
+   "src": "storyboard/frames/A06/f2.png",
+   "size": "中景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "郁岑燁",
+     "text": "你看都沒看他出手，怎麼知道他能打？",
+     "emo": "冷",
+     "vol": "中",
+     "pace": "慢",
+     "pre": 0.4,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T19",
+   "src": "storyboard/frames/A07/f1.png",
+   "size": "中景",
+   "cam": "Static",
+   "sfx": "刀出架",
+   "lines": [
+    {
+     "spk": "齊衡烈",
+     "text": "所以才要打一場啊。",
+     "emo": "笑",
+     "vol": "高",
+     "pace": "中",
+     "pre": 0.2,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T20",
+   "src": "storyboard/frames/A07/f2.png",
+   "size": "近景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "郁岑燁",
+     "text": "……無聊。",
+     "emo": "冷",
+     "vol": "低",
+     "pace": "慢",
+     "pre": 0.3,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T21",
+   "src": "storyboard/frames/A08/f1.png",
+   "size": "中景",
+   "cam": "Push In",
+   "lines": [
+    {
+     "spk": "厲若楓",
+     "text": "別急。他的腳步有點亂。",
+     "emo": "冷靜",
+     "vol": "低",
+     "pace": "慢",
+     "pre": 0.8,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T22",
+   "src": "storyboard/frames/A08/f2.png",
+   "size": "近景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "机遙（心聲）",
+     "text": "步法不穩……揹了一年山路，還是被看出來了。",
+     "emo": "苦笑",
+     "vol": "低",
+     "pace": "中",
+     "pre": 0.4,
+     "ovl": 0.0
+    },
+    {
+     "spk": "机遙",
+     "text": "你們都看得出來？",
+     "emo": "疑惑",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.3,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T23",
+   "src": "storyboard/frames/A09/f1.png",
+   "size": "近景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "郁岑燁",
+     "text": "至少我看得出來。",
+     "emo": "冷",
+     "vol": "低",
+     "pace": "中",
+     "pre": 0.2,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T24",
+   "src": "storyboard/frames/A09/f2.png",
+   "size": "中景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "齊衡烈",
+     "text": "哈哈，那更好！明天演武場見。",
+     "emo": "笑",
+     "vol": "高",
+     "pace": "快",
+     "pre": 0.1,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T25",
+   "src": "storyboard/frames/A10/f1.png",
+   "size": "全景",
+   "cam": "Static",
+   "sfx": "走廊聲音被抽掉",
+   "lines": [
+    {
+     "spk": "蕭曜霖（畫外）",
+     "text": "不用等明天。",
+     "emo": "冷",
+     "vol": "低",
+     "pace": "慢",
+     "pre": 0.6,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T26",
+   "src": "storyboard/frames/A10/f2.png",
+   "size": "全景",
+   "cam": "Push In",
+   "lines": [
+    {
+     "spk": "蕭曜霖",
+     "text": "半刻鐘後，新生演武場集合。",
+     "emo": "冷",
+     "vol": "中",
+     "pace": "慢",
+     "pre": 0.8,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T27",
+   "src": "storyboard/frames/A11/f1.png",
+   "size": "全景",
+   "cam": "Static",
+   "sec": 2.5,
+   "sfx": "沉重腳步遠去",
+   "lines": []
+  },
+  {
+   "id": "T28",
+   "src": "storyboard/frames/A11/f2.png",
+   "size": "中景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "机遙",
+     "text": "這麼快？",
+     "emo": "愣",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.6,
+     "ovl": 0.0
+    },
+    {
+     "spk": "齊衡烈",
+     "text": "習慣就好。",
+     "emo": "笑",
+     "vol": "中",
+     "pace": "快",
+     "pre": 0.2,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T29",
+   "src": "storyboard/frames/A12/f1.png",
+   "size": "中景",
+   "cam": "Static",
+   "sec": 2.0,
+   "lines": []
+  },
+  {
+   "id": "T30",
+   "src": "storyboard/frames/A12/f2.png",
+   "size": "中景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "齊衡烈",
+     "text": "喂，新來的。我叫齊衡烈。擦劍那個是郁岑燁，窗邊那個是厲若楓。你呢？",
+     "emo": "笑",
+     "vol": "中",
+     "pace": "快",
+     "pre": 0.3,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T31",
+   "src": "storyboard/frames/A08/f1.png",
+   "crop": [
+    0.3,
+    0.05,
+    0.5
+   ],
+   "size": "近景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "厲若楓",
+     "text": "……我自己會說。",
+     "emo": "冷",
+     "vol": "低",
+     "pace": "慢",
+     "pre": 0.3,
+     "ovl": 0.0
+    }
+   ],
+   "note": "裁切依實際出圖重定"
+  },
+  {
+   "id": "T32",
+   "src": "storyboard/frames/A08/f2.png",
+   "size": "近景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "机遙",
+     "text": "机遙。",
+     "emo": "平",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.4,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T33",
+   "src": "storyboard/frames/A12/f2.png",
+   "size": "中景",
+   "cam": "Push In",
+   "lines": [
+    {
+     "spk": "齊衡烈",
+     "text": "机遙。",
+     "emo": "笑",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.3,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T34",
+   "src": "storyboard/frames/A09/f1.png",
+   "size": "近景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "郁岑燁",
+     "text": "名字倒是比腳步穩。",
+     "emo": "冷",
+     "vol": "低",
+     "pace": "中",
+     "pre": 0.2,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T35",
+   "src": "storyboard/frames/A12/f2.png",
+   "size": "中景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "齊衡烈",
+     "text": "行。走了，第一天就遲到，那個人會讓你後悔自己考進來。",
+     "emo": "笑",
+     "vol": "中",
+     "pace": "快",
+     "pre": 0.3,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T36",
+   "src": "storyboard/frames/A12/f3.png",
+   "size": "中景",
+   "cam": "Static",
+   "lines": [
+    {
+     "spk": "机遙",
+     "text": "那個人是誰？",
+     "emo": "疑惑",
+     "vol": "中",
+     "pace": "中",
+     "pre": 0.3,
+     "ovl": 0.0
+    },
+    {
+     "spk": "郁岑燁",
+     "text": "蕭曜霖。戰技堂的教官。",
+     "emo": "冷",
+     "vol": "低",
+     "pace": "中",
+     "pre": 0.2,
+     "ovl": 0.0
+    },
+    {
+     "spk": "厲若楓",
+     "text": "厲若楓。……走了。",
+     "emo": "冷靜",
+     "vol": "低",
+     "pace": "慢",
+     "pre": 0.6,
+     "ovl": 0.0
+    }
+   ]
+  },
+  {
+   "id": "T37",
+   "src": "storyboard/frames/A12/f4.png",
+   "size": "近景",
+   "cam": "Push In",
+   "sec": 3.0,
+   "sfx": "關門",
+   "lines": [
+    {
+     "spk": "机遙（心聲）",
+     "text": "第七室。",
+     "emo": "輕笑",
+     "vol": "低",
+     "pace": "慢",
+     "pre": 0.8,
+     "ovl": 0.0
+    }
+   ]
+  }
+ ]
+}
