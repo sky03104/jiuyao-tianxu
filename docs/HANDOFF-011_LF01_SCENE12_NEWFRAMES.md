@@ -129,7 +129,7 @@ Blocking (Chinese): 郁岑燁被看穿；厲若楓的箭被彈開
 
 Shot (Chinese): 中景，橫式 16:9。厲若楓站在樹根上拉開三段式短弓連射，箭矢打在赤瞳妖將的鱗甲上被彈開，火星四濺。
 
-LAYOUT (must follow): two figures only. 厲若楓 on the left standing on a huge tree root, amber eyes, drawing his three-section folding short bow, a volley of arrows in flight toward the right. 赤瞳妖將 on the right, towering, arrows striking his crimson-black scale plates and bouncing off in bursts of sparks; he does not even turn.
+LAYOUT (must follow): two figures only. 厲若楓 (a young woman) on the left standing on a huge tree root, amber eyes, drawing her three-section folding short bow, a volley of arrows in flight toward the right. 赤瞳妖將 on the right, towering, arrows striking his crimson-black scale plates and bouncing off in bursts of sparks; he does not even turn.
 
 厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, sleeveless left arm with an old shoulder scar, quiver behind the right shoulder, three-section folding short bow (match her approved character sheet; arm guards on both forearms are acceptable).
 
@@ -163,7 +163,7 @@ Blocking (Chinese): 所有人站在原地
 
 Shot (Chinese): 全景，橫式 16:9。石庭恢復灰暗安靜，六名年輕修行者站在原地沒有人說話；齊衡烈握刀的手還在發抖，聞人澈扶著短杖喘氣。
 
-LAYOUT (must follow): exactly six young cultivators standing still in the grey quiet stone courtyard, spread out, no one speaking: 机遙 (messy dark hair, plain grey short jacket, clean face), 齊衡烈 (bright red hair, the hand holding his heavy saber trembling), 郁岑燁 (black-teal hair, deep navy robe, straight sword), 厲若楓 (bow in hand, quiver on his back), 江祈璟 (high ponytail, deep navy robe, spear), 聞人澈 (grey-blue hooded robe, leaning on his short staff, catching his breath). Exactly THREE dark stone pillars in a triangle and ONE central round pedestal with the dark crystal — no light beams anywhere. Cold grey-green mist.
+LAYOUT (must follow): exactly six young cultivators standing still in the grey quiet stone courtyard, spread out, no one speaking: 机遙 (messy dark hair, plain grey short jacket, clean face), 齊衡烈 (bright red hair, the hand holding his heavy saber trembling), 郁岑燁 (black-teal hair, deep navy robe, straight sword), 厲若楓 (a young WOMAN, low ponytail, dark-teal cape, bow in hand, quiver on her back), 江祈璟 (high ponytail, deep navy robe, spear), 聞人澈 (grey-blue hooded robe, leaning on his short staff, catching his breath). Exactly THREE dark stone pillars in a triangle and ONE central round pedestal with the dark crystal — no light beams anywhere. Cold grey-green mist. NOT a lineup or group photo: they stand scattered at different depths and angles, nobody looks at the camera — 齊衡烈 stares down at his trembling hand, 聞人澈 is bent over his staff, 郁岑燁 and 江祈璟 still watch the mist where the giant left, 机遙 stands a little apart looking at the dark crystal, 厲若楓 lowers her bow.
 
 厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, sleeveless left arm with an old shoulder scar, quiver behind the right shoulder, three-section folding short bow (match her approved character sheet; arm guards on both forearms are acceptable).
 
