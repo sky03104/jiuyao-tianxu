@@ -4,11 +4,13 @@
 鏡頭表每個鏡頭：src（分鏡圖）＋crop（裁切 [x,y,w]）／new（storyboard/frames/new/<鏡號>.png）／reuse（沿用某鏡的新圖）、
 景別、運鏡、音效 sfx、台詞（情緒／音量／速度／pre 前停頓／ovl 搶話重疊）。
 時間軸：每句開始＝上一句結束＋pre（有 ovl 就提前 ovl 秒，兩句疊在一起）；鏡頭長度＝台詞講完＋0.35 秒（無台詞用 sec）。
-聲音：配音＋暫時音效（ffmpeg 合成：地鳴、衝擊、鈴、風、箭、碎裂）＋低頻配樂底（「配樂抽掉／壓低」的鏡頭靜音，「配樂起戰鬥」後加心跳鼓）。
-字幕與地點卡規則見 production/roles/06_字幕.md。
+聲音（v6 起）：配音＋../music/scene12_bed_v6.mp3（配樂＋音效＋環境聲，由 ../music/score_scene12.py 依時間軸產生、已在台詞下壓低）；
+  加 --temp-sound 改回 v5 的 ffmpeg 合成暫時音效與低頻配樂底。
+字幕與地點卡規則見 production/roles/06_字幕.md；聲音、節奏、運鏡規則見 05_剪輯.md（程式會檢查並列出警告）。
 
-  python3 production/LF01/animatic/render_shots.py               → LF01_scene12_animatic_v5.mp4
-  python3 production/LF01/animatic/render_shots.py --stills      → 只輸出每鏡第一格到 stills_v5/
+  python3 production/LF01/animatic/render_shots.py --timeline    → ../music/scene12_timeline.json（給配樂程式）
+  python3 production/LF01/animatic/render_shots.py               → LF01_scene12_animatic_v6.mp4
+  python3 production/LF01/animatic/render_shots.py --stills      → 只輸出每鏡第一格到 stills_v6/
 """
 import json, os, re, shutil, subprocess, sys
 
@@ -19,8 +21,12 @@ import render_scene12 as base  # 沿用 ffmpeg、字型、字幕排版、地點�
 
 SHOTS = json.load(open(os.path.join(LF, "scene12_shots.json"), encoding="utf-8"))["shots"]
 MAN = {e["key"]: e for e in json.load(open(os.path.join(LF, "voice", "scene12_shots_manifest.json"), encoding="utf-8"))}
-OUT = os.path.join(HERE, "LF01_scene12_animatic_v5.mp4")
-TMP = os.path.join(HERE, "cache_v5")
+VER = "v6"
+OUT = os.path.join(HERE, f"LF01_scene12_animatic_{VER}.mp4")
+TMP = os.path.join(HERE, f"cache_{VER}")
+MUSIC = os.path.join(LF, "music")
+BED = os.path.join(MUSIC, f"scene12_bed_{VER}.mp3")
+TIMELINE = os.path.join(MUSIC, "scene12_timeline.json")
 W, H, FPS = base.W, base.H, base.FPS
 CAPTION = {"S01": {"top": "青嵐古林", "main": "陣眼遺跡"}}
 run, FF = base.run, base.FF
@@ -45,9 +51,18 @@ def motion(cam, sec, crop, mirror):
     elif cam.startswith("Tracking"):
         z = "1.10"
         xx = f"(iw-iw/zoom)*(on/{n})" if not mirror else f"(iw-iw/zoom)*(1-on/{n})"
+    elif cam.startswith("Pull"):
+        z, xx = f"1.14-0.14*on/{n}", "iw/2-(iw/zoom/2)"
+    elif cam.startswith("Tilt"):
+        z, xx, yy = "1.14", "iw/2-(iw/zoom/2)", f"(ih-ih/zoom)*(1-on/{n})"
+    elif cam.startswith("Shake"):
+        z = "1.08"
+        xx = "iw/2-(iw/zoom/2)+60*sin(on*2.3)*exp(-on/6)"
+        yy = "ih/2-(ih/zoom/2)+40*cos(on*1.9)*exp(-on/6)"
     else:
         z, xx = f"1+0.03*on/{n}", "iw/2-(iw/zoom/2)"
-    return (f"{pre}scale=3840:2160,setsar=1,zoompan=z='{z}':x='{xx}':y='ih/2-(ih/zoom/2)':d={n}:s={W}x{H}:fps={FPS},"
+    yy = locals().get("yy", "ih/2-(ih/zoom/2)")
+    return (f"{pre}scale=3840:2160,setsar=1,zoompan=z='{z}':x='{xx}':y='{yy}':d={n}:s={W}x{H}:fps={FPS},"
             "setsar=1,format=yuv420p")
 
 
@@ -65,6 +80,9 @@ SFX = [
 
 def main():
     stills = "--stills" in sys.argv
+    temp_sound = "--temp-sound" in sys.argv
+    only_timeline = "--timeline" in sys.argv
+    tl_shots = []
     os.makedirs(TMP, exist_ok=True)
     parts, voices, subs, sfx, caps = [], [], [], [], []
     music_off, battle_on = [], None
@@ -76,7 +94,7 @@ def main():
         shot_start = t
         cap = CAPTION.get(s["id"])
         if cap:
-            caps.append((t + 0.5, t + 4.0, cap))
+            caps.append((t + 0.5, t + 4.7, cap))
         lines = []
         for i, l in enumerate([] if stills else s["lines"], 1):
             key = f"{s['id']}_{i}_{l['spk'].replace('（', '').replace('）', '')}"
@@ -87,16 +105,22 @@ def main():
             d = base.dur(f)
             st = last_end + l["pre"] - l.get("ovl", 0.0)
             if i == 1:
-                st = max(st, shot_start + (4.2 if cap else 0.1))
+                st = max(st, shot_start + (4.9 if cap else 0.1))
             lines.append((f, st, d, l))
             last_end = st + d
         sec = s.get("sec", 1.5)
         end = max(shot_start + sec, (last_end + 0.35) if lines else 0)
         sec = round(end - shot_start, 2)
+        tl_shots.append({"id": s["id"], "t0": round(shot_start, 3), "t1": round(end, 3), "cam": s["cam"],
+                         "size": s.get("size", ""), "sfx": s.get("sfx", ""),
+                         "lines": [{"spk": l["spk"], "t0": round(st, 3), "t1": round(st + d, 3), "vol": l.get("vol", "")}
+                                   for f, st, d, l in lines]})
+        if only_timeline:
+            t = end; continue
         if stills:
-            os.makedirs(os.path.join(HERE, "stills_v5"), exist_ok=True)
+            os.makedirs(os.path.join(HERE, f"stills_{VER}"), exist_ok=True)
             run(["-i", img, "-vf", motion(s["cam"], 0.1, crop, False), "-frames:v", "1",
-                 os.path.join(HERE, "stills_v5", f"{s['id']}.png")])
+                 os.path.join(HERE, f"stills_{VER}", f"{s['id']}.png")])
             t = end; continue
         mirror = s["cam"].startswith("Tracking") and track_i % 2 == 1
         track_i += s["cam"].startswith("Tracking")
@@ -106,7 +130,7 @@ def main():
         parts.append(part)
         for f, st, d, l in lines:
             voices.append((f, st))
-            subs.append((st, st + d + 0.3, l["spk"], l["text"]))
+            subs.append([st, st + hold(l["spk"], d), l["spk"], l["text"], d, l.get("ovl", 0.0)])
         note = s.get("sfx", "")
         for pat, flt in SFX:
             if re.search(pat, note):
@@ -118,9 +142,14 @@ def main():
         if "配樂抽掉" in note and battle_on is not None and shot_start > battle_on:
             music_off.append((shot_start, end + 999))
         t = end
+    if only_timeline:
+        os.makedirs(MUSIC, exist_ok=True)
+        json.dump({"total": round(t, 3), "shots": tl_shots}, open(TIMELINE, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        print(f"✓ {TIMELINE}（{t:.1f} 秒）"); return
     if stills:
-        print("stills →", os.path.join(HERE, "stills_v5")); return
+        print("stills →", os.path.join(HERE, f"stills_{VER}")); return
     total = t
+    warn = check(tl_shots, subs, music_off)
 
     lst = os.path.join(TMP, "list.txt")
     open(lst, "w").write("".join(f"file '{p}'\n" for p in parts))
@@ -137,7 +166,7 @@ def main():
         f.write(f"Style: D,{base.FONT_NAME},50,&H00FFFFFF,&H00000000,&H80000000,0,1,3,1,2,60\n")
         f.write(f"Style: C,{base.CAP_FONT or base.FONT_NAME},120,&H00FFFFFF,&H00000000,&H64000000,0,1,0,4,1,140\n\n")
         f.write("[Events]\nFormat: Layer, Start, End, Style, Text\n")
-        for a, b, spk, line in subs:
+        for a, b, spk, line, *_ in subs:
             f.write(f"Dialogue: 0,{ts(a)},{ts(b)},D,{base.sub_text(line)}\n")
         for a, b, cap in caps:
             f.write(f"Dialogue: 1,{ts(a)},{ts(b)},C,{{\\fad(600,600)\\pos(120,920)\\an1\\fsp26}}"
@@ -155,15 +184,22 @@ def main():
     for f, st in voices:
         ins += ["-i", f]; ms = int(st * 1000)
         fl.append(f"[{k}:a]aformat=sample_rates=48000:channel_layouts=stereo,adelay={ms}|{ms}[v{k}]"); labels.append(f"[v{k}]"); k += 1
+    if not temp_sound:
+        if not os.path.exists(BED):
+            sys.exit(f"缺配樂音效 {BED}：先跑 --timeline，再跑 ../music/score_scene12.py（或加 --temp-sound）")
+        ins += ["-i", BED]
+        fl.append(f"[{k}:a]aformat=sample_rates=48000:channel_layouts=stereo[bed]"); labels.append("[bed]")
+        sfx, music_off, battle_on = [], [], None
     for j, (flt, st) in enumerate(sfx):
         ms = int(st * 1000)
         fl.append(f"{flt},aformat=sample_rates=48000:channel_layouts=stereo,adelay={ms}|{ms},volume=0.6[s{j}]"); labels.append(f"[s{j}]")
     # 配樂底：低頻雙音嗡鳴；靜音區段用 volume 表達式關掉；戰鬥段加 1.6Hz 心跳鼓
     mute = "+".join(f"between(t,{a:.2f},{b:.2f})" for a, b in music_off) or "0"
-    fl.append(f"sine=f=55:d={total}:r=48000,volume=0.10[m1];sine=f=82.5:d={total}:r=48000,volume=0.05[m2];"
+    if temp_sound:
+      fl.append(f"sine=f=55:d={total}:r=48000,volume=0.10[m1];sine=f=82.5:d={total}:r=48000,volume=0.05[m2];"
               f"[m1][m2]amix=inputs=2:normalize=0,tremolo=f=0.15:d=0.4,volume='if({mute},0,1)':eval=frame,"
               f"aformat=channel_layouts=stereo,afade=t=in:d=2,afade=t=out:st={total - 2}:d=2[mus]")
-    labels.append("[mus]")
+      labels.append("[mus]")
     if battle_on is not None:
         fl.append(f"anoisesrc=color=brown:amplitude=1:d={total}:r=48000,lowpass=f=70,"
                   f"volume='if(lt(mod(t,0.62),0.12)*gte(t,{battle_on:.2f})*not({mute}),1.4,0)':eval=frame,"
@@ -174,7 +210,37 @@ def main():
     run(ins + ["-filter_complex", f"[0:v]{vfilter}[vout];" + ";".join(fl), "-map", "[vout]", "-map", "[aout]",
                "-c:v", "libx264", "-preset", "medium", "-crf", "27", "-c:a", "aac", "-b:a", "160k",
                "-movflags", "+faststart", OUT])
-    print(f"✓ {OUT}（{total:.0f} 秒，{len(parts)} 鏡，{len(voices)} 句配音，{len(sfx)} 個音效）")
+    print(f"✓ {OUT}（{total:.0f} 秒，{len(parts)} 鏡，{len(voices)} 句配音）")
+    for w in warn:
+        print("⚠", w)
+
+
+def hold(spk, d):
+    """字幕最短停留（06_字幕.md）：對白 ≥1.2 秒且 ≥ 講完＋0.3 秒；旁白、心聲 ≥1.8 秒且 ≥ 講完＋0.6 秒。"""
+    if spk == "旁白" or "心聲" in spk:
+        return max(1.8, d + 0.6)
+    return max(1.2, d + 0.3)
+
+
+def check(shots, subs, music_off):
+    """05_剪輯.md／06_字幕.md 可自動檢查的規則；回傳警告清單。字幕被下一句擠到時提早收（直接改 subs）。"""
+    warn = []
+    subs.sort(key=lambda x: x[0])
+    for a, b in zip(subs, subs[1:]):
+        if b[5] > 0:  # 下一句是刻意搶話：兩行字幕同時出現（libass 自動上下排開），不提早收
+            continue
+        if a[1] > b[0] - 0.05:
+            a[1] = b[0] - 0.05
+            need = hold(a[2], a[4])
+            if a[1] - a[0] < need - 0.01:
+                warn.append(f"字幕「{a[3]}」只停 {a[1] - a[0]:.1f} 秒（規則 {need:.1f} 秒）：下一句太快，考慮加大停頓")
+    cams = {s["cam"].split()[0] for s in shots}
+    if len(cams) < 4:
+        warn.append(f"運鏡只有 {len(cams)} 種（{'、'.join(sorted(cams))}），規則每場至少 4 種")
+    quiet = [s["id"] for s in shots if re.search(r"抽掉|壓低|安靜", s["sfx"])]
+    if len(quiet) < 2:
+        warn.append(f"安靜段只有 {len(quiet)} 處，規則每場至少 2 處")
+    return warn
 
 
 if __name__ == "__main__":
