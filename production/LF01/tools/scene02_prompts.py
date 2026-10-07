@@ -32,6 +32,25 @@ CLOSEUPS = {
             "blurred courtyard and other students in clear morning light."),
 }
 # 已出圖但不合格、要單格重出的（修正寫在 lf01.json 該格的 layout）
+# 同一張故事版出過第二版（b），某幾格第二版比較好時改用它：(段號, 第幾格) → (故事版檔名, 第幾格)
+PANEL_OVERRIDE = {("A03", 1): ("S02-1b", 5), ("A05", 1): ("S02-1b", 9)}  # 第一版憑證是方形有字、門牌寫了字
+
+
+def panel_override(seg, k):
+    from PIL import Image
+    if (seg, k) not in PANEL_OVERRIDE:
+        return None
+    name, n = PANEL_OVERRIDE[(seg, k)]
+    src = os.path.join(LF, "storyboard", "boards", f"{name}.png")
+    im = Image.open(src).convert("RGB")
+    W, H = im.size
+    r, c = divmod(n - 1, 3)
+    dst = os.path.join(LF, "storyboard", "boards", name, f"p{n}.jpg")
+    os.makedirs(os.path.dirname(dst), exist_ok=True)
+    im.crop((int(c * W / 3), int(r * H / 3), int((c + 1) * W / 3), int((r + 1) * H / 3))).save(dst, quality=92)
+    return dst
+
+
 # (段號, 第幾格, 為什麼重出)；2026-10-07 的 A01 f2、A02 f1 已重出通過，清空。驗圖紀錄見 ../README.md
 REDO = []
 LIPSYNC = ("The face is large, sharp and clearly visible (this shot will be used for lip-sync), no hands or objects covering "
@@ -85,9 +104,11 @@ def main():
         L += ["# 單格正式分鏡圖（故事版已通過的格子）", "",
               "> 每張開新對話；參考拼圖最後一格是故事版裁下來的那一格，照它的構圖、但畫質要做到正式分鏡圖。", ""]
     for j in todo:
-        refs = j["refs"] + [j["panel"]]
+        refs = j["refs"] + [panel_override(j["seg"]["id"], j["k"]) or j["panel"]]
         descs = j["descs"] + ["the approved storyboard panel for THIS shot — follow its framing, camera angle and staging, "
-                              "but render at full finished quality; ignore any small label text in its corner"]
+                              "but render at full finished quality; ignore any small label text in its corner. Take ONLY the composition "
+                              "from it — NOT its drawing style, colours or faces: render in the semi-realistic 3D style of the character "
+                              "sheets, with faces, hair colour and body proportions exactly as on the character sheets"]
         board = j["board"].replace(".jpg", "-panel.jpg")
         ups, lines = h.board_or_single(refs, descs, board)
         L += [f"## {j['seg']['id']} f{j['k']}　→ 存成 `{h.rel(j['out'])}`", "", "**上傳：** " + "、".join(ups), "",

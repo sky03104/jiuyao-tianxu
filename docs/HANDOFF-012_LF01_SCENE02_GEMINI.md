@@ -21,7 +21,7 @@ Image 1: a reference board of 7 panels separated by white gaps (it is a referenc
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
-STORYBOARD SHEET for one continuous sequence. ONE 16:9 landscape canvas divided into an exact grid of 3 columns x 3 rows of equal 16:9 panels, separated by thin pure-white gutters, no outer border. Read left to right, top to bottom; SHOT 1 fills the first cell. 9 cells are used. Each panel is a finished colour frame in the same rendering style as the reference sheets (simpler detail is fine, but NOT a pencil sketch). The same character must look identical in every panel — face, hair, costume, weapon — and match the character sheets; the location stays consistent across panels. Vary the shot sizes exactly as listed. No text, no panel numbers, no captions, no speech bubbles, no arrows.
+STORYBOARD SHEET for one continuous sequence. ONE 16:9 landscape canvas divided into an exact grid of 3 columns x 3 rows of equal 16:9 panels, separated by thin pure-white gutters, no outer border. Read left to right, top to bottom; SHOT 1 fills the first cell. 9 cells are used. Each panel is a finished colour frame in the same rendering style as the reference sheets (simpler detail is fine, but NOT a pencil sketch, and NOT 2D anime, manhwa or cel-shaded line art — every panel is a semi-realistic 3D render like the character sheets). The same character must look identical in every panel — face, hair, costume, weapon — and match the character sheets; the location stays consistent across panels. Vary the shot sizes exactly as listed. No text, no panel numbers, no captions, no speech bubbles, no arrows.
 
 SHOT 1 (grid cell: top row, left) — 大遠景, Push In (opening moment). Characters: no people. Lighting: clear early morning, a long band of white cloud drifting across the middle of the mountain, first sunlight turning the top hall pale gold. Shot (Chinese): 大遠景，橫式 16:9。依山疊建的天玄院三層院落，白色雲帶從山腰緩緩流過，最上方三重簷主殿被晨光照成淡金色。
 
@@ -58,7 +58,7 @@ Image 1: a reference board of 6 panels separated by white gaps (it is a referenc
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
-STORYBOARD SHEET for one continuous sequence. ONE 16:9 landscape canvas divided into an exact grid of 3 columns x 3 rows of equal 16:9 panels, separated by thin pure-white gutters, no outer border. Read left to right, top to bottom; SHOT 1 fills the first cell. 9 cells are used. Each panel is a finished colour frame in the same rendering style as the reference sheets (simpler detail is fine, but NOT a pencil sketch). The same character must look identical in every panel — face, hair, costume, weapon — and match the character sheets; the location stays consistent across panels. Vary the shot sizes exactly as listed. No text, no panel numbers, no captions, no speech bubbles, no arrows.
+STORYBOARD SHEET for one continuous sequence. ONE 16:9 landscape canvas divided into an exact grid of 3 columns x 3 rows of equal 16:9 panels, separated by thin pure-white gutters, no outer border. Read left to right, top to bottom; SHOT 1 fills the first cell. 9 cells are used. Each panel is a finished colour frame in the same rendering style as the reference sheets (simpler detail is fine, but NOT a pencil sketch, and NOT 2D anime, manhwa or cel-shaded line art — every panel is a semi-realistic 3D render like the character sheets). The same character must look identical in every panel — face, hair, costume, weapon — and match the character sheets; the location stays consistent across panels. Vary the shot sizes exactly as listed. No text, no panel numbers, no captions, no speech bubbles, no arrows.
 
 SHOT 1 (grid cell: top row, left) — 中景, Static Shot (opening moment). Characters: 机遙、齊衡烈. Lighting: morning, the far end of the corridor quieter, sunlight narrowing to a strip along the wall. Shot (Chinese): 雙人中景，橫式 16:9。門從裡面被拉開，齊衡烈一手撐門框、探出半個身子上下打量机遙；机遙站在門檻外，兩人側面相對。
 
@@ -96,7 +96,7 @@ Image 1: a reference board of 7 panels separated by white gaps (it is a referenc
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
-STORYBOARD SHEET for one continuous sequence. ONE 16:9 landscape canvas divided into an exact grid of 3 columns x 3 rows of equal 16:9 panels, separated by thin pure-white gutters, no outer border. Read left to right, top to bottom; SHOT 1 fills the first cell. 8 cells are used; the remaining 1 grid cell(s) at the end stay plain white. Each panel is a finished colour frame in the same rendering style as the reference sheets (simpler detail is fine, but NOT a pencil sketch). The same character must look identical in every panel — face, hair, costume, weapon — and match the character sheets; the location stays consistent across panels. Vary the shot sizes exactly as listed. No text, no panel numbers, no captions, no speech bubbles, no arrows.
+STORYBOARD SHEET for one continuous sequence. ONE 16:9 landscape canvas divided into an exact grid of 3 columns x 3 rows of equal 16:9 panels, separated by thin pure-white gutters, no outer border. Read left to right, top to bottom; SHOT 1 fills the first cell. 8 cells are used; the remaining 1 grid cell(s) at the end stay plain white. Each panel is a finished colour frame in the same rendering style as the reference sheets (simpler detail is fine, but NOT a pencil sketch, and NOT 2D anime, manhwa or cel-shaded line art — every panel is a semi-realistic 3D render like the character sheets). The same character must look identical in every panel — face, hair, costume, weapon — and match the character sheets; the location stays consistent across panels. Vary the shot sizes exactly as listed. No text, no panel numbers, no captions, no speech bubbles, no arrows.
 
 SHOT 1 (grid cell: top row, left) — 全景, Static Shot (opening moment). Characters: 机遙、齊衡烈、郁岑燁、厲若楓. Lighting: looking down the corridor toward its far end with the morning sun directly behind the far opening, strong soft backlight and glowing haze. Shot (Chinese): 全景，橫式 16:9，鏡頭在東廊上看進第七室敞開的門口。屋內齊衡烈、郁岑燁、厲若楓同時轉頭望向走廊（朝鏡頭方向），站在門檻上的机遙跟著回頭；四人都在門框之內。 厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, sleeveless left arm with an old shoulder scar, quiver behind the right shoulder, three-section folding short bow (match her approved character sheet; arm guards on both forearms are acceptable).
 
@@ -170,7 +170,7 @@ Reference images:
 Image 1: a reference board of 3 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
   - Panel 1 (top-left): environment sheet of this location — match its architecture, materials, layout and wear exactly; the frame shows the same place
   - Panel 2 (top-right): prop sheet of 入院憑證 — match this object exactly; any plaque or token surface stays blank
-  - Panel 3 (middle-left): the approved storyboard panel for THIS shot — follow its framing, camera angle and staging, but render at full finished quality; ignore any small label text in its corner
+  - Panel 3 (middle-left): the approved storyboard panel for THIS shot — follow its framing, camera angle and staging, but render at full finished quality; ignore any small label text in its corner. Take ONLY the composition from it — NOT its drawing style, colours or faces: render in the semi-realistic 3D style of the character sheets, with faces, hair colour and body proportions exactly as on the character sheets
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -197,7 +197,7 @@ Image 1: a reference board of 4 panels separated by white gaps (it is a referenc
   - Panel 1 (top-left): environment sheet of this location — match its architecture, materials, layout and wear exactly; the frame shows the same place
   - Panel 2 (top-right): character model sheet of 机遙 — this is the person called 机遙 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
   - Panel 3 (middle-left): character model sheet of 裴含章 — this is the person called 裴含章 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
-  - Panel 4 (middle-right): the approved storyboard panel for THIS shot — follow its framing, camera angle and staging, but render at full finished quality; ignore any small label text in its corner
+  - Panel 4 (middle-right): the approved storyboard panel for THIS shot — follow its framing, camera angle and staging, but render at full finished quality; ignore any small label text in its corner. Take ONLY the composition from it — NOT its drawing style, colours or faces: render in the semi-realistic 3D style of the character sheets, with faces, hair colour and body proportions exactly as on the character sheets
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -222,7 +222,7 @@ Image 1: a reference board of 4 panels separated by white gaps (it is a referenc
   - Panel 1 (top-left): environment sheet of this location — match its architecture, materials, layout and wear exactly; the frame shows the same place
   - Panel 2 (top-right): character model sheet of 机遙 — this is the person called 机遙 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
   - Panel 3 (middle-left): prop sheet of 入院憑證 — match this object exactly; any plaque or token surface stays blank
-  - Panel 4 (middle-right): the approved storyboard panel for THIS shot — follow its framing, camera angle and staging, but render at full finished quality; ignore any small label text in its corner
+  - Panel 4 (middle-right): the approved storyboard panel for THIS shot — follow its framing, camera angle and staging, but render at full finished quality; ignore any small label text in its corner. Take ONLY the composition from it — NOT its drawing style, colours or faces: render in the semi-realistic 3D style of the character sheets, with faces, hair colour and body proportions exactly as on the character sheets
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -247,7 +247,7 @@ Image 1: a reference board of 4 panels separated by white gaps (it is a referenc
   - Panel 1 (top-left): environment sheet of this location — match its architecture, materials, layout and wear exactly; the frame shows the same place
   - Panel 2 (top-right): character model sheet of 机遙 — this is the person called 机遙 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
   - Panel 3 (middle-left): character model sheet of 陸鳴鸞 — this is the person called 陸鳴鸞 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
-  - Panel 4 (middle-right): the approved storyboard panel for THIS shot — follow its framing, camera angle and staging, but render at full finished quality; ignore any small label text in its corner
+  - Panel 4 (middle-right): the approved storyboard panel for THIS shot — follow its framing, camera angle and staging, but render at full finished quality; ignore any small label text in its corner. Take ONLY the composition from it — NOT its drawing style, colours or faces: render in the semi-realistic 3D style of the character sheets, with faces, hair colour and body proportions exactly as on the character sheets
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -274,7 +274,7 @@ Image 1: a reference board of 4 panels separated by white gaps (it is a referenc
   - Panel 1 (top-left): environment sheet of this location — match its architecture, materials, layout and wear exactly; the frame shows the same place
   - Panel 2 (top-right): character model sheet of 机遙 — this is the person called 机遙 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
   - Panel 3 (middle-left): prop sheet of 第七室門牌 — match this object exactly; any plaque or token surface stays blank
-  - Panel 4 (middle-right): the approved storyboard panel for THIS shot — follow its framing, camera angle and staging, but render at full finished quality; ignore any small label text in its corner
+  - Panel 4 (middle-right): the approved storyboard panel for THIS shot — follow its framing, camera angle and staging, but render at full finished quality; ignore any small label text in its corner. Take ONLY the composition from it — NOT its drawing style, colours or faces: render in the semi-realistic 3D style of the character sheets, with faces, hair colour and body proportions exactly as on the character sheets
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -287,6 +287,225 @@ Shot (Chinese): 中景，橫式 16:9。机遙站在一扇深色舊木門前，�
 LAYOUT (must follow): The small vertical door plaque beside the door frame is completely BLANK — plain dark wood or bronze, absolutely no characters or writing on it (match the prop sheet). 机遙 stands in front of the old dark wooden door, the rolled cloth bundle on his back, looking up at the plaque, holding the round admission token in one hand.
 
 Shot size: 中景; camera move: Push In (draw the opening moment of the shot).
+
+Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
+```
+
+## A05 f2　→ 存成 `production/LF01/storyboard/frames/A05/f2.png`
+
+**上傳：** [參考拼圖 f2-refs-panel.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/A05/f2-refs-panel.jpg)（4 張拼成一張）
+
+```text
+Reference images:
+Image 1: a reference board of 4 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location — match its architecture, materials, layout and wear exactly; the frame shows the same place
+  - Panel 2 (top-right): character model sheet of 机遙 — this is the person called 机遙 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+  - Panel 3 (middle-left): character model sheet of 齊衡烈 — this is the person called 齊衡烈 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+  - Panel 4 (middle-right): the approved storyboard panel for THIS shot — follow its framing, camera angle and staging, but render at full finished quality; ignore any small label text in its corner. Take ONLY the composition from it — NOT its drawing style, colours or faces: render in the semi-realistic 3D style of the character sheets, with faces, hair colour and body proportions exactly as on the character sheets
+
+Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
+
+Lighting: morning, the far end of the corridor quieter, sunlight narrowing to a strip along the wall
+
+Blocking (Chinese): 第七室門前；門被拉開，齊衡烈探身
+
+Shot (Chinese): 雙人中景，橫式 16:9。門從裡面被拉開，齊衡烈一手撐門框、探出半個身子上下打量机遙；机遙站在門檻外，兩人側面相對。
+
+Shot size: 中景; camera move: Static Shot (draw the opening moment of the shot).
+
+Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
+```
+
+## A06 f1　→ 存成 `production/LF01/storyboard/frames/A06/f1.png`
+
+**上傳：** [參考拼圖 f1-refs-panel.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/A06/f1-refs-panel.jpg)（3 張拼成一張）
+
+```text
+Reference images:
+Image 1: a reference board of 3 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location — match its architecture, materials, layout and wear exactly; the frame shows the same place
+  - Panel 2 (top-right): character model sheet of 齊衡烈 — this is the person called 齊衡烈 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+  - Panel 3 (middle-left): the approved storyboard panel for THIS shot — follow its framing, camera angle and staging, but render at full finished quality; ignore any small label text in its corner. Take ONLY the composition from it — NOT its drawing style, colours or faces: render in the semi-realistic 3D style of the character sheets, with faces, hair colour and body proportions exactly as on the character sheets
+
+Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
+
+Lighting: morning sunlight entering through the large square lattice window opposite the door, crisp lattice shadows across the floor
+
+Blocking (Chinese): 第七室門口與屋內：齊衡烈、郁岑燁
+
+Shot (Chinese): 近景，橫式 16:9。齊衡烈咧嘴大笑，抬手拍在自己右上臂的赤金臂環上。
+
+Shot size: 近景; camera move: Static Shot (draw the opening moment of the shot).
+
+Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
+```
+
+## A06 f2　→ 存成 `production/LF01/storyboard/frames/A06/f2.png`
+
+**上傳：** [參考拼圖 f2-refs-panel.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/A06/f2-refs-panel.jpg)（3 張拼成一張）
+
+```text
+Reference images:
+Image 1: a reference board of 3 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location — match its architecture, materials, layout and wear exactly; the frame shows the same place
+  - Panel 2 (top-right): character model sheet of 郁岑燁 — this is the person called 郁岑燁 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+  - Panel 3 (middle-left): the approved storyboard panel for THIS shot — follow its framing, camera angle and staging, but render at full finished quality; ignore any small label text in its corner. Take ONLY the composition from it — NOT its drawing style, colours or faces: render in the semi-realistic 3D style of the character sheets, with faces, hair colour and body proportions exactly as on the character sheets
+
+Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
+
+Lighting: morning sunlight entering through the large square lattice window opposite the door, crisp lattice shadows across the floor
+
+Blocking (Chinese): 第七室門口與屋內：齊衡烈、郁岑燁
+
+Shot (Chinese): 中景，橫式 16:9。屋內矮桌旁，郁岑燁坐著用布擦長劍，聽到話才抬起眼，目光冷淡；窗格光影落在桌面。
+
+Shot size: 中景; camera move: Static Shot (draw the opening moment of the shot).
+
+Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
+```
+
+## A07 f1　→ 存成 `production/LF01/storyboard/frames/A07/f1.png`
+
+**上傳：** [參考拼圖 f1-refs-panel.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/A07/f1-refs-panel.jpg)（3 張拼成一張）
+
+```text
+Reference images:
+Image 1: a reference board of 3 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location — match its architecture, materials, layout and wear exactly; the frame shows the same place
+  - Panel 2 (top-right): character model sheet of 齊衡烈 — this is the person called 齊衡烈 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+  - Panel 3 (middle-left): the approved storyboard panel for THIS shot — follow its framing, camera angle and staging, but render at full finished quality; ignore any small label text in its corner. Take ONLY the composition from it — NOT its drawing style, colours or faces: render in the semi-realistic 3D style of the character sheets, with faces, hair colour and body proportions exactly as on the character sheets
+
+Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
+
+Lighting: morning sunlight through the lattice window
+
+Blocking (Chinese): 齊衡烈提刀；郁岑燁低頭
+
+Shot (Chinese): 中景，橫式 16:9。齊衡烈從門邊兵器架提起單刃厚背重刀扛上肩，咧嘴一笑。
+
+Shot size: 中景; camera move: Static Shot (draw the opening moment of the shot).
+
+Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
+```
+
+## A07 f2　→ 存成 `production/LF01/storyboard/frames/A07/f2.png`
+
+**上傳：** [參考拼圖 f2-refs-panel.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/A07/f2-refs-panel.jpg)（3 張拼成一張）
+
+```text
+Reference images:
+Image 1: a reference board of 3 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location — match its architecture, materials, layout and wear exactly; the frame shows the same place
+  - Panel 2 (top-right): character model sheet of 郁岑燁 — this is the person called 郁岑燁 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+  - Panel 3 (middle-left): the approved storyboard panel for THIS shot — follow its framing, camera angle and staging, but render at full finished quality; ignore any small label text in its corner. Take ONLY the composition from it — NOT its drawing style, colours or faces: render in the semi-realistic 3D style of the character sheets, with faces, hair colour and body proportions exactly as on the character sheets
+
+Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
+
+Lighting: morning sunlight through the lattice window
+
+Blocking (Chinese): 齊衡烈提刀；郁岑燁低頭
+
+Shot (Chinese): 近景，橫式 16:9。郁岑燁低頭繼續擦劍，眉頭輕皺。
+
+Shot size: 近景; camera move: Static Shot (draw the opening moment of the shot).
+
+Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
+```
+
+## A08 f1　→ 存成 `production/LF01/storyboard/frames/A08/f1.png`
+
+**上傳：** [參考拼圖 f1-refs-panel.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/A08/f1-refs-panel.jpg)（3 張拼成一張）
+
+```text
+Reference images:
+Image 1: a reference board of 3 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location — match its architecture, materials, layout and wear exactly; the frame shows the same place
+  - Panel 2 (top-right): character model sheet of 厲若楓 — this is the person called 厲若楓 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+  - Panel 3 (middle-left): the approved storyboard panel for THIS shot — follow its framing, camera angle and staging, but render at full finished quality; ignore any small label text in its corner. Take ONLY the composition from it — NOT its drawing style, colours or faces: render in the semi-realistic 3D style of the character sheets, with faces, hair colour and body proportions exactly as on the character sheets
+
+Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
+
+Lighting: morning sunlight through the lattice window, the window side bright
+
+Blocking (Chinese): 厲若楓看机遙的腳；机遙愣住
+
+Shot (Chinese): 中景，橫式 16:9。厲若楓（女）靠在窗邊牆上，背後三段式短弓，琥珀色眼睛往下看著門口的方向（看的是机遙的腳），窗光在她半邊臉上。
+
+厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, sleeveless left arm with an old shoulder scar, quiver behind the right shoulder, three-section folding short bow (match her approved character sheet; arm guards on both forearms are acceptable).
+
+Shot size: 中景; camera move: Static Shot (draw the opening moment of the shot).
+
+Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
+```
+
+## A08 f2　→ 存成 `production/LF01/storyboard/frames/A08/f2.png`
+
+**上傳：** [參考拼圖 f2-refs-panel.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/A08/f2-refs-panel.jpg)（3 張拼成一張）
+
+```text
+Reference images:
+Image 1: a reference board of 3 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location — match its architecture, materials, layout and wear exactly; the frame shows the same place
+  - Panel 2 (top-right): character model sheet of 机遙 — this is the person called 机遙 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+  - Panel 3 (middle-left): the approved storyboard panel for THIS shot — follow its framing, camera angle and staging, but render at full finished quality; ignore any small label text in its corner. Take ONLY the composition from it — NOT its drawing style, colours or faces: render in the semi-realistic 3D style of the character sheets, with faces, hair colour and body proportions exactly as on the character sheets
+
+Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
+
+Lighting: morning sunlight through the lattice window, the window side bright
+
+Blocking (Chinese): 厲若楓看机遙的腳；机遙愣住
+
+Shot (Chinese): 近景，橫式 16:9。机遙站在門檻前愣了一下，視線從窗邊移向矮桌，表情是真心的疑問。
+
+Shot size: 近景; camera move: Static Shot (draw the opening moment of the shot).
+
+Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
+```
+
+## A09 f1　→ 存成 `production/LF01/storyboard/frames/A09/f1.png`
+
+**上傳：** [參考拼圖 f1-refs-panel.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/A09/f1-refs-panel.jpg)（3 張拼成一張）
+
+```text
+Reference images:
+Image 1: a reference board of 3 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location — match its architecture, materials, layout and wear exactly; the frame shows the same place
+  - Panel 2 (top-right): character model sheet of 郁岑燁 — this is the person called 郁岑燁 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+  - Panel 3 (middle-left): the approved storyboard panel for THIS shot — follow its framing, camera angle and staging, but render at full finished quality; ignore any small label text in its corner. Take ONLY the composition from it — NOT its drawing style, colours or faces: render in the semi-realistic 3D style of the character sheets, with faces, hair colour and body proportions exactly as on the character sheets
+
+Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
+
+Lighting: morning sunlight through the lattice window
+
+Blocking (Chinese): 郁岑燁頭也不抬；齊衡烈大笑
+
+Shot (Chinese): 近景，橫式 16:9。郁岑燁頭也沒抬，布在劍身上滑過。
+
+Shot size: 近景; camera move: Static Shot (draw the opening moment of the shot).
+
+Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
+```
+
+## A09 f2　→ 存成 `production/LF01/storyboard/frames/A09/f2.png`
+
+**上傳：** [參考拼圖 f2-refs-panel.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/A09/f2-refs-panel.jpg)（3 張拼成一張）
+
+```text
+Reference images:
+Image 1: a reference board of 3 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location — match its architecture, materials, layout and wear exactly; the frame shows the same place
+  - Panel 2 (top-right): character model sheet of 齊衡烈 — this is the person called 齊衡烈 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+  - Panel 3 (middle-left): the approved storyboard panel for THIS shot — follow its framing, camera angle and staging, but render at full finished quality; ignore any small label text in its corner. Take ONLY the composition from it — NOT its drawing style, colours or faces: render in the semi-realistic 3D style of the character sheets, with faces, hair colour and body proportions exactly as on the character sheets
+
+Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
+
+Lighting: morning sunlight through the lattice window
+
+Blocking (Chinese): 郁岑燁頭也不抬；齊衡烈大笑
+
+Shot (Chinese): 中景，橫式 16:9。齊衡烈仰頭大笑，把肩上的重刀顛了一下。
+
+Shot size: 中景; camera move: Static Shot (draw the opening moment of the shot).
 
 Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
 ```

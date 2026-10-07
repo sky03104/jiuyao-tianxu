@@ -184,7 +184,8 @@ def board_jobs():
                 f"Read left to right, top to bottom; SHOT 1 fills the first cell. {len(part)} cells are used"
                 + (f"; the remaining {cols * rows - len(part)} grid cell(s) at the end stay plain white" if len(part) < cols * rows else "")
                 + ". Each panel is a finished colour frame in the same rendering style as the reference sheets (simpler detail "
-                "is fine, but NOT a pencil sketch). The same character must look identical in every panel — face, hair, "
+                "is fine, but NOT a pencil sketch, and NOT 2D anime, manhwa or cel-shaded line art — every panel is a semi-realistic 3D render "
+                "like the character sheets). The same character must look identical in every panel — face, hair, "
                 "costume, weapon — and match the character sheets; the location stays consistent across panels. Vary the "
                 "shot sizes exactly as listed. No text, no panel numbers, no captions, no speech bubbles, no arrows.\n\n"
                 + "\n\n".join(panels))
