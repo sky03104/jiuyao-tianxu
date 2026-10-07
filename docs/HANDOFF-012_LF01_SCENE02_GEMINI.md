@@ -16,8 +16,8 @@ Image 1: a reference board of 7 panels separated by white gaps (it is a referenc
   - Panel 3 (top-right): character model sheet of 机遙 — the person called 机遙 in the panel text; same face, hairstyle, costume and weapon in every panel
   - Panel 4 (middle-left): character model sheet of 裴含章 — the person called 裴含章 in the panel text; same face, hairstyle, costume and weapon in every panel
   - Panel 5 (middle-middle): character model sheet of 陸鳴鸞 — the person called 陸鳴鸞 in the panel text; same face, hairstyle, costume and weapon in every panel
-  - Panel 6 (middle-right): prop sheet of 入院憑證
-  - Panel 7 (bottom-left): prop sheet of 第七室門牌
+  - Panel 6 (middle-right): prop sheet of an object used in this sequence (shot text calls it 入院憑證) — match its shape and materials; its surface stays BLANK, never write its name or any characters on it
+  - Panel 7 (bottom-left): prop sheet of an object used in this sequence (shot text calls it 第七室門牌) — match its shape and materials; its surface stays BLANK, never write its name or any characters on it
 
 Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
 
@@ -31,7 +31,7 @@ SHOT 3 (grid cell: top row, right) — 中景, Static Shot (opening moment). Cha
 
 SHOT 4 (grid cell: middle row, left) — 全景, Static Shot (opening moment). Characters: 机遙. Lighting: clear early morning, soft warm light on the gatehouse. Shot (Chinese): 全景，橫式 16:9，冷灰色調的回憶畫面。同一座門樓在冬天是灰的，地上殘雪；考核場的站樁石圈裡，机遙被推出圈外、單膝跌在雪泥上，圈外考官背影模糊。
 
-SHOT 5 (grid cell: middle row, middle) — 特寫, Static Shot (opening moment). Characters: no people. Lighting: morning light in the shade under the gatehouse roof. Shot (Chinese): 特寫，橫式 16:9。報到木案上一塊銅盤，一隻手把玉白入院憑證按在銅盤上，銅盤亮起淡淡青光。
+SHOT 5 (grid cell: middle row, middle) — 特寫, Static Shot (opening moment). Characters: no people. Lighting: morning light in the shade under the gatehouse roof. Shot (Chinese): 特寫，橫式 16:9。報到木案上一塊銅盤，一隻手把玉白入院憑證按在銅盤上，銅盤亮起淡淡青光。 LAYOUT: Extreme close-up on the wooden desk. The admission token is ROUND (not a rectangular slab): an antique bronze frame with a pale jade-green face carved with clouds and a four-pointed star, a dark-blue braided cord — exactly the prop sheet. No characters or writing anywhere on the token or the plate. A hand presses it flat onto a shallow bronze plate, which glows a faint cyan-green.
 
 SHOT 6 (grid cell: middle row, right) — 中景, Static Shot (opening moment). Characters: 机遙、裴含章. Lighting: morning light in the shade under the gatehouse roof. Shot (Chinese): 過肩中景，橫式 16:9。從院方執事裴含章（女，深色制服、髮髻，只見背影與肩膀）肩後看出去，机遙站在木案前，身上沒有任何兵器；背景是排隊的新生。
 
@@ -39,7 +39,7 @@ SHOT 7 (grid cell: bottom row, left) — 中景, Tracking Shot (opening moment).
 
 SHOT 8 (grid cell: bottom row, middle) — 中景, Static Shot (opening moment). Characters: 机遙、陸鳴鸞. Lighting: early morning sun slanting in low from the open left side, long parallel bands of warm light and pillar shadows across the floor. Shot (Chinese): 中景，橫式 16:9。一個綁紅繩高馬尾的女生（陸鳴鸞）倒退著跑，一頭撞上机遙背上的行囊，回頭咧嘴笑著問話；机遙被撞得往前一步。 LAYOUT: 机遙在畫面左側、背對左邊的欄杆、被撞得身體前傾；陸鳴鸞在右側、剛轉過身面向机遙、一手抬起比著道歉、咧嘴笑；背景是東廊柱子與其他新生。共兩名主要人物。
 
-SHOT 9 (grid cell: bottom row, right) — 中景, Push In (opening moment). Characters: 机遙. Lighting: morning, the far end of the corridor quieter, sunlight narrowing to a strip along the wall. Shot (Chinese): 中景，橫式 16:9。机遙站在一扇深色舊木門前，抬頭看門楣旁的直立小門牌（無字），手裡拿著入院憑證。
+SHOT 9 (grid cell: bottom row, right) — 中景, Push In (opening moment). Characters: 机遙. Lighting: morning, the far end of the corridor quieter, sunlight narrowing to a strip along the wall. Shot (Chinese): 中景，橫式 16:9。机遙站在一扇深色舊木門前，抬頭看門楣旁的直立小門牌（無字），手裡拿著入院憑證。 LAYOUT: The small vertical door plaque beside the door frame is completely BLANK — plain dark wood or bronze, absolutely no characters or writing on it (match the prop sheet). 机遙 stands in front of the old dark wooden door, the rolled cloth bundle on his back, looking up at the plaque, holding the round admission token in one hand.
 ```
 
 ## S02-2（A05 f2、A06 f1、A06 f2、A07 f1、A07 f2、A08 f1、A08 f2、A09 f1、A09 f2）　→ 存成 `production/LF01/storyboard/boards/S02-2.png`

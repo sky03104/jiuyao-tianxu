@@ -164,7 +164,8 @@ def board_jobs():
             descs = (["environment sheet of a location used in this sequence — match its architecture and materials"] * len(scenes)
                      + [f"character model sheet of {char_name(c)} — the person called {char_name(c)} in the panel text; "
                         "same face, hairstyle, costume and weapon in every panel" for c in chars]
-                     + [f"prop sheet of {reuse['props'][x]}" for x in props])
+                     + [f"prop sheet of an object used in this sequence (shot text calls it {reuse['props'][x]}) — match its "
+                        "shape and materials; its surface stays BLANK, never write its name or any characters on it" for x in props])
             cols, rows = b["cols"], b["rows"]
             panels = []
             for i, (seg, k, cut) in enumerate(part):
