@@ -25,9 +25,9 @@ STORYBOARD SHEET for one continuous sequence. ONE 16:9 landscape canvas divided 
 
 SHOT 1 (grid cell: top row, left) — 大遠景, Push In (opening moment). Characters: no people. Lighting: clear early morning, a long band of white cloud drifting across the middle of the mountain, first sunlight turning the top hall pale gold. Shot (Chinese): 大遠景，橫式 16:9。依山疊建的天玄院三層院落，白色雲帶從山腰緩緩流過，最上方三重簷主殿被晨光照成淡金色。
 
-SHOT 2 (grid cell: top row, middle) — 全景, Static Shot (opening moment). Characters: 机遙. Lighting: clear early morning, a long band of white cloud drifting across the middle of the mountain, first sunlight turning the top hall pale gold. Shot (Chinese): 全景，橫式 16:9。山腳銅框門樓，兩面深藍學院旗分立左右；石階上新生與送行家人來來往往，有人挑著箱籠，机遙一個人背著捲布行囊走在石階中段，畫面右三分之一。
+SHOT 2 (grid cell: top row, middle) — 全景, Static Shot (opening moment). Characters: 机遙. Lighting: clear early morning, a long band of white cloud drifting across the middle of the mountain, first sunlight turning the top hall pale gold. Shot (Chinese): 全景，橫式 16:9。山腳銅框門樓，兩面深藍學院旗分立左右；石階上新生與送行家人來來往往，有人挑著箱籠，机遙一個人背著捲布行囊走在石階中段，畫面右三分之一。 LAYOUT: ONE single continuous image, NOT split into panels, no inset strip. Camera at the foot of a long stone stairway looking UP the steps toward the bronze-framed gatehouse (same gatehouse as the environment sheet: dark bronze frame, gilded trim, blank plaque, two tall dark-blue academy banners on poles left and right). Many new students and family members fill the steps, most seen from behind or in profile, climbing UP. 机遙 is ONE small figure among them on the middle of the stairway in the RIGHT third of the frame, seen from behind / three-quarter back, climbing UP alone, the rolled cloth bundle strapped across his back — he is NOT facing the camera and NOT walking down.
 
-SHOT 3 (grid cell: top row, right) — 中景, Static Shot (opening moment). Characters: 机遙. Lighting: clear early morning, soft warm light on the gatehouse. Shot (Chinese): 中景低角度，橫式 16:9。机遙站在門樓下仰頭，看匾額位置上的圓形雲星徽紋（無字），右手握著入院憑證垂在身側。
+SHOT 3 (grid cell: top row, right) — 中景, Static Shot (opening moment). Characters: 机遙. Lighting: clear early morning, soft warm light on the gatehouse. Shot (Chinese): 中景低角度，橫式 16:9。机遙站在門樓下仰頭，看匾額位置上的圓形雲星徽紋（無字），右手握著入院憑證垂在身側。 LAYOUT: Low angle looking up. The gatehouse is the SAME bronze-framed gatehouse as the environment sheet (dark antique bronze pillars and beams with gilded trim — NOT plain wood). The round cloud-and-star emblem sits where a name plaque would be, with no characters. 机遙 stands under the gate looking up at the emblem, the rolled cloth bundle strapped across his back (same as his character sheet), his RIGHT hand hanging at his side holding the admission token by its dark-blue braided cord: a round token with an antique bronze frame and a pale jade-green face carved with clouds and a four-pointed star (match the prop sheet).
 
 SHOT 4 (grid cell: middle row, left) — 全景, Static Shot (opening moment). Characters: 机遙. Lighting: clear early morning, soft warm light on the gatehouse. Shot (Chinese): 全景，橫式 16:9，冷灰色調的回憶畫面。同一座門樓在冬天是灰的，地上殘雪；考核場的站樁石圈裡，机遙被推出圈外、單膝跌在雪泥上，圈外考官背影模糊。
 
@@ -155,4 +155,55 @@ Shot: Medium close-up of 机遙 standing in front of the registration desk on hi
 The face is large, sharp and clearly visible (this shot will be used for lip-sync), no hands or objects covering the mouth, no motion blur on the face.
 
 Horizontal 16:9 widescreen cinematic frame. Only this one character appears in focus. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
+```
+
+## A01 f2（單格重出：左邊人潮與門樓構圖可用，但畫面右側另拼了一條机遙的小圖、他還面向鏡頭往下走；改成單一畫面、机遙背影往上爬）　→ 存成 `production/LF01/storyboard/frames/A01/f2.png`
+
+**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/A01/f2-refs.jpg)（2 張拼成一張）
+
+```text
+Reference images:
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location — match its architecture, materials, layout and wear exactly; the frame shows the same place
+  - Panel 2 (top-right): character model sheet of 机遙 — this is the person called 机遙 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+
+Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
+
+Lighting: clear early morning, a long band of white cloud drifting across the middle of the mountain, first sunlight turning the top hall pale gold
+
+Blocking (Chinese): 開場空景接門樓人潮；机遙獨自一人拾級而上
+
+Shot (Chinese): 全景，橫式 16:9。山腳銅框門樓，兩面深藍學院旗分立左右；石階上新生與送行家人來來往往，有人挑著箱籠，机遙一個人背著捲布行囊走在石階中段，畫面右三分之一。
+
+LAYOUT (must follow): ONE single continuous image, NOT split into panels, no inset strip. Camera at the foot of a long stone stairway looking UP the steps toward the bronze-framed gatehouse (same gatehouse as the environment sheet: dark bronze frame, gilded trim, blank plaque, two tall dark-blue academy banners on poles left and right). Many new students and family members fill the steps, most seen from behind or in profile, climbing UP. 机遙 is ONE small figure among them on the middle of the stairway in the RIGHT third of the frame, seen from behind / three-quarter back, climbing UP alone, the rolled cloth bundle strapped across his back — he is NOT facing the camera and NOT walking down.
+
+Shot size: 全景; camera move: Static Shot (draw the opening moment of the shot).
+
+Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
+```
+
+## A02 f1（單格重出：門樓畫成木頭（要銅框門樓）、机遙沒背行囊、憑證畫成金牌（要銅框玉面））　→ 存成 `production/LF01/storyboard/frames/A02/f1.png`
+
+**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/A02/f1-refs.jpg)（3 張拼成一張）
+
+```text
+Reference images:
+Image 1: a reference board of 3 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location — match its architecture, materials, layout and wear exactly; the frame shows the same place
+  - Panel 2 (top-right): character model sheet of 机遙 — this is the person called 机遙 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+  - Panel 3 (middle-left): prop sheet of 入院憑證 — match this object exactly; any plaque or token surface stays blank
+
+Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
+
+Lighting: clear early morning, soft warm light on the gatehouse
+
+Blocking (Chinese): 門樓下，机遙抬頭；閃回去年冬天考核失敗
+
+Shot (Chinese): 中景低角度，橫式 16:9。机遙站在門樓下仰頭，看匾額位置上的圓形雲星徽紋（無字），右手握著入院憑證垂在身側。
+
+LAYOUT (must follow): Low angle looking up. The gatehouse is the SAME bronze-framed gatehouse as the environment sheet (dark antique bronze pillars and beams with gilded trim — NOT plain wood). The round cloud-and-star emblem sits where a name plaque would be, with no characters. 机遙 stands under the gate looking up at the emblem, the rolled cloth bundle strapped across his back (same as his character sheet), his RIGHT hand hanging at his side holding the admission token by its dark-blue braided cord: a round token with an antique bronze frame and a pale jade-green face carved with clouds and a four-pointed star (match the prop sheet).
+
+Shot size: 中景; camera move: Static Shot (draw the opening moment of the shot).
+
+Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
 ```

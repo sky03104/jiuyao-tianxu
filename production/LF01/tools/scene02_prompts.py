@@ -31,6 +31,9 @@ CLOSEUPS = {
             "stiff and polite; both hands holding the strap of the rolled cloth bundle on his shoulder. No weapon. Background: "
             "blurred courtyard and other students in clear morning light."),
 }
+# 已出圖但不合格、要單格重出的（鏡頭 layout 寫在 lf01.json）
+REDO = [("A01", 2, "左邊人潮與門樓構圖可用，但畫面右側另拼了一條机遙的小圖、他還面向鏡頭往下走；改成單一畫面、机遙背影往上爬"),
+        ("A02", 1, "門樓畫成木頭（要銅框門樓）、机遙沒背行囊、憑證畫成金牌（要銅框玉面）")]
 LIPSYNC = ("The face is large, sharp and clearly visible (this shot will be used for lip-sync), no hands or objects covering "
            "the mouth, no motion blur on the face.")
 
@@ -67,6 +70,14 @@ def main():
     for j in closeups:
         ups, lines = h.board_or_single(j["refs"], j["descs"], j["board"])
         L += [f"## {j['id']}（近景）　→ 存成 `{h.rel(j['out'])}`", "", "**上傳：** " + "、".join(ups), "",
+              "```text", "Reference images:\n" + "\n".join(lines) + "\n\n" + j["body"], "```", ""]
+    redo = {(a, b): why for a, b, why in REDO}
+    for j in h.frame_jobs():
+        why = redo.get((j["seg"]["id"], j["k"]))
+        if not why:
+            continue
+        ups, lines = h.board_or_single(j["refs"], j["descs"], j["board"])
+        L += [f"## {j['seg']['id']} f{j['k']}（單格重出：{why}）　→ 存成 `{h.rel(j['out'])}`", "", "**上傳：** " + "、".join(ups), "",
               "```text", "Reference images:\n" + "\n".join(lines) + "\n\n" + j["body"], "```", ""]
     open(DOC, "w", encoding="utf-8").write("\n".join(L))
     print(f"✓ {h.rel(DOC)}：故事版 {len(boards)} 張、近景 {len(closeups)} 張")
