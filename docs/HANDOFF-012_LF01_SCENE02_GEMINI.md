@@ -112,7 +112,7 @@ SHOT 6 (grid cell: middle row, right) — 中景, Static Shot (opening moment). 
 
 SHOT 7 (grid cell: bottom row, left) — 中景, Static Shot (opening moment). Characters: 机遙、郁岑燁、厲若楓. Lighting: morning sunlight through the lattice window. Shot (Chinese): 中景，橫式 16:9。第七室門口，郁岑燁長劍掛在腰間、從机遙身邊走過沒有停步；厲若楓跟在後面，經過机遙時停了很短的一下、側頭看他；机遙站在門內，看著兩人。 LAYOUT: 机遙在畫面左側門內、面向右；郁岑燁在中間正走出門口、朝右前方、劍在腰側；厲若楓在右後方、半步停住、側臉看向机遙。共三人，齊衡烈已在畫面外。 厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, sleeveless left arm with an old shoulder scar, quiver behind the right shoulder, three-section folding short bow (match her approved character sheet; arm guards on both forearms are acceptable).
 
-SHOT 8 (grid cell: bottom row, middle) — 近景, Push In (opening moment). Characters: 机遙. Lighting: morning sunlight through the lattice window. Shot (Chinese): 近景，橫式 16:9。机遙站在第七室門口回頭看屋內：晨光從窗格照在兵器架旁剛放下的捲布行囊（包袱沾著泥）；門楣旁的小木牌（無字）刻痕被摸圓了，在前景一側。 LAYOUT: 前景右側是門框與直立小木牌（無字）；机遙在畫面左三分之一、側身回頭望向屋內；背景是窗格光與床上的行囊。只有机遙一人。
+SHOT 8 (grid cell: bottom row, middle) — 近景, Push In (opening moment). Characters: 机遙. Lighting: morning sunlight through the lattice window. Shot (Chinese): 近景，橫式 16:9。机遙站在第七室門口回頭看屋內：晨光從窗格照在兵器架旁剛放下的捲布行囊（包袱沾著泥）；門楣旁的小木牌（無字）刻痕被摸圓了，在前景一側。 LAYOUT: 前景右側是門框與直立小木牌（無字）；机遙在畫面左三分之一、側身回頭望向屋內；背景是窗格光與兵器架旁的行囊（屋內沒有床）。只有机遙一人。
 ```
 
 ## T07（近景）　→ 存成 `production/LF01/storyboard/frames/new/T07.png`
