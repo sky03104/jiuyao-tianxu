@@ -98,11 +98,11 @@ Rendering style: match the attached reference images exactly — polished Chines
 
 STORYBOARD SHEET for one continuous sequence. ONE 16:9 landscape canvas divided into an exact grid of 3 columns x 3 rows of equal 16:9 panels, separated by thin pure-white gutters, no outer border. Read left to right, top to bottom; SHOT 1 fills the first cell. 8 cells are used; the remaining 1 grid cell(s) at the end stay plain white. Each panel is a finished colour frame in the same rendering style as the reference sheets (simpler detail is fine, but NOT a pencil sketch, and NOT 2D anime, manhwa or cel-shaded line art — every panel is a semi-realistic 3D render like the character sheets). The same character must look identical in every panel — face, hair, costume, weapon — and match the character sheets; the location stays consistent across panels. Vary the shot sizes exactly as listed. No text, no panel numbers, no captions, no speech bubbles, no arrows.
 
-SHOT 1 (grid cell: top row, left) — 全景, Static Shot (opening moment). Characters: 机遙、齊衡烈、郁岑燁、厲若楓. Lighting: looking down the corridor toward its far end with the morning sun directly behind the far opening, strong soft backlight and glowing haze. Shot (Chinese): 全景，橫式 16:9，鏡頭在東廊上看進第七室敞開的門口。屋內齊衡烈、郁岑燁、厲若楓同時轉頭望向走廊（朝鏡頭方向），站在門檻上的机遙跟著回頭；四人都在門框之內。 厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, sleeveless left arm with an old shoulder scar, quiver behind the right shoulder, three-section folding short bow (match her approved character sheet; arm guards on both forearms are acceptable).
+SHOT 1 (grid cell: top row, left) — 全景, Static Shot (opening moment). Characters: 机遙、齊衡烈、郁岑燁、厲若楓. Lighting: looking down the corridor toward its far end with the morning sun directly behind the far opening, strong soft backlight and glowing haze. Shot (Chinese): 全景，橫式 16:9，鏡頭在東廊上看進第七室敞開的門口。屋內齊衡烈、郁岑燁、厲若楓同時轉頭望向走廊（朝鏡頭方向），站在門檻上的机遙跟著回頭；四人都在門框之內。 LAYOUT: EXACTLY FOUR people, no one else: 机遙, 齊衡烈, 郁岑燁, 厲若楓 (match their character sheets; 郁岑燁 has black-teal hair, not bright blue). They stand at and just inside the open door of their room on the corridor, all turning their heads toward the far bright end of the corridor (where someone off-screen has just spoken). Natural loose grouping at different depths, NOT a straight line-up. No extra students, no armoured guard. Lantern paper and wood carvings carry no characters. 厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, sleeveless left arm with an old shoulder scar, quiver behind the right shoulder, three-section folding short bow (match her approved character sheet; arm guards on both forearms are acceptable).
 
-SHOT 2 (grid cell: top row, middle) — 全景, Push In (opening moment). Characters: 蕭曜霖. Lighting: looking down the corridor toward its far end with the morning sun directly behind the far opening, strong soft backlight and glowing haze. Shot (Chinese): 全景逆光，橫式 16:9。東廊盡頭晨光最亮處，蕭曜霖站著不動，厚重護肩邊緣有補過的痕跡，背後門板重劍的劍柄高出肩頭；身影在光霧中近乎剪影。
+SHOT 2 (grid cell: top row, middle) — 全景, Push In (opening moment). Characters: 蕭曜霖. Lighting: looking down the corridor toward its far end with the morning sun directly behind the far opening, strong soft backlight and glowing haze. Shot (Chinese): 全景逆光，橫式 16:9。東廊盡頭晨光最亮處，蕭曜霖站著不動，厚重護肩邊緣有補過的痕跡，背後門板重劍的劍柄高出肩頭；身影在光霧中近乎剪影。 LAYOUT: 蕭曜霖 FACES THE CAMERA (toward the new students, who are behind the camera) — he is speaking to them, NOT looking away into the light. Strong backlight from the bright far opening behind him makes him almost a silhouette, but his face and beard are faintly readable. Heavy bronze shoulder guards, long dark robe, the huge door-panel greatsword strapped diagonally on his back with the hilt rising above his right shoulder (match his character sheet).
 
-SHOT 3 (grid cell: top row, right) — 全景, Static Shot (opening moment). Characters: 蕭曜霖. Lighting: strong morning backlight at the far end of the corridor. Shot (Chinese): 全景，橫式 16:9。蕭曜霖轉身沿走廊走遠的背影，兩旁房門口探頭的新生紛紛縮回頭。
+SHOT 3 (grid cell: top row, right) — 全景, Static Shot (opening moment). Characters: 蕭曜霖. Lighting: strong morning backlight at the far end of the corridor. Shot (Chinese): 全景，橫式 16:9。蕭曜霖轉身沿走廊走遠的背影，兩旁房門口探頭的新生紛紛縮回頭。 LAYOUT: Background students peeking from doors must NOT have red hair (red hair belongs to 齊衡烈 only).
 
 SHOT 4 (grid cell: middle row, left) — 中景, Static Shot (opening moment). Characters: 机遙、齊衡烈. Lighting: strong morning backlight at the far end of the corridor. Shot (Chinese): 雙人中景，橫式 16:9。第七室門口，机遙看著走廊盡頭；齊衡烈握緊肩上的刀柄，眼睛發亮地笑。
 
@@ -157,9 +157,64 @@ The face is large, sharp and clearly visible (this shot will be used for lip-syn
 Horizontal 16:9 widescreen cinematic frame. Only this one character appears in focus. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
 ```
 
-# 單格正式分鏡圖（故事版已通過的格子）
+## A10 f1（單格重出：多了一個不認識的盔甲人、五人排成一排；改成只有第七室四人）　→ 存成 `production/LF01/storyboard/frames/A10/f1.png`
 
-> 每張開新對話；參考拼圖最後一格是故事版裁下來的那一格，照它的構圖、但畫質要做到正式分鏡圖。
+**上傳：** [參考拼圖 f1-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/A10/f1-refs.jpg)（5 張拼成一張）
+
+```text
+Reference images:
+Image 1: a reference board of 5 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location — match its architecture, materials, layout and wear exactly; the frame shows the same place
+  - Panel 2 (top-middle): character model sheet of 机遙 — this is the person called 机遙 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+  - Panel 3 (top-right): character model sheet of 齊衡烈 — this is the person called 齊衡烈 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+  - Panel 4 (middle-left): character model sheet of 郁岑燁 — this is the person called 郁岑燁 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+  - Panel 5 (middle-middle): character model sheet of 厲若楓 — this is the person called 厲若楓 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+
+Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
+
+Lighting: looking down the corridor toward its far end with the morning sun directly behind the far opening, strong soft backlight and glowing haze
+
+Blocking (Chinese): 三人轉頭；走廊盡頭逆光中的蕭曜霖
+
+Shot (Chinese): 全景，橫式 16:9，鏡頭在東廊上看進第七室敞開的門口。屋內齊衡烈、郁岑燁、厲若楓同時轉頭望向走廊（朝鏡頭方向），站在門檻上的机遙跟著回頭；四人都在門框之內。
+
+LAYOUT (must follow): EXACTLY FOUR people, no one else: 机遙, 齊衡烈, 郁岑燁, 厲若楓 (match their character sheets; 郁岑燁 has black-teal hair, not bright blue). They stand at and just inside the open door of their room on the corridor, all turning their heads toward the far bright end of the corridor (where someone off-screen has just spoken). Natural loose grouping at different depths, NOT a straight line-up. No extra students, no armoured guard. Lantern paper and wood carvings carry no characters.
+
+厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, sleeveless left arm with an old shoulder scar, quiver behind the right shoulder, three-section folding short bow (match her approved character sheet; arm guards on both forearms are acceptable).
+
+Shot size: 全景; camera move: Static Shot (draw the opening moment of the shot).
+
+Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
+```
+
+## A10 f2（單格重出：蕭曜霖背對鏡頭，但這一鏡他在對新生說話；改成面向鏡頭的逆光剪影）　→ 存成 `production/LF01/storyboard/frames/A10/f2.png`
+
+**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/A10/f2-refs.jpg)（2 張拼成一張）
+
+```text
+Reference images:
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location — match its architecture, materials, layout and wear exactly; the frame shows the same place
+  - Panel 2 (top-right): character model sheet of 蕭曜霖 — this is the person called 蕭曜霖 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+
+Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
+
+Lighting: looking down the corridor toward its far end with the morning sun directly behind the far opening, strong soft backlight and glowing haze
+
+Blocking (Chinese): 三人轉頭；走廊盡頭逆光中的蕭曜霖
+
+Shot (Chinese): 全景逆光，橫式 16:9。東廊盡頭晨光最亮處，蕭曜霖站著不動，厚重護肩邊緣有補過的痕跡，背後門板重劍的劍柄高出肩頭；身影在光霧中近乎剪影。
+
+LAYOUT (must follow): 蕭曜霖 FACES THE CAMERA (toward the new students, who are behind the camera) — he is speaking to them, NOT looking away into the light. Strong backlight from the bright far opening behind him makes him almost a silhouette, but his face and beard are faintly readable. Heavy bronze shoulder guards, long dark robe, the huge door-panel greatsword strapped diagonally on his back with the hilt rising above his right shoulder (match his character sheet).
+
+Shot size: 全景; camera move: Push In (draw the opening moment of the shot).
+
+Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
+```
+
+# 單格正式分鏡圖（還沒出的格子）
+
+> 每張開新對話；有故事版的格子，參考拼圖最後一格是故事版裁下來的那一格，照它的構圖、但畫質要做到正式分鏡圖。
 
 ## A03 f1　→ 存成 `production/LF01/storyboard/frames/A03/f1.png`
 
@@ -506,6 +561,84 @@ Blocking (Chinese): 郁岑燁頭也不抬；齊衡烈大笑
 Shot (Chinese): 中景，橫式 16:9。齊衡烈仰頭大笑，把肩上的重刀顛了一下。
 
 Shot size: 中景; camera move: Static Shot (draw the opening moment of the shot).
+
+Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
+```
+
+## A12 f2　→ 存成 `production/LF01/storyboard/frames/A12/f2.png`
+
+**上傳：** [參考拼圖 f2-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/A12/f2-refs.jpg)（3 張拼成一張）
+
+```text
+Reference images:
+Image 1: a reference board of 3 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location — match its architecture, materials, layout and wear exactly; the frame shows the same place
+  - Panel 2 (top-right): character model sheet of 机遙 — this is the person called 机遙 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+  - Panel 3 (middle-left): character model sheet of 齊衡烈 — this is the person called 齊衡烈 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+
+Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
+
+Lighting: morning sunlight through the lattice window
+
+Blocking (Chinese): 机遙放下行囊；齊衡烈自我介紹
+
+Shot (Chinese): 雙人中景，橫式 16:9。齊衡烈已經走到門口，扛著刀回頭用拇指往身後一比；机遙在兵器架旁轉過身。
+
+Shot size: 中景; camera move: Static Shot (draw the opening moment of the shot).
+
+Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
+```
+
+## A12 f3　→ 存成 `production/LF01/storyboard/frames/A12/f3.png`
+
+**上傳：** [參考拼圖 f3-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/A12/f3-refs.jpg)（4 張拼成一張）
+
+```text
+Reference images:
+Image 1: a reference board of 4 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location — match its architecture, materials, layout and wear exactly; the frame shows the same place
+  - Panel 2 (top-right): character model sheet of 机遙 — this is the person called 机遙 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+  - Panel 3 (middle-left): character model sheet of 郁岑燁 — this is the person called 郁岑燁 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+  - Panel 4 (middle-right): character model sheet of 厲若楓 — this is the person called 厲若楓 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+
+Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
+
+Lighting: morning sunlight through the lattice window
+
+Blocking (Chinese): 机遙放下行囊；齊衡烈自我介紹
+
+Shot (Chinese): 中景，橫式 16:9。第七室門口，郁岑燁長劍掛在腰間、從机遙身邊走過沒有停步；厲若楓跟在後面，經過机遙時停了很短的一下、側頭看他；机遙站在門內，看著兩人。
+
+LAYOUT (must follow): 机遙在畫面左側門內、面向右；郁岑燁在中間正走出門口、朝右前方、劍在腰側；厲若楓在右後方、半步停住、側臉看向机遙。共三人，齊衡烈已在畫面外。
+
+厲若楓 MUST look like this: 厲若楓 is a YOUNG WOMAN (female), amber eyes, long dark hair tied low, dark-teal short cape with hood DOWN, sleeveless left arm with an old shoulder scar, quiver behind the right shoulder, three-section folding short bow (match her approved character sheet; arm guards on both forearms are acceptable).
+
+Shot size: 中景; camera move: Static Shot (draw the opening moment of the shot).
+
+Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
+```
+
+## A12 f4　→ 存成 `production/LF01/storyboard/frames/A12/f4.png`
+
+**上傳：** [參考拼圖 f4-refs.jpg](https://raw.githubusercontent.com/sky03104/jiuyao-tianxu/claude/blissful-cori-jllluh/production/LF01/storyboard/chatgpt/A12/f4-refs.jpg)（2 張拼成一張）
+
+```text
+Reference images:
+Image 1: a reference board of 2 panels separated by white gaps (it is a reference sheet only — do NOT reproduce the board layout):
+  - Panel 1 (top-left): environment sheet of this location — match its architecture, materials, layout and wear exactly; the frame shows the same place
+  - Panel 2 (top-right): character model sheet of 机遙 — this is the person called 机遙 in the shot text; match the SAME face, hairstyle, costume and weapon exactly
+
+Rendering style: match the attached reference images exactly — polished Chinese xianxia MMORPG key-art CG in the look of a premium donghua (Chinese 3D animation) feature: semi-realistic stylized 3D, beautiful idealised young faces with smooth luminous skin, clear bright detailed eyes with strong catchlights, crisp glossy highlights on hair, metal and leather, rich fine costume detailing with antique-gold filigree, soft bloom and clean airy colour. It must NOT look like a real photograph, a real person, a 3D scan or a costume-drama still. Art direction: premium 3D Eastern xuanhuan MMORPG cinematic art — a high-end 3D game character and environment render with the finish of an Eastern fantasy animated feature film. Stylized 3D, NOT a photograph, not live-action, not a period TV drama, not 2D anime, not chibi, not western fantasy. Natural adult proportions, slim and fit young characters, refined East Asian faces with personality in the eyes, no oversized anime eyes, no bodybuilder musculature. Materials: fine fabric, detailed leather, antique bronze, jade and wood with subtle mystical texture. Palette: deep teal, ink black, dark blue, dark brown, warm gold accents, small touches of vermilion. All characters are adults and fully clothed. Cinematic environmental light, depth of field, volumetric light, aerial perspective, a little morning mist, natural shadows; everything exists inside the world, never a studio backdrop.
+
+Lighting: morning sunlight through the lattice window
+
+Blocking (Chinese): 机遙放下行囊；齊衡烈自我介紹
+
+Shot (Chinese): 近景，橫式 16:9。机遙站在第七室門口回頭看屋內：晨光從窗格照在兵器架旁剛放下的捲布行囊（包袱沾著泥）；門楣旁的小木牌（無字）刻痕被摸圓了，在前景一側。
+
+LAYOUT (must follow): 前景右側是門框與直立小木牌（無字）；机遙在畫面左三分之一、側身回頭望向屋內；背景是窗格光與兵器架旁的行囊（屋內沒有床）。只有机遙一人。
+
+Shot size: 近景; camera move: Push In (draw the opening moment of the shot).
 
 Horizontal 16:9 widescreen cinematic frame (1536x1024 is acceptable). Only the characters named in the shot text appear, plus any background students or animals the shot text explicitly mentions. No text, no subtitles, no watermark, no borders — a single clean full-bleed frame.
 ```

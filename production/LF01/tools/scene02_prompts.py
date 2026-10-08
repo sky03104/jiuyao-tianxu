@@ -52,7 +52,8 @@ def panel_override(seg, k):
 
 
 # (段號, 第幾格, 為什麼重出)；2026-10-07 的 A01 f2、A02 f1 已重出通過，清空。驗圖紀錄見 ../README.md
-REDO = []
+REDO = [("A10", 1, "多了一個不認識的盔甲人、五人排成一排；改成只有第七室四人"),
+        ("A10", 2, "蕭曜霖背對鏡頭，但這一鏡他在對新生說話；改成面向鏡頭的逆光剪影")]
 LIPSYNC = ("The face is large, sharp and clearly visible (this shot will be used for lip-sync), no hands or objects covering "
            "the mouth, no motion blur on the face.")
 
@@ -99,12 +100,19 @@ def main():
         L += [f"## {j['seg']['id']} f{j['k']}（單格重出：{why}）　→ 存成 `{h.rel(j['out'])}`", "", "**上傳：** " + "、".join(ups), "",
               "```text", "Reference images:\n" + "\n".join(lines) + "\n\n" + j["body"], "```", ""]
     # 故事版已通過、單格還沒出的：附該格裁切當構圖參考
-    todo = [j for j in h.frame_jobs() if j["panel"] and not os.path.exists(j["out"])]
+    todo = [j for j in h.frame_jobs() if j["seg"]["id"].startswith("A") and not os.path.exists(j["out"])
+            and (j["seg"]["id"], j["k"]) not in redo]
     if todo:
-        L += ["# 單格正式分鏡圖（故事版已通過的格子）", "",
-              "> 每張開新對話；參考拼圖最後一格是故事版裁下來的那一格，照它的構圖、但畫質要做到正式分鏡圖。", ""]
+        L += ["# 單格正式分鏡圖（還沒出的格子）", "",
+              "> 每張開新對話；有故事版的格子，參考拼圖最後一格是故事版裁下來的那一格，照它的構圖、但畫質要做到正式分鏡圖。", ""]
     for j in todo:
-        refs = j["refs"] + [panel_override(j["seg"]["id"], j["k"]) or j["panel"]]
+        panel = panel_override(j["seg"]["id"], j["k"]) or j["panel"]
+        if not panel:
+            ups, lines = h.board_or_single(j["refs"], j["descs"], j["board"])
+            L += [f"## {j['seg']['id']} f{j['k']}　→ 存成 `{h.rel(j['out'])}`", "", "**上傳：** " + "、".join(ups), "",
+                  "```text", "Reference images:\n" + "\n".join(lines) + "\n\n" + j["body"], "```", ""]
+            continue
+        refs = j["refs"] + [panel]
         descs = j["descs"] + ["the approved storyboard panel for THIS shot — follow its framing, camera angle and staging, "
                               "but render at full finished quality; ignore any small label text in its corner. Take ONLY the composition "
                               "from it — NOT its drawing style, colours or faces: render in the semi-realistic 3D style of the character "

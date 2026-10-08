@@ -588,7 +588,8 @@
        "蕭曜霖（畫外）",
        "不用等明天。"
       ]
-     ]
+     ],
+     "layout": "EXACTLY FOUR people, no one else: 机遙, 齊衡烈, 郁岑燁, 厲若楓 (match their character sheets; 郁岑燁 has black-teal hair, not bright blue). They stand at and just inside the open door of their room on the corridor, all turning their heads toward the far bright end of the corridor (where someone off-screen has just spoken). Natural loose grouping at different depths, NOT a straight line-up. No extra students, no armoured guard. Lantern paper and wood carvings carry no characters."
     },
     {
      "sec": 9,
@@ -604,7 +605,8 @@
        "蕭曜霖",
        "半刻鐘後，新生演武場集合。"
       ]
-     ]
+     ],
+     "layout": "蕭曜霖 FACES THE CAMERA (toward the new students, who are behind the camera) — he is speaking to them, NOT looking away into the light. Strong backlight from the bright far opening behind him makes him almost a silhouette, but his face and beard are faintly readable. Heavy bronze shoulder guards, long dark robe, the huge door-panel greatsword strapped diagonally on his back with the hilt rising above his right shoulder (match his character sheet)."
     }
    ]
   },
@@ -623,7 +625,8 @@
      ],
      "props": [],
      "frame": "全景，橫式 16:9。蕭曜霖轉身沿走廊走遠的背影，兩旁房門口探頭的新生紛紛縮回頭。",
-     "lines": []
+     "lines": [],
+     "layout": "Background students peeking from doors must NOT have red hair (red hair belongs to 齊衡烈 only)."
     },
     {
      "sec": 8,
