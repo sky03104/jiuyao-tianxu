@@ -11,7 +11,7 @@
 
   python3 production/LF01/video/assemble_scene02_seedance.py room7
   python3 production/LF01/video/assemble_scene02_seedance.py corridor
-每支：{src, wm（抹浮水印）, ss/to（只取這段秒數）, lines[(秒, 配音key, 音量)], hit[秒]（砰聲＋畫面震動）}；秒數都是「取出後」的時間。
+每支：{src, wm（抹浮水印）, ss/to（只取這段秒數）, pad（結尾凍結秒數）, lines[(秒, 配音key, 音量)], hit[秒]（砰聲＋畫面震動）}；秒數都是「取出後」的時間。
 """
 import json
 import os
@@ -47,6 +47,13 @@ PLANS = {
             (0.2, "S02-12_A04f2_陸鳴鸞"), (2.6, "S02-13_A04f2_机遙"), (3.4, "S02-14_A04f2_陸鳴鸞"),
             (5.5, "S02-15_A04f2_演武場遠", 0.35)]),
     ]),
+    # F12（長片試驗，12 秒，Seedance 1.5）：這次模型照我們的台詞講，whisper 逐字時間戳直接當對位：
+    # 這麼快 0.00／習慣就好 1.06／喂新來的… 2.82～9.78／我自己會說 9.92～11.21／机遙 11.58。結尾凍結 0.5 秒讓「机遙。」講完。
+    "room7_intro": ("LF01_scene02_room7_intro_seedance_v1.mp4", [
+        dict(src="F12", wm=True, pad=0.5, lines=[
+            (0.0, "S02-30_A11f2_机遙"), (1.06, "S02-31_A11f2_齊衡烈"), (2.9, "S02-32_A12f2_齊衡烈"),
+            (9.95, "S02-33_A12f2_厲若楓"), (11.55, "S02-34_A12f2_机遙")]),
+    ]),
 }
 
 
@@ -70,10 +77,12 @@ def main():
         if not os.path.exists(src):
             sys.exit(f"缺影片 {src}")
         ss, to = seg.get("ss", 0.0), seg.get("to")
-        d = (to or base.dur(src)) - ss
+        pad = seg.get("pad", 0.0)
+        d = (to or base.dur(src)) - ss + pad
         part = os.path.join(TMP, f"{which}_{seg['src']}.mp4")
         vf = (WATERMARK + "," if seg["wm"] else "") + shake(seg.get("hit", [])) + \
-            f"scale={W}:{H},setsar=1,fps={FPS},format=yuv420p"
+            f"scale={W}:{H},setsar=1,fps={FPS},format=yuv420p" + \
+            (f",tpad=stop_mode=clone:stop_duration={pad}" if pad else "")
         run(["-ss", str(ss), "-i", src, "-t", f"{d:.3f}", "-an", "-vf", vf,
              "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", part])
         parts.append(part)
