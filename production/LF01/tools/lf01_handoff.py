@@ -51,6 +51,8 @@ def char_sheet(cid):
 
 
 def scene_sheet(sid):
+    if sid in data.get("sceneOverride", {}):
+        return os.path.join(LF, data["sceneOverride"][sid])
     if sid in reuse["scenes"]:
         return g.art_sheet_path(reuse["scenes"][sid])
     return os.path.join(LF, "art", f"{new_scenes[sid]['name']}-sheet.png")

@@ -1251,5 +1251,9 @@
  "captionStyle": {
   "font": "ZiyuYunyouShoushu-TC.ttf",
   "_note": "2026-10-02 咖哩選定 J 字嶼雲遊手書（見 fonts/README.md）"
+ },
+ "sceneOverride": {
+  "S03": "art/第七室修習室-sheet.png",
+  "_note": "2026-10-09：第七室改用無床的修習室設定圖（docs/47 4.1）；EP01 舊圖有床，不再使用"
  }
 }
