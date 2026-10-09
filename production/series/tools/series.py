@@ -18,6 +18,13 @@ SERIES = os.path.dirname(HERE)
 REPO = os.path.dirname(os.path.dirname(SERIES))
 REG = json.load(open(os.path.join(SERIES, "registry.json"), encoding="utf-8"))
 CH, LOC = REG["characters"], REG["locations"]
+# 各集新增的角色／場景先寫在 EPxx/registry_add.json（避免多位作者同時改同一個檔），讀取時合併
+for _p in sorted(glob.glob(os.path.join(SERIES, "*", "registry_add.json"))):
+    _a = json.load(open(_p, encoding="utf-8"))
+    for _k, _v in _a.get("characters", {}).items():
+        CH.setdefault(_k, _v)
+    for _k, _v in _a.get("locations", {}).items():
+        LOC.setdefault(_k, _v)
 PARTS = {"cold", "main", "op", "ed"}
 MAX_CPS = 4.5           # 一個 beat 內台詞字數／秒數上限
 RUNTIME = (930, 990)    # 正片（cold＋main）秒數
