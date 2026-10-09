@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""第 2 場第七室段（A05 f2～A09 f2）：Seedance 生成的 4 支影片 → 接上我們的配音、字幕 → LF01_scene02_room7_seedance_v1.mp4。
+"""第 2 場第七室段（A05 f2～A09 f2）：Seedance 生成的 4 支影片 → 接上我們的配音、字幕 → LF01_scene02_room7_seedance_v2.mp4。
 
 影片原檔放 scene02/V1.mp4～V4.mp4（CapCut AI Lab 直接生影片，提示詞見 scene02_seedance_prompts.md）。
 - Seedance 自帶的聲音（亂講的中文＋配樂）一律靜音。
@@ -23,15 +23,18 @@ run, W, H, FPS = base.run, 1920, 1080, 30
 MAN = {e["key"]: e for e in json.load(open(os.path.join(LF, "voice", "scene02_manifest.json"), encoding="utf-8"))}
 SRC = os.path.join(HERE, "scene02")
 TMP = os.path.join(HERE, "cache_scene02")
-OUT = os.path.join(HERE, "LF01_scene02_room7_seedance_v1.mp4")
+OUT = os.path.join(HERE, "LF01_scene02_room7_seedance_v2.mp4")
 WATERMARK = "delogo=x=34:y=34:w=262:h=68"
 
-# 支 → (浮水印?, [(開始秒, 配音 key)])；秒數＝該支影片內的時間
+# 支 → (浮水印?, [(開始秒, 配音 key)])；秒數＝該支影片內的時間。
+# v2（2026-10-09）：咖哩回報 v1「配音好像沒對到」。改依 Seedance 自帶語音的說話時段（whisper-1 逐字時間戳）
+# ＋逐格看嘴型重排：V1 齊衡烈 1.30／2.70 開口、机遙夾在中間；V2 郁岑燁 3.3 秒才抬眼、齊衡烈 5.3 秒開口；
+# V3 厲若楓 0.72 開口、机遙 6.10 開口（心聲放在他低頭那段）；V4 郁岑燁 0～1.8、齊衡烈 2.3～4.0。
 PLAN = [
-    ("V1", False, [(1.6, "S02-17_A05f2_齊衡烈"), (3.2, "S02-18_A05f2_机遙"), (4.5, "S02-19_A06f1_齊衡烈")]),
-    ("V2", True, [(0.9, "S02-20_A06f2_郁岑燁"), (5.5, "S02-21_A07f1_齊衡烈"), (7.15, "S02-22_A07f2_郁岑燁")]),
-    ("V3", True, [(0.4, "S02-23_A08f1_厲若楓"), (3.0, "S02-24_A08f2_机遙心聲"), (6.8, "S02-25_A08f2_机遙")]),
-    ("V4", True, [(0.9, "S02-26_A09f1_郁岑燁"), (2.8, "S02-27_A09f2_齊衡烈")]),
+    ("V1", False, [(1.3, "S02-17_A05f2_齊衡烈"), (2.25, "S02-18_A05f2_机遙"), (2.8, "S02-19_A06f1_齊衡烈")]),
+    ("V2", True, [(1.9, "S02-20_A06f2_郁岑燁"), (5.3, "S02-21_A07f1_齊衡烈"), (7.15, "S02-22_A07f2_郁岑燁")]),
+    ("V3", True, [(0.7, "S02-23_A08f1_厲若楓"), (2.45, "S02-24_A08f2_机遙心聲"), (6.1, "S02-25_A08f2_机遙")]),
+    ("V4", True, [(0.3, "S02-26_A09f1_郁岑燁"), (2.3, "S02-27_A09f2_齊衡烈")]),
 ]
 
 
