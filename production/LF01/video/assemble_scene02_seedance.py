@@ -47,6 +47,36 @@ PLANS = {
             (0.2, "S02-12_A04f2_陸鳴鸞"), (2.6, "S02-13_A04f2_机遙"), (3.4, "S02-14_A04f2_陸鳴鸞"),
             (5.5, "S02-15_A04f2_演武場遠", 0.35)]),
     ]),
+    # 第 2 場完整版（2026-10-09）：開場 4 張分鏡圖（運鏡＋地點卡）＋ Seedance 影片 12 支。
+    # R1 只有 8 秒放不下裴含章 3 句＋机遙 2 句 → 整支放慢到 0.82 倍，並把「新芽都在東廊。順著左手邊的迴廊走到底就是。」只留前半句（cut 1.6 秒）。
+    "full": ("LF01_scene02_seedance_full_v1.mp4", [
+        dict(img="storyboard/frames/A01/f1.png", dur=5.0, cam="push", caption={"top": "九曜界", "main": "天玄院"}, lines=[]),
+        dict(img="storyboard/frames/A01/f2.png", dur=3.5, cam="static", lines=[]),
+        dict(img="storyboard/frames/A02/f1.png", dur=3.5, cam="push", lines=[(0.8, "S02-01_A02f1_机遙心聲")]),
+        dict(img="storyboard/frames/A02/f2.png", dur=5.0, cam="static", lines=[
+            (0.5, "S02-02_A02f2_考官助手閃回"), (3.0, "S02-03_A02f2_机遙心聲")]),
+        dict(src="R1", wm=True, speed=0.82, lines=[
+            (0.9, "S02-04_A03f2_裴含章"), (4.1, "S02-05_A03f2_机遙"), (4.6, "S02-06_A03f2_裴含章"),
+            (6.3, "S02-07_A03f2_裴含章", 1.0, 1.6), (8.4, "S02-08_A03f2_机遙")]),
+        dict(src="R2", wm=True, lines=[(0.72, "S02-09_A03f2_裴含章"), (6.28, "S02-10_A03f2_机遙"), (8.24, "S02-11_A03f2_裴含章")]),
+        dict(src="C1a", wm=True, hit=[4.0], lines=[]),
+        dict(src="C1_take1", wm=True, ss=3.0, to=12.0, lines=[
+            (0.2, "S02-12_A04f2_陸鳴鸞"), (2.6, "S02-13_A04f2_机遙"), (3.4, "S02-14_A04f2_陸鳴鸞"),
+            (5.5, "S02-15_A04f2_演武場遠", 0.35)]),
+        dict(src="D1", wm=True, lines=[(1.2, "S02-16_A05f1_机遙心聲")]),
+        dict(src="V1", wm=False, lines=[(1.3, "S02-17_A05f2_齊衡烈"), (2.25, "S02-18_A05f2_机遙"), (2.8, "S02-19_A06f1_齊衡烈")]),
+        dict(src="V2", wm=True, lines=[(1.9, "S02-20_A06f2_郁岑燁"), (5.3, "S02-21_A07f1_齊衡烈"), (7.15, "S02-22_A07f2_郁岑燁")]),
+        dict(src="V3", wm=True, lines=[(0.7, "S02-23_A08f1_厲若楓"), (2.45, "S02-24_A08f2_机遙心聲"), (6.1, "S02-25_A08f2_机遙")]),
+        dict(src="V4", wm=True, lines=[(0.3, "S02-26_A09f1_郁岑燁"), (2.3, "S02-27_A09f2_齊衡烈")]),
+        dict(src="E2", wm=True, lines=[(2.9, "S02-28_A10f1_蕭曜霖畫外"), (6.1, "S02-29_A10f2_蕭曜霖")]),
+        dict(src="F12", wm=True, pad=0.5, lines=[
+            (0.0, "S02-30_A11f2_机遙"), (1.06, "S02-31_A11f2_齊衡烈"), (2.9, "S02-32_A12f2_齊衡烈"),
+            (9.95, "S02-33_A12f2_厲若楓"), (11.55, "S02-34_A12f2_机遙")]),
+        dict(src="F34", wm=True, pad=0.4, lines=[
+            (0.0, "S02-35_A12f2_齊衡烈"), (1.16, "S02-36_A12f2_郁岑燁"), (3.4, "S02-37_A12f2_齊衡烈"),
+            (8.0, "S02-38_A12f3_机遙"), (9.7, "S02-39_A12f3_郁岑燁")]),
+        dict(src="F5", wm=True, lines=[(0.2, "S02-40_A12f3_厲若楓"), (6.2, "S02-41_A12f4_机遙心聲")]),
+    ]),
     # F12（長片試驗，12 秒，Seedance 1.5）：這次模型照我們的台詞講，whisper 逐字時間戳直接當對位：
     # 這麼快 0.00／習慣就好 1.06／喂新來的… 2.82～9.78／我自己會說 9.92～11.21／机遙 11.58。結尾凍結 0.5 秒讓「机遙。」講完。
     "room7_intro": ("LF01_scene02_room7_intro_seedance_v1.mp4", [
@@ -55,6 +85,23 @@ PLANS = {
             (9.95, "S02-33_A12f2_厲若楓"), (11.55, "S02-34_A12f2_机遙")]),
     ]),
 }
+
+
+def add_lines(seg, t, d, voices, subs):
+    """台詞 (開始秒, 配音key[, 音量[, 只取前幾秒]])；缺配音就停下列出。"""
+    for st, key, *opt in seg["lines"]:
+        m = MAN[key]
+        if not m.get("file"):
+            sys.exit(f"缺配音 {key}（{m['text']}）")
+        f = os.path.join(LF, "voice", m["file"])
+        vol = opt[0] if opt else 1.0
+        cut = opt[1] if len(opt) > 1 else None
+        ld = cut or base.dur(f)
+        if st + ld > d + 0.3:
+            print(f"⚠ {key} 超出段落結尾 {st + ld - d:.2f} 秒")
+        voices.append((f, t + st, vol, cut))
+        text = m["text"] if not cut else m["text"].split("。")[0] + "。"
+        subs.append([t + st, t + st + max(1.2, ld + 0.3), text])
 
 
 def shake(hits):
@@ -72,29 +119,41 @@ def main():
     out = os.path.join(HERE, out_name)
     os.makedirs(TMP, exist_ok=True)
     parts, voices, subs, hits, t = [], [], [], [], 0.0
-    for seg in plan:
+    caps = []
+    for n_seg, seg in enumerate(plan):
+        if "img" in seg:  # 已通過的分鏡圖＋運鏡
+            img, d = os.path.join(LF, seg["img"]), seg["dur"]
+            if not os.path.exists(img):
+                sys.exit(f"缺圖 {img}")
+            n = int(d * FPS)
+            z = f"1+0.10*on/{n}" if seg.get("cam") == "push" else f"1+0.02*on/{n}"
+            part = os.path.join(TMP, f"{which}_{n_seg:02d}_img.mp4")
+            run(["-loop", "1", "-i", img, "-t", f"{d:.3f}", "-vf",
+                 f"scale={W * 2}:{H * 2}:force_original_aspect_ratio=increase,crop={W * 2}:{H * 2},setsar=1,"
+                 f"zoompan=z='{z}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={n}:s={W}x{H}:fps={FPS},format=yuv420p",
+                 "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", part])
+            parts.append(part)
+            if seg.get("caption"):
+                caps.append((t + 0.5, t + min(d, 4.7), seg["caption"]))
+            add_lines(seg, t, d, voices, subs)
+            t += d
+            continue
         src = os.path.join(SRC, f"{seg['src']}.mp4")
         if not os.path.exists(src):
             sys.exit(f"缺影片 {src}")
         ss, to = seg.get("ss", 0.0), seg.get("to")
-        pad = seg.get("pad", 0.0)
-        d = (to or base.dur(src)) - ss + pad
-        part = os.path.join(TMP, f"{which}_{seg['src']}.mp4")
-        vf = (WATERMARK + "," if seg["wm"] else "") + shake(seg.get("hit", [])) + \
+        pad, speed = seg.get("pad", 0.0), seg.get("speed", 1.0)
+        d = ((to or base.dur(src)) - ss) / speed + pad
+        part = os.path.join(TMP, f"{which}_{n_seg:02d}_{seg['src']}.mp4")
+        vf = (WATERMARK + "," if seg["wm"] else "") + (f"setpts=PTS/{speed}," if speed != 1.0 else "") + \
+            shake(seg.get("hit", [])) + \
             f"scale={W}:{H},setsar=1,fps={FPS},format=yuv420p" + \
             (f",tpad=stop_mode=clone:stop_duration={pad}" if pad else "")
-        run(["-ss", str(ss), "-i", src, "-t", f"{d:.3f}", "-an", "-vf", vf,
+        run(["-ss", str(ss)] + (["-t", f"{(to - ss):.3f}"] if to else []) + ["-i", src, "-t", f"{d:.3f}", "-an", "-vf", vf,
              "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", part])
         parts.append(part)
         hits += [t + h for h in seg.get("hit", [])]
-        for st, key, *vol in seg["lines"]:
-            m = MAN[key]
-            f = os.path.join(LF, "voice", m["file"])
-            ld = base.dur(f)
-            if st + ld > d + 0.3:
-                print(f"⚠ {key} 超出 {seg['src']} 結尾 {st + ld - d:.2f} 秒")
-            voices.append((f, t + st, vol[0] if vol else 1.0))
-            subs.append([t + st, t + st + max(1.2, ld + 0.3), m["text"]])
+        add_lines(seg, t, d, voices, subs)
         t += d
     total = t
     subs.sort()
@@ -113,19 +172,25 @@ def main():
         f.write("[Script Info]\nScriptType: v4.00+\nPlayResX: %d\nPlayResY: %d\n\n" % (W, H))
         f.write("[V4+ Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, "
                 "BorderStyle, Outline, Shadow, Alignment, MarginV\n")
-        f.write(f"Style: D,{base.FONT_NAME},50,&H00FFFFFF,&H00000000,&H80000000,0,1,3,1,2,60\n\n")
+        f.write(f"Style: D,{base.FONT_NAME},50,&H00FFFFFF,&H00000000,&H80000000,0,1,3,1,2,60\n")
+        f.write(f"Style: C,{base.CAP_FONT or base.FONT_NAME},120,&H00FFFFFF,&H00000000,&H64000000,0,1,0,4,1,140\n\n")
         f.write("[Events]\nFormat: Layer, Start, End, Style, Text\n")
         for a, b, line in subs:
             f.write(f"Dialogue: 0,{ts(a)},{ts(b)},D,{base.sub_text(line)}\n")
+        for a, b, cap in caps:
+            f.write(f"Dialogue: 1,{ts(a)},{ts(b)},C,{{\\fad(600,600)\\pos(120,920)\\an1\\fsp26}}"
+                    f"{{\\fs48\\fsp18\\c&HC8E1EB&}}{cap['top']}\\N{{\\fs120\\fsp26\\c&HFFFFFF&}}{cap['main']}\n")
     fdir = os.path.join(TMP, "fonts")
     os.makedirs(fdir, exist_ok=True)
-    shutil.copy(base.FONT, os.path.join(fdir, os.path.basename(base.FONT)))
+    for x in [base.FONT] + ([base.CAP_FILE] if base.CAP_DIR else []):
+        shutil.copy(x, os.path.join(fdir, os.path.basename(x)))
 
     ins, fl, labels = ["-i", video], [], []
-    for k, (f, st, vol) in enumerate(voices, 1):
+    for k, (f, st, vol, cut) in enumerate(voices, 1):
         ins += ["-i", f]
         ms = int(st * 1000)
-        fl.append(f"[{k}:a]aformat=sample_rates=48000:channel_layouts=stereo,volume={vol},adelay={ms}|{ms}[v{k}]")
+        trim = f"atrim=0:{cut},afade=t=out:st={cut - 0.12:.2f}:d=0.12," if cut else ""
+        fl.append(f"[{k}:a]{trim}aformat=sample_rates=48000:channel_layouts=stereo,volume={vol},adelay={ms}|{ms}[v{k}]")
         labels.append(f"[v{k}]")
     for j, h in enumerate(hits):  # 砰：低頻衝擊＋短促噪聲
         ms = int(h * 1000)
