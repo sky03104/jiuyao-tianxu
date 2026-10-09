@@ -1,0 +1,128 @@
+{
+ "_note": "角色與場景登記表。seedance＝寫進 Seedance【角色】的中文外觀（要包含認得出這個人的所有特徵）；sheet＝設定圖路徑（repo 相對），還沒出圖填 null；label＝上傳時檔名說明。新角色 C12 起、新場景 L05 起依序編號；新增時一定要寫 firstEp（第一次出場集數）與 sheetBrief（出設定圖用的外觀說明）。",
+ "characters": {
+  "C01": {
+   "name": "机遙",
+   "label": "玩家-sheet（机遙）",
+   "sheet": "production/EP01/shuohao/characters/images/玩家-sheet.png",
+   "seedance": "二十歲男生，黑色亂髮，深灰交領短衣，沒有武器（第一季）",
+   "gender": "男"
+  },
+  "C02": {
+   "name": "齊衡烈",
+   "label": "齊衡烈-sheet",
+   "sheet": "production/EP01/shuohao/characters/images/齊衡烈-sheet.png",
+   "seedance": "二十歲男生，鮮紅短刺髮，肩寬體壯但不是健美選手，無袖深色上衣配古青銅胸甲，右上臂赤金臂環，左前臂長皮護腕，單刃厚背重刀（粗鍛黑鐵、刀背厚平、只有一邊開刃、刀身微彎，絕對不是雙刃直劍）",
+   "gender": "男"
+  },
+  "C03": {
+   "name": "郁岑燁",
+   "label": "郁岑燁-sheet",
+   "sheet": "production/EP01/shuohao/characters/images/郁岑燁-sheet.png",
+   "seedance": "二十歲男生，黑中帶青的短髮，深藍道袍配古銅肩甲，右手纏白布，一把細長直劍，表情冷淡",
+   "gender": "男"
+  },
+  "C04": {
+   "name": "厲若楓",
+   "label": "厲若楓-sheet（女版）",
+   "sheet": "production/LF01/characters/厲若楓-sheet.png",
+   "seedance": "二十歲女生，琥珀色眼睛，深色長髮低束，深青色短披肩（兜帽放下），左臂無袖、肩上有舊疤、左前臂一隻皮護臂，右肩後漆木箭袋，背上斜背三折式短弓，話少、冷靜",
+   "gender": "女"
+  },
+  "C05": {
+   "name": "蕭曜霖",
+   "label": "蕭曜霖-sheet",
+   "sheet": "production/EP01/shuohao/characters/images/蕭曜霖-sheet.png",
+   "seedance": "戰技堂教官，三十多歲男性，黑髮束成高髻，短鬍，眉心一點金色印記，深色長袍配厚重古銅護肩（護肩邊緣有幾道補過的痕跡），背後斜背一把巨大的門板重劍、劍柄高出右肩",
+   "gender": "男"
+  },
+  "C06": {
+   "name": "江祈璟",
+   "label": "江祈璟-sheet",
+   "sheet": "production/LF01/characters/江祈璟-sheet.png",
+   "seedance": "二十歲男生，黑色長髮高馬尾綁深銀繩，深藍交領長袍滾銀白邊，雙前臂深色皮護腕，一桿長槍（深色硬木槍桿、柳葉形鋼槍頭、槍頭下繫一顆小古銅鈴），站姿筆直、神情冷靜",
+   "gender": "男"
+  },
+  "C07": {
+   "name": "聞人澈",
+   "label": "聞人澈-sheet",
+   "sheet": "production/LF01/characters/聞人澈-sheet.png",
+   "seedance": "二十一歲男生，灰藍色連帽長外袍（兜帽放下）配深炭灰內袍，及下巴的黑髮用木簪半束，右腰一個舊皮藥草袋，右手一根前臂長的深色短靈杖（杖頭圓、刻細符紋），左腕三枚細銅玉符環，沒有任何刀劍，溫和安靜、肩膀微微內收",
+   "gender": "男"
+  },
+  "C08": {
+   "name": "赤瞳妖將",
+   "label": "赤瞳妖將-sheet",
+   "sheet": "production/LF01/characters/赤瞳妖將-sheet.png",
+   "seedance": "人形妖將，身高是年輕修行者的兩倍以上，修長不壯碩，全身覆蓋層疊的赤黑色鱗甲（像上了漆的盔甲，接縫透著暗紅），沒有裸露胸腹，腰間一條破舊褪色的深藍禮帶，墨灰長髮，暗灰臉、黑色眼白、深紅眼瞳，短短的後掠角脊，長黑爪，沒有武器；安靜、不吼叫，周圍只有紅光與紅霧",
+   "gender": "—"
+  },
+  "C10": {
+   "name": "裴含章",
+   "label": "裴含章-sheet",
+   "sheet": "production/LF01/characters/裴含章-sheet.png",
+   "seedance": "三十多歲女性執事，深藍執事長袍滾古銅邊，袖口別著一支毛筆，髮髻梳得一絲不亂、插銅簪，眼下有淡淡倦色，表情永遠平淡，沒有武器",
+   "gender": "女"
+  },
+  "C11": {
+   "name": "陸鳴鸞",
+   "label": "陸鳴鸞-sheet",
+   "sheet": "production/LF01/characters/陸鳴鸞-sheet.png",
+   "seedance": "十九歲女生，高馬尾綁紅繩，赤紅與深褐色短武服、袖子捲到手肘，寬深色腰帶，左腰掛一把雁翎刀（單刃微彎）收在深色刀鞘裡，活潑、笑容大",
+   "gender": "女"
+  },
+  "C12": {
+   "name": "沈昭寧",
+   "label": "沈昭寧-sheet",
+   "sheet": null,
+   "seedance": "二十歲女生，墨黑長髮半束，白底銀紋劍袍，一把細長直劍，站姿永遠筆直，神情驕傲優雅",
+   "gender": "女",
+   "firstEp": "EP01",
+   "sheetBrief": "docs/46 沈昭寧：墨髮半束、白底銀紋劍袍、細長直劍、站姿筆直；驕傲優雅"
+  },
+  "C13": {
+   "name": "阿黎",
+   "label": "阿黎-sheet",
+   "sheet": null,
+   "seedance": "十七歲女生，曬黑的皮膚，短髮上夾一根羽毛，獸皮護腕，腰間一把短刀和一捆繩索，獵戶粗布衣，不是修行者，眼神野、動作快",
+   "gender": "女",
+   "firstEp": "EP01",
+   "sheetBrief": "docs/46 阿黎：曬黑、短髮夾羽毛、獸皮護腕、腰間短刀與繩索、獵戶衣著"
+  },
+  "C14": {
+   "name": "紀蘊之",
+   "label": "紀蘊之-sheet",
+   "sheet": null,
+   "seedance": "六十多歲女性長老，銀髮挽髻，玄色長袍，手持一卷竹簡，目光銳利，威嚴",
+   "gender": "女",
+   "firstEp": "EP01",
+   "sheetBrief": "docs/46 紀蘊之：銀髮挽髻、玄色長袍、手持竹簡、目光銳利"
+  }
+ },
+ "locations": {
+  "L01": {
+   "name": "天玄院外景／山門報到處",
+   "label": "天玄院外景-sheet",
+   "sheet": "production/EP01/shuohao/art/images/天玄院外景-sheet.png",
+   "seedance": "依山疊建的天玄院，三層院落，最上方三重簷主殿，山腳門樓掛兩面深藍學院旗"
+  },
+  "L02": {
+   "name": "天玄院東廊",
+   "label": "天玄院東廊-sheet",
+   "sheet": "production/EP01/shuohao/art/images/天玄院東廊-sheet.png",
+   "seedance": "天玄院東廊：長木迴廊，兩側是修習室的房門，石板地"
+  },
+  "L03": {
+   "name": "第七室修習室",
+   "label": "第七室修習室-sheet",
+   "sheet": "production/LF01/art/第七室修習室-sheet.png",
+   "seedance": "修習室（小廳）：中央矮桌與坐墊、門邊兵器架、方格窗外看得到演武場一角；室內沒有床"
+  },
+  "L04": {
+   "name": "陣眼遺跡",
+   "label": "陣眼遺跡-sheet",
+   "sheet": "production/LF01/art/陣眼遺跡-sheet.png",
+   "seedance": "古林深處下沉的圓形石庭：同心圓石板刻著殘缺符紋、長滿青苔與巨大樹根，中央石台上一顆人頭大小的深色多面晶石（銅綠色舊扣環），三根齊腰石柱排成三角形"
+  }
+ }
+}

@@ -1,0 +1,35 @@
+# 長篇全系列重整進度（自動續跑用）
+
+> 主持人（Claude）每次被喚醒時先讀這份文件：看哪些項目在跑、哪些還沒做，接著往下做。
+> 排程：每小時一次的自動續跑 Routine（trigger id 寫在最下面）。全部完成後刪掉它。
+> 狀態：⬜ 未開始／🔄 進行中（agent 名稱）／🔁 審查中（第 n 輪）／✅ 過關
+
+## 階段 1：分集指南（docs/48，每季一份）
+| 項目 | 狀態 | 備註 |
+|---|---|---|
+| 系列層級邏輯審查（從頭重審 21/24/47 與各章劇情） | ⬜ | 併入各季指南撰寫＋審查 |
+| 第一季 EP01～03 指南 | 🔄 架構師 S1 | docs/longform/S1_GUIDE.md |
+| 第二季 EP04～10 指南 | 🔄 架構師 S2 | docs/longform/S2_GUIDE.md |
+| 第三季 EP11～16 指南 | 🔄 架構師 S3 | docs/longform/S3_GUIDE.md |
+| 第四季 EP17～22 指南 | 🔄 架構師 S4S5 | docs/longform/S4_GUIDE.md |
+| 第五季 EP23～25 指南 | 🔄 架構師 S4S5 | docs/longform/S5_GUIDE.md |
+| 跨季連續性審查 | ⬜ | |
+
+## 階段 2：各集劇本（docs/longform/EPxx_SCRIPT.md）
+（指南過關後展開）
+
+## 階段 3：各集片段表與提示詞（production/series/EPxx/）
+（劇本過關後展開）
+
+## 階段 4：片頭曲／片尾曲（production/series/OP_ED/）
+| 項目 | 狀態 | 備註 |
+|---|---|---|
+| OP/ED 設計（歌詞、編曲、製作方式、畫面） | 🔄 音樂設計 | production/series/OP_ED/ |
+
+## 階段 5：收尾
+- [ ] CLAUDE.md、docs/47 更新（20 分鐘、25 集）
+- [ ] 第 2 場、第 12 場已做素材的影響清單
+- [ ] 給咖哩的總結
+
+## 自動續跑
+- trigger id：trig_01893oGRkQF45hDyd8VyRhS4（每小時 :56 分；完成後用 delete_trigger 刪掉）
