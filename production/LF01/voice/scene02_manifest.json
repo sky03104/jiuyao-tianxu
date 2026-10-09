@@ -57,13 +57,13 @@
   "key": "S02-06_A03f2_裴含章",
   "spk": "裴含章",
   "text": "補錄的。最後一個。",
-  "file": null,
-  "tempo": null,
-  "pitch_shift": null,
-  "take": null,
-  "asr": null,
-  "sim": null,
-  "f0": null
+  "file": "batch-v15/final/S02-06_A03f2_裴含章.mp3",
+  "tempo": 1.25,
+  "pitch_shift": 0.0,
+  "take": "S02-06_A03f2_裴含章_t1.mp3",
+  "asr": "補錄的。最後一個。",
+  "sim": 1.0,
+  "f0": 202
  },
  {
   "key": "S02-07_A03f2_裴含章",
@@ -447,7 +447,13 @@
   "key": "S02-40_A12f3_厲若楓",
   "spk": "厲若楓",
   "text": "厲若楓。……走了。",
-  "file": null
+  "file": "batch-v15/final/S02-40_A12f3_厲若楓.mp3",
+  "tempo": 1.25,
+  "pitch_shift": 0.0,
+  "take": "S02-40_A12f3_厲若楓_t2.mp3",
+  "asr": "厉若风走了。",
+  "sim": 0.8,
+  "f0": 197
  },
  {
   "key": "S02-41_A12f4_机遙心聲",
