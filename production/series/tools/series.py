@@ -28,6 +28,7 @@ for _p in sorted(glob.glob(os.path.join(SERIES, "*", "registry_add.json"))):
 PARTS = {"cold", "main", "op", "ed"}
 MAX_CPS = 4.5           # 一個 beat 內台詞字數／秒數上限
 RUNTIME = (930, 990)    # 正片（cold＋main）秒數
+CARD_SEC = 4            # 地點卡至少停 4 秒（06_字幕），這段不放台詞
 CONTACT = ["撞上", "撞到", "擁抱", "抱住", "抱起", "拍肩", "拍了拍他", "拍了拍她", "握手", "牽著", "牽起", "扶起", "扶住", "揹起", "背起他", "背起她", "攙扶"]
 PUNCT = re.compile(r"[\s，。？！、；：…—「」『』（）,.?!;:~～\-·]")
 
@@ -69,6 +70,20 @@ def script_lines(path):
             continue
         out.append((spk, text, n))
     return out, errs
+
+
+def script_cards(path):
+    """劇本裡正片的地點卡（△ 【地點卡】小字／大字），依出現順序。"""
+    out, skip = [], False
+    for line in open(path, encoding="utf-8"):
+        s = line.strip()
+        if s.startswith("## "):
+            skip = ("前情提要" in s) or ("下集預告" in s)
+            continue
+        m = re.search(r"【地點卡[^】]*】\s*(.+?)。?\s*$", s)
+        if m and not skip:
+            out.append(m.group(1).strip())
+    return out
 
 
 def check(ep, quiet=False):
@@ -142,6 +157,10 @@ def check(ep, quiet=False):
             for w in CONTACT:
                 if w in b.get("action", ""):
                     warns.append(f"{where}：動作有肢體接觸「{w}」，Seedance 做不出來，改成反應鏡頭＋剪接")
+        if c.get("caption"):
+            early = [s[1] for b in beats if b["t"][0] < CARD_SEC for s in b.get("say", [])]
+            if early:
+                warns.append(f"{where}：有地點卡，但前 {CARD_SEC} 秒就有台詞「{early[0][:12]}」（06_字幕：台詞等地點卡淡出後才開始）")
         if beats and t != dur:
             errs.append(f"{where}：beats 結束在 {t} 秒，但 dur 是 {dur}")
         if not beats:
@@ -158,6 +177,10 @@ def check(ep, quiet=False):
         if a != b:
             diff = list(difflib.unified_diff(a, b, "劇本", "clips.json", n=0, lineterm=""))
             errs.append(f"{ep}：劇本台詞與片段台詞不一致（{len(a)} vs {len(b)} 句）：\n    " + "\n    ".join(diff[:30]))
+        cards = script_cards(sp)
+        caps = [c["caption"] for c in clips if c.get("caption") and c.get("part") in ("cold", "main")]
+        if cards != caps:
+            errs.append(f"{ep}：地點卡和劇本不一致：劇本 {cards}，clips.json {caps}")
     elif not sp and ep.startswith("EP"):
         warns.append(f"{ep}：找不到 docs/longform/{ep}_SCRIPT*.md，台詞沒有對照")
     if not quiet:
@@ -249,6 +272,8 @@ def build(ep):
             scene = c.get("scene")
             L += [f"## {scene}", ""]
         L += [f"### {c['id']}（{c['dur']} 秒）", "", "**上傳：** " + "、".join(uploads(c)), ""]
+        if c.get("caption"):
+            L += [f"**地點卡（剪輯後製疊字，不進 Seedance）：** {c['caption']}（開頭疊 {CARD_SEC} 秒、淡入淡出）", ""]
         if c["mode"] == "firstframe":
             L += ["**關鍵幀（先用 Gemini 出圖，存成 `production/series/" + ep + f"/keyframes/{c['id']}.png`）**", "",
                   "```text", keyframe_prompt(c), "```", "", "**Seedance**", ""]
