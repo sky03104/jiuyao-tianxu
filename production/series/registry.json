@@ -5,9 +5,17 @@
    "name": "机遙",
    "label": "玩家-sheet（机遙）",
    "sheet": "production/EP01/shuohao/characters/images/玩家-sheet.png",
-   "seedance": "二十歲男生，黑色亂髮，深灰交領短衣；EP01 第 3 場起腰間佩一把新生制式長刀（單刃直刀、刀身窄而薄、素黑刀鞘、灰布纏柄、無護手紋飾，絕對不是齊衡烈那種寬身厚背重刀）",
+   "seedance": "二十歲男生，黑色亂髮，深灰交領短衣；腰間佩一把新生制式長刀（單刃直刀、刀身窄而薄、素黑刀鞘、灰布纏柄、無護手紋飾，絕對不是齊衡烈那種寬身厚背重刀）",
    "gender": "男",
    "note": "EP01 第 1～2 場（入院前、報到）沒有武器；第 3 場演武場起佩制式長刀（QUESTIONS S1-1）。設定圖沒有刀，片段 staging 要寫清楚有沒有帶刀。"
+  },
+  "C01A": {
+   "name": "机遙",
+   "label": "玩家-sheet（机遙）",
+   "sheet": "production/EP01/shuohao/characters/images/玩家-sheet.png",
+   "seedance": "二十歲男生，黑色亂髮，深灰交領短衣，身上沒有任何武器（腰間空著）",
+   "gender": "男",
+   "note": "C01 的無刀變體：EP01 第 1、2 場（還沒領新生制式長刀）用這個，forbid 加「刀、劍」。第 3 場起用 C01。"
   },
   "C02": {
    "name": "齊衡烈",

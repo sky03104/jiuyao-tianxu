@@ -251,7 +251,7 @@ def clip_prompt(c):
 
 def uploads(c):
     if c["mode"] == "firstframe":
-        return [f"關鍵幀 `production/series/{c['id'][:4]}/keyframes/{c['id']}.png`"]
+        return [f"關鍵幀 `production/series/{c['id'].split('-')[0]}/keyframes/{c['id']}.png`"]
     out = []
     for k in c.get("chars", []):
         ch = CH[k]
