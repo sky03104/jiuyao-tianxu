@@ -21,7 +21,7 @@
 | OP-13 | 4 | 參考圖 | 聞人澈-sheet、青嵐古林-sheet（待出圖） | 聞人澈把短靈杖點向地面，一圈淡青色的光陣從杖尖往… |
 | OP-14 | 6 | 首幀 | 關鍵幀 `production/series/OP/keyframes/OP-14.png` | 紅霧翻湧，赤瞳妖將高大修長的輪廓從霧裡出現，靜靜… |
 | OP-15 | 7 | 首幀 | 關鍵幀 `production/series/OP/keyframes/OP-15.png` | 机遙伸手按上深色晶石… |
-| OP-16 | 8 | 首幀 | 關鍵幀 `production/series/OP/keyframes/OP-16.png` | 鏡頭從山腳緩緩上升，越過天玄院的屋簷，天上的裂痕… |
+| OP-16 | 8 | 首幀 | 關鍵幀 `production/series/OP/keyframes/OP-16.png` | 鏡頭從山腳緩緩上升，越過天玄院的屋簷，雲慢慢流動… |
 | OP-17 | 6 | 參考圖 | 玩家-sheet（机遙）、青嵐城主街-sheet（待出圖） | 机遙的瞳孔映出天上那道白色的裂痕… |
 
 ## OP
@@ -361,7 +361,7 @@ Reference images: 天玄院外景-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
-畫面：黃昏，大遠景。依山疊建的天玄院在畫面右下，山腳的青嵐城屋頂連成一片，天空是橘紫色，一道淡淡發光的白色裂痕斜斜劃過天空。沒有人物，沒有文字。
+畫面：黃昏，大遠景。依山疊建的天玄院在畫面右下，山腳的青嵐城屋頂連成一片，天空是橘紫色、沒有裂痕，遠處一層厚雲的後面透出一點微弱的光。沒有人物，沒有文字。
 ```
 
 **Seedance**
@@ -370,12 +370,12 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 【畫面】橫式16:9，3D國漫動畫（半寫實、精緻光影），畫面中不要出現任何文字、字幕或浮水印。
 以上傳的圖1（關鍵幀）作為第一幀，人物外觀、服裝、站位都照圖1，不要改變。
 【角色】畫面中沒有主要角色。
-【場景】天玄院外景／山門報到處：黃昏，依山的天玄院與山腳的青嵐城全景，天上一道淡淡發光的裂痕。黃昏。
+【場景】天玄院外景／山門報到處：黃昏，依山的天玄院與山腳的青嵐城全景，天空乾淨，遠處厚雲的後面透出一點微光。黃昏。
 【站位】沒有人物；畫面下半是建築，上半是天空與裂痕（片名由後製疊在畫面中央）
 【分鏡與台詞】
-0–8秒：大遠景。鏡頭從山腳緩緩上升，越過天玄院的屋簷，天上的裂痕微微發光，雲慢慢流動
+0–8秒：大遠景。鏡頭從山腳緩緩上升，越過天玄院的屋簷，雲慢慢流動，遠處雲層後面有一點光一閃一閃地亮著
 【鏡頭】緩緩上升
-【禁止】文字、字幕、浮水印、人物。
+【禁止】文字、字幕、浮水印、人物、天上的裂痕。
 ```
 
 ### OP-17（6 秒）
