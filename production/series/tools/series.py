@@ -28,6 +28,8 @@ for _p in sorted(glob.glob(os.path.join(SERIES, "*", "registry_add.json"))):
 PARTS = {"cold", "main", "op", "ed"}
 MAX_CPS = 4.5           # 一個 beat 內台詞字數／秒數上限
 RUNTIME = (930, 990)    # 正片（cold＋main）秒數
+OPED_SEC = {"OP": 90, "ED": 80}  # 片頭曲／片尾曲長度；每一季的剪接版都要剛好這麼長
+SEASONS = ["S1", "S2", "S3", "S4", "S5"]
 CARD_SEC = 4            # 地點卡至少停 4 秒（06_字幕），這段不放台詞
 CONTACT = ["撞上", "撞到", "擁抱", "抱住", "抱起", "拍肩", "拍了拍他", "拍了拍她", "握手", "牽著", "牽起", "扶起", "扶住", "揹起", "背起他", "背起她", "攙扶"]
 PUNCT = re.compile(r"[\s，。？！、；：…—「」『』（）,.?!;:~～\-·]")
@@ -101,7 +103,15 @@ def check(ep, quiet=False):
         if cid in seen:
             errs.append(f"{where}：片段編號重複")
         seen.add(cid)
-        if not re.match(rf"^{ep}-(S\d\d|OP|ED)-\d\d[a-z]?$", cid):
+        if ep in OPED_SEC:
+            if not re.match(rf"^{ep}-\d\d[a-z]?$", cid):
+                errs.append(f"{where}：編號格式要是 {ep}-05（季別替換版加小寫字母：{ep}-05b）")
+            if c.get("part") != ep.lower():
+                errs.append(f"{where}：{ep} 的片段 part 要是 {ep.lower()}")
+            for x in c.get("seasons", SEASONS):
+                if x not in SEASONS:
+                    errs.append(f"{where}：seasons 只能是 {SEASONS}")
+        elif not re.match(rf"^{ep}-(S\d\d|OP|ED)-\d\d[a-z]?$", cid):
             errs.append(f"{where}：編號格式要是 {ep}-S05-03")
         part = c.get("part")
         if part not in PARTS:
@@ -165,6 +175,11 @@ def check(ep, quiet=False):
             errs.append(f"{where}：beats 結束在 {t} 秒，但 dur 是 {dur}")
         if not beats:
             errs.append(f"{where}：沒有 beats")
+    if ep in OPED_SEC:
+        for x in SEASONS:
+            n = sum(c.get("dur", 0) for c in clips if x in c.get("seasons", SEASONS))
+            if n != OPED_SEC[ep]:
+                errs.append(f"{ep}：{x} 剪接版合計 {n} 秒，要剛好 {OPED_SEC[ep]} 秒（替換片段要和被替換的一樣長）")
     lo, hi = RUNTIME
     if clips and any(c.get("part") in ("cold", "main") for c in clips) and not (lo <= total <= hi):
         errs.append(f"{ep}：正片 {total:.0f} 秒（{total / 60:.1f} 分），要在 {lo}～{hi} 秒")
