@@ -42,7 +42,7 @@
 
 | 集 | 狀態 | 備註 |
 |---|---|---|
-| EP02 | 🔄 片段表完成（131 支、978 秒、firstframe 35 支）；提示詞第 1 輪審查中（sonnet） | production/series/EP02/clips.json |
+| EP02 | 🔄 片段表完成（131 支、978 秒、firstframe 35 支）；提示詞第 1 輪不過關（中 3、小 49），修改中（sonnet） | production/series/EP02/clips.json |
 | EP01 | 🔁 片段表完成（126 支、983 秒、firstframe 50 支，check 通過）→ ✅ 第 2 輪修改後主持人複查過關（126 支、988 秒、firstframe 33 支） | production/series/EP01/clips.json、seedance_prompts.md |
 
 備忘（寫片段表時要處理）：
