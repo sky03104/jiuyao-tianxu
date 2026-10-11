@@ -26,8 +26,8 @@
 ## 階段 2：各集劇本（docs/longform/EPxx_SCRIPT.md）
 | 集 | 狀態 | 備註 |
 |---|---|---|
-| EP01 | ✅ 第 2 輪修改後主持人複查過關（231 句、972 秒、地點卡 12 張） |
-| EP02 | 🔄 撰寫中（opus） | docs/longform/EP02_SCRIPT.md | registry C01 武器、C07 藥袋已由主持人修；新增 C07B（無藥袋變體，第 2 輪第 1 條） |
+| EP01 | ✅ 第 2 輪修改後主持人複查過關（231 句、972 秒、地點卡 12 張） | registry C01 武器、C07 藥袋已由主持人修；新增 C07B（無藥袋變體，第 2 輪第 1 條） |
+| EP02 | 🔄 撰寫中（opus） | docs/longform/EP02_SCRIPT.md |
 
 ## 階段 3：各集片段表與提示詞（production/series/EPxx/）
 （劇本過關後展開）
