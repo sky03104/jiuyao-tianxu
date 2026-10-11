@@ -216,10 +216,12 @@ def check(ep, quiet=False):
     return errs, warns
 
 
-def say_text(spk, text, tone):
+def say_text(spk, text, tone, onscreen=None):
     tone = f"（{tone}）" if tone else ""
     bn = base_name(spk)
     if "心聲" in spk:
+        if onscreen is not None and bn not in onscreen:
+            return f"（{bn}的心聲旁白，畫面上不出現{bn}，畫面中沒有人開口）"
         return f"（這裡是{bn}的心聲，畫面中{bn}嘴巴閉著、沒有開口）"
     if offscreen(spk):
         return f"畫外傳來{bn}的聲音{tone}：「{text}」（畫面中沒有人開口）"
@@ -249,10 +251,11 @@ def clip_prompt(c):
     L.append("【分鏡與台詞】")
     for b in c["beats"]:
         a, z = b["t"]
-        says = "".join(say_text(*(s + [""])[:3]) for s in b.get("say", []))
+        says = "".join(say_text(*(s + [""])[:3], onscreen={CH[k]["name"] for k in chars}) for s in b.get("say", []))
         L.append(f"{a}–{z}秒：{b.get('shot', '')}。{b['action']}{'。' if says and not b['action'].endswith('。') else ''}{says}")
     L.append(f"【鏡頭】{c['camera']}")
-    count = ["第" + "一二三四"[len(chars)] + "個人"] if chars and c.get("countForbid", True) else []
+    # 有背景人物時不加「第 N 個人」，免得和 extras 要求出現的人打架（EP01 提示詞第 2 輪第 22 條）
+    count = ["第" + "一二三四"[len(chars)] + "個人"] if chars and not c.get("extras") and c.get("countForbid", True) else []
     forbid = ["文字", "字幕", "浮水印"] + count + (["重複出現的人"] if chars else []) + c.get("forbid", [])
     L.append("【禁止】" + "、".join(dict.fromkeys(forbid)) + "。")
     return "\n".join(L)
@@ -275,7 +278,7 @@ def keyframe_prompt(c):
     refs = [CH[k]["label"] for k in c.get("chars", [])] + [CR[k]["label"] for k in crs] + [LOC[c["loc"]]["label"]]
     names = [CH[k]["name"] for k in c.get("chars", [])]
     layout = ("\n\nLAYOUT (must follow): " + (f"exactly {len(names)} named character(s): " + "、".join(names) if names else "no named characters") +
-              (("; creatures: " + "、".join(CR[k]["name"] for k in crs)) if crs else "") + f"; 站位：{c['staging']}" +
+              (("; creatures: " + "、".join(CR[k]["name"] for k in crs)) if crs else "") + f"; 站位（以第 0 秒這一瞬間為準）：{c['staging']}" +
               "\n（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）")
     return ("Reference images: " + "、".join(refs) + "\n\n" +
             "Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, "

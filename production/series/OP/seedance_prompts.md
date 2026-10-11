@@ -39,7 +39,7 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 
 畫面：夜，霧中古林深處。畫面中央偏右一塊半埋在苔蘚裡的古石碑，碑面只有殘缺的紋路（沒有文字），前景是巨大盤結的樹根，月光被濃霧切成幾道斜斜的光柱打在碑上。冷青色調、低飽和、沒有人。
 
-LAYOUT (must follow): no named characters; 站位：石碑在畫面中央偏右，前景是盤結的樹根，沒有人
+LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為準）：石碑在畫面中央偏右，前景是盤結的樹根，沒有人
 （每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
@@ -71,7 +71,7 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 
 畫面：夜，霧中古林的小徑。一群青灰色的狼低著頭分站在小徑兩側，中間空出一條路，霧的最深處遠遠有兩點暗紅色的光。冷青色調，紅光是畫面唯一的暖色。沒有人。
 
-LAYOUT (must follow): no named characters; 站位：狼群分在小徑兩側，中間空出一條路，霧深處遠遠兩點紅光
+LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為準）：狼群分在小徑兩側，中間空出一條路，霧深處遠遠兩點紅光
 （每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
@@ -155,7 +155,7 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 
 畫面：白天，青嵐城主街。机遙（黑色亂髮、深灰交領短衣、腰間素黑刀鞘的制式長刀）背對鏡頭站在青石板街道中央仰頭看天；遠處天空中一道白色細長的裂痕從雲間劃開。兩側木造店舖、素色布幌（無字），行人模糊。
 
-LAYOUT (must follow): exactly 1 named character(s): 机遙; 站位：机遙背影站在街道中央，仰頭看天
+LAYOUT (must follow): exactly 1 named character(s): 机遙; 站位（以第 0 秒這一瞬間為準）：机遙背影站在街道中央，仰頭看天
 （每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
@@ -173,7 +173,7 @@ LAYOUT (must follow): exactly 1 named character(s): 机遙; 站位：机遙背�
 0–2秒：背影中景。机遙站在街中央，慢慢抬頭
 2–5秒：仰拍大遠景。晴朗的天空中，一道白色的細長裂痕從雲間劃開，慢慢往兩端延伸
 【鏡頭】從背影中景搖上天空
-【禁止】文字、字幕、浮水印、第二個人、重複出現的人、裂痕裡出現任何東西、街上的人看鏡頭、招牌文字。
+【禁止】文字、字幕、浮水印、重複出現的人、裂痕裡出現任何東西、街上的人看鏡頭、招牌文字。
 ```
 
 ### OP-07（6 秒）
@@ -311,7 +311,7 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 
 畫面：深夜，紅霧瀰漫的古林。赤瞳妖將（身高是人的兩倍以上、修長、赤黑色層疊鱗甲、腰間破舊深藍禮帶、墨灰長髮、深紅眼瞳）靜靜站在畫面遠處中央的紅霧裡；前景左側是机遙的背影（黑色亂髮、深灰交領短衣），右手按在腰間刀柄上。整個畫面暗紅，只有妖將的眼睛發光。
 
-LAYOUT (must follow): exactly 2 named character(s): 赤瞳妖將、机遙; 站位：赤瞳妖將站在畫面遠處中央的紅霧裡，机遙的背影在前景左側
+LAYOUT (must follow): exactly 2 named character(s): 赤瞳妖將、机遙; 站位（以第 0 秒這一瞬間為準）：赤瞳妖將站在畫面遠處中央的紅霧裡，机遙的背影在前景左側
 （每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
@@ -345,7 +345,7 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 
 畫面：陰天，古林深處下沉的圓形石庭。同心圓石板刻著殘缺符紋、長滿青苔與巨大樹根，三根齊腰石柱排成三角形，中央石台上一顆人頭大小的深色多面晶石。机遙站在石台前，右手伸向晶石。冷綠灰色調。
 
-LAYOUT (must follow): exactly 1 named character(s): 机遙; 站位：机遙站在中央石台前，伸出右手
+LAYOUT (must follow): exactly 1 named character(s): 机遙; 站位（以第 0 秒這一瞬間為準）：机遙站在中央石台前，伸出右手
 （每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
@@ -378,7 +378,7 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 
 畫面：黃昏，大遠景。依山疊建的天玄院在畫面右下，山腳的青嵐城屋頂連成一片，天空是橘紫色、沒有裂痕，遠處一層厚雲的後面透出一點微弱的光。沒有人物，沒有文字。
 
-LAYOUT (must follow): no named characters; 站位：沒有人物；畫面下半是建築，上半是天空與裂痕（片名由後製疊在畫面中央）
+LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為準）：沒有人物；畫面下半是建築，上半是天空與裂痕（片名由後製疊在畫面中央）
 （每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
