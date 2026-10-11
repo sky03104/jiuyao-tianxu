@@ -29,17 +29,17 @@
 ## 2. 分集原則
 
 - **一章一集**：主線 25 章（`docs/24`）＝ 25 集，分五季。
-- 一章放不進 16 分鐘時，先刪支線和重複的說明。真的放不下才拆成兩集，並在 `docs/48` 寫明原因。
-- 分集表、每集分場、每集結尾的鉤子、前情提要與下集預告的內容，都寫在 `docs/48_LONGFORM_EPISODE_GUIDE_V1.0.md`，**改劇情先改這份**。
+- 一章放不進 16 分鐘時，先刪支線和重複的說明。真的放不下才拆成兩集，並在該季指南寫明原因。
+- 分集表、每集分場、每集結尾的鉤子、前情提要與下集預告的內容，都寫在 `docs/longform/S1_GUIDE.md`～`S5_GUIDE.md`（每季一份分集指南），**改劇情先改指南**。
 
 ## 3. 檔案位置
 
 | 檔案 | 內容 |
 |---|---|
-| `docs/48_LONGFORM_EPISODE_GUIDE_V1.0.md` | 全系列分集指南：每集的分場、時長、鉤子、前情提要、下集預告 |
+| `docs/longform/S1_GUIDE.md`～`S5_GUIDE.md` | 各季分集指南：每集的分場、時長、鉤子、前情提要、下集預告 |
 | `docs/longform/EPxx_SCRIPT.md` | 每集的定稿劇本（正史第一來源；EP01 取代 `docs/43`） |
 | `production/series/EPxx/clips.json` | 每集的影片片段表（機器可讀，格式見第 5 節） |
-| `production/series/EPxx/seedance_prompts.md` | 由 `tools/build_prompts.py` 產生的提示詞，**不要手改** |
+| `production/series/EPxx/seedance_prompts.md` | 由 `python3 production/series/tools/series.py build EPxx` 產生的提示詞，**不要手改** |
 | `production/series/EPxx/review.md` | 每輪審查紀錄：誰審、抓到什麼、怎麼改、第幾輪過關 |
 | `production/series/registry.json` | 角色與場景登記表：Seedance 外觀描述、設定圖路徑；還沒有設定圖的填 `null` |
 | `production/series/ASSETS_TODO.md` | 由程式產生：哪些設定圖還沒出、哪一集第一次用到 |
@@ -122,10 +122,10 @@
 ## 7. 審查流程（每集都要走完）
 
 ```
-寫分場（docs/48）→ 系列審查（邏輯、揭露上限、前後集連續）→ 改到過關
+寫分場（季指南）→ 系列審查（邏輯、揭露上限、前後集連續）→ 改到過關
 → 寫劇本 → script-reviewer 審台詞＋canon-checker 查設定 → 改到過關
 → 寫 clips.json → tools/check.py 程式檢查＋提示詞審查（台詞覆蓋、可生成性）→ 改到過關
-→ build_prompts.py 產生提示詞
+→ series.py build 產生提示詞
 ```
 
 - **過關標準**：沒有「嚴重」或「中」等級的問題，`check.py` 沒有錯誤。

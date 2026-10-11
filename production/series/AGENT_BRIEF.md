@@ -7,7 +7,7 @@
 1. **規格**：讀 `production/series/README.md`，裡面有一集 20 分鐘的結構、劇本格式、clips.json 格式、Seedance 規則與審查流程。
 2. **上游文件與優先順序**：
    - `docs/21_WORLD_AND_STORY_MASTER_V1.0.md` 定世界真相與**揭露上限**，絕對不能超過。
-   - 其次是 `docs/47_LONGFORM_SERIES_BIBLE_V1.0.md`（長篇總綱），再來是 `docs/48_LONGFORM_EPISODE_GUIDE_V1.0.md`（分集指南）。
+   - 其次是 `docs/47_LONGFORM_SERIES_BIBLE_V1.0.md`（長篇總綱），再來是 `docs/longform/S1_GUIDE.md`～`S5_GUIDE.md`（每季一份分集指南）。
    - 主線 25 章骨架看 `docs/24_MAIN_STORY_MASTER_OUTLINE_V2.0.md`。
    - 女性角色看 `docs/46`，角色個性看 `docs/02_CHARACTER_BIBLE_V1.0.md`，戰鬥結構看 `docs/44`（一人一個流派、戰鬥中不換人）。
    - 各章細節：第 1 章看 `docs/25`，第 2 章看 `docs/26`，第 3 章看 `docs/27`，第 4～6 章看 `docs/40`～`42`，第 4～25 章看 `docs/36`～`39`，支線與伏筆看 `docs/34`、`35`。

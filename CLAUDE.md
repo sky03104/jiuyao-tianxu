@@ -45,7 +45,8 @@
 - **劇情（動畫、小說、補完內容）由 Claude 設計，咖哩以觀眾身分看成品**，不必每個劇情選擇都先問。
 - 仍受本文件「核心規則」約束：不改核心世界觀、遵守 `21` 真相揭露節奏與各章硬性規則；新增劇情一律標記並寫進 `/docs`。
 - 會改動已定案正式設定（世界觀、角色身分、正史歸屬等）的事，仍要先問咖哩。
-- 長篇動畫試點：`docs/43_LONGFORM_ANIMATION_EP01_QINGLAN_TRIAL_PILOT_SCRIPT_V1.0.md`（第一章＝一集約 28 分鐘，方向已通過）。
+- 長篇動畫試點：`docs/43_LONGFORM_ANIMATION_EP01_QINGLAN_TRIAL_PILOT_SCRIPT_V1.0.md`（已由 `docs/longform/EP01_SCRIPT.md` 取代）。
+- **長篇全系列重整（2026-10-09 咖哩裁定）**：25 集、五季，**每集 20 分鐘**（前情提要＋片頭曲 1:30＋正片約 16 分鐘＋片尾曲 1:20＋下集預告）。流程與格式看 `production/series/README.md`，進度看 `production/series/STATUS.md`，待裁定問題 `production/series/QUESTIONS.md`；各季分集指南 `docs/longform/S1～S5_GUIDE.md`、定稿劇本 `docs/longform/EPxx_SCRIPT.md`（**正史第一來源**）、每集片段表與 Seedance 提示詞 `production/series/EPxx/`（`tools/series.py check／build／assets`）、片頭曲片尾曲 `production/series/OP_ED/`。
 - **動畫製作分工看 `production/roles/`**（編劇／分鏡出圖／驗圖／配音／剪輯／字幕六本工作手冊，動工前先讀對應那本）；
   另有兩個 agent（`.claude/agents/`）：**script-reviewer**（劇本寫完、送配音前必跑，以觀眾身分抓看不懂／怪／死氣沉沉）、**frame-checker**（驗圖）。
 - **長篇系列總綱已定案（2026-10-04）**：`docs/47_LONGFORM_SERIES_BIBLE_V1.0.md` 是長篇動畫的最高劇情依據（揭露上限仍以 `21` 為準）；改劇情先改總綱、跑 script-reviewer，再改劇本。宿舍男女分開，「室」＝修行小組。
