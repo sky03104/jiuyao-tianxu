@@ -32,7 +32,7 @@
 | EP01 | ✅ 第 2 輪修改後主持人複查過關（231 句、972 秒、地點卡 12 張） | registry C01 武器、C07 藥袋已由主持人修；新增 C07B（無藥袋變體，第 2 輪第 1 條） |
 | EP02 | ✅ 第 1 輪修改後主持人複查過關（185 句、974 秒、地點卡 12 張） | docs/longform/EP02_SCRIPT.md |
 | EP03 | ✅ 第 1 輪過關，小問題 8 條已修（174 句、979 秒、地點卡 9 張） | docs/longform/EP03_SCRIPT.md |
-| EP04 | 🔁 第 1 輪不過關（中 5、小 9；實算 935～955 秒偏短）→ 🔄 第 1 輪修改中 | docs/longform/EP04_SCRIPT.md |
+| EP04 | ✅ 第 1 輪修改後主持人複查過關（187 句、976 秒、地點卡 12 張） | docs/longform/EP04_SCRIPT.md |
 | EP05 | 🔄 撰寫中（opus） | docs/longform/EP05_SCRIPT.md |
 | EP06～EP25 | ⬜ | 五季指南已全部定稿，依序開寫（一次最多 2 個 agent） |
 
@@ -41,6 +41,7 @@
 
 | 集 | 狀態 | 備註 |
 |---|---|---|
+| EP02 | 🔄 片段表撰寫中（sonnet） | production/series/EP02/clips.json |
 | EP01 | 🔁 片段表完成（126 支、983 秒、firstframe 50 支，check 通過）→ ✅ 第 2 輪修改後主持人複查過關（126 支、988 秒、firstframe 33 支） | production/series/EP01/clips.json、seedance_prompts.md |
 
 備忘（寫片段表時要處理）：
