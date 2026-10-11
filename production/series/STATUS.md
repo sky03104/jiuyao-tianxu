@@ -39,7 +39,7 @@
 
 | 集 | 狀態 | 備註 |
 |---|---|---|
-| EP01 | 🔁 片段表完成（126 支、983 秒、firstframe 50 支，check 通過）→ 提示詞第 1 輪審查中 | production/series/EP01/clips.json、seedance_prompts.md |
+| EP01 | 🔁 片段表完成（126 支、983 秒、firstframe 50 支，check 通過）→ 提示詞第 1 輪不過關（中 8、小 41；建議 14 支改 ref）→ 🔄 修改中 | production/series/EP01/clips.json、seedance_prompts.md |
 
 備忘（寫片段表時要處理）：
 - EP22 第 5 場疊圖鏡頭改後製合成：要在 registry 登記「古代全圖」「九節點圖」「骨片拓紋」三張線稿設定圖（黑底或透明、無字），並先定缺口形狀（＝EP18 門後全圖外輪廓）。S2 九節點圖、S3 骨片拓紋若已登記就沿用。
