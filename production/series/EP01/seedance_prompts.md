@@ -95,7 +95,7 @@
 | EP01-S08-13 | 6 | 參考圖 | 郁岑燁-sheet、齊衡烈-sheet、古林峽谷三陣點-sheet（待出圖） | 郁岑燁轉頭吼… |
 | EP01-S08-14 | 11 | 首幀 | 關鍵幀 `production/series/EP01/keyframes/EP01-S08-14.png` | 赤瞳妖將突然收手，垂下手臂… |
 | EP01-S08-15 | 9 | 參考圖 | 齊衡烈-sheet、郁岑燁-sheet、古林峽谷三陣點-sheet（待出圖） | 所有人站在原地，好一陣子沒有人說話；齊衡烈的刀還… |
-| EP01-S08-16 | 4 | 參考圖 | 聞人澈-sheet、厲若楓-sheet（女版）、古林峽谷三陣點-sheet（待出圖） | 聞人澈拄著短杖喘氣… |
+| EP01-S08-16 | 4 | 參考圖 | 聞人澈-無藥袋-sheet（待出圖）、厲若楓-sheet（女版）、古林峽谷三陣點-sheet（待出圖） | 聞人澈拄著短杖喘氣… |
 | EP01-S08-17 | 10 | 參考圖 | 江祈璟-sheet、玩家-sheet（机遙）、古林峽谷三陣點-sheet（待出圖） | 江祈璟收槍，沒有看机遙… |
 | EP01-S09-01 | 9 | 參考圖 | 阿黎-sheet（待出圖）、古林林外-sheet（待出圖） | 夕陽；隊伍撤到林外，其他巡查小隊陸續從林子裡出來… |
 | EP01-S09-02 | 8 | 參考圖 | 阿黎-sheet（待出圖）、玩家-sheet（机遙）、古林林外-sheet（待出圖） | 阿黎轉回來，看著机遙… |
@@ -108,8 +108,8 @@
 | EP01-S10-03 | 10 | 參考圖 | 紀蘊之-sheet（待出圖）、蕭曜霖-sheet、天玄院議事廳-sheet（待出圖） | 紀蘊之側了一下頭… |
 | EP01-S10-04 | 11 | 參考圖 | 紀蘊之-sheet（待出圖）、蕭曜霖-sheet、天玄院議事廳-sheet（待出圖） | 紀蘊之轉過身，平靜地看著他… |
 | EP01-S11-01 | 9 | 參考圖 | 陸鳴鸞-sheet、天玄院東廊-sheet | 東廊，天已經黑了；走廊盡頭多了一處封鎖哨：一張木… |
-| EP01-S11-02 | 7 | 參考圖 | 聞人澈-sheet、陸鳴鸞-sheet、天玄院東廊-sheet | 聞人澈最後一個走進鏡頭；陸鳴鸞的目光停在他身上… |
-| EP01-S11-03 | 4 | 參考圖 | 聞人澈-sheet、齊衡烈-sheet、天玄院東廊-sheet | 聞人澈低頭看自己空了的腰側，沒說話；齊衡烈把重刀… |
+| EP01-S11-02 | 7 | 參考圖 | 聞人澈-無藥袋-sheet（待出圖）、陸鳴鸞-sheet、天玄院東廊-sheet | 聞人澈最後一個走進鏡頭；陸鳴鸞的目光停在他身上… |
+| EP01-S11-03 | 4 | 參考圖 | 聞人澈-無藥袋-sheet（待出圖）、齊衡烈-sheet、天玄院東廊-sheet | 聞人澈低頭看自己空了的腰側，沒說話；齊衡烈把重刀… |
 | EP01-S11-04 | 8 | 參考圖 | 裴含章-sheet、天玄院東廊-sheet | 裴含章提燈從走廊另一頭走來… |
 | EP01-S11-05 | 4 | 參考圖 | 厲若楓-sheet（女版）、玩家-sheet（机遙）、天玄院東廊-sheet | 走廊安靜下來；厲若楓看向机遙… |
 | EP01-S11-06 | 12 | 參考圖 | 玩家-sheet（机遙）、裴含章-sheet、天玄院東廊-sheet | 裴含章已經回到案後坐下… |
@@ -119,7 +119,7 @@
 | EP01-S11-10 | 7 | 參考圖 | 蕭曜霖-sheet、玩家-sheet（机遙）、後院廢棄訓練場-sheet（待出圖） | 蕭曜霖側過臉… |
 | EP01-S12-01 | 12 | 參考圖 | 齊衡烈-sheet、郁岑燁-sheet、厲若楓-sheet（女版）、第七室修習室-sheet | 夜，宵禁鐘響之前；三人圍坐矮桌（第四個座位在畫面… |
 | EP01-S12-02 | 9 | 參考圖 | 玩家-sheet（机遙）、郁岑燁-sheet、厲若楓-sheet（女版）、第七室修習室-sheet | 机遙放下碗… |
-| EP01-S12-03 | 12 | 參考圖 | 齊衡烈-sheet、聞人澈-sheet、第七室修習室-sheet | 齊衡烈哼一聲… |
+| EP01-S12-03 | 12 | 參考圖 | 齊衡烈-sheet、聞人澈-無藥袋-sheet（待出圖）、第七室修習室-sheet | 齊衡烈哼一聲… |
 | EP01-S12-04 | 5 | 參考圖 | 厲若楓-sheet（女版）、第七室修習室-sheet | 遠處宵禁鐘一聲一聲傳來；厲若楓起身，背上弓，走到… |
 | EP01-S12-05 | 4 | 參考圖 | 玩家-sheet（机遙）、男舍後門-sheet（待出圖） | 男舍後門被推開一條縫… |
 | EP01-S12-06 | 7 | 參考圖 | 玩家-sheet（机遙）、厲若楓-sheet（女版）、藏書閣外廊-sheet（待出圖） | 藏書閣外廊，石階，月光；一盞提燈從廊下經過，只看… |
@@ -149,6 +149,9 @@ Reference images: 青嵐古林-sheet
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：夜，霧中古林深處。畫面中央偏右一塊半埋在苔蘚裡的古石碑，只露出一小段殘缺紋路（沒有任何文字），前景是巨大盤結的樹根，月光被濃霧切成幾道斜斜的光柱打在碑上。冷青色調、低飽和、沒有人、沒有動物。
+
+LAYOUT (must follow): no named characters; 站位：石碑在畫面中央偏右，前景是盤結的樹根；畫面中沒有人，也沒有動物
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -178,6 +181,9 @@ Reference images: 青嵐古林-sheet
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：夜，霧中古林。一群青灰色的狼（約七八隻）在林間小跑，右後方是那塊半埋在苔蘚裡的古石碑（無字），月光光柱斜照，冷青色調，沒有人。
+
+LAYOUT (must follow): no named characters; 站位：狼群從畫面左側跑進來，經過石碑前；石碑在畫面右後方；畫面中沒有人
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -208,6 +214,9 @@ Reference images: 青嵐古林-sheet
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：夜，霧中古林。前景偏右是半埋在苔蘚裡的古石碑（無字），中景濃霧深處、比人高一倍以上的位置亮著兩點暗紅色的光，看不到任何身體輪廓，上方的樹梢被壓彎。冷青色調，兩點紅光是畫面唯一的暖色。沒有人。
+
+LAYOUT (must follow): no named characters; 站位：石碑在畫面前景偏右；兩點紅光在中景的霧裡，位置很高（比人高一倍以上）；畫面中沒有人
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -243,6 +252,9 @@ Reference images: 玩家-sheet（机遙）、天玄院外景-sheet
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：清晨，大遠景。雲帶從山腰流過，依山疊建的天玄院三層院落，最上方三重簷主殿，山腳門樓掛兩面深藍學院旗（旗上沒有字）。門樓下新生三三兩兩，其中一個黑色亂髮、深灰交領短衣、背著深色捲布行囊、身上沒有武器的少年（机遙）獨自站著。晨光暖金色。
+
+LAYOUT (must follow): exactly 1 named character(s): 机遙; 站位：前 4 秒是天玄院全景，机遙只是門樓下的小人影；4 秒切中景：机遙獨自站在門樓下，背上綁著深色捲布行囊，身上沒有武器，低頭看手裡的入院憑證
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -274,6 +286,9 @@ Reference images: 玩家-sheet（机遙）、天玄院外景-sheet
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：去年冬天，灰冷低飽和的閃回畫面。天玄院門樓前的考核場，地上畫著站樁圈、積著雪泥；黑色亂髮、深灰交領短衣、身上沒有行囊也沒有武器的少年（机遙）在畫面中央踉蹌退出圈外，重心往後倒；圈內只看得到兩三個考生模糊的背影，沒有人伸手。
+
+LAYOUT (must follow): exactly 1 named character(s): 机遙; 站位：机遙一個人在畫面中央，從站樁圈裡踉蹌退出圈外；這時他身上沒有行囊、沒有武器；圈內只看得到幾個考生模糊的背影，沒有人伸手
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -585,7 +600,7 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 4–7秒：蕭曜霖中景。他的目光掃過全體新生。蕭曜霖（一字一句）說：「修行不是把力量塞進身體。」
 7–10秒：蕭曜霖近景。他停一拍，再開口。蕭曜霖（一字一句）說：「先學會站著，再談怎麼打。」
 【鏡頭】大遠景緩推到中景，再到近景
-【禁止】文字、字幕、浮水印、第二個人、重複出現的人、新生排成整齊隊列、兵器架上的字、雙刃直劍。
+【禁止】文字、字幕、浮水印、第二個人、重複出現的人、新生排成整齊隊列、兵器架上的字。
 ```
 
 ### EP01-S03-02（6 秒）
@@ -595,11 +610,14 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP01/keyframes/EP01-S03-02.png`）**
 
 ```text
-Reference images: 齊衡烈-sheet、新生演武場-sheet
+Reference images: 齊衡烈-sheet、演武傀儡-sheet、新生演武場-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：上午，演武場沙地。畫面中央偏右是一具比人高半個頭的演武傀儡（石質軀幹、木質四肢、關節刻淡金紋路、頭部是沒有五官的光滑石頭），剛被推到場中、手臂垂著；畫面左側齊衡烈（鮮紅短刺髮、無袖深色上衣配古青銅胸甲、右上臂赤金臂環）站著，單刃厚背重刀垂在身側、撇著嘴；背景是石欄與模糊的新生。【固定參考圖】演武傀儡-sheet（白底三視圖，見 EP01/registry_add.json 的 creatures；本張關鍵幀開新對話，附此圖與角色設定圖，不附其他關鍵幀）。
+
+LAYOUT (must follow): exactly 1 named character(s): 齊衡烈; creatures: 演武傀儡; 站位：傀儡在畫面中央偏右，齊衡烈在畫面左，雙手握單刃厚背重刀
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -628,11 +646,14 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP01/keyframes/EP01-S03-03.png`）**
 
 ```text
-Reference images: 陸鳴鸞-sheet、齊衡烈-sheet、新生演武場-sheet
+Reference images: 陸鳴鸞-sheet、齊衡烈-sheet、演武傀儡-sheet、新生演武場-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：上午，演武場沙地。畫面中央是演武傀儡（石質軀幹、木質四肢、淡金紋關節、無五官的石頭頭部）；陸鳴鸞（十九歲女生、高馬尾綁紅繩、赤紅與深褐短武服、袖子捲到手肘、雁翎刀）在傀儡前揮刀；畫面右側齊衡烈（鮮紅短刺髮、古青銅胸甲、單刃厚背重刀）坐在沙地上正要爬起來。【固定參考圖】演武傀儡-sheet（白底三視圖，見 EP01/registry_add.json 的 creatures；本張關鍵幀開新對話，附此圖與角色設定圖，不附其他關鍵幀）。
+
+LAYOUT (must follow): exactly 2 named character(s): 陸鳴鸞、齊衡烈; creatures: 演武傀儡; 站位：傀儡在畫面中央，陸鳴鸞在傀儡前揮刀；齊衡烈在畫面右側沙地上，剛被打滾過
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -682,11 +703,14 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP01/keyframes/EP01-S03-05.png`）**
 
 ```text
-Reference images: 郁岑燁-sheet、沈昭寧-sheet、新生演武場-sheet
+Reference images: 郁岑燁-sheet、沈昭寧-sheet、演武傀儡-sheet、新生演武場-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：上午，演武場。畫面左側沙地中央，郁岑燁（黑中帶青短髮、深藍道袍配古銅肩甲、右手纏白布）持細長直劍對著演武傀儡（石質軀幹、木質四肢、淡金紋關節、無五官的石頭頭部）出劍；畫面右側場邊石欄旁，沈昭寧（墨黑長髮半束、白底銀紋劍袍、細長直劍抱在懷裡）站姿筆直地看著。【固定參考圖】演武傀儡-sheet（白底三視圖，見 EP01/registry_add.json 的 creatures；本張關鍵幀開新對話，附此圖與角色設定圖，不附其他關鍵幀）。
+
+LAYOUT (must follow): exactly 2 named character(s): 郁岑燁、沈昭寧; creatures: 演武傀儡; 站位：郁岑燁在沙地中央對著傀儡（畫面左），沈昭寧抱劍站在場邊石欄旁（畫面右）
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -715,11 +739,14 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP01/keyframes/EP01-S03-06.png`）**
 
 ```text
-Reference images: 玩家-sheet（机遙）、蕭曜霖-sheet、新生演武場-sheet
+Reference images: 玩家-sheet（机遙）、蕭曜霖-sheet、演武傀儡-sheet、新生演武場-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：上午，演武場兵器架前。机遙（二十歲男生、黑色亂髮、深灰交領短衣）站在兵器架前，伸手取下一把新生制式長刀（單刃直刀、刀身窄而薄、素黑刀鞘、灰布纏柄、無護手紋飾）；畫面右側戰技堂教官蕭曜霖（黑髮高髻、短鬍、眉心金印、古銅護肩、背負巨大門板重劍）看著他的手；背景沙地中央立著演武傀儡（石質軀幹、木質四肢、淡金紋關節）。【固定參考圖】演武傀儡-sheet（白底三視圖，見 EP01/registry_add.json 的 creatures；本張關鍵幀開新對話，附此圖與角色設定圖，不附其他關鍵幀）。
+
+LAYOUT (must follow): exactly 2 named character(s): 机遙、蕭曜霖; creatures: 演武傀儡; 站位：0–2 秒：机遙在兵器架前（畫面左），新生制式長刀（單刃直刀、刀身窄而薄、素黑刀鞘、灰布纏柄、無護手紋飾）還掛在架上，他取下後佩在左腰；蕭曜霖站在一旁（畫面右）；2 秒後机遙走到沙地中央面對傀儡
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -739,7 +766,7 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 7–9秒：中景。第二段：傀儡扇形橫掃，他往後跳，鞋底在沙地拖出一道痕
 9–11秒：中景。第三段連擊：他的眼睛一直盯著傀儡的手臂，第三下差點打中他的肩，他狼狽地滾開
 【鏡頭】中景為主，戰鬥段跟拍
-【禁止】文字、字幕、浮水印、第三個人、重複出現的人、寬身厚背的重刀、雙刃直劍、血、傀儡的臉。
+【禁止】文字、字幕、浮水印、第三個人、重複出現的人、寬身厚背的重刀、机遙的刀變成雙刃直劍、血、傀儡的臉。
 ```
 
 ### EP01-S03-07（9 秒）
@@ -749,11 +776,14 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP01/keyframes/EP01-S03-07.png`）**
 
 ```text
-Reference images: 玩家-sheet（机遙）、蕭曜霖-sheet、新生演武場-sheet
+Reference images: 玩家-sheet（机遙）、蕭曜霖-sheet、演武傀儡-sheet、新生演武場-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：上午，演武場沙地。机遙（黑色亂髮、深灰交領短衣、左腰新生制式長刀：單刃窄薄、素黑刀鞘、灰布纏柄）喘著氣單膝撐地（畫面左）；蕭曜霖（黑髮高髻、短鬍、古銅護肩、背負門板重劍）站在場邊看他（畫面右）；演武傀儡（石質軀幹、木質四肢、淡金紋關節）在中央後方。【固定參考圖】演武傀儡-sheet（白底三視圖，見 EP01/registry_add.json 的 creatures；本張關鍵幀開新對話，附此圖與角色設定圖，不附其他關鍵幀）。
+
+LAYOUT (must follow): exactly 2 named character(s): 机遙、蕭曜霖; creatures: 演武傀儡; 站位：机遙在沙地上剛撐起身（畫面左），左腰佩新生制式長刀；蕭曜霖站在場邊（畫面右）；傀儡在畫面中央後方
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -772,7 +802,7 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 3–6秒：蕭曜霖近景。蕭曜霖的視線落向傀儡的腳。蕭曜霖（一字一句）說：「看它準備往哪裡站。」
 6–9秒：中景跟拍。机遙重新站好，傀儡又一次起手；這次他不看手，看傀儡的腳——重心往左移；他往右一步，連擊全數落空，最後一擊擦過他的衣角
 【鏡頭】近景正反打，6 秒後拉成中景跟拍
-【禁止】文字、字幕、浮水印、第三個人、重複出現的人、寬身厚背的重刀、雙刃直劍、血、傀儡的臉。
+【禁止】文字、字幕、浮水印、第三個人、重複出現的人、寬身厚背的重刀、机遙的刀變成雙刃直劍、血、傀儡的臉。
 ```
 
 ### EP01-S03-08（5 秒）
@@ -813,7 +843,7 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 5–8秒：中景。郁岑燁已經走開，沒回頭。郁岑燁（冷淡）說：「你動作太散，很難不看。」
 8–10秒：机遙中景。机遙低頭看自己的腳，原地把第二步慢慢踩了一次
 【鏡頭】中景與近景交替，鏡頭穩定
-【禁止】文字、字幕、浮水印、第三個人、重複出現的人、劍鞘碰到人、雙刃直劍。
+【禁止】文字、字幕、浮水印、第三個人、重複出現的人、劍鞘碰到人、机遙的刀變成雙刃直劍。
 ```
 
 ## S04
@@ -832,6 +862,9 @@ Reference images: 江祈璟-sheet、沈昭寧-sheet、阿黎-sheet、青嵐河�
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：上午，青嵐河谷入口。清澈的河流穿過谷底，鵝卵石灘與大塊岩石，上游遠處是霧中的森林。畫面中央，江祈璟（黑長髮高馬尾綁深銀繩、深藍交領長袍滾銀白邊、長槍斜靠肩上、柳葉槍頭下繫一顆小古銅鈴）站姿筆直；他身旁是沈昭寧（墨黑長髮半束、白底銀紋劍袍、懷裡抱著細長直劍）；畫面右側大岩石上，阿黎（十七歲、曬黑、短髮夾羽毛、獸皮護腕、腰間短刀和繩索、獵戶粗布衣）叼著草坐著；遠處河岸上四個很小的人影走來。
+
+LAYOUT (must follow): exactly 3 named character(s): 江祈璟、沈昭寧、阿黎; 站位：江祈璟長槍斜靠肩上站在河谷入口（畫面中），沈昭寧抱劍站在他身旁（畫面中偏左）；阿黎坐在右側一塊大岩石上；遠處河岸上四個小小的人影走來
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -1033,11 +1066,14 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP01/keyframes/EP01-S04-11.png`）**
 
 ```text
-Reference images: 齊衡烈-sheet、玩家-sheet（机遙）、江祈璟-sheet、青嵐河谷-sheet
+Reference images: 齊衡烈-sheet、玩家-sheet（机遙）、江祈璟-sheet、異化青牙狼-sheet、青嵐河谷-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：上午，河谷深處骨堆前。一隻比普通狼大一圈的青灰色異化巨狼（血紅眼睛、肩背毛底下透出暗紅紋路）從畫面右側骨堆後走出、壓低身子；畫面中央齊衡烈（鮮紅短刺髮、古青銅胸甲、右上臂赤金臂環）雙手橫舉單刃厚背重刀擋在前面；他左後方是机遙（黑色亂髮、深灰交領短衣、新生制式長刀已出鞘：單刃窄薄）；右前景江祈璟（黑長髮高馬尾、深藍長袍滾銀邊）持長槍，槍頭下一顆小古銅鈴。【固定參考圖】異化青牙狼-sheet（白底三視圖，見 EP01/registry_add.json 的 creatures；本張關鍵幀開新對話，附此圖與角色設定圖，不附其他關鍵幀）。
+
+LAYOUT (must follow): exactly 3 named character(s): 齊衡烈、机遙、江祈璟; creatures: 異化青牙狼; 站位：裂狼從畫面右側骨堆後走出；齊衡烈擋在最前面（畫面中）；机遙在他左後方（畫面左）；江祈璟持槍在右前景
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -1067,11 +1103,14 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP01/keyframes/EP01-S04-12.png`）**
 
 ```text
-Reference images: 齊衡烈-sheet、郁岑燁-sheet、沈昭寧-sheet、青嵐河谷-sheet
+Reference images: 齊衡烈-sheet、郁岑燁-sheet、沈昭寧-sheet、異化青牙狼-sheet、青嵐河谷-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：河谷深處。青灰色異化巨狼（血紅眼、肩背暗紅紋）撲向畫面左側的齊衡烈，齊衡烈（紅髮、青銅胸甲、單刃厚背重刀在手）身體正在側閃；畫面右側郁岑燁（深藍道袍、古銅肩甲、細長直劍）與沈昭寧（白底銀紋劍袍、細長直劍）劍已出鞘、正要衝入。【固定參考圖】異化青牙狼-sheet（白底三視圖，見 EP01/registry_add.json 的 creatures；本張關鍵幀開新對話，附此圖與角色設定圖，不附其他關鍵幀）。
+
+LAYOUT (must follow): exactly 3 named character(s): 齊衡烈、郁岑燁、沈昭寧; creatures: 異化青牙狼; 站位：裂狼在畫面中央；齊衡烈在左側側身閃開；郁岑燁和沈昭寧從右側一起切進來
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -1099,11 +1138,14 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP01/keyframes/EP01-S04-13.png`）**
 
 ```text
-Reference images: 厲若楓-sheet（女版）、聞人澈-sheet、青嵐河谷-sheet
+Reference images: 厲若楓-sheet（女版）、聞人澈-sheet、異化青牙狼-sheet、青嵐河谷-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：河谷深處。畫面左上高岩上，厲若楓（女、琥珀色眼睛、深色長髮低束、深青短披肩、左前臂皮護臂、三折式短弓）拉弓搭箭；畫面右下，聞人澈（灰藍連帽長外袍、及下巴黑髮木簪半束、右腰舊皮藥草袋、左腕三枚銅玉符環）右手短靈杖舉在手中、尚未點地，地上沒有法陣；青灰色異化巨狼在畫面中央偏下。（之後出現的法陣只有雲紋與星點連線，沒有五芒星、沒有字母或任何文字狀符號。）【固定參考圖】異化青牙狼-sheet（白底三視圖，見 EP01/registry_add.json 的 creatures；本張關鍵幀開新對話，附此圖與角色設定圖，不附其他關鍵幀）。
+
+LAYOUT (must follow): exactly 2 named character(s): 厲若楓、聞人澈; creatures: 異化青牙狼; 站位：厲若楓在左側高岩上拉弓（畫面左上），聞人澈在右側地面（畫面右下），裂狼在畫面中央偏下
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -1150,11 +1192,14 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP01/keyframes/EP01-S04-15.png`）**
 
 ```text
-Reference images: 沈昭寧-sheet、玩家-sheet（机遙）、青嵐河谷-sheet
+Reference images: 沈昭寧-sheet、玩家-sheet（机遙）、異化青牙狼-sheet、青嵐河谷-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：河谷深處。畫面中央机遙（黑色亂髮、深灰交領短衣、手持新生制式長刀）咬著牙盯著畫面右側的青灰色異化巨狼（血紅眼、肩背暗紅紋），巨狼後腿下壓、要跳；沈昭寧（白底銀紋劍袍、細長直劍）從他身邊走過，看都沒看他。【固定參考圖】異化青牙狼-sheet（白底三視圖，見 EP01/registry_add.json 的 creatures；本張關鍵幀開新對話，附此圖與角色設定圖，不附其他關鍵幀）。
+
+LAYOUT (must follow): exactly 2 named character(s): 沈昭寧、机遙; creatures: 異化青牙狼; 站位：沈昭寧從机遙身邊走過（由畫面左往右）；机遙在畫面中央，盯著畫面右側的裂狼
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -1209,6 +1254,9 @@ Reference images: 聞人澈-sheet、玩家-sheet（机遙）、青嵐河谷-shee
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：河谷深處。聞人澈（灰藍連帽長外袍、木簪半束黑髮、右腰舊皮藥草袋、左腕銅玉符環）蹲著，攤開的掌心托著一顆拳頭大小的半透明靈核，裡面有微光；机遙（黑色亂髮、深灰交領短衣、左腰新生制式長刀）蹲在他對面看著靈核。陰天的冷光。
+
+LAYOUT (must follow): exactly 2 named character(s): 聞人澈、机遙; 站位：聞人澈蹲著（畫面右），掌心托著靈核；机遙蹲在他對面（畫面左）
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -1303,6 +1351,9 @@ Reference images: 玩家-sheet（机遙）、蕭曜霖-sheet、院內測定室-s
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：院內測定室。石台上所有陣紋同時亮起，淡金色靈光從四周收束湧向石台中央的机遙（黑色亂髮、深灰交領短衣、左腰新生制式長刀），他咬緊牙、雙拳緊握；台下右側蕭曜霖（古銅護肩、背負門板重劍）平靜地看著。
+
+LAYOUT (must follow): exactly 2 named character(s): 机遙、蕭曜霖; 站位：机遙在石台中央（畫面中），蕭曜霖在台下（畫面右）
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -1380,6 +1431,9 @@ Reference images: 阿黎-sheet、玩家-sheet（机遙）、青嵐古林入口-s
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：白天，青嵐古林邊緣。林緣的空氣像水面一樣微微扭曲（透明的靈壓障壁，看得到折射的波紋），障壁後是濃霧與參天古木。阿黎（曬黑、短髮夾羽毛、獸皮護腕、腰間短刀與繩索、獵戶粗布衣）停在障壁前；她身後是机遙（黑色亂髮、深灰交領短衣、左腰新生制式長刀），再後面是三個模糊的同伴背影。
+
+LAYOUT (must follow): exactly 2 named character(s): 阿黎、机遙; 站位：阿黎走在最前，停在障壁前（畫面右）；机遙在她身後（畫面中），左腰佩刀；机遙身後還有三個同伴的模糊背影
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -1447,6 +1501,9 @@ Reference images: 玩家-sheet（机遙）、阿黎-sheet、青嵐古林入口-s
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：近景：机遙（深灰交領短衣）的手掌裡握著一枚巴掌大的圓形銅色通行印記（刻著古林紋樣、沒有字），印記微微發出淡青光；背景是像水面一樣扭曲的透明障壁和霧中古林，畫面右邊是阿黎（曬黑、短髮夾羽毛）的側影。
+
+LAYOUT (must follow): exactly 2 named character(s): 机遙、阿黎; 站位：机遙站在障壁前（畫面中），手裡握著通行印記；阿黎站在一旁（畫面右）；机遙身後三個同伴的模糊背影
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -1495,11 +1552,14 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP01/keyframes/EP01-S06-06.png`）**
 
 ```text
-Reference images: 齊衡烈-sheet、郁岑燁-sheet、玩家-sheet（机遙）、青嵐古林-sheet
+Reference images: 齊衡烈-sheet、郁岑燁-sheet、玩家-sheet（机遙）、異化青牙狼-sheet、青嵐古林-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：古林內霧中。畫面右側一個長滿樹根的狼巢洞口，幾隻青灰色異化巨狼（血紅眼、肩背暗紅紋）竄出；畫面左側齊衡烈（紅髮、青銅胸甲、單刃厚背重刀）和中間郁岑燁（深藍道袍、古銅肩甲、細長直劍）迎上去；左後方机遙（深灰交領短衣、新生制式長刀）在霧裡。周圍草木全朝畫面右側（古林深處）倒伏。【固定參考圖】異化青牙狼-sheet（白底三視圖，見 EP01/registry_add.json 的 creatures；本張關鍵幀開新對話，附此圖與角色設定圖，不附其他關鍵幀）。
+
+LAYOUT (must follow): exactly 3 named character(s): 齊衡烈、郁岑燁、机遙; creatures: 異化青牙狼; 站位：狼群從畫面右側洞口竄出；齊衡烈（畫面左）、郁岑燁（畫面中）迎上去；机遙在左後方的霧裡
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -1528,11 +1588,14 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP01/keyframes/EP01-S06-07.png`）**
 
 ```text
-Reference images: 厲若楓-sheet（女版）、玩家-sheet（机遙）、青嵐古林-sheet
+Reference images: 厲若楓-sheet（女版）、玩家-sheet（机遙）、異化青牙狼-sheet、青嵐古林-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：古林內霧中。畫面中央一塊半埋在地裡、刻痕斷裂的古陣殘片（沒有字），幾隻青灰色異化巨狼守在旁邊；畫面左側厲若楓（女、深色長髮低束、深青短披肩、三折式短弓）拉弓；地上釘著幾支箭；右前景机遙（深灰交領短衣、左腰長刀）喘著氣。殘片上斷裂的刻痕朝畫面右側（古林深處）。【固定參考圖】異化青牙狼-sheet（白底三視圖，見 EP01/registry_add.json 的 creatures；本張關鍵幀開新對話，附此圖與角色設定圖，不附其他關鍵幀）。
+
+LAYOUT (must follow): exactly 2 named character(s): 厲若楓、机遙; creatures: 異化青牙狼; 站位：厲若楓在畫面左拉弓；狼群守在畫面中央的殘片旁；机遙在右前景
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -1643,6 +1706,9 @@ Reference images: 聞人澈-sheet、玩家-sheet（机遙）、青嵐古林-shee
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：古林深處霧中，一面長青苔的岩壁上，一道古老的淡金陣紋被暗紅色的紋路侵蝕（像鐵鏽，又像血管，沒有文字）；聞人澈（灰藍連帽長外袍、木簪半束黑髮、右腰舊皮藥草袋）伸出短靈杖停在陣紋前一寸；左後方机遙（黑色亂髮、深灰交領短衣、左腰新生制式長刀）看著。
+
+LAYOUT (must follow): exactly 2 named character(s): 聞人澈、机遙; 站位：聞人澈站在岩壁前（畫面右），短杖停在陣紋前一寸；机遙在他左後方（畫面左）
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -1798,6 +1864,9 @@ Reference images: 陣眼殘響（只出關鍵幀）
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：舊絹般褪成淡金色調的畫面（細微的絹紋與顆粒）：一片比青嵐大得多的古老山河，層層山脈與蜿蜒的大河一直延伸到天邊，天地之間隱約有淡金色的陣紋線條。沒有任何人、沒有建築、沒有文字。
+
+LAYOUT (must follow): no named characters; 站位：畫面中沒有任何人；全程舊絹般的淡金色調
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -1914,6 +1983,9 @@ Reference images: 齊衡烈-sheet、江祈璟-sheet、玩家-sheet（机遙）�
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：午後陰沉的光、紅霧。峽谷霧中，林梢上空透出暗紅色裂光。齊衡烈（紅髮、青銅胸甲、單刃厚背重刀，畫面左）、江祈璟（黑長髮高馬尾、深藍長袍、長槍，畫面中）、机遙（黑色亂髮、深灰交領短衣、新生制式長刀，畫面右）站成一排；一群模糊的異化妖獸（狼、鹿、野豬）伏低身子從他們身邊與中間的空隙貼地跑過，掀起落葉，沒有碰到人。LAYOUT (must follow)：共 3 個人，每人只出現一次，由左到右並肩面向霧：齊衡烈（畫面左）、江祈璟（畫面中）、机遙（畫面右）；一群模糊的異化妖獸（狼、鹿、野豬，共約 8～10 隻）貼地從三人兩側和人與人之間的兩個空隙跑過，沒有任何一隻碰到人；林梢上空一道暗紅裂光。
+
+LAYOUT (must follow): exactly 3 named character(s): 齊衡烈、江祈璟、机遙; 站位：眾人剛從石庭退到峽谷；齊衡烈（畫面左）、江祈璟（畫面中）、机遙（畫面右）站成一排面向霧；獸群從他們兩側和中間的空隙貼地跑過，沒有碰到人
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -1967,6 +2039,9 @@ Reference images: 赤瞳妖將-sheet、古林峽谷三陣點-sheet
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：午後陰沉的光、紅霧。峽谷，霧散開一條路。赤瞳妖將站在路中央（全身，面向鏡頭）：人形，身高是年輕修行者的兩倍以上，修長，全身覆蓋層疊的赤黑色鱗甲、接縫透著暗紅，腰間一條破舊褪色的深藍禮帶，墨灰長髮，暗灰臉、黑色眼白、深紅眼瞳，短短的後掠角脊，長黑爪，沒有武器；周圍紅霧。低角度仰拍。
+
+LAYOUT (must follow): exactly 1 named character(s): 赤瞳妖將; 站位：赤瞳妖將站在霧散開的路中央（畫面中），面向鏡頭
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -2036,6 +2111,9 @@ Reference images: 赤瞳妖將-sheet、玩家-sheet（机遙）、古林峽谷�
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：午後陰沉的光、紅霧。峽谷紅霧中。畫面右上是赤瞳妖將的頭與肩（暗灰臉、黑色眼白、深紅眼瞳、墨灰長髮、赤黑鱗甲、短短的後掠角脊），低頭俯視；畫面左下是机遙（黑色亂髮、深灰交領短衣、新生制式長刀）仰頭看牠，臉被紅光照著。
+
+LAYOUT (must follow): exactly 2 named character(s): 赤瞳妖將、机遙; 站位：赤瞳妖將在畫面右（遠、高），机遙在畫面左（近）；兩者之間是紅霧
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -2068,6 +2146,9 @@ Reference images: 聞人澈-sheet、古林峽谷三陣點-sheet
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：峽谷，午後陰沉的光、紅霧。三個石陣點剛開始發出暗紅色的微光（光還沒有衝天），紅霧貼地；前景聞人澈（灰藍連帽長外袍、木簪半束黑髮、右腰舊皮藥草袋、短靈杖）側身看著它們，嘴巴閉著。
+
+LAYOUT (must follow): exactly 1 named character(s): 聞人澈; 站位：聞人澈在畫面前景（右腰還掛著藥袋），身後三根暗紅光柱沖天
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -2098,6 +2179,9 @@ Reference images: 齊衡烈-sheet、赤瞳妖將-sheet、古林峽谷三陣點-s
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：午後陰沉的光、紅霧。峽谷紅霧中，背景三根暗紅光柱，一側有盤結的粗樹根。畫面左前景齊衡烈（紅髮、青銅胸甲、右上臂赤金臂環、單刃厚背重刀）手臂剛抬起、要往後橫出，臉朝妖將，嘴巴閉著；畫面右側赤瞳妖將（赤黑鱗甲、深紅眼瞳、長黑爪）正要邁步。
+
+LAYOUT (must follow): exactly 2 named character(s): 齊衡烈、赤瞳妖將; 站位：齊衡烈在畫面左前景（最靠近妖將），妖將在畫面右；其他人在齊衡烈身後的畫面外
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -2132,6 +2216,9 @@ Reference images: 厲若楓-sheet（女版）、赤瞳妖將-sheet、古林峽�
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：午後陰沉的光、紅霧。峽谷紅霧中。畫面左側厲若楓（女、琥珀色眼睛、深色長髮低束、深青短披肩、三折式短弓）連射；畫面右側赤瞳妖將的赤黑鱗甲上彈開一支箭，迸出一點火星。
+
+LAYOUT (must follow): exactly 2 named character(s): 厲若楓、赤瞳妖將; 站位：厲若楓在畫面左連射，赤瞳妖將在畫面右
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -2163,6 +2250,9 @@ Reference images: 聞人澈-sheet、古林峽谷三陣點-sheet
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：午後陰沉的光、紅霧。峽谷紅霧中，聞人澈（灰藍連帽長外袍、木簪半束黑髮、右腰舊皮藥草袋、左腕銅玉符環）右手短靈杖點地，身前張開一圈淡青色曜紋法陣，紅霧從畫面右側撞上法陣。法陣只有雲紋與星點連線，沒有五芒星、沒有字母或任何文字狀符號；右下地磚的刻紋也不要像字。
+
+LAYOUT (must follow): exactly 1 named character(s): 聞人澈; 站位：聞人澈在畫面中央，短杖點地，身前張開一圈法陣，紅霧從畫面右側撞過來
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -2215,6 +2305,9 @@ Reference images: 玩家-sheet（机遙）、江祈璟-sheet、赤瞳妖將-shee
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：午後陰沉的光、紅霧。峽谷紅霧中。前景左側江祈璟（黑長髮高馬尾、深藍長袍滾銀邊、長槍、槍頭下小古銅鈴）、前景右側机遙（黑色亂髮、深灰交領短衣、新生制式長刀出鞘）並肩、半側身；畫面後方中央是赤瞳妖將（赤黑鱗甲、深紅眼瞳）；左右各有一個陣點噴著暗紅光柱。LAYOUT (must follow)：共 3 個角色，每人只出現一次：前景左江祈璟、前景右机遙（並肩、半側身），後方中央赤瞳妖將（只有一隻）；左右兩側各有一個陣點噴著暗紅光柱（共 2 根）。
+
+LAYOUT (must follow): exactly 3 named character(s): 机遙、江祈璟、赤瞳妖將; 站位：机遙（畫面右前）與江祈璟（畫面左前）並肩，妖將在畫面後方中央
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -2270,6 +2363,9 @@ Reference images: 赤瞳妖將-sheet、郁岑燁-sheet、玩家-sheet（机遙�
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：午後陰沉的光、紅霧。峽谷，三個剛熄滅的石陣點冒著淡煙；畫面中後方赤瞳妖將（赤黑鱗甲、腰間褪色深藍禮帶、深紅眼瞳、長黑爪）右臂還抬在半空、爪尖朝前，紅霧未退；畫面左側郁岑燁（深藍道袍、細長直劍）劍尖指著牠；畫面右側机遙（深灰交領短衣、新生制式長刀）喘著氣。LAYOUT (must follow)：共 3 個角色，每人只出現一次：左郁岑燁、右机遙、中後方赤瞳妖將（只有一隻）；前景三個熄滅冒煙的石陣點（共 3 個）。
+
+LAYOUT (must follow): exactly 3 named character(s): 赤瞳妖將、郁岑燁、机遙; 站位：妖將在畫面中後方，郁岑燁在畫面左持劍，机遙在畫面右；熄滅的陣點在前景
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -2315,7 +2411,7 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 
 ### EP01-S08-16（4 秒）
 
-**上傳：** 聞人澈-sheet、厲若楓-sheet（女版）、古林峽谷三陣點-sheet（待出圖）
+**上傳：** 聞人澈-無藥袋-sheet（待出圖）、厲若楓-sheet（女版）、古林峽谷三陣點-sheet（待出圖）
 
 ```text
 【畫面】橫式16:9，3D國漫動畫（半寫實、精緻光影），畫面中不要出現任何文字、字幕或浮水印。
@@ -2400,11 +2496,14 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP01/keyframes/EP01-S09-03.png`）**
 
 ```text
-Reference images: 玩家-sheet（机遙）、聞人澈-sheet、江祈璟-sheet、古林林外-sheet
+Reference images: 玩家-sheet（机遙）、聞人澈-無藥袋-sheet、江祈璟-sheet、古林林外-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：傍晚，古林外緩坡上：畫面前景三人背對鏡頭仰頭看天——机遙（黑色亂髮、深灰交領短衣、左腰新生制式長刀，畫面左）、聞人澈（灰藍連帽長外袍、右腰空著只剩一截斷皮繩、短靈杖，畫面中）、江祈璟（黑長髮高馬尾、深藍長袍、長槍，畫面右）；遠處霧中古林上空，夕陽天空裡懸著一道極細的黑色裂口（像玻璃裂開）。LAYOUT (must follow)：共 3 個人，每人只出現一次，都背對鏡頭；裂口只有 1 道，在畫面上方偏中的遠處。
+
+LAYOUT (must follow): exactly 3 named character(s): 机遙、聞人澈、江祈璟; 站位：机遙（畫面左）、聞人澈（畫面中，腰間空著）、江祈璟（畫面右）站在林外仰頭看天
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -2588,7 +2687,7 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 【畫面】橫式16:9，3D國漫動畫（半寫實、精緻光影），畫面中不要出現任何文字、字幕或浮水印。
 【角色】畫面中只有這1個人，只出現一次：
 - 圖1 陸鳴鸞：十九歲女生，高馬尾綁紅繩，赤紅與深褐色短武服、袖子捲到手肘，寬深色腰帶，左腰掛一把雁翎刀（單刃微彎）收在深色刀鞘裡，活潑、笑容大。
-【背景人物】從走廊盡頭走來的四個身影（逆光剪影，不是主要角色，要清楚數得出四個，看不清臉）（模糊、不看鏡頭、不排隊、不說話）。
+【背景人物】從走廊盡頭走來的四個身影（逆光剪影，不是主要角色，要清楚數得出四個，看不清臉）（逆光剪影、看不清臉、不說話；四個人要清楚數得出來）。
 【場景】圖2天玄院東廊：夜裡，長木迴廊點著燈，兩側修習室房門；走廊盡頭多了一處封鎖哨（一張木案、一盞燈、一本空白名冊）。同一晚。
 【站位】0–4 秒是走廊盡頭封鎖哨的空鏡（沒有人）；4 秒後陸鳴鸞抱膝坐在第八室門檻上（畫面中）；5–7 秒四個逆光剪影一個接一個從走廊盡頭走來（間隔清楚）、經過她面前
 【分鏡與台詞】
@@ -2597,12 +2696,12 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 5–7秒：反打。四個逆光剪影一個接一個走進畫面，間隔清楚，看不清臉
 7–9秒：陸鳴鸞近景。她抬頭，目光跟著走過來的人一個一個移動（眼睛隨剪影移動）。陸鳴鸞（一個一個數、小聲）說：「一、二、三、四……」
 【鏡頭】空鏡（地點卡疊在前 4 秒）接中景，5–7 秒一個反打（讓四個剪影各自清楚），再回陸鳴鸞近景
-【禁止】文字、字幕、浮水印、第二個人、重複出現的人、名冊上的字、封鎖哨有人、看得清臉的剪影。
+【禁止】文字、字幕、浮水印、重複出現的人、名冊上的字、封鎖哨有人、看得清臉的剪影。
 ```
 
 ### EP01-S11-02（7 秒）
 
-**上傳：** 聞人澈-sheet、陸鳴鸞-sheet、天玄院東廊-sheet
+**上傳：** 聞人澈-無藥袋-sheet（待出圖）、陸鳴鸞-sheet、天玄院東廊-sheet
 
 ```text
 【畫面】橫式16:9，3D國漫動畫（半寫實、精緻光影），畫面中不要出現任何文字、字幕或浮水印。
@@ -2622,7 +2721,7 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 
 ### EP01-S11-03（4 秒）
 
-**上傳：** 聞人澈-sheet、齊衡烈-sheet、天玄院東廊-sheet
+**上傳：** 聞人澈-無藥袋-sheet（待出圖）、齊衡烈-sheet、天玄院東廊-sheet
 
 ```text
 【畫面】橫式16:9，3D國漫動畫（半寫實、精緻光影），畫面中不要出現任何文字、字幕或浮水印。
@@ -2825,7 +2924,7 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 
 ### EP01-S12-03（12 秒）
 
-**上傳：** 齊衡烈-sheet、聞人澈-sheet、第七室修習室-sheet
+**上傳：** 齊衡烈-sheet、聞人澈-無藥袋-sheet（待出圖）、第七室修習室-sheet
 
 ```text
 【畫面】橫式16:9，3D國漫動畫（半寫實、精緻光影），畫面中不要出現任何文字、字幕或浮水印。
@@ -2851,7 +2950,7 @@ Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizont
 【畫面】橫式16:9，3D國漫動畫（半寫實、精緻光影），畫面中不要出現任何文字、字幕或浮水印。
 【角色】畫面中只有這1個人，只出現一次：
 - 圖1 厲若楓：二十歲女生，琥珀色眼睛，深色長髮低束，深青色短披肩（兜帽放下），左臂無袖、肩上有舊疤、左前臂一隻皮護臂，右肩後漆木箭袋，背上斜背三折式短弓，話少、冷靜。
-【場景】圖2第七室修習室：夜裡點著油燈，矮桌上這次有飯菜；門邊兵器架上靠著大家的兵器（齊衡烈的重刀、郁岑燁的劍、厲若楓的弓、机遙的新生制式長刀），沒有人身上帶著兵器；室內沒有床。夜，宵禁鐘響。
+【場景】圖2第七室修習室：夜裡點著油燈，矮桌上這次有飯菜；門邊兵器架上靠著大家的兵器（齊衡烈的重刀、郁岑燁的劍、厲若楓的弓、机遙的新生制式長刀），坐著的人身上沒有帶兵器（厲若楓起身後才從架上取下自己的弓背上）；室內沒有床。夜，宵禁鐘響。
 【站位】厲若楓起身走到門口（畫面右），回頭看屋裡
 【分鏡與台詞】
 0–3秒：中景。遠處宵禁鐘一聲一聲傳來；厲若楓起身，背上弓，走到門口，停了一拍
@@ -2933,6 +3032,9 @@ Reference images: 藏書閣外廊-sheet
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：月光下的石階，俯拍：一張泛黃的古林舊圖（只有地形線與細筆記號）上疊著一張炭筆草圖。草圖上幾個點——河谷的一處、古林裡三處、中央一處、上方一處——用細線連起來，形成一個缺了一角的形狀，線一直畫到紙邊外。只有線與點，沒有任何文字或數字。冷藍月光、石階紋理。LAYOUT (must follow)：俯拍，兩張紙疊在一起（下面一張泛黃的古林舊圖、上面一張炭筆草圖），畫面中沒有人、沒有手；草圖上共 6 個點：左下 1 個（河谷）、中間偏左 3 個排成小三角形（古林）、正中央 1 個（陣眼）、上方 1 個（天上的裂口），用細線連成一個缺了右上一角的形狀，線一直畫到紙邊外。
+
+LAYOUT (must follow): no named characters; 站位：畫面中沒有人，只有圖紙與月光；圖紙邊緣超出畫面
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -3026,6 +3128,9 @@ Reference images: 青嵐城主街-sheet
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：清晨，青嵐城主街仰拍：晴朗的天空佔滿畫面，屋簷與素色布幌的剪影只在畫面邊緣；天空中沒有任何東西（裂痕還沒出現）。沒有閃電、沒有火光、沒有人。
+
+LAYOUT (must follow): no named characters; 站位：畫面上半是天空，下半是整條街抬頭的人群；包子攤老闆在前景
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**
@@ -3096,6 +3201,9 @@ Reference images: 青嵐城主街-sheet
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：清晨高空俯視（比大俯瞰近一些）：青嵐城主街的屋頂在畫面下方，遠方山上依山疊建的天玄院、霧氣籠罩的古林與一條穿過谷底的河，已在地平線處小小可見；上半部是晴朗的天空與遠方雲層。沒有看得清的人、沒有文字。LAYOUT (must follow)：共 4 個地點，由近到遠：畫面下方青嵐城屋頂、右後方山上的天玄院（小）、左後方霧中的古林（小）、古林旁穿過谷底的河（小）；地平線以上是天空與雲層。
+
+LAYOUT (must follow): no named characters; 站位：畫面中沒有看得清的人；天空佔上半部
+（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
 **Seedance**

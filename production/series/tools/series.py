@@ -18,6 +18,7 @@ SERIES = os.path.dirname(HERE)
 REPO = os.path.dirname(os.path.dirname(SERIES))
 REG = json.load(open(os.path.join(SERIES, "registry.json"), encoding="utf-8"))
 CH, LOC = REG["characters"], REG["locations"]
+CR, CR_USE = dict(REG.get("creatures", {})), {}   # 非人形生物（妖獸、傀儡）的白底設定圖；關鍵幀要附
 # 各集新增的角色／場景先寫在 EPxx/registry_add.json（避免多位作者同時改同一個檔），讀取時合併
 for _p in sorted(glob.glob(os.path.join(SERIES, "*", "registry_add.json"))):
     _a = json.load(open(_p, encoding="utf-8"))
@@ -25,6 +26,12 @@ for _p in sorted(glob.glob(os.path.join(SERIES, "*", "registry_add.json"))):
         CH.setdefault(_k, _v)
     for _k, _v in _a.get("locations", {}).items():
         LOC.setdefault(_k, _v)
+    for _k, _v in _a.get("creatures", {}).items():
+        if _k.startswith("_"):
+            continue
+        CR.setdefault(_k, _v)
+        for _cid in _v.get("usedBy", []):
+            CR_USE.setdefault(_cid, []).append(_k)
 PARTS = {"cold", "main", "op", "ed"}
 MAX_CPS = 4.5           # 一個 beat 內台詞字數／秒數上限
 RUNTIME = (930, 990)    # 正片（cold＋main）秒數
@@ -233,7 +240,8 @@ def clip_prompt(c):
     else:
         L.append("【角色】畫面中沒有主要角色。")
     if c.get("extras"):
-        L.append(f"【背景人物】{c['extras']}（模糊、不看鏡頭、不排隊、不說話）。")
+        style = c.get("extrasStyle", "模糊、不看鏡頭、不排隊、不說話")
+        L.append(f"【背景人物】{c['extras']}（{style}）。")
     loc = LOC[c["loc"]]
     tag = f"圖{len(chars) + 1}" if c["mode"] == "ref" else ""
     L.append(f"【場景】{tag}{loc['name']}：{c['setting']}。{c.get('time', '')}。")
@@ -244,7 +252,8 @@ def clip_prompt(c):
         says = "".join(say_text(*(s + [""])[:3]) for s in b.get("say", []))
         L.append(f"{a}–{z}秒：{b.get('shot', '')}。{b['action']}{'。' if says and not b['action'].endswith('。') else ''}{says}")
     L.append(f"【鏡頭】{c['camera']}")
-    forbid = ["文字", "字幕", "浮水印"] + (["第" + "一二三四"[len(chars)] + "個人", "重複出現的人"] if chars else []) + c.get("forbid", [])
+    count = ["第" + "一二三四"[len(chars)] + "個人"] if chars and c.get("countForbid", True) else []
+    forbid = ["文字", "字幕", "浮水印"] + count + (["重複出現的人"] if chars else []) + c.get("forbid", [])
     L.append("【禁止】" + "、".join(dict.fromkeys(forbid)) + "。")
     return "\n".join(L)
 
@@ -262,11 +271,16 @@ def uploads(c):
 
 
 def keyframe_prompt(c):
-    refs = [CH[k]["label"] for k in c.get("chars", [])] + [LOC[c["loc"]]["label"]]
+    crs = CR_USE.get(c["id"], [])
+    refs = [CH[k]["label"] for k in c.get("chars", [])] + [CR[k]["label"] for k in crs] + [LOC[c["loc"]]["label"]]
+    names = [CH[k]["name"] for k in c.get("chars", [])]
+    layout = ("\n\nLAYOUT (must follow): " + (f"exactly {len(names)} named character(s): " + "、".join(names) if names else "no named characters") +
+              (("; creatures: " + "、".join(CR[k]["name"] for k in crs)) if crs else "") + f"; 站位：{c['staging']}" +
+              "\n（每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）")
     return ("Reference images: " + "、".join(refs) + "\n\n" +
             "Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, "
             "no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly "
-            "(face, hair, costume, weapon).\n\n畫面：" + c["firstframe"])
+            "(face, hair, costume, weapon).\n\n畫面：" + c["firstframe"] + layout)
 
 
 def build(ep):
@@ -306,16 +320,16 @@ def assets():
     need = {}
     for ep in episodes():
         for c in json.load(open(clips_path(ep), encoding="utf-8"))["clips"]:
-            for k in c.get("chars", []) + [c.get("loc")]:
-                e = CH.get(k) or LOC.get(k)
+            for k in c.get("chars", []) + [c.get("loc")] + CR_USE.get(c["id"], []):
+                e = CH.get(k) or LOC.get(k) or CR.get(k)
                 if e and not e.get("sheet"):
                     d = need.setdefault(k, {"first": c["id"], "n": 0})
                     d["n"] += 1
     L = ["# 還沒出的設定圖", "", "> 由 `series.py assets` 產生。依第一次用到的片段排序；出圖規範見 `docs/MASTER_VISUAL_STYLE_LOCK_V1.0.md`，"
          "流程沿用 `production/LF01/tools/lf01_handoff.py`（角色 3:2 設定圖、場景設定圖）。", "",
          "| 編號 | 名稱 | 第一次用到 | 用到幾支 | 外觀依據 |", "|---|---|---|---|---|"]
-    for k, d in sorted(need.items(), key=lambda kv: kv[1]["first"]):
-        e = CH.get(k) or LOC.get(k)
+    for k, d in sorted(need.items(), key=lambda kv: (not kv[1]["first"].startswith("EP"), kv[1]["first"])):
+        e = CH.get(k) or LOC.get(k) or CR.get(k)
         L.append(f"| {k} | {e['name']} | {d['first']} | {d['n']} | {e.get('sheetBrief') or e['seedance']} |")
     open(os.path.join(SERIES, "ASSETS_TODO.md"), "w", encoding="utf-8").write("\n".join(L) + "\n")
     print(f"✓ ASSETS_TODO.md（{len(need)} 項）")
