@@ -306,6 +306,8 @@ def build(ep):
         L += [f"### {c['id']}（{c['dur']} 秒）", "", "**上傳：** " + "、".join(uploads(c)), ""]
         if c.get("caption"):
             L += [f"**地點卡（剪輯後製疊字，不進 Seedance）：** {c['caption']}（開頭疊 {CARD_SEC} 秒、淡入淡出）", ""]
+        if c.get("note"):
+            L += [f"**備註（給人看，不進 Seedance）：** {c['note']}", ""]
         if c["mode"] == "firstframe":
             L += ["**關鍵幀（先用 Gemini 出圖，存成 `production/series/" + ep + f"/keyframes/{c['id']}.png`）**", "",
                   "```text", keyframe_prompt(c), "```", "", "**Seedance**", ""]

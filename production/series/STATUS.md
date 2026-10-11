@@ -57,7 +57,7 @@
 ## 階段 4：片頭曲／片尾曲（production/series/OP_ED/）
 | 項目 | 狀態 | 備註 |
 |---|---|---|
-| OP/ED 設計（歌詞、編曲、製作方式、畫面） | ⬜ v1 完成（主持人寫）：〈喚名〉90 秒／〈林子讓路的時候〉80 秒，OP 17 支、ED 8 支，`check` 通過；待審查 | production/series/OP_ED/design.md、OP/、ED/ |
+| OP/ED 設計（歌詞、編曲、製作方式、畫面） | 🔄 v1.2：主持人第 1 輪審查（3 中、5 小已修，見 OP_ED/review.md），OP 17 支、ED 8 支 `check` 通過；季別替換寫好後再派獨立審查員 | production/series/OP_ED/design.md、OP/、ED/ |
 | 片頭季別替換（S2～S5 各 3 支） | ⬜ 等各季第一集 clips.json 登記完場景再寫 | design.md 第 6 節 |
 
 ## 階段 5：收尾

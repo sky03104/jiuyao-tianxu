@@ -141,6 +141,8 @@
 
 **地點卡（剪輯後製疊字，不進 Seedance）：** 青嵐／古林（開頭疊 4 秒、淡入淡出）
 
+**備註（給人看，不進 Seedance）：** 開頭的黑場淡入由剪輯後製；地點卡疊在前 4 秒
+
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP01/keyframes/EP01-S01-01.png`）**
 
 ```text
@@ -523,6 +525,8 @@ LAYOUT (must follow): exactly 1 named character(s): 机遙; 站位（以第 0 �
 ### EP01-S02-14（12 秒）
 
 **上傳：** 玩家-sheet（机遙）、齊衡烈-sheet、厲若楓-sheet（女版）、第七室修習室-sheet
+
+**備註（給人看，不進 Seedance）：** LF01 F12 實測：搖向窗邊不聽話，所以改硬切
 
 ```text
 【畫面】橫式16:9，3D國漫動畫（半寫實、精緻光影），畫面中不要出現任何文字、字幕或浮水印。
@@ -1324,6 +1328,8 @@ LAYOUT (must follow): exactly 2 named character(s): 聞人澈、机遙; 站位�
 
 **上傳：** 蕭曜霖-sheet、玩家-sheet（机遙）、院內測定室-sheet（待出圖）
 
+**備註（給人看，不進 Seedance）：** 場景圖 EP01L2 若有陣紋亮起變體，可另出當 5 秒後的參考
+
 ```text
 【畫面】橫式16:9，3D國漫動畫（半寫實、精緻光影），畫面中不要出現任何文字、字幕或浮水印。
 【角色】畫面中只有這2個人，每人只出現一次，不要出現長得一樣的人：
@@ -2086,6 +2092,8 @@ LAYOUT (must follow): exactly 1 named character(s): 赤瞳妖將; 站位（以�
 ### EP01-S08-06（12 秒）
 
 **上傳：** 關鍵幀 `production/series/EP01/keyframes/EP01-S08-06.png`
+
+**備註（給人看，不進 Seedance）：** 已配音句：妖將那句實測 5.9 秒（檔案開頭靜音只有 0.4 秒），所以給滿 [0–6]；心聲 16 字給 4 秒。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP01/keyframes/EP01-S08-06.png`）**
 
@@ -3144,6 +3152,8 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 ### EP01-S13-06（12 秒）
 
 **上傳：** 關鍵幀 `production/series/EP01/keyframes/EP01-S13-06.png`
+
+**備註（給人看，不進 Seedance）：** 結尾切黑由剪輯處理，接片尾曲
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP01/keyframes/EP01-S13-06.png`）**
 

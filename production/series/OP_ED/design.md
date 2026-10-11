@@ -1,4 +1,4 @@
-# 片頭曲／片尾曲設計 v1（2026-10-10）
+# 片頭曲／片尾曲設計 v1.2（2026-10-11）
 
 > 狀態：初稿 v1，待審查。歌詞、編曲方向、製作流程、畫面分鏡都在這份；畫面的逐支提示詞在 `production/series/OP/clips.json`、`production/series/ED/clips.json`（`series.py build OP`／`build ED` 產生 `seedance_prompts.md`）。
 > 全系列共用一首片頭曲、一首片尾曲。片頭每季換 3 個鏡頭（第 6 節），歌不換。
@@ -140,7 +140,7 @@
 ### OP〈唤名〉
 **曲風標籤**：
 ```text
-chinese pop rock, guofeng, anime opening theme, 148 bpm, 4/4, D major pentatonic, young male vocal, clear and slightly husky, mixed choir in chorus, taiko drums, rock drum kit, electric bass, distorted guitar in background, pipa tremolo, dizi lead melody, erhu sustained notes, orchestral strings, energetic, epic, uplifting, 90 seconds
+chinese pop rock, guofeng, anime opening theme, 148 bpm, 4/4, D dorian pentatonic (D E G A C), young male vocal, clear and slightly husky, mixed choir in chorus, taiko drums, rock drum kit, electric bass, distorted guitar in background, pipa tremolo, dizi lead melody, erhu sustained notes, orchestral strings, energetic, epic, uplifting, 90 seconds
 ```
 **歌詞**：
 ```text
@@ -175,7 +175,7 @@ chinese pop rock, guofeng, anime opening theme, 148 bpm, 4/4, D major pentatonic
 ### ED〈林子让路的时候〉
 **曲風標籤**：
 ```text
-chinese folk ballad, guofeng, anime ending theme, 72 bpm, 6/8, D pentatonic, soft female vocal, breathy, intimate, guqin harmonics intro, xiao flute, cello, warm ambient pad, no drums, gentle, nostalgic, dusk, 80 seconds
+chinese folk ballad, guofeng, anime ending theme, 72 bpm, 6/8, D dorian pentatonic (D E G A C), soft female vocal, breathy, intimate, guqin harmonics intro, xiao flute, cello, warm ambient pad, no drums, gentle, nostalgic, dusk, 80 seconds
 ```
 **歌詞**：
 ```text
@@ -265,5 +265,6 @@ chinese folk ballad, guofeng, anime ending theme, 72 bpm, 6/8, D pentatonic, sof
 ## 修訂紀錄
 | 日期 | 版本 | 內容 |
 |---|---|---|
+| 2026-10-11 | v1.2 | 主持人第 1 輪審查：OP-16 staging 拿掉裂痕、ED 人物移出右側三分之一、曲風標籤改 D dorian pentatonic、OP-02 對齊 EP01 冷開場（見 `review.md`） |
 | 2026-10-10 | v1.1 | 天上的裂痕在 EP01 結尾已關上：OP-16、ED-07 改拍雲後一點光，不拍裂痕（S5 第 1 輪審查第 1 條帶出） |
 | 2026-10-10 | v1 | 主持人撰寫：歌名、歌詞（繁簡）、編曲方向、三個製作方案（授權查證）、片頭 17 支與片尾 8 支分鏡、季別替換規則 |
