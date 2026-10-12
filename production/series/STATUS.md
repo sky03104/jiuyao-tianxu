@@ -34,7 +34,7 @@
 | EP02 | ✅ 第 1 輪修改後主持人複查過關（185 句、974 秒、地點卡 12 張） | docs/longform/EP02_SCRIPT.md |
 | EP03 | ✅ 第 1 輪過關，小問題 8 條已修（174 句、979 秒、地點卡 9 張） | docs/longform/EP03_SCRIPT.md |
 | EP04 | ✅ 第 1 輪修改後主持人複查過關（187 句、976 秒、地點卡 12 張） | docs/longform/EP04_SCRIPT.md |
-| EP05 | 🔄 第 1 輪過關（嚴重 0、中 0、小 18），小問題修改中（sonnet） | docs/longform/EP05_SCRIPT.md |
+| EP05 | ✅ 第 1 輪過關，小問題 18 條已修（176 句、983 秒、地點卡 11 張） | docs/longform/EP05_SCRIPT.md |
 | EP06 | 🔄 撰寫中（opus） | docs/longform/EP06_SCRIPT.md |
 | EP07～EP25 | ⬜ | 五季指南已全部定稿，依序開寫（一次最多 2 個 agent） |
 
@@ -44,6 +44,7 @@
 | 集 | 狀態 | 備註 |
 |---|---|---|
 | EP02 | ✅ 第 1 輪修改後主持人複查過關（133 支、987 秒、firstframe 36 支；新增夏小滿無劍變體 EP02C1B） | production/series/EP02/clips.json |
+| EP03 | 🔄 片段表撰寫中（sonnet） | production/series/EP03/clips.json |
 | EP01 | 🔁 片段表完成（126 支、983 秒、firstframe 50 支，check 通過）→ ✅ 第 2 輪修改後主持人複查過關（126 支、988 秒、firstframe 33 支） | production/series/EP01/clips.json、seedance_prompts.md |
 
 備忘（寫片段表時要處理）：
