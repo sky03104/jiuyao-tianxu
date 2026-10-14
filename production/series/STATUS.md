@@ -62,7 +62,7 @@
 | EP05 | ✅ 第 1 輪修改後主持人複查過關（165 支、977 秒、firstframe 41 支；中 1、小 28 全修） | production/series/EP05/clips.json |
 | EP06 | ✅ 第 1 輪修改後主持人複查過關（164 支、989 秒、firstframe 24 支；中 3、小 22 全修；新增道具 EP04X9 舊木匣） | production/series/EP06/clips.json |
 | EP07 | ✅ 片段表第 1 輪不過關（中 3、小 26）→ 全數修改 → 主持人複查過關（167 支、987 秒、firstframe 21 支） | production/series/EP07/clips.json |
-| EP08 | 🔁 片段表完成（158 支、984 秒、firstframe 32 支，check 通過）；主持人已裁定 5 條；提示詞第 1 輪審查中（opus） | production/series/EP08/clips.json |
+| EP08 | 🔁 片段表完成（158 支、984 秒、firstframe 32 支，check 通過）；主持人已裁定 5 條；提示詞第 1 輪不過關（中 7、小 26），修改中（opus） | production/series/EP08/clips.json |
 | EP01 | 🔁 片段表完成（126 支、983 秒、firstframe 50 支，check 通過）→ ✅ 第 2 輪修改後主持人複查過關（126 支、988 秒、firstframe 33 支） | production/series/EP01/clips.json、seedance_prompts.md |
 
 備忘（寫片段表時要處理）：
