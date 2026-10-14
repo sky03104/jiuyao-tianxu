@@ -20,6 +20,7 @@
 > 2026-10-13 約 21:00 UTC：第十五次撞額度（重設 2026-10-14 01:00 UTC）。EP08 劇本已寫完（只差檔頭狀態，主持人補）；EP05 片段表審查審到 S04。01:01 恢復後接著做。
 > 2026-10-14 約 02:00 UTC：第十六次撞額度（重設 06:00 UTC）。EP06 片段表、EP09 劇本都還在讀資料、沒留檔。06:01 恢復後重派，並要求先建檔再讀細節。
 > 2026-10-14 約 07:00 UTC：第十七次撞額度（重設 11:00 UTC）。EP09 第 1 輪修改改到快完（剩重算秒數）；EP07 片段表還沒留檔。11:01 恢復後用 SendMessage 讓兩個 agent 接著做。
+> 2026-10-14 約 12:00 UTC：第十八次撞額度（重設 16:00 UTC）。EP10 第 1 輪審查寫到一半；EP07 片段表修改已完成。16:02 恢復後用 SendMessage 讓 EP10 審查員接著審，主持人複查 EP07 片段表過關。
 > 排隊順序（2026-10-11 04:30 更新）：五季指南全部定稿。之後輪流：劇本撰寫（opus）→ 劇本審查（台詞＋設定一人兼，opus）→ 修改（sonnet）→ 主持人複查；劇本過關後寫片段表。OP/ED 審查、跨季連續性審查穿插。
 > 狀態：⬜ 未開始／🔄 進行中（agent 名稱）／🔁 審查中（第 n 輪）／✅ 過關
 
@@ -59,7 +60,8 @@
 | EP04 | ✅ 第 1 輪修改後主持人複查過關（166 支、985 秒、firstframe 27 支；中 2、小 27 全修） | production/series/EP04/clips.json |
 | EP05 | ✅ 第 1 輪修改後主持人複查過關（165 支、977 秒、firstframe 41 支；中 1、小 28 全修） | production/series/EP05/clips.json |
 | EP06 | ✅ 第 1 輪修改後主持人複查過關（164 支、989 秒、firstframe 24 支；中 3、小 22 全修；新增道具 EP04X9 舊木匣） | production/series/EP06/clips.json |
-| EP07 | 🔁 片段表完成（166 支、985 秒、firstframe 21 支，check 通過）；主持人已裁定 3 條；提示詞第 1 輪不過關（中 3、小 26），修改中（opus） | production/series/EP07/clips.json |
+| EP07 | ✅ 片段表第 1 輪不過關（中 3、小 26）→ 全數修改 → 主持人複查過關（167 支、987 秒、firstframe 21 支） | production/series/EP07/clips.json |
+| EP08 | 🔄 片段表撰寫中（opus） | production/series/EP08/clips.json |
 | EP01 | 🔁 片段表完成（126 支、983 秒、firstframe 50 支，check 通過）→ ✅ 第 2 輪修改後主持人複查過關（126 支、988 秒、firstframe 33 支） | production/series/EP01/clips.json、seedance_prompts.md |
 
 備忘（寫片段表時要處理）：
