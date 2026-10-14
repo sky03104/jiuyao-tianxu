@@ -44,7 +44,7 @@
 | EP06 | ✅ 第 1 輪過關，小問題 20 條已修，主持人複查過關（169 句、974 秒、地點卡 10 張） | docs/longform/EP06_SCRIPT.md |
 | EP07 | ✅ 第 1 輪過關，小問題 19 條已修，主持人複查過關（160 句、956 秒、地點卡 8 張） | docs/longform/EP07_SCRIPT.md |
 | EP08 | ✅ 第 1 輪過關，小問題 22 條已修，主持人複查過關（163 句、980 秒、地點卡 6 張） | docs/longform/EP08_SCRIPT.md |
-| EP09 | 🔄 撰寫中（opus） | docs/longform/EP09_SCRIPT.md |
+| EP09 | 🔁 初稿完成（167 句、946 秒、地點卡 10 張）；第 1 輪審查中（opus） | docs/longform/EP09_SCRIPT.md |
 | EP10～EP25 | ⬜ | 五季指南已全部定稿，依序開寫（一次最多 2 個 agent） |
 
 ## 階段 3：各集片段表與提示詞（production/series/EPxx/）
@@ -56,7 +56,7 @@
 | EP03 | ✅ 第 1 輪修改後主持人複查過關（152 支、982 秒、firstframe 41 支；中 4、小 38 全修） | production/series/EP03/clips.json |
 | EP04 | ✅ 第 1 輪修改後主持人複查過關（166 支、985 秒、firstframe 27 支；中 2、小 27 全修） | production/series/EP04/clips.json |
 | EP05 | ✅ 第 1 輪修改後主持人複查過關（165 支、977 秒、firstframe 41 支；中 1、小 28 全修） | production/series/EP05/clips.json |
-| EP06 | 🔄 片段表撰寫中（opus） | production/series/EP06/clips.json |
+| EP06 | 🔁 片段表完成（163 支、986 秒、firstframe 23 支，check 通過）；主持人已裁定 4 條；提示詞第 1 輪審查中（opus） | production/series/EP06/clips.json |
 | EP01 | 🔁 片段表完成（126 支、983 秒、firstframe 50 支，check 通過）→ ✅ 第 2 輪修改後主持人複查過關（126 支、988 秒、firstframe 33 支） | production/series/EP01/clips.json、seedance_prompts.md |
 
 備忘（寫片段表時要處理）：
