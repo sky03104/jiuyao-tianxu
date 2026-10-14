@@ -53,7 +53,8 @@
 | EP02 | ✅ 第 1 輪修改後主持人複查過關（133 支、987 秒、firstframe 36 支；新增夏小滿無劍變體 EP02C1B） | production/series/EP02/clips.json |
 | EP03 | ✅ 第 1 輪修改後主持人複查過關（152 支、982 秒、firstframe 41 支；中 4、小 38 全修） | production/series/EP03/clips.json |
 | EP04 | ✅ 第 1 輪修改後主持人複查過關（166 支、985 秒、firstframe 27 支；中 2、小 27 全修） | production/series/EP04/clips.json |
-| EP05 | 🔁 片段表完成（165 支、977 秒、firstframe 41 支，check 通過）；主持人已裁定 3 條；提示詞第 1 輪不過關（中 1、小 28），修改中（opus） | production/series/EP05/clips.json |
+| EP05 | ✅ 第 1 輪修改後主持人複查過關（165 支、977 秒、firstframe 41 支；中 1、小 28 全修） | production/series/EP05/clips.json |
+| EP06 | 🔄 片段表撰寫中（opus） | production/series/EP06/clips.json |
 | EP01 | 🔁 片段表完成（126 支、983 秒、firstframe 50 支，check 通過）→ ✅ 第 2 輪修改後主持人複查過關（126 支、988 秒、firstframe 33 支） | production/series/EP01/clips.json、seedance_prompts.md |
 
 備忘（寫片段表時要處理）：

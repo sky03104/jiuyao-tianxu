@@ -308,3 +308,9 @@ S10 審完（嚴重 0、中 0、小 1。10 句台詞依序、一字不差，最�
 - S10 改完（第 29 條），存檔。29 條全部處理完。
 - 全部改完：`series.py check EP05` ✓（無 ✗、無 ⚠）；`build EP05`（165 支）、`assets`（ASSETS_TODO 95 項，只有 EP05X3 sheetBrief 一行變動）已跑。所有改法都不動 `dur`，各場秒數 41／156／137／116／91／109／128／78／62／59 與劇本標題相同，劇本不用改。台詞 176 句、地點卡 11 張未動。
 - **結果**：片段 165 支；正片 977 秒（16:17）；firstframe 41 支；動到的檔案：`production/series/EP05/clips.json`、`production/series/EP05/registry_add.json`（EP05C5、EP05X3 皮繩寫法）、`production/series/EP05/review.md`、`production/series/EP05/seedance_prompts.md`（build 產生）、`production/series/ASSETS_TODO.md`（assets 產生）。
+
+## 片段表第 1 輪修改後主持人複查（2026-10-14）— 結論：過關
+
+- `series.py check EP05`：165 支、正片 977 秒、176 句，✓ 無 ⚠；firstframe 41 支；build、assets 已重跑。
+- 中 1 條（第 14 條）看 clips.json：S05-11、S05-13 都是机遙畫面左、齊衡烈畫面右，刀出鞘沾泥在机遙手上；S05-12 三人鏡齊衡烈在畫面右，與 S05-06 一致。
+- 改法不同的 3 條（18 整支改中近景、22 羅盤以皮繩連在腰帶、28 細光寫在蓋縫）理由成立；registry_add 的 EP05C5、EP05X3 同步。
