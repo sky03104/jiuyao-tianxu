@@ -2271,13 +2271,13 @@ LAYOUT (must follow): no named characters; creatures: 岩甲獸; 站位（以第
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP04/keyframes/EP04-S08-03.png`）**
 
 ```text
-Reference images: 古代銅件-sheet、赭原前哨帳篷-sheet
+Reference images: 唐既明的舊木匣-sheet、古代銅件-sheet、赭原前哨帳篷-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：傍晚，油燈暖光與夕照混光。粗木桌上一個扁平的淺褐色舊木匣（約一尺長、巴掌寬，四角包黃銅、正面一個黃銅搭扣）的匣蓋打開，俯拍特寫：匣裡躺著一塊巴掌大的弧形暗青銅片（一端方形榫口、另一端斷口參差，片面九道平行的細槽，沒有字），九道細槽都是暗的；看不到任何人臉。
 
-LAYOUT (must follow): no named characters; creatures: 古代銅件; 站位（以第 0 秒這一瞬間為準）：粗木桌上一個扁平的舊木匣（約一尺長、巴掌寬，淺褐色木、四角包黃銅、正面一個黃銅搭扣）的匣蓋打開，匣裡躺著一塊巴掌大的弧形暗青銅片（一端方形榫口、另一端斷口參差，片面九道平行的細槽，沒有字）；俯拍特寫；看不到人臉
+LAYOUT (must follow): no named characters; creatures: 唐既明的舊木匣、古代銅件; 站位（以第 0 秒這一瞬間為準）：粗木桌上一個扁平的舊木匣（約一尺長、巴掌寬，淺褐色木、四角包黃銅、正面一個黃銅搭扣）的匣蓋打開，匣裡躺著一塊巴掌大的弧形暗青銅片（一端方形榫口、另一端斷口參差，片面九道平行的細槽，沒有字）；俯拍特寫；看不到人臉
 （每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
@@ -3648,13 +3648,13 @@ LAYOUT (must follow): no named characters; creatures: 三份公文與星環交�
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP04/keyframes/EP04-S12-11.png`）**
 
 ```text
-Reference images: 唐既明-sheet、古代銅件-sheet、驛路營地-sheet
+Reference images: 唐既明-sheet、唐既明的舊木匣-sheet、古代銅件-sheet、驛路營地-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：夜，篝火的暖光從畫面一側照過來。地上的特寫：一個扁平的淺褐色舊木匣（約一尺長、巴掌寬，四角包黃銅、正面一個黃銅搭扣）擱在一雙沾灰的靴子旁，匣蓋闔著，蓋縫裡透出一線很細的淡光；一隻粗壯、前臂有舊燙疤的男人的手正伸向匣蓋；看不到任何人臉。
 
-LAYOUT (must follow): exactly 1 named character(s): 唐既明; creatures: 古代銅件; 站位（以第 0 秒這一瞬間為準）：地上的特寫：一個扁平的舊木匣（約一尺長、巴掌寬，淺褐色木、四角包黃銅、正面一個黃銅搭扣）擱在一雙沾灰的靴子旁，匣蓋的縫裡透出一線細光；一隻粗壯、前臂有舊燙疤的手伸過來；看不到人臉
+LAYOUT (must follow): exactly 1 named character(s): 唐既明; creatures: 唐既明的舊木匣、古代銅件; 站位（以第 0 秒這一瞬間為準）：地上的特寫：一個扁平的舊木匣（約一尺長、巴掌寬，淺褐色木、四角包黃銅、正面一個黃銅搭扣）擱在一雙沾灰的靴子旁，匣蓋的縫裡透出一線細光；一隻粗壯、前臂有舊燙疤的手伸過來；看不到人臉
 （每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 

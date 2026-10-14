@@ -2706,13 +2706,13 @@ LAYOUT (must follow): exactly 1 named character(s): 唐既明; creatures: 抽取
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP05/keyframes/EP05-S07-02.png`）**
 
 ```text
-Reference images: 唐既明-sheet、測定盤-sheet、符訊玉-sheet、古代銅件-sheet、商隊營帳內部-sheet
+Reference images: 唐既明-sheet、唐既明的舊木匣-sheet、測定盤-sheet、符訊玉-sheet、古代銅件-sheet、商隊營帳內部-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：夜，油燈暖光。小木桌桌面特寫：一個闔著的扁平舊木匣（約一尺長、巴掌寬，淺褐色木、四角包黃銅、正面一個黃銅搭扣，搭扣扣著）；一雙粗壯、前臂有幾塊舊燙疤的男人的手正伸向搭扣；旁邊一面巴掌大的圓形暗銅盤（盤面三圈同心細環，暗著）；桌角擱著一枚掌心大小的扁圓青玉（玉面一道細螺旋紋，暗著）；所有東西上都沒有字；看不到人臉。
 
-LAYOUT (must follow): exactly 1 named character(s): 唐既明; creatures: 測定盤、符訊玉、古代銅件; 站位（以第 0 秒這一瞬間為準）：桌面特寫：油燈旁，一個闔著的扁平舊木匣（約一尺長、巴掌寬，淺褐色木、四角包黃銅、正面一個黃銅搭扣，搭扣扣著）；一雙粗壯、前臂有舊燙疤的男人的手正伸向搭扣；旁邊一面巴掌大的圓形暗銅盤（盤面三圈同心細環，暗著，沒有字）、桌角一枚扁圓青玉（玉面一道細螺旋紋，暗著）；看不到人臉
+LAYOUT (must follow): exactly 1 named character(s): 唐既明; creatures: 唐既明的舊木匣、測定盤、符訊玉、古代銅件; 站位（以第 0 秒這一瞬間為準）：桌面特寫：油燈旁，一個闔著的扁平舊木匣（約一尺長、巴掌寬，淺褐色木、四角包黃銅、正面一個黃銅搭扣，搭扣扣著）；一雙粗壯、前臂有舊燙疤的男人的手正伸向搭扣；旁邊一面巴掌大的圓形暗銅盤（盤面三圈同心細環，暗著，沒有字）、桌角一枚扁圓青玉（玉面一道細螺旋紋，暗著）；看不到人臉
 （每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
@@ -3246,13 +3246,13 @@ LAYOUT (must follow): exactly 1 named character(s): 黑衣首領; creatures: 陣
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP05/keyframes/EP05-S07-22.png`）**
 
 ```text
-Reference images: 唐既明-sheet、青銅羅盤-sheet、商隊營帳內部-sheet
+Reference images: 唐既明-sheet、唐既明的舊木匣-sheet、青銅羅盤-sheet、商隊營帳內部-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：夜，油燈暖光。小木桌桌面中景：桌子中間擺著一個巴掌大的青銅羅盤（盤面三根細指針一起指向畫面右，沒有字、沒有刻度）；桌子畫面右側一頭放著一個闔上的扁平舊木匣（約一尺長、巴掌寬，淺褐色木、四角包黃銅、正面黃銅搭扣），蓋縫裡透出一線細光；一雙粗壯、前臂有舊燙疤的手正要拿起木匣，畫面右邊緣露出一角厚皮圍裙；看不到人臉；桌上還有一面巴掌大的銅盤和一枚扁圓青玉。
 
-LAYOUT (must follow): exactly 1 named character(s): 唐既明; creatures: 陣具（青銅羅盤）; 站位（以第 0 秒這一瞬間為準）：桌面中景：小木桌中間擺著一個巴掌大的青銅羅盤（盤面三根細指針，沒有字、沒有刻度、沒有任何徽記）；桌子畫面右側一頭放著闔上的扁平的舊木匣（約一尺長、巴掌寬，淺褐色木、四角包黃銅、正面一個黃銅搭扣）（蓋縫透出一線細光）；唐既明的手與厚皮圍裙在畫面右邊緣，看不到臉
+LAYOUT (must follow): exactly 1 named character(s): 唐既明; creatures: 唐既明的舊木匣、陣具（青銅羅盤）; 站位（以第 0 秒這一瞬間為準）：桌面中景：小木桌中間擺著一個巴掌大的青銅羅盤（盤面三根細指針，沒有字、沒有刻度、沒有任何徽記）；桌子畫面右側一頭放著闔上的扁平的舊木匣（約一尺長、巴掌寬，淺褐色木、四角包黃銅、正面一個黃銅搭扣）（蓋縫透出一線細光）；唐既明的手與厚皮圍裙在畫面右邊緣，看不到臉
 （每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
@@ -3750,13 +3750,13 @@ LAYOUT (must follow): no named characters; creatures: 符訊玉; 站位（以第
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP05/keyframes/EP05-S09-11.png`）**
 
 ```text
-Reference images: 青銅羅盤-sheet、商隊營帳內部-sheet
+Reference images: 唐既明的舊木匣-sheet、青銅羅盤-sheet、商隊營帳內部-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
 畫面：夜，油燈暖光。特寫：從捲起的帆布帳簾口望進去（帳簾邊緣在畫面兩側虛焦），小木桌上一個闔著的扁平舊木匣（約一尺長、巴掌寬，淺褐色木、四角包黃銅、正面一個黃銅搭扣），匣蓋與匣身之間的縫裡透出一線細光；一個巴掌大的青銅羅盤擱在匣蓋靠鏡頭的一角，盤面三根細指針一起指向匣蓋正中（沒有字、沒有刻度、沒有徽記）；畫面中沒有人。
 
-LAYOUT (must follow): no named characters; creatures: 陣具（青銅羅盤）; 站位（以第 0 秒這一瞬間為準）：特寫：從捲起的帳簾口望進去（帳簾的邊緣在畫面兩側，虛焦），小木桌上一個闔著的扁平舊木匣（約一尺長、巴掌寬，淺褐色木、四角包黃銅、正面一個黃銅搭扣），匣蓋與匣身之間的縫裡透出一線細光；一個巴掌大的青銅羅盤擱在匣蓋靠鏡頭的一角，盤面三根細指針一起指向匣蓋正中（沒有字、沒有刻度、沒有徽記）；畫面中沒有人
+LAYOUT (must follow): no named characters; creatures: 唐既明的舊木匣、陣具（青銅羅盤）; 站位（以第 0 秒這一瞬間為準）：特寫：從捲起的帳簾口望進去（帳簾的邊緣在畫面兩側，虛焦），小木桌上一個闔著的扁平舊木匣（約一尺長、巴掌寬，淺褐色木、四角包黃銅、正面一個黃銅搭扣），匣蓋與匣身之間的縫裡透出一線細光；一個巴掌大的青銅羅盤擱在匣蓋靠鏡頭的一角，盤面三根細指針一起指向匣蓋正中（沒有字、沒有刻度、沒有徽記）；畫面中沒有人
 （每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
