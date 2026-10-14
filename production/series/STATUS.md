@@ -49,8 +49,9 @@
 | EP08 | ✅ 第 1 輪過關，小問題 22 條已修，主持人複查過關（163 句、980 秒、地點卡 6 張） | docs/longform/EP08_SCRIPT.md |
 | EP09 | ✅ 第 2 輪過關，小問題 5 條主持人已修（169 句、961 秒、地點卡 10 張） | docs/longform/EP09_SCRIPT.md |
 | EP10 | ✅ 第 1 輪不過關（中 1、小 12）→ 全數修改 → 主持人複查過關（157 句、979 秒、地點卡 5 張） | docs/longform/EP10_SCRIPT.md |
-| EP11 | 🔁 初稿完成（161 句、974 秒、地點卡 5 張）；主持人改何汀外觀；第 1 輪過關（小 11），小問題修改中（opus） | docs/longform/EP11_SCRIPT.md |
-| EP12～EP25 | ⬜ | 五季指南已全部定稿，依序開寫（一次最多 2 個 agent） |
+| EP11 | ✅ 第 1 輪過關，小問題 11 條已修，主持人複查過關（163 句、981 秒、地點卡 5 張；何汀外觀主持人改） | docs/longform/EP11_SCRIPT.md |
+| EP12 | 🔄 撰寫中（opus） | docs/longform/EP12_SCRIPT.md |
+| EP13～EP25 | ⬜ | 五季指南已全部定稿，依序開寫（一次最多 2 個 agent） |
 
 ## 階段 3：各集片段表與提示詞（production/series/EPxx/）
 （劇本過關後展開）
