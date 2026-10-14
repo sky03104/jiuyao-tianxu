@@ -85,7 +85,7 @@
 | 項目 | 狀態 | 備註 |
 |---|---|---|
 | OP/ED 設計（歌詞、編曲、製作方式、畫面） | 🔄 v1.2：主持人第 1 輪審查（3 中、5 小已修，見 OP_ED/review.md），OP 17 支、ED 8 支 `check` 通過；季別替換寫好後再派獨立審查員 | production/series/OP_ED/design.md、OP/、ED/ |
-| 片頭季別替換（S2～S5 各 3 支） | ⬜ 等各季第一集 clips.json 登記完場景再寫 | design.md 第 6 節 |
+| 片頭季別替換（S2～S5 各 3 支） | 🔄 S2 已寫（OP-06b 赭原背影抬頭／13b 聞人澈銅鈕旁量測／16b 赭原落日，場景用 EP04L1，check 通過）；S3～S5 等 EP11／EP17／EP23 片段表登記完場景再寫；全部寫完派獨立審查 | design.md 第 6 節、OP/clips.json |
 
 ## 階段 5：收尾
 - [ ] CLAUDE.md、docs/47 更新（20 分鐘、25 集）
