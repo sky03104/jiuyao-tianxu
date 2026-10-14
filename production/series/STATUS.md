@@ -44,7 +44,7 @@
 | EP06 | ✅ 第 1 輪過關，小問題 20 條已修，主持人複查過關（169 句、974 秒、地點卡 10 張） | docs/longform/EP06_SCRIPT.md |
 | EP07 | ✅ 第 1 輪過關，小問題 19 條已修，主持人複查過關（160 句、956 秒、地點卡 8 張） | docs/longform/EP07_SCRIPT.md |
 | EP08 | ✅ 第 1 輪過關，小問題 22 條已修，主持人複查過關（163 句、980 秒、地點卡 6 張） | docs/longform/EP08_SCRIPT.md |
-| EP09 | 🔁 初稿完成（167 句、946 秒、地點卡 10 張）；第 1 輪審查中（opus） | docs/longform/EP09_SCRIPT.md |
+| EP09 | 🔁 初稿完成（167 句、946 秒、地點卡 10 張）；第 1 輪不過關（嚴重 1、中 2、小 14），修改中（opus） | docs/longform/EP09_SCRIPT.md |
 | EP10～EP25 | ⬜ | 五季指南已全部定稿，依序開寫（一次最多 2 個 agent） |
 
 ## 階段 3：各集片段表與提示詞（production/series/EPxx/）
