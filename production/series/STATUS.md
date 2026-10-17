@@ -53,7 +53,7 @@
 | EP10 | ✅ 第 1 輪不過關（中 1、小 12）→ 全數修改 → 主持人複查過關（157 句、979 秒、地點卡 5 張） | docs/longform/EP10_SCRIPT.md |
 | EP11 | ✅ 第 1 輪過關，小問題 11 條已修，主持人複查過關（163 句、981 秒、地點卡 5 張；何汀外觀主持人改） | docs/longform/EP11_SCRIPT.md |
 | EP12 | ✅ 第 1 輪不過關（中 3、小 4）→ 全數修改 → 主持人複查過關（183 句、964 秒、地點卡 6 張；渺音／嶂外觀、齊衡烈送報告為主持人裁定） | docs/longform/EP12_SCRIPT.md |
-| EP13 | 🔄 撰寫中（opus） | docs/longform/EP13_SCRIPT.md |
+| EP13 | 🔁 初稿完成（162 句、965 秒、地點卡 5 張）→ 第 1 輪審查中 | docs/longform/EP13_SCRIPT.md |
 | EP14～EP25 | ⬜ | 五季指南已全部定稿，依序開寫（一次最多 2 個 agent） |
 
 ## 階段 3：各集片段表與提示詞（production/series/EPxx/）
@@ -69,7 +69,7 @@
 | EP07 | ✅ 片段表第 1 輪不過關（中 3、小 26）→ 全數修改 → 主持人複查過關（167 支、987 秒、firstframe 21 支） | production/series/EP07/clips.json |
 | EP08 | ✅ 片段表第 1 輪不過關（中 7、小 26）→ 全數修改 → 主持人複查過關（158 支、985 秒、firstframe 32 支；新登記褚承岳、阿芽、聯盟士兵、角鹿三狀態等） | production/series/EP08/clips.json |
 | EP09 | ✅ 片段表第 1 輪不過關（中 2、小 21）→ 全數修改 → 主持人複查過關（157 支、974 秒、firstframe 24 支；新登記士兵隊長、封陣師、檔案庫、古林門前街、封陣器等） | production/series/EP09/clips.json |
-| EP10 | 🔄 片段表撰寫中（opus） | production/series/EP10/clips.json |
+| EP10 | 🔁 片段表完成（146 支、949 秒、firstframe 63 支，check 通過；主持人裁定 4 條）→ 第 1 輪審查中 | production/series/EP10/clips.json |
 | EP01 | 🔁 片段表完成（126 支、983 秒、firstframe 50 支，check 通過）→ ✅ 第 2 輪修改後主持人複查過關（126 支、988 秒、firstframe 33 支） | production/series/EP01/clips.json、seedance_prompts.md |
 
 備忘（寫片段表時要處理）：
