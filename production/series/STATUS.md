@@ -66,7 +66,7 @@
 | EP06 | ✅ 第 1 輪修改後主持人複查過關（164 支、989 秒、firstframe 24 支；中 3、小 22 全修；新增道具 EP04X9 舊木匣） | production/series/EP06/clips.json |
 | EP07 | ✅ 片段表第 1 輪不過關（中 3、小 26）→ 全數修改 → 主持人複查過關（167 支、987 秒、firstframe 21 支） | production/series/EP07/clips.json |
 | EP08 | ✅ 片段表第 1 輪不過關（中 7、小 26）→ 全數修改 → 主持人複查過關（158 支、985 秒、firstframe 32 支；新登記褚承岳、阿芽、聯盟士兵、角鹿三狀態等） | production/series/EP08/clips.json |
-| EP09 | 🔁 片段表完成（157 支、974 秒、firstframe 23 支，check 通過；主持人裁定 5 條）→ 第 1 輪審查中 | production/series/EP09/clips.json |
+| EP09 | 🔁 片段表完成（157 支、974 秒、firstframe 23 支，check 通過；主持人裁定 5 條）→ 第 1 輪不過關（中 2、小 21）→ 修改中 | production/series/EP09/clips.json |
 | EP01 | 🔁 片段表完成（126 支、983 秒、firstframe 50 支，check 通過）→ ✅ 第 2 輪修改後主持人複查過關（126 支、988 秒、firstframe 33 支） | production/series/EP01/clips.json、seedance_prompts.md |
 
 備忘（寫片段表時要處理）：
