@@ -86,7 +86,7 @@
 | EP12 | ✅ 片段表第 1 輪不過關（中 2、小 19）→ 全數修改 → 主持人複查過關（179 支、967 秒、firstframe 39 支；新登記渺音、嶂、古物商、崖廳、廢烽台、沙渡邊市、邊境裂口、石鈴、沈家玉、骨片地圖等） | production/series/EP12/clips.json |
 | EP13 | ✅ 片段表完成（160 支、984 秒、firstframe 56 支，check 通過；主持人裁定 7 條）→ 第 1 輪過關（小 20）→ 全數修改 → 主持人複查過關 | production/series/EP13/clips.json |
 | EP14 | ✅ 片段表完成（161 支、947 秒；主持人裁定 6 條）→ 第 1 輪不過關（中 4、小 14）→ 全數修改 → 主持人複查過關（163 支、952 秒、firstframe 45 支；新登記螢極暗 EP14C1A、研究署羅盤 EP14X9） | production/series/EP14/clips.json |
-| EP15 | 🔄 片段表撰寫中（opus） | production/series/EP15/clips.json |
+| EP15 | 🔁 片段表完成（181 支、981 秒、firstframe 44 支，check 通過；主持人裁定 6 條：測定盤危險讀數最外圈轉紅、異化獸脈紋照舊暗紅）→ 第 1 輪審查中（opus） | production/series/EP15/clips.json |
 | EP01 | 🔁 片段表完成（126 支、983 秒、firstframe 50 支，check 通過）→ ✅ 第 2 輪修改後主持人複查過關（126 支、988 秒、firstframe 33 支） | production/series/EP01/clips.json、seedance_prompts.md |
 
 備忘（寫片段表時要處理）：
