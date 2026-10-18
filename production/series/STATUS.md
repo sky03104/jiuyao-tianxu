@@ -76,7 +76,8 @@
 | EP09 | ✅ 片段表第 1 輪不過關（中 2、小 21）→ 全數修改 → 主持人複查過關（157 支、974 秒、firstframe 24 支；新登記士兵隊長、封陣師、檔案庫、古林門前街、封陣器等） | production/series/EP09/clips.json |
 | EP10 | ✅ 片段表第 1 輪不過關（中 7、小 15）→ 全數修改 → 主持人複查過關（148 支、953 秒、firstframe 59 支；新登記核心節點各區、營地、弩台、沙盤、信號箭、普通灰背青牙狼 EP10X8 等） | production/series/EP10/clips.json |
 | EP11 | ✅ 片段表第 1 輪過關（小 25）→ 全數修改 → 主持人複查過關（164 支、986 秒、firstframe 56 支；新登記何汀、隼、何稷、烽口哨、界石線、霜根坡、母獸與幼獸等） | production/series/EP11/clips.json |
-| EP12 | 🔁 片段表完成（179 支、966 秒、firstframe 39 支，check 通過；主持人裁定 3 條）→ 第 1 輪不過關（中 2、小 19）→ 修改中 | production/series/EP12/clips.json |
+| EP12 | ✅ 片段表第 1 輪不過關（中 2、小 19）→ 全數修改 → 主持人複查過關（179 支、967 秒、firstframe 39 支；新登記渺音、嶂、古物商、崖廳、廢烽台、沙渡邊市、邊境裂口、石鈴、沈家玉、骨片地圖等） | production/series/EP12/clips.json |
+| EP13 | 🔄 片段表撰寫中（opus） | production/series/EP13/clips.json |
 | EP01 | 🔁 片段表完成（126 支、983 秒、firstframe 50 支，check 通過）→ ✅ 第 2 輪修改後主持人複查過關（126 支、988 秒、firstframe 33 支） | production/series/EP01/clips.json、seedance_prompts.md |
 
 備忘（寫片段表時要處理）：
