@@ -60,7 +60,7 @@
 | EP13 | ✅ 第 1 輪過關（小 15）→ 全數修改 → 主持人複查過關（161 句、963 秒、地點卡 5 張；古卷「頁」改「段」、S4 EP19 要點 4 同步） | docs/longform/EP13_SCRIPT.md |
 | EP14 | ✅ 第 1 輪過關（小 15）→ 全數修改 → 主持人複查過關（162 句、958 秒、地點卡 5 張；時間軸一天一夜、EP15 議會改隔天夜裡） | docs/longform/EP14_SCRIPT.md |
 | EP15 | ✅ 第 1 輪過關（小 8）→ 全數修改 → 主持人複查過關（168 句、952 秒、地點卡 4 張；議會隔天夜裡、江祈璟回隊） | docs/longform/EP15_SCRIPT.md |
-| EP16 | 🔄 撰寫中（opus） | docs/longform/EP16_SCRIPT.md |
+| EP16 | 🔁 初稿完成（143 句、952 秒、地點卡 5 張；主持人裁定：句數接受、S4 聞人澈「唯一」改「最早」）→ 第 1 輪審查中 | docs/longform/EP16_SCRIPT.md |
 | EP17～EP25 | ⬜ | 五季指南已全部定稿，依序開寫（一次最多 2 個 agent） |
 
 ## 階段 3：各集片段表與提示詞（production/series/EPxx/）
