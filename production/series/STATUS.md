@@ -55,7 +55,7 @@
 | EP11 | ✅ 第 1 輪過關，小問題 11 條已修，主持人複查過關（163 句、981 秒、地點卡 5 張；何汀外觀主持人改） | docs/longform/EP11_SCRIPT.md |
 | EP12 | ✅ 第 1 輪不過關（中 3、小 4）→ 全數修改 → 主持人複查過關（183 句、964 秒、地點卡 6 張；渺音／嶂外觀、齊衡烈送報告為主持人裁定） | docs/longform/EP12_SCRIPT.md |
 | EP13 | ✅ 第 1 輪過關（小 15）→ 全數修改 → 主持人複查過關（161 句、963 秒、地點卡 5 張；古卷「頁」改「段」、S4 EP19 要點 4 同步） | docs/longform/EP13_SCRIPT.md |
-| EP14 | 🔄 撰寫中（opus） | docs/longform/EP14_SCRIPT.md |
+| EP14 | 🔁 初稿完成（161 句、950 秒、地點卡 5 張；主持人裁定：時間軸一天一夜、「刮螢」保留）→ 第 1 輪審查中 | docs/longform/EP14_SCRIPT.md |
 | EP15～EP25 | ⬜ | 五季指南已全部定稿，依序開寫（一次最多 2 個 agent） |
 
 ## 階段 3：各集片段表與提示詞（production/series/EPxx/）
