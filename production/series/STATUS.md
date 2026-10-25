@@ -97,7 +97,7 @@
 | EP15 | ✅ 片段表完成（181 支、981 秒；主持人裁定 6 條）→ 第 1 輪不過關（中 3、小 21）→ 全數修改 → 主持人複查過關（182 支、981 秒、firstframe 44 支；測定盤危險讀數最外圈轉紅） | production/series/EP15/clips.json |
 | EP16 | ✅ 初稿（166 支；主持人裁定 6 條：靈杖插行囊繩帶、蕭曜霖 C05A 便服）→ 第 1 輪不過關（中 2、小 14）→ 全數修改 → 主持人複查過關（170 支、966 秒、firstframe 68；EP16X2 usedBy 只留 S03-06） |
 | EP17 | ✅ 初稿（169 支；新登記藺沅、江肅、桓瑾 S4 變體 EP14C3A；主持人裁定 5 條：江祈璟回 C06、缺頁正面可拍、銅件細槽淡金）→ 第 1 輪不過關（中 1、小 23）→ 全數修改 → 主持人複查過關（173 支、970 秒、firstframe 52） | production/series/EP17/ |
-| EP18 | 🔄 初稿完成（177 支、953 秒、firstframe 64；新登記 C02A、EP18L1～L10、X1～X7；主持人裁定 6 條：光渠淡琥珀、九道光擠左空右）→ 第 1 輪審查中（opus） | production/series/EP18/ |
+| EP18 | 🔄 初稿完成（177 支、953 秒、firstframe 64；新登記 C02A、EP18L1～L10、X1～X7；主持人裁定 6 條：光渠淡琥珀、九道光擠左空右）→ 第 1 輪不過關（中 1、小 15）→ 修改中（sonnet） | production/series/EP18/ |
 | EP01 | 🔁 片段表完成（126 支、983 秒、firstframe 50 支，check 通過）→ ✅ 第 2 輪修改後主持人複查過關（126 支、988 秒、firstframe 33 支） | production/series/EP01/clips.json、seedance_prompts.md |
 
 備忘（寫片段表時要處理）：
