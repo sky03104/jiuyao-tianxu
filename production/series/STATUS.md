@@ -103,7 +103,7 @@
 | EP17 | ✅ 初稿（169 支；新登記藺沅、江肅、桓瑾 S4 變體 EP14C3A；主持人裁定 5 條：江祈璟回 C06、缺頁正面可拍、銅件細槽淡金）→ 第 1 輪不過關（中 1、小 23）→ 全數修改 → 主持人複查過關（173 支、970 秒、firstframe 52） | production/series/EP17/ |
 | EP18 | ✅ 初稿（177 支；新登記 C02A、EP18L1～L10、X1～X7；主持人裁定 6 條：光渠淡琥珀、九道光擠左空右）→ 第 1 輪不過關（中 1、小 15）→ 全數修改 → 主持人複查過關（178 支、954 秒、firstframe 64） | production/series/EP18/ |
 | EP19 | ✅ 初稿（192 支；新登記 C04A、C12A、EP19L1～L8、X1～X7；主持人裁定 6 條：投影黑底 L8、聞人澈全集握杖、晶甲獸淡青亂閃）→ 第 1 輪不過關（中 3、小 16）→ 全數修改 → 主持人複查過關（192 支、976 秒、剪完 989、firstframe 82） | production/series/EP19/ |
-| EP20 | 🔄 片段表撰寫中（opus） | production/series/EP20/ |
+| EP20 | 🔄 初稿完成（188 支、944 秒＋插格 37 秒≈981、firstframe 60；新登記厲疏桐 EP20C1／C1A、EP20L1～L5、X1～X6；主持人裁定 6 條：陸鳴鸞靈印左手腕、靈印後製範圍）→ 第 1 輪審查中（opus） | production/series/EP20/ |
 | EP01 | 🔁 片段表完成（126 支、983 秒、firstframe 50 支，check 通過）→ ✅ 第 2 輪修改後主持人複查過關（126 支、988 秒、firstframe 33 支） | production/series/EP01/clips.json、seedance_prompts.md |
 
 備忘（寫片段表時要處理）：
