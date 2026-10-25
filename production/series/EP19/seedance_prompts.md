@@ -76,9 +76,9 @@
 | EP19-S04-07 | 4 | 首幀 | 關鍵幀 `production/series/EP19/keyframes/EP19-S04-07.png` | 河裡的光點從山腳往畫面上方的山頂一路流上去… |
 | EP19-S04-08 | 6 | 首幀 | 關鍵幀 `production/series/EP19/keyframes/EP19-S04-08.png` | 枝葉的輪廓一片一片變尖、一閃一閃，結成了晶體… |
 | EP19-S04-09 | 7 | 參考圖 | 齊衡烈-sheet（待出圖）、江祈璟-sheet、渺音-sheet（待出圖）、記錄站大廳-sheet（待出圖） | 齊衡烈握著刀柄，眼睛在畫面右上方的投影裡來回找… |
-| EP19-S04-10 | 5 | 首幀 | 關鍵幀 `production/series/EP19/keyframes/EP19-S04-10.png` | 剪影們一群接一群往畫面右慢慢走，燈一晃一晃；沒有… |
+| EP19-S04-10 | 5 | 首幀 | 關鍵幀 `production/series/EP19/keyframes/EP19-S04-10.png` | 剪影們一列接一列（每列前後鬆散、高矮不齊）往畫面… |
 | EP19-S04-11 | 4 | 參考圖 | 江祈璟-sheet、記錄站大廳-sheet（待出圖） | 他看著畫面右上方的剪影… |
-| EP19-S04-12 | 5 | 參考圖 | 郁岑燁-sheet、記錄站大廳-sheet（待出圖） | 他皺著眉，看著畫面右上方那一群一群的剪影… |
+| EP19-S04-12 | 5 | 參考圖 | 郁岑燁-sheet、記錄站大廳-sheet（待出圖） | 他皺著眉，看著畫面右上方那一列一列的剪影… |
 | EP19-S04-13 | 5 | 首幀 | 關鍵幀 `production/series/EP19/keyframes/EP19-S04-13.png` | 裂縫從畫面左一路裂到畫面右，越裂越寬… |
 | EP19-S04-14 | 6 | 參考圖 | 玩家-sheet（机遙）、記錄站大廳-sheet（待出圖） | 他看著畫面右上方那道裂縫… |
 | EP19-S04-15 | 4 | 首幀 | 關鍵幀 `production/series/EP19/keyframes/EP19-S04-15.png` | 低吟停了；石片的光紋一圈一圈暗下去；人影仰著頭不… |
@@ -131,9 +131,9 @@
 | EP19-S07-10 | 8 | 參考圖 | 郁岑燁-sheet、沈昭寧-sheet（待出圖）、桓瑾-sheet（待出圖）、記錄站大廳-sheet（待出圖） | 沈昭寧走到郁岑燁和桓瑾中間站定，兩邊各隔一步，誰… |
 | EP19-S07-11 | 4 | 參考圖 | 江祈璟-sheet、記錄站大廳-sheet（待出圖） | 他看著桓瑾… |
 | EP19-S07-12 | 8 | 參考圖 | 桓瑾-sheet（待出圖）、記錄站大廳-sheet（待出圖） | 她平平地說，嘴看得見… |
-| EP19-S07-13 | 6 | 參考圖 | 江祈璟-sheet、記錄站大廳-sheet（待出圖） | 他很久沒有動，握著槍桿的手越握越緊… |
+| EP19-S07-13 | 6 | 參考圖 | 江祈璟-sheet、記錄站大廳-sheet（待出圖） | 他很久沒有動，畫面下緣握著槍桿的右手越握越緊，指… |
 | EP19-S07-14 | 5 | 參考圖 | 桓瑾-sheet（待出圖）、記錄站大廳-sheet（待出圖） | 她看著畫面左外的江祈璟… |
-| EP19-S07-15 | 4 | 參考圖 | 江祈璟-sheet、記錄站大廳-sheet（待出圖） | 他的視線從桓瑾身上別開，抬高望向畫面右上方窗外被… |
+| EP19-S07-15 | 4 | 參考圖 | 江祈璟-sheet、記錄站大廳-sheet（待出圖） | 他閉了一下眼，下巴往畫面左下一收，臉從畫面右外的… |
 | EP19-S07-16 | 7 | 參考圖 | 桓瑾-sheet（待出圖）、記錄站大廳-sheet（待出圖） | 她接著說，嘴看得見… |
 | EP19-S07-17 | 4 | 參考圖 | 桓瑾-sheet（待出圖）、玩家-sheet（机遙）、記錄站大廳-sheet（待出圖） | 桓瑾說，嘴看得見… |
 | EP19-S07-18 | 4 | 首幀 | 關鍵幀 `production/series/EP19/keyframes/EP19-S07-18.png` | 石片慢慢轉；地上的人影都不動；鏡頭極慢地往那片石… |
@@ -192,7 +192,7 @@
 | EP19-S11-05 | 4 | 參考圖 | 厲若楓-sheet（待出圖）、細塔外景-sheet（待出圖） | 她從畫面左（塔腳背風那一角）走過來，往塔門那邊走… |
 | EP19-S11-06 | 4 | 參考圖 | 玩家-sheet（机遙）、細塔外景-sheet（待出圖） | 他眼睛沒有離開畫面右上方… |
 | EP19-S11-07 | 4 | 參考圖 | 厲若楓-sheet（待出圖）、細塔外景-sheet（待出圖） | 她抬起頭，往畫面右上方看，停住了… |
-| EP19-S11-08 | 5 | 首幀 | 關鍵幀 `production/series/EP19/keyframes/EP19-S11-08.png` | 戴皮手套的手從斗篷底下抽出一支箭… |
+| EP19-S11-08 | 5 | 首幀 | 關鍵幀 `production/series/EP19/keyframes/EP19-S11-08.png` | 戴皮手套的手把整支箭從斗篷底下抽出來，箭頭朝畫面… |
 | EP19-S11-09 | 4 | 首幀 | 關鍵幀 `production/series/EP19/keyframes/EP19-S11-09.png` | 箭斜斜插著，尾羽被夜風吹得輕輕顫… |
 | EP19-S11-10 | 4 | 參考圖 | 厲若楓-sheet（待出圖）、細塔外景-sheet（待出圖） | 她看著那支箭的角度… |
 | EP19-S11-11 | 4 | 首幀 | 關鍵幀 `production/series/EP19/keyframes/EP19-S11-11.png` | 人影轉過身，背對鏡頭… |
@@ -466,7 +466,7 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S01-11.png`
 
-**備註（給人看，不進 Seedance）：** 十人剪影＝路人規格（不掛設定圖）。渡橋不拍任何人扶人，各走各的。
+**備註（給人看，不進 Seedance）：** 十人剪影＝路人規格（不掛設定圖）。渡橋不拍任何人扶人，各走各的。石樑只容一人，人影前後隔著走，不並排；大多數人揹行囊（桓瑾只有斜背皮匣、渺音空手）。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S01-11.png`）**
 
@@ -487,13 +487,13 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 【畫面】橫式16:9，3D國漫動畫（半寫實、精緻光影），畫面中不要出現任何文字、字幕或浮水印。
 以上傳的圖1（關鍵幀）作為第一幀，人物外觀、服裝、站位都照圖1，不要改變。
 【角色】畫面中沒有主要角色。
-【背景人物】十個小小的人影（很小的模糊剪影，看不清臉、不看鏡頭；石樑上幾個、每人之間隔好幾步，橋頭幾個在等；每個人背上都揹著行囊；誰都不碰誰；最後剛好十個）。
+【背景人物】十個小小的人影（很小的模糊剪影，看不清臉、不看鏡頭；石樑上幾個、每人之間隔好幾步，橋頭幾個在等；大多數人背上揹著行囊；誰都不碰誰；最後剛好十個）。
 【場景】門後之城・城外斷橋（塌城牆、牆外深渠、斷橋石樑、對岸石柱；清晨）：城牆外：一道很深的石渠，渠壁又高又陡，渠底流著淡琥珀色的光，順著渠往高處流，光從底下往上照；渠上一座石橋，橋的中段塌了，只剩一道一人寬的石樑連著兩頭，石樑表面一個個磨亮的淺印子；對岸橋頭立著一根石柱，石柱上斜插著一支舊箭；淡青綠色的天，沒有太陽；地上沒有影子；沒有任何文字。門內第三天清晨：淡青綠色的天，沒有太陽，天空邊上透出一層深紫，光從整片天均勻地來，地上沒有影子。
 【站位】遠景，從側面遠遠拍整座斷橋：牆這一頭在畫面左，對岸在畫面右；一人寬的石樑橫在很深的石渠上，渠底淡琥珀色的光往上照；石樑上幾個小小的人影一個接一個往畫面右走，每人之間隔好幾步；最前面一個小小的人影快到對岸，畫面左的橋頭還有幾個小小的人影在等；比例：人影很小，石渠深得像峽谷
 【分鏡與台詞】
 0–6秒：遠景。石樑上的小小人影一個一個往畫面右慢慢走，每人之間隔好幾步；橋頭的人影一個接一個踏上石樑
 【鏡頭】遠景，固定
-【禁止】文字、字幕、浮水印、第十一個人、扶人、揹人、牽手、排成一列、看得清臉的人、太陽、九道光、地上的影子、紅光。
+【禁止】文字、字幕、浮水印、第十一個人、扶人、揹人、牽手、看得清臉的人、並排走、兩個人影擠在同一段石樑上、太陽、九道光、地上的影子、紅光。
 ```
 
 ### EP19-S01-12（4 秒）
@@ -876,7 +876,7 @@ LAYOUT (must follow): no named characters; creatures: 晶甲獸; 站位（以第
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S02-15.png`
 
-**備註（給人看，不進 Seedance）：** 江祈璟的槍（只拍槍與獸）。槍挑與獸翻倒拆兩支（S02-15／16），不拍接觸。
+**備註（給人看，不進 Seedance）：** 江祈璟的槍（只拍槍與獸）。槍挑與獸翻倒拆兩支（S02-15／16），不拍接觸。第 0 秒槍已是槍尾朝獸、槍頭朝畫面右下，全程不再掉轉。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S02-15.png`）**
 
@@ -901,9 +901,9 @@ LAYOUT (must follow): no named characters; creatures: 晶甲獸; 站位（以第
 【站位】中景，峽谷裡：一隻晶甲獸從畫面左的岩壁上撲下來，在半空；畫面右下伸進一桿長槍（深色硬木槍桿、柳葉形槍頭朝畫面右下、槍頭下繫一顆小古銅鈴），槍尾朝著撲來的獸；槍尾和獸之間隔著一段空
 【分鏡與台詞】
 0–2秒：中景。晶甲獸從畫面左的岩壁上撲下來
-2–4秒：中景。槍桿一掉轉，槍尾往上一挑，掃過獸的面前（槍尾和獸之間始終隔著一點空）
+2–4秒：中景。槍尾往上一挑，掃過獸的面前（槍頭始終朝畫面右下，槍尾和獸之間始終隔著一點空）
 【鏡頭】中景，固定
-【禁止】文字、字幕、浮水印、臉、人的身體、槍尾碰到獸、吼叫、張大嘴、紅眼、血、太陽、九道光、地上的影子、紅光。
+【禁止】文字、字幕、浮水印、臉、人的身體、槍尾碰到獸、吼叫、張大嘴、紅眼、血、槍頭朝著獸、太陽、九道光、地上的影子、紅光。
 ```
 
 ### EP19-S02-16（4 秒）
@@ -1101,7 +1101,7 @@ LAYOUT (must follow): exactly 1 named character(s): 陸鳴鸞; creatures: 晶甲
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S02-23.png`
 
-**備註（給人看，不進 Seedance）：** 沈昭寧的劍。爪劃過她左前臂只用音效（布料劃破）＋下一支她按住手臂交代，不拍接觸。
+**備註（給人看，不進 Seedance）：** 沈昭寧的劍。爪劃過她左前臂只用音效（布料劃破）＋下一支她按住手臂交代，不拍接觸。布料劃破音效落在第 3 秒爪揮出畫面右的那一下（沈昭寧在畫面右、劍的那一側，S02-24 她才按得住左前臂）。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S02-23.png`）**
 
@@ -1126,7 +1126,7 @@ LAYOUT (must follow): no named characters; creatures: 晶甲獸; 站位（以第
 【站位】特寫：一隻晶甲獸的兩隻前爪舉在半空（爪尖帶著淡青的晶光），一把細長直劍的劍身從畫面右橫過來，停在牠的前爪前面；劍和爪之間隔著一點空；沒有人的臉
 【分鏡與台詞】
 0–2秒：特寫。劍身從畫面右橫掃過來，劍光一閃，擋在獸的前爪前面；獸的前爪縮了一下
-2–4秒：特寫。獸的另一隻前爪往畫面左下揮過去，爪尖帶起一道淡青的晶光，揮出畫面外
+2–4秒：特寫。獸的另一隻前爪從劍下往畫面右下揮過去，爪尖帶起一道淡青的晶光，揮出畫面右邊緣（劍的那一側）
 【鏡頭】特寫，固定
 【禁止】文字、字幕、浮水印、臉、人的手臂、血、劍碰到爪、吼叫、張大嘴、紅眼、太陽、九道光、地上的影子、紅光。
 ```
@@ -1178,7 +1178,7 @@ LAYOUT (must follow): no named characters; creatures: 晶甲獸; 站位（以第
 【畫面】橫式16:9，3D國漫動畫（半寫實、精緻光影），畫面中不要出現任何文字、字幕或浮水印。
 以上傳的圖1（關鍵幀）作為第一幀，人物外觀、服裝、站位都照圖1，不要改變。
 【角色】畫面中沒有主要角色。
-【背景人物】十個小小的人影（很小的模糊剪影，看不清臉、不看鏡頭；一個接一個跑、前後隔一兩步，不排隊；背上都揹著行囊；誰都不碰誰；最後剛好十個）。
+【背景人物】十個小小的人影（很小的模糊剪影，看不清臉、不看鏡頭；一個接一個跑、前後隔一兩步，不排隊；大多數人背上揹著行囊；誰都不碰誰；最後剛好十個）。
 【場景】天墟・峽谷與晶甲獸巢（爪痕、晶屑、岩縫、峽谷出口）：天墟・峽谷裡：兩邊的岩壁又高又近，只容兩三個人並排，岩壁上滿是一道道新鮮的爪痕和一個個黑黑的岩縫，地上散著碎晶屑；頭頂一條窄窄的淡青綠色的天，沒有太陽；地上沒有影子；沒有任何文字。門內第三天上午：淡青綠色的天，沒有太陽，天空邊上透出一層深紫，光從整片天均勻地來，地上沒有影子。
 【站位】遠景，峽谷裡：十個小小的人影一個接一個從畫面左往畫面右跑過；兩邊岩縫口趴著一隻隻晶甲獸，背上晶體的脈紋亂閃，沒有追出來
 【分鏡與台詞】
@@ -1212,7 +1212,7 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 【畫面】橫式16:9，3D國漫動畫（半寫實、精緻光影），畫面中不要出現任何文字、字幕或浮水印。
 以上傳的圖1（關鍵幀）作為第一幀，人物外觀、服裝、站位都照圖1，不要改變。
 【角色】畫面中沒有主要角色。
-【背景人物】十個小小的人影（很小的模糊剪影，看不清臉、不看鏡頭；散開站著，有的彎腰喘氣、有的仰頭；背上都揹著行囊；誰都不碰誰；最後剛好十個）。
+【背景人物】十個小小的人影（很小的模糊剪影，看不清臉、不看鏡頭；散開站著，有的彎腰喘氣、有的仰頭；大多數人背上揹著行囊；誰都不碰誰；最後剛好十個）。
 【場景】天墟・峽谷與晶甲獸巢（爪痕、晶屑、岩縫、峽谷出口）：天墟・峽谷出口：兩邊的岩壁一下子往兩旁退開，地上散著幾塊平平的大石頭；前方不遠處立著一座又高又細的塔，淡琥珀色的光沿著塔身往上流；淡青綠色的天，沒有太陽；地上沒有影子；沒有任何文字。門內第三天上午：淡青綠色的天，沒有太陽，天空邊上透出一層深紫，光從整片天均勻地來，地上沒有影子。
 【站位】遠景，峽谷出口：兩邊的岩壁一下子往兩旁退開，前方不遠處立著那座又高又細的塔；十個小小的人影停在出口，有的彎著腰喘氣、有的仰頭看塔；比例：塔比人高幾十倍
 【分鏡與台詞】
@@ -1397,7 +1397,7 @@ LAYOUT (must follow): no named characters; creatures: 鏽箭（厲家製式，�
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S03-04.png`）**
 
 ```text
-Reference images: 記石-sheet、中央石台-sheet、記錄站大廳-sheet
+Reference images: 記錄站石片-sheet、中央石台-sheet、記錄站大廳-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
@@ -1428,7 +1428,7 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）�
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S03-05.png`）**
 
 ```text
-Reference images: 記石-sheet、記錄站大廳-sheet
+Reference images: 記錄站石片-sheet、記錄站大廳-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
@@ -1444,7 +1444,7 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）; 
 【畫面】橫式16:9，3D國漫動畫（半寫實、精緻光影），畫面中不要出現任何文字、字幕或浮水印。
 以上傳的圖1（關鍵幀）作為第一幀，人物外觀、服裝、站位都照圖1，不要改變。
 【角色】畫面中沒有主要角色。
-【背景人物】十個小小的人影（很小的模糊剪影，看不清臉、不看鏡頭；三三兩兩走進來、仰著頭；背上都揹著行囊；最後剛好十個）。
+【背景人物】十個小小的人影（很小的模糊剪影，看不清臉、不看鏡頭；三三兩兩走進來、仰著頭；大多數人背上揹著行囊；最後剛好十個）。
 【場景】天墟・記錄站大廳（上百片懸浮石片、環形石階、朝平原的高窗、中央低石台）：記錄站大廳：細塔底下一座圓形的石砌大廳，高得看不見頂；上百片石片浮在半空，巴掌大到門板大都有（最大的比人還高），慢慢地轉，像停在空中的落葉，石片表面只有一圈套一圈的圓環紋、沒有字；牆上刻著圓環紋（只有紋路），淡琥珀色的細光線沿著牆往上流；牆邊一道環形石階沿著牆往上；地上沒有影子；沒有任何文字。門內第三天上午：大廳高處的幾扇窄窗透進淡青綠的天光，光很均勻，地上沒有影子。
 【站位】遠景，從大廳裡往塔門拍：十個小小的人影從畫面下方的塔門走進大廳，仰著頭；他們頭頂上上百片石片浮在半空，最大的比人還高
 【分鏡與台詞】
@@ -1460,7 +1460,7 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）; 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S03-06.png`）**
 
 ```text
-Reference images: 記石-sheet、記錄站大廳-sheet
+Reference images: 記錄站石片-sheet、記錄站大廳-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
@@ -1528,7 +1528,7 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）; 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S03-09.png`）**
 
 ```text
-Reference images: 記石-sheet、記錄站大廳-sheet
+Reference images: 記錄站石片-sheet、記錄站大廳-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
@@ -1605,7 +1605,7 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）; 
 - 圖2 机遙：二十歲男生，黑色亂髮，深灰交領短衣；腰間佩一把新生制式長刀（單刃直刀、刀身窄而薄、素黑刀鞘、灰布纏柄、無護手紋飾，絕對不是齊衡烈那種寬身厚背重刀）。
 - 圖3 聞人澈：二十一歲男生，灰藍色連帽長外袍（兜帽放下）配深炭灰內袍，及下巴的黑髮用木簪半束，右腰一個皮藥草袋，右手一根前臂長的深色短靈杖（杖頭圓、刻細符紋），左腕三枚細銅玉符環，沒有任何刀劍，溫和安靜、肩膀微微內收。
 【場景】圖4天墟・記錄站大廳（上百片懸浮石片、環形石階、朝平原的高窗、中央低石台）：記錄站大廳：細塔底下一座圓形的石砌大廳，高得看不見頂；上百片石片浮在半空，巴掌大到門板大都有（最大的比人還高），慢慢地轉，像停在空中的落葉，石片表面只有一圈套一圈的圓環紋、沒有字；牆上刻著圓環紋（只有紋路），淡琥珀色的細光線沿著牆往上流；牆邊一道環形石階沿著牆往上；地上沒有影子；沒有任何文字。門內第三天上午：大廳高處的幾扇窄窗透進淡青綠的天光，光很均勻，地上沒有影子。
-【站位】中景：大廳裡最大的那片石片浮在畫面右（門板大、比人還高，離地一尺）；渺音（雙手空著）起始站在畫面中間、離石片三步，四分之三側臉朝畫面右；机遙（腰間制式長刀在素黑刀鞘裡，腰帶上繫著一枚扁圓素青玉，背上揹著行囊）在她身後畫面左；聞人澈（短靈杖握在右手（行囊側邊的繩帶上是空的），背上揹著行囊）在畫面最左；三人都四分之三側臉朝畫面右；只有三個人
+【站位】中景：大廳裡最大的那片石片浮在畫面右（門板大、比人還高，離地一尺）；渺音（雙手空著）起始閉著眼、側著頭站在畫面中間、離石片三步，四分之三側臉朝畫面右；机遙（腰間制式長刀在素黑刀鞘裡，腰帶上繫著一枚扁圓素青玉，背上揹著行囊）在她身後畫面左；聞人澈（短靈杖握在右手（行囊側邊的繩帶上是空的），背上揹著行囊）在畫面最左；三人都四分之三側臉朝畫面右；只有三個人
 【分鏡與台詞】
 0–3秒：中景。渺音睜開眼，走到大石片前一步站定；机遙和聞人澈跟在她身後一步
 3–6秒：中景。机遙看著她的背影問，嘴看得見。机遙（輕）說：「渺音，能讓它大聲一點嗎？」
@@ -1694,7 +1694,7 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）; 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S03-17.png`）**
 
 ```text
-Reference images: 記石-sheet、記錄站大廳-sheet
+Reference images: 記錄站石片-sheet、記錄站大廳-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
@@ -1716,7 +1716,7 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）; 
 0–2秒：特寫。指尖輕輕碰到石面
 2–4秒：特寫。指尖四周的圓環紋亮起淡青白的光，一圈一圈往外亮開
 【鏡頭】特寫，固定
-【禁止】文字、字幕、浮水印、臉、字、紅光、太陽、九道光、地上的影子。
+【禁止】文字、字幕、浮水印、臉、字、紅光、投影、光柱、往上射的光、太陽、九道光、地上的影子。
 ```
 
 ### EP19-S03-18（5 秒）
@@ -1728,7 +1728,7 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）; 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S03-18.png`）**
 
 ```text
-Reference images: 記石-sheet、記錄站大廳-sheet
+Reference images: 記錄站石片-sheet、記錄站大廳-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
@@ -1744,7 +1744,7 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）; 
 【畫面】橫式16:9，3D國漫動畫（半寫實、精緻光影），畫面中不要出現任何文字、字幕或浮水印。
 以上傳的圖1（關鍵幀）作為第一幀，人物外觀、服裝、站位都照圖1，不要改變。
 【角色】畫面中沒有主要角色。
-【背景人物】十個小小的人影（很小的模糊剪影，看不清臉、不看鏡頭；石片下三個、前景邊緣七個仰著頭；背上都揹著行囊；最後剛好十個）。
+【背景人物】十個小小的人影（很小的模糊剪影，看不清臉、不看鏡頭；石片下三個（正中那個身形最纖細、背上沒有行囊）、前景邊緣七個仰著頭；大多數人背上揹著行囊；最後剛好十個）。
 【場景】天墟・記錄站大廳（上百片懸浮石片、環形石階、朝平原的高窗、中央低石台）：記錄站大廳：細塔底下一座圓形的石砌大廳，高得看不見頂；上百片石片浮在半空，巴掌大到門板大都有（最大的比人還高），慢慢地轉，像停在空中的落葉，石片表面只有一圈套一圈的圓環紋、沒有字；牆上刻著圓環紋（只有紋路），淡琥珀色的細光線沿著牆往上流；牆邊一道環形石階沿著牆往上；地上沒有影子；沒有任何文字。門內第三天上午：大廳高處的幾扇窄窗透進淡青綠的天光，光很均勻，地上沒有影子。
 【站位】遠景，從大廳一側往上拍：一片門板大的石片亮著淡青白的光紋，石片下站著三個小小的人影；畫面前景邊緣還有幾個小小的人影仰著頭；石片正上方是一大片空著的半空（比兩層樓還高），四周其他石片慢慢轉
 【分鏡與台詞】
@@ -1778,7 +1778,7 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）; 
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S04-01.png`
 
-**備註（給人看，不進 Seedance）：** 後製疊光（劇本第 1 輪修改、EP18 主持人裁定 3）：九個淡白光點照 EP18X6 構圖稿的同一個視角（被壓扁的一圈、同一道低弧），這裡等距一圈、一起慢慢轉；AI 只生沒有光點的投影天空底。整支後製合成到 S03-18 那片石片的正上方（大廳底）。這張關鍵幀 S04-05、S08-08 沿用（同一張圖）。記石投影的九道光不受「黃昏才亮」的可見規則限制。
+**備註（給人看，不進 Seedance）：** 合成：去黑疊到 S03-18（第一片石片）末格凍結的大廳底上；位置＝大廳底裡那片亮著光紋的石片的正上方（水平對齊石片中線、底邊貼在石片頂端上方，往上佔比兩層樓還高的那塊半空），不罩住大廳；特寫放大佔滿畫面時大廳底仍墊在後面，只透出淡淡的石片與窗光。後製疊光（劇本第 1 輪修改、EP18 主持人裁定 3）：九個淡白光點照 EP18X6 構圖稿的同一個視角（被壓扁的一圈、同一道低弧），這裡等距一圈、一起慢慢轉；AI 只生沒有光點的投影天空底。這張關鍵幀 S04-05、S08-08 沿用（同一張圖）。記石投影的九道光不受「黃昏才亮」的可見規則限制。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S04-01.png`）**
 
@@ -1811,7 +1811,7 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S04-02.png`
 
-**備註（給人看，不進 Seedance）：** 單獨生成黑底素材，後製去黑合成到第一片石片正上方（EP19X3）。「整齊的時候大地是平的」：河往低處流（後面倒流上山才看得出異常）。
+**備註（給人看，不進 Seedance）：** 合成：去黑疊到 S03-18（第一片石片）末格凍結的大廳底上；位置＝大廳底裡那片亮著光紋的石片的正上方（水平對齊石片中線、底邊貼在石片頂端上方，往上佔比兩層樓還高的那塊半空），不罩住大廳；特寫放大佔滿畫面時大廳底仍墊在後面，只透出淡淡的石片與窗光。單獨生成黑底素材，後製去黑合成到第一片石片正上方（EP19X3）。「整齊的時候大地是平的」：河往低處流（後面倒流上山才看得出異常）。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S04-02.png`）**
 
@@ -1882,7 +1882,7 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S04-05.png`
 
-**備註（給人看，不進 Seedance）：** 同一個視角、同一張底圖；後製九個光點不再一起轉——有的快、有的慢，慢慢往畫面左擠（擠的一側畫面左、空的一側畫面右，照 EP18X6）。
+**備註（給人看，不進 Seedance）：** 合成：去黑疊到 S03-18（第一片石片）末格凍結的大廳底上；位置＝大廳底裡那片亮著光紋的石片的正上方（水平對齊石片中線、底邊貼在石片頂端上方，往上佔比兩層樓還高的那塊半空），不罩住大廳；特寫放大佔滿畫面時大廳底仍墊在後面，只透出淡淡的石片與窗光。九個光點落在 S04-01 同一個位置，不位移。同一個視角、同一張底圖；後製九個光點不再一起轉——有的快、有的慢，慢慢往畫面左擠（擠的一側畫面左、空的一側畫面右，照 EP18X6）。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S04-05.png`）**
 
@@ -1932,7 +1932,7 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S04-07.png`
 
-**備註（給人看，不進 Seedance）：** 單獨生成黑底素材，後製合成。水往上流抽不準就後製把光點方向反過來。
+**備註（給人看，不進 Seedance）：** 合成：去黑疊到 S03-18（第一片石片）末格凍結的大廳底上；位置＝大廳底裡那片亮著光紋的石片的正上方（水平對齊石片中線、底邊貼在石片頂端上方，往上佔比兩層樓還高的那塊半空），不罩住大廳；特寫放大佔滿畫面時大廳底仍墊在後面，只透出淡淡的石片與窗光。單獨生成黑底素材，後製合成。水往上流抽不準就後製把光點方向反過來。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S04-07.png`）**
 
@@ -1965,7 +1965,7 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S04-08.png`
 
-**備註（給人看，不進 Seedance）：** 劇本兩格（林子結晶 3 秒、走獸眼睛 3 秒）併一支同機位推近，不切格。投影是單色，晶化用輪廓變尖、一閃一閃表現（不寫綠）。
+**備註（給人看，不進 Seedance）：** 合成：去黑疊到 S03-18（第一片石片）末格凍結的大廳底上；位置＝大廳底裡那片亮著光紋的石片的正上方（水平對齊石片中線、底邊貼在石片頂端上方，往上佔比兩層樓還高的那塊半空），不罩住大廳；特寫放大佔滿畫面時大廳底仍墊在後面，只透出淡淡的石片與窗光。劇本兩格（林子結晶 3 秒、走獸眼睛 3 秒）併一支同機位推近，不切格。投影是單色，晶化用輪廓變尖、一閃一閃表現（不寫綠）。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S04-08.png`）**
 
@@ -2019,7 +2019,7 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S04-10.png`
 
-**備註（給人看，不進 Seedance）：** 古人往外走（指南要點 4）：不拍揹人、牽人（投影也照無肢體接觸）。
+**備註（給人看，不進 Seedance）：** 合成：去黑疊到 S03-18（第一片石片）末格凍結的大廳底上；位置＝大廳底裡那片亮著光紋的石片的正上方（水平對齊石片中線、底邊貼在石片頂端上方，往上佔比兩層樓還高的那塊半空），不罩住大廳；特寫放大佔滿畫面時大廳底仍墊在後面，只透出淡淡的石片與窗光。古人往外走（指南要點 4）：不拍揹人、牽人（投影也照無肢體接觸）。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S04-10.png`）**
 
@@ -2028,9 +2028,9 @@ Reference images: 記石投影素材-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
-畫面：投影。純黑的底上，淡青白、半透明的剪影：大大小小的人形剪影，有的提著一盞燈、有的扛著包袱，三三兩兩往畫面右走；只有剪影與光，看不清臉，沒有顏色。沒有文字。
+畫面：投影。純黑的底上，淡青白、半透明的剪影：大大小小的人形剪影，有的提著一盞燈、有的扛著包袱，一列接一列（每列前後鬆散、高矮不齊）往畫面右走；只有剪影與光，看不清臉，沒有顏色。沒有文字。
 
-LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為準）：投影：純黑的底上，淡青白、半透明的剪影：大大小小的人形剪影，有的提著一盞燈、有的扛著包袱，三三兩兩、一群接一群往畫面右走；只有剪影與光
+LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為準）：投影：純黑的底上，淡青白、半透明的剪影：大大小小的人形剪影，有的提著一盞燈、有的扛著包袱，一列接一列（每列前後鬆散、高矮不齊）往畫面右走；只有剪影與光
 （每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
@@ -2041,11 +2041,11 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 以上傳的圖1（關鍵幀）作為第一幀，人物外觀、服裝、站位都照圖1，不要改變。
 【角色】畫面中沒有主要角色。
 【場景】記石投影・黑底素材（後製合成到記錄站大廳）：記石投影（單獨生成的素材）：純黑的底上，淡青白色、半透明的投影光影，只有輪廓與光，像用光畫出來的剪影；沒有臉、沒有任何文字。投影素材：純黑的底，只有淡青白的光。
-【站位】投影：純黑的底上，淡青白、半透明的剪影：大大小小的人形剪影，有的提著一盞燈、有的扛著包袱，三三兩兩、一群接一群往畫面右走；只有剪影與光
+【站位】投影：純黑的底上，淡青白、半透明的剪影：大大小小的人形剪影，有的提著一盞燈、有的扛著包袱，一列接一列（每列前後鬆散、高矮不齊）往畫面右走；只有剪影與光
 【分鏡與台詞】
-0–5秒：遠景。剪影們一群接一群往畫面右慢慢走，燈一晃一晃；沒有軍隊，沒有戰陣
+0–5秒：遠景。剪影們一列接一列（每列前後鬆散、高矮不齊）往畫面右慢慢走，燈一晃一晃；沒有軍隊，沒有戰陣
 【鏡頭】遠景，固定
-【禁止】文字、字幕、浮水印、軍隊、戰陣、兵器、揹人、牽手、城門、排成一列、實景、彩色、臉、字、紅光、太陽。
+【禁止】文字、字幕、浮水印、軍隊、戰陣、兵器、揹人、牽手、城門、實景、彩色、臉、整齊的隊伍、行軍、字、紅光、太陽。
 ```
 
 ### EP19-S04-11（4 秒）
@@ -2076,7 +2076,7 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 【場景】圖2天墟・記錄站大廳（上百片懸浮石片、環形石階、朝平原的高窗、中央低石台）：記錄站大廳：細塔底下一座圓形的石砌大廳，高得看不見頂；上百片石片浮在半空，巴掌大到門板大都有（最大的比人還高），慢慢地轉，像停在空中的落葉，石片表面只有一圈套一圈的圓環紋、沒有字；牆上刻著圓環紋（只有紋路），淡琥珀色的細光線沿著牆往上流；牆邊一道環形石階沿著牆往上；地上沒有影子；沒有任何文字。門內第三天近午：大廳高處的窄窗透進淡青綠的天光，光很均勻，地上沒有影子。
 【站位】近景：郁岑燁（細長直劍在鞘裡佩在腰間，右手纏著白布，背上揹著行囊）仰著頭看畫面右上方，四分之三側臉朝畫面右；臉上映著從上方投下來的淡青白光；只有他一個人入鏡
 【分鏡與台詞】
-0–2秒：近景。他皺著眉，看著畫面右上方那一群一群的剪影
+0–2秒：近景。他皺著眉，看著畫面右上方那一列一列的剪影
 2–5秒：近景。他開口，嘴看得見。郁岑燁（低、沉）說：「那他們在逃什麼？」
 【鏡頭】近景，固定
 【禁止】文字、字幕、浮水印、第二個人、重複出現的人、轉成正臉、投影、光柱、太陽、九道光、地上的影子、紅光。
@@ -2085,6 +2085,8 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 ### EP19-S04-13（5 秒）
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S04-13.png`
+
+**備註（給人看，不進 Seedance）：** 合成：去黑疊到 S03-18（第一片石片）末格凍結的大廳底上；位置＝大廳底裡那片亮著光紋的石片的正上方（水平對齊石片中線、底邊貼在石片頂端上方，往上佔比兩層樓還高的那塊半空），不罩住大廳；特寫放大佔滿畫面時大廳底仍墊在後面，只透出淡淡的石片與窗光。終格（裂縫橫過整片大地）凍結＝S04-15 疊在石片上的停格。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S04-13.png`）**
 
@@ -2140,7 +2142,7 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S04-15.png`）**
 
 ```text
-Reference images: 記石-sheet、記錄站大廳-sheet
+Reference images: 記錄站石片-sheet、記錄站大廳-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
@@ -2156,7 +2158,7 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）; 
 【畫面】橫式16:9，3D國漫動畫（半寫實、精緻光影），畫面中不要出現任何文字、字幕或浮水印。
 以上傳的圖1（關鍵幀）作為第一幀，人物外觀、服裝、站位都照圖1，不要改變。
 【角色】畫面中沒有主要角色。
-【背景人物】十個小小的人影（很小的模糊剪影，看不清臉、不看鏡頭；石片下五個、前景邊緣五個仰著頭；背上都揹著行囊；最後剛好十個）。
+【背景人物】十個小小的人影（很小的模糊剪影，看不清臉、不看鏡頭；石片下五個、前景邊緣五個仰著頭；大多數人背上揹著行囊；最後剛好十個）。
 【場景】天墟・記錄站大廳（上百片懸浮石片、環形石階、朝平原的高窗、中央低石台）：記錄站大廳：細塔底下一座圓形的石砌大廳，高得看不見頂；上百片石片浮在半空，巴掌大到門板大都有（最大的比人還高），慢慢地轉，像停在空中的落葉，石片表面只有一圈套一圈的圓環紋、沒有字；牆上刻著圓環紋（只有紋路），淡琥珀色的細光線沿著牆往上流；牆邊一道環形石階沿著牆往上；地上沒有影子；沒有任何文字。門內第三天近午：大廳高處的窄窗透進淡青綠的天光，光很均勻，地上沒有影子。
 【站位】遠景，從大廳一側往上拍：那片門板大的石片上淡青白的光紋慢慢暗下去；石片正上方是一大片空著的半空；石片下和前景邊緣站著小小的人影，仰著頭
 【分鏡與台詞】
@@ -2211,7 +2213,7 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）; 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S05-02.png`）**
 
 ```text
-Reference images: 記石-sheet、記錄站大廳-sheet
+Reference images: 記錄站石片-sheet、記錄站大廳-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
@@ -2233,7 +2235,7 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）; 
 0–2秒：特寫。指尖碰到左邊那片，圓環紋閃了一下淡青白的光，馬上暗了
 2–4秒：特寫。手移到右邊那片，碰下去，又閃了一下，又暗了
 【鏡頭】特寫，固定
-【禁止】文字、字幕、浮水印、臉、字、紅光、太陽、九道光、地上的影子。
+【禁止】文字、字幕、浮水印、臉、字、紅光、投影、光柱、往上射的光、太陽、九道光、地上的影子。
 ```
 
 ### EP19-S05-03（4 秒）
@@ -2245,7 +2247,7 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）; 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S05-03.png`）**
 
 ```text
-Reference images: 記石-sheet、記錄站大廳-sheet
+Reference images: 記錄站石片-sheet、記錄站大廳-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
@@ -2293,7 +2295,7 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）; 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S05-05.png`）**
 
 ```text
-Reference images: 記石-sheet、記錄站大廳-sheet
+Reference images: 記錄站石片-sheet、記錄站大廳-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
@@ -2315,14 +2317,14 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）; 
 0–1.5秒：特寫。指尖碰下去
 1.5–4秒：特寫。圓環紋亮起淡青白的光，一圈一圈往外亮開，亮著，沒有暗
 【鏡頭】特寫，固定
-【禁止】文字、字幕、浮水印、臉、字、紅光、太陽、九道光、地上的影子。
+【禁止】文字、字幕、浮水印、臉、字、紅光、投影、光柱、往上射的光、太陽、九道光、地上的影子。
 ```
 
 ### EP19-S05-06（6 秒）
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S05-06.png`
 
-**備註（給人看，不進 Seedance）：** 斷代者（只在投影裡，不登記角色）：不拍臉、看不出是人是妖（EP22 才放下兜帽）。單獨生成黑底素材，後製合成到第二片石片正上方。
+**備註（給人看，不進 Seedance）：** 合成：去黑疊到 S05-17（第二片石片）末格凍結的大廳底上；位置＝大廳底裡那片亮著光紋的石片的正上方（水平對齊石片中線、底邊貼在石片頂端上方，往上佔比兩層樓還高的那塊半空），不罩住大廳；特寫放大佔滿畫面時大廳底仍墊在後面，只透出淡淡的石片與窗光。斷代者（只在投影裡，不登記角色）：不拍臉、看不出是人是妖（EP22 才放下兜帽）。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S05-06.png`）**
 
@@ -2378,6 +2380,8 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S05-08.png`
 
+**備註（給人看，不進 Seedance）：** 合成：去黑疊到 S05-17（第二片石片）末格凍結的大廳底上；位置＝大廳底裡那片亮著光紋的石片的正上方（水平對齊石片中線、底邊貼在石片頂端上方，往上佔比兩層樓還高的那塊半空），不罩住大廳；特寫放大佔滿畫面時大廳底仍墊在後面，只透出淡淡的石片與窗光。
+
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S05-08.png`）**
 
 ```text
@@ -2408,6 +2412,8 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 ### EP19-S05-09（4 秒）
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S05-09.png`
+
+**備註（給人看，不進 Seedance）：** 合成：去黑疊到 S05-17（第二片石片）末格凍結的大廳底上；位置＝大廳底裡那片亮著光紋的石片的正上方（水平對齊石片中線、底邊貼在石片頂端上方，往上佔比兩層樓還高的那塊半空），不罩住大廳；特寫放大佔滿畫面時大廳底仍墊在後面，只透出淡淡的石片與窗光。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S05-09.png`）**
 
@@ -2475,6 +2481,8 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S05-12.png`
 
+**備註（給人看，不進 Seedance）：** 合成：去黑疊到 S05-17（第二片石片）末格凍結的大廳底上；位置＝大廳底裡那片亮著光紋的石片的正上方（水平對齊石片中線、底邊貼在石片頂端上方，往上佔比兩層樓還高的那塊半空），不罩住大廳；特寫放大佔滿畫面時大廳底仍墊在後面，只透出淡淡的石片與窗光。
+
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S05-12.png`）**
 
 ```text
@@ -2505,6 +2513,8 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 ### EP19-S05-13（6 秒）
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S05-13.png`
+
+**備註（給人看，不進 Seedance）：** 合成：去黑疊到 S05-17（第二片石片）末格凍結的大廳底上；位置＝大廳底裡那片亮著光紋的石片的正上方（水平對齊石片中線、底邊貼在石片頂端上方，往上佔比兩層樓還高的那塊半空），不罩住大廳；特寫放大佔滿畫面時大廳底仍墊在後面，只透出淡淡的石片與窗光。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S05-13.png`）**
 
@@ -2556,6 +2566,8 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S05-15.png`
 
+**備註（給人看，不進 Seedance）：** 合成：去黑疊到 S05-17（第二片石片）末格凍結的大廳底上；位置＝大廳底裡那片亮著光紋的石片的正上方（水平對齊石片中線、底邊貼在石片頂端上方，往上佔比兩層樓還高的那塊半空），不罩住大廳；特寫放大佔滿畫面時大廳底仍墊在後面，只透出淡淡的石片與窗光。終格（撐陣的剪影兩手仍舉在半空、光線從手上散開）凍結＝S05-17 疊在石片上的停格（第 7 場机遙從高窗往下看的就是這一格）。
+
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S05-15.png`）**
 
 ```text
@@ -2579,9 +2591,9 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 【站位】投影：純黑的底上，淡青白、半透明的剪影：撐著陣角的剪影雙手舉著，圈外站著一群剪影，最後一個剪影正往圈外走；只有剪影與光
 【分鏡與台詞】
 0–3秒：中景。最後一個剪影走出圈外
-3–5秒：中景。撐陣的那個抬起頭，放開手——光線從他手上散開
+3–5秒：中景。撐陣的那個抬起頭，十指張開、鬆開陣的邊——兩手仍舉在半空沒有放下，光線從他手上散開；最後一格停在兩手還舉著的樣子
 【鏡頭】中景，固定
-【禁止】文字、字幕、浮水印、臉、兜帽放下、兵器、排成一列、實景、彩色、字、紅光、太陽。
+【禁止】文字、字幕、浮水印、臉、兜帽放下、兵器、排成一列、實景、彩色、手臂放下、轉身、字、紅光、太陽。
 ```
 
 ### EP19-S05-16（7 秒）
@@ -2611,7 +2623,7 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S05-17.png`）**
 
 ```text
-Reference images: 記石-sheet、記錄站大廳-sheet
+Reference images: 記錄站石片-sheet、記錄站大廳-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
@@ -2663,7 +2675,7 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）; 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S06-01.png`）**
 
 ```text
-Reference images: 記石-sheet、記錄站大廳-sheet
+Reference images: 記錄站石片-sheet、記錄站大廳-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
@@ -2685,14 +2697,14 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）; 
 0–1.5秒：特寫。手從石面上收回，退出畫面
 1.5–4秒：特寫。石片的圓環紋一圈一圈亮起淡青白的光
 【鏡頭】特寫，固定
-【禁止】文字、字幕、浮水印、臉、字、紅光、太陽、九道光、地上的影子。
+【禁止】文字、字幕、浮水印、臉、字、紅光、投影、光柱、往上射的光、太陽、九道光、地上的影子。
 ```
 
 ### EP19-S06-02（8 秒）
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S06-02.png`
 
-**備註（給人看，不進 Seedance）：** 三圈陣（斷、回、界）：最外圈切口、中間一圈往外開的細渠（＝S3 EP13 迴音庭洩口，位置夾在外圈與內圈之間）、最裡面一道邊。單獨生成黑底素材，後製合成到第三片石片正上方；第 8 場三圈全亮用同一個設計（EP19X3）。
+**備註（給人看，不進 Seedance）：** 合成：去黑疊到 S06-18（第三片石片）末格凍結的大廳底上；位置＝大廳底裡那片亮著光紋的石片的正上方（水平對齊石片中線、底邊貼在石片頂端上方，往上佔比兩層樓還高的那塊半空），不罩住大廳；特寫放大佔滿畫面時大廳底仍墊在後面，只透出淡淡的石片與窗光。終格（三圈光紋）凍結＝S06-18 疊在石片上的停格（第 6、7 場桓瑾照著描的就是這一格）。三圈陣（斷、回、界）：最外圈切口、中間一圈往外開的細渠（＝S3 EP13 迴音庭洩口，位置夾在外圈與內圈之間）、最裡面一道邊。第 8 場三圈全亮用同一個設計（EP19X3）。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S06-02.png`）**
 
@@ -2781,7 +2793,7 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 
 **上傳：** 聞人澈-sheet、記錄站大廳-sheet（待出圖）
 
-**備註（給人看，不進 Seedance）：** 劇本三格手指特寫併成：S06-04 指尖停在外圈前＋本支近景點三圈（手在畫面下緣，後製在指尖前疊光紋）＋S06-06 退回中間那圈。本支後插格 2 秒：EP06-S09-12 第 1～3 秒（星河殿古卷庫，聞人澈停住的手指；只用畫面、去聲）。
+**備註（給人看，不進 Seedance）：** 劇本三格手指特寫併成：S06-04 指尖停在外圈前＋本支近景點三圈（手在畫面下緣，後製在指尖前疊光紋）＋S06-06 退回中間那圈。後製：0–1.5 秒指尖前疊外圈切口、1.5–4 秒疊中圈細渠、4–6 秒疊內圈的邊（S06-02 素材局部；食指在畫面下緣隨眼睛往裡移，後製光紋跟著指尖走，S06-06 才接得上「往外退回」中圈）。本支後插格 2 秒：EP06-S09-12 第 1～3 秒（星河殿古卷庫，聞人澈停住的手指；只用畫面、去聲）。
 
 ```text
 【畫面】橫式16:9，3D國漫動畫（半寫實、精緻光影），畫面中不要出現任何文字、字幕或浮水印。
@@ -2791,9 +2803,9 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 【站位】近景：聞人澈（短靈杖握在右手，行囊卸在牆邊），左手抬在臉前半空、食指伸著（手在畫面下緣），仰著頭看畫面右上方，四分之三側臉朝畫面右；臉上映著從上方投下來的淡青白光；只有他一個人入鏡
 【分鏡與台詞】
 0–1.5秒：近景。他盯著最外面那一圈，開口，嘴看得見。聞人澈（一圈一圈點過去）說：「斷。」
-1.5–2.5秒：近景。他的眼睛往裡移了一點
+1.5–2.5秒：近景。他的眼睛和畫面下緣的左手食指一起往裡移了一點
 2.5–4秒：近景。他開口，嘴看得見。聞人澈（低）說：「回。」
-4–5秒：近景。眼睛再往裡移一點
+4–5秒：近景。眼睛和食指再往裡移一點
 5–6秒：近景。他開口，嘴看得見。聞人澈（低）說：「界。」
 【鏡頭】近景，固定
 【禁止】文字、字幕、浮水印、第二個人、重複出現的人、轉成正臉、投影、光柱、太陽、九道光、地上的影子、紅光。
@@ -3039,7 +3051,7 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S06-18.png`）**
 
 ```text
-Reference images: 記石-sheet、記錄站大廳-sheet
+Reference images: 記錄站石片-sheet、記錄站大廳-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
@@ -3075,7 +3087,7 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）; 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S07-01.png`）**
 
 ```text
-Reference images: 記石-sheet、記錄站大廳-sheet
+Reference images: 記錄站石片-sheet、記錄站大廳-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
@@ -3367,9 +3379,9 @@ LAYOUT (must follow): no named characters; creatures: 桓瑾的描板（薄木�
 【角色】畫面中只有這1個人，只出現一次：
 - 圖1 江祈璟：二十歲男生，黑色長髮高馬尾綁深銀繩，深藍交領長袍滾銀白邊，雙前臂深色皮護腕，一桿長槍（深色硬木槍桿、柳葉形鋼槍頭、槍頭下繫一顆小古銅鈴），站姿筆直、神情冷靜。
 【場景】圖2天墟・記錄站大廳（上百片懸浮石片、環形石階、朝平原的高窗、中央低石台）：記錄站大廳高處的窗邊：環形石階沿著牆走到盡頭，接上一小塊石砌的平台，平台邊一扇高窗，石砌的窗台；窗外灌進一片淡琥珀色的亮光；平台另一邊是空空的大廳，半空浮著一片片慢慢轉的石片；牆上刻著圓環紋（只有紋路），淡琥珀色的細光線沿著牆往上流；地上沒有影子；沒有任何文字。門內第三天午後：高窗外一片亮光，淡琥珀色的光從高窗灌進來，窗邊很亮；大廳裡窄窗透進淡青綠的天光；地上沒有影子。
-【站位】近景：江祈璟（右手握著長槍，槍頭下繫一顆小古銅鈴）站在石階頂上，四分之三側臉朝畫面右；只有他一個人入鏡
+【站位】近景：江祈璟（右手握著長槍，槍頭下繫一顆小古銅鈴）站在石階頂上，四分之三側臉朝畫面右，右手握著槍桿、手在畫面下緣看得見；只有他一個人入鏡
 【分鏡與台詞】
-0–3秒：近景。他很久沒有動，握著槍桿的手越握越緊
+0–3秒：近景。他很久沒有動，畫面下緣握著槍桿的右手越握越緊，指節發白
 3–6秒：近景。他低聲說，嘴看得見。江祈璟（很久、低）說：「我爹關的那座。」
 【鏡頭】近景，固定
 【禁止】文字、字幕、浮水印、第二個人、重複出現的人、轉成正臉、灰披風、投影、光柱、太陽、九道光、地上的影子、紅光。
@@ -3398,16 +3410,19 @@ LAYOUT (must follow): no named characters; creatures: 桓瑾的描板（薄木�
 
 **上傳：** 江祈璟-sheet、記錄站大廳-sheet（待出圖）
 
+**備註（給人看，不進 Seedance）：** 「江肅。」之後他先把臉別開、再抬眼望窗外（主持人複查點名、劇本第 1 輪 +2 秒加的格）：別開要看得出來——0–1.5 秒頭明顯低下去偏離桓瑾那一側，1.5 秒後才抬頭看窗。第 0 秒看著桓瑾的方向，1.5 秒後不再看向桓瑾。
+
 ```text
 【畫面】橫式16:9，3D國漫動畫（半寫實、精緻光影），畫面中不要出現任何文字、字幕或浮水印。
 【角色】畫面中只有這1個人，只出現一次：
 - 圖1 江祈璟：二十歲男生，黑色長髮高馬尾綁深銀繩，深藍交領長袍滾銀白邊，雙前臂深色皮護腕，一桿長槍（深色硬木槍桿、柳葉形鋼槍頭、槍頭下繫一顆小古銅鈴），站姿筆直、神情冷靜。
 【場景】圖2天墟・記錄站大廳（上百片懸浮石片、環形石階、朝平原的高窗、中央低石台）：記錄站大廳高處的窗邊：環形石階沿著牆走到盡頭，接上一小塊石砌的平台，平台邊一扇高窗，石砌的窗台；窗外灌進一片淡琥珀色的亮光；平台另一邊是空空的大廳，半空浮著一片片慢慢轉的石片；牆上刻著圓環紋（只有紋路），淡琥珀色的細光線沿著牆往上流；地上沒有影子；沒有任何文字。門內第三天午後：高窗外一片亮光，淡琥珀色的光從高窗灌進來，窗邊很亮；大廳裡窄窗透進淡青綠的天光；地上沒有影子。
-【站位】近景：江祈璟（右手握著長槍，槍頭下繫一顆小古銅鈴）站在石階頂上，四分之三側臉朝畫面右；窗外的淡琥珀色亮光照在他臉上；只有他一個人入鏡
+【站位】近景：江祈璟（右手握著長槍，槍頭下繫一顆小古銅鈴）站在石階頂上，起始四分之三側臉朝畫面右、看著畫面右外的桓瑾；窗外的淡琥珀色亮光淡淡照在他臉上，右手握著槍桿；只有他一個人入鏡
 【分鏡與台詞】
-0–4秒：近景。他的視線從桓瑾身上別開，抬高望向畫面右上方窗外被光吞掉的平原（頭只微微轉，仍朝畫面右）
-【鏡頭】近景，固定
-【禁止】文字、字幕、浮水印、第二個人、重複出現的人、轉成正臉、開口、灰披風、投影、光柱、太陽、九道光、地上的影子、紅光。
+0–1.5秒：近景。他閉了一下眼，下巴往畫面左下一收，臉從畫面右外的桓瑾那一邊別開，低下去偏向畫面左下（只偏成側臉、不轉成正對鏡頭的正臉）
+1.5–4秒：近景。他慢慢抬起頭、睜開眼，不再看桓瑾那一側，視線望向畫面右上方窗外被光吞掉的平原，窗外的淡琥珀色亮光一下子照滿他的臉；握槍的手沒有鬆
+【鏡頭】近景，從他右前方稍低處拍，固定
+【禁止】文字、字幕、浮水印、第二個人、重複出現的人、轉成正臉、開口、灰披風、投影、光柱、1.5 秒後看向桓瑾、太陽、九道光、地上的影子、紅光。
 ```
 
 ### EP19-S07-16（7 秒）
@@ -3456,7 +3471,7 @@ LAYOUT (must follow): no named characters; creatures: 桓瑾的描板（薄木�
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S07-18.png`）**
 
 ```text
-Reference images: 記石-sheet、記錄站大廳-sheet
+Reference images: 記錄站石片-sheet、記錄站大廳-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
@@ -3549,7 +3564,7 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）; 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S08-01.png`）**
 
 ```text
-Reference images: 記石-sheet、記錄站大廳-sheet
+Reference images: 記錄站石片-sheet、記錄站大廳-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
@@ -3598,7 +3613,7 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）; 
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S08-03.png`
 
-**備註（給人看，不進 Seedance）：** 和 S06-02 同一個設計（EP19X3）；第 6 場只是陣本身，這裡三圈全亮＝陣在動。
+**備註（給人看，不進 Seedance）：** 合成：去黑疊到 S08-15（第四片石片）末格凍結的大廳底上；位置＝大廳底裡那片亮著光紋的石片的正上方（水平對齊石片中線、底邊貼在石片頂端上方，往上佔比兩層樓還高的那塊半空），不罩住大廳；特寫放大佔滿畫面時大廳底仍墊在後面，只透出淡淡的石片與窗光。和 S06-02 同一個設計（EP19X3）；第 6 場只是陣本身，這裡三圈全亮＝陣在動。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S08-03.png`）**
 
@@ -3632,7 +3647,7 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S08-04.png`
 
-**備註（給人看，不進 Seedance）：** 大地變白（劇本第 1 輪修改）：AI 只生不動的大地底圖（投影質感、固定機位，有林、河、山），後製從畫面右的邊緣往內一層層蓋白（遮罩動畫），像被光一口一口吃掉；遠景，不拍城。S08-06 用同一張底圖的終格。
+**備註（給人看，不進 Seedance）：** 合成：去黑疊到 S08-15（第四片石片）末格凍結的大廳底上；位置＝大廳底裡那片亮著光紋的石片的正上方（水平對齊石片中線、底邊貼在石片頂端上方，往上佔比兩層樓還高的那塊半空），不罩住大廳；特寫放大佔滿畫面時大廳底仍墊在後面，只透出淡淡的石片與窗光。大地變白（劇本第 1 輪修改）：AI 只生不動的大地底圖（投影質感、固定機位，有林、河、山），後製從畫面右的邊緣往內一層層蓋白（遮罩動畫），像被光一口一口吃掉；遠景，不拍城。S08-06 用同一張底圖的終格。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S08-04.png`）**
 
@@ -3683,7 +3698,7 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S08-06.png`
 
-**備註（給人看，不進 Seedance）：** 同一張底圖的終格：後製遮罩停在畫面中間——畫面右那一塊整個白掉，邊上只剩一道整整齊齊的斷口（空掉的一邊在畫面右，和九道光空的一側同一邊）。
+**備註（給人看，不進 Seedance）：** 合成：去黑疊到 S08-15（第四片石片）末格凍結的大廳底上；位置＝大廳底裡那片亮著光紋的石片的正上方（水平對齊石片中線、底邊貼在石片頂端上方，往上佔比兩層樓還高的那塊半空），不罩住大廳；特寫放大佔滿畫面時大廳底仍墊在後面，只透出淡淡的石片與窗光。同一張底圖的終格：後製遮罩停在畫面中間——畫面右那一塊整個白掉，邊上只剩一道整整齊齊的斷口（空掉的一邊在畫面右，和九道光空的一側同一邊）。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S08-06.png`）**
 
@@ -3733,7 +3748,7 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S08-08.png`
 
-**備註（給人看，不進 Seedance）：** 後製疊光（劇本第 1 輪修改）：九個光點往留下來的那一邊（畫面左）擠過去，空掉的那一邊（畫面右）上方空出一大塊；擠完的位置照 EP18X6 構圖稿（同一道低弧、擠的一側畫面左、空的一側畫面右）。本支後插格 2 秒：EP18-S06-09 第 0～2 秒（屋頂上看見的九道光，同樣一邊擠著、一邊空了一大塊；沿用素材）。
+**備註（給人看，不進 Seedance）：** 合成：去黑疊到 S08-15（第四片石片）末格凍結的大廳底上；位置＝大廳底裡那片亮著光紋的石片的正上方（水平對齊石片中線、底邊貼在石片頂端上方，往上佔比兩層樓還高的那塊半空），不罩住大廳；特寫放大佔滿畫面時大廳底仍墊在後面，只透出淡淡的石片與窗光。沿用 S04-01 的投影天空底（同一張圖），光點照本支 note 後製擠向畫面左。後製疊光（劇本第 1 輪修改）：九個光點往留下來的那一邊（畫面左）擠過去，空掉的那一邊（畫面右）上方空出一大塊；擠完的位置照 EP18X6 構圖稿（同一道低弧、擠的一側畫面左、空的一側畫面右）。本支後插格 2 秒：EP18-S06-09 第 0～2 秒（屋頂上看見的九道光，同樣一邊擠著、一邊空了一大塊；沿用素材）。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S08-08.png`）**
 
@@ -3766,6 +3781,8 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S08-09.png`
 
+**備註（給人看，不進 Seedance）：** 合成：去黑疊到 S08-15（第四片石片）末格凍結的大廳底上；位置＝大廳底裡那片亮著光紋的石片的正上方（水平對齊石片中線、底邊貼在石片頂端上方，往上佔比兩層樓還高的那塊半空），不罩住大廳；特寫放大佔滿畫面時大廳底仍墊在後面，只透出淡淡的石片與窗光。
+
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S08-09.png`）**
 
 ```text
@@ -3796,6 +3813,8 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 ### EP19-S08-10（4 秒）
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S08-10.png`
+
+**備註（給人看，不進 Seedance）：** 合成：去黑疊到 S08-15（第四片石片）末格凍結的大廳底上；位置＝大廳底裡那片亮著光紋的石片的正上方（水平對齊石片中線、底邊貼在石片頂端上方，往上佔比兩層樓還高的那塊半空），不罩住大廳；特寫放大佔滿畫面時大廳底仍墊在後面，只透出淡淡的石片與窗光。末格（斷口邊最前面那個剪影）凍結＝S08-15 疊在石片上的停格（斷口和空掉的畫面右，淡淡的）。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S08-10.png`）**
 
@@ -3908,7 +3927,7 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S08-15.png`）**
 
 ```text
-Reference images: 記石-sheet、記錄站大廳-sheet
+Reference images: 記錄站石片-sheet、記錄站大廳-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
@@ -3944,7 +3963,7 @@ LAYOUT (must follow): no named characters; creatures: 記石（懸浮石片）; 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S09-01.png`）**
 
 ```text
-Reference images: 記石-sheet、記錄站大廳-sheet
+Reference images: 記錄站石片-sheet、記錄站大廳-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
@@ -4492,7 +4511,7 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 【分鏡與台詞】
 0–4秒：特寫。碗光沿著牆移過去，一束、一束、又一束
 【鏡頭】特寫，跟著光橫移
-【禁止】文字、字幕、浮水印、臉、手、字、數字、營火、火光、星星、月亮、太陽、九道光、地上的影子、紅光。
+【禁止】文字、字幕、浮水印、0–4 秒畫面中有人、臉、手、字、數字、營火、火光、星星、月亮、太陽、九道光、地上的影子、紅光。
 ```
 
 ### EP19-S10-09（8 秒）
@@ -4561,7 +4580,7 @@ LAYOUT (must follow): no named characters; 站位（以第 0 秒這一瞬間為�
 【分鏡與台詞】
 0–4秒：特寫。碗光輕輕晃；鏡頭極慢推近那個三道痕與箭頭
 【鏡頭】特寫，極慢推近
-【禁止】文字、字幕、浮水印、臉、手、字、數字、營火、火光、星星、月亮、太陽、九道光、地上的影子、紅光。
+【禁止】文字、字幕、浮水印、0–4 秒畫面中有人、臉、手、字、數字、營火、火光、星星、月亮、太陽、九道光、地上的影子、紅光。
 ```
 
 ### EP19-S10-12（4 秒）
@@ -4829,7 +4848,7 @@ LAYOUT (must follow): exactly 1 named character(s): 灰斗篷人; 站位（以�
 
 **上傳：** 關鍵幀 `production/series/EP19/keyframes/EP19-S11-08.png`
 
-**備註（給人看，不進 Seedance）：** 只拍斗篷、手套與箭。斥候路標的角度（EP18「插成這個角度，是斥候的路標」）。
+**備註（給人看，不進 Seedance）：** 只拍斗篷、手套與箭。首幀＝第 0 秒手正抽出箭、箭已露出一半（箭頭朝畫面右），關鍵幀附 EP19X6 不會畫出兩支箭；箭頭方向在這一支插定，S11-09 接得上。斥候路標的角度（EP18「插成這個角度，是斥候的路標」）。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP19/keyframes/EP19-S11-08.png`）**
 
@@ -4838,9 +4857,9 @@ Reference images: 灰斗篷人-sheet、外廊新箭-sheet、細塔外景-sheet
 
 Semi-realistic 3D Chinese animation (guoman) style, cinematic lighting, horizontal 16:9 single full-bleed frame, no text, no subtitles, no watermark, no borders. Every character must match their reference sheet exactly (face, hair, costume, weapon).
 
-畫面：中景，仰角，夜裡。外廊齊腰高的石欄杆邊，只看得見灰色長斗篷的下半身和一隻戴深色皮手套的手，手正伸進斗篷底下；淡琥珀色的光從下往上照著斗篷下擺；背景是深紫色的天。沒有臉、沒有文字。
+畫面：中景，仰角，夜裡。外廊齊腰高的石欄杆邊，只看得見灰色長斗篷的下半身和一隻戴深色皮手套的手，手正從斗篷底下抽出一支新箭，淺色箭桿露出一半、箭頭朝畫面右；淡琥珀色的光從下往上照著斗篷下擺；背景是深紫色的天。沒有臉、沒有文字。
 
-LAYOUT (must follow): exactly 1 named character(s): 灰斗篷人; creatures: 外廊上的新箭; 站位（以第 0 秒這一瞬間為準）：中景，仰角：外廊的石欄杆邊，只拍到灰色斗篷的下半身、一隻戴深色皮手套的手和齊腰高的石欄杆；淡琥珀色的光從下往上照著斗篷下擺
+LAYOUT (must follow): exactly 1 named character(s): 灰斗篷人; creatures: 外廊上的新箭; 站位（以第 0 秒這一瞬間為準）：中景，仰角：外廊的石欄杆邊，只拍到灰色斗篷的下半身、一隻戴深色皮手套的手和齊腰高的石欄杆；第 0 秒手正從斗篷底下抽出一支新箭，淺色箭桿露出一半、箭頭朝畫面右；淡琥珀色的光從下往上照著斗篷下擺
 （每張關鍵幀開新對話，只附上面列的設定圖，不要附前一張關鍵幀，否則會照抄構圖。）
 ```
 
@@ -4852,12 +4871,12 @@ LAYOUT (must follow): exactly 1 named character(s): 灰斗篷人; creatures: 外
 【角色】畫面中只有這1個人，只出現一次：
 - 灰斗篷人：身分不明的人，一件深灰色長斗篷把全身罩住，兜帽壓得很低，臉上蒙著深色的布，戴深色皮手套，背上一個一臂長的舊木匣；身形中等、看不出男女；只拍背影或逆光剪影，看不到臉。
 【場景】天墟・細塔外景（塔門、門楣、門上外廊、塔腳光渠；上午／深夜）：細塔的塔門前（夜）：拱形塔門比人高一倍多；塔門正上方約兩丈高（三個多人高），一圈外廊繞著塔身，外廊邊一道齊腰高的石欄杆；塔腳前一條光渠，淡琥珀色的光往高處流、從下往上照；塔身在夜裡是一道又高又細的黑色剪影；深紫色的天，沒有星星；地上沒有影子；沒有任何文字。門內第三天深夜：深紫色的天，沒有星星；細塔是一道黑色剪影，只有塔腳光渠的淡琥珀色光從下往上照，地上沒有影子。
-【站位】中景，仰角：外廊的石欄杆邊，只拍到灰色斗篷的下半身、一隻戴深色皮手套的手和齊腰高的石欄杆；淡琥珀色的光從下往上照著斗篷下擺
+【站位】中景，仰角：外廊的石欄杆邊，只拍到灰色斗篷的下半身、一隻戴深色皮手套的手和齊腰高的石欄杆；第 0 秒手正從斗篷底下抽出一支新箭，淺色箭桿露出一半、箭頭朝畫面右；淡琥珀色的光從下往上照著斗篷下擺
 【分鏡與台詞】
-0–2秒：中景。戴皮手套的手從斗篷底下抽出一支箭
-2–5秒：中景。手把箭斜斜插進欄杆的石縫裡，插穩，手收回斗篷底下
+0–2秒：中景。戴皮手套的手把整支箭從斗篷底下抽出來，箭頭朝畫面右
+2–5秒：中景。手把箭斜斜插進欄杆的石縫裡，箭頭斜指畫面右，插穩，手收回斗篷底下
 【鏡頭】中景仰角，固定
-【禁止】文字、字幕、浮水印、第二個人、重複出現的人、臉、露臉、兜帽放下、晶脈、回頭、營火、火光、星星、月亮、太陽、九道光、地上的影子、紅光。
+【禁止】文字、字幕、浮水印、第二個人、重複出現的人、臉、露臉、兜帽放下、晶脈、回頭、營火、火光、第二支箭、星星、月亮、太陽、九道光、地上的影子、紅光。
 ```
 
 ### EP19-S11-09（4 秒）
