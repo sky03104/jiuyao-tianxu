@@ -250,3 +250,6 @@ S11 審完（嚴重 0、中 1、小 1。4 句台詞依序、一字不差，最�
 - S09 完成（第 20 條；S11-01／09 的第 23 條同做）。
 - S10 完成（第 21 條）。
 - S11 完成（第 22 條；第 23 條同在 S09 行完成）。23 條全部改完，進入收尾（check／build／assets、劇本秒數同步）。
+
+收尾：`series.py check EP20` 通過（無 ✗、無 ⚠）、`build EP20`、`assets` 已跑；沒有拆支、沒有增減秒數，劇本各場「約 m:ss」、檔頭合計、秒數表加總列不用動；`registry_add.json` 也不用動（S05-03 改掛 EP20C1A 屬角色、角色不列 usedBy）。
+片段 188 支；正片 944 秒；剪完約 981 秒（插格 37 秒，S10-09 插格改第 2～4 秒仍 2 秒）；firstframe 60 支；動到 `EP20/clips.json`、`EP20/review.md`、`EP20/seedance_prompts.md`、`production/series/ASSETS_TODO.md`。
