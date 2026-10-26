@@ -108,7 +108,7 @@
 | EP19 | ✅ 初稿（192 支；新登記 C04A、C12A、EP19L1～L8、X1～X7；主持人裁定 6 條：投影黑底 L8、聞人澈全集握杖、晶甲獸淡青亂閃）→ 第 1 輪不過關（中 3、小 16）→ 全數修改 → 主持人複查過關（192 支、976 秒、剪完 989、firstframe 82） | production/series/EP19/ |
 | EP20 | ✅ 初稿（188 支；新登記厲疏桐 EP20C1／C1A、EP20L1～L5、X1～X6；主持人裁定 6 條：陸鳴鸞靈印左手腕、靈印後製範圍）→ 第 1 輪不過關（中 2、小 21）→ 全數修改 → 主持人複查過關（188 支、944 秒、剪完約 981、firstframe 60） | production/series/EP20/ |
 | EP21 | ✅ 初稿（182 支；新登記 EP21L1～L6、X1～X10；主持人裁定 5 條：原音插格補整句）→ 第 1 輪不過關（中 3、小 18）→ 全數修改 → 主持人複查過關（182 支、964 秒＋插格 24＝剪完 988、firstframe 75） | production/series/EP21/ |
-| EP22 | 🔄 片段表撰寫中（opus） | production/series/EP22/ |
+| EP22 | 🔄 初稿完成（178 支、936 秒＋插格停格切黑 48.5 秒≈984.5、firstframe 61；新登記 EP22L1～L6、X1～X7 含古代全圖三線稿；主持人裁定 3 條：投影在中央石台上空、藺沅斗篷變體 EP17C1A、薄紙描本）→ 第 1 輪審查中（opus） | production/series/EP22/ |
 | EP23 | 🔄 片段表撰寫中（opus） | production/series/EP23/ |
 | EP01 | 🔁 片段表完成（126 支、983 秒、firstframe 50 支，check 通過）→ ✅ 第 2 輪修改後主持人複查過關（126 支、988 秒、firstframe 33 支） | production/series/EP01/clips.json、seedance_prompts.md |
 
