@@ -173,3 +173,8 @@
 4. S06-04、S09-11 說話人只露手：同意；不改中景。
 5. 阿黎拆三支（+3 秒）、「八段。還缺一段。」另成 S09-14：同意（台詞順序不變）。
 6. 第五季片頭替換編號用 OP-08b、OP-14c、OP-16e（長度 7／6／8 秒）；OP-16e 是否可拍「擠左空右」構圖，寫 OP 時另定。
+
+## 片段表第 1 輪審查（2026-11-04）
+
+審查員：Claude（clip-reviewer，第 1 輪，opus）。對象 `production/series/EP23/clips.json`（194 支）、`registry_add.json`、`seedance_prompts.md`。依據：定稿劇本 `docs/longform/EP23_SCRIPT.md`、S5 指南、STATUS 備忘、主持人裁定 6 條（2026-11-04）。（審查中，邊審邊存）
+
