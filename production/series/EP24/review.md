@@ -171,3 +171,9 @@
 3. 剪完餘裕 5 秒：同意，之後增減秒數需同時處理。
 4. S03-07 帶台詞的 firstframe（附影子狼參考圖）：同意。
 5. 新版靈印本集只疊齊衡烈、陸鳴鸞、机遙：同意，其他人留給 EP25 另定。
+
+## 片段表第 1 輪審查（2026-11-04）— 審查中
+
+審查員：Claude（clip-reviewer，第 1 輪，opus）。對象 `production/series/EP24/clips.json`（198 支）、`registry_add.json`、`seedance_prompts.md`。依據：定稿劇本 `docs/longform/EP24_SCRIPT.md`、S5 指南、STATUS 備忘、主持人裁定 5 條（2026-11-04）。只審查，未改 `clips.json`、`registry_add.json`、劇本。
+
+（審查中，逐場補上）
