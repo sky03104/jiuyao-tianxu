@@ -281,3 +281,6 @@ S11 審完（嚴重 0、中 0、小 0＋第 6、16 條。4 句依序、一字不
 
 - `series.py check EP24` 通過；195 支、正片 963（≥930）、剪完 985（≤990）；id 無重複；EP02C3A、EP17C1B、C12B、C08B 已登記並掛對；同集插格三處（S04-19 後、S07-07 後、S10-01 後）登記在 `_note`。
 - 結論：EP24 片段表定稿。
+
+## 連續性修正（2026-11-05，CONTINUITY_REVIEW ②-2）
+C12B 的登記移到 EP21/registry_add.json（firstEp EP21），本集 registry_add 刪除該筆；本集掛法不動（仍 C12B）。check 通過。

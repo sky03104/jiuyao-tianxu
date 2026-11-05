@@ -270,3 +270,6 @@ S11 審完（嚴重 0、中 0、小 0＋第 8、17、18 條。0 句；劇本 13 
 
 - `series.py check EP22` 通過；178 支、正片 936 秒不變；藺沅 30 支全掛 EP17C1A、疏桐蒙面 10 支全掛 EP20C1B、EP20C1A 不再被用；registry 登記 EP17C1A、EP20C1B、EP22X8。第 1 輪修改記錄逐條對得上審查。
 - 結論：EP22 片段表定稿。
+
+## 連續性修正（2026-11-05，CONTINUITY_REVIEW ②-2）
+C12B（沈昭寧左前臂淡紅舊疤）首次登記由 EP24 移到 EP21（EP21/registry_add.json，firstEp EP21）；本集片段表所有 C12 片段（均寫左前臂舊疤）改掛 C12B。check 通過。
