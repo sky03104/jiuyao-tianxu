@@ -55,7 +55,7 @@
 | 第三季 EP11～16 指南 | ✅ 第 2 輪修改後主持人複查過關（EP11 955／12 945／13 945／14 945／15 980／16 985 秒） | docs/longform/S3_GUIDE.md |
 | 第四季 EP17～22 指南 | ✅ 第 2 輪過關，小問題 16 條也已修（v1.2，全季約 24 天）；初稿 v1 完成（EP19 945／20 985／21 980／22 945 秒），待第 1 輪審查 | docs/longform/S4_GUIDE.md |
 | 第五季 EP23～25 指南 | ✅ 第 2 輪修改後主持人複查過關（v1.2）；初稿 v1 完成（EP24 940／EP25 980 秒；伏筆回收表 65 條、刻意留白 3 條；Q-S45-01～13），待第 1 輪審查 | docs/longform/S5_GUIDE.md |
-| 跨季連續性審查 | 🔄 審查中（opus，2026-11-04；輸出 production/series/CONTINUITY_REVIEW.md；EP25 片段表不在範圍） | |
+| 跨季連續性審查 | ✅ 審查完成（2026-11-05：25 條，中 4、小 21，整體連貫無嚴重問題；揭露節奏零問題）→ 修正中（sonnet，2026-11-05：箭簇註記對齊、EP15 補解開小鈴一格、唐既明台詞「一年」改、EP09 紀蘊之改空手版 EP02C3、C12B 移到 EP21 登記等；時間線三條等待裁定列在 CONTINUITY_REVIEW.md 檔尾） | production/series/CONTINUITY_REVIEW.md |
 
 ## 階段 2：各集劇本（docs/longform/EPxx_SCRIPT.md）
 | 集 | 狀態 | 備註 |
