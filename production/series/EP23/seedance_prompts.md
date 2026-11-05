@@ -571,7 +571,7 @@ LAYOUT (must follow): exactly 3 named character(s): 机遙、齊衡烈、郁岑�
 
 **上傳：** 關鍵幀 `production/series/EP23/keyframes/EP23-S01-14.png`
 
-**備註（給人看，不進 Seedance）：** 後製疊九道光（白天版，EP23X8；EP18X6 構圖）：南方低空排成一道低而不齊的弧，畫面左邊幾道擠成一團、一道一道在發抖，畫面右邊空出一大塊；淡青白、不用紅（STATUS 備忘、S5 製作通則 3）。AI 只生空天。可作第五季片頭 OP-16e 替換底圖（候選；擠左空右能不能進片頭，寫 OP 時另定）。
+**備註（給人看，不進 Seedance）：** 後製疊九道光（白天版，EP23X8；EP18X6 構圖）：南方低空排成一道低而不齊的弧，畫面左邊幾道擠成一團、一道一道在發抖，畫面右邊空出一大塊；淡白（九道光一律淡白，STATUS 備忘）、不用紅（S5 製作通則 3）。AI 只生空天。可作第五季片頭 OP-16e 替換底圖（候選；擠左空右能不能進片頭，寫 OP 時另定）。
 
 **關鍵幀（先用 Gemini 出圖，存成 `production/series/EP23/keyframes/EP23-S01-14.png`）**
 

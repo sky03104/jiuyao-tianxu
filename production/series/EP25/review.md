@@ -194,3 +194,8 @@
 6. 鞋沾泥兩變體（EP02C1C、C13A）：保留。
 7. 九道光顏色：一律「淡白」（主持人 2026-11-05 裁定，與古陣光淡青白區別）；EP25 最後一格九道光均勻一圈＋細縫的描述需一致。
 8. EP25 前情提要旁白「机遙入院的頭幾天」：改「机遙入院不久」（劇本與片段表同步；配音尚未做）。
+
+## 片段表第 1 輪審查（2026-11-05）— 審查中
+
+審查員：Claude（clip-reviewer，第 1 輪，opus）。對象 `production/series/EP25/clips.json`（192 支）、`registry_add.json`、`seedance_prompts.md`。依據：定稿劇本 `docs/longform/EP25_SCRIPT.md`（104 句）、S5 指南、STATUS 備忘、主持人裁定 8 條（2026-11-05，片段表作者回報）。只審查，未改 `clips.json`、`registry_add.json`、劇本。
+
